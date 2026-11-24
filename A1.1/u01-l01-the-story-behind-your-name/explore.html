@@ -1367,9 +1367,7 @@ body.teacher-mode .teacher-note-box {
           <span><span class="teacher-note-tag">Teacher Note</span>Explore 01 Key</span>
           <span class="teacher-note-chevron">&#9662;</span>
         </button>
-        <div class="teacher-note-body">
-          <strong>Key:</strong> 1. <em>I'm</em> &middot; 2. <em>I am</em> (never contract at the end of a short affirmative answer) &middot; 3. <em>I'm not</em> &middot; 4. <em>You're</em> &middot; 5. <em>My</em>.
-        </div>
+        <div class="teacher-note-body" data-enc-idx="0"></div>
       </div>
 
       <div class="screen-footer-actions">
@@ -1449,9 +1447,7 @@ body.teacher-mode .teacher-note-box {
           <span><span class="teacher-note-tag">Teacher Note</span>Explore 02 Key</span>
           <span class="teacher-note-chevron">&#9662;</span>
         </button>
-        <div class="teacher-note-body">
-          <strong>Key:</strong> 1. <em>full name</em> &middot; 2. <em>middle name</em> &middot; 3. <em>nickname</em> &middot; 4. <em>initials</em> &middot; 5. <em>first name</em> &middot; 6. <em>last name</em>.
-        </div>
+        <div class="teacher-note-body" data-enc-idx="1"></div>
       </div>
 
       <div class="screen-footer-actions">
@@ -1527,6 +1523,7 @@ body.teacher-mode .teacher-note-box {
     </div>
   </footer>
 
+  <script id="ld-teacher-vault" type="application/json">{"slots":[{"salt":"FF0meV0MU5CrPkVXZXquyg==","iv":"HXAqKUJUv+jzH/jF","wrapped":"f/bb6G7nRVyCbc7KK7134n+J0DSgXhyU13Mi81dIJiv9E1Aalf14G22kIeC4HPgt"},{"salt":"ouMsjSE9hZs6j+Uzk4apKw==","iv":"PB5qoqBRqQN/RcR7","wrapped":"0pdwG91Iwrci5DaNX8eHZ64chugb6/Z03d+Bc84VnHGUll+r2VQ80bW/hDTT1P3D"}],"items":[{"iv":"qCcpRtNvTXLsJqAs","data":"V9zWHK6YttD3QhrGFrPgCwqCqCuOWXlqiXPH3Yw6RlZfMLLBF4gnvfpHgjR+2DvjI6KqNccPL8TXsOivuxVxlRT/l7U4+tQAqGzCWdejeYK9mfuOBiGzHFswfpKcbIU0i8e3+VhmeGj2Tf2BkMhmskdCO/Pp3bXEGIagxbdHbLLhJVBMG30JFsv+t8Pf5aHkATO6D8R28AkUpvhUXmyYM0f3SnvKEsxm5WxyVTNM2OKJo4vsxyZAtzjAHZiuVSkhhtZ0zzkd02Df0eGegFzuw27EqBzkDH6ndDJAz7oP7m8trX2G7MlIdNTI2h1uvcMpag=="},{"iv":"SftnmImRK6uR4l4r","data":"QZfn9ABVBOdwJ16LT76XABSWKGETc7YFz3pHp6aWW2YD22UwtnHcGmTQponiDvwjc9rkBFYB8jQO4eSiRvkq7trYgj7iLvb0PVeum+i+VbaE13gqd1xgxYiezrKBiQWXKgZG2lIXWSyKrySnTyKQmn2MAq7f7M8OxnsOu6vgihv7YfQPUWxySRSfgAmmgGMIytnpaNqk9lfPSYQmqh7RADmPzqpmOKx5UE1BP05b0r3idUuiA2xOdV5Se0e4IEH0K+nyKdhKWjnqu1j4qnRpoFnjj/ij9xfWK2fscPJ7a6lhfhnNRI64LTC8Im/yTQ=="}]}</script>
   <script>
 /* ==========================================================================
    LEARNING & DEVELOPMENT STUDIO · ENGLISH HUB
@@ -1542,10 +1539,10 @@ body.teacher-mode .teacher-note-box {
 (function (global) {
   'use strict';
 
-  const TEACHER_PINS = ['2680', '5726', '8826', '2026', 'admin'];
   const STUDENT_KEYS = ['ld-student-name', 'ld_student_name', 'english_hub_student_name', 'studentName'];
-  const TEACHER_SESSION_KEY = 'ld-teacher-mode';
+  const TEACHER_DEK_KEY = 'ld-teacher-dek';
   const STUDENT_PROMPTED_KEY = 'ld-student-prompted';
+  const PBKDF2_ITERS = 100000;
 
   let activeAudio = null;
   let activeAudioBtn = null;
@@ -1640,24 +1637,100 @@ body.teacher-mode .teacher-note-box {
   }
 
   /* ------------------------------------------------------------------------
-     2. TEACHER'S VERSION PIN MODAL & SESSION PERSISTENCE
+     2. TEACHER'S VERSION ENCRYPTED VAULT & SESSION PERSISTENCE
      ------------------------------------------------------------------------ */
-  function isTeacherMode() {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('role') === 'teacher') {
-      sessionStorage.setItem(TEACHER_SESSION_KEY, 'true');
-      return true;
+  function b64ToBytes(b64) {
+    const bin = atob(b64);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+
+  function bytesToB64(bytes) {
+    let bin = '';
+    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin);
+  }
+
+  function getTeacherVault() {
+    const el = document.getElementById('ld-teacher-vault');
+    if (!el) return null;
+    try {
+      return JSON.parse(el.textContent);
+    } catch (_) {
+      return null;
     }
-    return sessionStorage.getItem(TEACHER_SESSION_KEY) === 'true';
+  }
+
+  async function aesGcmDecryptBytes(cryptoKey, ivB64, dataB64) {
+    const iv = b64ToBytes(ivB64);
+    const data = b64ToBytes(dataB64);
+    const plainBuf = await window.crypto.subtle.decrypt({ name: 'AES-GCM', iv }, cryptoKey, data);
+    return new Uint8Array(plainBuf);
+  }
+
+  async function unlockWithDekBytes(dekBytes) {
+    const vault = getTeacherVault();
+    if (!vault || !window.crypto || !window.crypto.subtle) return false;
+    try {
+      const dekKey = await window.crypto.subtle.importKey('raw', dekBytes, { name: 'AES-GCM' }, false, ['decrypt']);
+      const decoder = new TextDecoder();
+      const targets = document.querySelectorAll('[data-enc-idx]');
+      for (const target of targets) {
+        const idx = parseInt(target.getAttribute('data-enc-idx'), 10);
+        const entry = vault.items[idx];
+        if (!entry) continue;
+        const plainBytes = await aesGcmDecryptBytes(dekKey, entry.iv, entry.data);
+        target.innerHTML = decoder.decode(plainBytes);
+      }
+      sessionStorage.setItem(TEACHER_DEK_KEY, bytesToB64(dekBytes));
+      applyTeacherMode(true);
+      return true;
+    } catch (_) {
+      sessionStorage.removeItem(TEACHER_DEK_KEY);
+      return false;
+    }
+  }
+
+  async function verifyPinAndUnlock(pin) {
+    const vault = getTeacherVault();
+    if (!vault || !window.crypto || !window.crypto.subtle) {
+      throw new Error('NO_SUBTLE');
+    }
+    const enc = new TextEncoder();
+    const baseKey = await window.crypto.subtle.importKey('raw', enc.encode(pin), 'PBKDF2', false, ['deriveKey']);
+    for (const slot of vault.slots) {
+      try {
+        const wrapKey = await window.crypto.subtle.deriveKey(
+          { name: 'PBKDF2', salt: b64ToBytes(slot.salt), iterations: PBKDF2_ITERS, hash: 'SHA-256' },
+          baseKey,
+          { name: 'AES-GCM', length: 256 },
+          false,
+          ['decrypt']
+        );
+        const dekBytes = await aesGcmDecryptBytes(wrapKey, slot.iv, slot.wrapped);
+        const ok = await unlockWithDekBytes(dekBytes);
+        if (ok) return true;
+      } catch (_) {
+        // Try next PIN slot
+      }
+    }
+    return false;
+  }
+
+  function isTeacherMode() {
+    return document.body.classList.contains('teacher-mode');
   }
 
   function applyTeacherMode(active) {
     if (active) {
       document.body.classList.add('teacher-mode');
-      sessionStorage.setItem(TEACHER_SESSION_KEY, 'true');
     } else {
       document.body.classList.remove('teacher-mode');
-      sessionStorage.removeItem(TEACHER_SESSION_KEY);
+      sessionStorage.removeItem(TEACHER_DEK_KEY);
+      document.querySelectorAll('[data-enc-idx]').forEach((el) => {
+        el.innerHTML = '';
+      });
     }
     document.querySelectorAll('[data-hub-teacher-trigger], .header-teacher-link').forEach((btn) => {
       btn.innerHTML = active ? "Teacher's Version &#10003;" : "Teacher's Version &#8599;";
@@ -1677,13 +1750,13 @@ body.teacher-mode .teacher-note-box {
         <button type="button" class="hub-modal-close" data-close-pin-modal aria-label="Close">&times;</button>
         <div class="hub-modal-eyebrow">Faculty Access</div>
         <h3 class="hub-modal-title">Teacher's Version</h3>
-        <p class="hub-modal-desc">Enter your instructor or coordinator PIN to reveal live facilitation notes and answer keys.</p>
+        <p class="hub-modal-desc">Enter your instructor PIN to decrypt and reveal live facilitation notes and answer keys.</p>
         <form id="hubPinForm">
           <input type="password" id="hubPinInput" class="hub-input font-mono" placeholder="Enter PIN" autocomplete="off" maxlength="20">
           <div class="hub-modal-error" id="hubPinError"></div>
           <div style="display:flex; gap:10px; justify-content:flex-end;">
             <button type="button" class="btn-brand-secondary" data-close-pin-modal>Cancel</button>
-            <button type="submit" class="btn-brand-primary">Unlock Notes</button>
+            <button type="submit" class="btn-brand-primary" id="hubPinSubmitBtn">Unlock Notes</button>
           </div>
         </form>
       </div>
@@ -1697,19 +1770,36 @@ body.teacher-mode .teacher-note-box {
     });
 
     const form = modal.querySelector('#hubPinForm');
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const input = document.getElementById('hubPinInput');
       const err = document.getElementById('hubPinError');
-      const val = (input ? input.value : '').trim().toLowerCase();
-      if (TEACHER_PINS.includes(val)) {
-        if (err) err.textContent = '';
-        if (input) input.value = '';
-        modal.classList.remove('active');
-        applyTeacherMode(true);
-      } else {
-        if (err) err.textContent = 'Invalid PIN. Please verify with academic coordination.';
+      const submitBtn = document.getElementById('hubPinSubmitBtn');
+      const val = (input ? input.value : '').trim();
+      if (!val) {
+        if (err) err.textContent = 'Please enter your instructor PIN.';
         if (input) input.focus();
+        return;
+      }
+      if (submitBtn) submitBtn.disabled = true;
+      try {
+        const unlocked = await verifyPinAndUnlock(val);
+        if (unlocked) {
+          if (err) err.textContent = '';
+          if (input) input.value = '';
+          modal.classList.remove('active');
+        } else {
+          if (err) err.textContent = 'Invalid PIN. Please verify with academic coordination.';
+          if (input) input.focus();
+        }
+      } catch (ex) {
+        if (err) {
+          err.textContent = ex && ex.message === 'NO_SUBTLE'
+            ? 'Encrypted unlock requires HTTPS or localhost.'
+            : 'Unable to verify PIN in this browser.';
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     });
   }
@@ -2050,14 +2140,21 @@ body.teacher-mode .teacher-note-box {
   /* ------------------------------------------------------------------------
      6. INITIALIZATION
      ------------------------------------------------------------------------ */
-  function init() {
+  async function init() {
     updateStudentHeaderDisplay();
-    applyTeacherMode(isTeacherMode());
     initInteractions();
     initAudioDecks();
 
+    let unlocked = false;
+    const savedDek = sessionStorage.getItem(TEACHER_DEK_KEY);
+    if (savedDek) {
+      unlocked = await unlockWithDekBytes(b64ToBytes(savedDek));
+    } else {
+      applyTeacherMode(false);
+    }
+
     // Prompt once cleanly for student name if empty and not in teacher mode
-    if (!getStoredStudentName() && !isTeacherMode() && !sessionStorage.getItem(STUDENT_PROMPTED_KEY)) {
+    if (!getStoredStudentName() && !unlocked && !sessionStorage.getItem(STUDENT_PROMPTED_KEY)) {
       openStudentModal();
     }
   }
