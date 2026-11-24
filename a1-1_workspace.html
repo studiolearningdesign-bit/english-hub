@@ -1196,6 +1196,75 @@
         "action": "Coming Soon",
         "soon": true
       }
+    ],
+    "labs": [
+      {
+        "unit": "A1.1-U01",
+        "tag": "Explore Labs · Macro-Unit 01 (Live)",
+        "title": "The Name We Carry &amp; First Impressions",
+        "photo": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+        "tagline": "Workbook &amp; mechanics drills for names, nicknames, I/you + To Be, and My/Your.",
+        "pill1": "L01 Explore Live",
+        "pill2": "Workbook &amp; Drills",
+        "action": "Open Explore Labs",
+        "url": "./A1.1/u01/index.html?mode=explore",
+        "live": true
+      },
+      {
+        "unit": "A1.1-U02",
+        "tag": "Explore Labs · Macro-Unit 02",
+        "title": "Chosen Family &amp; Household Boundaries",
+        "photo": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80",
+        "tagline": "Workbook drills for possessives, 's, and have/has.",
+        "pill1": "3 Labs",
+        "pill2": "Possessives &amp; Have/Has",
+        "action": "Coming Soon",
+        "soon": true
+      },
+      {
+        "unit": "A1.1-U03",
+        "tag": "Explore Labs · Macro-Unit 03",
+        "title": "Spaces, Sanctuaries &amp; The Clutter Dilemma",
+        "photo": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
+        "tagline": "Workbook drills for There is/are, prepositions, and demonstratives.",
+        "pill1": "3 Labs",
+        "pill2": "There is/are &amp; Place",
+        "action": "Coming Soon",
+        "soon": true
+      },
+      {
+        "unit": "A1.1-U04",
+        "tag": "Explore Labs · Macro-Unit 04",
+        "title": "The Neighborhood &amp; Lost Connections",
+        "photo": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=800&q=80",
+        "tagline": "Workbook drills for Is there...? and street directions.",
+        "pill1": "2 Labs",
+        "pill2": "Is there...? &amp; Directions",
+        "action": "Coming Soon",
+        "soon": true
+      },
+      {
+        "unit": "A1.1-U05",
+        "tag": "Explore Labs · Macro-Unit 05",
+        "title": "Appearances, Aging &amp; Character",
+        "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+        "tagline": "Workbook drills for physical descriptions and personality traits.",
+        "pill1": "2 Labs",
+        "pill2": "Appearance &amp; Character",
+        "action": "Coming Soon",
+        "soon": true
+      },
+      {
+        "unit": "A1.1-U06",
+        "tag": "Explore Labs · Capstone Studio",
+        "title": "The Real Human Dossier (Capstone)",
+        "photo": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=800&q=80",
+        "tagline": "Full A1.1 integration review and self-check.",
+        "pill1": "1 Capstone",
+        "pill2": "Full A1.1 Integration",
+        "action": "Coming Soon",
+        "soon": true
+      }
     ]
   },
   "A1.2": {
@@ -2555,7 +2624,8 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       checkRoleParams();
-      setSwitchMode('experience', false);
+      const initialMode = urlParams.get('mode') === 'explore' ? 'explore' : 'experience';
+      setSwitchMode(initialMode, false);
     });
   </script>
 </body>
