@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Guía Docente · A1.2-U03-L01: Grandma's Feast vs. The Miracle Diet | Teacher's Hub</title>
+  <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   LEARNING & DEVELOPMENT STUDIO · ENGLISH HUB
+   Executive Standard Design System (hub-core.css)
+   Typography: Plus Jakarta Sans + IBM Plex Mono
+   ========================================================================== */
+
+:root {
+  /* Deep Navy (Dominant) */
+  --navy-950: #071527;
+  --navy-900: #001F54;
+  --navy-800: #0B2545;
+  --navy-700: #133E68;
+
+  /* Champagne Gold (Accent / Emphasis) */
+  --gold-600: #B57C00;
+  --gold-500: #D4A843;
+  --gold-400: #E5A922;
+  --gold-100: #FEF8EB;
+  --gold-border: rgba(212, 168, 67, 0.35);
+
+  /* Teal (Secondary / Interaction) */
+  --teal-800: #0F766E;
+  --teal-700: #007A87;
+  --teal-500: #14B8A6;
+  --teal-300: #4DD0E1;
+  --teal-50: #F0FDFA;
+
+  /* Neutrals & Surfaces */
+  --white: #FFFFFF;
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0A192F;
+
+  /* Semantic Status */
+  --danger-600: #DC2626;
+  --danger-50: #FEF2F2;
+  --danger-border: rgba(220, 38, 38, 0.25);
+  --success-600: #059669;
+  --success-50: #ECFDF5;
+  --success-border: rgba(5, 150, 105, 0.25);
+
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --shadow-xs: 0 1px 2px rgba(10, 25, 47, 0.04);
+  --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+  --shadow-md: 0 6px 18px -2px rgba(10, 25, 47, 0.06), 0 2px 6px -1px rgba(10, 25, 47, 0.03);
+  --shadow-lg: 0 16px 36px -4px rgba(10, 25, 47, 0.10), 0 4px 12px -2px rgba(10, 25, 47, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--slate-50);
+  color: var(--slate-900);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ==========================================================================
+   1. INSTITUTIONAL HEADER (.site-header)
+   Navy background, inverted white logo on left, 3 clean typographic items on right
+   ========================================================================== */
+.site-header {
+  background: var(--navy-900);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.28);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(7, 21, 39, 0.16);
+}
+
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-logo-white {
+  height: 92px;
+  width: auto;
+  object-fit: contain;
+  margin: -20px 0;
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.brand-course-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-200);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Exactly 3 clean typographic elements on the right */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+.header-student-tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate-300);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.18s ease;
+}
+
+.header-student-tag:hover {
+  color: var(--white);
+}
+
+.header-student-tag strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.header-teacher-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold-500);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  white-space: nowrap;
+}
+
+.header-teacher-link:hover {
+  color: var(--gold-400);
+}
+
+body.teacher-mode .header-teacher-link {
+  color: var(--teal-300);
+}
+
+.header-back-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-200);
+  text-decoration: none;
+  transition: color 0.18s ease;
+  white-space: nowrap;
+}
+
+.header-back-link:hover {
+  color: var(--white);
+}
+
+/* ==========================================================================
+   2. MAIN CONTAINER & HERO BANNER (.workspace-hero-banner)
+   ========================================================================== */
+.content-wrapper {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 72px;
+  flex: 1;
+}
+
+.workspace-hero-banner {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  padding: 60px 48px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(212, 168, 67, 0.24);
+  box-shadow: 0 24px 48px -12px rgba(7, 21, 39, 0.32);
+  margin-bottom: 36px;
+  color: var(--white);
+  background-color: var(--navy-950);
+  background-image:
+    linear-gradient(90deg, rgba(7, 21, 39, 0.97) 0%, rgba(11, 31, 58, 0.90) 52%, rgba(7, 21, 39, 0.42) 100%),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=85');
+}
+
+.hero-banner-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  max-width: 24ch;
+  letter-spacing: -0.015em;
+  color: var(--white);
+}
+
+.hero-banner-title .gold-accent {
+  color: var(--gold-500);
+  font-style: italic;
+}
+
+.hero-banner-desc {
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: var(--slate-300);
+  line-height: 1.6;
+  max-width: 54ch;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   3. MODULAR NAVIGATION: SEGMENTED BAR (.segmented-bar)
+   #F1F5F9 surface, elevated white active segment, ZERO thick colored borders
+   ========================================================================== */
+.segmented-bar {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 5px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.segmented-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.segment-btn {
+  flex: 1 0 auto;
+  min-width: 132px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--slate-600);
+  font-family: inherit;
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.segment-btn:hover {
+  color: var(--navy-900);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.segment-btn.active {
+  background: var(--white);
+  color: var(--navy-900);
+  border-color: rgba(10, 25, 47, 0.06);
+  box-shadow: 0 2px 8px rgba(10, 25, 47, 0.08), 0 1px 2px rgba(10, 25, 47, 0.04);
+}
+
+.segment-index {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--slate-400);
+  flex-shrink: 0;
+}
+
+.segment-btn.active .segment-index {
+  color: var(--teal-700);
+}
+
+.segment-label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: hubFadeIn 0.22s ease-out;
+}
+
+@keyframes hubFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Screen Section Headers */
+.screen-header-block {
+  margin-bottom: 24px;
+}
+
+.screen-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-700);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 4px;
+}
+
+.screen-heading {
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.screen-desc {
+  font-size: 0.96rem;
+  color: var(--slate-600);
+  max-width: 72ch;
+  margin-top: 6px;
+}
+
+/* Footer Prev/Next Navigation */
+.screen-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--slate-200);
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   4. CLEAN EXECUTIVE CARDS (NO border-top / border-left ACCENTS)
+   ========================================================================== */
+.studio-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE 3D FLIP CARDS (.flip-card)
+   ========================================================================== */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  min-height: 244px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 244px;
+  text-align: left;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: var(--radius-md);
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flip-card-front > div:first-child,
+.flip-card-back > div:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-card-front {
+  background: var(--white);
+  box-shadow: var(--shadow-xs);
+}
+
+.flip-card:hover .flip-card-front {
+  border-color: var(--slate-300);
+  box-shadow: var(--shadow-md);
+}
+
+.flip-card-back {
+  background: linear-gradient(155deg, var(--white) 0%, var(--teal-50) 100%);
+  border-color: rgba(0, 122, 135, 0.3);
+  transform: rotateY(180deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.flip-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.flip-card-term {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.flip-card-pos {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--teal-700);
+  background: var(--teal-50);
+  border: 1px solid rgba(0, 122, 135, 0.22);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.flip-card-ipa {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--slate-500);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.flip-card-example {
+  font-size: 13px;
+  color: var(--slate-700);
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  line-height: 1.45;
+  margin-top: 10px;
+}
+
+.flip-card-example strong {
+  color: var(--teal-700);
+}
+
+.flip-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.flip-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate-400);
+}
+
+.flip-card-meaning-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+  margin-bottom: 5px;
+}
+
+.flip-card-back-term {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.flip-card-meaning {
+  font-size: 14.5px;
+  color: var(--slate-800);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   6. HTML5 REAL AUDIO PLAYER (.audio-pill & .audio-deck)
+   Zero speechSynthesis; graceful "Audio pending" state when MP3 is missing
+   ========================================================================== */
+.audio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  color: var(--navy-900);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.audio-pill:hover:not(.is-pending) {
+  background: var(--teal-50);
+  border-color: var(--teal-500);
+  color: var(--teal-800);
+}
+
+.audio-pill.is-playing {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--white);
+}
+
+.audio-pill.is-pending {
+  background: var(--slate-50);
+  border-color: var(--slate-200);
+  color: var(--slate-400);
+  cursor: default;
+}
+
+.audio-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal-500);
+  flex-shrink: 0;
+}
+
+.audio-pill.is-playing .audio-pill-dot {
+  background: var(--gold-400);
+}
+
+.audio-pill.is-pending .audio-pill-dot {
+  background: var(--slate-300);
+}
+
+/* Full Track Audio Deck */
+.audio-deck {
+  background: var(--navy-900);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.audio-deck-play {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  border: none;
+  color: var(--navy-950);
+  font-size: 15px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.audio-deck-play:hover:not(:disabled) {
+  background: var(--gold-400);
+  transform: scale(1.04);
+}
+
+.audio-deck-play:disabled {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--slate-400);
+  cursor: default;
+}
+
+.audio-deck-scrubber {
+  flex: 1 1 200px;
+}
+
+.audio-deck-slider {
+  width: 100%;
+  accent-color: var(--gold-400);
+  cursor: pointer;
+}
+
+.audio-deck-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--slate-300);
+  margin-top: 4px;
+}
+
+.audio-deck-speed {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   7. TEACHER'S VERSION ACCORDIONS (.teacher-note-box)
+   Hidden by default; revealed only when body.teacher-mode is active
+   ========================================================================== */
+.teacher-note-box {
+  display: none;
+  background: var(--gold-100);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  margin-top: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+body.teacher-mode .teacher-note-box {
+  display: block;
+}
+
+.teacher-note-toggle {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.teacher-note-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-600);
+  margin-right: 8px;
+}
+
+.teacher-note-chevron {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--gold-600);
+  transition: transform 0.2s ease;
+}
+
+.teacher-note-box.is-open .teacher-note-chevron {
+  transform: rotate(180deg);
+}
+
+.teacher-note-body {
+  display: none;
+  padding: 0 18px 16px;
+  font-size: 13.5px;
+  color: var(--slate-800);
+  line-height: 1.6;
+  border-top: 1px solid rgba(212, 168, 67, 0.22);
+  padding-top: 12px;
+}
+
+.teacher-note-box.is-open .teacher-note-body {
+  display: block;
+}
+
+/* ==========================================================================
+   8. BUTTONS & CONTROLS
+   ========================================================================== */
+.btn-brand-primary {
+  background: var(--gold-500);
+  color: var(--navy-950);
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-brand-primary:hover {
+  background: var(--gold-400);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(212, 168, 67, 0.3);
+}
+
+.btn-brand-secondary {
+  background: var(--white);
+  border: 1px solid var(--slate-300);
+  color: var(--slate-700);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.btn-brand-secondary:hover {
+  background: var(--slate-100);
+  color: var(--navy-900);
+}
+
+.btn-teal {
+  background: var(--teal-700);
+  color: var(--white);
+  border: 1px solid transparent;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease;
+}
+
+.btn-teal:hover {
+  background: var(--teal-800);
+}
+
+/* ==========================================================================
+   9. MODALS (PIN ENTRY, STUDENT NAME, SYLLABUS)
+   ========================================================================== */
+.hub-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 39, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 250;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hub-modal-backdrop.active {
+  display: flex;
+}
+
+.hub-modal-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  max-width: 440px;
+  width: 100%;
+  padding: 28px 30px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.hub-modal-card.wide {
+  max-width: 640px;
+}
+
+.hub-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--slate-400);
+  cursor: pointer;
+}
+
+.hub-modal-close:hover {
+  color: var(--navy-900);
+}
+
+.hub-modal-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+  margin-bottom: 6px;
+}
+
+.hub-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+
+.hub-modal-desc {
+  font-size: 13.5px;
+  color: var(--slate-600);
+  margin-bottom: 18px;
+}
+
+.hub-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--navy-900);
+  background: var(--white);
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.hub-input:focus {
+  border-color: var(--teal-700);
+  box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.12);
+}
+
+.hub-modal-error {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--danger-600);
+  margin-bottom: 12px;
+  min-height: 18px;
+}
+
+/* ==========================================================================
+   10. INSTITUTIONAL FOOTER (.studio-site-footer)
+   ========================================================================== */
+.studio-site-footer {
+  border-top: 1px solid rgba(212, 168, 67, 0.32);
+  background: var(--navy-900);
+  color: var(--slate-200);
+  padding: 28px 24px;
+  margin-top: auto;
+}
+
+.footer-content-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 12.5px;
+}
+
+@media (min-width: 768px) {
+  .footer-content-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-left-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-brand-dot {
+  color: var(--gold-400);
+}
+
+.footer-teacher-portal-link {
+  color: var(--gold-400);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-teacher-portal-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 10px 16px;
+  }
+  .brand-divider,
+  .brand-course-label {
+    display: none;
+  }
+  .header-actions {
+    gap: 14px;
+  }
+  .header-student-tag {
+    display: none;
+  }
+  .content-wrapper {
+    padding: 20px 16px 56px;
+  }
+  .workspace-hero-banner {
+    padding: 40px 24px;
+    min-height: 300px;
+  }
+  .studio-card {
+    padding: 20px 18px;
+  }
+}
+
+/* ==========================================================================
+   12. CLEAN PRINT STYLES (Explore Worksheets & Teacher's Hub Lesson Plan)
+   ========================================================================== */
+@media print {
+  .site-header,
+  .studio-site-footer,
+  .segmented-bar,
+  .screen-footer-actions,
+  .no-print,
+  .hub-modal-backdrop,
+  .audio-pill,
+  .audio-deck,
+  .teacher-note-box {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+  }
+
+  .content-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .studio-card,
+  .doc-hero-card,
+  .section-card,
+  .drill-item,
+  .badge-card {
+    box-shadow: none !important;
+    border-color: #CBD5E1 !important;
+    break-inside: avoid;
+  }
+}
+
+</style>
+  <style>
+    .doc-hero-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 30px 32px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+
+    .doc-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal-700);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .doc-title {
+      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+      font-weight: 800;
+      color: var(--navy-900);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .doc-lead {
+      font-size: 0.96rem;
+      color: var(--slate-600);
+      max-width: 74ch;
+      margin-bottom: 20px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      font-size: 13.5px;
+    }
+
+    .meta-item strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: 3px;
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-card h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 10px;
+    }
+
+    .frontier-box {
+      background: var(--danger-50);
+      border: 1px solid var(--danger-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 13.5px;
+      color: var(--slate-800);
+    }
+
+    .frontier-box strong {
+      color: var(--danger-600);
+    }
+
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 13.5px;
+    }
+
+    .doc-table th,
+    .doc-table td {
+      border: 1px solid var(--slate-200);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-table th {
+      background: var(--navy-900);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .doc-table tr:nth-child(even) td {
+      background: var(--slate-50);
+    }
+
+    .rubric-pill {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+    }
+
+    .e0 { background: var(--danger-50); color: var(--danger-600); border: 1px solid var(--danger-border); }
+    .e1 { background: var(--gold-100); color: var(--gold-600); border: 1px solid var(--gold-border); }
+    .e2 { background: var(--success-50); color: var(--success-600); border: 1px solid var(--success-border); }
+    .e3 { background: var(--teal-50); color: var(--teal-800); border: 1px solid rgba(0, 122, 135, 0.25); }
+
+    @media print {
+      .site-header,
+      .studio-site-footer,
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+      .content-wrapper {
+        padding: 0;
+        max-width: 100%;
+      }
+      .doc-hero-card {
+        box-shadow: none;
+        border-color: #cbd5e1;
+        break-inside: avoid;
+      }
+      .section-card {
+        box-shadow: none;
+        border-color: #cbd5e1;
+        break-inside: auto;
+      }
+      .section-card h2 {
+        break-after: avoid;
+      }
+      .doc-table thead {
+        display: table-header-group;
+      }
+      .doc-table tr {
+        break-inside: avoid;
+      }
+    }
+
+    .portal-lock-card {
+      max-width: 480px;
+      margin: 48px auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 34px 32px;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+    .portal-lock-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .portal-lock-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+    .portal-lock-desc {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .portal-pin-input {
+      width: 100%;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-300);
+      color: var(--navy-900);
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .portal-pin-input:focus {
+      border-color: var(--teal-600);
+      box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.14);
+    }
+    .portal-pin-error {
+      min-height: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--danger-600);
+      margin-bottom: 12px;
+    }
+    .portal-lock-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .portal-back-student {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      text-decoration: none;
+    }
+    .portal-back-student:hover { color: var(--navy-900); }
+    .header-lock-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .header-lock-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    body.portal-unlocked .header-lock-btn { display: inline-flex; align-items: center; }
+
+    .portal-lock-card { max-width: 480px; margin: 48px auto; background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 34px 32px; box-shadow: var(--shadow-md); text-align: left; }
+    .portal-lock-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-700); margin-bottom: 6px; }
+    .portal-lock-title { font-size: 1.45rem; font-weight: 800; color: var(--navy-900); margin-bottom: 8px; }
+    .portal-lock-desc { font-size: 14px; color: var(--slate-600); line-height: 1.6; margin-bottom: 18px; }
+    .portal-pin-input { width: 100%; font-family: 'IBM Plex Mono', monospace; font-size: 15px; padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--slate-300); color: var(--navy-900); margin-bottom: 10px; outline: none; }
+    .portal-pin-input:focus { border-color: var(--teal-600); box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.14); }
+    .portal-pin-error { min-height: 20px; font-size: 12.5px; font-weight: 600; color: var(--danger-600); margin-bottom: 12px; }
+    .portal-lock-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .portal-back-student { font-size: 13px; font-weight: 600; color: var(--slate-600); text-decoration: none; }
+    .portal-back-student:hover { color: var(--navy-900); }
+    .header-lock-btn { display: none; background: rgba(255, 255, 255, 0.12); color: var(--white); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-full); padding: 7px 14px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .header-lock-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    body.portal-unlocked .header-lock-btn { display: inline-flex; align-items: center; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../A1.2/u03/index.html" class="brand-lockup">
+        <span class="brand-logo-wrap"><img src="../../../assets/logo-white-lockup.webp" alt="Learning &amp; Development Studio" class="brand-logo-white"></span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher's Hub &middot; Documento Rector</span>
+      </a>
+      <nav class="header-actions" aria-label="Header actions">
+        <a href="../../../A1.2/u03-l01-grandmas-feast-vs-the-miracle-diet/index.html" class="header-teacher-link">Experience &#8599;</a>
+        <a href="../../../A1.2/u03-l01-grandmas-feast-vs-the-miracle-diet/explore.html" class="header-back-link">Explore &#8599;</a>
+        <button type="button" class="header-lock-btn" id="lockPortalBtn">Lock Portal</button>
+        <a href="../../../A1.2/u03/index.html" class="header-back-link">&larr; Back to Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper" id="teacherPortalMain">
+    <section class="portal-lock-card" id="teacherPortalGate">
+      <div class="portal-lock-eyebrow">Faculty Access &middot; Protected</div>
+      <h1 class="portal-lock-title">Teacher's Portal &amp; Printable Guide</h1>
+      <p class="portal-lock-desc">
+        Enter your instructor PIN to decrypt the didactic sequence, answer keys, audio production script, and printable rubric for <strong>A1.2-U03-L01</strong>.
+      </p>
+      <form id="portalPinForm">
+        <input type="password" id="portalPinInput" class="portal-pin-input" placeholder="Enter instructor PIN" autocomplete="off" maxlength="20" autofocus>
+        <div class="portal-pin-error" id="portalPinError"></div>
+        <div class="portal-lock-actions">
+          <a href="../../../A1.2/u03-l01-grandmas-feast-vs-the-miracle-diet/index.html" class="portal-back-student">&larr; Return to Lesson</a>
+          <button type="submit" class="btn-brand-primary" id="portalPinSubmit">Unlock Teacher Portal</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-content-inner">
+      <div class="footer-left-lockup">
+        <strong>Learning &amp; Development Studio</strong>
+        <span class="footer-brand-dot">&middot;</span>
+        <span style="color:var(--teal-300);">Educate &bull; Design &bull; Grow</span>
+        <span class="footer-brand-dot">&middot;</span>
+        <span style="color:var(--slate-300);">Teacher's Hub &middot; A1.2-U03-L01</span>
+      </div>
+      <div>
+        <a href="../../../A1.2/u03-l01-grandmas-feast-vs-the-miracle-diet/index.html" class="footer-teacher-portal-link">Abrir Experience (Alumno) &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script id="ld-teacher-vault" type="application/json">{"slots":[{"salt":"QFZPJykP21zjAd+OiL2kwg==","iv":"wisOckJpjTZhwijO","wrapped":"JaAOoEvkf+JEVuc4vAGKEHO+CUErm7QmzXkAhJMgK4xQ6iZfqkMDflgb6rXJduun"},{"salt":"6vmqkF2oxf+OibG9Ec/+Gw==","iv":"OYqmK3QxiuabyoOu","wrapped":"i6QSUCY/bRV1CAgDJihWy12MgIj+5Rm2I19a/uMxdZSzDGpJmnq93eQshKByT68+"}],"main":{"iv":"hJ9TYDXXb0kB15gy","data":"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"}}</script>
+  <script>
+    (function () {
+      'use strict';
+      const TEACHER_DEK_KEY = 'ld-teacher-dek';
+      const PBKDF2_ITERS = 100000;
+      const mainEl = document.getElementById('teacherPortalMain');
+      const lockedHtml = mainEl ? mainEl.innerHTML : '';
+
+      function b64ToBytes(b64) {
+        const bin = atob(b64);
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        return bytes;
+      }
+      function bytesToB64(bytes) {
+        let bin = '';
+        for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+        return btoa(bin);
+      }
+      function getVault() {
+        const el = document.getElementById('ld-teacher-vault');
+        if (!el) return null;
+        try { return JSON.parse(el.textContent); } catch (_) { return null; }
+      }
+      async function aesGcmDecryptBytes(cryptoKey, ivB64, dataB64) {
+        const plainBuf = await window.crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64ToBytes(ivB64) }, cryptoKey, b64ToBytes(dataB64));
+        return new Uint8Array(plainBuf);
+      }
+      async function unlockWithDekBytes(dekBytes) {
+        const vault = getVault();
+        if (!vault || !mainEl || !window.crypto || !window.crypto.subtle) return false;
+        try {
+          const dekKey = await window.crypto.subtle.importKey('raw', dekBytes, { name: 'AES-GCM' }, false, ['decrypt']);
+          const plainBytes = await aesGcmDecryptBytes(dekKey, vault.main.iv, vault.main.data);
+          mainEl.innerHTML = new TextDecoder().decode(plainBytes);
+          sessionStorage.setItem(TEACHER_DEK_KEY, bytesToB64(dekBytes));
+          document.body.classList.add('portal-unlocked');
+          return true;
+        } catch (_) {
+          sessionStorage.removeItem(TEACHER_DEK_KEY);
+          return false;
+        }
+      }
+      async function verifyPinAndUnlock(pin) {
+        const vault = getVault();
+        if (!vault || !window.crypto || !window.crypto.subtle) throw new Error('NO_SUBTLE');
+        const baseKey = await window.crypto.subtle.importKey('raw', new TextEncoder().encode(pin), 'PBKDF2', false, ['deriveKey']);
+        for (const slot of vault.slots) {
+          try {
+            const wrapKey = await window.crypto.subtle.deriveKey(
+              { name: 'PBKDF2', salt: b64ToBytes(slot.salt), iterations: PBKDF2_ITERS, hash: 'SHA-256' },
+              baseKey, { name: 'AES-GCM', length: 256 }, false, ['decrypt']
+            );
+            const dekBytes = await aesGcmDecryptBytes(wrapKey, slot.iv, slot.wrapped);
+            if (await unlockWithDekBytes(dekBytes)) return true;
+          } catch (_) {}
+        }
+        return false;
+      }
+      function bindGateForm() {
+        const form = document.getElementById('portalPinForm');
+        if (!form) return;
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const input = document.getElementById('portalPinInput');
+          const err = document.getElementById('portalPinError');
+          const submit = document.getElementById('portalPinSubmit');
+          const val = (input ? input.value : '').trim();
+          if (!val) { if (err) err.textContent = 'Please enter your instructor PIN.'; if (input) input.focus(); return; }
+          if (submit) submit.disabled = true;
+          try {
+            const ok = await verifyPinAndUnlock(val);
+            if (!ok) { if (err) err.textContent = 'Invalid PIN. Please verify with academic coordination.'; if (input) input.focus(); }
+          } catch (ex) {
+            if (err) err.textContent = ex && ex.message === 'NO_SUBTLE' ? 'Encrypted unlock requires HTTPS or localhost.' : 'Unable to verify PIN in this browser.';
+          } finally { if (submit) submit.disabled = false; }
+        });
+      }
+      const lockBtn = document.getElementById('lockPortalBtn');
+      if (lockBtn) {
+        lockBtn.addEventListener('click', () => {
+          sessionStorage.removeItem(TEACHER_DEK_KEY);
+          document.body.classList.remove('portal-unlocked');
+          if (mainEl) mainEl.innerHTML = lockedHtml;
+          bindGateForm();
+        });
+      }
+      async function initPortal() {
+        const savedDek = sessionStorage.getItem(TEACHER_DEK_KEY);
+        if (savedDek) {
+          const ok = await unlockWithDekBytes(b64ToBytes(savedDek));
+          if (ok) return;
+        }
+        bindGateForm();
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPortal);
+      else initPortal();
+    })();
+  </script>
+</body>
+</html>
