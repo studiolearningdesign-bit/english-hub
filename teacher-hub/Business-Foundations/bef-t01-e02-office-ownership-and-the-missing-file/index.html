@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Guía Docente · BEF-T01-E02: Office Ownership &amp; The Missing File | Teacher's Hub</title>
+  <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   LEARNING & DEVELOPMENT STUDIO · ENGLISH HUB
+   Executive Standard Design System (hub-core.css)
+   Typography: Plus Jakarta Sans + IBM Plex Mono
+   ========================================================================== */
+
+:root {
+  /* Deep Navy (Dominant) */
+  --navy-950: #071527;
+  --navy-900: #001F54;
+  --navy-800: #0B2545;
+  --navy-700: #133E68;
+
+  /* Champagne Gold (Accent / Emphasis) */
+  --gold-600: #B57C00;
+  --gold-500: #D4A843;
+  --gold-400: #E5A922;
+  --gold-100: #FEF8EB;
+  --gold-border: rgba(212, 168, 67, 0.35);
+
+  /* Teal (Secondary / Interaction) */
+  --teal-800: #0F766E;
+  --teal-700: #007A87;
+  --teal-500: #14B8A6;
+  --teal-300: #4DD0E1;
+  --teal-50: #F0FDFA;
+
+  /* Neutrals & Surfaces */
+  --white: #FFFFFF;
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0A192F;
+
+  /* Semantic Status */
+  --danger-600: #DC2626;
+  --danger-50: #FEF2F2;
+  --danger-border: rgba(220, 38, 38, 0.25);
+  --success-600: #059669;
+  --success-50: #ECFDF5;
+  --success-border: rgba(5, 150, 105, 0.25);
+
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --shadow-xs: 0 1px 2px rgba(10, 25, 47, 0.04);
+  --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+  --shadow-md: 0 6px 18px -2px rgba(10, 25, 47, 0.06), 0 2px 6px -1px rgba(10, 25, 47, 0.03);
+  --shadow-lg: 0 16px 36px -4px rgba(10, 25, 47, 0.10), 0 4px 12px -2px rgba(10, 25, 47, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--slate-50);
+  color: var(--slate-900);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ==========================================================================
+   1. INSTITUTIONAL HEADER (.site-header)
+   Navy background, inverted white logo on left, 3 clean typographic items on right
+   ========================================================================== */
+.site-header {
+  background: var(--navy-900);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.28);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(7, 21, 39, 0.16);
+}
+
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-logo-white {
+  height: 92px;
+  width: auto;
+  object-fit: contain;
+  margin: -20px 0;
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.brand-course-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-200);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Exactly 3 clean typographic elements on the right */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+.header-student-tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate-300);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.18s ease;
+}
+
+.header-student-tag:hover {
+  color: var(--white);
+}
+
+.header-student-tag strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.header-teacher-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold-500);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  white-space: nowrap;
+}
+
+.header-teacher-link:hover {
+  color: var(--gold-400);
+}
+
+body.teacher-mode .header-teacher-link {
+  color: var(--teal-300);
+}
+
+.header-back-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-200);
+  text-decoration: none;
+  transition: color 0.18s ease;
+  white-space: nowrap;
+}
+
+.header-back-link:hover {
+  color: var(--white);
+}
+
+/* ==========================================================================
+   2. MAIN CONTAINER & HERO BANNER (.workspace-hero-banner)
+   ========================================================================== */
+.content-wrapper {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 72px;
+  flex: 1;
+}
+
+.workspace-hero-banner {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  padding: 60px 48px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(212, 168, 67, 0.24);
+  box-shadow: 0 24px 48px -12px rgba(7, 21, 39, 0.32);
+  margin-bottom: 36px;
+  color: var(--white);
+  background-color: var(--navy-950);
+  background-image:
+    linear-gradient(90deg, rgba(7, 21, 39, 0.97) 0%, rgba(11, 31, 58, 0.90) 52%, rgba(7, 21, 39, 0.42) 100%),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=85');
+}
+
+.hero-banner-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  max-width: 24ch;
+  letter-spacing: -0.015em;
+  color: var(--white);
+}
+
+.hero-banner-title .gold-accent {
+  color: var(--gold-500);
+  font-style: italic;
+}
+
+.hero-banner-desc {
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: var(--slate-300);
+  line-height: 1.6;
+  max-width: 54ch;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   3. MODULAR NAVIGATION: SEGMENTED BAR (.segmented-bar)
+   #F1F5F9 surface, elevated white active segment, ZERO thick colored borders
+   ========================================================================== */
+.segmented-bar {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 5px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.segmented-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.segment-btn {
+  flex: 1 0 auto;
+  min-width: 132px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--slate-600);
+  font-family: inherit;
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.segment-btn:hover {
+  color: var(--navy-900);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.segment-btn.active {
+  background: var(--white);
+  color: var(--navy-900);
+  border-color: rgba(10, 25, 47, 0.06);
+  box-shadow: 0 2px 8px rgba(10, 25, 47, 0.08), 0 1px 2px rgba(10, 25, 47, 0.04);
+}
+
+.segment-index {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--slate-400);
+  flex-shrink: 0;
+}
+
+.segment-btn.active .segment-index {
+  color: var(--teal-700);
+}
+
+.segment-label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: hubFadeIn 0.22s ease-out;
+}
+
+@keyframes hubFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Screen Section Headers */
+.screen-header-block {
+  margin-bottom: 24px;
+}
+
+.screen-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-700);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 4px;
+}
+
+.screen-heading {
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.screen-desc {
+  font-size: 0.96rem;
+  color: var(--slate-600);
+  max-width: 72ch;
+  margin-top: 6px;
+}
+
+/* Footer Prev/Next Navigation */
+.screen-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--slate-200);
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   4. CLEAN EXECUTIVE CARDS (NO border-top / border-left ACCENTS)
+   ========================================================================== */
+.studio-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE 3D FLIP CARDS (.flip-card)
+   ========================================================================== */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  min-height: 244px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 244px;
+  text-align: left;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: var(--radius-md);
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flip-card-front > div:first-child,
+.flip-card-back > div:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-card-front {
+  background: var(--white);
+  box-shadow: var(--shadow-xs);
+}
+
+.flip-card:hover .flip-card-front {
+  border-color: var(--slate-300);
+  box-shadow: var(--shadow-md);
+}
+
+.flip-card-back {
+  background: linear-gradient(155deg, var(--white) 0%, var(--teal-50) 100%);
+  border-color: rgba(0, 122, 135, 0.3);
+  transform: rotateY(180deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.flip-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.flip-card-term {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.flip-card-pos {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--teal-700);
+  background: var(--teal-50);
+  border: 1px solid rgba(0, 122, 135, 0.22);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.flip-card-ipa {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--slate-500);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.flip-card-example {
+  font-size: 13px;
+  color: var(--slate-700);
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  line-height: 1.45;
+  margin-top: 10px;
+}
+
+.flip-card-example strong {
+  color: var(--teal-700);
+}
+
+.flip-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.flip-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate-400);
+}
+
+.flip-card-meaning-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+  margin-bottom: 5px;
+}
+
+.flip-card-back-term {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.flip-card-meaning {
+  font-size: 14.5px;
+  color: var(--slate-800);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   6. HTML5 REAL AUDIO PLAYER (.audio-pill & .audio-deck)
+   Zero speechSynthesis; graceful "Audio pending" state when MP3 is missing
+   ========================================================================== */
+.audio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  color: var(--navy-900);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.audio-pill:hover:not(.is-pending) {
+  background: var(--teal-50);
+  border-color: var(--teal-500);
+  color: var(--teal-800);
+}
+
+.audio-pill.is-playing {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--white);
+}
+
+.audio-pill.is-pending {
+  background: var(--slate-50);
+  border-color: var(--slate-200);
+  color: var(--slate-400);
+  cursor: default;
+}
+
+.audio-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal-500);
+  flex-shrink: 0;
+}
+
+.audio-pill.is-playing .audio-pill-dot {
+  background: var(--gold-400);
+}
+
+.audio-pill.is-pending .audio-pill-dot {
+  background: var(--slate-300);
+}
+
+/* Full Track Audio Deck */
+.audio-deck {
+  background: var(--navy-900);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.audio-deck-play {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  border: none;
+  color: var(--navy-950);
+  font-size: 15px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.audio-deck-play:hover:not(:disabled) {
+  background: var(--gold-400);
+  transform: scale(1.04);
+}
+
+.audio-deck-play:disabled {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--slate-400);
+  cursor: default;
+}
+
+.audio-deck-scrubber {
+  flex: 1 1 200px;
+}
+
+.audio-deck-slider {
+  width: 100%;
+  accent-color: var(--gold-400);
+  cursor: pointer;
+}
+
+.audio-deck-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--slate-300);
+  margin-top: 4px;
+}
+
+.audio-deck-speed {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   7. TEACHER'S VERSION ACCORDIONS (.teacher-note-box)
+   Hidden by default; revealed only when body.teacher-mode is active
+   ========================================================================== */
+.teacher-note-box {
+  display: none;
+  background: var(--gold-100);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  margin-top: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+body.teacher-mode .teacher-note-box {
+  display: block;
+}
+
+.teacher-note-toggle {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.teacher-note-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-600);
+  margin-right: 8px;
+}
+
+.teacher-note-chevron {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--gold-600);
+  transition: transform 0.2s ease;
+}
+
+.teacher-note-box.is-open .teacher-note-chevron {
+  transform: rotate(180deg);
+}
+
+.teacher-note-body {
+  display: none;
+  padding: 0 18px 16px;
+  font-size: 13.5px;
+  color: var(--slate-800);
+  line-height: 1.6;
+  border-top: 1px solid rgba(212, 168, 67, 0.22);
+  padding-top: 12px;
+}
+
+.teacher-note-box.is-open .teacher-note-body {
+  display: block;
+}
+
+/* ==========================================================================
+   8. BUTTONS & CONTROLS
+   ========================================================================== */
+.btn-brand-primary {
+  background: var(--gold-500);
+  color: var(--navy-950);
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-brand-primary:hover {
+  background: var(--gold-400);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(212, 168, 67, 0.3);
+}
+
+.btn-brand-secondary {
+  background: var(--white);
+  border: 1px solid var(--slate-300);
+  color: var(--slate-700);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.btn-brand-secondary:hover {
+  background: var(--slate-100);
+  color: var(--navy-900);
+}
+
+.btn-teal {
+  background: var(--teal-700);
+  color: var(--white);
+  border: 1px solid transparent;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease;
+}
+
+.btn-teal:hover {
+  background: var(--teal-800);
+}
+
+/* ==========================================================================
+   9. MODALS (PIN ENTRY, STUDENT NAME, SYLLABUS)
+   ========================================================================== */
+.hub-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 39, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 250;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hub-modal-backdrop.active {
+  display: flex;
+}
+
+.hub-modal-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  max-width: 440px;
+  width: 100%;
+  padding: 28px 30px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.hub-modal-card.wide {
+  max-width: 640px;
+}
+
+.hub-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--slate-400);
+  cursor: pointer;
+}
+
+.hub-modal-close:hover {
+  color: var(--navy-900);
+}
+
+.hub-modal-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+  margin-bottom: 6px;
+}
+
+.hub-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+
+.hub-modal-desc {
+  font-size: 13.5px;
+  color: var(--slate-600);
+  margin-bottom: 18px;
+}
+
+.hub-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--navy-900);
+  background: var(--white);
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.hub-input:focus {
+  border-color: var(--teal-700);
+  box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.12);
+}
+
+.hub-modal-error {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--danger-600);
+  margin-bottom: 12px;
+  min-height: 18px;
+}
+
+/* ==========================================================================
+   10. INSTITUTIONAL FOOTER (.studio-site-footer)
+   ========================================================================== */
+.studio-site-footer {
+  border-top: 1px solid rgba(212, 168, 67, 0.32);
+  background: var(--navy-900);
+  color: var(--slate-200);
+  padding: 28px 24px;
+  margin-top: auto;
+}
+
+.footer-content-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 12.5px;
+}
+
+@media (min-width: 768px) {
+  .footer-content-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-left-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-brand-dot {
+  color: var(--gold-400);
+}
+
+.footer-teacher-portal-link {
+  color: var(--gold-400);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-teacher-portal-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 10px 16px;
+  }
+  .brand-divider,
+  .brand-course-label {
+    display: none;
+  }
+  .header-actions {
+    gap: 14px;
+  }
+  .header-student-tag {
+    display: none;
+  }
+  .content-wrapper {
+    padding: 20px 16px 56px;
+  }
+  .workspace-hero-banner {
+    padding: 40px 24px;
+    min-height: 300px;
+  }
+  .studio-card {
+    padding: 20px 18px;
+  }
+}
+
+/* ==========================================================================
+   12. CLEAN PRINT STYLES (Explore Worksheets & Teacher's Hub Lesson Plan)
+   ========================================================================== */
+@media print {
+  .site-header,
+  .studio-site-footer,
+  .segmented-bar,
+  .screen-footer-actions,
+  .no-print,
+  .hub-modal-backdrop,
+  .audio-pill,
+  .audio-deck,
+  .teacher-note-box {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+  }
+
+  .content-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .studio-card,
+  .doc-hero-card,
+  .section-card,
+  .drill-item,
+  .badge-card {
+    box-shadow: none !important;
+    border-color: #CBD5E1 !important;
+    break-inside: avoid;
+  }
+}
+
+</style>
+  <style>
+    .doc-hero-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 30px 32px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+
+    .doc-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal-700);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .doc-title {
+      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+      font-weight: 800;
+      color: var(--navy-900);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .doc-lead {
+      font-size: 0.96rem;
+      color: var(--slate-600);
+      max-width: 74ch;
+      margin-bottom: 20px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      font-size: 13.5px;
+    }
+
+    .meta-item strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: 3px;
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-card h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 10px;
+    }
+
+    .frontier-box {
+      background: var(--danger-50);
+      border: 1px solid var(--danger-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 13.5px;
+      color: var(--slate-800);
+    }
+
+    .frontier-box strong {
+      color: var(--danger-600);
+    }
+
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 13.5px;
+    }
+
+    .doc-table th,
+    .doc-table td {
+      border: 1px solid var(--slate-200);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-table th {
+      background: var(--navy-900);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .doc-table tr:nth-child(even) td {
+      background: var(--slate-50);
+    }
+
+    .rubric-pill {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+    }
+
+    .e0 { background: var(--danger-50); color: var(--danger-600); border: 1px solid var(--danger-border); }
+    .e1 { background: var(--gold-100); color: var(--gold-600); border: 1px solid var(--gold-border); }
+    .e2 { background: var(--success-50); color: var(--success-600); border: 1px solid var(--success-border); }
+    .e3 { background: var(--teal-50); color: var(--teal-800); border: 1px solid rgba(0, 122, 135, 0.25); }
+
+    @media print {
+      .site-header,
+      .studio-site-footer,
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+      .content-wrapper {
+        padding: 0;
+        max-width: 100%;
+      }
+      .doc-hero-card {
+        box-shadow: none;
+        border-color: #cbd5e1;
+        break-inside: avoid;
+      }
+      .section-card {
+        box-shadow: none;
+        border-color: #cbd5e1;
+        break-inside: auto;
+      }
+      .section-card h2 {
+        break-after: avoid;
+      }
+      .doc-table thead {
+        display: table-header-group;
+      }
+      .doc-table tr {
+        break-inside: avoid;
+      }
+    }
+
+    .portal-lock-card {
+      max-width: 480px;
+      margin: 48px auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 34px 32px;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+    .portal-lock-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .portal-lock-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+    .portal-lock-desc {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .portal-pin-input {
+      width: 100%;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-300);
+      color: var(--navy-900);
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .portal-pin-input:focus {
+      border-color: var(--teal-600);
+      box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.14);
+    }
+    .portal-pin-error {
+      min-height: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--danger-600);
+      margin-bottom: 12px;
+    }
+    .portal-lock-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .portal-back-student {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      text-decoration: none;
+    }
+    .portal-back-student:hover { color: var(--navy-900); }
+    .header-lock-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .header-lock-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    body.portal-unlocked .header-lock-btn { display: inline-flex; align-items: center; }
+
+    .portal-lock-card {
+      max-width: 480px;
+      margin: 48px auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 34px 32px;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+    .portal-lock-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .portal-lock-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+    .portal-lock-desc {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .portal-pin-input {
+      width: 100%;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-300);
+      color: var(--navy-900);
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .portal-pin-input:focus {
+      border-color: var(--teal-600);
+      box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.14);
+    }
+    .portal-pin-error {
+      min-height: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--danger-600);
+      margin-bottom: 12px;
+    }
+    .portal-lock-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .portal-back-student {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      text-decoration: none;
+    }
+    .portal-back-student:hover { color: var(--navy-900); }
+    .header-lock-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .header-lock-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    body.portal-unlocked .header-lock-btn { display: inline-flex; align-items: center; }
+  </style>
+</head>
+<body>
+
+  <!-- INSTITUTIONAL HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../business-foundations_workspace.html" class="brand-lockup">
+        <span class="brand-logo-wrap"><img
+          src="../../../assets/logo-white-lockup.webp"
+          alt="Learning &amp; Development Studio"
+          class="brand-logo-white"
+        ></span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher's Hub &middot; Business Foundations</span>
+      </a>
+      <nav class="header-actions" aria-label="Header actions">
+        <a href="../../../Business-Foundations/bef-t01-e02-office-ownership-and-the-missing-file/index.html" class="header-teacher-link">
+          Experience &#8599;
+        </a>
+        <a href="../../../Business-Foundations/bef-t01-e02-office-ownership-and-the-missing-file/explore.html" class="header-back-link">
+          Explore &#8599;
+        </a>
+        <button type="button" class="header-lock-btn" id="lockPortalBtn">Lock Portal</button>
+        <a href="../../../business-foundations_workspace.html" class="header-back-link">&larr; Back to Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper" id="teacherPortalMain">
+    <section class="portal-lock-card" id="teacherPortalGate">
+      <div class="portal-lock-eyebrow">Faculty Access &middot; Protected</div>
+      <h1 class="portal-lock-title">Teacher's Portal &amp; Printable Guide</h1>
+      <p class="portal-lock-desc">
+        Enter your instructor PIN to decrypt the didactic sequence, answer keys, audio production script, and printable rubric for <strong>BEF-T01-E02</strong>.
+      </p>
+      <form id="portalPinForm">
+        <input type="password" id="portalPinInput" class="portal-pin-input" placeholder="Enter instructor PIN" autocomplete="off" maxlength="20" autofocus>
+        <div class="portal-pin-error" id="portalPinError"></div>
+        <div class="portal-lock-actions">
+          <a href="../../../Business-Foundations/bef-t01-e02-office-ownership-and-the-missing-file/index.html" class="portal-back-student">&larr; Return to Lesson</a>
+          <button type="submit" class="btn-brand-primary" id="portalPinSubmit">Unlock Teacher Portal</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-content-inner">
+      <div class="footer-left-lockup">
+        <strong>Learning &amp; Development Studio</strong>
+        <span class="footer-brand-dot">&middot;</span>
+        <span style="color:var(--teal-300);">Educate &bull; Design &bull; Grow</span>
+        <span class="footer-brand-dot">&middot;</span>
+        <span style="color:var(--slate-300);">Teacher's Hub &middot; BEF-T01-E02</span>
+      </div>
+      <div>
+        <a href="../../../Business-Foundations/bef-t01-e02-office-ownership-and-the-missing-file/index.html" class="footer-teacher-portal-link">
+          Abrir Experience (Alumno) &rarr;
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script id="ld-teacher-vault" type="application/json">{"slots":[{"salt":"kZvVRvtL52Y4fQmBuDxrgQ==","iv":"YNo21ZXVvXCTKZtq","wrapped":"Zs2c0EHZQvq5gMKmk2mmuJahEP04v/686qx/CkmyPTh6qQKrQpu5K8z5Jdr/YorL"},{"salt":"FdWYWUvcJ3OWKOjHnzSOAg==","iv":"d9RGJ/Wh2onUXQeS","wrapped":"v0QlzQGIc1zj6ipIbgdDBpfQDvDHaQ+guxfGR4RofPDWxZ59hjHnk/VKpeV1CqKo"}],"main":{"iv":"75iiXwUl9EKixb0S","data":"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"}}</script>
+  <script>
+    (function () {
+      'use strict';
+      const TEACHER_DEK_KEY = 'ld-teacher-dek';
+      const PBKDF2_ITERS = 100000;
+      const mainEl = document.getElementById('teacherPortalMain');
+      const lockedHtml = mainEl ? mainEl.innerHTML : '';
+
+      function b64ToBytes(b64) {
+        const bin = atob(b64);
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        return bytes;
+      }
+
+      function bytesToB64(bytes) {
+        let bin = '';
+        for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+        return btoa(bin);
+      }
+
+      function getVault() {
+        const el = document.getElementById('ld-teacher-vault');
+        if (!el) return null;
+        try { return JSON.parse(el.textContent); } catch (_) { return null; }
+      }
+
+      async function aesGcmDecryptBytes(cryptoKey, ivB64, dataB64) {
+        const plainBuf = await window.crypto.subtle.decrypt(
+          { name: 'AES-GCM', iv: b64ToBytes(ivB64) },
+          cryptoKey,
+          b64ToBytes(dataB64)
+        );
+        return new Uint8Array(plainBuf);
+      }
+
+      async function unlockWithDekBytes(dekBytes) {
+        const vault = getVault();
+        if (!vault || !mainEl || !window.crypto || !window.crypto.subtle) return false;
+        try {
+          const dekKey = await window.crypto.subtle.importKey('raw', dekBytes, { name: 'AES-GCM' }, false, ['decrypt']);
+          const plainBytes = await aesGcmDecryptBytes(dekKey, vault.main.iv, vault.main.data);
+          mainEl.innerHTML = new TextDecoder().decode(plainBytes);
+          sessionStorage.setItem(TEACHER_DEK_KEY, bytesToB64(dekBytes));
+          document.body.classList.add('portal-unlocked');
+          return true;
+        } catch (_) {
+          sessionStorage.removeItem(TEACHER_DEK_KEY);
+          return false;
+        }
+      }
+
+      async function verifyPinAndUnlock(pin) {
+        const vault = getVault();
+        if (!vault || !window.crypto || !window.crypto.subtle) throw new Error('NO_SUBTLE');
+        const baseKey = await window.crypto.subtle.importKey('raw', new TextEncoder().encode(pin), 'PBKDF2', false, ['deriveKey']);
+        for (const slot of vault.slots) {
+          try {
+            const wrapKey = await window.crypto.subtle.deriveKey(
+              { name: 'PBKDF2', salt: b64ToBytes(slot.salt), iterations: PBKDF2_ITERS, hash: 'SHA-256' },
+              baseKey,
+              { name: 'AES-GCM', length: 256 },
+              false,
+              ['decrypt']
+            );
+            const dekBytes = await aesGcmDecryptBytes(wrapKey, slot.iv, slot.wrapped);
+            if (await unlockWithDekBytes(dekBytes)) return true;
+          } catch (_) {}
+        }
+        return false;
+      }
+
+      function bindGateForm() {
+        const form = document.getElementById('portalPinForm');
+        if (!form) return;
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const input = document.getElementById('portalPinInput');
+          const err = document.getElementById('portalPinError');
+          const submit = document.getElementById('portalPinSubmit');
+          const val = (input ? input.value : '').trim();
+          if (!val) {
+            if (err) err.textContent = 'Please enter your instructor PIN.';
+            if (input) input.focus();
+            return;
+          }
+          if (submit) submit.disabled = true;
+          try {
+            const ok = await verifyPinAndUnlock(val);
+            if (!ok) {
+              if (err) err.textContent = 'Invalid PIN. Please verify with academic coordination.';
+              if (input) input.focus();
+            }
+          } catch (ex) {
+            if (err) {
+              err.textContent = ex && ex.message === 'NO_SUBTLE'
+                ? 'Encrypted unlock requires HTTPS or localhost.'
+                : 'Unable to verify PIN in this browser.';
+            }
+          } finally {
+            if (submit) submit.disabled = false;
+          }
+        });
+      }
+
+      const lockBtn = document.getElementById('lockPortalBtn');
+      if (lockBtn) {
+        lockBtn.addEventListener('click', () => {
+          sessionStorage.removeItem(TEACHER_DEK_KEY);
+          document.body.classList.remove('portal-unlocked');
+          if (mainEl) mainEl.innerHTML = lockedHtml;
+          bindGateForm();
+        });
+      }
+
+      async function initPortal() {
+        const savedDek = sessionStorage.getItem(TEACHER_DEK_KEY);
+        if (savedDek) {
+          const ok = await unlockWithDekBytes(b64ToBytes(savedDek));
+          if (ok) return;
+        }
+        bindGateForm();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPortal);
+      } else {
+        initPortal();
+      }
+    })();
+  </script>
+</body>
+</html>
