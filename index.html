@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#071527">
+  <title>Learning &amp; Development Studio — Where Potential Takes Shape</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-deep: #071527;
+      --navy-main: #0B1F3A;
+      --navy-card: #0f2847;
+      --gold: #d4a843;
+      --gold-dark: #b88f32;
+      --gold-light: #fef7e7;
+      --teal: #00828A;
+      --teal-light: #e6f6f7;
+      --paper: #f8fafc;
+      --paper-card: #ffffff;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --shadow-sm: 0 2px 8px rgba(11, 31, 58, 0.04);
+      --shadow-card: 0 10px 30px -5px rgba(11, 31, 58, 0.06), 0 0 1px rgba(11, 31, 58, 0.15);
+      --shadow-hover: 0 20px 40px -10px rgba(11, 31, 58, 0.12), 0 0 15px rgba(212, 168, 67, 0.18);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP NAV */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(7, 21, 39, 0.94);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.22);
+      padding: 10px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-wrap {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      height: 52px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .brand-lockup-img {
+      height: 92px;
+      width: auto;
+      object-fit: contain;
+      margin: -20px 0;
+      display: block;
+      transition: transform .25s ease, filter .25s ease;
+    }
+    .brand-wrap:hover .brand-lockup-img {
+      transform: scale(1.02);
+      filter: drop-shadow(0 0 8px rgba(212, 168, 67, 0.35));
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-gold-link {
+      color: var(--gold) !important;
+      font-weight: 700;
+      font-size: 13.5px;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: all .2s ease;
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid rgba(212, 168, 67, 0.35);
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.02em;
+    }
+    .nav-gold-link:hover {
+      color: #ffffff !important;
+      background: rgba(212, 168, 67, 0.18) !important;
+      border-color: var(--gold);
+    }
+
+    /* HERO SECTION */
+    .hero-container {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 32px 100px;
+      background: #071527 url('./assets/hero-clean.jpg') no-repeat center right / cover;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7, 21, 39, 0.85) 0%, rgba(7, 21, 39, 0.55) 48%, rgba(7, 21, 39, 0.18) 100%);
+      pointer-events: none;
+    }
+
+    .hero-bottom-wash {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 36px;
+      background: linear-gradient(to top, var(--paper) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 680px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 168, 67, 0.15);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: clamp(38px, 5.2vw, 56px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero-title .gold-accent {
+      color: var(--gold);
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 1.8vw, 18px);
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 580px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      font-size: 14.5px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #071527;
+      text-decoration: none;
+      padding: 13px 30px;
+      border-radius: 999px;
+      box-shadow: 0 4px 16px rgba(212, 168, 67, 0.35);
+      transition: all .2s ease;
+      cursor: pointer;
+      border: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 168, 67, 0.5);
+      filter: brightness(1.08);
+    }
+
+    .btn-secondary {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      text-decoration: none;
+      padding: 12px 26px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      transition: all .2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* MAIN CURRICULUM SECTION */
+    .main-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 24px 80px;
+      position: relative;
+      z-index: 20;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 36px;
+    }
+    .section-kicker {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      color: var(--navy-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* FILTER TABS BAR */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .filter-btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: var(--paper-card);
+      color: var(--navy-main);
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all .2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold-dark);
+    }
+    .filter-btn.active {
+      background: var(--navy-main);
+      color: #ffffff;
+      border-color: var(--navy-main);
+      box-shadow: 0 4px 12px rgba(11, 31, 58, 0.18);
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 26px;
+      box-shadow: 0 1px 3px rgba(11, 31, 58, 0.03), 0 6px 16px -6px rgba(11, 31, 58, 0.05);
+      transition: all .2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -6px rgba(11, 31, 58, 0.08);
+      border-color: rgba(212, 168, 67, 0.4);
+    }
+
+    .card.is-hidden {
+      display: none;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .card-code {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 4px 12px;
+      border-radius: 6px;
+      color: #ffffff;
+      background: var(--navy-main);
+    }
+    .code-gold { background: var(--navy-main); border: 1px solid var(--gold); color: var(--gold); }
+    .code-teal { background: var(--navy-main); border: 1px solid var(--teal); color: var(--teal); }
+    .code-navy { background: var(--navy-main); }
+
+    .card-stage-kicker {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy-main);
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      margin-bottom: 10px;
+    }
+
+    .card-outcome {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: #0f766e;
+      background: #f0fdfa;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+    }
+    .card-meta.meta-gold {
+      color: #b45309;
+      background: #fefce8;
+    }
+    .card-meta.meta-navy {
+      color: var(--navy-main);
+      background: #f1f5f9;
+    }
+
+    .card-btn {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--navy-main);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 11px 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all .2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      width: 100%;
+    }
+    .card-btn:hover, .card:hover .card-btn {
+      background: var(--navy-main);
+      color: #ffffff;
+      border-color: var(--navy-main);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+      padding: 36px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer-brand {
+      font-weight: 700;
+      color: var(--navy-main);
+      margin-bottom: 4px;
+    }
+    .footer-motto {
+      font-size: 12px;
+      color: var(--teal);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    /* MODAL ACCESS STYLES */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 21, 39, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .modal-backdrop.active {
+      display: grid;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px -12px rgba(7, 21, 39, 0.35);
+      width: 100%;
+      max-width: 440px;
+      padding: 32px 30px;
+      position: relative;
+      animation: modalPop .25s ease-out;
+    }
+    @keyframes modalPop {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #f1f5f9;
+      border: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+    }
+    .modal-close:hover { background: #e2e8f0; color: var(--ink); }
+
+    .modal-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-dark);
+      margin-bottom: 6px;
+    }
+    .modal-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy-main);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .modal-subtitle {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 22px;
+      line-height: 1.45;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .form-label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--navy-main);
+      margin-bottom: 6px;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.15);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      font-size: 14.5px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      margin-top: 8px;
+      transition: all .2s;
+    }
+    .btn-submit-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy-deep);
+      box-shadow: 0 4px 14px rgba(212, 168, 67, 0.35);
+    }
+    .btn-submit-gold:hover { filter: brightness(1.08); }
+
+    .btn-submit-navy {
+      background: var(--navy-main);
+      color: #ffffff;
+    }
+    .btn-submit-navy:hover { background: var(--navy-deep); }
+
+    .modal-error {
+      color: #dc2626;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-top: 10px;
+      display: none;
+    }
+    .modal-error.show { display: block; }
+
+    @media (max-width: 640px) {
+      .top-nav { padding: 8px 16px; height: 64px; }
+      .brand-lockup-img { height: 74px; }
+      .hero-container { padding: 60px 20px 100px; min-height: auto; }
+      .hero-title { font-size: 32px; }
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <header class="top-nav">
+    <a href="#" class="brand-wrap" title="Learning &amp; Development Studio">
+      <img src="./assets/logo-white-lockup.webp" alt="Learning &amp; Development Studio" class="brand-lockup-img">
+    </a>
+    <div class="nav-actions">
+      <!-- DISCREET ACADEMIC DEPARTMENT ACCESS -->
+      <button type="button" class="nav-gold-link" onclick="openAcademicModal()">
+        Academic Department &nearr;
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-container">
+    <div class="hero-overlay"></div>
+    <div class="hero-bottom-wash"></div>
+
+    <div class="hero-content">
+      <div class="hero-pill">
+        Educational System &middot; Learning &amp; Development Studio
+      </div>
+      <h1 class="hero-title">
+        Where potential <br><span class="gold-accent">takes shape.</span>
+      </h1>
+      <p class="hero-subtitle">
+        A structured communicative journey anchored in real-world competence. Advance through observable outcomes, from your first words to executive fluency.
+      </p>
+      <div class="hero-actions">
+        <!-- ONLY TWO MAIN HERO CTAS -->
+        <button type="button" class="btn-gold" onclick="openStudentModal('general')">
+          Student Access &rarr;
+        </button>
+        <a href="./Guest/" class="btn-secondary">
+          Guest Demo &nearr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CURRICULUM & ROADMAP -->
+  <main class="main-wrapper" id="curriculum">
+    <div class="section-header">
+      <span class="section-kicker">Communicative Journey &middot; CEFR Trajectory</span>
+      <h2 class="section-title">Academic Programs &amp; Levels</h2>
+      <p class="section-desc">
+        Understanding comes before advancement. Choose your course level to enter your active interactive workspace and language labs.
+      </p>
+    </div>
+
+    <!-- FILTER TABS (NO "ALL" TAB - DEFAULTS TO STAGE 1 FOUNDATIONS) -->
+    <div class="filter-bar" role="tablist">
+      <button type="button" class="filter-btn active" data-filter="foundations">Stage 1 · Foundations</button>
+      <button type="button" class="filter-btn" data-filter="expansion">Stage 2 · Expansion</button>
+      <button type="button" class="filter-btn" data-filter="independent">Stage 3 · Independent</button>
+      <button type="button" class="filter-btn" data-filter="advanced">Stage 4 · Advanced &amp; Fluency</button>
+      <button type="button" class="filter-btn" data-filter="specialized">Stage 5 · Executive &amp; Exams</button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div class="cards-grid">
+
+      <!-- ================= STAGE 1: FOUNDATIONS ================= -->
+      <!-- PRE-A1 -->
+      <article class="card" data-stage="foundations">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-navy">Pre-A1</span>
+            <span class="card-stage-kicker">Stage 1 · Foundations</span>
+          </div>
+          <h3 class="card-title">First Contact &amp; Survival</h3>
+          <p class="card-outcome">
+            Essential classroom formulas, alphabet sounds, numbers, age, and simple personal data.
+          </p>
+          <div class="card-meta">15 Communicative Topics &middot; Personal Data &amp; Sound Foundations</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('PreA1', './pre-a1_workspace.html')">
+          Enter Pre-A1 &rarr;
+        </button>
+      </article>
+
+      <!-- A1.1 -->
+      <article class="card" data-stage="foundations">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-gold">A1.1</span>
+            <span class="card-stage-kicker">Stage 1 · Foundations</span>
+          </div>
+          <h3 class="card-title">Identity, Spaces &amp; Belongings</h3>
+          <p class="card-outcome">
+            Say who you are, introduce your family, describe rooms, furniture, and point things in your city.
+          </p>
+          <div class="card-meta meta-gold">25 Topics &middot; Verb To Be, Possessives &amp; There is/are</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('A1.1', './a1-1_workspace.html')">
+          Enter A1.1 &rarr;
+        </button>
+      </article>
+
+      <!-- A1.2 -->
+      <article class="card" data-stage="foundations">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-teal">A1.2</span>
+            <span class="card-stage-kicker">Stage 1 · Foundations</span>
+          </div>
+          <h3 class="card-title">Daily Life &amp; Right Now</h3>
+          <p class="card-outcome">
+            Talk about daily habits, routines, food ordering, and describe actions happening in this exact moment.
+          </p>
+          <div class="card-meta">25 Topics &middot; Present Simple, Food &amp; Present Continuous</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('A1.2', './a1-2_workspace.html')">
+          Enter A1.2 &rarr;
+        </button>
+      </article>
+
+      <!-- ================= STAGE 2: EXPANSION ================= -->
+      <!-- A2.1 -->
+      <article class="card is-hidden" data-stage="expansion">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-navy">A2.1</span>
+            <span class="card-stage-kicker">Stage 2 · Expansion</span>
+          </div>
+          <h3 class="card-title">Past Events, City &amp; Moving Around</h3>
+          <p class="card-outcome">
+            Narrate past vacations, master regular and irregular past verbs, and navigate the city with directions.
+          </p>
+          <div class="card-meta">20 Topics &middot; Past Simple, Irregular Verbs &amp; Transit</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('A2.1', './a2-1_workspace.html')">
+          Enter A2.1 &rarr;
+        </button>
+      </article>
+
+      <!-- A2.2 -->
+      <article class="card is-hidden" data-stage="expansion">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-gold">A2.2</span>
+            <span class="card-stage-kicker">Stage 2 · Expansion</span>
+          </div>
+          <h3 class="card-title">Comparisons, Advice &amp; Experiences</h3>
+          <p class="card-outcome">
+            Compare choices, give recommendations, discuss future plans, and talk about memorable life experiences.
+          </p>
+          <div class="card-meta meta-gold">20 Topics &middot; Comparatives, Modals &amp; Life Present Perfect</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('A2.2', './a2-2_workspace.html')">
+          Enter A2.2 &rarr;
+        </button>
+      </article>
+
+      <!-- ================= STAGE 3: INDEPENDENT ================= -->
+      <!-- B1.1 -->
+      <article class="card is-hidden" data-stage="independent">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-navy">B1.1</span>
+            <span class="card-stage-kicker">Stage 3 · Independent</span>
+          </div>
+          <h3 class="card-title">Complex Stories &amp; Tactful Inquiries</h3>
+          <p class="card-outcome">
+            Narrate simultaneous past events, ask polite indirect questions, and master complex relative clauses.
+          </p>
+          <div class="card-meta">20 Topics &middot; Past Continuous, Indirect Questions &amp; Clauses</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('B1.1', './b1-1_workspace.html')">
+          Enter B1.1 &rarr;
+        </button>
+      </article>
+
+      <!-- B1.2 -->
+      <article class="card is-hidden" data-stage="independent">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-gold">B1.2</span>
+            <span class="card-stage-kicker">Stage 3 · Independent</span>
+          </div>
+          <h3 class="card-title">Dilemmas, Reports &amp; Processes</h3>
+          <p class="card-outcome">
+            Explore imagined choices, report conversations, describe industrial processes, and delegate services.
+          </p>
+          <div class="card-meta meta-gold">20 Topics &middot; 2nd Conditional, Reported Speech &amp; Passive</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('B1.2', './b1-2_workspace.html')">
+          Enter B1.2 &rarr;
+        </button>
+      </article>
+
+      <!-- B1+ -->
+      <article class="card is-hidden" data-stage="independent">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-teal">B1+</span>
+            <span class="card-stage-kicker">Bridge to B2</span>
+          </div>
+          <h3 class="card-title">Professional Synthesis &amp; Nuance</h3>
+          <p class="card-outcome">
+            Defend professional profiles, write executive emails with diplomatic hedging, and negotiate agreements.
+          </p>
+          <div class="card-meta">20 Topics &middot; Structured Interviews &amp; Diplomatic Hedging</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('B1+', './b1-plus_workspace.html')">
+          Enter B1+ &rarr;
+        </button>
+      </article>
+
+      <!-- ================= STAGE 4: ADVANCED & FLUENCY ================= -->
+      <!-- B2.1 -->
+      <article class="card is-hidden" data-stage="advanced">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-navy">B2.1</span>
+            <span class="card-stage-kicker">Stage 4 · Advanced Fluency</span>
+          </div>
+          <h3 class="card-title">Autonomous Communication &amp; Debate</h3>
+          <p class="card-outcome">
+            Defend complex arguments, deliver structured business briefings, and express nuanced viewpoints spontaneously without hesitation.
+          </p>
+          <div class="card-meta meta-navy">Syllabus &middot; 4 Units &middot; Abstract Reasoning &amp; Discourse</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('B2.1', './b1-plus_workspace.html?level=B2.1')">
+          Enter B2.1 &rarr;
+        </button>
+      </article>
+
+      <!-- B2.2 -->
+      <article class="card is-hidden" data-stage="advanced">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-gold">B2.2</span>
+            <span class="card-stage-kicker">Stage 4 · Advanced Fluency</span>
+          </div>
+          <h3 class="card-title">Executive Precision &amp; Negotiation</h3>
+          <p class="card-outcome">
+            Formulate diplomatic counter-proposals, synthesize multi-party negotiations, and manage high-stakes professional disputes.
+          </p>
+          <div class="card-meta meta-gold">Syllabus &middot; 4 Units &middot; Tactical Concession &amp; Refusal</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('B2.2', './b1-plus_workspace.html?level=B2.2')">
+          Enter B2.2 &rarr;
+        </button>
+      </article>
+
+      <!-- C1 -->
+      <article class="card is-hidden" data-stage="advanced">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-teal">C1</span>
+            <span class="card-stage-kicker">Stage 4 · Executive Mastery</span>
+          </div>
+          <h3 class="card-title">Strategic Synthesis &amp; Governance</h3>
+          <p class="card-outcome">
+            Authoritative leadership discourse: cross-cultural organizational synthesis, keynote addresses, and high-level corporate governance.
+          </p>
+          <div class="card-meta">Syllabus &middot; 4 Units &middot; Boardroom Strategic Capstone</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('C1', './business_workspace.html?level=C1')">
+          Enter C1 &rarr;
+        </button>
+      </article>
+
+      <!-- ================= STAGE 5: EXECUTIVE & EXAMS ================= -->
+      <!-- BUSINESS ENGLISH -->
+      <article class="card is-hidden" data-stage="specialized">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-gold">Business Track</span>
+            <span class="card-stage-kicker">Executive Program</span>
+          </div>
+          <h3 class="card-title">Executive Business English</h3>
+          <p class="card-outcome">
+            The Corporate Lifecycle (Mintzberg &amp; Senge): crisis operations, meeting alignment, client relations, finance &amp; legal, people friction, and boardroom strategy.
+          </p>
+          <div class="card-meta meta-gold">6 Lifecycle Tracks &middot; 28 Executive Modules &middot; On-Demand Menu</div>
+        </div>
+        <button type="button" class="card-btn" onclick="directAccess('Business', './business_workspace.html')">
+          Open Business Portal &rarr;
+        </button>
+      </article>
+
+      <!-- TOEFL ITP -->
+      <article class="card is-hidden" data-stage="specialized">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-navy">TOEFL ITP®</span>
+            <span class="card-stage-kicker">Certification Lab</span>
+          </div>
+          <h3 class="card-title">TOEFL ITP Boost LMS</h3>
+          <p class="card-outcome">
+            Targeted diagnostic training for Section 2 (Structure &amp; Written Expression) and CENNI university degree compliance.
+          </p>
+          <div class="card-meta meta-navy">Section 1, 2, 3 &middot; Error Spotting &amp; Syntax Parallelism</div>
+        </div>
+        <a href="https://israelventura104-afk.github.io/toefl-itp-boost-lms/" class="card-btn" target="_blank" rel="noopener">
+          Open TOEFL Platform &nearr;
+        </a>
+      </article>
+
+      <!-- TOEIC -->
+      <article class="card is-hidden" data-stage="specialized">
+        <div>
+          <div class="card-top">
+            <span class="card-code code-teal">TOEIC®</span>
+            <span class="card-stage-kicker">Certification Lab</span>
+          </div>
+          <h3 class="card-title">TOEIC Boost LMS</h3>
+          <p class="card-outcome">
+            Listening and Reading strategy: auditory traps, acoustic distractors, multi-passage speed reading, and corporate benchmarks.
+          </p>
+          <div class="card-meta">Listening &amp; Reading &middot; Auditory Trap Neutralization</div>
+        </div>
+        <a href="https://israelventura104-afk.github.io/toeic-boost-lms/" class="card-btn" target="_blank" rel="noopener">
+          Open TOEIC Platform &nearr;
+        </a>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- INSTITUTIONAL FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-brand">Learning &amp; Development Studio</div>
+    <div class="footer-motto">Educate &middot; Design &middot; Grow</div>
+    <p>English Hub Academic Trajectory &middot; Sede: Celaya, Guanajuato &middot; Educational Use Only</p>
+  </footer>
+
+  <!-- STUDENT ACCESS MODAL -->
+  <div class="modal-backdrop" id="studentModal" onclick="closeModalOnBackdrop(event, 'studentModal')">
+    <div class="modal-box">
+      <button type="button" class="modal-close" onclick="closeModal('studentModal')">&times;</button>
+      <div class="modal-kicker">Student Workspace</div>
+      <h3 class="modal-title">Welcome to Class</h3>
+      <p class="modal-subtitle">Enter your name and confirm your course level to access your interactive workbook.</p>
+
+      <form onsubmit="handleStudentSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="studentNameInput">Your Name</label>
+          <input type="text" id="studentNameInput" class="form-input" placeholder="e.g. Sofia, Carlos, Roberto" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="studentLevelSelect">Select Level</label>
+          <select id="studentLevelSelect" class="form-select">
+            <option value="PreA1">Pre-A1 · First Contact &amp; Survival</option>
+            <option value="A1.1">A1.1 · Identity, Spaces &amp; Belongings</option>
+            <option value="A1.2" selected>A1.2 · Daily Life &amp; Right Now</option>
+            <option value="A2.1">A2.1 · Past Events &amp; City</option>
+            <option value="A2.2">A2.2 · Comparisons &amp; Experiences</option>
+            <option value="B1.1">B1.1 · Stories &amp; Trajectories</option>
+            <option value="B1.2">B1.2 · Dilemmas &amp; Passive</option>
+            <option value="B1+">B1+ · Professional Synthesis</option>
+            <option value="B2.1">B2.1 · Autonomous Communication &amp; Debate</option>
+            <option value="B2.2">B2.2 · Executive Precision &amp; Negotiation</option>
+            <option value="C1">C1 · Strategic Leadership &amp; Governance</option>
+            <option value="Business">Business English · Executive Suite</option>
+            <option value="TOEFL">TOEFL ITP® · Certification Lab</option>
+            <option value="TOEIC">TOEIC® · Corporate Benchmark</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit btn-submit-gold">
+          Enter Classroom &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACADEMIC DEPARTMENT MODAL -->
+  <div class="modal-backdrop" id="academicModal" onclick="closeModalOnBackdrop(event, 'academicModal')">
+    <div class="modal-box">
+      <button type="button" class="modal-close" onclick="closeModal('academicModal')">&times;</button>
+      <div class="modal-kicker">Academic Department</div>
+      <h3 class="modal-title">Faculty &amp; Coordination</h3>
+      <p class="modal-subtitle">Authorized academic personnel only. Enter your PIN to access your instructional hub.</p>
+
+      <form onsubmit="handleAcademicSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="academicPinInput">Academic Access PIN</label>
+          <input type="password" id="academicPinInput" class="form-input" placeholder="Enter PIN code" required autofocus>
+        </div>
+        <div class="modal-error" id="academicPinError">Incorrect Academic PIN. Please verify with Direction.</div>
+        <button type="submit" class="btn-submit btn-submit-navy">
+          Access Academic Portal &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // ROUTES MAPPING
+      const ROUTES = {
+        "PreA1": "./pre-a1_workspace.html",
+        "A1.1": "./a1-1_workspace.html",
+        "A1.2": "./a1-2_workspace.html",
+        "A2.1": "./a2-1_workspace.html",
+        "A2.2": "./a2-2_workspace.html",
+        "B1.1": "./b1-1_workspace.html",
+        "B1.2": "./b1-2_workspace.html",
+        "B1+": "./b1-plus_workspace.html",
+        "B2.1": "./b1-plus_workspace.html?level=B2.1",
+        "B2.2": "./b1-plus_workspace.html?level=B2.2",
+        "C1": "./business_workspace.html?level=C1",
+        "Business": "./business_workspace.html",
+        "TOEFL": "https://israelventura104-afk.github.io/toefl-itp-boost-lms/",
+        "TOEIC": "https://israelventura104-afk.github.io/toeic-boost-lms/"
+      };
+
+      // FILTER BUTTONS (NO "ALL" TAB - DEFAULTS TO FOUNDATIONS)
+      const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+      const cards = Array.from(document.querySelectorAll('.card'));
+
+      function applyFilter(filter) {
+        filterBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
+        cards.forEach(card => {
+          const show = card.dataset.stage === filter;
+          card.classList.toggle('is-hidden', !show);
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyFilter(btn.dataset.filter);
+        });
+      });
+
+      // Default initial view: Stage 1 Foundations
+      applyFilter('foundations');
+
+      // MODAL CONTROLS
+      window.openStudentModal = function(defaultLevel) {
+        let savedName = '';
+        try {
+          savedName = localStorage.getItem('ld_student_name') || '';
+        } catch (_) {}
+
+        if (savedName) {
+          document.getElementById('studentNameInput').value = savedName;
+        }
+
+        if (defaultLevel && ROUTES[defaultLevel]) {
+          document.getElementById('studentLevelSelect').value = defaultLevel;
+        }
+
+        document.getElementById('studentModal').classList.add('active');
+      };
+
+      window.openAcademicModal = function() {
+        document.getElementById('academicPinError').classList.remove('show');
+        document.getElementById('academicPinInput').value = '';
+        document.getElementById('academicModal').classList.add('active');
+        setTimeout(() => document.getElementById('academicPinInput').focus(), 100);
+      };
+
+      window.closeModal = function(id) {
+        document.getElementById(id).classList.remove('active');
+      };
+
+      window.closeModalOnBackdrop = function(e, id) {
+        if (e.target.id === id) {
+          closeModal(id);
+        }
+      };
+
+      // DIRECT ACCESS FROM CARDS
+      window.directAccess = function(levelKey, fallbackUrl) {
+        let studentName = '';
+        try {
+          studentName = localStorage.getItem('ld_student_name') || '';
+        } catch (_) {}
+
+        const targetUrl = ROUTES[levelKey] || fallbackUrl;
+
+        // If student already entered their name before, skip modal!
+        if (studentName) {
+          window.location.href = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'name=' + encodeURIComponent(studentName);
+          return;
+        }
+
+        // Otherwise ask for their name and preselect this level
+        openStudentModal(levelKey);
+      };
+
+      // SUBMIT HANDLERS
+      window.handleStudentSubmit = function(e) {
+        e.preventDefault();
+        const name = (document.getElementById('studentNameInput').value || '').trim();
+        const level = document.getElementById('studentLevelSelect').value || 'A1.2';
+
+        if (!name) return;
+
+        try {
+          localStorage.setItem('ld_student_name', name);
+          localStorage.setItem('ld-english-hub', JSON.stringify({ name: name, level: level, at: Date.now() }));
+        } catch (_) {}
+
+        const targetUrl = ROUTES[level] || './a1-2_workspace.html';
+        window.location.href = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'name=' + encodeURIComponent(name);
+      };
+
+      window.handleAcademicSubmit = function(e) {
+        e.preventDefault();
+        const pin = (document.getElementById('academicPinInput').value || '').trim();
+        const errorEl = document.getElementById('academicPinError');
+
+        // COORDINATOR PINS (Israel Ventura)
+        const COORDINATOR_PINS = ['5726', '8826', '2026', 'admin'];
+        // TEACHER PINS
+        const TEACHER_PINS = ['2680'];
+
+        if (COORDINATOR_PINS.includes(pin)) {
+          try {
+            sessionStorage.setItem('ld-coordinator-auth', 'granted');
+          } catch (_) {}
+          window.location.href = './mapa_curricular_mcer_ld_studio.html';
+          return;
+        }
+
+        if (TEACHER_PINS.includes(pin)) {
+          try {
+            sessionStorage.setItem('ld-teacher-auth', 'granted');
+          } catch (_) {}
+          window.location.href = './teacher-hub/index.html';
+          return;
+        }
+
+        errorEl.classList.add('show');
+        document.getElementById('academicPinInput').focus();
+      };
+
+    })();
+  </script>
+</body>
+</html>
