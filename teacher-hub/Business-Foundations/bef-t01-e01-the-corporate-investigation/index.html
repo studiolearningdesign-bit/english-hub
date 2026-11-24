@@ -1,63 +1,1598 @@
-<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Teacher Guide · BEF-T01-E01</title><style>body{font:16px/1.6 'Plus Jakarta Sans',Arial,sans-serif;color:#001f54;background:#f8fafc;max-width:850px;margin:30px auto;padding:20px}textarea{width:100%;height:120px}button{padding:10px 16px;border-radius:8px;border:1px solid #cbd5e1;background:#001f54;color:#fff;font-weight:700;cursor:pointer}input{padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px;width:100%;max-width:260px;box-sizing:border-box}.gate{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:32px;max-width:460px;margin:40px auto;box-shadow:0 8px 24px rgba(10,25,47,0.08)}.err{color:#dc2626;font-size:13px;min-height:20px;margin:8px 0}@media print{button,a,.no-print{display:none}}</style>
-<div id="portalRoot">
-  <div class="gate">
-    <p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#007a87;font-weight:700;margin:0 0 6px">Faculty Access &middot; Protected</p>
-    <h1 style="margin:0 0 10px;font-size:24px">The Corporate Investigation · Teacher Guide</h1>
-    <p style="color:#475569;font-size:14px;margin:0 0 16px">Ingresa tu PIN docente para descifrar la guía pedagógica, claves y rúbrica.</p>
-    <form id="portalForm">
-      <input type="password" id="portalPin" placeholder="Enter PIN" autocomplete="off" autofocus>
-      <div class="err" id="portalErr"></div>
-      <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-        <a href="../../../Business-Foundations/bef-t01-e01-the-corporate-investigation/index.html" style="color:#475569;text-decoration:none;font-weight:600">← Experience</a>
-        <button type="submit">Unlock Teacher Guide</button>
-      </div>
-    </form>
-  </div>
-</div>
-<script id="ld-teacher-vault" type="application/json">{"slots":[{"salt":"/g9MUZG32Glq7QB114iCBw==","iv":"iuBn8bG+/tD1wcak","wrapped":"jOIzFz44OctCqgpNaztAJIXAzR3DiGR/iXCyHf0HgphkDnhby5CCDydZ33yGRLMU"},{"salt":"Fw64OgncFp+aqhWOlXqKYg==","iv":"WS1JP33A20i21eIT","wrapped":"L/0ffpPiE3mqkVACcQpWrLyLgC9J++2/Lmdn1YLKadumG607rkAyecgUdQbtuJEh"}],"main":{"iv":"29lq9p3v55584N9f","data":"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"}}</script>
-<script>
-(function(){
-  const KEY='ld-teacher-dek', ITERS=100000;
-  const root=document.getElementById('portalRoot');
-  function b64(s){const x=atob(s),u=new Uint8Array(x.length);for(let i=0;i<x.length;i++)u[i]=x.charCodeAt(i);return u}
-  function tob64(u){let s='';for(let i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s)}
-  async function unlockDek(dekBytes){
-    try{
-      const v=JSON.parse(document.getElementById('ld-teacher-vault').textContent);
-      const dk=await crypto.subtle.importKey('raw',dekBytes,{name:'AES-GCM'},false,['decrypt']);
-      const pb=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(v.main.iv)},dk,b64(v.main.data));
-      root.innerHTML='<div class="no-print" style="text-align:right;margin-bottom:12px"><button type="button" id="lockBtn" style="background:#475569">Lock Guide</button></div>'+new TextDecoder().decode(pb);
-      sessionStorage.setItem(KEY,tob64(dekBytes));
-      const lb=document.getElementById('lockBtn');
-      if(lb)lb.onclick=()=>{sessionStorage.removeItem(KEY);location.reload()};
-      return true;
-    }catch(_){sessionStorage.removeItem(KEY);return false}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Guía Docente · BEF-T01-E01: The Corporate Investigation | Teacher's Hub</title>
+  <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   LEARNING & DEVELOPMENT STUDIO · ENGLISH HUB
+   Executive Standard Design System (hub-core.css)
+   Typography: Plus Jakarta Sans + IBM Plex Mono
+   ========================================================================== */
+
+:root {
+  /* Deep Navy (Dominant) */
+  --navy-950: #071527;
+  --navy-900: #001F54;
+  --navy-800: #0B2545;
+  --navy-700: #133E68;
+
+  /* Champagne Gold (Accent / Emphasis) */
+  --gold-600: #B57C00;
+  --gold-500: #D4A843;
+  --gold-400: #E5A922;
+  --gold-100: #FEF8EB;
+  --gold-border: rgba(212, 168, 67, 0.35);
+
+  /* Teal (Secondary / Interaction) */
+  --teal-800: #0F766E;
+  --teal-700: #007A87;
+  --teal-500: #14B8A6;
+  --teal-300: #4DD0E1;
+  --teal-50: #F0FDFA;
+
+  /* Neutrals & Surfaces */
+  --white: #FFFFFF;
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0A192F;
+
+  /* Semantic Status */
+  --danger-600: #DC2626;
+  --danger-50: #FEF2F2;
+  --danger-border: rgba(220, 38, 38, 0.25);
+  --success-600: #059669;
+  --success-50: #ECFDF5;
+  --success-border: rgba(5, 150, 105, 0.25);
+
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --shadow-xs: 0 1px 2px rgba(10, 25, 47, 0.04);
+  --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+  --shadow-md: 0 6px 18px -2px rgba(10, 25, 47, 0.06), 0 2px 6px -1px rgba(10, 25, 47, 0.03);
+  --shadow-lg: 0 16px 36px -4px rgba(10, 25, 47, 0.10), 0 4px 12px -2px rgba(10, 25, 47, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--slate-50);
+  color: var(--slate-900);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ==========================================================================
+   1. INSTITUTIONAL HEADER (.site-header)
+   Navy background, inverted white logo on left, 3 clean typographic items on right
+   ========================================================================== */
+.site-header {
+  background: var(--navy-900);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.28);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(7, 21, 39, 0.16);
+}
+
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-logo-white {
+  height: 92px;
+  width: auto;
+  object-fit: contain;
+  margin: -20px 0;
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.brand-course-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-200);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Exactly 3 clean typographic elements on the right */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+.header-student-tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate-300);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.18s ease;
+}
+
+.header-student-tag:hover {
+  color: var(--white);
+}
+
+.header-student-tag strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.header-teacher-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold-500);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  white-space: nowrap;
+}
+
+.header-teacher-link:hover {
+  color: var(--gold-400);
+}
+
+body.teacher-mode .header-teacher-link {
+  color: var(--teal-300);
+}
+
+.header-back-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-200);
+  text-decoration: none;
+  transition: color 0.18s ease;
+  white-space: nowrap;
+}
+
+.header-back-link:hover {
+  color: var(--white);
+}
+
+/* ==========================================================================
+   2. MAIN CONTAINER & HERO BANNER (.workspace-hero-banner)
+   ========================================================================== */
+.content-wrapper {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 72px;
+  flex: 1;
+}
+
+.workspace-hero-banner {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  padding: 60px 48px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(212, 168, 67, 0.24);
+  box-shadow: 0 24px 48px -12px rgba(7, 21, 39, 0.32);
+  margin-bottom: 36px;
+  color: var(--white);
+  background-color: var(--navy-950);
+  background-image:
+    linear-gradient(90deg, rgba(7, 21, 39, 0.97) 0%, rgba(11, 31, 58, 0.90) 52%, rgba(7, 21, 39, 0.42) 100%),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=85');
+}
+
+.hero-banner-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  max-width: 24ch;
+  letter-spacing: -0.015em;
+  color: var(--white);
+}
+
+.hero-banner-title .gold-accent {
+  color: var(--gold-500);
+  font-style: italic;
+}
+
+.hero-banner-desc {
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: var(--slate-300);
+  line-height: 1.6;
+  max-width: 54ch;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   3. MODULAR NAVIGATION: SEGMENTED BAR (.segmented-bar)
+   #F1F5F9 surface, elevated white active segment, ZERO thick colored borders
+   ========================================================================== */
+.segmented-bar {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 5px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.segmented-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.segment-btn {
+  flex: 1 0 auto;
+  min-width: 132px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--slate-600);
+  font-family: inherit;
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.segment-btn:hover {
+  color: var(--navy-900);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.segment-btn.active {
+  background: var(--white);
+  color: var(--navy-900);
+  border-color: rgba(10, 25, 47, 0.06);
+  box-shadow: 0 2px 8px rgba(10, 25, 47, 0.08), 0 1px 2px rgba(10, 25, 47, 0.04);
+}
+
+.segment-index {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--slate-400);
+  flex-shrink: 0;
+}
+
+.segment-btn.active .segment-index {
+  color: var(--teal-700);
+}
+
+.segment-label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: hubFadeIn 0.22s ease-out;
+}
+
+@keyframes hubFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Screen Section Headers */
+.screen-header-block {
+  margin-bottom: 24px;
+}
+
+.screen-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-700);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 4px;
+}
+
+.screen-heading {
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.screen-desc {
+  font-size: 0.96rem;
+  color: var(--slate-600);
+  max-width: 72ch;
+  margin-top: 6px;
+}
+
+/* Footer Prev/Next Navigation */
+.screen-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--slate-200);
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   4. CLEAN EXECUTIVE CARDS (NO border-top / border-left ACCENTS)
+   ========================================================================== */
+.studio-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE 3D FLIP CARDS (.flip-card)
+   ========================================================================== */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  min-height: 244px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 244px;
+  text-align: left;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: var(--radius-md);
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flip-card-front > div:first-child,
+.flip-card-back > div:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-card-front {
+  background: var(--white);
+  box-shadow: var(--shadow-xs);
+}
+
+.flip-card:hover .flip-card-front {
+  border-color: var(--slate-300);
+  box-shadow: var(--shadow-md);
+}
+
+.flip-card-back {
+  background: linear-gradient(155deg, var(--white) 0%, var(--teal-50) 100%);
+  border-color: rgba(0, 122, 135, 0.3);
+  transform: rotateY(180deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.flip-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.flip-card-term {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.flip-card-pos {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--teal-700);
+  background: var(--teal-50);
+  border: 1px solid rgba(0, 122, 135, 0.22);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.flip-card-ipa {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--slate-500);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.flip-card-example {
+  font-size: 13px;
+  color: var(--slate-700);
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  line-height: 1.45;
+  margin-top: 10px;
+}
+
+.flip-card-example strong {
+  color: var(--teal-700);
+}
+
+.flip-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.flip-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate-400);
+}
+
+.flip-card-meaning-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+  margin-bottom: 5px;
+}
+
+.flip-card-back-term {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.flip-card-meaning {
+  font-size: 14.5px;
+  color: var(--slate-800);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   6. HTML5 REAL AUDIO PLAYER (.audio-pill & .audio-deck)
+   Zero speechSynthesis; graceful "Audio pending" state when MP3 is missing
+   ========================================================================== */
+.audio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  color: var(--navy-900);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.audio-pill:hover:not(.is-pending) {
+  background: var(--teal-50);
+  border-color: var(--teal-500);
+  color: var(--teal-800);
+}
+
+.audio-pill.is-playing {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--white);
+}
+
+.audio-pill.is-pending {
+  background: var(--slate-50);
+  border-color: var(--slate-200);
+  color: var(--slate-400);
+  cursor: default;
+}
+
+.audio-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal-500);
+  flex-shrink: 0;
+}
+
+.audio-pill.is-playing .audio-pill-dot {
+  background: var(--gold-400);
+}
+
+.audio-pill.is-pending .audio-pill-dot {
+  background: var(--slate-300);
+}
+
+/* Full Track Audio Deck */
+.audio-deck {
+  background: var(--navy-900);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.audio-deck-play {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  border: none;
+  color: var(--navy-950);
+  font-size: 15px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.audio-deck-play:hover:not(:disabled) {
+  background: var(--gold-400);
+  transform: scale(1.04);
+}
+
+.audio-deck-play:disabled {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--slate-400);
+  cursor: default;
+}
+
+.audio-deck-scrubber {
+  flex: 1 1 200px;
+}
+
+.audio-deck-slider {
+  width: 100%;
+  accent-color: var(--gold-400);
+  cursor: pointer;
+}
+
+.audio-deck-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--slate-300);
+  margin-top: 4px;
+}
+
+.audio-deck-speed {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   7. TEACHER'S VERSION ACCORDIONS (.teacher-note-box)
+   Hidden by default; revealed only when body.teacher-mode is active
+   ========================================================================== */
+.teacher-note-box {
+  display: none;
+  background: var(--gold-100);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  margin-top: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+body.teacher-mode .teacher-note-box {
+  display: block;
+}
+
+.teacher-note-toggle {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.teacher-note-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-600);
+  margin-right: 8px;
+}
+
+.teacher-note-chevron {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--gold-600);
+  transition: transform 0.2s ease;
+}
+
+.teacher-note-box.is-open .teacher-note-chevron {
+  transform: rotate(180deg);
+}
+
+.teacher-note-body {
+  display: none;
+  padding: 0 18px 16px;
+  font-size: 13.5px;
+  color: var(--slate-800);
+  line-height: 1.6;
+  border-top: 1px solid rgba(212, 168, 67, 0.22);
+  padding-top: 12px;
+}
+
+.teacher-note-box.is-open .teacher-note-body {
+  display: block;
+}
+
+/* ==========================================================================
+   8. BUTTONS & CONTROLS
+   ========================================================================== */
+.btn-brand-primary {
+  background: var(--gold-500);
+  color: var(--navy-950);
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-brand-primary:hover {
+  background: var(--gold-400);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(212, 168, 67, 0.3);
+}
+
+.btn-brand-secondary {
+  background: var(--white);
+  border: 1px solid var(--slate-300);
+  color: var(--slate-700);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.btn-brand-secondary:hover {
+  background: var(--slate-100);
+  color: var(--navy-900);
+}
+
+.btn-teal {
+  background: var(--teal-700);
+  color: var(--white);
+  border: 1px solid transparent;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.18s ease;
+}
+
+.btn-teal:hover {
+  background: var(--teal-800);
+}
+
+/* ==========================================================================
+   9. MODALS (PIN ENTRY, STUDENT NAME, SYLLABUS)
+   ========================================================================== */
+.hub-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 39, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 250;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hub-modal-backdrop.active {
+  display: flex;
+}
+
+.hub-modal-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  max-width: 440px;
+  width: 100%;
+  padding: 28px 30px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.hub-modal-card.wide {
+  max-width: 640px;
+}
+
+.hub-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--slate-400);
+  cursor: pointer;
+}
+
+.hub-modal-close:hover {
+  color: var(--navy-900);
+}
+
+.hub-modal-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+  margin-bottom: 6px;
+}
+
+.hub-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+
+.hub-modal-desc {
+  font-size: 13.5px;
+  color: var(--slate-600);
+  margin-bottom: 18px;
+}
+
+.hub-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--navy-900);
+  background: var(--white);
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.hub-input:focus {
+  border-color: var(--teal-700);
+  box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.12);
+}
+
+.hub-modal-error {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--danger-600);
+  margin-bottom: 12px;
+  min-height: 18px;
+}
+
+/* ==========================================================================
+   10. INSTITUTIONAL FOOTER (.studio-site-footer)
+   ========================================================================== */
+.studio-site-footer {
+  border-top: 1px solid rgba(212, 168, 67, 0.32);
+  background: var(--navy-900);
+  color: var(--slate-200);
+  padding: 28px 24px;
+  margin-top: auto;
+}
+
+.footer-content-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 12.5px;
+}
+
+@media (min-width: 768px) {
+  .footer-content-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
-  async function verify(pin){
-    const v=JSON.parse(document.getElementById('ld-teacher-vault').textContent);
-    const bk=await crypto.subtle.importKey('raw',new TextEncoder().encode(pin),'PBKDF2',false,['deriveKey']);
-    for(const slot of v.slots){
-      try{
-        const wk=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(slot.salt),iterations:ITERS,hash:'SHA-256'},bk,{name:'AES-GCM',length:256},false,['decrypt']);
-        const db=new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(slot.iv)},wk,b64(slot.wrapped)));
-        if(await unlockDek(db))return true;
-      }catch(_){}
+}
+
+.footer-left-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-brand-dot {
+  color: var(--gold-400);
+}
+
+.footer-teacher-portal-link {
+  color: var(--gold-400);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-teacher-portal-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 10px 16px;
+  }
+  .brand-divider,
+  .brand-course-label {
+    display: none;
+  }
+  .header-actions {
+    gap: 14px;
+  }
+  .header-student-tag {
+    display: none;
+  }
+  .content-wrapper {
+    padding: 20px 16px 56px;
+  }
+  .workspace-hero-banner {
+    padding: 40px 24px;
+    min-height: 300px;
+  }
+  .studio-card {
+    padding: 20px 18px;
+  }
+}
+
+/* ==========================================================================
+   12. CLEAN PRINT STYLES (Explore Worksheets & Teacher's Hub Lesson Plan)
+   ========================================================================== */
+@media print {
+  .site-header,
+  .studio-site-footer,
+  .segmented-bar,
+  .screen-footer-actions,
+  .no-print,
+  .hub-modal-backdrop,
+  .audio-pill,
+  .audio-deck,
+  .teacher-note-box {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #0A192F !important;
+  }
+
+  .content-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .studio-card,
+  .doc-hero-card,
+  .section-card,
+  .drill-item,
+  .badge-card {
+    box-shadow: none !important;
+    border-color: #CBD5E1 !important;
+    break-inside: avoid;
+  }
+}
+
+</style>
+  <style>
+    .doc-hero-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 30px 32px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
     }
-    return false;
-  }
-  const form=document.getElementById('portalForm');
-  if(form){
-    form.addEventListener('submit',async(e)=>{
-      e.preventDefault();
-      const pin=(document.getElementById('portalPin').value||'').trim();
-      const err=document.getElementById('portalErr');
-      if(!pin){err.textContent='Ingresa el PIN.';return}
-      try{
-        if(!(await verify(pin)))err.textContent='PIN incorrecto.';
-      }catch(_){err.textContent='Requiere HTTPS o localhost.';}
-    });
-  }
-  const saved=sessionStorage.getItem(KEY);
-  if(saved)unlockDek(b64(saved));
-})();
-</script></html>
+
+    .doc-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal-700);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .doc-title {
+      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+      font-weight: 800;
+      color: var(--navy-900);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .doc-lead {
+      font-size: 0.96rem;
+      color: var(--slate-600);
+      max-width: 74ch;
+      margin-bottom: 20px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      font-size: 13.5px;
+    }
+
+    .meta-item strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: 3px;
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-card h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 10px;
+    }
+
+    .frontier-box {
+      background: var(--danger-50);
+      border: 1px solid var(--danger-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 13.5px;
+      color: var(--slate-800);
+    }
+
+    .frontier-box strong {
+      color: var(--danger-600);
+    }
+
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 13.5px;
+    }
+
+    .doc-table th,
+    .doc-table td {
+      border: 1px solid var(--slate-200);
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-table th {
+      background: var(--navy-900);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .doc-table tr:nth-child(even) td {
+      background: var(--slate-50);
+    }
+
+    .rubric-pill {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+    }
+
+    .e0 { background: var(--danger-50); color: var(--danger-600); border: 1px solid var(--danger-border); }
+    .e1 { background: var(--gold-100); color: var(--gold-600); border: 1px solid var(--gold-border); }
+    .e2 { background: var(--success-50); color: var(--success-600); border: 1px solid var(--success-border); }
+    .e3 { background: var(--teal-50); color: var(--teal-800); border: 1px solid rgba(0, 122, 135, 0.25); }
+
+    @media print {
+      .site-header,
+      .studio-site-footer,
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+      .content-wrapper {
+        padding: 0;
+        max-width: 100%;
+      }
+      .doc-hero-card {
+        box-shadow: none;
+        border-color: #cbd5e1;
+        break-inside: avoid;
+      }
+      .section-card {
+        box-shadow: none;
+        border-color: #cbd5e1;
+        break-inside: auto;
+      }
+      .section-card h2 {
+        break-after: avoid;
+      }
+      .doc-table thead {
+        display: table-header-group;
+      }
+      .doc-table tr {
+        break-inside: avoid;
+      }
+    }
+
+    .portal-lock-card {
+      max-width: 480px;
+      margin: 48px auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 34px 32px;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+    .portal-lock-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .portal-lock-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+    .portal-lock-desc {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .portal-pin-input {
+      width: 100%;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-300);
+      color: var(--navy-900);
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .portal-pin-input:focus {
+      border-color: var(--teal-600);
+      box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.14);
+    }
+    .portal-pin-error {
+      min-height: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--danger-600);
+      margin-bottom: 12px;
+    }
+    .portal-lock-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .portal-back-student {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      text-decoration: none;
+    }
+    .portal-back-student:hover { color: var(--navy-900); }
+    .header-lock-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .header-lock-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    body.portal-unlocked .header-lock-btn { display: inline-flex; align-items: center; }
+
+    .portal-lock-card {
+      max-width: 480px;
+      margin: 48px auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 34px 32px;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+    .portal-lock-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .portal-lock-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+    .portal-lock-desc {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .portal-pin-input {
+      width: 100%;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-300);
+      color: var(--navy-900);
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .portal-pin-input:focus {
+      border-color: var(--teal-600);
+      box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.14);
+    }
+    .portal-pin-error {
+      min-height: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--danger-600);
+      margin-bottom: 12px;
+    }
+    .portal-lock-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .portal-back-student {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      text-decoration: none;
+    }
+    .portal-back-student:hover { color: var(--navy-900); }
+    .header-lock-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .header-lock-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    body.portal-unlocked .header-lock-btn { display: inline-flex; align-items: center; }
+  </style>
+</head>
+<body>
+
+  <!-- INSTITUTIONAL HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../business-foundations_workspace.html" class="brand-lockup">
+        <span class="brand-logo-wrap"><img
+          src="../../../assets/logo-white-lockup.webp"
+          alt="Learning &amp; Development Studio"
+          class="brand-logo-white"
+        ></span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher's Hub &middot; Business Foundations</span>
+      </a>
+      <nav class="header-actions" aria-label="Header actions">
+        <a href="../../../Business-Foundations/bef-t01-e01-the-corporate-investigation/index.html" class="header-teacher-link">
+          Experience &#8599;
+        </a>
+        <a href="../../../Business-Foundations/bef-t01-e01-the-corporate-investigation/explore.html" class="header-back-link">
+          Explore &#8599;
+        </a>
+        <button type="button" class="header-lock-btn" id="lockPortalBtn">Lock Portal</button>
+        <a href="../../../business-foundations_workspace.html" class="header-back-link">&larr; Back to Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper" id="teacherPortalMain">
+    <section class="portal-lock-card" id="teacherPortalGate">
+      <div class="portal-lock-eyebrow">Faculty Access &middot; Protected</div>
+      <h1 class="portal-lock-title">Teacher's Portal &amp; Printable Guide</h1>
+      <p class="portal-lock-desc">
+        Enter your instructor PIN to decrypt the didactic sequence, answer keys, restricted records guide, and rubric for <strong>BEF-T01-E01</strong>.
+      </p>
+      <form id="portalPinForm">
+        <input type="password" id="portalPinInput" class="portal-pin-input" placeholder="Enter instructor PIN" autocomplete="off" maxlength="20" autofocus>
+        <div class="portal-pin-error" id="portalPinError"></div>
+        <div class="portal-lock-actions">
+          <a href="../../../Business-Foundations/bef-t01-e01-the-corporate-investigation/index.html" class="portal-back-student">&larr; Return to Lesson</a>
+          <button type="submit" class="btn-brand-primary" id="portalPinSubmit">Unlock Teacher Portal</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-content-inner">
+      <div class="footer-left-lockup">
+        <strong>Learning &amp; Development Studio</strong>
+        <span class="footer-brand-dot">&middot;</span>
+        <span style="color:var(--teal-300);">Educate &bull; Design &bull; Grow</span>
+        <span class="footer-brand-dot">&middot;</span>
+        <span style="color:var(--slate-300);">Teacher's Hub &middot; BEF-T01-E01</span>
+      </div>
+      <div>
+        <a href="../../../Business-Foundations/bef-t01-e01-the-corporate-investigation/index.html" class="footer-teacher-portal-link">
+          Abrir Experience (Alumno) &rarr;
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script id="ld-teacher-vault" type="application/json">{"slots":[{"salt":"xnyOu/zG+zoq2IDd+cdzGw==","iv":"OsicF42v6GwslhAI","wrapped":"H/c5a2dbxZmm4HqQrRfTZKYUiXldcYKmLTgpwLRROiF+8Qja4xtdcXfkfEtR/0iu"},{"salt":"RRgO/V9Zd3RMUAwU8xcQ9g==","iv":"V02JKDvMSE5cjYiw","wrapped":"/Xk10jZImj/xHAbjjqXnfepDRkrGBjvCfsRXUEfr52hhsUkTF2QmuIzKJLizFjUh"}],"main":{"iv":"z3KWfBjrSr8hyhgn","data":"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"}}</script>
+  <script>
+    (function () {
+      'use strict';
+      const TEACHER_DEK_KEY = 'ld-teacher-dek';
+      const PBKDF2_ITERS = 100000;
+      const mainEl = document.getElementById('teacherPortalMain');
+      const lockedHtml = mainEl ? mainEl.innerHTML : '';
+
+      function b64ToBytes(b64) {
+        const bin = atob(b64);
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        return bytes;
+      }
+
+      function bytesToB64(bytes) {
+        let bin = '';
+        for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+        return btoa(bin);
+      }
+
+      function getVault() {
+        const el = document.getElementById('ld-teacher-vault');
+        if (!el) return null;
+        try { return JSON.parse(el.textContent); } catch (_) { return null; }
+      }
+
+      async function aesGcmDecryptBytes(cryptoKey, ivB64, dataB64) {
+        const plainBuf = await window.crypto.subtle.decrypt(
+          { name: 'AES-GCM', iv: b64ToBytes(ivB64) },
+          cryptoKey,
+          b64ToBytes(dataB64)
+        );
+        return new Uint8Array(plainBuf);
+      }
+
+      async function unlockWithDekBytes(dekBytes) {
+        const vault = getVault();
+        if (!vault || !mainEl || !window.crypto || !window.crypto.subtle) return false;
+        try {
+          const dekKey = await window.crypto.subtle.importKey('raw', dekBytes, { name: 'AES-GCM' }, false, ['decrypt']);
+          const plainBytes = await aesGcmDecryptBytes(dekKey, vault.main.iv, vault.main.data);
+          mainEl.innerHTML = new TextDecoder().decode(plainBytes);
+          sessionStorage.setItem(TEACHER_DEK_KEY, bytesToB64(dekBytes));
+          document.body.classList.add('portal-unlocked');
+          return true;
+        } catch (_) {
+          sessionStorage.removeItem(TEACHER_DEK_KEY);
+          return false;
+        }
+      }
+
+      async function verifyPinAndUnlock(pin) {
+        const vault = getVault();
+        if (!vault || !window.crypto || !window.crypto.subtle) throw new Error('NO_SUBTLE');
+        const baseKey = await window.crypto.subtle.importKey('raw', new TextEncoder().encode(pin), 'PBKDF2', false, ['deriveKey']);
+        for (const slot of vault.slots) {
+          try {
+            const wrapKey = await window.crypto.subtle.deriveKey(
+              { name: 'PBKDF2', salt: b64ToBytes(slot.salt), iterations: PBKDF2_ITERS, hash: 'SHA-256' },
+              baseKey,
+              { name: 'AES-GCM', length: 256 },
+              false,
+              ['decrypt']
+            );
+            const dekBytes = await aesGcmDecryptBytes(wrapKey, slot.iv, slot.wrapped);
+            if (await unlockWithDekBytes(dekBytes)) return true;
+          } catch (_) {}
+        }
+        return false;
+      }
+
+      function bindGateForm() {
+        const form = document.getElementById('portalPinForm');
+        if (!form) return;
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const input = document.getElementById('portalPinInput');
+          const err = document.getElementById('portalPinError');
+          const submit = document.getElementById('portalPinSubmit');
+          const val = (input ? input.value : '').trim();
+          if (!val) {
+            if (err) err.textContent = 'Please enter your instructor PIN.';
+            if (input) input.focus();
+            return;
+          }
+          if (submit) submit.disabled = true;
+          try {
+            const ok = await verifyPinAndUnlock(val);
+            if (!ok) {
+              if (err) err.textContent = 'Invalid PIN. Please verify with academic coordination.';
+              if (input) input.focus();
+            }
+          } catch (ex) {
+            if (err) {
+              err.textContent = ex && ex.message === 'NO_SUBTLE'
+                ? 'Encrypted unlock requires HTTPS or localhost.'
+                : 'Unable to verify PIN in this browser.';
+            }
+          } finally {
+            if (submit) submit.disabled = false;
+          }
+        });
+      }
+
+      const lockBtn = document.getElementById('lockPortalBtn');
+      if (lockBtn) {
+        lockBtn.addEventListener('click', () => {
+          sessionStorage.removeItem(TEACHER_DEK_KEY);
+          document.body.classList.remove('portal-unlocked');
+          if (mainEl) mainEl.innerHTML = lockedHtml;
+          bindGateForm();
+        });
+      }
+
+      async function initPortal() {
+        const savedDek = sessionStorage.getItem(TEACHER_DEK_KEY);
+        if (savedDek) {
+          const ok = await unlockWithDekBytes(b64ToBytes(savedDek));
+          if (ok) return;
+        }
+        bindGateForm();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPortal);
+      } else {
+        initPortal();
+      }
+    })();
+  </script>
+</body>
+</html>
