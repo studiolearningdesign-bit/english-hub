@@ -41,7 +41,7 @@
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       background: var(--slate-50);
       color: var(--slate-900);
-      line-height: 1.65;
+      line-height: 1.62;
     }
     .font-mono { font-family: 'IBM Plex Mono', monospace; }
 
@@ -66,14 +66,14 @@
     .header-link { color: var(--gold-500); text-decoration: none; font-size: 13px; font-weight: 700; }
     .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
 
-    .page-container { max-width: 1020px; margin: 0 auto; padding: 30px 24px 64px; }
+    .page-container { max-width: 1040px; margin: 0 auto; padding: 30px 24px 64px; }
 
     .hub-hero {
       background: linear-gradient(135deg, #071527 0%, #001F54 65%, #133E68 100%);
       color: var(--white);
       border-radius: var(--radius-lg);
       padding: 32px 36px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -98,6 +98,28 @@
     }
     .btn-print:hover { background: var(--gold-400); }
 
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .meta-item {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+    .meta-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+    .meta-val { font-size: 0.88rem; font-weight: 600; color: var(--navy-900); }
+
     .hub-card {
       background: var(--white);
       border: 1px solid var(--slate-200);
@@ -116,55 +138,84 @@
     }
     .hub-title { font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 14px; }
 
-    .pnf-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-    .pnf-box {
+    .stage-block {
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-md);
-      padding: 16px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
       background: var(--slate-50);
     }
+    .stage-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .stage-head h3 { font-size: 1rem; font-weight: 800; color: var(--navy-900); }
+    .stage-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--teal-800);
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .stage-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      font-size: 0.86rem;
+    }
+    .stage-col {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+    }
+    .stage-col strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin-bottom: 4px;
+    }
+
+    .pnf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .pnf-box { border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px; background: var(--slate-50); }
     .pnf-box.is-f { background: var(--danger-50); border-color: rgba(220, 38, 38, 0.25); }
     .pnf-box h3 { font-size: 0.92rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
     .pnf-box.is-f h3 { color: var(--danger-600); }
-    .pnf-box p { font-size: 0.88rem; color: var(--slate-800); }
+    .pnf-box p { font-size: 0.87rem; color: var(--slate-800); }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.88rem;
-      margin-top: 8px;
-    }
-    th {
-      background: var(--navy-900);
-      color: var(--white);
-      text-align: left;
-      padding: 10px 14px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-    }
-    td {
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--slate-200);
-      vertical-align: top;
-    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin-top: 8px; }
+    th { background: var(--navy-900); color: var(--white); text-align: left; padding: 10px 14px; font-size: 0.78rem; text-transform: uppercase; }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--slate-200); vertical-align: top; }
     tr:nth-child(even) td { background: var(--slate-50); }
 
-    .studio-site-footer { border-top: 1px solid var(--slate-200); background: var(--white); padding: 20px 24px; }
+    .studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--slate-200);
+      padding: 22px 24px;
+    }
     .footer-inner {
-      max-width: 1020px; margin: 0 auto; display: flex; justify-content: space-between;
-      flex-wrap: wrap; gap: 10px; font-size: 0.82rem; color: var(--slate-600);
+      max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; font-size: 0.82rem;
     }
 
     @media print {
       .site-header, .btn-print, .studio-site-footer { display: none !important; }
-      body { background: #fff; }
+      body { background: #fff; font-size: 11pt; }
       .page-container { padding: 0; max-width: 100%; }
-      .hub-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px 24px; }
-      .hub-card { box-shadow: none; break-inside: avoid; }
+      .hub-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 22px; }
+      .hub-card, .stage-block { box-shadow: none; break-inside: avoid; }
     }
   </style>
 </head>
@@ -188,76 +239,125 @@
   <main class="page-container">
     <header class="hub-hero">
       <div>
-        <h1>Teacher's Guide: <span>The Story Behind Your Name</span></h1>
-        <p>A1.1-U01-L01 &middot; Documento maestro de preparaci&oacute;n, producci&oacute;n de audios y evaluaci&oacute;n cualitativa.</p>
+        <h1>Complete Lesson Plan: <span>The Story Behind Your Name</span></h1>
+        <p>A1.1-U01-L01 &middot; Secuencia did&aacute;ctica completa, guion de producci&oacute;n de audios y protocolo de evaluaci&oacute;n cualitativa.</p>
       </div>
       <button type="button" class="btn-print" onclick="window.print()">Print Teacher Guide</button>
     </header>
 
-    <!-- 1. LESSON PLAN -->
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">C&oacute;digo &amp; Curso</div><div class="meta-val">A1.1-U01-L01 &middot; Macro-Unit 01</div></div>
+      <div class="meta-item"><div class="meta-label">Resultado Comunicativo</div><div class="meta-val">Presentar nombre real/apodo, confirmar y corregir suposiciones con I/you + To Be.</div></div>
+      <div class="meta-item"><div class="meta-label">Principio de Tiempo</div><div class="meta-val">Flexible (Understanding Comes Before Advancement; puede tomar 1–2 sesiones).</div></div>
+      <div class="meta-item"><div class="meta-label">Evidencia de Avance</div><div class="meta-val">Intercambio oral con tarjeta secreta + Exit Ticket de 3–4 frases sin copiar.</div></div>
+    </div>
+
+    <!-- 1. SECUENCIA DIDACTICA COMPLETA -->
     <section class="hub-card">
-      <div class="hub-kicker">Secci&oacute;n 01</div>
-      <h2 class="hub-title">Complete Lesson Plan (Secuencia Did&aacute;ctica Completa)</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>M&oacute;dulo</th>
-            <th>Objetivo</th>
-            <th>Procedimiento paso a paso</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>01 &middot; Warm-Up</strong><br><span class="font-mono">Engage</span></td>
-            <td>Activar [P] sin presi&oacute;n ni gram&aacute;tica nueva.</td>
-            <td>1. Saludar con <em>Hello! What's your name?</em><br>2. Modelar una reacci&oacute;n en la encuesta.<br>3. Pedir al alumno responder oralmente usando <em>My name is... / Yes / No</em>.</td>
-          </tr>
-          <tr>
-            <td><strong>02 &middot; Vocabulary</strong><br><span class="font-mono">Build</span></td>
-            <td>6 palabras clave + contraste <em>I am / I'm</em>.</td>
-            <td>1. Explorar las 6 Flip Cards (<em>first name, last name, nickname, real name, easy, hard</em>).<br>2. Practicar pronunciaci&oacute;n de <em>I am vs I'm</em>.<br>3. Resolver <em>Unscramble the Word</em> y verificar ortograf&iacute;a.</td>
-          </tr>
-          <tr>
-            <td><strong>03 &middot; USA Chunks</strong><br><span class="font-mono">Notice</span></td>
-            <td>4 bloques pragm&aacute;ticos fijos sin desglose gramatical.</td>
-            <td>1. Presentar los 4 chunks como bloques cerrados.<br>2. Practicar ritmo y entonaci&oacute;n (<em>You can call me...</em>, <em>Again, please?</em>).<br>3. Simular un nombre dif&iacute;cil para provocar <em>Again, please?</em></td>
-          </tr>
-          <tr>
-            <td><strong>04 &middot; Listening</strong><br><span class="font-mono">Notice in Context</span></td>
-            <td>Escucha sin transcripci&oacute;n previa.</td>
-            <td>1. Reproducir el di&aacute;logo entre Nora y Mateo con el texto oculto.<br>2. Responder las 4 preguntas Yes/No.<br>3. Abrir la transcripci&oacute;n para notar <em>I'm / I'm not / Are you...?</em></td>
-          </tr>
-          <tr>
-            <td><strong>05 &middot; Grammar</strong><br><span class="font-mono">Understand</span></td>
-            <td>Sistematizar <em>I, you + To Be + My</em>.</td>
-            <td>1. Revisar tabla afirmativa, negativa y pregunta Yes/No.<br>2. Resolver <em>Error Clinic</em> (el alumno detecta el error sin marcas rojas).<br>3. Construir oraciones en <em>Wordbox</em>.</td>
-          </tr>
-          <tr>
-            <td><strong>06 &middot; Speaking</strong><br><span class="font-mono">Communicate</span></td>
-            <td>Intercambio real con tarjeta secreta.</td>
-            <td>1. El alumno elige Card A, B o C.<br>2. El docente hace una suposici&oacute;n incorrecta (<em>Are you Leo?</em>).<br>3. El alumno corrige con <em>No, I'm not...</em> y usa al menos 1 chunk.</td>
-          </tr>
-          <tr>
-            <td><strong>07 &middot; Exit Ticket</strong><br><span class="font-mono">Reflect</span></td>
-            <td>Evidencia escrita aut&oacute;noma (espacio en blanco).</td>
-            <td>1. Escribir 3–4 frases aisladas sobre nombre real, apodo y una negaci&oacute;n.<br>2. Verificar may&uacute;scula en <em>I</em>, nombres propios, ap&oacute;strofo y puntuaci&oacute;n.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="hub-kicker">Secci&oacute;n 01 &middot; Did&aacute;ctica Paso a Paso</div>
+      <h2 class="hub-title">Complete Lesson Plan (Secuencia Did&aacute;ctica por Actividad)</h2>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>01 &middot; Warm-Up: Your Name Story &amp; Studio Pass (Actividades 1A y 1B)</h3>
+          <span class="stage-tag">Fase: Engage &middot; Icebreaker + [P]</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Teacher Script &amp; Modelado</strong>En 1A mueve primero la barra de felicidad (1–10) con tu propio nombre y elige su origen (<em>"Eight! Good name! Family name."</em>). En 1B modela tu nombre en el gafete interactivo y saluda: <em>"Hello! My name is [Nombre]. What's your name?"</em></div>
+          <div class="stage-col"><strong>Interferencia L1 &amp; Correcci&oacute;n</strong>En 1A permite que el alumno reaccione con comodidad (si cuenta un detalle del origen en espa&ntilde;ol, valida con calidez y devuelve en ingl&eacute;s simple). En 1B, si omite <em>My name is</em>, haz eco suave: <em>"My name is Ana."</em></div>
+          <div class="stage-col"><strong>Andamiaje &amp; Cierre</strong>1A es activaci&oacute;n abierta sin clave &uacute;nica. En 1B finge no escuchar bien una vez y modela <em>"Again, please?"</em> antes de pasar a Vocabulario.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>02 &middot; Vocabulary: Visual Pass, 6 Flip Cards, Sound Focus &amp; Unscramble (2A–2C)</h3>
+          <span class="stage-tag">Fase: Build &middot; MFP + Phonology</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Teacher Script &amp; Modelado</strong>Usa el pase visual de Carlos Rivera (2A) para anclar <em>first name / last name / nickname</em> antes de voltear las 6 tarjetas. En 2B levanta 2 dedos separados para <em>I / am</em> y j&uacute;ntalos en 1 golpe para <em>I'm</em>.</div>
+          <div class="stage-col"><strong>Interferencia L1 &amp; Pronunciaci&oacute;n</strong>Vigila <em>nickname</em> con vocal corta /ɪ/ (evitar "neek-name") y el acento en la primera palabra (<em>FIRST name, LAST name</em>). En <em>hard</em>, aspira suavemente la /h/ inicial (no /x/ fuerte de "j").</div>
+          <div class="stage-col"><strong>Andamiaje &amp; Claves (2C)</strong>Modela el #1 juntos antes de dejar 2–6 aut&oacute;nomos. Keys: 1. nickname &middot; 2. first name &middot; 3. last name &middot; 4. real name &middot; 5. easy &middot; 6. hard.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>03 &middot; Everyday Expressions: 4 Bloques Pragm&aacute;ticos (3A)</h3>
+          <span class="stage-tag">Fase: Notice &middot; Whole Chunks</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Teacher Script &amp; Modelado</strong>Usa la foto de encuentro presencial: <em>"Messages first... now face to face! Nice to finally put a face to the name."</em> Practica la frase larga con <em>back-chaining</em> (del final hacia el inicio).</div>
+          <div class="stage-col"><strong>Regla Metodol&oacute;gica Cr&iacute;tica</strong>Prohibido desglosar la gram&aacute;tica interna (no explicar <em>can</em> ni infinitivos). Se ense&ntilde;an como bloques fijos de uso inmediato.</div>
+          <div class="stage-col"><strong>Pr&aacute;ctica Rel&aacute;mpago</strong>Di un apodo inventado divertido (<em>"My nickname is Kiwi"</em>) con expresi&oacute;n seria para provocar <em>"No, I'm serious!"</em> y pide al alumno adaptar <em>"You can call me..."</em></div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>04 &middot; Listening: At the Studio Check-In (4A y 4B)</h3>
+          <span class="stage-tag">Fase: Notice in Context &middot; Transcript Hidden</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Pre / While / Post Listening</strong>Pre: se&ntilde;ala retratos de Nora y Mateo y lanza pregunta de gist (<em>"Teo or Kiwi?"</em>). While 1: escucha completa sin transcripci&oacute;n. While 2: responde 4 reactivos Yes/No. Post: abre transcripci&oacute;n para notar <em>I'm / I'm not / Are you...?</em></div>
+          <div class="stage-col"><strong>Contingencia de Audio</strong>Si el MP3 de estudio a&uacute;n no est&aacute; cargado, lee t&uacute; el guion de la Secci&oacute;n 03 a velocidad A1.1 clara y pausada, manteniendo oculta la transcripci&oacute;n al alumno.</div>
+          <div class="stage-col"><strong>Claves (4B)</strong>1. No (es Mateo/Teo) &middot; 2. Yes &middot; 3. No (su apodo es Teo) &middot; 4. Yes (Valdovinos es dif&iacute;cil).</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>05 &middot; Grammar: I, You &amp; To Be + My (5A, 5B y 5C)</h3>
+          <span class="stage-tag">Fase: Understand &amp; Practice &middot; Strict [N]</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Descubrimiento Guiado (5A)</strong>Usa las fotos de contraste <em>Self (I)</em> vs. <em>Partner (You)</em>. Se&ntilde;&aacute;late el pecho (<em>I'm...</em>) y al alumno con palma abierta (<em>You're...</em>). Muestra la inversi&oacute;n visual <em>You are &rarr; Are you?</em></div>
+          <div class="stage-col"><strong>Interferencia L1 (Espa&ntilde;ol)</strong>Anticipa 3 errores cl&aacute;sicos: 1) omitir el sujeto (<em>"Am Carlos"</em>), 2) invertir <em>not</em> (<em>"I not am"</em>), 3) confundir <em>I</em> con <em>My</em> (<em>"I name is..."</em>). En 5B no des pistas directas; remite a la tabla.</div>
+          <div class="stage-col"><strong>Claves (5B y 5C)</strong>5B Clinic: 1. I am/I'm Carlos. &middot; 2. You are/You're funny. &middot; 3. Are you Mateo? &middot; 4. I am not/I'm not Kiwi. &middot; 5. My name is Nora. 5C Wordbox: 1. I'm not Leo. &middot; 2. Are you Sofia? &middot; 3. You can call me Paco. &middot; 4. My name is hard.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>06 &middot; Speaking: Secret Name Card Roleplay (6A)</h3>
+          <span class="stage-tag">Fase: Communicate &middot; Information Gap</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Din&aacute;mica de Vac&iacute;o Real</strong>El alumno elige Card A, B o C sin dec&iacute;rtelo. T&uacute; haces de anfitri&oacute;n y adivinas mal a prop&oacute;sito (<em>"Hello! Are you Leo?"</em>) para provocar <em>"No, I'm not..."</em></div>
+          <div class="stage-col"><strong>Provocaci&oacute;n de Chunks</strong>Al escuchar el apellido largo (<em>Quintero / Echeverria</em>), di <em>"Again, please?"</em> para invitarlo a usar <em>"You can call me Max/Paco."</em></div>
+          <div class="stage-col"><strong>Retroalimentaci&oacute;n Diferida</strong>No cortes el di&aacute;logo en medio. Toma nota de 1–2 detalles, retroalimenta al final y cambia de tarjeta para confirmar transferencia.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>07 &middot; Exit Ticket &amp; Can-Do Statements (7A)</h3>
+          <span class="stage-tag">Fase: Reflect &middot; Advancement Check</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Condici&oacute;n de Autonom&iacute;a</strong>Espacio totalmente en blanco; el alumno escribe 3–4 oraciones aisladas (nombre real, apodo y una negaci&oacute;n <em>I'm not...</em>) sin copiar de la pesta&ntilde;a 05.</div>
+          <div class="stage-col"><strong>Criterios de Escritura A1.1</strong>Revisar: <em>I</em> siempre en may&uacute;scula, may&uacute;scula en nombres propios, ap&oacute;strofo en <em>I'm / I'm not</em> y punto final.</div>
+          <div class="stage-col"><strong>Decisi&oacute;n de Avance</strong>Con E2/E3 asigna <em>Explore</em> y avanza a L02. Con E0/E1 trabaja <em>Explore</em> Part 02 en sesi&oacute;n guiada antes de avanzar.</div>
+        </div>
+      </div>
     </section>
 
     <!-- 2. DELIMITACION P / N / F -->
     <section class="hub-card">
-      <div class="hub-kicker">Secci&oacute;n 02</div>
-      <h2 class="hub-title">Delimitaci&oacute;n Curricular (P / N / F)</h2>
+      <div class="hub-kicker">Secci&oacute;n 02 &middot; Control Ling&uuml;&iacute;stico</div>
+      <h2 class="hub-title">Delimitaci&oacute;n Curricular (P / P? / N / F)</h2>
       <div class="pnf-grid">
         <div class="pnf-box">
           <h3>[P] Previamente Demostrado</h3>
-          <p><em>Hello, Hi, Good morning, Goodbye, What's your name?, My name is..., Again, please, Yes, No</em>, nombres propios, consignas <em>Listen, Read, Write, Ask</em>.</p>
+          <p><em>Hello, Goodbye, What's your name?, My name is..., Again, please, Yes, No, Thank you</em>, reconocimiento de campo <em>NAME / FIRST NAME</em>.</p>
+        </div>
+        <div class="pnf-box">
+          <h3>[P?] Diagnosticar en 1B</h3>
+          <p>Alternancia rec&iacute;proca (que el alumno inicie <em>What's your name?</em> y no solo responda) y uso espont&aacute;neo de <em>Again, please</em>.</p>
         </div>
         <div class="pnf-box">
           <h3>[N] Recurso Nuevo</h3>
-          <p>Pronombres <em>I, you</em>; verbo <em>To Be</em> (<em>I am / I'm, I am not / I'm not, You are / You're, You aren't, Am I...?, Are you...?</em>); posesivo <em>My</em>; 6 palabras de identidad; 4 USA Chunks.</p>
+          <p>Pronombres <em>I, you</em>; verbo <em>To Be</em> (<em>I am / I'm, I am not / I'm not, You are / You're, You aren't, Am I...?, Are you...?</em>); posesivo <em>My</em>; 6 palabras clave; 4 Everyday Expressions.</p>
         </div>
         <div class="pnf-box is-f">
           <h3>[F] L&iacute;mite Frontera (Prohibido)</h3>
@@ -268,8 +368,9 @@
 
     <!-- 3. GUION DE AUDIO -->
     <section class="hub-card">
-      <div class="hub-kicker">Secci&oacute;n 03</div>
-      <h2 class="hub-title">Guion de Producci&oacute;n de Audios (Estudio)</h2>
+      <div class="hub-kicker">Secci&oacute;n 03 &middot; Producci&oacute;n de Estudio</div>
+      <h2 class="hub-title">Guion de Producci&oacute;n de Audios (Sin TTS)</h2>
+      <p style="font-size:0.86rem; color:var(--slate-600); margin-bottom:10px;"><strong>Indicaciones de grabaci&oacute;n:</strong> Voz c&aacute;lida, natural y clara a velocidad A1.1 (~105–115 ppm), con articulaci&oacute;n n&iacute;tida en contracciones (<em>I'm / I'm not</em>) y entonaci&oacute;n ascendente clara en preguntas Yes/No.</p>
       <table>
         <thead>
           <tr>
@@ -279,16 +380,16 @@
         </thead>
         <tbody>
           <tr><td class="font-mono">u01-l01-warmup-1.mp3</td><td>"Hello! What's your name?"</td></tr>
-          <tr><td class="font-mono">u01-l01-warmup-2.mp3</td><td>"My name is Carlos. Is that right?"</td></tr>
-          <tr><td class="font-mono">u01-l01-warmup-3.mp3</td><td>"Again, please!"</td></tr>
+          <tr><td class="font-mono">u01-l01-warmup-2.mp3</td><td>"My name is Carlos."</td></tr>
+          <tr><td class="font-mono">u01-l01-warmup-3.mp3</td><td>"Again, please."</td></tr>
           <tr><td class="font-mono">vocab-first-name.mp3 / -ex.mp3</td><td>"First name." / "My first name is Carlos."</td></tr>
           <tr><td class="font-mono">vocab-last-name.mp3 / -ex.mp3</td><td>"Last name." / "My last name is Rivera."</td></tr>
           <tr><td class="font-mono">vocab-nickname.mp3 / -ex.mp3</td><td>"Nickname." / "My nickname is Beto."</td></tr>
           <tr><td class="font-mono">vocab-real-name.mp3 / -ex.mp3</td><td>"Real name." / "My real name is Sofia."</td></tr>
           <tr><td class="font-mono">vocab-easy.mp3 / -ex.mp3</td><td>"Easy." / "My name is easy."</td></tr>
           <tr><td class="font-mono">vocab-hard.mp3 / -ex.mp3</td><td>"Hard." / "My last name is hard."</td></tr>
-          <tr><td class="font-mono">pron-iam-im.mp3</td><td>"I am Mateo. I'm Mateo."</td></tr>
-          <tr><td class="font-mono">pron-name-nickname.mp3</td><td>"Name. Nickname."</td></tr>
+          <tr><td class="font-mono">pron-iam-im.mp3</td><td>"I am Mateo. [pausa 1s] I'm Mateo."</td></tr>
+          <tr><td class="font-mono">pron-name-nickname.mp3</td><td>"Name. [pausa 1s] Nickname."</td></tr>
           <tr><td class="font-mono">chunk-face-to-name.mp3</td><td>"Hello, Luis! Nice to finally put a face to the name."</td></tr>
           <tr><td class="font-mono">chunk-call-me.mp3</td><td>"My name is Guadalupe. You can call me Lupe."</td></tr>
           <tr><td class="font-mono">chunk-serious.mp3</td><td>"My nickname is Kiwi. No, I'm serious!"</td></tr>
@@ -312,7 +413,7 @@
 
     <!-- 4. RUBRICA E0-E3 -->
     <section class="hub-card">
-      <div class="hub-kicker">Secci&oacute;n 04</div>
+      <div class="hub-kicker">Secci&oacute;n 04 &middot; Evaluaci&oacute;n y Avance</div>
       <h2 class="hub-title">Protocolo de Mediaci&oacute;n y R&uacute;brica Cualitativa (E0&ndash;E3)</h2>
       <table>
         <thead>
@@ -331,7 +432,7 @@
           <tr>
             <td><strong>E1</strong></td>
             <td>Produce su nombre con apoyo visual o copiando el modelo; omite <em>am/are</em> o confunde <em>I</em> con <em>My</em>.</td>
-            <td>Reforzar con <em>Explore</em> Part 02 y contraste directo <em>I'm [Name]</em> vs <em>My name is [Name]</em>.</td>
+            <td>Reforzar con <em>Explore</em> Part 02 y contraste directo <em>I'm [Name]</em> vs. <em>My name is [Name]</em>.</td>
           </tr>
           <tr>
             <td><strong>E2</strong></td>
@@ -340,7 +441,7 @@
           </tr>
           <tr>
             <td><strong>E3</strong></td>
-            <td>Integra de forma fluida <em>I'm / I'm not / Are you...?</em> + al menos dos USA Chunks y escribe su Exit Ticket sin copiar.</td>
+            <td>Integra de forma fluida <em>I'm / I'm not / Are you...?</em> + al menos dos Everyday Expressions y escribe su Exit Ticket sin copiar.</td>
             <td>Dominio observable pleno; listo para ampliar con <em>he/she/we/they</em> y origen en L02.</td>
           </tr>
         </tbody>
@@ -351,7 +452,7 @@
   <footer class="studio-site-footer">
     <div class="footer-inner">
       <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-      <div>Teacher's Hub &middot; A1.1-U01-L01</div>
+      <div>Teacher's Hub &middot; A1.1-U01-L01 &middot; Complete Lesson Plan</div>
     </div>
   </footer>
 </body>

@@ -140,9 +140,7 @@
       transition: color 0.15s;
     }
     .header-teacher-link:hover { color: var(--gold-400); }
-    .header-teacher-link.is-active {
-      color: var(--teal-300);
-    }
+    .header-teacher-link.is-active { color: var(--teal-300); }
     .header-back-link {
       color: var(--slate-200);
       text-decoration: none;
@@ -165,7 +163,7 @@
       position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      min-height: 210px;
+      min-height: 215px;
       display: flex;
       align-items: flex-end;
       padding: 36px 40px;
@@ -180,11 +178,7 @@
       box-shadow: var(--shadow-md);
       color: var(--white);
     }
-    .hero-content {
-      max-width: 720px;
-      position: relative;
-      z-index: 2;
-    }
+    .hero-content { max-width: 720px; position: relative; z-index: 2; }
     .hero-title {
       font-size: clamp(1.75rem, 3.2vw, 2.45rem);
       font-weight: 800;
@@ -194,12 +188,7 @@
       color: var(--white);
     }
     .hero-title span { color: var(--gold-500); }
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--slate-200);
-      font-weight: 400;
-      max-width: 60ch;
-    }
+    .hero-subtitle { font-size: 0.98rem; color: var(--slate-200); font-weight: 400; max-width: 60ch; }
 
     /* === SEGMENTED NAVIGATION === */
     .module-nav-grid {
@@ -231,10 +220,7 @@
       transition: all 0.18s ease;
       white-space: nowrap;
     }
-    .module-tab:hover {
-      color: var(--navy-900);
-      background: rgba(255, 255, 255, 0.55);
-    }
+    .module-tab:hover { color: var(--navy-900); background: rgba(255, 255, 255, 0.55); }
     .module-tab .tab-num {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.76rem;
@@ -248,9 +234,7 @@
       border-color: var(--slate-200);
       font-weight: 700;
     }
-    .module-tab.active .tab-num {
-      color: var(--teal-700);
-    }
+    .module-tab.active .tab-num { color: var(--teal-700); }
 
     /* === MODULE PANELS === */
     .module-panel { display: none; }
@@ -268,9 +252,7 @@
       box-shadow: var(--shadow-sm);
       margin-bottom: 22px;
     }
-    .section-header {
-      margin-bottom: 22px;
-    }
+    .section-header { margin-bottom: 22px; }
     .section-kicker {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.74rem;
@@ -280,31 +262,22 @@
       color: var(--teal-700);
       margin-bottom: 6px;
     }
-    .section-title {
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: var(--navy-900);
-      line-height: 1.25;
-      margin-bottom: 6px;
-    }
-    .section-lead {
-      font-size: 0.95rem;
-      color: var(--slate-600);
-    }
+    .section-title { font-size: 1.45rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; margin-bottom: 6px; }
+    .section-lead { font-size: 0.95rem; color: var(--slate-600); }
 
-    /* === TEACHER NOTE BOX (Hidden unless Teacher mode active) === */
+    /* === TEACHER NOTE BOX (PER ACTIVITY, HIDDEN UNLESS TEACHER MODE) === */
     .teacher-note-box {
       display: none;
       background: var(--gold-100);
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-md);
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       overflow: hidden;
     }
     body.teacher-mode .teacher-note-box { display: block; }
     .teacher-note-box summary {
-      padding: 13px 18px;
-      font-size: 0.86rem;
+      padding: 12px 16px;
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--navy-900);
       cursor: pointer;
@@ -317,7 +290,7 @@
     .teacher-note-box summary::-webkit-details-marker { display: none; }
     .teacher-note-badge {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.71rem;
       font-weight: 700;
       text-transform: uppercase;
       color: var(--gold-600);
@@ -327,29 +300,39 @@
       border-radius: var(--radius-full);
     }
     .teacher-note-body {
-      padding: 0 18px 16px;
-      font-size: 0.86rem;
+      padding: 12px 16px 16px;
+      font-size: 0.84rem;
       color: var(--slate-800);
-      border-top: 1px solid rgba(212, 168, 67, 0.22);
-      padding-top: 12px;
+      border-top: 1px solid rgba(212, 168, 67, 0.24);
+    }
+    .teacher-meta-line {
+      font-size: 0.82rem;
+      color: var(--navy-900);
+      margin-bottom: 10px;
+      background: var(--white);
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
     }
     .teacher-steps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
     }
     .teacher-step-item {
       background: var(--white);
-      border: 1px solid var(--gold-border);
+      border: 1px solid rgba(212, 168, 67, 0.28);
       border-radius: var(--radius-sm);
       padding: 10px 12px;
+      line-height: 1.5;
     }
     .teacher-step-item strong {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-family: 'IBM Plex Mono', monospace;
       color: var(--gold-600);
       margin-bottom: 4px;
+      text-transform: uppercase;
     }
 
     /* === BUTTONS === */
@@ -368,31 +351,15 @@
       transition: all 0.16s ease;
       text-decoration: none;
     }
-    .btn-primary {
-      background: var(--navy-900);
-      color: var(--white);
-    }
+    .btn-primary { background: var(--navy-900); color: var(--white); }
     .btn-primary:hover { background: var(--navy-700); }
-    .btn-teal {
-      background: var(--teal-700);
-      color: var(--white);
-    }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
     .btn-teal:hover { background: var(--teal-800); }
-    .btn-outline {
-      background: var(--white);
-      color: var(--navy-900);
-      border-color: var(--slate-300);
-    }
-    .btn-outline:hover {
-      border-color: var(--navy-900);
-      background: var(--slate-50);
-    }
-    .btn-sm {
-      padding: 6px 12px;
-      font-size: 0.78rem;
-    }
+    .btn-outline { background: var(--white); color: var(--navy-900); border-color: var(--slate-300); }
+    .btn-outline:hover { border-color: var(--navy-900); background: var(--slate-50); }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; }
 
-    /* === AUDIO PLAYER (REAL MP3 ONLY - NO TTS) === */
+    /* === AUDIO BUTTON (REAL MP3 ONLY - NO TTS) === */
     .audio-btn {
       display: inline-flex;
       align-items: center;
@@ -408,97 +375,258 @@
       cursor: pointer;
       transition: all 0.15s;
     }
-    .audio-btn:hover {
-      background: var(--teal-700);
-      color: var(--white);
-      border-color: var(--teal-700);
-    }
-    .audio-status-note {
-      font-size: 0.75rem;
-      color: var(--slate-500);
-      margin-top: 6px;
-      min-height: 18px;
-    }
+    .audio-btn:hover { background: var(--teal-700); color: var(--white); border-color: var(--teal-700); }
+    .audio-status-note { font-size: 0.78rem; color: var(--slate-500); margin-top: 8px; min-height: 18px; }
 
-    /* === 01 WARM-UP POLL & REACTIONS === */
-    .poll-grid {
+    /* === VISUAL EDITORIAL BANNERS & CARDS === */
+    .scene-banner {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .poll-card {
+      grid-template-columns: 280px 1fr;
+      gap: 22px;
+      align-items: center;
       background: var(--slate-50);
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-md);
-      padding: 20px;
+      overflow: hidden;
+      margin-bottom: 24px;
     }
-    .poll-question {
-      font-size: 1rem;
+    .scene-banner-photo {
+      width: 100%;
+      height: 185px;
+      object-fit: cover;
+      display: block;
+    }
+    .scene-banner-body {
+      padding: 18px 22px 18px 0;
+    }
+    .scene-banner-body h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+    }
+    .scene-banner-body p {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+
+    /* === 01A WARM-UP: NAME HAPPINESS METER & ORIGIN === */
+    .warmup-interactive-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .warmup-panel-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .warmup-panel-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 4px;
+    }
+    .warmup-panel-sub {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+    }
+    .meter-readout {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+    }
+    .meter-score {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.65rem;
       font-weight: 700;
       color: var(--navy-900);
-      margin-bottom: 12px;
     }
-    .poll-options {
+    .meter-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--teal-800);
+    }
+    .name-slider {
+      width: 100%;
+      accent-color: var(--teal-700);
+      height: 8px;
+      cursor: pointer;
+    }
+    .meter-scale {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--slate-500);
+    }
+    .origin-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
     }
+    .origin-btn {
+      background: var(--white);
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s;
+    }
+    .origin-btn:hover { border-color: var(--teal-700); color: var(--teal-800); }
+    .origin-btn.selected { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+    .warmup-photo-strip {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .warmup-photo-strip img {
+      width: 120px;
+      height: 88px;
+      object-fit: cover;
+      display: block;
+    }
+    .warmup-photo-strip-text {
+      padding: 10px 14px 10px 0;
+      font-size: 0.85rem;
+      color: var(--slate-700);
+    }
+    .poll-options { display: flex; flex-wrap: wrap; gap: 8px; }
     .poll-opt-btn {
       background: var(--white);
       border: 1px solid var(--slate-300);
       border-radius: var(--radius-full);
-      padding: 7px 14px;
+      padding: 6px 14px;
       font-family: inherit;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--slate-700);
       cursor: pointer;
       transition: all 0.15s;
     }
-    .poll-opt-btn:hover {
-      border-color: var(--teal-700);
-      color: var(--teal-800);
+    .poll-opt-btn:hover { border-color: var(--teal-700); color: var(--teal-800); }
+    .poll-opt-btn.selected { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+    .poll-reply { font-size: 0.82rem; font-weight: 700; color: var(--teal-800); min-height: 18px; }
+
+    /* === LIVE NAME TAG BUILDER (01B) === */
+    .live-badge-grid {
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      gap: 20px;
+      align-items: center;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 22px;
     }
-    .poll-opt-btn.selected {
-      background: var(--navy-900);
-      color: var(--white);
-      border-color: var(--navy-900);
-    }
-    .poll-reply {
-      margin-top: 10px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--teal-800);
-      min-height: 20px;
-    }
-    .trigger-questions {
+    .studio-lanyard-badge {
       background: var(--white);
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-md);
-      padding: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      text-align: center;
     }
-    .trigger-questions h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
+    .lanyard-top {
+      background: var(--navy-900);
+      color: var(--white);
+      padding: 12px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .lanyard-top span { color: var(--gold-500); }
+    .lanyard-body {
+      padding: 24px 16px;
+    }
+    .lanyard-label {
+      font-size: 0.76rem;
+      color: var(--slate-500);
+      margin-bottom: 4px;
+    }
+    .lanyard-name {
+      font-size: 1.55rem;
+      font-weight: 800;
       color: var(--navy-900);
-      margin-bottom: 12px;
+      word-break: break-word;
     }
-    .trigger-list {
-      display: grid;
-      gap: 10px;
-    }
+    .trigger-list { display: grid; gap: 10px; margin-top: 14px; }
     .trigger-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       padding: 10px 14px;
-      background: var(--slate-50);
+      background: var(--white);
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-sm);
       font-size: 0.92rem;
       font-weight: 600;
+      color: var(--navy-900);
+    }
+
+    /* === 02 VISUAL PASS DIAGRAM === */
+    .id-pass-visual {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      align-items: center;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 24px;
+    }
+    .id-pass-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--slate-300);
+    }
+    .id-pass-fields {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .id-field {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+    .id-field-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teal-700);
+    }
+    .id-field-val {
+      font-size: 0.98rem;
+      font-weight: 800;
       color: var(--navy-900);
     }
 
@@ -509,11 +637,7 @@
       gap: 18px;
       margin-bottom: 26px;
     }
-    .flip-card {
-      perspective: 1000px;
-      height: 235px;
-      cursor: pointer;
-    }
+    .flip-card { perspective: 1000px; height: 235px; cursor: pointer; }
     .flip-card-inner {
       position: relative;
       width: 100%;
@@ -521,9 +645,7 @@
       transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
       transform-style: preserve-3d;
     }
-    .flip-card.is-flipped .flip-card-inner {
-      transform: rotateY(180deg);
-    }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
     .flip-face {
       position: absolute;
       inset: 0;
@@ -547,11 +669,7 @@
       gap: 12px;
       text-align: left;
     }
-    .flip-word-group {
-      flex: 1;
-      min-width: 0;
-      padding-right: 6px;
-    }
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
     .flip-back {
       transform: rotateY(180deg);
       background: var(--navy-950);
@@ -592,32 +710,11 @@
       color: var(--slate-500);
       margin-top: 4px;
     }
-    .flip-example {
-      font-size: 0.9rem;
-      color: var(--slate-700);
-      font-weight: 500;
-      text-align: center;
-    }
-    .flip-audio-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .flip-back-word {
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: var(--gold-400);
-    }
-    .flip-back-meaning {
-      font-size: 0.95rem;
-      color: var(--slate-100);
-      max-width: 28ch;
-    }
-    .flip-hint {
-      font-size: 0.72rem;
-      color: var(--slate-400);
-    }
+    .flip-example { font-size: 0.9rem; color: var(--slate-700); font-weight: 500; text-align: center; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.4rem; font-weight: 800; color: var(--gold-400); }
+    .flip-back-meaning { font-size: 0.94rem; color: var(--slate-100); max-width: 28ch; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
 
     /* === MICRO-FOCUS PRONUNCIATION === */
     .pron-contrast-box {
@@ -627,12 +724,7 @@
       padding: 20px;
       margin-bottom: 26px;
     }
-    .pron-contrast-box h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy-900);
-      margin-bottom: 6px;
-    }
+    .pron-contrast-box h3 { font-size: 1rem; font-weight: 700; color: var(--navy-900); margin-bottom: 6px; }
     .pron-pairs {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -648,30 +740,18 @@
       flex-direction: column;
       gap: 8px;
     }
-    .pron-pair-label {
-      font-weight: 700;
-      color: var(--navy-900);
-      font-size: 0.95rem;
-    }
+    .pron-pair-label { font-weight: 700; color: var(--navy-900); font-size: 0.95rem; }
 
-    /* === UNSCRAMBLE ACTIVITY === */
+    /* === ACTIVITY BOXES === */
     .activity-box {
       background: var(--slate-50);
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-md);
       padding: 22px;
+      margin-bottom: 22px;
     }
-    .activity-box h3 {
-      font-size: 1.02rem;
-      font-weight: 800;
-      color: var(--navy-900);
-      margin-bottom: 6px;
-    }
-    .unscramble-grid {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
+    .activity-box h3 { font-size: 1.02rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .unscramble-grid { display: grid; gap: 12px; margin-top: 16px; }
     .unscramble-row {
       background: var(--white);
       border: 1px solid var(--slate-200);
@@ -690,15 +770,8 @@
       letter-spacing: 0.08em;
       margin-bottom: 4px;
     }
-    .unscramble-clue {
-      font-size: 0.84rem;
-      color: var(--slate-600);
-    }
-    .unscramble-input-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .unscramble-clue { font-size: 0.84rem; color: var(--slate-600); }
+    .unscramble-input-wrap { display: flex; align-items: center; gap: 8px; }
     .text-input {
       border: 1px solid var(--slate-300);
       border-radius: var(--radius-sm);
@@ -709,21 +782,12 @@
       background: var(--white);
       min-width: 170px;
     }
-    .text-input:focus {
-      outline: 2px solid var(--teal-500);
-      border-color: var(--teal-700);
-    }
-    .status-pill {
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      display: inline-block;
-    }
+    .text-input:focus { outline: 2px solid var(--teal-500); border-color: var(--teal-700); }
+    .status-pill { font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); display: inline-block; }
     .status-ok { background: var(--teal-50); color: var(--teal-800); }
     .status-err { background: var(--danger-50); color: var(--danger-600); }
 
-    /* === 04 LISTENING === */
+    /* === 04 LISTENING WITH PORTRAITS === */
     .listening-stage {
       background: var(--navy-950);
       color: var(--white);
@@ -732,13 +796,34 @@
       margin-bottom: 22px;
       border: 1px solid rgba(212, 168, 67, 0.25);
     }
+    .listening-speakers {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .speaker-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-full);
+      padding: 6px 14px 6px 6px;
+    }
+    .speaker-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
     .listening-stage-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 14px;
     }
     .transcript-panel {
       display: none;
@@ -750,10 +835,7 @@
       line-height: 1.7;
     }
     .transcript-panel.is-open { display: block; }
-    .comp-list {
-      display: grid;
-      gap: 12px;
-    }
+    .comp-list { display: grid; gap: 12px; }
     .comp-item {
       background: var(--slate-50);
       border: 1px solid var(--slate-200);
@@ -765,30 +847,39 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .comp-q {
-      font-weight: 600;
-      color: var(--navy-900);
-      font-size: 0.94rem;
-    }
-    .comp-btns {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
+    .comp-q { font-weight: 600; color: var(--navy-900); font-size: 0.94rem; }
+    .comp-btns { display: flex; gap: 8px; align-items: center; }
 
-    /* === 05 GRAMMAR === */
+    /* === 05 GRAMMAR VISUAL CONTRAST + TABLE === */
+    .pronoun-visual-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .pronoun-visual-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+    .pronoun-visual-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
     .grammar-table-wrap {
       overflow-x: auto;
       margin-bottom: 24px;
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-md);
     }
-    .grammar-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      text-align: left;
-    }
+    .grammar-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
     .grammar-table th {
       background: var(--navy-900);
       color: var(--white);
@@ -798,26 +889,11 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    .grammar-table td {
-      padding: 12px 16px;
-      border-top: 1px solid var(--slate-200);
-      color: var(--slate-800);
-      background: var(--white);
-    }
-    .grammar-table tr:nth-child(even) td {
-      background: var(--slate-50);
-    }
-    .grammar-highlight {
-      font-weight: 700;
-      color: var(--teal-800);
-    }
+    .grammar-table td { padding: 12px 16px; border-top: 1px solid var(--slate-200); color: var(--slate-800); background: var(--white); }
+    .grammar-table tr:nth-child(even) td { background: var(--slate-50); }
+    .grammar-highlight { font-weight: 700; color: var(--teal-800); }
 
-    .clinic-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 14px;
-      margin-bottom: 24px;
-    }
+    .clinic-list { display: grid; gap: 12px; margin-top: 14px; }
     .clinic-row {
       background: var(--white);
       border: 1px solid var(--slate-200);
@@ -828,11 +904,7 @@
       gap: 12px;
       align-items: center;
     }
-    .clinic-sentence {
-      font-size: 0.94rem;
-      font-weight: 600;
-      color: var(--navy-900);
-    }
+    .clinic-sentence { font-size: 0.94rem; font-weight: 600; color: var(--navy-900); }
 
     .wordbox-row {
       background: var(--white);
@@ -841,12 +913,7 @@
       padding: 14px 16px;
       margin-top: 12px;
     }
-    .wordbox-tokens {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
+    .wordbox-tokens { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
     .word-chip {
       background: var(--slate-100);
       border: 1px solid var(--slate-300);
@@ -873,33 +940,31 @@
       background: var(--slate-50);
     }
 
-    /* === 06 SPEAKING === */
+    /* === 06 SPEAKING SECRET CARDS WITH PORTRAITS === */
     .secret-cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
       margin-bottom: 22px;
     }
     .secret-card {
       background: var(--slate-50);
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-md);
-      padding: 18px;
+      overflow: hidden;
       cursor: pointer;
       transition: all 0.16s;
     }
     .secret-card:hover { border-color: var(--teal-700); }
-    .secret-card.selected {
-      background: var(--white);
-      border-color: var(--navy-900);
-      box-shadow: var(--shadow-sm);
-    }
+    .secret-card.selected { background: var(--white); border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+    .secret-card-photo { width: 100%; height: 225px; object-fit: cover; object-position: center top; display: block; }
+    .secret-card-body { padding: 16px; }
     .secret-card-tag {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.72rem;
       font-weight: 700;
       color: var(--teal-700);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .checklist-box {
       background: var(--teal-50);
@@ -907,18 +972,8 @@
       border-radius: var(--radius-md);
       padding: 20px;
     }
-    .checklist-box h3 {
-      font-size: 0.98rem;
-      font-weight: 800;
-      color: var(--navy-900);
-      margin-bottom: 10px;
-    }
-    .checklist-items {
-      display: grid;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--slate-800);
-    }
+    .checklist-box h3 { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); margin-bottom: 10px; }
+    .checklist-items { display: grid; gap: 8px; font-size: 0.9rem; color: var(--slate-800); }
 
     /* === 07 EXIT TICKET === */
     .exit-textarea {
@@ -933,15 +988,8 @@
       resize: vertical;
       margin-bottom: 14px;
     }
-    .exit-textarea:focus {
-      outline: 2px solid var(--teal-500);
-      border-color: var(--teal-700);
-    }
-    .cando-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
+    .exit-textarea:focus { outline: 2px solid var(--teal-500); border-color: var(--teal-700); }
+    .cando-list { display: grid; gap: 10px; margin-top: 18px; }
     .cando-item {
       display: flex;
       align-items: flex-start;
@@ -961,16 +1009,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 22px;
       padding-top: 18px;
       border-top: 1px solid var(--slate-200);
     }
 
-    /* === SITE FOOTER === */
+    /* === EXECUTIVE SITE FOOTER === */
     .studio-site-footer {
-      border-top: 1px solid var(--slate-200);
-      background: var(--white);
-      padding: 22px 24px;
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
     }
     .footer-inner {
       max-width: 1120px;
@@ -979,18 +1029,29 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.82rem;
-      color: var(--slate-600);
+      gap: 16px;
+      font-size: 0.84rem;
     }
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
     .footer-teacher-portal {
-      color: var(--navy-900);
+      color: var(--gold-400);
       font-weight: 700;
       text-decoration: none;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      transition: all 0.16s;
     }
     .footer-teacher-portal:hover {
-      color: var(--teal-700);
-      text-decoration: underline;
+      background: rgba(212, 168, 67, 0.14);
+      color: var(--white);
     }
 
     /* === PIN MODAL === */
@@ -1014,27 +1075,15 @@
       max-width: 380px;
       box-shadow: var(--shadow-md);
     }
-    .modal-card h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--navy-900);
-      margin-bottom: 6px;
-    }
-    .modal-card p {
-      font-size: 0.86rem;
-      color: var(--slate-600);
-      margin-bottom: 14px;
-    }
-    .modal-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-top: 16px;
-    }
+    .modal-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .modal-card p { font-size: 0.86rem; color: var(--slate-600); margin-bottom: 14px; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
 
-    @media (max-width: 720px) {
+    @media (max-width: 780px) {
       .workspace-hero-banner { padding: 26px 22px; min-height: 180px; }
       .section-card { padding: 22px 18px; }
+      .scene-banner, .live-badge-grid, .id-pass-visual, .warmup-interactive-grid { grid-template-columns: 1fr; }
+      .scene-banner-body { padding: 0 18px 18px; }
       .unscramble-row, .clinic-row { grid-template-columns: 1fr; }
       .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
     }
@@ -1078,71 +1127,107 @@
 
     <!-- ==================== 01 WARM-UP ==================== -->
     <section class="module-panel active" id="m1">
-      <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 01 Warm-Up <span class="teacher-note-badge">Strict [P] Only</span></summary>
-        <div class="teacher-note-body">
-          <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Use ONLY Pre-A1 [P] frames: <em>Hello! What's your name? My name is... Again, please. Yes / No.</em></div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Point to Card 1 (coffee cup label): <em>"Carlos... Carloss? No!"</em> Demonstrate clicking Yes or No.</div>
-            <div class="teacher-step-item"><strong>3. Check</strong>Have the student check the 3 name labels and do a 3-line [P] greeting exchange aloud.</div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>1. No (Carloss) &middot; 2. Yes (Sofia) &middot; 3. No (Beto vs. Bety). Do not introduce [N] grammar yet.</div>
-          </div>
-        </div>
-      </details>
-
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">01 &middot; Engage</div>
-          <h2 class="section-title">Coffee Cup Name Check</h2>
-          <p class="section-lead">Look at the name on each cup. Click <strong>Yes</strong> or <strong>No</strong>.</p>
+          <h2 class="section-title">Your Name Story</h2>
+          <p class="section-lead">Move the bar to show how happy you are with your name, and choose where your name comes from.</p>
         </div>
 
-        <div class="poll-grid">
-          <div class="poll-card">
-            <div class="poll-question">Person: <strong>Carlos</strong> &rarr; Cup: <span class="font-mono">CARLOSS</span></div>
-            <div class="poll-options">
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Look again: Carlos vs. Carloss.')">Yes</button>
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'No! Again, please: Carlos.')">No</button>
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 1A: Name Happiness Meter &amp; Origin <span class="teacher-note-badge">Personal Icebreaker</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Generar conexi&oacute;n emocional inmediata con el tema de la lecci&oacute;n (<em>The Story Behind Your Name</em>) mediante interacci&oacute;n visual (barra deslizable + origen) sin exigir estructuras gramaticales [N] todav&iacute;a.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado del docente</strong>Mueve primero la barra con tu propio caso: <em>"My name is [Tu Nombre]. Eight! Good name! Family name&mdash;from my grandfather."</em></div>
+              <div class="teacher-step-item"><strong>2. Participaci&oacute;n del alumno</strong>Pide al alumno mover la barra del 1 al 10 y elegir una tarjeta de origen (<em>Family / Famous person / Classic / Unique / No idea</em>).</div>
+              <div class="teacher-step-item"><strong>3. Flexibilidad en ingreso A1.1</strong>Si el alumno quiere contar una breve an&eacute;cdota sobre el origen de su nombre y a&uacute;n no tiene vocabulario en ingl&eacute;s, permite 1–2 palabras clave o una aclaraci&oacute;n breve sin frenar el rapport, y devuelve en ingl&eacute;s simple (<em>"Oh, family! Nice!"</em>).</div>
+              <div class="teacher-step-item"><strong>4. Transici&oacute;n a 1B</strong>Cierra el rompehielos diciendo: <em>"Great! Now, let's make your Studio Name Tag!"</em></div>
             </div>
-            <div class="poll-reply"></div>
+          </div>
+        </details>
+
+        <div class="warmup-interactive-grid">
+          <div class="warmup-panel-card">
+            <div>
+              <div class="warmup-panel-title">1. How happy are you with your name?</div>
+              <div class="warmup-panel-sub">Move the bar from 1 to 10.</div>
+            </div>
+            <div class="meter-readout">
+              <div class="meter-score" id="nameMeterScore">7 / 10</div>
+              <div class="meter-label" id="nameMeterLabel">Good name!</div>
+            </div>
+            <div>
+              <input type="range" min="1" max="10" value="7" class="name-slider" id="nameHappySlider" aria-label="How happy are you with your name from 1 to 10" oninput="updateNameMeter(this.value)">
+              <div class="meter-scale">
+                <span>1 &middot; Not happy</span>
+                <span>5 &middot; Okay</span>
+                <span>10 &middot; Love it!</span>
+              </div>
+            </div>
           </div>
 
-          <div class="poll-card">
-            <div class="poll-question">Person: <strong>Sofia</strong> &rarr; Cup: <span class="font-mono">SOFIA</span></div>
-            <div class="poll-options">
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Yes! Sofia. Thank you!')">Yes</button>
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Look again: Sofia = SOFIA.')">No</button>
+          <div class="warmup-panel-card">
+            <div>
+              <div class="warmup-panel-title">2. Where is your name from?</div>
+              <div class="warmup-panel-sub">Click one option and share with your teacher.</div>
             </div>
-            <div class="poll-reply"></div>
-          </div>
-
-          <div class="poll-card">
-            <div class="poll-question">Person: <strong>Mateo</strong> &rarr; Cup: <span class="font-mono">MATIO</span></div>
-            <div class="poll-options">
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Look again: Mateo vs. Matio.')">Yes</button>
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'No! Again, please: Mateo.')">No</button>
+            <div class="origin-options-grid">
+              <button type="button" class="origin-btn" onclick="selectOrigin(this, 'Family! A classic story.')">Family (mom, dad, grandma...)</button>
+              <button type="button" class="origin-btn" onclick="selectOrigin(this, 'A famous person! Cool.')">Famous person / Movie</button>
+              <button type="button" class="origin-btn" onclick="selectOrigin(this, 'Classic and strong!')">Classic / Traditional</button>
+              <button type="button" class="origin-btn" onclick="selectOrigin(this, 'Unique and different!')">Unique / Special</button>
+              <button type="button" class="origin-btn" style="grid-column: 1 / -1;" onclick="selectOrigin(this, 'No idea! Time to ask your family!')">No idea!</button>
             </div>
-            <div class="poll-reply"></div>
+            <div class="poll-reply" id="originReply"></div>
+            <div class="warmup-photo-strip">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Friends talking and smiling">
+              <div class="warmup-photo-strip-text">Every name has a story&mdash;family, a song, a movie, or a funny nickname.</div>
+            </div>
           </div>
         </div>
 
-        <div class="trigger-questions">
-          <h3>First Hello (Pre-A1 Review)</h3>
-          <div class="trigger-list">
-            <div class="trigger-item">
-              <span>Hello! What's your name?</span>
-              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-1.mp3', this)">&#9654; Listen</button>
-            </div>
-            <div class="trigger-item">
-              <span>My name is ___.</span>
-              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-2.mp3', this)">&#9654; Listen</button>
-            </div>
-            <div class="trigger-item">
-              <span>Again, please.</span>
-              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-3.mp3', this)">&#9654; Listen</button>
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 1B: Live Name Tag &amp; [P] Exchange <span class="teacher-note-badge">Diagnostic [P]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Diagnosticar que el alumno conserva los marcos [P] de Pre-A1 (<em>Hello, What's your name?, My name is..., Again, please</em>) antes de introducir vocabulario nuevo.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado oral</strong>Escribe primero tu propio nombre en el gafete o dilo: <em>"Hello! My name is [Tu Nombre]. What's your name?"</em></div>
+              <div class="teacher-step-item"><strong>2. Intercambio real</strong>Pide al alumno escribir su nombre en el campo del gafete y responder oralmente. Finge no escuchar bien una vez y di: <em>"Again, please?"</em> para provocar repetici&oacute;n natural.</div>
+              <div class="teacher-step-item"><strong>3. Inversi&oacute;n de roles</strong>Se&ntilde;ala la l&iacute;nea 1 y haz gesto para que el alumno te pregunte a ti: <em>"What's your name?"</em></div>
+              <div class="teacher-step-item"><strong>4. Criterio de paso</strong>Si omite <em>My name is</em> o responde solo el nombre aislado, modela en eco suave (<em>"My name is Ana"</em>) antes de pasar a Vocabulario.</div>
             </div>
           </div>
-          <div class="audio-status-note" id="audioStatusGlobal"></div>
+        </details>
+
+        <div class="live-badge-grid">
+          <div>
+            <h3 style="font-size: 1.02rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px;">Your Studio Name Tag</h3>
+            <p class="section-lead" style="margin-bottom: 12px;">Type your name for the badge, then practice the first hello.</p>
+            <input type="text" class="text-input" id="liveBadgeInput" placeholder="Write your name..." style="width: 100%; max-width: 300px;" oninput="updateLiveBadge(this.value)">
+            <div class="trigger-list">
+              <div class="trigger-item">
+                <span>Hello! What's your name?</span>
+                <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-1.mp3', this)">&#9654; Listen</button>
+              </div>
+              <div class="trigger-item">
+                <span>My name is <span id="inlineBadgeName">___</span>.</span>
+                <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-2.mp3', this)">&#9654; Listen</button>
+              </div>
+              <div class="trigger-item">
+                <span>Again, please.</span>
+                <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-3.mp3', this)">&#9654; Listen</button>
+              </div>
+            </div>
+            <div class="audio-status-note" id="audioStatusGlobal"></div>
+          </div>
+          <div class="studio-lanyard-badge">
+            <div class="lanyard-top">L&amp;D Studio &middot; <span>Welcome Pass</span></div>
+            <div class="lanyard-body">
+              <div class="lanyard-label">HELLO, MY NAME IS</div>
+              <div class="lanyard-name" id="liveBadgePreview">Your Name</div>
+            </div>
+          </div>
         </div>
 
         <div class="module-footer-nav">
@@ -1154,23 +1239,33 @@
 
     <!-- ==================== 02 VOCABULARY ==================== -->
     <section class="module-panel" id="m2">
-      <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 02 Vocabulary <span class="teacher-note-badge">6 Words + Unscramble</span></summary>
-        <div class="teacher-note-body">
-          <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Have the student read each front card and click to flip for meaning. Notice examples use [P] <em>My ... is ...</em></div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Model word stress: <em>NICK-name</em>, <em>FIRST name</em>, <em>LAST name</em>. Contrast <em>I'm</em> vs <em>I am</em>.</div>
-            <div class="teacher-step-item"><strong>3. Check</strong>Run the Unscramble activity below. Ask the student to spell or say the solved word.</div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>Unscramble: 1. nickname &middot; 2. first name &middot; 3. last name &middot; 4. real name &middot; 5. easy &middot; 6. hard.</div>
-          </div>
-        </div>
-      </details>
-
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">02 &middot; Build</div>
           <h2 class="section-title">Key Words for Names</h2>
-          <p class="section-lead">Click any card to see the meaning. Listen to the word and the example.</p>
+          <p class="section-lead">Look at Carlos's studio pass, then click each card to see the meaning and listen.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2A: Visual Pass &amp; 6 Flip Cards <span class="teacher-note-badge">Meaning &rarr; Form &rarr; Pronunciation</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Presentar 6 piezas l&eacute;xicas de alto rendimiento en secuencia MFP (Significado &rarr; Forma &rarr; Pronunciaci&oacute;n) apoyadas en el gafete visual de Carlos.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Anclaje visual (Gafete)</strong>Se&ntilde;ala el pase de Carlos arriba: <em>"Carlos = first name. Rivera = last name. Beto = nickname."</em> Pide al alumno se&ntilde;alar su propio <em>first name</em> y <em>last name</em>.</div>
+              <div class="teacher-step-item"><strong>2. Pronunciaci&oacute;n cr&iacute;tica</strong>Vigila dos errores comunes de hispanohablantes: <em>nickname</em> con vocal corta /ɪ/ (no "neek-name") y acento en la primera palabra (<em>FIRST name, LAST name, NICK-name</em>).</div>
+              <div class="teacher-step-item"><strong>3. Contrastes de significado</strong>Contrasta <em>easy</em> vs. <em>hard</em> con nombres reales: <em>"Ana = easy. Maximiliano = hard!"</em></div>
+              <div class="teacher-step-item"><strong>4. Verificaci&oacute;n r&aacute;pida</strong>Sin voltear tarjetas, di: <em>"Rivera: first name or last name?"</em> (Last name). <em>"Beto: real name or nickname?"</em> (Nickname).</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="id-pass-visual">
+          <img class="id-pass-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Carlos Rivera studio pass">
+          <div class="id-pass-fields">
+            <div class="id-field"><div class="id-field-label">First Name</div><div class="id-field-val">Carlos</div></div>
+            <div class="id-field"><div class="id-field-label">Last Name</div><div class="id-field-val">Rivera</div></div>
+            <div class="id-field"><div class="id-field-label">Nickname</div><div class="id-field-val">Charly</div></div>
+          </div>
         </div>
 
         <div class="flip-grid">
@@ -1319,6 +1414,17 @@
           </div>
         </div>
 
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2B: Sound Focus (Intelligibility) <span class="teacher-note-badge">Phonology Drill</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Entrenar el o&iacute;do para distinguir contracci&oacute;n natural (<em>I'm</em> = 1 s&iacute;laba) frente a forma completa (<em>I am</em> = 2 s&iacute;labas) antes de escuchar el di&aacute;logo.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Contraste visual con dedos</strong>Levanta 2 dedos separados para <em>I / am</em> y j&uacute;ntalos en 1 golpe para <em>I'm</em>.</div>
+              <div class="teacher-step-item"><strong>2. Juego de discriminaci&oacute;n</strong>Di al azar <em>"I'm Mateo"</em> o <em>"I am Mateo"</em> y pide al alumno mostrar 1 o 2 dedos seg&uacute;n lo que escuche.</div>
+            </div>
+          </div>
+        </details>
+
         <div class="pron-contrast-box">
           <h3>Sound Focus: Clear Contractions</h3>
           <p class="section-lead">Listen to the difference between the full form and the short form.</p>
@@ -1333,6 +1439,18 @@
             </div>
           </div>
         </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2C: Unscramble the Word <span class="teacher-note-badge">Form Recall &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Verificar reconocimiento ortogr&aacute;fico activo de las 6 palabras sin caer en rellenar huecos mec&aacute;nicos.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado del &iacute;tem 1</strong>Resuelve el #1 junto con el alumno en voz alta antes de dejar los &iacute;tems 2–6 en trabajo aut&oacute;nomo.</div>
+              <div class="teacher-step-item"><strong>2. Cierre oral</strong>Al validar cada palabra correcta, pide al alumno leerla en voz alta con una frase propia (ej. <em>"My nickname is..."</em>).</div>
+              <div class="teacher-step-item"><strong>3. Answer Keys</strong>1. nickname &middot; 2. first name &middot; 3. last name &middot; 4. real name &middot; 5. easy &middot; 6. hard.</div>
+            </div>
+          </div>
+        </details>
 
         <div class="activity-box">
           <h3>Vocabulary Activity: Unscramble the Word</h3>
@@ -1349,23 +1467,32 @@
 
     <!-- ==================== 03 EVERYDAY EXPRESSIONS ==================== -->
     <section class="module-panel" id="m3">
-      <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 03 Everyday Expressions <span class="teacher-note-badge">Fixed Expressions</span></summary>
-        <div class="teacher-note-body">
-          <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Teach these 4 expressions as whole, fixed blocks. Do NOT analyze the grammar inside them.</div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Play each audio and drill natural rhythm: <em>"You can CALL me Lupe."</em></div>
-            <div class="teacher-step-item"><strong>3. Check</strong>Say a long or funny name and prompt the student to react with <em>"Again, please?"</em> or <em>"No, I'm serious!"</em></div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>Students should use at least two expressions naturally in Module 06 Speaking.</div>
-          </div>
-        </div>
-      </details>
-
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">03 &middot; Notice</div>
           <h2 class="section-title">Everyday Expressions</h2>
           <p class="section-lead">Learn each phrase as one complete block. Click a card to see when to use it.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 3A: Pragmatic Chunks Presentation <span class="teacher-note-badge">Whole-Block Drilling</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Incorporar 4 bloques pragm&aacute;ticos reales de primer encuentro <strong>sin analizar su gram&aacute;tica interna</strong> (prohibido explicar el modal <em>can</em> en <em>You can call me</em> o el infinitivo en <em>put a face to the name</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Contextualizaci&oacute;n con foto</strong>Se&ntilde;ala la imagen de encuentro presencial: <em>"Messages on the phone first... now in person! 'Nice to finally put a face to the name!'"</em></div>
+              <div class="teacher-step-item"><strong>2. Back-chaining (frase larga)</strong>Para <em>Nice to finally put a face to the name</em>, repite desde el final: <em>"to the name" &rarr; "a face to the name" &rarr; "put a face to the name" &rarr; frase completa.</em></div>
+              <div class="teacher-step-item"><strong>3. Mini-reacci&oacute;n en vivo</strong>Di un apodo gracioso (ej. <em>"My nickname is Taco"</em>) con cara seria y provoca que el alumno repita <em>"No, I'm serious!"</em> con entonaci&oacute;n expresiva.</div>
+              <div class="teacher-step-item"><strong>4. Meta de transferencia</strong>Avisa al alumno que estas frases aparecer&aacute;n en el audio siguiente (M&oacute;dulo 04) y que elegir&aacute; al menos una en el Speaking (M&oacute;dulo 06).</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="scene-banner">
+          <img class="scene-banner-photo" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Two people meeting in person for the first time">
+          <div class="scene-banner-body">
+            <h3>Meeting in Person for the First Time</h3>
+            <p>You know someone's name from messages or email&mdash;now you finally meet face to face. These 4 everyday phrases make the first 10 seconds natural.</p>
+          </div>
         </div>
 
         <div class="flip-grid">
@@ -1467,26 +1594,37 @@
 
     <!-- ==================== 04 LISTENING ==================== -->
     <section class="module-panel" id="m4">
-      <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 04 Listening <span class="teacher-note-badge">Transcript Hidden First</span></summary>
-        <div class="teacher-note-body">
-          <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Keep the transcript hidden! Play the studio audio once for gist, then a second time for details.</div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Ask: <em>"Is his name Mateo? Yes or No?"</em> before checking all 4 items.</div>
-            <div class="teacher-step-item"><strong>3. Check</strong>Have the student answer Yes/No, then open the transcript to notice <em>I'm / I'm not / Are you...?</em></div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>1. No (he is Mateo) &middot; 2. Yes (real name: Mateo) &middot; 3. No (nickname: Teo) &middot; 4. Yes (last name is hard).</div>
-          </div>
-        </div>
-      </details>
-
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">04 &middot; Notice in Context</div>
           <h2 class="section-title">At the Studio Check-In</h2>
-          <p class="section-lead">Listen to Nora and Mateo first. Do not open the text until you finish the questions.</p>
+          <p class="section-lead">Listen to Nora and Mateo first. Keep the transcript closed until you finish the questions.</p>
         </div>
 
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 4A: Pre-Listening &amp; Independent Listening <span class="teacher-note-badge">Transcript Hidden</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Desarrollar comprensi&oacute;n auditiva real (sin lectura simult&aacute;nea) y exponer inductivamente al alumno a <em>I'm / I'm not / Are you...?</em> en contexto natural.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Pre-Listening (30 seg)</strong>Se&ntilde;ala los retratos de Nora y Mateo: <em>"Nora is at the desk. Mateo arrives. Listen: What is Mateo's nickname?"</em></div>
+              <div class="teacher-step-item"><strong>2. Escucha 1 (Idea general)</strong>Reproduce el audio completo sin pausar y con la transcripci&oacute;n cerrada. Pregunta solo: <em>"Teo or Kiwi?"</em> (Teo).</div>
+              <div class="teacher-step-item"><strong>3. Escucha 2 (Detalle)</strong>Reproduce una segunda vez para que el alumno responda los 4 reactivos Yes/No de abajo.</div>
+              <div class="teacher-step-item"><strong>4. Si el audio de estudio no est&aacute; cargado</strong>L&eacute;elo t&uacute; en voz clara a velocidad A1.1 usando el guion del Teacher's Hub (manteniendo oculta la pantalla del texto al alumno).</div>
+            </div>
+          </div>
+        </details>
+
         <div class="listening-stage">
+          <div class="listening-speakers">
+            <div class="speaker-pill">
+              <img class="speaker-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Nora">
+              <div><strong>Nora</strong><div style="font-size:0.75rem; color: var(--slate-300);">Studio Host</div></div>
+            </div>
+            <div class="speaker-pill">
+              <img class="speaker-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" alt="Mateo">
+              <div><strong>Mateo</strong><div style="font-size:0.75rem; color: var(--slate-300);">New Guest</div></div>
+            </div>
+          </div>
           <div class="listening-stage-top">
             <div>
               <strong>Audio Track: Studio Check-In</strong>
@@ -1509,6 +1647,17 @@
           </div>
         </div>
 
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 4B: Comprehension &amp; Grammar Noticing <span class="teacher-note-badge">Inductive Bridge</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Comprobar comprensi&oacute;n y usar la transcripci&oacute;n <em>despu&eacute;s</em> de responder para que el alumno descubra la gram&aacute;tica antes de abrir el M&oacute;dulo 05.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Answer Keys</strong>1. No (he is Mateo / Teo) &middot; 2. Yes &middot; 3. No (nickname is Teo) &middot; 4. Yes (Valdovinos is hard).</div>
+              <div class="teacher-step-item"><strong>2. Puente inductivo (Noticing)</strong>Abre la transcripci&oacute;n y se&ntilde;ala: <em>"Look at Mateo: 'I'm Mateo' (+) vs. 'I'm not Kiwi' (&minus;). Look at Nora: 'Are you Mateo?'"</em> Pasa al M&oacute;dulo 05.</div>
+            </div>
+          </div>
+        </details>
+
         <div class="comp-list" id="listeningCompList"></div>
 
         <div class="module-footer-nav">
@@ -1520,23 +1669,42 @@
 
     <!-- ==================== 05 GRAMMAR ==================== -->
     <section class="module-panel" id="m5">
-      <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 05 Grammar <span class="teacher-note-badge">I / you + To Be + My</span></summary>
-        <div class="teacher-note-body">
-          <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Scope strictly limited to <em>I, you</em> + <em>am / are</em> + <em>My</em>. Do NOT introduce <em>he/she/they</em> here.</div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Point out <em>am</em> goes with <em>I</em>, and <em>are</em> goes with <em>you</em>.</div>
-            <div class="teacher-step-item"><strong>3. Check</strong>In Error Clinic, let the student find the mistake without hints. Then build sentences in the Wordbox.</div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>Clinic: 1. I am / I'm Carlos &middot; 2. You are / You're funny &middot; 3. Are you Mateo? &middot; 4. I'm not Kiwi &middot; 5. My name is Nora.</div>
-          </div>
-        </div>
-      </details>
-
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">05 &middot; Understand &amp; Practice</div>
           <h2 class="section-title">I, You &amp; To Be</h2>
           <p class="section-lead">Use <strong>I am (I'm)</strong> to talk about yourself, and <strong>You are (You're)</strong> to talk to another person. Use <strong>My</strong> for your name.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5A: Guided Discovery (I / You + To Be + My) <span class="teacher-note-badge">Strict Scope [N]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>L&iacute;mite estricto [F]:</strong> Ense&ntilde;a &uacute;nicamente <em>I, you, My</em> + <em>am / are</em>. No adelantes <em>he/she/they</em> (eso es L02) ni verbos de acci&oacute;n (<em>work, live, like</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Anclaje f&iacute;sico</strong>Se&ntilde;&aacute;late el pecho: <em>"I am [Tu Nombre]. I'm [Tu Nombre]."</em> Se&ntilde;ala con palma abierta al alumno: <em>"You are [Alumno]. You're [Alumno]."</em></div>
+              <div class="teacher-step-item"><strong>2. Interferencia L1 (Espa&ntilde;ol)</strong>En espa&ntilde;ol se omite el sujeto ("Soy Carlos"). Recalca que en ingl&eacute;s <strong>siempre</strong> necesitamos <em>I</em> o <em>You</em> (nunca <em>"Am Carlos"</em>).</div>
+              <div class="teacher-step-item"><strong>3. Pregunta Yes/No (Inversi&oacute;n)</strong>Muestra visualmente el cruce: <em>You are Mateo</em> &rarr; <em>Are you Mateo?</em> Practica 3 rondas r&aacute;pidas de <em>Yes, I am / No, I'm not</em>.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="pronoun-visual-grid">
+          <div class="pronoun-visual-card">
+            <img class="pronoun-visual-photo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=220&q=80" alt="I am Mateo">
+            <div>
+              <div class="section-kicker" style="margin-bottom:2px;">Self</div>
+              <div style="font-size:1.05rem; font-weight:800; color:var(--navy-900);">I am / I'm &middot; My</div>
+              <div style="font-size:0.86rem; color:var(--slate-600);">"I'm Mateo. My nickname is Teo."</div>
+            </div>
+          </div>
+          <div class="pronoun-visual-card">
+            <img class="pronoun-visual-photo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=220&q=80" alt="You are Nora">
+            <div>
+              <div class="section-kicker" style="margin-bottom:2px;">Partner</div>
+              <div style="font-size:1.05rem; font-weight:800; color:var(--navy-900);">You are / You're</div>
+              <div style="font-size:0.86rem; color:var(--slate-600);">"You're Nora. Are you Nora?"</div>
+            </div>
+          </div>
         </div>
 
         <div class="grammar-table-wrap">
@@ -1568,11 +1736,34 @@
           </table>
         </div>
 
-        <div class="activity-box" style="margin-bottom: 22px;">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5B: Error Clinic (Find &amp; Fix) <span class="teacher-note-badge">Zero Red Hints &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Desarrollar automonitoreo real. Los errores no est&aacute;n subrayados ni marcados en rojo a prop&oacute;sito para que el alumno detecte la discordancia por s&iacute; mismo.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. T&eacute;cnica de andamiaje</strong>Si el alumno no ve el error en #1 (<em>I are Carlos</em>), pregunta: <em>"Look at the table: I + am or I + are?"</em> Nunca des la respuesta directa de inmediato.</div>
+              <div class="teacher-step-item"><strong>2. Foco en #4 y #5</strong>#4 trabaja el orden de <em>not</em> despu&eacute;s de <em>am</em> (error cl&aacute;sico del espa&ntilde;ol "Yo no soy"). #5 contrasta <em>I</em> vs. <em>My</em>.</div>
+              <div class="teacher-step-item"><strong>3. Answer Keys</strong>1. I am / I'm Carlos. &middot; 2. You are / You're funny. &middot; 3. Are you Mateo? &middot; 4. I am not / I'm not Kiwi. &middot; 5. My name is Nora.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="activity-box">
           <h3>Grammar in Context A: Error Clinic (Find &amp; Fix)</h3>
           <p class="section-lead">Each sentence has one mistake. Find it and write the correct sentence.</p>
           <div class="clinic-list" id="errorClinicList"></div>
         </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5C: Wordbox Sentence Builder <span class="teacher-note-badge">Syntax Consolidation</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Consolidar el orden de palabras en oraciones negativas, preguntas Yes/No y bloques funcionales.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Pista de may&uacute;scula y puntuaci&oacute;n</strong>Gu&iacute;a al alumno a observar la letra may&uacute;scula (inicio) y el punto o signo <code>?</code> (final) antes de armar la frase.</div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. I'm not Leo. &middot; 2. Are you Sofia? &middot; 3. You can call me Paco. &middot; 4. My name is hard.</div>
+            </div>
+          </div>
+        </details>
 
         <div class="activity-box">
           <h3>Grammar in Context B: Wordbox Sentence Builder</h3>
@@ -1589,18 +1780,6 @@
 
     <!-- ==================== 06 SPEAKING ==================== -->
     <section class="module-panel" id="m6">
-      <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 06 Speaking <span class="teacher-note-badge">Roleplay + Checklist</span></summary>
-        <div class="teacher-note-body">
-          <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Student picks one Secret Name Card below (do not show partner). You play the check-in host.</div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Ask: <em>"Hello! Are you Leo?"</em> Student answers with <em>No, I'm not...</em> and uses a chunk.</div>
-            <div class="teacher-step-item"><strong>3. Check</strong>Verify the 4 checklist items are demonstrated aloud without reading from a script.</div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>Evidence: 1 greeting, 1 negative correction (<em>I'm not</em>), 1 chunk, 1 question back (<em>What's your name?</em>).</div>
-          </div>
-        </div>
-      </details>
-
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">06 &middot; Communicate</div>
@@ -1608,24 +1787,46 @@
           <p class="section-lead">Pick one card. Meet your partner at the studio desk. Confirm your real name and share your nickname!</p>
         </div>
 
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 6A: Roleplay Facilitation &amp; Observation <span class="teacher-note-badge">Performance Task</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Generar producci&oacute;n oral espont&aacute;nea con vac&iacute;o de informaci&oacute;n real (el docente o compa&ntilde;ero no sabe qu&eacute; tarjeta eligi&oacute; el alumno y debe adivinar/confirmar).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Provocaci&oacute;n de negaci&oacute;n</strong>Inicia el roleplay adivinando el nombre <strong>incorrecto</strong> a prop&oacute;sito: <em>"Good morning! Are you Leo?"</em> Esto obliga al alumno a producir <em>"No, I'm not! I'm..."</em></div>
+              <div class="teacher-step-item"><strong>2. Provocaci&oacute;n de reparaci&oacute;n</strong>Cuando diga su apellido dif&iacute;cil (Quintero / Echeverria), pregunta <em>"Again, please?"</em> para invitarlo a usar <em>"You can call me Max/Paco."</em></div>
+              <div class="teacher-step-item"><strong>3. Correcci&oacute;n diferida</strong>No interrumpas durante el di&aacute;logo; anota 1–2 errores reales y da retroalimentaci&oacute;n breve al terminar la ronda, luego repite con otra tarjeta.</div>
+              <div class="teacher-step-item"><strong>4. Evidencia E2/E3</strong>Logra saludo + <em>I'm</em> + correcci&oacute;n <em>No, I'm not</em> + pregunta de vuelta (<em>What's your name?</em>) + al menos 1 Everyday Expression sin leer guion.</div>
+            </div>
+          </div>
+        </details>
+
         <div class="secret-cards-grid">
           <div class="secret-card" onclick="selectSecretCard(this)">
-            <div class="secret-card-tag">CARD A</div>
-            <div><strong>First Name:</strong> Maximiliano</div>
-            <div><strong>Last Name:</strong> Quintero (hard!)</div>
-            <div><strong>Nickname:</strong> Max</div>
+            <img class="secret-card-photo" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Maximiliano card">
+            <div class="secret-card-body">
+              <div class="secret-card-tag">CARD A</div>
+              <div><strong>First Name:</strong> Maximiliano</div>
+              <div><strong>Last Name:</strong> Quintero (hard!)</div>
+              <div><strong>Nickname:</strong> Max</div>
+            </div>
           </div>
           <div class="secret-card" onclick="selectSecretCard(this)">
-            <div class="secret-card-tag">CARD B</div>
-            <div><strong>First Name:</strong> Guadalupe</div>
-            <div><strong>Last Name:</strong> Mendoza</div>
-            <div><strong>Nickname:</strong> Lupe</div>
+            <img class="secret-card-photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Guadalupe card">
+            <div class="secret-card-body">
+              <div class="secret-card-tag">CARD B</div>
+              <div><strong>First Name:</strong> Guadalupe</div>
+              <div><strong>Last Name:</strong> Mendoza</div>
+              <div><strong>Nickname:</strong> Lupe</div>
+            </div>
           </div>
           <div class="secret-card" onclick="selectSecretCard(this)">
-            <div class="secret-card-tag">CARD C</div>
-            <div><strong>First Name:</strong> Francisco</div>
-            <div><strong>Last Name:</strong> Echeverria (hard!)</div>
-            <div><strong>Nickname:</strong> Paco</div>
+            <img class="secret-card-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Francisco card">
+            <div class="secret-card-body">
+              <div class="secret-card-tag">CARD C</div>
+              <div><strong>First Name:</strong> Francisco</div>
+              <div><strong>Last Name:</strong> Echeverria (hard!)</div>
+              <div><strong>Nickname:</strong> Paco</div>
+            </div>
           </div>
         </div>
 
@@ -1648,24 +1849,24 @@
 
     <!-- ==================== 07 EXIT TICKET ==================== -->
     <section class="module-panel" id="m7">
-      <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 07 Exit Ticket <span class="teacher-note-badge">Evidence Check</span></summary>
-        <div class="teacher-note-body">
-          <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Student writes 3–4 isolated sentences in the blank space without copying from earlier tabs.</div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Prompt orally: <em>"Write your name, your nickname (real or fun), and one 'I'm not' sentence."</em></div>
-            <div class="teacher-step-item"><strong>3. Check</strong>Check capital <em>I</em>, capital names, apostrophe in <em>I'm / I'm not</em>, and period/question mark.</div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>Advance only if student produces accurate <em>I am / I'm not</em> and <em>My name is...</em> independently.</div>
-          </div>
-        </div>
-      </details>
-
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">07 &middot; Reflect</div>
           <h2 class="section-title">Exit Ticket</h2>
           <p class="section-lead">Write 3 or 4 short sentences about your name, your nickname, and one thing you are not.</p>
         </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 7A: Written Evidence &amp; Advancement Decision <span class="teacher-note-badge">Understanding Before Advancement</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Recoger micro-producci&oacute;n escrita aut&oacute;noma (espacio totalmente en blanco, sin copiar) para decidir el avance a L02 bajo el principio <em>Understanding Comes Before Advancement</em>.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Condici&oacute;n de evidencia</strong>Pide al alumno escribir sin regresar a la pesta&ntilde;a 05. Puede usar datos reales o ficticios.</div>
+              <div class="teacher-step-item"><strong>2. Qu&eacute; revisar en escritura A1.1</strong>1) <em>I</em> siempre en may&uacute;scula &middot; 2) May&uacute;scula en nombres propios &middot; 3) Ap&oacute;strofo en <em>I'm / I'm not</em> &middot; 4) Punto final.</div>
+              <div class="teacher-step-item"><strong>3. Decisi&oacute;n de avance</strong>Si demuestra E2/E3 (afirmaci&oacute;n + negaci&oacute;n + posesivo <em>My</em>), asigna <em>Explore</em> y avanza a L02. Si muestra E0/E1, refuerza con <em>Explore</em> Part 02 antes de avanzar.</div>
+            </div>
+          </div>
+        </details>
 
         <textarea class="exit-textarea" id="exitTicketInput" aria-label="Exit Ticket response"></textarea>
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
@@ -1690,7 +1891,12 @@
 
   <footer class="studio-site-footer">
     <div class="footer-inner">
-      <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Story Behind Your Name (A1.1)</div>
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Story Behind Your Name (A1.1)</div>
+      </div>
       <a href="../../../teacher-hub/A1.1/the-story-behind-your-name/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
     </div>
   </footer>
@@ -1699,7 +1905,7 @@
   <div class="modal-backdrop" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
     <div class="modal-card">
       <h3 id="pinModalTitle">Teacher's Version</h3>
-      <p>Enter your faculty PIN to show step-by-step teaching notes and answer keys.</p>
+      <p>Enter your authorized faculty PIN to unlock step-by-step didactic sequences and answer keys.</p>
       <input type="password" id="pinInput" class="text-input" style="width: 100%;" placeholder="Faculty PIN" onkeydown="if(event.key==='Enter')submitPin()">
       <div class="audio-status-note" id="pinError" style="color: var(--danger-600);"></div>
       <div class="modal-actions">
@@ -1710,7 +1916,6 @@
   </div>
 
   <script>
-    // === STUDENT NAME & TEACHER PIN ===
     function loadStudentName() {
       let name = '';
       try {
@@ -1763,7 +1968,7 @@
       document.getElementById('pinModal').classList.remove('is-open');
     }
     function submitPin() {
-      const val = document.getElementById('pinInput').value.trim().toLowerCase();
+      const val = document.getElementById('pinInput').value.trim();
       if (VALID_PINS.includes(val)) {
         try { sessionStorage.setItem('ld-coordinator-auth', 'granted'); } catch (_) {}
         setTeacherMode(true);
@@ -1773,7 +1978,6 @@
       }
     }
 
-    // === SEGMENTED TAB NAVIGATION ===
     const tabs = document.querySelectorAll('.module-tab');
     const panels = document.querySelectorAll('.module-panel');
     function goToTab(tabId) {
@@ -1787,14 +1991,10 @@
     }
     tabs.forEach(t => t.addEventListener('click', () => goToTab(t.dataset.tab)));
 
-    // === REAL AUDIO PLAYER (NO TTS) ===
     let currentAudio = null;
     function playLessonAudio(src, btn) {
       const statusEl = document.getElementById('audioStatusGlobal');
-      if (currentAudio) {
-        currentAudio.pause();
-        currentAudio = null;
-      }
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
       const audio = new Audio(src);
       currentAudio = audio;
       const orig = btn.innerHTML;
@@ -1804,22 +2004,33 @@
       }).catch(() => {
         btn.innerHTML = orig;
         const fileName = src.split('/').pop();
-        if (statusEl) {
-          statusEl.textContent = 'Studio audio file queued: ' + fileName;
-        }
+        if (statusEl) statusEl.textContent = 'Studio audio file queued: ' + fileName;
       });
       audio.onended = () => { btn.innerHTML = orig; };
     }
 
-    // === 01 WARM-UP POLL ===
-    function selectPoll(btn, reply) {
-      const card = btn.closest('.poll-card');
-      card.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      card.querySelector('.poll-reply').textContent = reply;
+    function updateNameMeter(val) {
+      const n = Number(val);
+      document.getElementById('nameMeterScore').textContent = n + ' / 10';
+      const label = document.getElementById('nameMeterLabel');
+      if (n <= 3) label.textContent = 'Not happy!';
+      else if (n <= 6) label.textContent = 'It is okay.';
+      else if (n <= 8) label.textContent = 'Good name!';
+      else label.textContent = 'Super happy!';
     }
 
-    // === 02 UNSCRAMBLE ===
+    function selectOrigin(btn, msg) {
+      document.querySelectorAll('.origin-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('originReply').textContent = msg;
+    }
+
+    function updateLiveBadge(val) {
+      const clean = val.trim();
+      document.getElementById('liveBadgePreview').textContent = clean || 'Your Name';
+      document.getElementById('inlineBadgeName').textContent = clean || '___';
+    }
+
     const unscrambleItems = [
       { scrambled: 'K I C N M A N E', clue: 'Short or funny name from friends', answer: 'nickname' },
       { scrambled: 'R I F S T   M A N E', clue: 'Your main personal name', answer: 'first name' },
@@ -1850,16 +2061,10 @@
     function checkUnscramble(idx) {
       const val = document.getElementById('unscr-' + idx).value.trim().toLowerCase();
       const st = document.getElementById('unscr-st-' + idx);
-      if (val === unscrambleItems[idx].answer) {
-        st.className = 'status-pill status-ok';
-        st.textContent = 'Correct';
-      } else {
-        st.className = 'status-pill status-err';
-        st.textContent = 'Try again';
-      }
+      st.className = 'status-pill ' + (val === unscrambleItems[idx].answer ? 'status-ok' : 'status-err');
+      st.textContent = val === unscrambleItems[idx].answer ? 'Correct' : 'Try again';
     }
 
-    // === 04 LISTENING ===
     const compItems = [
       { q: '1. Is his name Kiwi?', ans: 'No' },
       { q: '2. Is his real first name Mateo?', ans: 'Yes' },
@@ -1887,13 +2092,8 @@
       row.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
       const st = document.getElementById('comp-st-' + idx);
-      if (choice === compItems[idx].ans) {
-        st.className = 'status-pill status-ok';
-        st.textContent = 'Correct';
-      } else {
-        st.className = 'status-pill status-err';
-        st.textContent = 'Listen again';
-      }
+      st.className = 'status-pill ' + (choice === compItems[idx].ans ? 'status-ok' : 'status-err');
+      st.textContent = choice === compItems[idx].ans ? 'Correct' : 'Listen again';
     }
     function toggleTranscript() {
       const panel = document.getElementById('transcriptPanel');
@@ -1902,7 +2102,6 @@
       btn.textContent = open ? 'Hide Transcript' : 'Show Transcript (after listening)';
     }
 
-    // === 05 GRAMMAR: ERROR CLINIC (NO RED HIGHLIGHTING) ===
     const clinicItems = [
       { broken: 'I are Carlos.', fixes: ["i am carlos.", "i'm carlos."] },
       { broken: 'You is funny.', fixes: ["you are funny.", "you're funny."] },
@@ -1929,16 +2128,10 @@
     function checkClinic(idx) {
       const val = document.getElementById('clinic-' + idx).value.trim().toLowerCase().replace(/\s+/g, ' ');
       const st = document.getElementById('clinic-st-' + idx);
-      if (clinicItems[idx].fixes.includes(val)) {
-        st.className = 'status-pill status-ok';
-        st.textContent = 'Fixed!';
-      } else {
-        st.className = 'status-pill status-err';
-        st.textContent = 'Check I / you / My';
-      }
+      st.className = 'status-pill ' + (clinicItems[idx].fixes.includes(val) ? 'status-ok' : 'status-err');
+      st.textContent = clinicItems[idx].fixes.includes(val) ? 'Fixed!' : 'Check I / you / My';
     }
 
-    // === 05 GRAMMAR: WORDBOX ===
     const wordboxItems = [
       { tokens: ['not', "I'm", 'Leo.'], answer: "I'm not Leo." },
       { tokens: ['you', 'Are', 'Sofia?'], answer: 'Are you Sofia?' },
@@ -1989,22 +2182,15 @@
     function checkWordbox(idx) {
       const built = wordboxState[idx].join(' ');
       const st = document.getElementById('wb-st-' + idx);
-      if (built === wordboxItems[idx].answer) {
-        st.className = 'status-pill status-ok';
-        st.textContent = 'Correct!';
-      } else {
-        st.className = 'status-pill status-err';
-        st.textContent = 'Try again';
-      }
+      st.className = 'status-pill ' + (built === wordboxItems[idx].answer ? 'status-ok' : 'status-err');
+      st.textContent = built === wordboxItems[idx].answer ? 'Correct!' : 'Try again';
     }
 
-    // === 06 SECRET CARD ===
     function selectSecretCard(card) {
       document.querySelectorAll('.secret-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
     }
 
-    // === 07 EXIT TICKET ===
     function saveExitTicket() {
       const val = document.getElementById('exitTicketInput').value.trim();
       const st = document.getElementById('exitTicketStatus');
@@ -2018,7 +2204,6 @@
       st.textContent = 'Saved! Share your sentences with your teacher.';
     }
 
-    // === INIT ===
     window.addEventListener('DOMContentLoaded', () => {
       loadStudentName();
       const params = new URLSearchParams(window.location.search);
