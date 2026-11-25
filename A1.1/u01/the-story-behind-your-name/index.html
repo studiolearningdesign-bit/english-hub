@@ -531,14 +531,26 @@
       -webkit-backface-visibility: hidden;
       border-radius: var(--radius-md);
       border: 1px solid var(--slate-200);
-      padding: 20px;
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+      align-items: stretch;
       text-align: center;
       background: var(--white);
       box-shadow: var(--shadow-sm);
+    }
+    .flip-front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+    }
+    .flip-word-group {
+      flex: 1;
+      min-width: 0;
+      padding-right: 6px;
     }
     .flip-back {
       transform: rotateY(180deg);
@@ -546,33 +558,45 @@
       color: var(--white);
       border-color: var(--navy-800);
       justify-content: center;
+      align-items: center;
       gap: 12px;
     }
     .flip-pos {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.72rem;
       font-weight: 700;
-      text-transform: uppercase;
+      text-transform: lowercase;
       color: var(--teal-700);
       background: var(--teal-50);
       padding: 3px 10px;
       border-radius: var(--radius-full);
+      flex-shrink: 0;
+      margin-top: 2px;
     }
     .flip-word {
-      font-size: 1.32rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: var(--navy-900);
-      line-height: 1.2;
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+    }
+    .flip-word-chunk {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
     }
     .flip-ipa {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.8rem;
       color: var(--slate-500);
+      margin-top: 4px;
     }
     .flip-example {
       font-size: 0.9rem;
       color: var(--slate-700);
       font-weight: 500;
+      text-align: center;
     }
     .flip-audio-row {
       display: flex;
@@ -1045,7 +1069,7 @@
     <nav class="module-nav-grid" role="tablist" aria-label="Lesson Modules">
       <button type="button" class="module-tab active" data-tab="m1" role="tab" aria-selected="true"><span class="tab-num">01</span> Warm-Up</button>
       <button type="button" class="module-tab" data-tab="m2" role="tab" aria-selected="false"><span class="tab-num">02</span> Vocabulary</button>
-      <button type="button" class="module-tab" data-tab="m3" role="tab" aria-selected="false"><span class="tab-num">03</span> USA Chunks</button>
+      <button type="button" class="module-tab" data-tab="m3" role="tab" aria-selected="false"><span class="tab-num">03</span> Everyday Expressions</button>
       <button type="button" class="module-tab" data-tab="m4" role="tab" aria-selected="false"><span class="tab-num">04</span> Listening</button>
       <button type="button" class="module-tab" data-tab="m5" role="tab" aria-selected="false"><span class="tab-num">05</span> Grammar</button>
       <button type="button" class="module-tab" data-tab="m6" role="tab" aria-selected="false"><span class="tab-num">06</span> Speaking</button>
@@ -1055,13 +1079,13 @@
     <!-- ==================== 01 WARM-UP ==================== -->
     <section class="module-panel active" id="m1">
       <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 01 Warm-Up <span class="teacher-note-badge">P Only</span></summary>
+        <summary>Teacher's Guide &middot; 01 Warm-Up <span class="teacher-note-badge">Strict [P] Only</span></summary>
         <div class="teacher-note-body">
           <div class="teacher-steps-grid">
-            <div class="teacher-step-item"><strong>1. Setup</strong>Greet the student using <em>Hello!</em> and <em>What's your name?</em> Keep strictly to [P] frames.</div>
-            <div class="teacher-step-item"><strong>2. Modeling</strong>Click one reaction option yourself first: <em>"My name is [Name]. Yes, it is good!"</em></div>
-            <div class="teacher-step-item"><strong>3. Check</strong>Have the student click their answers and say one short [P] line aloud.</div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>Open-ended personal activation. Accept any valid <em>Yes / No / My name is...</em> response.</div>
+            <div class="teacher-step-item"><strong>1. Setup</strong>Use ONLY Pre-A1 [P] frames: <em>Hello! What's your name? My name is... Again, please. Yes / No.</em></div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Point to Card 1 (coffee cup label): <em>"Carlos... Carloss? No!"</em> Demonstrate clicking Yes or No.</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>Have the student check the 3 name labels and do a 3-line [P] greeting exchange aloud.</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>1. No (Carloss) &middot; 2. Yes (Sofia) &middot; 3. No (Beto vs. Bety). Do not introduce [N] grammar yet.</div>
           </div>
         </div>
       </details>
@@ -1069,44 +1093,52 @@
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">01 &middot; Engage</div>
-          <h2 class="section-title">Name Check: How Do You Feel About Your Name?</h2>
-          <p class="section-lead">Click your answer, then say your name aloud.</p>
+          <h2 class="section-title">Coffee Cup Name Check</h2>
+          <p class="section-lead">Look at the name on each cup. Click <strong>Yes</strong> or <strong>No</strong>.</p>
         </div>
 
         <div class="poll-grid">
           <div class="poll-card">
-            <div class="poll-question">1. Your name: is it good or funny?</div>
+            <div class="poll-question">Person: <strong>Carlos</strong> &rarr; Cup: <span class="font-mono">CARLOSS</span></div>
             <div class="poll-options">
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Yes! Good name.')">Good</button>
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Okay!')">Okay</button>
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Haha, funny!')">Funny</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Look again: Carlos vs. Carloss.')">Yes</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'No! Again, please: Carlos.')">No</button>
             </div>
             <div class="poll-reply"></div>
           </div>
 
           <div class="poll-card">
-            <div class="poll-question">2. In a cafe, is your name a problem?</div>
+            <div class="poll-question">Person: <strong>Sofia</strong> &rarr; Cup: <span class="font-mono">SOFIA</span></div>
             <div class="poll-options">
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Yes! Spell it again, please!')">Yes</button>
-              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'No, no problem.')">No</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Yes! Sofia. Thank you!')">Yes</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Look again: Sofia = SOFIA.')">No</button>
+            </div>
+            <div class="poll-reply"></div>
+          </div>
+
+          <div class="poll-card">
+            <div class="poll-question">Person: <strong>Mateo</strong> &rarr; Cup: <span class="font-mono">MATIO</span></div>
+            <div class="poll-options">
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Look again: Mateo vs. Matio.')">Yes</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'No! Again, please: Mateo.')">No</button>
             </div>
             <div class="poll-reply"></div>
           </div>
         </div>
 
         <div class="trigger-questions">
-          <h3>Ask &amp; Answer</h3>
+          <h3>First Hello (Pre-A1 Review)</h3>
           <div class="trigger-list">
             <div class="trigger-item">
               <span>Hello! What's your name?</span>
               <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-1.mp3', this)">&#9654; Listen</button>
             </div>
             <div class="trigger-item">
-              <span>My name is... Is that right?</span>
+              <span>My name is ___.</span>
               <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-2.mp3', this)">&#9654; Listen</button>
             </div>
             <div class="trigger-item">
-              <span>Again, please!</span>
+              <span>Again, please.</span>
               <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-3.mp3', this)">&#9654; Listen</button>
             </div>
           </div>
@@ -1145,10 +1177,12 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">noun</span>
-                <div>
-                  <div class="flip-word">first name</div>
-                  <div class="flip-ipa">/fɜːrst neɪm/</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">first name</div>
+                    <div class="flip-ipa">/fɜːrst neɪm/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
                 </div>
                 <div class="flip-example">"My first name is Carlos."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1167,10 +1201,12 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">noun</span>
-                <div>
-                  <div class="flip-word">last name</div>
-                  <div class="flip-ipa">/læst neɪm/</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">last name</div>
+                    <div class="flip-ipa">/læst neɪm/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
                 </div>
                 <div class="flip-example">"My last name is Rivera."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1189,10 +1225,12 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">noun</span>
-                <div>
-                  <div class="flip-word">nickname</div>
-                  <div class="flip-ipa">/ˈnɪkneɪm/</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">nickname</div>
+                    <div class="flip-ipa">/ˈnɪkneɪm/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
                 </div>
                 <div class="flip-example">"My nickname is Beto."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1211,10 +1249,12 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">noun</span>
-                <div>
-                  <div class="flip-word">real name</div>
-                  <div class="flip-ipa">/ˈrɪəl neɪm/</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">real name</div>
+                    <div class="flip-ipa">/ˈrɪəl neɪm/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
                 </div>
                 <div class="flip-example">"My real name is Sofia."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1233,10 +1273,12 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">adjective</span>
-                <div>
-                  <div class="flip-word">easy</div>
-                  <div class="flip-ipa">/ˈiːzi/</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">easy</div>
+                    <div class="flip-ipa">/ˈiːzi/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
                 </div>
                 <div class="flip-example">"My name is easy."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1255,10 +1297,12 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">adjective</span>
-                <div>
-                  <div class="flip-word">hard</div>
-                  <div class="flip-ipa">/hɑːrd/</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">hard</div>
+                    <div class="flip-ipa">/hɑːrd/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
                 </div>
                 <div class="flip-example">"My last name is hard."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1298,21 +1342,21 @@
 
         <div class="module-footer-nav">
           <button type="button" class="btn btn-outline" onclick="goToTab('m1')">&larr; Previous</button>
-          <button type="button" class="btn btn-primary" onclick="goToTab('m3')">Next: USA Chunks &rarr;</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m3')">Next: Everyday Expressions &rarr;</button>
         </div>
       </div>
     </section>
 
-    <!-- ==================== 03 USA CHUNKS ==================== -->
+    <!-- ==================== 03 EVERYDAY EXPRESSIONS ==================== -->
     <section class="module-panel" id="m3">
       <details class="teacher-note-box">
-        <summary>Teacher's Guide &middot; 03 USA Chunks <span class="teacher-note-badge">Fixed Expressions</span></summary>
+        <summary>Teacher's Guide &middot; 03 Everyday Expressions <span class="teacher-note-badge">Fixed Expressions</span></summary>
         <div class="teacher-note-body">
           <div class="teacher-steps-grid">
             <div class="teacher-step-item"><strong>1. Setup</strong>Teach these 4 expressions as whole, fixed blocks. Do NOT analyze the grammar inside them.</div>
             <div class="teacher-step-item"><strong>2. Modeling</strong>Play each audio and drill natural rhythm: <em>"You can CALL me Lupe."</em></div>
             <div class="teacher-step-item"><strong>3. Check</strong>Say a long or funny name and prompt the student to react with <em>"Again, please?"</em> or <em>"No, I'm serious!"</em></div>
-            <div class="teacher-step-item"><strong>4. Keys</strong>Students should use at least two chunks naturally in Module 06 Speaking.</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>Students should use at least two expressions naturally in Module 06 Speaking.</div>
           </div>
         </div>
       </details>
@@ -1320,7 +1364,7 @@
       <div class="section-card">
         <div class="section-header">
           <div class="section-kicker">03 &middot; Notice</div>
-          <h2 class="section-title">Real-Life Expressions (USA Chunks)</h2>
+          <h2 class="section-title">Everyday Expressions</h2>
           <p class="section-lead">Learn each phrase as one complete block. Click a card to see when to use it.</p>
         </div>
 
@@ -1328,9 +1372,11 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">First Meeting</span>
-                <div>
-                  <div class="flip-word">Nice to finally put a face to the name.</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">Nice to finally put a face to the name.</div>
+                  </div>
+                  <span class="flip-pos">first meeting</span>
                 </div>
                 <div class="flip-example">"Hello, Luis! Nice to finally put a face to the name."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1348,9 +1394,11 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">Nickname</span>
-                <div>
-                  <div class="flip-word">You can call me...</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">You can call me...</div>
+                  </div>
+                  <span class="flip-pos">nickname</span>
                 </div>
                 <div class="flip-example">"My name is Guadalupe. You can call me Lupe."</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1368,9 +1416,11 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">Reaction</span>
-                <div>
-                  <div class="flip-word">No, I'm serious!</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">No, I'm serious!</div>
+                  </div>
+                  <span class="flip-pos">reaction</span>
                 </div>
                 <div class="flip-example">"My nickname is Kiwi. No, I'm serious!"</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1388,9 +1438,11 @@
           <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
             <div class="flip-card-inner">
               <div class="flip-face">
-                <span class="flip-pos">Repair</span>
-                <div>
-                  <div class="flip-word">Again, please?</div>
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">Again, please?</div>
+                  </div>
+                  <span class="flip-pos">repair</span>
                 </div>
                 <div class="flip-example">"Sorry&mdash;again, please?"</div>
                 <div class="flip-audio-row" onclick="event.stopPropagation()">
@@ -1583,7 +1635,7 @@
             <div>1. Say hello and ask your partner's name (<em>What's your name?</em>).</div>
             <div>2. Say your real name with <em>I'm...</em> or <em>My name is...</em></div>
             <div>3. Correct one wrong guess with <em>No, I'm not...</em></div>
-            <div>4. Use at least one USA Chunk (<em>You can call me...</em> / <em>No, I'm serious!</em> / <em>Again, please?</em>).</div>
+            <div>4. Use at least one Everyday Expression (<em>You can call me...</em> / <em>No, I'm serious!</em> / <em>Again, please?</em>).</div>
           </div>
         </div>
 
@@ -1687,7 +1739,7 @@
       loadStudentName();
     }
 
-    const VALID_PINS = ['2680', '5726', '8826', '2026', 'admin'];
+    const VALID_PINS = ['2064', '0410'];
     function setTeacherMode(active) {
       document.body.classList.toggle('teacher-mode', active);
       const btn = document.getElementById('teacherToggleBtn');
@@ -1711,7 +1763,7 @@
       document.getElementById('pinModal').classList.remove('is-open');
     }
     function submitPin() {
-      const val = document.getElementById('pinInput').value.trim();
+      const val = document.getElementById('pinInput').value.trim().toLowerCase();
       if (VALID_PINS.includes(val)) {
         try { sessionStorage.setItem('ld-coordinator-auth', 'granted'); } catch (_) {}
         setTeacherMode(true);
@@ -1970,7 +2022,9 @@
     window.addEventListener('DOMContentLoaded', () => {
       loadStudentName();
       const params = new URLSearchParams(window.location.search);
-      if (params.get('role') === 'teacher' || sessionStorage.getItem('ld-coordinator-auth') === 'granted') {
+      let hasAuth = false;
+      try { hasAuth = sessionStorage.getItem('ld-coordinator-auth') === 'granted'; } catch (_) {}
+      if (params.get('role') === 'teacher' || hasAuth) {
         setTeacherMode(true);
       }
       renderUnscramble();
