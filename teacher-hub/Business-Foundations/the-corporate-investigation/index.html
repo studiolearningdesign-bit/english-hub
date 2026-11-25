@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Guide · The Corporate Investigation — Business Foundations | Learning &amp; Development Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    header.site-header {
+      background: var(--navy-950);
+      color: var(--white);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+    }
+
+    .site-header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 46px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-white {
+      height: 84px;
+      width: auto;
+      object-fit: contain;
+      margin: -19px 0;
+      display: block;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+
+    .header-course {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold-500);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate-200);
+      text-decoration: none;
+    }
+
+    .header-link:hover { color: var(--white); }
+
+    .btn-print {
+      background: var(--gold-500);
+      color: var(--navy-950);
+      border: 1px solid var(--gold-500);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font: 700 13px/1.3 'Plus Jakarta Sans', sans-serif;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 22px 48px;
+    }
+
+    .doc-hero {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-bottom: 22px;
+    }
+
+    .doc-hero .mono-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .doc-hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 800;
+      line-height: 1.18;
+    }
+
+    .doc-hero p {
+      margin: 0;
+      color: rgba(248, 250, 252, 0.88);
+      max-width: 720px;
+    }
+
+    section.card-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 20px;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin: 0 0 12px;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin: 18px 0 8px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .meta-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .meta-card strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border: 1px solid var(--slate-200);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--navy-900);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--slate-50);
+    }
+
+    code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      background: var(--slate-100);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--navy-900);
+    }
+
+    .notice-box {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 110px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14.5px;
+      padding: 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      margin-top: 8px;
+    }
+
+    footer.studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+
+    @media print {
+      header.site-header, footer.studio-site-footer, .btn-print { display: none !important; }
+      body { background: #fff; font-size: 13px; }
+      main { padding: 0; max-width: 100%; }
+      .doc-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px 24px; }
+      section.card-block { break-inside: avoid; padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="header-brand">
+        <span class="brand-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="brand-logo-white"
+          >
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="header-course">Teacher Hub &middot; Business Foundations</span>
+      </div>
+      <div class="header-actions">
+        <a class="header-link" href="../../../Business-Foundations/u01/the-corporate-investigation/index.html?role=teacher">Abrir Experience (Modo Docente) &#8599;</a>
+        <a class="header-link" href="../../../Business-Foundations/u01/the-corporate-investigation/explore.html">Ver Explore &#8599;</a>
+        <button type="button" class="btn-print" onclick="window.print()">Print Teacher Guide</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="doc-hero">
+      <span class="mono-kicker">Teacher Guide · BEF-U01-L01 · Uso Exclusivo Docente</span>
+      <h1>The Corporate Investigation</h1>
+      <p>Guía completa de preparación, secuencia didáctica paso a paso, delimitación curricular P / P? / N / F, claves de respuesta, protocolo de mediación, rúbrica cualitativa E0–E3 y guion de producción de audios en estudio.</p>
+    </div>
+
+    <!-- 1. FICHA GENERAL Y DELIMITACIÓN P / P? / N / F -->
+    <section class="card-block">
+      <span class="kicker">01 · Delimitación Curricular</span>
+      <h2>Alcance Académico y Repertorio P / P? / N / F</h2>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <strong>Código y Ubicación</strong>
+          Business Foundations · Unidad 01 · Lección 01 (<code>BEF-U01-L01</code>). Consolidación funcional A1.1 / entrada corporativa.
+        </div>
+        <div class="meta-card">
+          <strong>Tiempo Flexible</strong>
+          Principio rector: <em>Understanding Comes Before Advancement</em>. Sin duración obligatoria; puede distribuirse en varias sesiones.
+        </div>
+        <div class="meta-card">
+          <strong>Acceso Docente en Vivo</strong>
+          PINs autorizados en <code>index.html</code>: <code>0410</code> y <code>2064</code> (o mediante enlace <code>?role=teacher</code>).
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Categoría</th>
+              <th>Repertorio Exacto</th>
+              <th>Regla de Aplicación en Clase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P (Previamente demostrado)</strong></td>
+              <td>Preguntas personales básicas con <code>To Be</code> (1.ª y 2.ª persona: <em>What's your name? Where are you from? Are you ready?</em>).</td>
+              <td>Base exclusiva del <code>01 Warm-up</code> y de las preguntas iniciales de comprensión.</td>
+            </tr>
+            <tr>
+              <td><strong>P? (Verificar antes de exigir)</strong></td>
+              <td>Concordancia de 3.ª persona (<code>is / are</code>), artículos indefinidos (<code>a / an</code>), posesivos (<code>his / her / their</code>) y léxico de entrevista.</td>
+              <td>Diagnosticar y modelar brevemente antes de evaluar en <code>05 Language Lab</code> y <code>07 Interview Lab</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>N (Recurso nuevo / foco)</strong></td>
+              <td>Transferencia de <code>To Be</code> (afirmativa, negativa, Yes/No y Wh-) a terceros y equipos; 6 términos laborales clave; 4 <em>Workplace Expressions</em> como bloques fijos; micro-contraste <code>I am</code> vs. <code>I'm</code>.</td>
+              <td>Enseñar explícitamente y practicar con apoyos antes de exigir autonomía en <code>06 Investigation</code> y <code>08 Exit Ticket</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>F (Frontera estrictamente prohibida)</strong></td>
+              <td>Auxiliares <code>do / does</code>, Present Simple de acción, tiempos pasados, Present Continuous, comparativos y modales indirectos.</td>
+              <td>Excluidos de consignas, textos, audios, ejemplos, distractores y correcciones exigidas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. SECUENCIA DIDÁCTICA COMPLETA -->
+    <section class="card-block">
+      <span class="kicker">02 · Complete Lesson Plan</span>
+      <h2>Secuencia Didáctica Paso a Paso</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Módulo</th>
+              <th>1. Setup &amp; 2. Modeling</th>
+              <th>3. Check &amp; 4. Claves de Respuesta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>01 · Warm-up</strong><br>The First Impression</td>
+              <td>Saludar al alumno como nuevo colega en su primer día. Formular las 3 preguntas <code>[P]</code> sin corregir de inmediato.</td>
+              <td>Observar fluidez inicial y uso espontáneo de <code>I am / I'm</code>. Sin clave cerrada (diagnóstico).</td>
+            </tr>
+            <tr>
+              <td><strong>02 · Vocabulary</strong><br>Language of the Workplace</td>
+              <td>Presentar las 6 <em>Flip Cards</em> con audios reales (<code>Word</code> + <code>Example</code>) y voltear para confirmar significado. Ejecutar el micro-foco de inteligibilidad <code>I am</code> vs. <code>I'm</code>.</td>
+              <td><strong>Office Status Match:</strong> Free right now = <em>Available</em>; In a meeting = <em>Busy</em>; Job title = <em>Position</em>; Finance/HR = <em>Department</em>; Prepared = <em>Ready</em>; Private data = <em>Confidential</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>03 · Workplace Expressions</strong><br>Sound Natural</td>
+              <td>Enseñar las 4 expresiones como <strong>bloques fijos</strong> sin desglosar su gramática interna. Reproducir audios de frase y ejemplo; trabajar entonación profesional.</td>
+              <td>Dar estímulos breves (ej. <em>"Is Daniel in London?"</em>) para provocar respuestas naturales con <em>Just a moment. / Let me check. / That's correct. / I'm not sure.</em></td>
+            </tr>
+            <tr>
+              <td><strong>04 · Reading</strong><br>Internal Personnel Directory</td>
+              <td>Pedir lectura silenciosa primero. Habilitar <code>Listen (after reading)</code> únicamente después de leer para comprobar ritmo y pronunciación.</td>
+              <td><strong>Directory Check:</strong> 1. Rachel · 2. Daniel · 3. Sophie. Señalar las <em>Workplace Expressions</em> dentro de la llamada interna.</td>
+            </tr>
+            <tr>
+              <td><strong>05 · Language Lab</strong><br>Structure Behind the Question</td>
+              <td>Conectar el cuadro de <code>To Be</code> con los perfiles leídos. Modelar inversión en preguntas y verificar posesivos (<code>his / her / their</code>) antes del drill oral.</td>
+              <td><strong>Change the Subject:</strong> 1. <em>Where is Rachel?</em> · 2. <em>How old is he?</em> · 3. <em>Are they available?</em> · 4. <em>Where are the managers?</em></td>
+            </tr>
+            <tr>
+              <td><strong>06 · Investigation</strong><br>Information Gap &amp; Briefing</td>
+              <td>Iniciar con Mission A (Audit). En Missions B y C, usar PIN docente (<code>0410</code> / <code>2064</code>) y revelar cada campo <strong>únicamente</strong> tras recibir una pregunta oral válida. Cerrar con Mission D (Briefing oral).</td>
+              <td><strong>Audit:</strong> 1. Language error (<em>Rachel is in London.</em>) · 2. Information error (<em>Daniel is in Toronto.</em>) · 3. Correct · 4. Language error (<em>Rachel and Daniel are in different cities.</em>).<br><strong>Victoria:</strong> Chief Financial Officer, New York, 42, Canadian, Not available.<br><strong>Operations Team:</strong> Toronto, Available, Not ready.</td>
+            </tr>
+            <tr>
+              <td><strong>07 · Interview Lab</strong><br>Career Application</td>
+              <td>Presentar primero el mini-glosario de 4 términos (<em>Expertise, Strengths, Candidate, Reliable</em>). Analizar a Jordan Ellis, redactar el perfil propio y luego cerrar notas para la entrevista en vivo.</td>
+              <td><strong>Analysis:</strong> 1. A finance professional · 2. Accounting · 3. Organized and responsible · 4. Reliable. Incluir transferencia en 3.ª persona preguntando por otro candidato.</td>
+            </tr>
+            <tr>
+              <td><strong>08 · Exit Ticket</strong><br>Case Review: Adrian Foster</td>
+              <td>Retirar todos los modelos visibles. El alumno produce preguntas y enunciados de forma independiente.</td>
+              <td>Verificar 3 preguntas sobre Adrian (edad, ubicación, puesto), 1 sobre su equipo y contraste afirmativo/negativo. Registrar en rúbrica <code>E0–E3</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Claves de Respuesta · Explore Worksheet (<code>explore.html</code>)</h3>
+      <ul>
+        <li><strong>02 · Write the Questions (ejemplos válidos):</strong> <em>Where is Amelia?</em> / <em>What is Marcus's position? (o What is his position?)</em> / <em>Is the Operations team available? (o Are they available?)</em></li>
+        <li><strong>03 · Correct the Records:</strong> A. <em>Amelia is in Boston.</em> · B. <em>Marcus is busy.</em> (o <em>Marcus isn't available.</em>) · C. <em>The Operations team is in Denver.</em></li>
+        <li><strong>04 · Mini-Call:</strong> Respuestas válidas integrando <em>Just a moment. / Let me check.</em> y <em>Yes, that's correct.</em></li>
+        <li><strong>05 · Interview Practice:</strong> Producción personal coherente con <code>To Be</code> y léxico de entrevista.</li>
+      </ul>
+    </section>
+
+    <!-- 3. GUION DE PRODUCCIÓN DE AUDIOS -->
+    <section class="card-block">
+      <span class="kicker">03 · Audio Production Script</span>
+      <h2>Guion de Producción de Audios en Estudio (26 Archivos MP3)</h2>
+      <p><strong>Regla absoluta:</strong> nunca usar <code>speechSynthesis</code> / TTS del navegador. Guardar todos los archivos en <code>Business-Foundations/u01/the-corporate-investigation/audio/</code> con los nombres exactos de la tabla.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre de Archivo (<code>audio/</code>)</th>
+              <th>Módulo</th>
+              <th>Guion Literal para Grabación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td><code>vocab-01-word.mp3</code></td><td>02 Vocabulary</td><td>Available.</td></tr>
+            <tr><td>02</td><td><code>vocab-01-example.mp3</code></td><td>02 Vocabulary</td><td>I am available.</td></tr>
+            <tr><td>03</td><td><code>vocab-02-word.mp3</code></td><td>02 Vocabulary</td><td>Busy.</td></tr>
+            <tr><td>04</td><td><code>vocab-02-example.mp3</code></td><td>02 Vocabulary</td><td>I am busy.</td></tr>
+            <tr><td>05</td><td><code>vocab-03-word.mp3</code></td><td>02 Vocabulary</td><td>Position.</td></tr>
+            <tr><td>06</td><td><code>vocab-03-example.mp3</code></td><td>02 Vocabulary</td><td>My position: manager.</td></tr>
+            <tr><td>07</td><td><code>vocab-04-word.mp3</code></td><td>02 Vocabulary</td><td>Department.</td></tr>
+            <tr><td>08</td><td><code>vocab-04-example.mp3</code></td><td>02 Vocabulary</td><td>My department: finance.</td></tr>
+            <tr><td>09</td><td><code>vocab-05-word.mp3</code></td><td>02 Vocabulary</td><td>Ready.</td></tr>
+            <tr><td>10</td><td><code>vocab-05-example.mp3</code></td><td>02 Vocabulary</td><td>I am ready.</td></tr>
+            <tr><td>11</td><td><code>vocab-06-word.mp3</code></td><td>02 Vocabulary</td><td>Confidential.</td></tr>
+            <tr><td>12</td><td><code>vocab-06-example.mp3</code></td><td>02 Vocabulary</td><td>Confidential information.</td></tr>
+            <tr><td>13</td><td><code>pron-01-full.mp3</code></td><td>02 Intelligibility</td><td>I am available. I am ready.</td></tr>
+            <tr><td>14</td><td><code>pron-02-contracted.mp3</code></td><td>02 Intelligibility</td><td>I'm available. I'm ready.</td></tr>
+            <tr><td>15</td><td><code>expr-01-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>Just a moment.</td></tr>
+            <tr><td>16</td><td><code>expr-01-example.mp3</code></td><td>03 Workplace Expr.</td><td>Just a moment, please.</td></tr>
+            <tr><td>17</td><td><code>expr-02-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>Let me check.</td></tr>
+            <tr><td>18</td><td><code>expr-02-example.mp3</code></td><td>03 Workplace Expr.</td><td>Let me check. One moment.</td></tr>
+            <tr><td>19</td><td><code>expr-03-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>That's correct.</td></tr>
+            <tr><td>20</td><td><code>expr-03-example.mp3</code></td><td>03 Workplace Expr.</td><td>Yes, that's correct.</td></tr>
+            <tr><td>21</td><td><code>expr-04-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>I'm not sure.</td></tr>
+            <tr><td>22</td><td><code>expr-04-example.mp3</code></td><td>03 Workplace Expr.</td><td>I'm not sure. Let me check.</td></tr>
+            <tr><td>23</td><td><code>reading-01-rachel.mp3</code></td><td>04 Reading</td><td>I'm Rachel. I'm the Finance Director. I'm from Canada. I'm in London. I'm busy.</td></tr>
+            <tr><td>24</td><td><code>reading-02-daniel.mp3</code></td><td>04 Reading</td><td>I'm Daniel. I'm the Operations Manager. I'm from Singapore. I'm in Toronto. I'm available.</td></tr>
+            <tr><td>25</td><td><code>reading-03-sophie.mp3</code></td><td>04 Reading</td><td>I'm Sophie. I'm an HR Specialist. I'm from the USA. I'm in Chicago. I'm not available.</td></tr>
+            <tr><td>26</td><td><code>reading-04-phone-call.mp3</code></td><td>04 Reading</td><td>A: Hello. Are you Daniel? B: Yes, that's correct. A: Are you available? B: Just a moment. Let me check. Yes, I am.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. PROTOCOLO DE MEDIACIÓN Y RÚBRICA E0-E3 -->
+    <section class="card-block">
+      <span class="kicker">04 · Evaluación y Mediación</span>
+      <h2>Protocolo de Mediación y Rúbrica Cualitativa (E0–E3)</h2>
+      <div class="notice-box">
+        <strong>Protocolo de Mediación (Inglés → Inglés):</strong> En <code>06 Investigation</code>, el alumno consulta expedientes restringidos y transmite únicamente los datos verificados al director en el <em>Executive Briefing</em>. Leer la tarjeta sin adaptar sujeto/verbo o copiar respuestas literales no demuestra mediación. Registrar por separado comprensión, interacción oral, producción escrita e inteligibilidad.
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Nivel</th>
+              <th>Descriptor Observable</th>
+              <th>Intervención Docente Sugerida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>E0</strong></td>
+              <td>Tras enseñanza y oportunidad accesible, aún no logra formular preguntas o enunciados de 3.ª persona con los apoyos permitidos.</td>
+              <td>Volver al cuadro de <code>05 Language Lab</code> con estímulo visual acotado y contraste <code>is / are</code> antes de reintentar.</td>
+            </tr>
+            <tr>
+              <td><strong>E1</strong></td>
+              <td>Logro parcial o dependencia de imitación inmediata / guion idéntico para preguntar o reportar.</td>
+              <td>Cambiar el referente (nuevo nombre o departamento) manteniendo la misma estructura para fomentar transferencia.</td>
+            </tr>
+            <tr>
+              <td><strong>E2</strong></td>
+              <td>Logra la función con los apoyos previstos: pregunta con <code>is / are</code>, corrige datos y responde entrevista básica con claridad.</td>
+              <td>Consolidar con <code>Explore</code> y recuperar en la siguiente lección en un contexto laboral distinto.</td>
+            </tr>
+            <tr>
+              <td><strong>E3</strong></td>
+              <td>Mayor flexibilidad y autonomía ante referentes nuevos (singular y plural) e intercambio espontáneo sin notas.</td>
+              <td>Registrar evidencia favorable; no equivale a certificar nivel siguiente sin completar la ruta.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Notas de Observación Individual</h3>
+      <textarea placeholder="Registrar alumno, fecha, apoyos utilizados, nivel E0–E3 por dimensión (preguntas 3.ª persona, plural, contraste afirmativo/negativo, entrevista) y siguiente intervención..."></textarea>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="footer-logo-white"
+          >
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; Teacher Guide &middot; The Corporate Investigation (Business Foundations)</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Corporate Investigation — Business Foundations | Learning &amp; Development Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 8px rgba(0, 31, 84, 0.06);
+      --shadow-md: 0 10px 28px rgba(7, 21, 39, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==================== SITE HEADER ==================== */
+    header.site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .site-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 46px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-white {
+      height: 84px;
+      width: auto;
+      object-fit: contain;
+      margin: -19px 0;
+      display: block;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+
+    .header-course {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      white-space: nowrap;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-student {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate-200);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .header-student:hover { color: var(--white); }
+
+    .header-teacher-btn {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font: 700 13px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: var(--gold-500);
+      cursor: pointer;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .header-teacher-btn:hover { color: var(--gold-400); }
+    .header-teacher-btn.is-active { color: var(--teal-300); }
+
+    .header-back-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .header-back-link:hover { color: var(--white); }
+
+    /* ==================== MAIN CONTAINER ==================== */
+    main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 28px 22px 48px;
+    }
+
+    /* ==================== HERO BANNER ==================== */
+    header.workspace-hero-banner {
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 54px;
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(90deg, rgba(7, 21, 39, 0.96) 0%, rgba(11, 37, 69, 0.86) 52%, rgba(7, 21, 39, 0.42) 100%),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;
+      box-shadow: var(--shadow-md);
+    }
+
+    .workspace-hero-banner h1 {
+      font-size: clamp(32px, 4.8vw, 48px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      max-width: 640px;
+      margin: 0 0 18px;
+      color: var(--white);
+    }
+
+    .workspace-hero-banner h1 span {
+      color: var(--gold-500);
+    }
+
+    .workspace-hero-banner p {
+      max-width: 540px;
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.65;
+      color: rgba(248, 250, 252, 0.9);
+      font-weight: 400;
+    }
+
+    /* ==================== SEGMENTED MODULE NAV ==================== */
+    nav.module-nav-grid {
+      display: flex;
+      overflow-x: auto;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin: 26px 0 24px;
+      gap: 4px;
+      scrollbar-width: thin;
+    }
+
+    nav.module-nav-grid button {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    nav.module-nav-grid button:hover {
+      color: var(--navy-900);
+    }
+
+    nav.module-nav-grid button .nav-idx {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--slate-500);
+    }
+
+    nav.module-nav-grid button.active {
+      background: var(--white);
+      color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+    }
+
+    nav.module-nav-grid button.active .nav-idx {
+      color: var(--teal-700);
+    }
+
+    /* ==================== CARDS & TYPOGRAPHY ==================== */
+    article.card-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(10, 25, 47, 0.03);
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navy-900);
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--navy-900);
+      line-height: 1.3;
+      margin: 22px 0 10px;
+    }
+
+    h3:first-child { margin-top: 0; }
+
+    p.lead {
+      color: var(--slate-600);
+      margin: 0 0 18px;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--teal-700);
+    }
+
+    /* ==================== TEACHER NOTE ACCORDION ==================== */
+    details.teacher-note-box {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+
+    details.teacher-note-box summary {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    details.teacher-note-box summary::-webkit-details-marker { display: none; }
+
+    details.teacher-note-box summary::after {
+      content: '+';
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    details.teacher-note-box[open] summary::after {
+      content: '−';
+    }
+
+    .teacher-steps {
+      margin: 12px 0 0;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--gold-border);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--slate-900);
+    }
+
+    .teacher-step-item {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .teacher-step-item strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-600);
+      margin-bottom: 4px;
+    }
+
+    /* ==================== BUTTONS & CONTROLS ==================== */
+    .btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+      border-radius: var(--radius-sm);
+      padding: 9px 15px;
+      transition: border-color 0.16s ease, background 0.16s ease, color 0.16s ease;
+    }
+
+    .btn:hover:not(:disabled) {
+      border-color: var(--teal-700);
+      color: var(--teal-700);
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+    }
+
+    .btn-primary {
+      background: var(--navy-900);
+      color: var(--white);
+      border-color: var(--navy-900);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--navy-700);
+      border-color: var(--navy-700);
+      color: var(--white);
+    }
+
+    .btn-audio {
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--teal-50);
+      border: 1px solid rgba(0, 122, 135, 0.25);
+      color: var(--teal-800);
+      cursor: pointer;
+      transition: background 0.16s ease, border-color 0.16s ease;
+    }
+
+    .btn-audio:hover {
+      background: #CCFBF1;
+      border-color: var(--teal-700);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ==================== FLIP CARDS (VOCAB & WORKPLACE EXPRESSIONS) ==================== */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin: 14px 0 26px;
+    }
+
+    .flip-card {
+      perspective: 1000px;
+      height: 235px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.is-flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flip-front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .flip-word-group {
+      flex: 1;
+      min-width: 0;
+      padding-right: 6px;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+      background: var(--navy-950);
+      border-color: var(--navy-800);
+      color: var(--white);
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .flip-word {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+    }
+
+    .flip-word-chunk {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+    }
+
+    .flip-ipa {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin-top: 4px;
+    }
+
+    .flip-example {
+      font-size: 0.9rem;
+      color: var(--slate-700);
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+    }
+
+    .flip-audio-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flip-back-word {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold-400);
+      line-height: 1.2;
+    }
+
+    .flip-back-meaning {
+      font-size: 0.94rem;
+      color: var(--slate-100);
+      max-width: 28ch;
+      margin: 0;
+    }
+
+    .flip-hint {
+      font-size: 0.72rem;
+      color: #94A3B8;
+    }
+
+    /* ==================== INTELLIGIBILITY MICRO-FOCUS ==================== */
+    .pron-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .pron-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pron-pair {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy-900);
+    }
+
+    .pron-ipa {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--teal-700);
+    }
+
+    /* ==================== MATCH ACTIVITY (VOCAB) ==================== */
+    .match-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .match-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .match-item {
+      text-align: left;
+      padding: 13px 16px;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      color: var(--slate-900);
+      font-size: 14.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .match-item:hover:not(:disabled) {
+      border-color: var(--teal-700);
+      background: var(--teal-50);
+    }
+
+    .match-item.selected {
+      border-color: var(--navy-900);
+      background: #EFF6FF;
+      color: var(--navy-900);
+      font-weight: 600;
+    }
+
+    .match-item.matched {
+      border-color: var(--teal-500);
+      background: var(--teal-50);
+      color: var(--teal-800);
+      font-weight: 600;
+      cursor: default;
+    }
+
+    .match-item.wrong {
+      border-color: var(--danger-600);
+      background: var(--danger-50);
+      color: var(--danger-600);
+    }
+
+    /* ==================== WARM-UP PROMPTS ==================== */
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .prompt-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .prompt-card .prompt-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--teal-700);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .prompt-card h3 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--navy-900);
+    }
+
+    /* ==================== PROFILES & LINES ==================== */
+    .line {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .line:last-child { border-bottom: 0; }
+
+    .profile {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 82px;
+      height: 82px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--slate-200);
+      flex-shrink: 0;
+    }
+
+    .dialogue-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 12px 0 18px;
+    }
+
+    /* ==================== GRAMMAR TABLE & WORDBOX ==================== */
+    .table-scroll {
+      overflow-x: auto;
+      margin: 14px 0 22px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid var(--slate-200);
+      text-align: left;
+    }
+
+    th {
+      background: var(--navy-900);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--slate-50);
+    }
+
+    .dock {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      min-height: 52px;
+      margin: 10px 0;
+      font-weight: 600;
+      color: var(--navy-900);
+      display: flex;
+      align-items: center;
+    }
+
+    /* ==================== RESTRICTED RECORDS & DARK PANEL ==================== */
+    .restricted {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .restricted b {
+      display: block;
+      font-size: 16px;
+      color: var(--navy-900);
+    }
+
+    .inline-notice {
+      font-size: 13px;
+      color: var(--gold-600);
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .inline-notice.show { display: block; }
+
+    .dark-panel {
+      background: var(--navy-950);
+      color: var(--white);
+      padding: 24px 26px;
+      border-radius: var(--radius-md);
+      margin: 14px 0 18px;
+    }
+
+    .dark-panel h3 {
+      color: var(--gold-500);
+      margin-top: 0;
+    }
+
+    .dark-panel p {
+      color: rgba(248, 250, 252, 0.92);
+      margin-bottom: 0;
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .glossary-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .glossary-card strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .glossary-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--slate-600);
+    }
+
+    /* ==================== FORM INPUTS & CHECKLISTS ==================== */
+    label.field-label {
+      display: block;
+      font-weight: 600;
+      color: var(--navy-900);
+      margin: 14px 0;
+    }
+
+    textarea, input[type="password"] {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 11px 13px;
+      width: 100%;
+      margin-top: 6px;
+      color: var(--slate-900);
+      background: var(--white);
+    }
+
+    textarea { min-height: 92px; resize: vertical; }
+
+    textarea:focus, input[type="password"]:focus {
+      outline: none;
+      border-color: var(--teal-700);
+    }
+
+    .checklist-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 10px 0;
+      font-size: 15px;
+      color: var(--slate-900);
+      cursor: pointer;
+    }
+
+    .checklist-item input {
+      margin-top: 4px;
+      accent-color: var(--teal-700);
+    }
+
+    .feedback-msg {
+      margin: 8px 0 0;
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 22px;
+    }
+
+    .good { color: var(--teal-800); }
+    .bad { color: var(--danger-600); }
+
+    /* ==================== BOTTOM CONTINUITY BAR ==================== */
+    .end-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 26px 0 8px;
+      gap: 12px;
+    }
+
+    /* ==================== FOOTER ==================== */
+    footer.studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 36px;
+      overflow: hidden;
+    }
+
+    .footer-logo-white {
+      height: 68px;
+      width: auto;
+      object-fit: contain;
+      margin: -16px 0;
+      display: block;
+    }
+
+    .footer-links-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-explore-link {
+      color: var(--slate-200);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 7px 12px;
+      transition: color 0.16s;
+    }
+
+    .footer-explore-link:hover { color: var(--white); }
+
+    .footer-teacher-portal {
+      color: var(--gold-400);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      transition: all 0.16s;
+    }
+
+    .footer-teacher-portal:hover {
+      background: rgba(212, 168, 67, 0.14);
+      color: var(--white);
+    }
+
+    /* ==================== TEACHER PIN DIALOG ==================== */
+    dialog {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      max-width: 400px;
+      width: 92%;
+      box-shadow: var(--shadow-md);
+    }
+
+    dialog::backdrop {
+      background: rgba(7, 21, 39, 0.58);
+      backdrop-filter: blur(4px);
+    }
+
+    /* ==================== RESPONSIVE & PRINT ==================== */
+    @media (max-width: 720px) {
+      .site-header-inner { flex-wrap: wrap; }
+      .header-course { display: none; }
+      header.workspace-hero-banner { padding: 32px 24px; min-height: 300px; }
+      article.card-block { padding: 20px; }
+      .match-board { grid-template-columns: 1fr; }
+      .profile { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media print {
+      header.site-header, nav.module-nav-grid, .end-nav, footer.studio-site-footer, button, dialog {
+        display: none !important;
+      }
+      body { background: #fff; }
+      article.card-block { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../index.html" class="header-brand">
+        <span class="brand-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="brand-logo-white"
+          >
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="header-course">English Hub &middot; Business Foundations</span>
+      </a>
+      <div class="header-links">
+        <button type="button" class="header-student" id="studentName" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-btn" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a class="header-back-link" href="../index.html">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="workspace-hero-banner">
+      <h1>The Corporate <span>Investigation</span></h1>
+      <p>Your company needs accurate information. Your mission: verify the facts, identify the errors, and deliver a clear executive report.</p>
+    </header>
+
+    <nav class="module-nav-grid" id="nav" aria-label="Lesson modules"></nav>
+
+    <div id="screen"></div>
+
+    <div class="end-nav">
+      <button type="button" class="btn" id="prev">← Previous</button>
+      <span id="count" class="mono"></span>
+      <button type="button" class="btn btn-primary" id="next">Next →</button>
+    </div>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="footer-logo-white"
+          >
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Corporate Investigation (Business Foundations)</div>
+      </div>
+      <div class="footer-links-right">
+        <a href="explore.html" class="footer-explore-link">Explore Worksheet &rarr;</a>
+        <a href="../../../teacher-hub/Business-Foundations/the-corporate-investigation/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="teacherDialog">
+    <span class="kicker">Faculty Access</span>
+    <h3 style="margin-top: 4px;">Teacher's Version</h3>
+    <p class="lead" style="font-size: 14px;">Enter your authorized faculty PIN to unlock live teaching sequences and restricted records.</p>
+    <input id="pinInput" type="password" placeholder="Enter PIN" aria-label="Teacher PIN" autocomplete="off">
+    <p id="pinMessage" class="feedback-msg bad"></p>
+    <div class="actions" style="margin-top: 14px; justify-content: flex-end;">
+      <button type="button" class="btn" onclick="document.getElementById('teacherDialog').close()">Cancel</button>
+      <button type="button" class="btn btn-primary" onclick="authorizeTeacher()">Unlock</button>
+    </div>
+  </dialog>
+
+  <script>
+    const MODULE_NAMES = [
+      'Warm-up',
+      'Vocabulary',
+      'Workplace Expressions',
+      'Reading',
+      'Language Lab',
+      'Investigation',
+      'Interview Lab',
+      'Exit Ticket'
+    ];
+
+    const VALID_PINS = ['0410', '2064'];
+
+    let current = 0;
+    let isTeacher = false;
+    let interviewIdx = 0;
+    const savedInputs = {};
+
+    // Match activity state
+    let matchSelectedCue = null;
+    const matchedIndices = new Set();
+
+    const $ = (id) => document.getElementById(id);
+
+    // Initialize student name and optional ?role=teacher
+    (function initSession() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const student = params.get('name') || localStorage.getItem('ld_student_name') || 'Guest';
+        $('studentName').textContent = 'Student · ' + student;
+        if (params.get('role') === 'teacher') {
+          isTeacher = true;
+        }
+      } catch (_) {
+        $('studentName').textContent = 'Student · Guest';
+      }
+    })();
+
+    const VOCAB = [
+      { word: 'Available', pos: 'adjective', ipa: '/əˈveɪləbəl/', example: 'I am available.', meaning: 'Free now and ready to talk or work.', cue: 'Free right now for a quick call.' },
+      { word: 'Busy', pos: 'adjective', ipa: '/ˈbɪzi/', example: 'I am busy.', meaning: 'Not free now; working on something.', cue: 'In a meeting and not free.' },
+      { word: 'Position', pos: 'noun', ipa: '/pəˈzɪʃən/', example: 'My position: manager.', meaning: 'A job title or role in a company.', cue: 'Your job title at the company.' },
+      { word: 'Department', pos: 'noun', ipa: '/dɪˈpɑːrtmənt/', example: 'My department: finance.', meaning: 'A specific section or team in a company.', cue: 'Finance, HR, or Operations.' },
+      { word: 'Ready', pos: 'adjective', ipa: '/ˈredi/', example: 'I am ready.', meaning: 'Prepared to start.', cue: 'Prepared to begin the briefing.' },
+      { word: 'Confidential', pos: 'adjective', ipa: '/ˌkɑːnfɪˈdenʃəl/', example: 'Confidential information.', meaning: 'Private information; not for everyone.', cue: 'Private data for authorized staff only.' }
+    ];
+
+    const MATCH_RIGHT_ORDER = [2, 0, 5, 1, 4, 3];
+
+    const EXPRESSIONS = [
+      { phrase: 'Just a moment.', use: 'Requesting time', ipa: '/dʒʌst ə ˈmoʊmənt/', example: 'Just a moment, please.', meaning: 'Please wait a short time.' },
+      { phrase: 'Let me check.', use: 'Checking information', ipa: '/lɛt mi tʃɛk/', example: 'Let me check. One moment.', meaning: 'I need a second to verify the facts.' },
+      { phrase: "That's correct.", use: 'Confirming information', ipa: '/ðæts kəˈrɛkt/', example: "Yes, that's correct.", meaning: 'Yes, that information is right.' },
+      { phrase: "I'm not sure.", use: 'Expressing uncertainty', ipa: '/aɪm nɑt ʃʊr/', example: "I'm not sure. Let me check.", meaning: 'I do not know for certain yet.' }
+    ];
+
+    const PROFILES = [
+      {
+        name: 'Rachel Morgan',
+        first: 'Rachel',
+        role: 'Finance Director',
+        article: 'the',
+        country: 'Canada',
+        city: 'London',
+        status: 'busy',
+        photo: 'photo-1580489944761-15a19d654956',
+        audio: 'reading-01-rachel'
+      },
+      {
+        name: 'Daniel Chen',
+        first: 'Daniel',
+        role: 'Operations Manager',
+        article: 'the',
+        country: 'Singapore',
+        city: 'Toronto',
+        status: 'available',
+        photo: 'photo-1500648767791-00dcc994a43e',
+        audio: 'reading-02-daniel'
+      },
+      {
+        name: 'Sophie Williams',
+        first: 'Sophie',
+        role: 'HR Specialist',
+        article: 'an',
+        country: 'the USA',
+        city: 'Chicago',
+        status: 'not available',
+        photo: 'photo-1534528741775-53994a69daeb',
+        audio: 'reading-03-sophie'
+      }
+    ];
+
+    const WORDBOX_ITEMS = [
+      { prompt: 'Where are you?', newSubject: 'Rachel', words: ['Where', 'are', 'Rachel', 'is', '?'], answer: 'Where is Rachel?' },
+      { prompt: 'How old are you?', newSubject: 'he', words: ['he', 'is', 'How old', 'are', '?'], answer: 'How old is he?' },
+      { prompt: 'Is Rachel available?', newSubject: 'they', words: ['available', 'Is', 'they', 'Are', '?'], answer: 'Are they available?' },
+      { prompt: 'Where is the manager?', newSubject: 'the managers', words: ['the managers', 'is', 'Where', 'are', '?'], answer: 'Where are the managers?' }
+    ];
+
+    const INTERVIEW_QUESTIONS = [
+      'Who are you as a professional?',
+      'What is your area of expertise?',
+      'What are your strengths?',
+      'Why are you a good candidate for this position?',
+      'Are you available?',
+      'Are you ready for the interview?'
+    ];
+
+    const TEACHER_NOTES = [
+      {
+        setup: 'Greet the student as a new colleague arriving on their first day. Keep the tone natural and executive.',
+        modeling: 'Ask the three familiar [P] questions without immediate grammar correction.',
+        check: 'Observe spontaneous confidence, clarity, and comprehension of To Be in 1st/2nd person.',
+        keys: 'Diagnostic baseline only. Note any hesitation with "I am / I\'m" for Module 02.'
+      },
+      {
+        setup: 'Introduce the 6 core workplace words before opening the Office Status Match.',
+        modeling: 'Play each Word + Example audio; flip cards to confirm meaning. Run the I am vs. I\'m contrast.',
+        check: 'Have the student complete the Office Status Match and produce one oral sentence per word.',
+        keys: 'Matches: Free right now = Available; In a meeting = Busy; Job title = Position; Finance/HR = Department; Prepared = Ready; Private data = Confidential.'
+      },
+      {
+        setup: 'Frame these 4 items as fixed professional expressions — do not dissect internal grammar.',
+        modeling: 'Play Phrase + Example audios. Drill natural intonation and pausing.',
+        check: 'Give quick workplace cues (e.g., "Is Daniel in London?") so the student responds with a chunk.',
+        keys: 'Fixed blocks: Just a moment. / Let me check. / That\'s correct. / I\'m not sure.'
+      },
+      {
+        setup: 'Ask the student to read the Internal Personnel Directory silently FIRST before clicking audio.',
+        modeling: 'After silent reading, allow optional post-reading audio to check rhythm and pronunciation.',
+        check: 'Complete the 3 comprehension questions and ask the student to spot the Workplace Expressions in the phone call.',
+        keys: '1. Rachel · 2. Daniel · 3. Sophie. Expressions in call: "Yes, that\'s correct." / "Just a moment. Let me check."'
+      },
+      {
+        setup: 'Connect the grammar table back to the directory profiles the student just noticed.',
+        modeling: 'Highlight subject-verb agreement (am / is / are) and question inversion. Check possessive prerequisites (his/her/their).',
+        check: 'Guide the Change the Subject wordbox, then elicit oral possessive transfer questions.',
+        keys: '1. Where is Rachel? · 2. How old is he? · 3. Are they available? · 4. Where are the managers?'
+      },
+      {
+        setup: 'Run Mission A (Audit) first, then switch to Information Gap mode for Missions B & C.',
+        modeling: 'Do NOT reveal restricted fields until the student produces an accurate oral question.',
+        check: 'Prompt the student to deliver Mission D (Executive Briefing) using the Speaking Checklist.',
+        keys: 'Audit: 1. Language error (Rachel is...) · 2. Information error (Daniel is in Toronto) · 3. Correct · 4. Language error (Rachel and Daniel are...). Victoria: CFO, New York, 42, Canadian, Not available. Team: Toronto, Available, Not ready.'
+      },
+      {
+        setup: 'Pre-teach the 4 Interview Glossary terms BEFORE opening Jordan Ellis\'s profile.',
+        modeling: 'Review Jordan\'s answers, then scaffold the student\'s personal profile in Part 03.',
+        check: 'Close notes for Part 04 (Live Interview) and ask unscripted follow-ups plus the 3rd-person candidate inquiry.',
+        keys: 'Analysis: Who are you = A finance professional · Expertise = Accounting · Strengths = Organized and responsible · Why candidate = Reliable.'
+      },
+      {
+        setup: 'Remove all visible models. The Exit Ticket collects independent observable evidence.',
+        modeling: 'Clarify the task instructions only; do not supply sentence starters.',
+        check: 'Review the 4 written questions and 2 statements, then verify Can-Do self-assessment.',
+        keys: 'Record E0–E3 separately for: 3rd-person questions, plural team question, affirmative/negative contrast, and interview response.'
+      }
+    ];
+
+    function renderTeacherAccordion(idx) {
+      if (!isTeacher) return '';
+      const n = TEACHER_NOTES[idx];
+      return `
+        <details class="teacher-note-box">
+          <summary>Teacher's Live Sequence · Module ${String(idx + 1).padStart(2, '0')}</summary>
+          <div class="teacher-steps">
+            <div class="teacher-step-item"><strong>1. Setup</strong>${n.setup}</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>${n.modeling}</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>${n.check}</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>${n.keys}</div>
+          </div>
+        </details>
+      `;
+    }
+
+    function audioBtn(file, label) {
+      return `<button type="button" class="btn-audio" onclick="event.stopPropagation(); playAudio(this, '${file}')">▶ ${label}</button>`;
+    }
+
+    function playAudio(btn, file) {
+      const original = btn.dataset.label || btn.textContent;
+      btn.dataset.label = original;
+      const audio = new Audio('audio/' + file + '.mp3');
+      audio.play().catch(() => {
+        btn.textContent = 'Audio pending studio file';
+        setTimeout(() => { btn.textContent = original; }, 2200);
+      });
+    }
+
+    function renderFlipCard(item, idx, type) {
+      const num = String(idx + 1).padStart(2, '0');
+      const isVocab = type === 'vocab';
+      const term = isVocab ? item.word : item.phrase;
+      const badge = isVocab ? item.pos : item.use.toLowerCase();
+      const termClass = isVocab ? 'flip-word' : 'flip-word-chunk';
+      const mainFile = isVocab ? `vocab-${num}-word` : `expr-${num}-phrase`;
+      const exFile = isVocab ? `vocab-${num}-example` : `expr-${num}-example`;
+      const mainLabel = isVocab ? 'Word' : 'Phrase';
+
+      return `
+        <div class="flip-card" role="button" tabindex="0" aria-label="Flip card for ${term}"
+             onclick="this.classList.toggle('is-flipped')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}">
+          <div class="flip-card-inner">
+            <div class="flip-face">
+              <div class="flip-front-top">
+                <div class="flip-word-group">
+                  <div class="${termClass}">${term}</div>
+                  <div class="flip-ipa">${item.ipa}</div>
+                </div>
+                <span class="flip-pos">${badge}</span>
+              </div>
+              <div class="flip-example">"${item.example}"</div>
+              <div class="flip-audio-row" onclick="event.stopPropagation()">
+                ${audioBtn(mainFile, mainLabel)}
+                ${audioBtn(exFile, 'Example')}
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="flip-back-word">${term}</div>
+              <div class="flip-back-meaning">${item.meaning}</div>
+              <div class="flip-hint">Click to flip back</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderChoice(question, options, correct) {
+      return `
+        <div class="line">
+          <div style="font-weight: 600; color: var(--navy-900); margin-bottom: 10px;">${question}</div>
+          <div class="actions">
+            ${options.map(opt => `<button type="button" class="btn" data-answer="${opt === correct}" onclick="checkChoice(this)">${opt}</button>`).join('')}
+          </div>
+          <p class="feedback-msg" aria-live="polite"></p>
+        </div>
+      `;
+    }
+
+    function checkChoice(btn) {
+      const fb = btn.parentElement.nextElementSibling;
+      const ok = btn.dataset.answer === 'true';
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct.' : 'Not quite — check the facts and try again.';
+    }
+
+    function renderMatchActivity() {
+      const leftHtml = VOCAB.map((v, i) => {
+        const done = matchedIndices.has(i);
+        const sel = matchSelectedCue === i;
+        return `<button type="button" class="match-item ${done ? 'matched' : ''} ${sel ? 'selected' : ''}" ${done ? 'disabled' : ''} onclick="selectMatchCue(${i})">${v.cue}</button>`;
+      }).join('');
+
+      const rightHtml = MATCH_RIGHT_ORDER.map((wordIdx) => {
+        const v = VOCAB[wordIdx];
+        const done = matchedIndices.has(wordIdx);
+        return `<button type="button" class="match-item ${done ? 'matched' : ''}" id="matchWord${wordIdx}" ${done ? 'disabled' : ''} onclick="selectMatchWord(${wordIdx})">${v.word}</button>`;
+      }).join('');
+
+      const allDone = matchedIndices.size === VOCAB.length;
+
+      return `
+        <div class="match-board">
+          <div class="match-col">
+            <span class="kicker">Workplace Situation</span>
+            ${leftHtml}
+          </div>
+          <div class="match-col">
+            <span class="kicker">Key Term</span>
+            ${rightHtml}
+          </div>
+        </div>
+        <div class="actions" style="margin-top: 16px; justify-content: space-between;">
+          <p id="matchFeedback" class="feedback-msg ${allDone ? 'good' : ''}" style="margin:0;" aria-live="polite">
+            ${allDone ? 'All 6 workplace terms matched.' : 'Select a situation on the left, then its matching term on the right.'}
+          </p>
+          <button type="button" class="btn" onclick="resetMatch()">Reset Match</button>
+        </div>
+      `;
+    }
+
+    function selectMatchCue(idx) {
+      if (matchedIndices.has(idx)) return;
+      matchSelectedCue = idx;
+      render();
+    }
+
+    function selectMatchWord(wordIdx) {
+      if (matchSelectedCue === null || matchedIndices.has(wordIdx)) return;
+      if (matchSelectedCue === wordIdx) {
+        matchedIndices.add(wordIdx);
+        matchSelectedCue = null;
+        render();
+      } else {
+        const wrongBtn = $('matchWord' + wordIdx);
+        const fb = $('matchFeedback');
+        if (wrongBtn) {
+          wrongBtn.classList.add('wrong');
+          setTimeout(() => wrongBtn.classList.remove('wrong'), 600);
+        }
+        if (fb) {
+          fb.className = 'feedback-msg bad';
+          fb.textContent = 'Not a match — check the meaning on the flip card and try again.';
+        }
+      }
+    }
+
+    function resetMatch() {
+      matchSelectedCue = null;
+      matchedIndices.clear();
+      render();
+    }
+
+    function renderWordbox(item, idx) {
+      return `
+        <div class="line">
+          <div style="font-weight: 700; color: var(--navy-900);">${item.prompt}</div>
+          <div class="mono" style="margin-top: 4px;">New subject: ${item.newSubject}</div>
+          <div class="dock" id="dock${idx}"></div>
+          <div class="actions" id="pool${idx}" style="margin-bottom: 10px;">
+            ${item.words.map(w => `<button type="button" class="btn" onclick="addWord(this, ${idx})">${w}</button>`).join('')}
+          </div>
+          <div class="actions">
+            <button type="button" class="btn" onclick="clearWords(${idx})">Clear</button>
+            <button type="button" class="btn btn-primary" onclick="checkWords(${idx})">Check</button>
+          </div>
+          <p id="fb${idx}" class="feedback-msg" aria-live="polite"></p>
+        </div>
+      `;
+    }
+
+    function addWord(btn, idx) {
+      const dock = $('dock' + idx);
+      const token = btn.textContent;
+      if (!dock.textContent) {
+        dock.textContent = token;
+      } else if (token === '?') {
+        dock.textContent += '?';
+      } else {
+        dock.textContent += ' ' + token;
+      }
+      btn.disabled = true;
+      $('fb' + idx).textContent = '';
+    }
+
+    function clearWords(idx) {
+      $('dock' + idx).textContent = '';
+      $('fb' + idx).textContent = '';
+      $('pool' + idx).querySelectorAll('button').forEach(b => { b.disabled = false; });
+    }
+
+    function checkWords(idx) {
+      const ok = $('dock' + idx).textContent.trim() === WORDBOX_ITEMS[idx].answer;
+      const fb = $('fb' + idx);
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct.' : 'Check the subject, verb agreement, and question mark.';
+    }
+
+    function renderRestrictedFields(items, prefix) {
+      return items.map((item, i) => `
+        <div class="line">
+          <div class="restricted">
+            <div>
+              <span class="mono">${item[0]}</span>
+              <b id="${prefix}${i}">••••••••</b>
+            </div>
+            <button type="button" class="btn" data-value="${item[1]}" onclick="toggleRestricted(this, '${prefix}${i}', '${prefix}Notice${i}')">Reveal</button>
+          </div>
+          <div class="inline-notice" id="${prefix}Notice${i}">
+            Restricted field — ask your teacher an oral question to unlock this record.
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleRestricted(btn, valId, noticeId) {
+      if (!isTeacher) {
+        const notice = $(noticeId);
+        notice.classList.add('show');
+        return;
+      }
+      const target = $(valId);
+      const hidden = target.textContent === '••••••••';
+      target.textContent = hidden ? btn.dataset.value : '••••••••';
+      btn.textContent = hidden ? 'Hide' : 'Reveal';
+    }
+
+    function renderTextboxes(labels) {
+      return labels.map((lbl, i) => `
+        <label class="field-label">
+          ${lbl}
+          <textarea data-save="${current}-${i}" placeholder="Write your response here..."></textarea>
+        </label>
+      `).join('');
+    }
+
+    function renderPhoto(id, alt) {
+      return `<img src="https://images.unsplash.com/${id}?auto=format&fit=crop&w=240&h=240&q=80" alt="${alt}">`;
+    }
+
+    const MODULES = [
+      // 01 Warm-up
+      () => `
+        <article class="card-block">
+          <span class="kicker">01 · Warm-up</span>
+          <h2>The First Impression</h2>
+          <p class="lead">Meet your teacher as a new colleague on your first morning at the company. Answer naturally.</p>
+          <div class="prompt-grid">
+            <div class="prompt-card"><span class="prompt-num">QUESTION 01</span><h3>What's your name?</h3></div>
+            <div class="prompt-card"><span class="prompt-num">QUESTION 02</span><h3>Where are you from?</h3></div>
+            <div class="prompt-card"><span class="prompt-num">QUESTION 03</span><h3>Are you ready?</h3></div>
+          </div>
+        </article>
+      `,
+
+      // 02 Vocabulary
+      () => `
+        <article class="card-block">
+          <span class="kicker">02 · Core Vocabulary</span>
+          <h2>The Language of the Workplace</h2>
+          <p class="lead">Listen to each word and example, then click any card to flip and check the meaning.</p>
+          <div class="flip-grid">
+            ${VOCAB.map((v, i) => renderFlipCard(v, i, 'vocab')).join('')}
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Intelligibility Micro-Focus</span>
+          <h3>Full Form vs. Natural Contraction</h3>
+          <p class="lead">In clear workplace English, both forms are correct. Listen to the rhythm difference between full and contracted speech.</p>
+          <div class="pron-grid">
+            <div class="pron-card">
+              <span class="mono">FULL FORM (CLEAR EMPHASIS)</span>
+              <div class="pron-pair">I am available. / I am ready.</div>
+              <div class="pron-ipa">/aɪ æm/</div>
+              <div>${audioBtn('pron-01-full', 'Listen: I am')}</div>
+            </div>
+            <div class="pron-card">
+              <span class="mono">CONTRACTED FORM (NATURAL FLOW)</span>
+              <div class="pron-pair">I'm available. / I'm ready.</div>
+              <div class="pron-ipa">/aɪm/</div>
+              <div>${audioBtn('pron-02-contracted', "Listen: I'm")}</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Vocabulary Practice</span>
+          <h3>Office Status Match</h3>
+          <p class="lead">Connect each workplace situation to the right word.</p>
+          ${renderMatchActivity()}
+        </article>
+      `,
+
+      // 03 Workplace Expressions
+      () => `
+        <article class="card-block">
+          <span class="kicker">03 · Workplace Expressions</span>
+          <h2>Sound Natural and Professional</h2>
+          <p class="lead">Learn these four expressions as complete blocks for calls and quick office checks. Click each card to see its real workplace meaning.</p>
+          <div class="flip-grid">
+            ${EXPRESSIONS.map((e, i) => renderFlipCard(e, i, 'expr')).join('')}
+          </div>
+        </article>
+      `,
+
+      // 04 Reading
+      () => `
+        <article class="card-block">
+          <span class="kicker">04 · Internal Personnel Directory</span>
+          <h2>Meet the Team</h2>
+          <p class="lead">Read each profile silently first. Then use the optional audio to check pronunciation and rhythm.</p>
+          ${PROFILES.map(p => `
+            <div class="line profile">
+              ${renderPhoto(p.photo, p.name)}
+              <div>
+                <h3 style="margin: 0 0 6px;">${p.name}</h3>
+                <p style="margin: 0 0 10px;">I'm ${p.first}. I'm ${p.article} ${p.role}. I'm from ${p.country}. I'm in ${p.city}. I'm ${p.status}.</p>
+                ${audioBtn(p.audio, 'Listen (after reading)')}
+              </div>
+            </div>
+          `).join('')}
+
+          <h3>Internal Phone Call</h3>
+          <div class="dialogue-box">
+            <p style="margin: 0 0 12px;">
+              <strong>Caller:</strong> Hello. Are you Daniel?<br>
+              <strong>Daniel:</strong> Yes, that's correct.<br>
+              <strong>Caller:</strong> Are you available?<br>
+              <strong>Daniel:</strong> Just a moment. Let me check. Yes, I am.
+            </p>
+            ${audioBtn('reading-04-phone-call', 'Listen (after reading)')}
+          </div>
+
+          <h3>Directory Check</h3>
+          ${renderChoice('1. Who is the Finance Director?', ['Rachel', 'Daniel', 'Sophie'], 'Rachel')}
+          ${renderChoice('2. Who is available right now?', ['Rachel', 'Daniel', 'Sophie'], 'Daniel')}
+          ${renderChoice('3. Who is in Chicago?', ['Rachel', 'Daniel', 'Sophie'], 'Sophie')}
+        </article>
+      `,
+
+      // 05 Language Lab
+      () => `
+        <article class="card-block">
+          <span class="kicker">05 · Language Lab</span>
+          <h2>The Structure Behind the Question</h2>
+          <p class="lead">Use <strong>am</strong>, <strong>is</strong>, and <strong>are</strong> to confirm names, locations, positions, and availability across different people and teams.</p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Affirmative</th>
+                  <th>Negative</th>
+                  <th>Yes / No Question</th>
+                  <th>Information Question (Wh-)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>I</strong></td>
+                  <td>I am ready.</td>
+                  <td>I am not ready.</td>
+                  <td>Am I ready?</td>
+                  <td>Where am I?</td>
+                </tr>
+                <tr>
+                  <td><strong>He · She · It</strong></td>
+                  <td>She is ready.</td>
+                  <td>She isn't ready.</td>
+                  <td>Is she ready?</td>
+                  <td>Where is she?</td>
+                </tr>
+                <tr>
+                  <td><strong>You · We · They</strong></td>
+                  <td>They are ready.</td>
+                  <td>They aren't ready.</td>
+                  <td>Are they ready?</td>
+                  <td>Where are they?</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Change the Subject</h3>
+          <p class="lead">Build each new question in order, including the question mark.</p>
+          ${WORDBOX_ITEMS.map((item, i) => renderWordbox(item, i)).join('')}
+
+          <h3>Possessive Transfer (Oral Drill)</h3>
+          <div class="dialogue-box">
+            <p style="margin: 0 0 6px;">What is <strong>your</strong> position? → What is <strong>her</strong> position?</p>
+            <p style="margin: 0 0 6px;">What are <strong>your</strong> strengths? → What are <strong>their</strong> strengths?</p>
+            <p style="margin: 0; color: var(--slate-600);">Practice saying both questions aloud with <strong>his</strong>, <strong>her</strong>, and <strong>their</strong>.</p>
+          </div>
+        </article>
+      `,
+
+      // 06 Investigation
+      () => `
+        <article class="card-block">
+          <span class="kicker">06 · Corporate Investigation</span>
+          <h2>Mission A · Information Audit</h2>
+          <p class="lead">Compare each record against the Internal Personnel Directory. Identify whether it is correct, has a language error, or has an information error — then correct it aloud.</p>
+          ${renderChoice('Record 01: Rachel are in London.', ['Correct', 'Language error', 'Information error'], 'Language error')}
+          ${renderChoice('Record 02: Daniel is in Chicago.', ['Correct', 'Language error', 'Information error'], 'Information error')}
+          ${renderChoice('Record 03: Sophie is an HR Specialist.', ['Correct', 'Language error', 'Information error'], 'Correct')}
+          ${renderChoice('Record 04: Rachel and Daniel is in different cities.', ['Correct', 'Language error', 'Information error'], 'Language error')}
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Mission B · Restricted Personnel Record 004</span>
+          <div class="profile" style="margin: 10px 0 14px;">
+            ${renderPhoto('photo-1551836022-d5d88e9218df', 'Victoria Bennett')}
+            <div>
+              <h3 style="margin: 0;">Victoria Bennett</h3>
+              <p class="lead" style="margin: 4px 0 0;">Ask your teacher an oral question to unlock each confidential field.</p>
+            </div>
+          </div>
+          ${renderRestrictedFields([
+            ['Position', 'Chief Financial Officer'],
+            ['Location', 'New York'],
+            ['Age', '42'],
+            ['Nationality', 'Canadian'],
+            ['Status', 'Not available']
+          ], 'file')}
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Mission C · Team Verification</span>
+          <h3>Operations Team</h3>
+          <p class="lead">Ask plural questions to verify the team's current status.</p>
+          ${renderRestrictedFields([
+            ['Location', 'Toronto'],
+            ['Status', 'Available'],
+            ['Project', 'Not ready']
+          ], 'team')}
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Mission D · Speaking Production</span>
+          <h3>Executive Briefing</h3>
+          <p class="lead">Organize your key facts below, then present your verbal report to the director.</p>
+          ${renderTextboxes(['Briefing notes'])}
+          <div class="checklist-box">
+            <span class="kicker">Speaking Checklist</span>
+            ${[
+              'I ask at least four clear questions to unlock the records.',
+              'I use is and are accurately with different subjects.',
+              'I report five verified facts clearly.',
+              'I include at least one negative sentence.'
+            ].map(item => `<label class="checklist-item"><input type="checkbox"> <span>${item}</span></label>`).join('')}
+          </div>
+        </article>
+      `,
+
+      // 07 Interview Lab
+      () => `
+        <article class="card-block">
+          <span class="kicker">07 · Career Application</span>
+          <h2>Interview Lab</h2>
+          <h3>01 · Key Interview Vocabulary</h3>
+          <p class="lead">Review these four professional terms before reading the candidate profile.</p>
+          <div class="glossary-grid">
+            <div class="glossary-card"><strong>Expertise</strong><p>Your main professional specialty or field.</p></div>
+            <div class="glossary-card"><strong>Strengths</strong><p>The qualities and skills you are good at.</p></div>
+            <div class="glossary-card"><strong>Candidate</strong><p>A person interviewing for a job position.</p></div>
+            <div class="glossary-card"><strong>Reliable</strong><p>Responsible, consistent, and dependable.</p></div>
+          </div>
+        </article>
+
+        <article class="card-block">
+          <h3>02 · Interview Analysis</h3>
+          <p class="lead">Read the candidate profile, then match each interview question to the right detail.</p>
+          <div class="dark-panel">
+            <span class="mono" style="color: var(--gold-500);">CANDIDATE PROFILE</span>
+            <h3 style="margin-top: 6px;">Jordan Ellis</h3>
+            <p>I'm a finance professional. My area of expertise is accounting. I'm organized and responsible. I'm a good candidate for this position because I'm reliable.</p>
+          </div>
+          ${renderChoice('1. Who are you as a professional?', ['Accounting', 'Organized and responsible', 'Reliable', 'A finance professional'], 'A finance professional')}
+          ${renderChoice('2. What is your area of expertise?', ['Accounting', 'Organized and responsible', 'Reliable', 'A finance professional'], 'Accounting')}
+          ${renderChoice('3. What are your strengths?', ['Accounting', 'Organized and responsible', 'Reliable', 'A finance professional'], 'Organized and responsible')}
+          ${renderChoice('4. Why are you a good candidate for this position?', ['Accounting', 'Organized and responsible', 'Reliable', 'A finance professional'], 'Reliable')}
+        </article>
+
+        <article class="card-block">
+          <h3>03 · Professional Profile Builder</h3>
+          <p class="lead">Draft your own answers for a real workplace interview.</p>
+          ${renderTextboxes([
+            'Who are you as a professional?',
+            'What is your area of expertise?',
+            'What are your strengths?',
+            'Why are you a good candidate for this position?'
+          ])}
+        </article>
+
+        <article class="card-block">
+          <h3>04 · Live Interview</h3>
+          <p class="lead">Close your notes and respond aloud to the recruiter.</p>
+          <div class="dark-panel">
+            <span class="mono" style="color: var(--gold-500);">RECRUITER QUESTION</span>
+            <h3 id="interviewQ" style="color: var(--white); font-size: 22px; margin: 10px 0 18px;"></h3>
+            <div class="actions">
+              <button type="button" class="btn" onclick="stepInterview(-1)">← Previous Question</button>
+              <button type="button" class="btn btn-primary" style="background: var(--gold-500); border-color: var(--gold-500); color: var(--navy-950);" onclick="stepInterview(1)">Next Question →</button>
+            </div>
+          </div>
+          <p class="lead" style="margin-bottom: 0;"><strong>Follow-up transfer:</strong> Ask your teacher about another candidate's position, strengths, and availability.</p>
+        </article>
+      `,
+
+      // 08 Exit Ticket
+      () => `
+        <article class="card-block">
+          <span class="kicker">08 · Exit Ticket</span>
+          <h2>Case Review: Adrian Foster</h2>
+          <p class="lead">Adrian Foster is a new employee. Without looking back at previous screens, write three questions about Adrian (age, location, and position), one question about his team, and one positive + one negative statement.</p>
+          ${renderTextboxes([
+            'Question 1 (Adrian — age)',
+            'Question 2 (Adrian — location)',
+            'Question 3 (Adrian — position)',
+            'Question 4 (His team)',
+            'One positive sentence and one negative sentence'
+          ])}
+          <div class="checklist-box">
+            <span class="kicker">My Can-Do Statements</span>
+            ${[
+              'I can ask three clear questions about a new colleague.',
+              'I can ask an accurate question about a team.',
+              'I can produce one positive and one negative statement using To Be.',
+              'I can answer at least two professional interview questions aloud.'
+            ].map(item => `<label class="checklist-item"><input type="checkbox"> <span>${item}</span></label>`).join('')}
+          </div>
+        </article>
+      `
+    ];
+
+    function stepInterview(delta) {
+      interviewIdx = (interviewIdx + delta + INTERVIEW_QUESTIONS.length) % INTERVIEW_QUESTIONS.length;
+      const el = $('interviewQ');
+      if (el) el.textContent = INTERVIEW_QUESTIONS[interviewIdx];
+    }
+
+    function saveCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => {
+        savedInputs[el.dataset.save] = el.value;
+      });
+    }
+
+    function restoreCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => {
+        if (savedInputs[el.dataset.save] !== undefined) {
+          el.value = savedInputs[el.dataset.save];
+        }
+      });
+    }
+
+    function render() {
+      saveCurrentInputs();
+      $('nav').innerHTML = MODULE_NAMES.map((name, idx) => `
+        <button type="button" class="${current === idx ? 'active' : ''}" onclick="go(${idx})">
+          <span class="nav-idx">${String(idx + 1).padStart(2, '0')}</span>
+          <span>${name}</span>
+        </button>
+      `).join('');
+
+      $('screen').innerHTML = renderTeacherAccordion(current) + MODULES[current]();
+      restoreCurrentInputs();
+
+      $('prev').disabled = current === 0;
+      $('next').disabled = current === MODULE_NAMES.length - 1;
+      $('count').textContent = `${String(current + 1).padStart(2, '0')} / ${String(MODULE_NAMES.length).padStart(2, '0')}`;
+
+      if (current === 6) stepInterview(0);
+    }
+
+    function go(idx) {
+      current = idx;
+      render();
+      $('nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const activeBtn = $('nav').children[idx];
+      if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    }
+
+    function editStudentName() {
+      const currentName = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', currentName);
+      if (next === null) return;
+      const clean = next.trim();
+      try {
+        localStorage.setItem('ld_student_name', clean);
+      } catch (_) {}
+      $('studentName').textContent = 'Student · ' + (clean || 'Guest');
+    }
+
+    function updateTeacherButton() {
+      const btn = $('teacherToggleBtn');
+      if (!btn) return;
+      btn.classList.toggle('is-active', isTeacher);
+      btn.textContent = isTeacher ? "Teacher's Version (On) ×" : "Teacher's Version ↗";
+    }
+
+    function openTeacherModal() {
+      if (isTeacher) {
+        isTeacher = false;
+        updateTeacherButton();
+        render();
+        return;
+      }
+      $('pinMessage').textContent = '';
+      $('pinInput').value = '';
+      $('teacherDialog').showModal();
+      setTimeout(() => $('pinInput').focus(), 60);
+    }
+
+    function authorizeTeacher() {
+      const pin = ($('pinInput').value || '').trim();
+      if (VALID_PINS.includes(pin)) {
+        isTeacher = true;
+        $('teacherDialog').close();
+        updateTeacherButton();
+        render();
+      } else {
+        $('pinMessage').textContent = 'Incorrect PIN. Please verify with Academic Coordination.';
+        $('pinInput').focus();
+      }
+    }
+
+    updateTeacherButton();
+
+    $('pinInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        authorizeTeacher();
+      }
+    });
+
+    $('prev').onclick = () => go(current - 1);
+    $('next').onclick = () => go(current + 1);
+
+    render();
+  </script>
+</body>
+</html>
