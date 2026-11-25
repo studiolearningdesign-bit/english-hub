@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A2.1 &middot; Macro-Unit 02: Murphy's Law &amp; The Pronunciation Trap | L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-700: #133E68;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --white: #FFFFFF;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(10, 25, 47, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+    .site-header {
+      background: rgba(7, 21, 39, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 52px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .brand-logo-white {
+      height: 92px;
+      width: auto;
+      object-fit: contain;
+      margin: -20px 0;
+      display: block;
+      flex-shrink: 0;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+    .brand-course-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .nav-back-link {
+      color: var(--slate-200);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-back-link:hover {
+      color: var(--white);
+      border-color: var(--gold-400);
+      background: rgba(212, 168, 67, 0.15);
+    }
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 36px 24px 72px;
+    }
+    .workspace-hero-banner {
+      background: linear-gradient(135deg, #071527 0%, #001F54 60%, #133E68 100%);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      box-shadow: var(--shadow-md);
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-400);
+      background: rgba(212, 168, 67, 0.12);
+      border: 1px solid var(--gold-border);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-size: clamp(1.65rem, 3vw, 2.3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .hero-title span { color: var(--gold-400); }
+    .hero-desc {
+      font-size: 0.96rem;
+      color: var(--slate-200);
+      max-width: 72ch;
+    }
+    .mode-switch-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding: 12px 18px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .mode-switch-group {
+      display: inline-flex;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      gap: 4px;
+    }
+    .mode-switch-btn {
+      border: none;
+      background: transparent;
+      color: var(--slate-600);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mode-switch-btn.active.exp { background: var(--navy-900); color: var(--white); }
+    .mode-switch-btn.active.expl { background: var(--teal-700); color: var(--white); }
+    .mode-switch-hint {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--slate-600);
+    }
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 22px;
+    }
+    .lesson-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .lesson-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .lesson-card.is-soon {
+      opacity: 0.72;
+      background: #F8FAFC;
+    }
+    .lesson-card.is-soon:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      opacity: 0.86;
+    }
+    .lesson-card.is-soon .card-photo {
+      filter: grayscale(65%) saturate(0.55) brightness(0.92);
+    }
+    .lesson-card.is-soon:hover .card-photo {
+      transform: none;
+    }
+    .card-visual {
+      position: relative;
+      height: 164px;
+      overflow: hidden;
+      background: var(--navy-950);
+    }
+    .card-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .lesson-card:hover .card-photo { transform: scale(1.04); }
+    .card-visual-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,21,39,0.12) 0%, rgba(7,21,39,0.72) 100%);
+    }
+    .card-badges {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lesson-code {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--white);
+      background: rgba(7, 21, 39, 0.82);
+      border: 1px solid rgba(212, 168, 67, 0.45);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+    .card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .lesson-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .lesson-desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      margin-bottom: 12px;
+    }
+    .lesson-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+    }
+    .btn-soon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-500);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+    .btn-soon svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .site-footer {
+      border-top: 1px solid var(--slate-200);
+      padding: 22px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--slate-500);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../a2-1_workspace.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; Level A2.1</span>
+      </a>
+      <a href="../../a2-1_workspace.html" class="nav-back-link">&larr; Return to A2.1 Workspace</a>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <header class="workspace-hero-banner">
+      <div class="hero-pill">A2.1 &middot; Macro-Unit 02 &middot; 2 Lessons</div>
+      <h1 class="hero-title">Murphy's Law &amp; The <span>Pronunciation Trap</span></h1>
+      <p class="hero-desc">Narrar anécdotas en pasado, dominar la fonética de -ed, el FOMO digital y causas y consecuencias reales.</p>
+    </header>
+
+    <div class="mode-switch-bar">
+      <div class="mode-switch-group" role="tablist" aria-label="Lesson Mode">
+        <button type="button" class="mode-switch-btn active exp" id="uSwitchExp" role="tab" aria-selected="true">Experience (Student's Book)</button>
+        <button type="button" class="mode-switch-btn expl" id="uSwitchExpl" role="tab" aria-selected="false">Explore (Workbook)</button>
+      </div>
+      <div class="mode-switch-hint" id="uSwitchHint">Mode: Experience (Communicative Lesson)</div>
+    </div>
+
+    <section class="lessons-grid">
+      <article class="lesson-card is-soon">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="When It Rains, It Pours: The 3 Sounds of -ed">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="lesson-code font-mono">A2.1-U02-L01</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="lesson-title">When It Rains, It Pours: The 3 Sounds of -ed</h2>
+            <p class="lesson-desc">La cadena de pequeños desastres: no sonó la alarma, se cayó el café, se ponchó la llanta.</p>
+            <div class="lesson-pills">
+              <span class="pill">Past Simple regular (-ed)</span>
+              <span class="pill">When it rains, it pours</span>
+            </div>
+          </div>
+          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
+        </div>
+      </article>
+
+      <article class="lesson-card is-soon">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Did You Really Do That?">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="lesson-code font-mono">A2.1-U02-L02</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="lesson-title">Did You Really Do That?</h2>
+            <p class="lesson-desc">Dudas en la carretera: '¿Apagué la estufa? ¿Le pusiste seguro a la puerta?'.</p>
+            <div class="lesson-pills">
+              <span class="pill">Preguntas con Did (Did you lock</span>
+              <span class="pill">Don't tell me you forgot!</span>
+            </div>
+          </div>
+          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
+    <div>Master Scope &amp; Sequence 2026 &middot; A2.1 &middot; Macro-Unit 02</div>
+  </footer>
+
+  <script>
+    (function () {
+      const btnExp = document.getElementById('uSwitchExp');
+      const btnExpl = document.getElementById('uSwitchExpl');
+      const hint = document.getElementById('uSwitchHint');
+      const backLinks = document.querySelectorAll('.brand-lockup, .nav-back-link');
+
+      function applyMode(mode) {
+        const isExplore = mode === 'explore';
+        if (btnExp) {
+          btnExp.classList.toggle('active', !isExplore);
+          btnExp.setAttribute('aria-selected', isExplore ? 'false' : 'true');
+        }
+        if (btnExpl) {
+          btnExpl.classList.toggle('active', isExplore);
+          btnExpl.setAttribute('aria-selected', isExplore ? 'true' : 'false');
+        }
+        if (hint) {
+          hint.textContent = isExplore
+            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            : 'Mode: Experience (Communicative Lesson)';
+        }
+        backLinks.forEach((a) => {
+          a.href = isExplore ? '../../a2-1_workspace.html?mode=explore' : '../../a2-1_workspace.html';
+        });
+      }
+
+      if (btnExp) btnExp.addEventListener('click', () => applyMode('experience'));
+      if (btnExpl) btnExpl.addEventListener('click', () => applyMode('explore'));
+      const params = new URLSearchParams(window.location.search);
+      applyMode(params.get('mode') === 'explore' ? 'explore' : 'experience');
+    })();
+  </script>
+</body>
+</html>

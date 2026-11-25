@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A1.1 · Macro-Unit 01: The Name We Carry &amp; First Impressions | L&amp;D Studio</title>
+  <title>A1.1 &middot; Macro-Unit 01: The Name We Carry &amp; First Impressions | L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,7 +42,6 @@
       -webkit-font-smoothing: antialiased;
     }
     .font-mono { font-family: 'IBM Plex Mono', monospace; }
-
     .site-header {
       background: rgba(7, 21, 39, 0.94);
       backdrop-filter: blur(16px);
@@ -114,207 +114,212 @@
       border-color: var(--gold-400);
       background: rgba(212, 168, 67, 0.15);
     }
-
     .content-wrapper {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 28px 24px 64px;
+      padding: 36px 24px 72px;
     }
-
     .workspace-hero-banner {
+      background: linear-gradient(135deg, #071527 0%, #001F54 60%, #133E68 100%);
+      color: var(--white);
       border-radius: var(--radius-lg);
-      overflow: hidden;
-      padding: 48px 42px;
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 36px 40px;
+      margin-bottom: 28px;
       border: 1px solid rgba(212, 168, 67, 0.28);
-      box-shadow: 0 20px 40px -12px rgba(7, 21, 39, 0.30);
-      margin-bottom: 32px;
-      color: #ffffff;
-      background-size: cover;
-      background-position: center 30%;
-      background-image: linear-gradient(90deg, rgba(7, 21, 39, 0.97) 0%, rgba(11, 31, 58, 0.92) 55%, rgba(7, 21, 39, 0.45) 100%),
-                        url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=85);
+      box-shadow: var(--shadow-md);
     }
     .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      background: rgba(212, 168, 67, 0.18);
-      border: 1px solid var(--gold-border);
-      color: #fef08a;
-      padding: 5px 13px;
-      border-radius: var(--radius-full);
-      font-size: 11px;
-      font-weight: 800;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      width: fit-content;
+      color: var(--gold-400);
+      background: rgba(212, 168, 67, 0.12);
+      border: 1px solid var(--gold-border);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
       margin-bottom: 14px;
     }
     .hero-title {
-      font-size: clamp(28px, 3.6vw, 40px);
+      font-size: clamp(1.65rem, 3vw, 2.3rem);
       font-weight: 800;
       line-height: 1.15;
+      letter-spacing: -0.02em;
       margin-bottom: 10px;
     }
-    .hero-title span { color: var(--gold-500); font-style: italic; }
-    .hero-desc { font-size: 1rem; color: #cbd5e1; max-width: 56ch; }
-
-    .lessons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-      gap: 20px;
+    .hero-title span { color: var(--gold-400); }
+    .hero-desc {
+      font-size: 0.96rem;
+      color: var(--slate-200);
+      max-width: 72ch;
     }
-    .lesson-card {
-      background: var(--white);
-      border: 1px solid var(--slate-200);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.25s ease;
-    }
-    .lesson-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--slate-300);
-    }
-    .card-visual {
-      position: relative;
-      height: 170px;
-      overflow: hidden;
-      background: var(--navy-900);
-    }
-    .card-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.35s ease;
-    }
-    .lesson-card:hover .card-photo { transform: scale(1.04); }
-    .card-visual-gradient {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(7, 21, 39, 0.15) 0%, rgba(7, 21, 39, 0.72) 100%);
-    }
-    .card-badges {
-      position: absolute;
-      left: 14px;
-      bottom: 12px;
-      right: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .lesson-code {
-      font-size: 10.5px;
-      font-weight: 800;
-      color: #fef08a;
-      background: rgba(7, 21, 39, 0.78);
-      border: 1px solid var(--gold-border);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-    }
-    .card-body {
-      padding: 20px 22px 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-      gap: 16px;
-    }
-    .lesson-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--navy-900);
-      margin: 4px 0 6px;
-    }
-    .lesson-desc { font-size: 0.88rem; color: var(--slate-600); }
-    .lesson-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-    .pill {
-      font-size: 0.74rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      background: var(--slate-100);
-      color: var(--navy-900);
-    }
-    .btn-launch {
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
-      background: var(--navy-900);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 0.86rem;
-      padding: 10px 18px;
-      border-radius: var(--radius-full);
-      transition: background 0.2s;
-    }
-    .btn-launch:hover { background: var(--navy-700); }
-    .btn-launch.teal-mode { background: var(--teal-700); }
-    .btn-launch.teal-mode:hover { background: #005f69; }
-    .btn-soon {
-      display: inline-block;
-      text-align: center;
-      background: var(--slate-100);
-      color: var(--slate-500);
-      font-weight: 700;
-      font-size: 0.86rem;
-      padding: 10px 18px;
-      border-radius: var(--radius-full);
-    }
-
     .mode-switch-bar {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 14px;
       margin-bottom: 24px;
+      padding: 12px 18px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
     }
     .mode-switch-group {
       display: inline-flex;
-      background: var(--white);
+      background: var(--slate-100);
       border: 1px solid var(--slate-200);
       border-radius: var(--radius-full);
       padding: 4px;
-      box-shadow: var(--shadow-sm);
+      gap: 4px;
     }
     .mode-switch-btn {
       border: none;
       background: transparent;
       color: var(--slate-600);
       font-family: inherit;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 8px 18px;
+      padding: 7px 16px;
       border-radius: var(--radius-full);
       cursor: pointer;
       transition: all 0.2s;
     }
-    .mode-switch-btn.active.exp {
-      background: var(--navy-900);
-      color: var(--white);
-    }
-    .mode-switch-btn.active.expl {
-      background: var(--teal-700);
-      color: var(--white);
-    }
+    .mode-switch-btn.active.exp { background: var(--navy-900); color: var(--white); }
+    .mode-switch-btn.active.expl { background: var(--teal-700); color: var(--white); }
     .mode-switch-hint {
       font-size: 0.84rem;
       font-weight: 600;
       color: var(--slate-600);
     }
-
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 22px;
+    }
+    .lesson-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .lesson-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .lesson-card.is-soon {
+      opacity: 0.72;
+      background: #F8FAFC;
+    }
+    .lesson-card.is-soon:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      opacity: 0.86;
+    }
+    .lesson-card.is-soon .card-photo {
+      filter: grayscale(65%) saturate(0.55) brightness(0.92);
+    }
+    .lesson-card.is-soon:hover .card-photo {
+      transform: none;
+    }
+    .card-visual {
+      position: relative;
+      height: 164px;
+      overflow: hidden;
+      background: var(--navy-950);
+    }
+    .card-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .lesson-card:hover .card-photo { transform: scale(1.04); }
+    .card-visual-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,21,39,0.12) 0%, rgba(7,21,39,0.72) 100%);
+    }
+    .card-badges {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lesson-code {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--white);
+      background: rgba(7, 21, 39, 0.82);
+      border: 1px solid rgba(212, 168, 67, 0.45);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+    .card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .lesson-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .lesson-desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      margin-bottom: 12px;
+    }
+    .lesson-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+    }
+    .btn-soon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-500);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+    .btn-soon svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
     .site-footer {
       border-top: 1px solid var(--slate-200);
       padding: 22px 24px;
@@ -322,6 +327,8 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
       font-size: 0.8rem;
       color: var(--slate-500);
     }
@@ -343,123 +350,119 @@
 
   <main class="content-wrapper">
     <header class="workspace-hero-banner">
-      <div class="hero-pill">A1.1 &middot; Macro-Unidad 01 &middot; 4 Lessons</div>
+      <div class="hero-pill">A1.1 &middot; Macro-Unit 01 &middot; 4 Lessons</div>
       <h1 class="hero-title">The Name We Carry &amp; <span>First Impressions</span></h1>
-      <p class="hero-desc">
-        Introduce yourself clearly, talk about origin and nationality, express professions with precision, and build confident first impressions using To Be.
-      </p>
+      <p class="hero-desc">Describir la identidad real, raíces, familia diversa, pertenencias y espacios cotidianos sin clichés infantiles.</p>
     </header>
 
     <div class="mode-switch-bar">
       <div class="mode-switch-group" role="tablist" aria-label="Lesson Mode">
-        <button type="button" class="mode-switch-btn active exp" id="u01SwitchExp" role="tab" aria-selected="true">Experience (Student's Book)</button>
-        <button type="button" class="mode-switch-btn expl" id="u01SwitchExpl" role="tab" aria-selected="false">Explore (Workbook)</button>
+        <button type="button" class="mode-switch-btn active exp" id="uSwitchExp" role="tab" aria-selected="true">Experience (Student's Book)</button>
+        <button type="button" class="mode-switch-btn expl" id="uSwitchExpl" role="tab" aria-selected="false">Explore (Workbook)</button>
       </div>
-      <div class="mode-switch-hint" id="u01SwitchHint">Mode: Communicative class &amp; speaking missions</div>
+      <div class="mode-switch-hint" id="uSwitchHint">Mode: Experience (Communicative Lesson)</div>
     </div>
 
     <section class="lessons-grid">
-      <article class="lesson-card">
+      <article class="lesson-card is-soon">
         <div class="card-visual">
           <img class="card-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="The Story Behind Your Name">
           <div class="card-visual-gradient"></div>
           <div class="card-badges">
-            <span class="lesson-code font-mono" id="l01Badge">A1.1-U01-L01 &middot; Live</span>
+            <span class="lesson-code font-mono">A1.1-U01-L01</span>
           </div>
         </div>
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Story Behind Your Name</h2>
-            <p class="lesson-desc">First names, family nicknames, spelling, and first impressions with <em>I / you + To Be + my / your</em>.</p>
+            <p class="lesson-desc">Nombres que la gente odia, apodos vergonzosos y pronunciación real.</p>
             <div class="lesson-pills">
-              <span class="pill">I'm / Are you...?</span>
-              <span class="pill">Call me [Name]</span>
+              <span class="pill">Pronombres sujeto (I, you) + Verbo To Be (</span>
+              <span class="pill">Nice to finally put a face to the name</span>
             </div>
           </div>
-          <a href="../u01-l01-the-story-behind-your-name/index.html" class="btn-launch" id="l01Btn">Open Lesson 01 &rarr;</a>
+          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
         </div>
       </article>
 
-      <article class="lesson-card">
+      <article class="lesson-card is-soon">
         <div class="card-visual">
-          <img class="card-photo" src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Where Are You Really From?">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Where Are You Really From?">
           <div class="card-visual-gradient"></div>
           <div class="card-badges">
-            <span class="lesson-code font-mono">A1.1-U01-L02 &middot; Locked</span>
+            <span class="lesson-code font-mono">A1.1-U01-L02</span>
           </div>
         </div>
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Where Are You Really From?</h2>
-            <p class="lesson-desc">Origin, hometown, and nationality beyond clich&eacute;s with <em>To Be (he, she, we, they) + Yes/No questions</em>.</p>
+            <p class="lesson-desc">El orgullo del pueblo o barrio de origen vs la ciudad. ¿La provincia es más cálida?</p>
             <div class="lesson-pills">
-              <span class="pill">Born &amp; raised in...</span>
-              <span class="pill">Small world!</span>
+              <span class="pill">Verbo To Be (he, she, we, they) + pregunta</span>
+              <span class="pill">Born and raised in...</span>
             </div>
           </div>
-          <span class="btn-soon">Locked &middot; Coming Soon</span>
+          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
         </div>
       </article>
 
-      <article class="lesson-card">
+      <article class="lesson-card is-soon">
         <div class="card-visual">
-          <img class="card-photo" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="The Job vs. The Human">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="The Job vs. The Human">
           <div class="card-visual-gradient"></div>
           <div class="card-badges">
-            <span class="lesson-code font-mono">A1.1-U01-L03 &middot; Locked</span>
+            <span class="lesson-code font-mono">A1.1-U01-L03</span>
           </div>
         </div>
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Job vs. The Human</h2>
-            <p class="lesson-desc">Express professions with precise indefinite articles (<em>a / an + To Be</em>).</p>
+            <p class="lesson-desc">¿Eres tu título universitario o tu pasión? El ingeniero en Uber, la mamá emprendedora.</p>
             <div class="lesson-pills">
-              <span class="pill">a / an + To Be</span>
-              <span class="pill">What do you do?</span>
+              <span class="pill">Artículos indefinidos (a/an)</span>
+              <span class="pill">It pays the bills</span>
             </div>
           </div>
-          <span class="btn-soon">Locked &middot; Coming Soon</span>
+          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
         </div>
       </article>
 
-      <article class="lesson-card">
+      <article class="lesson-card is-soon">
         <div class="card-visual">
-          <img class="card-photo" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="The First 30 Seconds">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="The First 30 Seconds">
           <div class="card-visual-gradient"></div>
           <div class="card-badges">
-            <span class="lesson-code font-mono">A1.1-U01-L04 &middot; Locked</span>
+            <span class="lesson-code font-mono">A1.1-U01-L04</span>
           </div>
         </div>
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The First 30 Seconds</h2>
-            <p class="lesson-desc">Integrate <em>Wh-</em> questions + <em>To Be</em> (<em>Who, Where, How old</em>) to profile people.</p>
+            <p class="lesson-desc">¿Qué dice tu foto de WhatsApp o apretón de manos? ¿Las primeras impresiones son justas?</p>
             <div class="lesson-pills">
-              <span class="pill">Wh- + To Be</span>
+              <span class="pill">Preguntas de información con Wh- + To Be (</span>
               <span class="pill">First impressions matter</span>
             </div>
           </div>
-          <span class="btn-soon">Locked &middot; Coming Soon</span>
+          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
         </div>
       </article>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div><strong>Learning &amp; Development Studio</strong> &middot; Where potential takes shape</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; Macro-Unit 01</div>
+    <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
+    <div>Master Scope &amp; Sequence 2026 &middot; A1.1 &middot; Macro-Unit 01</div>
   </footer>
 
   <script>
     (function () {
-      const btnExp = document.getElementById('u01SwitchExp');
-      const btnExpl = document.getElementById('u01SwitchExpl');
-      const hint = document.getElementById('u01SwitchHint');
-      const l01Badge = document.getElementById('l01Badge');
-      const l01Btn = document.getElementById('l01Btn');
+      const btnExp = document.getElementById('uSwitchExp');
+      const btnExpl = document.getElementById('uSwitchExpl');
+      const hint = document.getElementById('uSwitchHint');
       const backLinks = document.querySelectorAll('.brand-lockup, .nav-back-link');
 
-      function applyU01Mode(mode) {
+      function applyMode(mode) {
         const isExplore = mode === 'explore';
         if (btnExp) {
           btnExp.classList.toggle('active', !isExplore);
@@ -471,29 +474,18 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Workbook, mechanics & precision drills'
-            : 'Mode: Communicative class & speaking missions';
-        }
-        if (l01Badge) {
-          l01Badge.textContent = isExplore ? 'A1.1-U01-L01 · Explore' : 'A1.1-U01-L01 · Live';
-        }
-        if (l01Btn) {
-          l01Btn.href = isExplore
-            ? '../u01-l01-the-story-behind-your-name/explore.html'
-            : '../u01-l01-the-story-behind-your-name/index.html';
-          l01Btn.innerHTML = isExplore ? 'Open Explore 01 &rarr;' : 'Open Lesson 01 &rarr;';
-          l01Btn.classList.toggle('teal-mode', isExplore);
+            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {
           a.href = isExplore ? '../../a1-1_workspace.html?mode=explore' : '../../a1-1_workspace.html';
         });
       }
 
-      if (btnExp) btnExp.addEventListener('click', () => applyU01Mode('experience'));
-      if (btnExpl) btnExpl.addEventListener('click', () => applyU01Mode('explore'));
-
+      if (btnExp) btnExp.addEventListener('click', () => applyMode('experience'));
+      if (btnExpl) btnExpl.addEventListener('click', () => applyMode('explore'));
       const params = new URLSearchParams(window.location.search);
-      applyU01Mode(params.get('mode') === 'explore' ? 'explore' : 'experience');
+      applyMode(params.get('mode') === 'explore' ? 'explore' : 'experience');
     })();
   </script>
 </body>
