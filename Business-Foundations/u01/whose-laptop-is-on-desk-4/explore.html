@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore · The Lost &amp; Found Log — Business Foundations | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-500: #D4A843;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    header.site-header {
+      background: var(--navy-950);
+      color: var(--white);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+    }
+
+    .site-header-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; flex-shrink: 0; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); flex-shrink: 0; }
+    .header-course { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .header-link { font-size: 13px; font-weight: 600; color: var(--slate-200); text-decoration: none; }
+    .header-link:hover { color: var(--white); }
+
+    .btn-print {
+      background: var(--gold-500);
+      color: var(--navy-950);
+      border: 1px solid var(--gold-500);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font: 700 13px/1.3 'Plus Jakarta Sans', sans-serif;
+      cursor: pointer;
+    }
+
+    main { max-width: 980px; margin: 0 auto; padding: 28px 22px 48px; }
+
+    .worksheet-hero {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 34px 38px;
+      margin-bottom: 22px;
+    }
+
+    .worksheet-hero h1 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 36px); font-weight: 800; line-height: 1.18; }
+    .worksheet-hero h1 span { color: var(--gold-500); }
+    .worksheet-hero p { margin: 0; color: rgba(248, 250, 252, 0.88); max-width: 620px; }
+
+    .meta-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .meta-strip label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal-700);
+      display: block;
+    }
+
+    .meta-strip input {
+      width: 100%;
+      margin-top: 4px;
+      border: 0;
+      border-bottom: 1px solid var(--slate-300);
+      padding: 6px 2px;
+      font: 500 15px 'Plus Jakarta Sans', sans-serif;
+      color: var(--navy-900);
+      background: transparent;
+    }
+
+    section.card-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 18px;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+
+    h2 { font-size: 21px; font-weight: 700; color: var(--navy-900); margin: 0 0 10px; }
+    p.lead { margin: 0 0 16px; color: var(--slate-600); }
+
+    .log-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .log-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .log-card strong { display: block; color: var(--navy-900); font-size: 16px; margin-bottom: 4px; }
+
+    .prompt-item { margin: 14px 0; }
+    .prompt-item label { display: block; font-weight: 600; color: var(--navy-900); margin-bottom: 6px; }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      padding: 10px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      color: var(--slate-900);
+      background: var(--white);
+    }
+
+    textarea { min-height: 76px; resize: vertical; }
+
+    .record-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13.5px;
+      color: var(--navy-900);
+    }
+
+    footer.studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    .footer-brand-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+
+    .footer-return-link {
+      color: var(--gold-500);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgba(212, 168, 67, 0.4);
+    }
+
+    @media print {
+      header.site-header, footer.studio-site-footer, .btn-print { display: none !important; }
+      body { background: #fff; font-size: 14px; }
+      main { padding: 0; max-width: 100%; }
+      .worksheet-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 22px 24px; }
+      section.card-block { break-inside: avoid; padding: 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="header-brand">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="header-course">English Hub &middot; Business Foundations &middot; Explore</span>
+      </a>
+      <div class="header-actions">
+        <a class="header-link" href="index.html">&larr; Back to Experience</a>
+        <button type="button" class="btn-print" onclick="window.print()">Print Worksheet</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="worksheet-hero">
+      <h1>Explore &middot; <span>The Lost &amp; Found Log</span></h1>
+      <p>Independent consolidation for <strong>Whose Laptop Is on Desk 4?</strong> Practice possessive adjectives, <strong>'s / s'</strong>, and <strong>Whose...?</strong> questions.</p>
+    </div>
+
+    <div class="meta-strip">
+      <div>
+        <label for="studentField">Student Name</label>
+        <input id="studentField" type="text" placeholder="Your full name">
+      </div>
+      <div>
+        <label for="dateField">Date</label>
+        <input id="dateField" type="text" placeholder="YYYY-MM-DD">
+      </div>
+    </div>
+
+    <section class="card-block">
+      <span class="kicker">01 &middot; Office Reference Log</span>
+      <h2>Floor 2 Lost &amp; Found</h2>
+      <p class="lead">Use this log to complete Parts 02 and 03.</p>
+      <div class="log-grid">
+        <div class="log-card">
+          <strong>Blue Lanyard (Desk 2)</strong>
+          Owner: Laura (HR)<br>Status: Verified
+        </div>
+        <div class="log-card">
+          <strong>Office Stationery (Top Drawer)</strong>
+          Owner: Marcos (IT)<br>Status: Verified
+        </div>
+        <div class="log-card">
+          <strong>Personal Belongings (Shared Table 6)</strong>
+          Owner: The interns (Sales)<br>Status: Pending pickup
+        </div>
+      </div>
+    </section>
+
+    <section class="card-block">
+      <span class="kicker">02 &middot; Write the Questions &amp; Answers</span>
+      <h2>Whose Item Is It?</h2>
+      <p class="lead">Write one <strong>Whose...?</strong> question and one complete answer using <strong>'s</strong> or <strong>s'</strong> for each item.</p>
+      <div class="prompt-item">
+        <label for="q1">1. Blue lanyard (singular — Laura):</label>
+        <input id="q1" type="text" placeholder="Question + Answer...">
+      </div>
+      <div class="prompt-item">
+        <label for="q2">2. Stationery box (singular — Marcos):</label>
+        <input id="q2" type="text" placeholder="Question + Answer...">
+      </div>
+      <div class="prompt-item">
+        <label for="q3">3. Personal belongings (plural — the interns):</label>
+        <input id="q3" type="text" placeholder="Question + Answer...">
+      </div>
+    </section>
+
+    <section class="card-block">
+      <span class="kicker">03 &middot; Error Clinic</span>
+      <h2>Fix the Office Notes</h2>
+      <p class="lead">Each sentence below has one error. Rewrite each sentence accurately.</p>
+      <div class="prompt-item">
+        <div class="record-box">Note A: This is Laura. His badge is on Desk 2.</div>
+        <input type="text" aria-label="Correction for Note A" placeholder="Write the corrected sentence...">
+      </div>
+      <div class="prompt-item">
+        <div class="record-box">Note B: Whose keys is these?</div>
+        <input type="text" aria-label="Correction for Note B" placeholder="Write the corrected sentence...">
+      </div>
+      <div class="prompt-item">
+        <div class="record-box">Note C: The headset of Marcos is in Room A.</div>
+        <input type="text" aria-label="Correction for Note C" placeholder="Write the natural version with 's...">
+      </div>
+    </section>
+
+    <section class="card-block">
+      <span class="kicker">04 &middot; Workplace Expressions</span>
+      <h2>Quick Desk Replies</h2>
+      <p class="lead">Respond to each coworker using one Workplace Expression (<em>No idea. / Good question. / I think so. / Ask IT.</em>) plus one short sentence.</p>
+      <div class="prompt-item">
+        <label for="w1">1. Coworker: "Whose laptop is on Desk 4? Is it Marcos's?"</label>
+        <textarea id="w1" placeholder="Write your response..."></textarea>
+      </div>
+      <div class="prompt-item">
+        <label for="w2">2. Coworker: "Whose confidential folder is this?"</label>
+        <textarea id="w2" placeholder="Write your response..."></textarea>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; Whose Laptop Is on Desk 4? (Business Foundations)</div>
+      </div>
+      <a href="index.html" class="footer-return-link">&larr; Return to Experience</a>
+    </div>
+  </footer>
+
+  <script>
+    try {
+      const saved = localStorage.getItem('ld_student_name');
+      if (saved) document.getElementById('studentField').value = saved;
+    } catch (_) {}
+  </script>
+</body>
+</html>

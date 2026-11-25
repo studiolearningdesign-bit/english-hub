@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Guide · Whose Laptop Is on Desk 4? — Business Foundations | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    header.site-header {
+      background: var(--navy-950);
+      color: var(--white);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+    }
+
+    .site-header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .header-brand { display: inline-flex; align-items: center; gap: 14px; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; flex-shrink: 0; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); flex-shrink: 0; }
+    .header-course { font-size: 13px; font-weight: 600; color: var(--gold-500); }
+
+    .header-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .header-link { font-size: 13px; font-weight: 500; color: var(--slate-200); text-decoration: none; }
+    .header-link:hover { color: var(--white); }
+
+    .btn-print {
+      background: var(--gold-500);
+      color: var(--navy-950);
+      border: 1px solid var(--gold-500);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font: 700 13px/1.3 'Plus Jakarta Sans', sans-serif;
+      cursor: pointer;
+    }
+
+    main { max-width: 1080px; margin: 0 auto; padding: 28px 22px 48px; }
+
+    .doc-hero {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-bottom: 22px;
+    }
+
+    .doc-hero .mono-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .doc-hero h1 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 36px); font-weight: 800; line-height: 1.18; }
+    .doc-hero p { margin: 0; color: rgba(248, 250, 252, 0.88); max-width: 720px; }
+
+    section.card-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 20px;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+
+    h2 { font-size: 22px; font-weight: 700; color: var(--navy-900); margin: 0 0 12px; }
+    h3 { font-size: 17px; font-weight: 700; color: var(--navy-900); margin: 18px 0 8px; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .meta-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .meta-card strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+
+    .table-scroll { overflow-x: auto; margin-top: 12px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 10px 12px; border: 1px solid var(--slate-200); text-align: left; vertical-align: top; }
+    th { background: var(--navy-900); color: var(--white); font-weight: 600; }
+    tbody tr:nth-child(even) { background: var(--slate-50); }
+
+    code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      background: var(--slate-100);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--navy-900);
+    }
+
+    .notice-box {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 110px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14.5px;
+      padding: 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      margin-top: 8px;
+    }
+
+    footer.studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    .footer-brand-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+
+    @media print {
+      header.site-header, footer.studio-site-footer, .btn-print { display: none !important; }
+      body { background: #fff; font-size: 13px; }
+      main { padding: 0; max-width: 100%; }
+      .doc-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px 24px; }
+      section.card-block { break-inside: avoid; padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="header-brand">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="header-course">Teacher Hub &middot; Business Foundations</span>
+      </div>
+      <div class="header-actions">
+        <a class="header-link" href="../../../Business-Foundations/u01/whose-laptop-is-on-desk-4/index.html?role=teacher">Abrir Experience (Modo Docente) &#8599;</a>
+        <a class="header-link" href="../../../Business-Foundations/u01/whose-laptop-is-on-desk-4/explore.html">Ver Explore &#8599;</a>
+        <button type="button" class="btn-print" onclick="window.print()">Print Teacher Guide</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="doc-hero">
+      <span class="mono-kicker">Teacher Guide &middot; BF-U01-L02 &middot; Uso Exclusivo Docente</span>
+      <h1>Whose Laptop Is on Desk 4?</h1>
+      <p>Guía completa de preparación, secuencia didáctica paso a paso, delimitación curricular P / P? / N / F, claves de respuesta, protocolo de mediación, rúbrica cualitativa E0–E3 y guion de producción de audios en estudio.</p>
+    </div>
+
+    <section class="card-block">
+      <span class="kicker">01 &middot; Delimitación Curricular</span>
+      <h2>Alcance Académico y Repertorio P / P? / N / F</h2>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <strong>Código y Ubicación</strong>
+          Business Foundations &middot; Macro-Unidad 01 &middot; Lección 02 (<code>BF-U01-L02</code>).
+        </div>
+        <div class="meta-card">
+          <strong>Tiempo Flexible</strong>
+          Principio rector: <em>Understanding Comes Before Advancement</em>. Sin límite rígido de sesión.
+        </div>
+        <div class="meta-card">
+          <strong>Acceso Docente en Vivo</strong>
+          PINs autorizados en <code>index.html</code>: <code>0410</code> y <code>2064</code> (o mediante enlace <code>?role=teacher</code>).
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Categoría</th><th>Repertorio Exacto</th><th>Regla de Aplicación</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P (Previamente demostrado)</strong></td>
+              <td><code>To Be</code> (afirm./neg./Yes-No/Wh-), <code>a/an</code>, roles y vocabulario de L01 (<em>available, busy, department, confidential</em>), <code>my / your</code>.</td>
+              <td>Base exclusiva del <code>01 Warm-up</code> y preguntas de acceso.</td>
+            </tr>
+            <tr>
+              <td><strong>P? (Verificar antes de exigir)</strong></td>
+              <td>Singular vs. plural en demostrativos de contacto inmediato (<em>this / these</em>) y concordancia <code>is / are</code>.</td>
+              <td>Verificar brevemente antes de exigir <em>Whose ... is this? / are these?</em></td>
+            </tr>
+            <tr>
+              <td><strong>N (Recurso nuevo)</strong></td>
+              <td>Adjetivos posesivos (<code>my, your, his, her, our, their</code>), genitivo sajón (<code>'s</code> y plural regular <code>s'</code>), preguntas <code>Whose...?</code>, 6 objetos de oficina, 4 <em>Workplace Expressions</em> y contraste fonético <code>his / her</code> + terminaciones de <code>'s</code>.</td>
+              <td>Enseñar explícitamente y practicar con apoyos antes de evaluar en <code>06 Speaking</code> y <code>07 Exit Ticket</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>F (Frontera prohibida)</strong></td>
+              <td>Pronombres posesivos independientes (<code>mine, yours, hers, ours, theirs</code>), doble genitivo (<code>a friend of mine's</code>), verbos de acción en Present Simple (<code>belong, use, need</code>), auxiliar <code>do/does</code>, pasado.</td>
+              <td>Excluidos de consignas, textos, audios, ejemplos y correcciones.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card-block">
+      <span class="kicker">02 &middot; Complete Lesson Plan</span>
+      <h2>Secuencia Didáctica Paso a Paso</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Módulo</th><th>1. Setup &amp; 2. Modeling</th><th>3. Check &amp; 4. Claves</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>01 &middot; Warm-up</strong><br>The Shared Hot-Desk</td>
+              <td>Mostrar la escena de Desk 4 y modelar una respuesta en <code>[P]</code> (<em>"My desk is clean."</em>).</td>
+              <td>Diagnóstico oral rápido sin introducir <code>his/her/'s</code> todavía.</td>
+            </tr>
+            <tr>
+              <td><strong>02 &middot; Vocabulary</strong><br>Items on the Desk</td>
+              <td>Trabajar las 6 <em>Flip Cards</em> con audios reales, voltear para confirmar significado y practicar <code>his/her</code> + terminaciones de <code>'s</code>.</td>
+              <td><strong>Unscramble:</strong> 1. <em>coworker</em> &middot; 2. <em>belongings</em> &middot; 3. <em>stationery</em> &middot; 4. <em>lanyard</em> &middot; 5. <em>drawer</em> &middot; 6. <em>shared</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>03 &middot; Workplace Expressions</strong><br>Quick Office Replies</td>
+              <td>Presentar las 4 frases como <strong>bloques fijos</strong> (sin analizar <em>think</em> ni <em>ask</em> como Present Simple).</td>
+              <td><em>No idea. / Good question. / I think so. / Ask IT.</em></td>
+            </tr>
+            <tr>
+              <td><strong>04 &middot; Listening</strong><br>Conference Room B</td>
+              <td>Mantener la transcripción <strong>oculta</strong> durante las 2 primeras escuchas. Abrirla después para notar <code>his/her/their/'s/Whose</code>.</td>
+              <td><strong>Owner Verification:</strong> 1. <em>Elena's</em> &middot; 2. <em>Carlos's</em> &middot; 3. <em>David's</em> &middot; 4. <em>the managers'</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>05 &middot; Grammar</strong><br>Possessives, 's &amp; Whose</td>
+              <td>Explicar la interferencia del español (<em>"su"</em> → <code>his / her / their</code>) y el contraste singular <code>'s</code> vs. plural <code>s'</code>.</td>
+              <td><strong>Part A:</strong> <em>Elena's badge</em> &middot; <em>Carlos's charger</em> &middot; <em>the managers' folders</em> &middot; <em>his headset</em>.<br><strong>Part B:</strong> 1. Fix (<em>Her notebook is on Desk 4.</em>) &middot; 2. Natural &middot; 3. Fix (<em>Whose charger is this?</em>) &middot; 4. Natural.</td>
+            </tr>
+            <tr>
+              <td><strong>06 &middot; Speaking</strong><br>Lost &amp; Found Roleplay</td>
+              <td>Modelar Item 01 con pregunta <em>Whose...?</em> + <em>Workplace Expression</em> + dueño con <code>'s</code> y posesivo.</td>
+              <td>Intercambiar roles en Items 03–04 para garantizar plural <em>Whose ... are these? They're...</em></td>
+            </tr>
+            <tr>
+              <td><strong>07 &middot; Exit Ticket</strong><br>End-of-Day Desk Report</td>
+              <td>Cerrar pestañas previas y recoger evidencia escrita sin modelos copiables.</td>
+              <td>Revisar apóstrofo (<code>'s</code> vs. <code>s'</code>), distinción <code>his/her/their</code> y concordancia <code>is/are</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Claves de Respuesta &middot; Explore Worksheet (<code>explore.html</code>)</h3>
+      <ul>
+        <li><strong>02 &middot; Whose Item Is It?:</strong> 1. <em>Whose lanyard is this? It's Laura's lanyard.</em> &middot; 2. <em>Whose stationery is this? It's Marcos's stationery.</em> &middot; 3. <em>Whose belongings are these? They're the interns' belongings.</em></li>
+        <li><strong>03 &middot; Error Clinic:</strong> A. <em>This is Laura. Her badge is on Desk 2.</em> &middot; B. <em>Whose keys are these?</em> &middot; C. <em>Marcos's headset is in Room A.</em></li>
+        <li><strong>04 &middot; Quick Desk Replies:</strong> Producción personal libre integrando una <em>Workplace Expression</em> + oración corta en <code>[P/N]</code>.</li>
+      </ul>
+    </section>
+
+    <section class="card-block">
+      <span class="kicker">03 &middot; Audio Production Script</span>
+      <h2>Guion de Producción de Audios en Estudio (23 Archivos MP3)</h2>
+      <p><strong>Regla absoluta:</strong> cero <code>speechSynthesis</code> / TTS. Guardar todos los audios en <code>Business-Foundations/u01/whose-laptop-is-on-desk-4/audio/</code>.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Archivo (<code>audio/</code>)</th><th>Módulo</th><th>Guion Literal</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td><code>vocab-01-word.mp3</code></td><td>02 Vocabulary</td><td>Coworker.</td></tr>
+            <tr><td>02</td><td><code>vocab-01-example.mp3</code></td><td>02 Vocabulary</td><td>My coworker is in Finance.</td></tr>
+            <tr><td>03</td><td><code>vocab-02-word.mp3</code></td><td>02 Vocabulary</td><td>Belongings.</td></tr>
+            <tr><td>04</td><td><code>vocab-02-example.mp3</code></td><td>02 Vocabulary</td><td>Are these your belongings?</td></tr>
+            <tr><td>05</td><td><code>vocab-03-word.mp3</code></td><td>02 Vocabulary</td><td>Stationery.</td></tr>
+            <tr><td>06</td><td><code>vocab-03-example.mp3</code></td><td>02 Vocabulary</td><td>This stationery is for HR.</td></tr>
+            <tr><td>07</td><td><code>vocab-04-word.mp3</code></td><td>02 Vocabulary</td><td>Lanyard.</td></tr>
+            <tr><td>08</td><td><code>vocab-04-example.mp3</code></td><td>02 Vocabulary</td><td>Her lanyard is blue.</td></tr>
+            <tr><td>09</td><td><code>vocab-05-word.mp3</code></td><td>02 Vocabulary</td><td>Drawer.</td></tr>
+            <tr><td>10</td><td><code>vocab-05-example.mp3</code></td><td>02 Vocabulary</td><td>His keys are in the drawer.</td></tr>
+            <tr><td>11</td><td><code>vocab-06-word.mp3</code></td><td>02 Vocabulary</td><td>Shared.</td></tr>
+            <tr><td>12</td><td><code>vocab-06-example.mp3</code></td><td>02 Vocabulary</td><td>Desk 4 is a shared desk.</td></tr>
+            <tr><td>13</td><td><code>pron-01-his-her.mp3</code></td><td>02 Intelligibility</td><td>His badge. Her badge. His laptop. Her laptop.</td></tr>
+            <tr><td>14</td><td><code>pron-02-genitive-s.mp3</code></td><td>02 Intelligibility</td><td>Pat's badge. Daniel's charger. Carlos's headset.</td></tr>
+            <tr><td>15</td><td><code>expr-01-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>No idea.</td></tr>
+            <tr><td>16</td><td><code>expr-01-example.mp3</code></td><td>03 Workplace Expr.</td><td>Whose charger is this? No idea.</td></tr>
+            <tr><td>17</td><td><code>expr-02-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>Good question.</td></tr>
+            <tr><td>18</td><td><code>expr-02-example.mp3</code></td><td>03 Workplace Expr.</td><td>Whose folder is on Desk 4? Good question.</td></tr>
+            <tr><td>19</td><td><code>expr-03-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>I think so.</td></tr>
+            <tr><td>20</td><td><code>expr-03-example.mp3</code></td><td>03 Workplace Expr.</td><td>Is this Elena's badge? I think so.</td></tr>
+            <tr><td>21</td><td><code>expr-04-phrase.mp3</code></td><td>03 Workplace Expr.</td><td>Ask IT.</td></tr>
+            <tr><td>22</td><td><code>expr-04-example.mp3</code></td><td>03 Workplace Expr.</td><td>Whose laptop is this? Ask IT.</td></tr>
+            <tr><td>23</td><td><code>listening-01-desk4.mp3</code></td><td>04 Listening</td><td>Claire: David, wait a second. Desk 4 is a shared desk — whose laptop is this? David: Good question. Let me check the sticker... Yes, I think so — it's Elena's laptop. Her department is Finance. Claire: Great. And whose blue lanyard is in the top drawer? David: That's Carlos's lanyard. He's my coworker in Operations. Claire: Okay. What about these belongings? Whose keys are these? David: Oh! Those are my keys! Thanks, Claire. Claire: Haha, no problem! And this stationery and these folders? David: No idea. Maybe they're the managers' folders — their meeting is at nine. Ask IT if another laptop is still here.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card-block">
+      <span class="kicker">04 &middot; Evaluación y Mediación</span>
+      <h2>Protocolo de Mediación y Rúbrica Cualitativa (E0–E3)</h2>
+      <div class="notice-box">
+        <strong>Protocolo de Mediación (Inglés → Inglés):</strong> En <code>06 Speaking</code>, el alumno interpreta fichas de objetos perdidos y comunica claramente a un colega de quién es cada objeto usando <code>'s / s'</code> y <code>his / her / their</code>. Leer la ficha de forma literal sin reformular sujeto/posesivo no acredita mediación.
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Nivel</th><th>Descriptor Observable</th><th>Intervención Docente</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>E0</strong></td><td>No logra formular preguntas con <code>Whose</code> ni indicar posesión con <code>'s</code> o <code>his/her</code> tras modelado.</td><td>Regresar a las 2 tablas del Módulo 05 con objetos físicos en cámara antes de reintentar.</td></tr>
+            <tr><td><strong>E1</strong></td><td>Depende de plantilla literal o confunde frecuentemente <code>his / her</code> o singular/plural.</td><td>Alternar referentes masculinos, femeninos y plurales en rondas orales breves.</td></tr>
+            <tr><td><strong>E2</strong></td><td>Pregunta con <code>Whose is this / are these?</code> y responde con <code>'s</code> y <code>his/her/their</code> con claridad y apoyos previstos.</td><td>Consolidar con <code>Explore</code> y habilitar avance a <code>BF-U01-L03</code>.</td></tr>
+            <tr><td><strong>E3</strong></td><td>Transfiere con autonomía a objetos y colegas nuevos integrando <em>Workplace Expressions</em> con naturalidad.</td><td>Registrar evidencia favorable por dimensión.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Notas de Observación Individual</h3>
+      <textarea placeholder="Registrar alumno, fecha, apoyos usados, E0–E3 por dimensión (Whose singular/plural, 's y s', his/her/their, listening) y siguiente paso..."></textarea>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; Teacher Guide &middot; Whose Laptop Is on Desk 4? (Business Foundations)</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

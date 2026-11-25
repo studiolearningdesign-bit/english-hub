@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Foundations · Course Workspace | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-700: #133E68;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --white: #FFFFFF;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(10, 25, 47, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* === HEADER === */
+    .site-header {
+      background: rgba(7, 21, 39, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 52px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-white {
+      height: 92px;
+      width: auto;
+      object-fit: contain;
+      margin: -20px 0;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+
+    .brand-course-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-back-link {
+      color: var(--slate-200);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-back-link:hover {
+      color: var(--white);
+      border-color: var(--gold-400);
+      background: rgba(212, 168, 67, 0.15);
+    }
+
+    /* === MAIN === */
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 36px 24px 72px;
+    }
+
+    .workspace-hero-banner {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 48px;
+      margin-bottom: 28px;
+      color: var(--white);
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      box-shadow: 0 24px 48px -12px rgba(7, 21, 39, 0.35);
+      background-image:
+        linear-gradient(95deg, rgba(7, 21, 39, 0.96) 0%, rgba(11, 31, 58, 0.88) 52%, rgba(7, 21, 39, 0.68) 100%),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85');
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fef08a;
+      background: rgba(212, 168, 67, 0.18);
+      border: 1px solid var(--gold-border);
+      padding: 5px 13px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 4.4vw, 48px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      max-width: 24ch;
+    }
+
+    .hero-title span { color: var(--gold-500); }
+
+    .hero-desc {
+      font-size: clamp(15px, 1.4vw, 17px);
+      color: #cbd5e1;
+      max-width: 64ch;
+      line-height: 1.6;
+    }
+
+    /* === CONTROLS BAR (STAGE FILTER + MODE SWITCH) === */
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+      padding: 12px 18px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stage-filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .stage-btn {
+      border: 1px solid var(--slate-200);
+      background: var(--slate-50);
+      color: var(--slate-600);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .stage-btn:hover { border-color: var(--navy-900); color: var(--navy-900); }
+
+    .stage-btn.active {
+      background: var(--navy-900);
+      border-color: var(--navy-900);
+      color: var(--white);
+    }
+
+    .mode-switch-group {
+      display: inline-flex;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .mode-switch-btn {
+      border: none;
+      background: transparent;
+      color: var(--slate-600);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-switch-btn.active.exp { background: var(--navy-900); color: var(--white); }
+    .mode-switch-btn.active.expl { background: var(--teal-700); color: var(--white); }
+
+    /* === STAGE SECTIONS & CARDS === */
+    .stage-section {
+      margin-bottom: 36px;
+    }
+
+    .stage-section.is-hidden { display: none; }
+
+    .stage-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .stage-heading h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    .stage-heading span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal-700);
+    }
+
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 22px;
+    }
+
+    .unit-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    }
+
+    .unit-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .unit-card.is-soon {
+      opacity: 0.74;
+      background: #F8FAFC;
+    }
+
+    .unit-card.is-soon:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      opacity: 0.88;
+    }
+
+    .unit-card.is-soon .card-photo {
+      filter: grayscale(65%) saturate(0.55) brightness(0.92);
+    }
+
+    .unit-card.is-soon:hover .card-photo { transform: none; }
+
+    .card-visual {
+      position: relative;
+      height: 158px;
+      overflow: hidden;
+      background: var(--navy-950);
+    }
+
+    .card-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .unit-card:hover .card-photo { transform: scale(1.04); }
+
+    .card-visual-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 21, 39, 0.12) 0%, rgba(7, 21, 39, 0.75) 100%);
+    }
+
+    .card-badges {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .unit-code {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--white);
+      background: rgba(7, 21, 39, 0.82);
+      border: 1px solid rgba(212, 168, 67, 0.45);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .unit-count {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--slate-200);
+      background: rgba(7, 21, 39, 0.75);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+    }
+
+    .card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .unit-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .unit-desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      margin-bottom: 12px;
+    }
+
+    .unit-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+    }
+
+    .btn-open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--navy-900);
+      border: 1px solid var(--navy-900);
+      color: var(--white);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn-open:hover {
+      background: var(--teal-700);
+      border-color: var(--teal-700);
+    }
+
+    .btn-soon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-500);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .btn-soon svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* === FOOTER === */
+    .studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+
+    @media (max-width: 720px) {
+      .workspace-hero-banner { padding: 32px 24px; min-height: 220px; }
+      .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; Business Foundations</span>
+      </a>
+      <a href="../index.html" class="nav-back-link">&larr; Return to English Hub</a>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <header class="workspace-hero-banner">
+      <div class="hero-pill">Business Foundations &middot; 3 Stages &middot; 16 Macro-Units</div>
+      <h1 class="hero-title">Workplace English from <span>Foundations to Bridge</span></h1>
+      <p class="hero-desc">Strengthen your core English in real corporate scenarios: directories, daily operations, client calls, incident reports, project roadmaps, and workplace diplomacy.</p>
+    </header>
+
+    <div class="controls-bar">
+      <div class="stage-filter-group" role="tablist" aria-label="Course Stages">
+        <button type="button" class="stage-btn active" data-stage="all" role="tab" aria-selected="true">All Stages</button>
+        <button type="button" class="stage-btn" data-stage="s1" role="tab" aria-selected="false">Stage 1 · A1.1–A1.2</button>
+        <button type="button" class="stage-btn" data-stage="s2" role="tab" aria-selected="false">Stage 2 · A2.1–A2.2</button>
+        <button type="button" class="stage-btn" data-stage="s3" role="tab" aria-selected="false">Stage 3 · B1.1–B1.2</button>
+      </div>
+      <div class="mode-switch-group" role="tablist" aria-label="Lesson Mode">
+        <button type="button" class="mode-switch-btn active exp" id="bfSwitchExp" role="tab" aria-selected="true">Experience</button>
+        <button type="button" class="mode-switch-btn expl" id="bfSwitchExpl" role="tab" aria-selected="false">Explore</button>
+      </div>
+    </div>
+
+    <div id="stagesContainer"></div>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; Business Foundations</div>
+      </div>
+      <div>Curriculum 2026 &middot; Stages 1–3 (A1.1–B1.2)</div>
+    </div>
+  </footer>
+
+  <script>
+    const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>';
+
+    const STAGES = [
+      {
+        id: 's1',
+        title: 'Stage 1 · Workplace Foundations',
+        cefr: 'A1.1 – A1.2 · Macro-Units u01–u05',
+        units: [
+          {
+            code: 'BF-U01',
+            title: 'Corporate Identity & Inquiries',
+            lessons: '3 Lessons',
+            desc: 'Verify personnel directories, clarify roles and availability, and handle ownership and first interviews.',
+            pills: ['To Be', 'Possessives & \'s', 'Have / Has'],
+            photo: 'photo-1486406146926-c627a92ad1ab',
+            href: './u01/index.html',
+            live: true
+          },
+          {
+            code: 'BF-U02',
+            title: 'Office Spaces, Tools & Onboarding',
+            lessons: '3 Lessons',
+            desc: 'Walk through office layouts, locate rooms and equipment, give clear instructions, and describe team profiles.',
+            pills: ['There is / are', 'Prepositions & Imperatives', 'Adjectives'],
+            photo: 'photo-1497366216548-37526070297c',
+            live: false
+          },
+          {
+            code: 'BF-U03',
+            title: 'Daily Operations & Schedules',
+            lessons: '3 Lessons',
+            desc: 'Explain daily workflows, departmental responsibilities, schedules, and recurring workplace habits.',
+            pills: ['Present Simple', 'Do / Does', 'Frequency'],
+            photo: 'photo-1552664730-d307ca884978',
+            live: false
+          },
+          {
+            code: 'BF-U04',
+            title: 'Resources, Budgets & Client Hospitality',
+            lessons: '2 Lessons',
+            desc: 'Track office supplies, ask about quantities and budgets, and host clients politely during business meals.',
+            pills: ['Countable / Uncountable', 'Some / Any', 'Polite Requests'],
+            photo: 'photo-1556761175-5973dc0f32e7',
+            live: false
+          },
+          {
+            code: 'BF-U05',
+            title: 'Capabilities & Right Now Status',
+            lessons: '2 Lessons',
+            desc: 'Report what is happening right now versus routine tasks, and discuss team skills and permissions.',
+            pills: ['Present Continuous', 'Simple vs. Continuous', 'Can / Can\'t'],
+            photo: 'photo-1522071820081-009f0129c71c',
+            live: false
+          }
+        ]
+      },
+      {
+        id: 's2',
+        title: 'Stage 2 · Operational Communication',
+        cefr: 'A2.1 – A2.2 · Macro-Units u06–u10',
+        units: [
+          {
+            code: 'BF-U06',
+            title: 'Past Reports & Incident Logs',
+            lessons: '3 Lessons',
+            desc: 'Report what happened yesterday, log system outages, and debrief business trips in chronological order.',
+            pills: ['Past Simple', 'Regular -ed & Irregulars', 'Did / Subject Qs'],
+            photo: 'photo-1454165804606-c3d57bc86b40',
+            live: false
+          },
+          {
+            code: 'BF-U07',
+            title: 'Policies, Contingencies & Transit',
+            lessons: '2 Lessons',
+            desc: 'State standard company rules, outline contingency plans with clients, and navigate business travel.',
+            pills: ['Zero Conditional', 'First Conditional', 'Movement Prepositions'],
+            photo: 'photo-1521737604893-d14cc237f11d',
+            live: false
+          },
+          {
+            code: 'BF-U08',
+            title: 'Vendors, Constraints & Proposals',
+            lessons: '2 Lessons',
+            desc: 'Compare vendor quotes, evaluate options objectively, and flag budget or capacity limits.',
+            pills: ['Comparatives & Superlatives', 'As... As', 'Too / Enough'],
+            photo: 'photo-1460925895917-afdab827c52f',
+            live: false
+          },
+          {
+            code: 'BF-U09',
+            title: 'Rules, Advice & Future Plans',
+            lessons: '2 Lessons',
+            desc: 'Give practical workplace advice, clarify compliance rules, and align quarterly plans and confirmed meetings.',
+            pills: ['Should / Have to / Mustn\'t', 'Will / Going to', 'Future Agendas'],
+            photo: 'photo-1506784983877-45594efa4cbe',
+            live: false
+          },
+          {
+            code: 'BF-U10',
+            title: 'Career Experience & Track Record',
+            lessons: '2 Lessons',
+            desc: 'Present professional experience in interviews and shift smoothly from highlights to specific past stories.',
+            pills: ['Present Perfect (ever/never)', 'Perfect vs. Past Simple'],
+            photo: 'photo-1573497019940-1c28c88b4f3e',
+            live: false
+          }
+        ]
+      },
+      {
+        id: 's3',
+        title: 'Stage 3 · Professional Bridge',
+        cefr: 'B1.1 – B1.2 · Macro-Units u11–u16 · Bridge to Executive',
+        units: [
+          {
+            code: 'BF-U11',
+            title: 'Incident Context & Legacy Habits',
+            lessons: '2 Lessons',
+            desc: 'Reconstruct interrupted events during operational incidents and contrast past workflows with today.',
+            pills: ['Past Continuous vs. Simple', '-ed / -ing Adjectives', 'Used to'],
+            photo: 'photo-1519389950473-47ba0277781c',
+            live: false
+          },
+          {
+            code: 'BF-U12',
+            title: 'Project Duration & Milestones',
+            lessons: '2 Lessons',
+            desc: 'Track tenure, ongoing account ownership, and deliverables that are already complete or still pending.',
+            pills: ['For / Since', 'Already / Yet / Just'],
+            photo: 'photo-1531403009284-440f080d1e12',
+            live: false
+          },
+          {
+            code: 'BF-U13',
+            title: 'Workplace Diplomacy & Precision',
+            lessons: '2 Lessons',
+            desc: 'Ask sensitive questions diplomatically and define key clients, contacts, and systems with precision.',
+            pills: ['Indirect Questions', 'Defining Relative Clauses'],
+            photo: 'photo-1551836022-d5d88e9218df',
+            live: false
+          },
+          {
+            code: 'BF-U14',
+            title: 'Strategic Choices & Hypotheticals',
+            lessons: '2 Lessons',
+            desc: 'Discuss operational trade-offs, avoid common pitfalls, and propose hypothetical budget or team scenarios.',
+            pills: ['Verb Patterns (-ing / to)', 'Second Conditional'],
+            photo: 'photo-1553877522-43269d4ea984',
+            live: false
+          },
+          {
+            code: 'BF-U15',
+            title: 'Meetings, Processes & Outsourcing',
+            lessons: '3 Lessons',
+            desc: 'Summarize leadership decisions, explain how operations run, and coordinate outsourced services.',
+            pills: ['Reported Speech', 'Passive Voice', 'Causatives'],
+            photo: 'photo-1542744173-8e7e53415bb0',
+            live: false
+          },
+          {
+            code: 'BF-U16',
+            title: 'Deduction, Verification & Executive Bridge',
+            lessons: '3 Lessons',
+            desc: 'Draw evidence-based conclusions, confirm agreements, soften difficult updates, and complete the Capstone review.',
+            pills: ['Deduction Modals', 'Question Tags', 'Intro Hedging'],
+            photo: 'photo-1507679799987-c73779587ccf',
+            live: false
+          }
+        ]
+      }
+    ];
+
+    let activeStage = 'all';
+    let currentMode = 'experience';
+
+    function renderStages() {
+      const isExplore = currentMode === 'explore';
+      const container = document.getElementById('stagesContainer');
+
+      container.innerHTML = STAGES.map(stage => {
+        const hidden = activeStage !== 'all' && activeStage !== stage.id;
+        return `
+          <section class="stage-section ${hidden ? 'is-hidden' : ''}">
+            <div class="stage-heading">
+              <h2>${stage.title}</h2>
+              <span>${stage.cefr}</span>
+            </div>
+            <div class="units-grid">
+              ${stage.units.map(u => {
+                const targetHref = u.live ? (isExplore ? `${u.href}?mode=explore` : u.href) : '';
+                return `
+                  <article class="unit-card ${u.live ? '' : 'is-soon'}">
+                    <div class="card-visual">
+                      <img class="card-photo" src="https://images.unsplash.com/${u.photo}?auto=format&fit=crop&w=800&q=80" alt="${u.title}">
+                      <div class="card-visual-gradient"></div>
+                      <div class="card-badges">
+                        <span class="unit-code font-mono">${u.code}</span>
+                        <span class="unit-count font-mono">${u.lessons}</span>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div>
+                        <h3 class="unit-title">${u.title}</h3>
+                        <p class="unit-desc">${u.desc}</p>
+                        <div class="unit-pills">
+                          ${u.pills.map(p => `<span class="pill">${p}</span>`).join('')}
+                        </div>
+                      </div>
+                      ${u.live
+                        ? `<a href="${targetHref}" class="btn-open">${isExplore ? 'Open Unit (Explore) &rarr;' : 'Open Macro-Unit &rarr;'}</a>`
+                        : `<span class="btn-soon">${LOCK_SVG} Soon</span>`
+                      }
+                    </div>
+                  </article>
+                `;
+              }).join('')}
+            </div>
+          </section>
+        `;
+      }).join('');
+    }
+
+    document.querySelectorAll('.stage-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeStage = btn.dataset.stage;
+        document.querySelectorAll('.stage-btn').forEach(b => {
+          const on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        renderStages();
+      });
+    });
+
+    function applyMode(mode) {
+      currentMode = mode === 'explore' ? 'explore' : 'experience';
+      const isExplore = currentMode === 'explore';
+      document.getElementById('bfSwitchExp').classList.toggle('active', !isExplore);
+      document.getElementById('bfSwitchExpl').classList.toggle('active', isExplore);
+      renderStages();
+    }
+
+    document.getElementById('bfSwitchExp').addEventListener('click', () => applyMode('experience'));
+    document.getElementById('bfSwitchExpl').addEventListener('click', () => applyMode('explore'));
+
+    const params = new URLSearchParams(window.location.search);
+    applyMode(params.get('mode') === 'explore' ? 'explore' : 'experience');
+  </script>
+</body>
+</html>

@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Welcome Kit Audit — Business Foundations | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 8px rgba(0, 31, 84, 0.06);
+      --shadow-md: 0 10px 28px rgba(7, 21, 39, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==================== SITE HEADER ==================== */
+    header.site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .site-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; flex-shrink: 0; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); flex-shrink: 0; }
+    .header-course { font-size: 13px; font-weight: 600; color: var(--slate-200); white-space: nowrap; }
+
+    .header-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+    .header-student {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate-200);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .header-student:hover { color: var(--white); }
+
+    .header-teacher-btn {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font: 700 13px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: var(--gold-500);
+      cursor: pointer;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+    .header-teacher-btn:hover { color: var(--gold-400); }
+    .header-teacher-btn.is-active { color: var(--teal-300); }
+
+    .header-back-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .header-back-link:hover { color: var(--white); }
+
+    /* ==================== MAIN ==================== */
+    main { max-width: 1120px; margin: 0 auto; padding: 28px 24px 56px; }
+
+    header.workspace-hero-banner {
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 44px 48px;
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(110deg, rgba(7, 21, 39, 0.95) 0%, rgba(11, 37, 69, 0.86) 54%, rgba(7, 21, 39, 0.45) 100%),
+        url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md);
+    }
+
+    .workspace-hero-banner h1 {
+      font-size: clamp(30px, 4.4vw, 44px);
+      font-weight: 800;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+      margin: 0 0 14px;
+      color: var(--white);
+    }
+
+    .workspace-hero-banner h1 span { color: var(--gold-500); }
+    .workspace-hero-banner p { max-width: 560px; margin: 0; font-size: 16.5px; color: rgba(248, 250, 252, 0.9); }
+
+    /* ==================== SEGMENTED NAV ==================== */
+    nav.module-nav-grid {
+      display: flex;
+      overflow-x: auto;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin: 26px 0 24px;
+      gap: 4px;
+      scrollbar-width: thin;
+    }
+
+    nav.module-nav-grid button {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    nav.module-nav-grid button:hover { color: var(--navy-900); }
+    nav.module-nav-grid button .nav-idx { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700; color: var(--slate-500); }
+
+    nav.module-nav-grid button.active {
+      background: var(--white);
+      color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+      border-color: var(--slate-200);
+      font-weight: 700;
+    }
+    nav.module-nav-grid button.active .nav-idx { color: var(--teal-700); }
+
+    /* ==================== CARDS & TYPOGRAPHY ==================== */
+    article.card-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+
+    h2 { font-size: 25px; font-weight: 800; color: var(--navy-900); line-height: 1.25; margin: 0 0 10px; }
+    h3 { font-size: 18px; font-weight: 700; color: var(--navy-900); line-height: 1.3; margin: 22px 0 10px; }
+    h3:first-child { margin-top: 0; }
+    p.lead { color: var(--slate-600); margin: 0 0 18px; }
+    .mono { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--teal-700); }
+
+    /* ==================== TEACHER NOTE ACCORDION ==================== */
+    details.teacher-note-box {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+
+    details.teacher-note-box summary {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    details.teacher-note-box summary::-webkit-details-marker { display: none; }
+    details.teacher-note-box summary::after { content: '+'; font-size: 16px; }
+    details.teacher-note-box[open] summary::after { content: '−'; }
+
+    .teacher-steps {
+      margin: 12px 0 0;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--gold-border);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--slate-900);
+    }
+
+    .teacher-step-item {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .teacher-step-item strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-600);
+      margin-bottom: 4px;
+    }
+
+    /* ==================== BUTTONS ==================== */
+    .btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+      border-radius: var(--radius-sm);
+      padding: 9px 15px;
+      transition: all 0.16s ease;
+    }
+    .btn:hover:not(:disabled) { border-color: var(--teal-700); color: var(--teal-700); }
+    .btn:disabled { opacity: 0.45; cursor: default; }
+
+    .btn-primary { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+    .btn-primary:hover:not(:disabled) { background: var(--navy-700); border-color: var(--navy-700); color: var(--white); }
+
+    .btn-audio {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      color: var(--teal-800);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-audio:hover { background: var(--teal-700); color: var(--white); border-color: var(--teal-700); }
+
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+    /* ==================== WARM-UP KIT BUILDER ==================== */
+    .kit-toggle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin: 16px 0 22px;
+    }
+
+    .kit-toggle {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+      background: var(--slate-50);
+      color: var(--navy-900);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.16s ease;
+    }
+
+    .kit-toggle:hover { border-color: var(--teal-700); }
+    .kit-toggle.is-on {
+      background: var(--navy-900);
+      border-color: var(--navy-900);
+      color: var(--white);
+    }
+
+    .kit-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      background: rgba(15, 118, 110, 0.12);
+      color: var(--teal-800);
+    }
+
+    .kit-toggle.is-on .kit-badge {
+      background: rgba(212, 168, 67, 0.22);
+      color: var(--gold-400);
+    }
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .prompt-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+    }
+
+    /* ==================== FLIP CARDS (EXACT REFERENCE) ==================== */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin: 14px 0 26px;
+    }
+
+    .flip-card { perspective: 1000px; height: 235px; cursor: pointer; }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flip-front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
+
+    .flip-back {
+      transform: rotateY(180deg);
+      background: var(--navy-950);
+      border-color: var(--navy-800);
+      color: var(--white);
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .flip-word { font-size: 1.5rem; font-weight: 800; color: var(--navy-900); line-height: 1.18; letter-spacing: -0.015em; }
+    .flip-word-chunk { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; }
+    .flip-ipa { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--slate-500); margin-top: 4px; }
+    .flip-example { font-size: 0.9rem; color: var(--slate-700); font-weight: 500; text-align: center; margin: 0; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.4rem; font-weight: 800; color: var(--gold-400); line-height: 1.2; }
+    .flip-back-meaning { font-size: 0.94rem; color: var(--slate-100); max-width: 28ch; margin: 0; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
+
+    /* ==================== INTELLIGIBILITY & CLUE DEDUCTION ==================== */
+    .pron-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .pron-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .clue-row {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    select.kit-select {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-300);
+      color: var(--navy-900);
+      background: var(--white);
+      min-width: 170px;
+    }
+
+    /* ==================== READING PROFILES & AUDIT CARDS ==================== */
+    .line { padding: 16px 0; border-bottom: 1px solid var(--slate-200); }
+    .line:last-child { border-bottom: 0; }
+
+    .profile { display: flex; gap: 18px; align-items: center; }
+    .profile img {
+      width: 82px;
+      height: 82px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--slate-200);
+      flex-shrink: 0;
+    }
+
+    .table-scroll { overflow-x: auto; margin: 14px 0 22px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    th, td { padding: 11px 14px; border: 1px solid var(--slate-200); text-align: left; }
+    th { background: var(--navy-900); color: var(--white); font-weight: 600; }
+    tbody tr:nth-child(even) { background: var(--slate-50); }
+
+    .text-input {
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font: 500 14.5px 'Plus Jakarta Sans', sans-serif;
+      color: var(--navy-900);
+      background: var(--white);
+      min-width: 240px;
+    }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 16px 0 20px;
+    }
+
+    .audit-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .audit-card:hover { border-color: var(--teal-700); }
+    .audit-card.selected { background: var(--white); border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+
+    .audit-item-list { list-style: none; padding: 0; margin: 12px 0 0; font-size: 14px; }
+    .audit-item-list li { padding: 4px 0; display: flex; justify-content: space-between; border-bottom: 1px solid var(--slate-200); }
+    .audit-item-list li:last-child { border-bottom: 0; }
+    .tag-ok { color: var(--teal-800); font-weight: 700; }
+    .tag-miss { color: var(--danger-600); font-weight: 700; }
+
+    .checklist-box {
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 9px 0;
+      font-size: 14.5px;
+      color: var(--slate-900);
+      cursor: pointer;
+    }
+    .checklist-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    label.field-label { display: block; font-weight: 600; color: var(--navy-900); margin: 14px 0; }
+
+    textarea, input[type="password"] {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 11px 13px;
+      width: 100%;
+      margin-top: 6px;
+      color: var(--slate-900);
+      background: var(--white);
+    }
+    textarea { min-height: 86px; resize: vertical; }
+
+    .feedback-msg { margin: 8px 0 0; font-size: 13.5px; font-weight: 600; min-height: 20px; }
+    .good { color: var(--teal-800); }
+    .bad { color: var(--danger-600); }
+
+    .end-nav { display: flex; justify-content: space-between; align-items: center; margin: 26px 0 8px; gap: 12px; }
+
+    /* ==================== FOOTER ==================== */
+    footer.studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    .footer-brand-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+    .footer-links-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .footer-explore-link { color: var(--slate-200); font-weight: 600; text-decoration: none; padding: 7px 12px; }
+    .footer-explore-link:hover { color: var(--white); }
+
+    .footer-teacher-portal {
+      color: var(--gold-400);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      transition: all 0.16s;
+    }
+    .footer-teacher-portal:hover { background: rgba(212, 168, 67, 0.14); color: var(--white); }
+
+    dialog {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      max-width: 400px;
+      width: 92%;
+      box-shadow: var(--shadow-md);
+    }
+    dialog::backdrop { background: rgba(7, 21, 39, 0.58); backdrop-filter: blur(4px); }
+
+    @media (max-width: 760px) {
+      .site-header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+      header.workspace-hero-banner { padding: 30px 22px; min-height: 200px; }
+      article.card-block { padding: 20px; }
+      .clue-row { grid-template-columns: 1fr; }
+      .profile { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media print {
+      header.site-header, nav.module-nav-grid, .end-nav, footer.studio-site-footer, button, dialog { display: none !important; }
+      body { background: #fff; }
+      article.card-block { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../index.html" class="header-brand">
+        <span class="brand-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="brand-logo-white"
+          >
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="header-course">English Hub &middot; Business Foundations</span>
+      </a>
+      <div class="header-links">
+        <button type="button" class="header-student" id="studentName" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-btn" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a class="header-back-link" href="../index.html">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="workspace-hero-banner">
+      <h1>The Welcome Kit <span>Audit</span></h1>
+      <p>Three new hires start at 9:00 AM, and half of their equipment is still missing. Check each desk and report what is ready — and what is not.</p>
+    </header>
+
+    <nav class="module-nav-grid" id="nav" aria-label="Lesson modules"></nav>
+
+    <div id="screen"></div>
+
+    <div class="end-nav">
+      <button type="button" class="btn" id="prev">&larr; Previous</button>
+      <span id="count" class="mono"></span>
+      <button type="button" class="btn btn-primary" id="next">Next &rarr;</button>
+    </div>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="footer-logo-white"
+          >
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Welcome Kit Audit (Business Foundations)</div>
+      </div>
+      <div class="footer-links-right">
+        <a href="explore.html" class="footer-explore-link">Explore Worksheet &rarr;</a>
+        <a href="../../../teacher-hub/Business-Foundations/the-welcome-kit-audit/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="teacherDialog">
+    <span class="kicker">Faculty Access</span>
+    <h3 style="margin-top: 4px;">Teacher's Version</h3>
+    <p class="lead" style="font-size: 14px;">Enter your authorized faculty PIN to unlock live teaching sequences and answer keys.</p>
+    <input id="pinInput" type="password" placeholder="Enter PIN" aria-label="Teacher PIN" autocomplete="off">
+    <p id="pinMessage" class="feedback-msg bad"></p>
+    <div class="actions" style="margin-top: 14px; justify-content: flex-end;">
+      <button type="button" class="btn" onclick="document.getElementById('teacherDialog').close()">Cancel</button>
+      <button type="button" class="btn btn-primary" onclick="authorizeTeacher()">Unlock</button>
+    </div>
+  </dialog>
+
+  <script>
+    const MODULE_NAMES = [
+      'Warm-up',
+      'Vocabulary',
+      'Workplace Expressions',
+      'Reading',
+      'Grammar',
+      'Speaking',
+      'Exit Ticket'
+    ];
+
+    const VALID_PINS = ['0410', '2064'];
+
+    let current = 0;
+    let isTeacher = false;
+    let selectedAudit = 0;
+    const savedInputs = {};
+    const warmupKit = new Set(['Laptop', 'Office ID']);
+
+    const $ = (id) => document.getElementById(id);
+
+    (function initSession() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const student = params.get('name') || localStorage.getItem('ld_student_name') || 'Guest';
+        $('studentName').textContent = 'Student · ' + student;
+        if (params.get('role') === 'teacher') isTeacher = true;
+      } catch (_) {
+        $('studentName').textContent = 'Student · Guest';
+      }
+    })();
+
+    const WARMUP_ITEMS = ['Laptop', 'Office ID', 'Monitor', 'Password', 'Company email', 'Desk keys'];
+
+    const VOCAB = [
+      { word: 'new hire', pos: 'noun', ipa: '/nuː ˈhaɪər/', example: 'Nadia is a new hire.', meaning: 'A person who just started a new job at the company.', clue: 'An employee on their first day at a company.' },
+      { word: 'equipment', pos: 'noun', ipa: '/ɪˈkwɪpmənt/', example: 'Our equipment is ready.', meaning: 'The tools, devices, and gear needed for work.', clue: 'Work devices and gear such as laptops and monitors.' },
+      { word: 'pending', pos: 'adjective', ipa: '/ˈpɛndɪŋ/', example: 'His parking pass is pending.', meaning: 'Not finished or approved yet; waiting.', clue: 'Waiting for approval or delivery; not done yet.' },
+      { word: 'replacement', pos: 'noun', ipa: '/rɪˈpleɪsmənt/', example: 'Her replacement charger is here.', meaning: 'A new item that takes the place of a lost or broken one.', clue: 'A new device that takes the place of a broken one.' },
+      { word: 'checklist', pos: 'noun', ipa: '/ˈtʃɛklɪst/', example: 'My onboarding checklist is short.', meaning: 'A structured list of items or steps to verify.', clue: 'A list of items you verify one by one.' },
+      { word: 'spare', pos: 'adjective', ipa: '/spɛər/', example: 'We have a spare headset.', meaning: 'Extra; kept ready in case someone needs one.', clue: 'An extra item kept ready for emergencies.' }
+    ];
+
+    const EXPRESSIONS = [
+      { phrase: 'All set.', use: 'complete', ipa: '/ɔːl sɛt/', example: "Laptop, badge, password — you're all set.", meaning: 'Everything is ready; nothing is missing.' },
+      { phrase: 'Still missing.', use: 'incomplete', ipa: '/stɪl ˈmɪsɪŋ/', example: 'Her parking pass is still missing.', meaning: 'It is not here yet.' },
+      { phrase: 'On the way.', use: 'arriving', ipa: '/ɒn ðə weɪ/', example: 'His new monitor is on the way.', meaning: 'It is coming soon.' },
+      { phrase: 'No problem at all.', use: 'reassurance', ipa: '/noʊ ˈprɒbləm æt ɔːl/', example: 'No access card yet? No problem at all.', meaning: 'Do not worry; it is easy to solve.' }
+    ];
+
+    const ONBOARDING_PROFILES = [
+      {
+        name: 'Nadia Brooks',
+        role: 'New Hire · Product Designer · Floor 3',
+        photo: 'photo-1573497019940-1c28c88b4f3e',
+        text: "Nadia is a new hire on Floor 3. She has her laptop, her equipment checklist, and a new monitor. She doesn't have a parking pass yet — it's pending and still missing, but it's on the way.",
+        audio: 'reading-01-nadia'
+      },
+      {
+        name: 'Tomas Vega',
+        role: 'New Hire · Financial Analyst · Floor 4',
+        photo: 'photo-1506794778202-cad84cf45f1d',
+        text: "Tomas has his laptop, his password, and a spare headset. He doesn't have a replacement charger yet, and he doesn't have an access card. IT says: 'No problem at all — they're on the way.'",
+        audio: 'reading-02-tomas'
+      },
+      {
+        name: 'Leo & Priya',
+        role: 'Sales Interns · Floor 2',
+        photo: 'photo-1522071820081-009f0129c71c',
+        text: "Leo and Priya have their checklists, their office IDs, and their basic equipment. They don't have spare monitors, and their parking passes are pending, but their desks are all set for orientation.",
+        audio: 'reading-03-interns'
+      }
+    ];
+
+    const GRAMMAR_CHOICE_ITEMS = [
+      { prompt: '1. Nadia _____ a new monitor on Desk 3.', opts: ['have', 'has', "don't have"], answer: 'has' },
+      { prompt: '2. Tomas _____ an access card yet.', opts: ["don't have", "doesn't have", "doesn't has"], answer: "doesn't have" },
+      { prompt: '3. Leo and Priya _____ their welcome guides.', opts: ['have', 'has', "doesn't have"], answer: 'have' },
+      { prompt: '4. We _____ a parking pass for Floor 2.', opts: ["don't have", "doesn't have", 'has'], answer: "don't have" }
+    ];
+
+    const SWITCH_ITEMS = [
+      { prompt: 'Nadia has a parking pass.', dir: 'Make it NEGATIVE:', answer: "Nadia doesn't have a parking pass." },
+      { prompt: "Tomas doesn't have a monitor.", dir: 'Make it AFFIRMATIVE:', answer: 'Tomas has a monitor.' },
+      { prompt: 'The interns have monitors.', dir: 'Make it NEGATIVE:', answer: "The interns don't have monitors." },
+      { prompt: "I don't have my password.", dir: 'Make it AFFIRMATIVE:', answer: 'I have my password.' }
+    ];
+
+    const AUDIT_DECK = [
+      {
+        name: 'Kit A · Hannah Cole (HR)',
+        items: [
+          ['Laptop & Password', true],
+          ['Access Card', true],
+          ['Monitor', false],
+          ['Welcome Guide', true]
+        ]
+      },
+      {
+        name: 'Kit B · Victor Reyes (IT)',
+        items: [
+          ['Laptop & Charger', true],
+          ['Monitor', true],
+          ['Parking Pass', false],
+          ['Planner', false]
+        ]
+      },
+      {
+        name: 'Kit C · Marketing Team (2 Hires)',
+        items: [
+          ['Access Cards', true],
+          ['Welcome Guides', true],
+          ['Headsets', false],
+          ['Passwords', true]
+        ]
+      }
+    ];
+
+    const TEACHER_NOTES = [
+      {
+        setup: 'Invite the student to toggle their top 3 essential Day-1 items in the Welcome Kit Builder.',
+        modeling: 'Respond using ONLY [P] (To Be + my/your): "Day 1 is busy! My #1 essential item is my laptop."',
+        check: 'Elicit brief oral reactions without teaching have/has yet.',
+        keys: 'Diagnostic [P] only. Note vocabulary familiarity with office gear from L02.'
+      },
+      {
+        setup: 'Introduce the 6 high-value onboarding terms via Flip Cards before running Guess the Term.',
+        modeling: 'Play Word + Example audios; flip cards. Drill the have/has (/hæv/ vs /hæz/) and don\'t/doesn\'t have contrasts.',
+        check: 'Have the student match each clue in Guess the Term using the dropdowns.',
+        keys: 'Clues: 1. new hire · 2. equipment · 3. pending · 4. replacement · 5. checklist · 6. spare.'
+      },
+      {
+        setup: 'Teach all 4 Workplace Expressions as fixed blocks for onboarding status updates.',
+        modeling: 'Play Phrase + Example audios; drill crisp office delivery.',
+        check: 'Give quick status prompts ("Badge: ok. Laptop: ok. Monitor: missing") to elicit "Still missing" / "All set".',
+        keys: 'Fixed blocks: All set. / Still missing. / On the way. / No problem at all.'
+      },
+      {
+        setup: 'Have the student read the 3 Onboarding Cards silently FIRST, then offer optional post-reading audio.',
+        modeling: 'Ask the student to notice have / has / don\'t have / doesn\'t have and the Workplace Expressions.',
+        check: 'Complete the 4 Audit Status Checks orally and via buttons.',
+        keys: '1. Nadia · 2. Tomas · 3. Nadia · 4. Leo & Priya.'
+      },
+      {
+        setup: 'Present the affirmative/negative table. Highlight the #1 error: "doesn\'t has" ❌ → "doesn\'t have" ✅.',
+        modeling: 'Stay strictly within physical possession [N] — do NOT introduce routines (have breakfast/have a meeting) [F].',
+        check: 'Complete Part A (Choose Form) and Part B (Affirmative ↔ Negative Switch).',
+        keys: 'Part A: 1. has · 2. doesn\'t have · 3. have · 4. don\'t have. Part B: 1. Nadia doesn\'t have a parking pass. · 2. Tomas has a monitor. · 3. The interns don\'t have monitors. · 4. I have my password.'
+      },
+      {
+        setup: 'Simulation: Student is HR Onboarding Lead; Teacher is IT Manager.',
+        modeling: 'Model Kit A: "Hannah has her laptop and access card. She doesn\'t have a monitor yet — it\'s still missing."',
+        check: 'Have the student brief Kit B (he) and Kit C (they) using at least 2 Workplace Expressions.',
+        keys: 'Verify all 4 Speaking Checklist items (singular has/doesn\'t have + plural have/don\'t have).'
+      },
+      {
+        setup: 'Close previous modules. Exit Ticket collects independent written evidence with zero templates.',
+        modeling: 'Clarify the 3 perspectives (I, he/she, we/they) without supplying starters.',
+        check: 'Verify have/has agreement and base form "have" after don\'t/doesn\'t.',
+        keys: 'Record E0–E3 separately for: I/we/they have/don\'t have, he/she has/doesn\'t have, and Workplace Expressions.'
+      }
+    ];
+
+    function renderTeacherAccordion(idx) {
+      if (!isTeacher) return '';
+      const n = TEACHER_NOTES[idx];
+      return `
+        <details class="teacher-note-box">
+          <summary>Teacher's Live Sequence &middot; Module ${String(idx + 1).padStart(2, '0')}</summary>
+          <div class="teacher-steps">
+            <div class="teacher-step-item"><strong>1. Setup</strong>${n.setup}</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>${n.modeling}</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>${n.check}</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>${n.keys}</div>
+          </div>
+        </details>
+      `;
+    }
+
+    function audioBtn(file, label) {
+      return `<button type="button" class="btn-audio" onclick="event.stopPropagation(); playAudio(this, '${file}')">&#9654; ${label}</button>`;
+    }
+
+    function playAudio(btn, file) {
+      const original = btn.dataset.label || btn.textContent;
+      btn.dataset.label = original;
+      const audio = new Audio('audio/' + file + '.mp3');
+      audio.play().catch(() => {
+        btn.textContent = 'Audio pending studio file';
+        setTimeout(() => { btn.textContent = original; }, 2200);
+      });
+    }
+
+    function renderFlipCard(item, idx, type) {
+      const num = String(idx + 1).padStart(2, '0');
+      const isVocab = type === 'vocab';
+      const term = isVocab ? item.word : item.phrase;
+      const badge = isVocab ? item.pos : item.use.toLowerCase();
+      const termClass = isVocab ? 'flip-word' : 'flip-word-chunk';
+      const mainFile = isVocab ? `vocab-${num}-word` : `expr-${num}-phrase`;
+      const exFile = isVocab ? `vocab-${num}-example` : `expr-${num}-example`;
+      const mainLabel = isVocab ? 'Word' : 'Phrase';
+
+      return `
+        <div class="flip-card" role="button" tabindex="0" aria-label="Flip card for ${term}"
+             onclick="this.classList.toggle('is-flipped')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}">
+          <div class="flip-card-inner">
+            <div class="flip-face">
+              <div class="flip-front-top">
+                <div class="flip-word-group">
+                  <div class="${termClass}">${term}</div>
+                  <div class="flip-ipa">${item.ipa}</div>
+                </div>
+                <span class="flip-pos">${badge}</span>
+              </div>
+              <div class="flip-example">"${item.example}"</div>
+              <div class="flip-audio-row" onclick="event.stopPropagation()">
+                ${audioBtn(mainFile, mainLabel)}
+                ${audioBtn(exFile, 'Example')}
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="flip-back-word">${term}</div>
+              <div class="flip-back-meaning">${item.meaning}</div>
+              <div class="flip-hint">Click to flip back</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleWarmupItem(item) {
+      if (warmupKit.has(item)) warmupKit.delete(item);
+      else warmupKit.add(item);
+      render();
+    }
+
+    function checkClue(idx) {
+      const sel = $('clueSel' + idx);
+      const fb = $('clueFb' + idx);
+      if (!sel || !fb) return;
+      const ok = sel.value === VOCAB[idx].word;
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct!' : 'Check the flip card meaning and try again.';
+    }
+
+    function checkChoice(btn) {
+      const fb = btn.parentElement.nextElementSibling;
+      const ok = btn.dataset.answer === 'true';
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct.' : 'Check the onboarding card or subject agreement and try again.';
+    }
+
+    function renderChoice(question, options, correct) {
+      return `
+        <div class="line">
+          <div style="font-weight: 600; color: var(--navy-900); margin-bottom: 10px;">${question}</div>
+          <div class="actions">
+            ${options.map(opt => `<button type="button" class="btn" data-answer="${opt === correct}" onclick="checkChoice(this)">${opt}</button>`).join('')}
+          </div>
+          <p class="feedback-msg" aria-live="polite"></p>
+        </div>
+      `;
+    }
+
+    function checkSwitch(idx) {
+      const inp = $('sw' + idx);
+      const fb = $('swFb' + idx);
+      if (!inp || !fb) return;
+      const clean = s => s.trim().toLowerCase().replace(/[’']/g, "'").replace(/\.$/, '').replace(/\s+/g, ' ');
+      const ok = clean(inp.value) === clean(SWITCH_ITEMS[idx].answer);
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct!' : 'Check have/has and remember: after don\'t/doesn\'t, always use "have".';
+    }
+
+    function selectAudit(idx) {
+      selectedAudit = idx;
+      render();
+    }
+
+    function renderTextboxes(labels) {
+      return labels.map((lbl, i) => `
+        <label class="field-label">
+          ${lbl}
+          <textarea data-save="${current}-${i}" placeholder="Write your response here..."></textarea>
+        </label>
+      `).join('');
+    }
+
+    const MODULES = [
+      // 01 Warm-up
+      () => `
+        <article class="card-block">
+          <span class="kicker">01 &middot; Warm-up</span>
+          <h2>Day 1 Onboarding Kit</h2>
+          <p class="lead">Imagine today is your first day at a new company. Click the items that are essential on Day 1, then discuss the two questions below.</p>
+
+          <div class="kit-toggle-grid">
+            ${WARMUP_ITEMS.map(item => {
+              const on = warmupKit.has(item);
+              return `
+                <button type="button" class="kit-toggle ${on ? 'is-on' : ''}" onclick="toggleWarmupItem('${item}')">
+                  <span>${item}</span>
+                  <span class="kit-badge">${on ? 'Essential' : 'Optional'}</span>
+                </button>
+              `;
+            }).join('')}
+          </div>
+
+          <div class="prompt-grid">
+            <div class="prompt-card">
+              <span class="mono">QUESTION 01</span>
+              <h3 style="margin-top:6px;">Is Day 1 at a new job exciting or stressful?</h3>
+            </div>
+            <div class="prompt-card">
+              <span class="mono">QUESTION 02</span>
+              <h3 style="margin-top:6px;">What is your #1 essential item on your desk?</h3>
+            </div>
+          </div>
+        </article>
+      `,
+
+      // 02 Vocabulary
+      () => `
+        <article class="card-block">
+          <span class="kicker">02 &middot; Core Vocabulary</span>
+          <h2>Onboarding Essentials</h2>
+          <p class="lead">Listen to each word and example, then click any card to flip and confirm the meaning.</p>
+          <div class="flip-grid">
+            ${VOCAB.map((v, i) => renderFlipCard(v, i, 'vocab')).join('')}
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Intelligibility Micro-Focus</span>
+          <h3>Clear Sounds: Have vs. Has &amp; Negatives</h3>
+          <p class="lead">Listen closely to the final consonant difference between <strong>have (/v/)</strong> and <strong>has (/z/)</strong>, and the smooth link in <strong>don't have / doesn't have</strong>.</p>
+          <div class="pron-grid">
+            <div class="pron-card">
+              <span class="mono">AFFIRMATIVE CONTRAST</span>
+              <div style="font-size:17px; font-weight:800; color:var(--navy-900);">I have /hæv/ &nbsp;vs.&nbsp; She has /hæz/</div>
+              <div>${audioBtn('pron-01-have-has', 'Listen & Compare')}</div>
+            </div>
+            <div class="pron-card">
+              <span class="mono">NEGATIVE FLOW</span>
+              <div style="font-size:17px; font-weight:800; color:var(--navy-900);">don't have &nbsp;vs.&nbsp; doesn't have</div>
+              <div>${audioBtn('pron-02-negatives', 'Listen & Compare')}</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Vocabulary Practice</span>
+          <h3>Guess the Kit Item</h3>
+          <p class="lead">Read each onboarding clue and select the right item from the menu.</p>
+          ${VOCAB.map((v, i) => `
+            <div class="clue-row">
+              <div>
+                <div style="font-weight:600; color:var(--navy-900);">${i + 1}. ${v.clue}</div>
+                <p id="clueFb${i}" class="feedback-msg" style="margin:4px 0 0;" aria-live="polite"></p>
+              </div>
+              <div class="actions">
+                <select class="kit-select" id="clueSel${i}" aria-label="Select item for clue ${i + 1}">
+                  <option value="">Choose item...</option>
+                  ${VOCAB.map(opt => `<option value="${opt.word}">${opt.word}</option>`).join('')}
+                </select>
+                <button type="button" class="btn btn-primary" onclick="checkClue(${i})">Check</button>
+              </div>
+            </div>
+          `).join('')}
+        </article>
+      `,
+
+      // 03 Workplace Expressions
+      () => `
+        <article class="card-block">
+          <span class="kicker">03 &middot; Workplace Expressions</span>
+          <h2>Status &amp; Reassurance Phrases</h2>
+          <p class="lead">Learn these four practical office expressions as complete blocks for onboarding and equipment checks.</p>
+          <div class="flip-grid">
+            ${EXPRESSIONS.map((e, i) => renderFlipCard(e, i, 'expr')).join('')}
+          </div>
+        </article>
+      `,
+
+      // 04 Reading
+      () => `
+        <article class="card-block">
+          <span class="kicker">04 &middot; HR Onboarding Dashboard</span>
+          <h2>New-Hire Kit Status</h2>
+          <p class="lead">Read each new hire's onboarding card silently first. Then use the optional audio to check rhythm and pronunciation.</p>
+
+          ${ONBOARDING_PROFILES.map(p => `
+            <div class="line profile">
+              <img src="https://images.unsplash.com/${p.photo}?auto=format&fit=crop&w=240&h=240&q=80" alt="${p.name}">
+              <div>
+                <h3 style="margin:0 0 2px;">${p.name}</h3>
+                <div class="mono" style="margin-bottom:8px;">${p.role}</div>
+                <p style="margin:0 0 10px;">${p.text}</p>
+                ${audioBtn(p.audio, 'Listen (after reading)')}
+              </div>
+            </div>
+          `).join('')}
+
+          <h3>Audit Status Check</h3>
+          ${renderChoice('1. Who already has a new monitor?', ['Nadia', 'Tomas', 'Leo & Priya'], 'Nadia')}
+          ${renderChoice("2. Who doesn't have an access card yet?", ['Nadia', 'Tomas', 'Leo & Priya'], 'Tomas')}
+          ${renderChoice('3. Whose parking pass is on the way?', ['Nadia', 'Tomas', 'Leo & Priya'], 'Nadia')}
+          ${renderChoice('4. Who is all set for orientation despite having no monitors?', ['Nadia', 'Tomas', 'Leo & Priya'], 'Leo & Priya')}
+        </article>
+      `,
+
+      // 05 Grammar
+      () => `
+        <article class="card-block">
+          <span class="kicker">05 &middot; Grammar in Context</span>
+          <h2>Have / Has for Office Equipment</h2>
+          <p class="lead">Use <strong>have / has</strong> to report what tools and resources people possess — and <strong>don't have / doesn't have</strong> for missing items.</p>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Subject</th><th>Affirmative (+)</th><th>Negative (&minus;)</th><th>Workplace Example</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>I &middot; You &middot; We &middot; They</strong></td>
+                  <td><strong>have</strong></td>
+                  <td><strong>don't have</strong></td>
+                  <td>They <strong>have</strong> their badges. They <strong>don't have</strong> monitors.</td>
+                </tr>
+                <tr>
+                  <td><strong>He &middot; She &middot; It</strong></td>
+                  <td><strong>has</strong></td>
+                  <td><strong>doesn't have</strong></td>
+                  <td>Nadia <strong>has</strong> a laptop. She <strong>doesn't have</strong> a parking pass.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Practice A &middot; Select the Accurate Form</h3>
+          ${GRAMMAR_CHOICE_ITEMS.map(item => renderChoice(item.prompt, item.opts, item.answer)).join('')}
+
+          <h3>Practice B &middot; Affirmative &harr; Negative Switch</h3>
+          <p class="lead">Transform each sentence. Watch the base form <strong>have</strong> after <strong>don't / doesn't</strong>.</p>
+          ${SWITCH_ITEMS.map((item, i) => `
+            <div class="clue-row">
+              <div>
+                <div style="font-weight:700; color:var(--navy-900);">${i + 1}. ${item.prompt}</div>
+                <div class="mono">${item.dir}</div>
+                <p id="swFb${i}" class="feedback-msg" style="margin:4px 0 0;" aria-live="polite"></p>
+              </div>
+              <div class="actions">
+                <input type="text" class="text-input" id="sw${i}" data-save="sw-${i}" placeholder="Write sentence..." onkeydown="if(event.key==='Enter')checkSwitch(${i})">
+                <button type="button" class="btn btn-primary" onclick="checkSwitch(${i})">Check</button>
+              </div>
+            </div>
+          `).join('')}
+        </article>
+      `,
+
+      // 06 Speaking
+      () => `
+        <article class="card-block">
+          <span class="kicker">06 &middot; Speaking Simulation</span>
+          <h2>The HR &rarr; IT Equipment Handoff</h2>
+          <p class="lead">You are the HR Onboarding Lead. Click each kit below and brief the IT Manager (your teacher) on what each hire has, what they don't have, and what is still missing or on the way.</p>
+
+          <div class="audit-grid">
+            ${AUDIT_DECK.map((kit, i) => `
+              <div class="audit-card ${selectedAudit === i ? 'selected' : ''}" onclick="selectAudit(${i})">
+                <span class="mono">AUDIT CARD 0${i + 1}</span>
+                <h3 style="margin:4px 0 0;">${kit.name}</h3>
+                <ul class="audit-item-list">
+                  ${kit.items.map(([label, ok]) => `
+                    <li>
+                      <span>${label}</span>
+                      <span class="${ok ? 'tag-ok' : 'tag-miss'}">${ok ? '✓ Ready' : '✗ Missing'}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="checklist-box">
+            <span class="kicker">Speaking Checklist</span>
+            ${[
+              'I report at least two affirmative items using have and has.',
+              "I report at least two missing items using don't have and doesn't have.",
+              'I never say "doesn\'t has" — I use "doesn\'t have" cleanly.',
+              'I include at least two Workplace Expressions (All set / Still missing / On the way / No problem at all).'
+            ].map(t => `<label class="checklist-item"><input type="checkbox"> <span>${t}</span></label>`).join('')}
+          </div>
+        </article>
+      `,
+
+      // 07 Exit Ticket
+      () => `
+        <article class="card-block">
+          <span class="kicker">07 &middot; Exit Ticket</span>
+          <h2>Desk &amp; Team Equipment Audit</h2>
+          <p class="lead">Without looking back at previous modules, write six short sentences covering yourself, one colleague, and a team.</p>
+          ${renderTextboxes([
+            '1. Yourself (I): one item you have + one item you don\'t have',
+            '2. One colleague (He / She): one item they have + one item they don\'t have',
+            '3. A team (We / They): one item they have + one item they don\'t have'
+          ])}
+          <div class="checklist-box">
+            <span class="kicker">My Can-Do Statements</span>
+            ${[
+              "I can state what I have and don't have on my desk.",
+              "I can report what a colleague has and doesn't have accurately.",
+              "I can report what a team has and doesn't have using plural forms.",
+              'I can give a clear onboarding status update using All set, Still missing, or On the way.'
+            ].map(t => `<label class="checklist-item"><input type="checkbox"> <span>${t}</span></label>`).join('')}
+          </div>
+        </article>
+      `
+    ];
+
+    function saveCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => { savedInputs[el.dataset.save] = el.value; });
+    }
+
+    function restoreCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => {
+        if (savedInputs[el.dataset.save] !== undefined) el.value = savedInputs[el.dataset.save];
+      });
+    }
+
+    function render() {
+      saveCurrentInputs();
+      $('nav').innerHTML = MODULE_NAMES.map((name, idx) => `
+        <button type="button" class="${current === idx ? 'active' : ''}" onclick="go(${idx})">
+          <span class="nav-idx">${String(idx + 1).padStart(2, '0')}</span>
+          <span>${name}</span>
+        </button>
+      `).join('');
+
+      $('screen').innerHTML = renderTeacherAccordion(current) + MODULES[current]();
+      restoreCurrentInputs();
+
+      $('prev').disabled = current === 0;
+      $('next').disabled = current === MODULE_NAMES.length - 1;
+      $('count').textContent = `${String(current + 1).padStart(2, '0')} / ${String(MODULE_NAMES.length).padStart(2, '0')}`;
+    }
+
+    function go(idx) {
+      current = idx;
+      render();
+      $('nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const activeBtn = $('nav').children[idx];
+      if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    }
+
+    function editStudentName() {
+      const currentName = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', currentName);
+      if (next === null) return;
+      const clean = next.trim();
+      try { localStorage.setItem('ld_student_name', clean); } catch (_) {}
+      $('studentName').textContent = 'Student · ' + (clean || 'Guest');
+    }
+
+    function updateTeacherButton() {
+      const btn = $('teacherToggleBtn');
+      if (!btn) return;
+      btn.classList.toggle('is-active', isTeacher);
+      btn.textContent = isTeacher ? "Teacher's Version (On) ×" : "Teacher's Version ↗";
+    }
+
+    function openTeacherModal() {
+      if (isTeacher) {
+        isTeacher = false;
+        updateTeacherButton();
+        render();
+        return;
+      }
+      $('pinMessage').textContent = '';
+      $('pinInput').value = '';
+      $('teacherDialog').showModal();
+      setTimeout(() => $('pinInput').focus(), 60);
+    }
+
+    function authorizeTeacher() {
+      const pin = ($('pinInput').value || '').trim();
+      if (VALID_PINS.includes(pin)) {
+        isTeacher = true;
+        $('teacherDialog').close();
+        updateTeacherButton();
+        render();
+      } else {
+        $('pinMessage').textContent = 'Incorrect PIN. Please verify with Academic Coordination.';
+        $('pinInput').focus();
+      }
+    }
+
+    $('pinInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); authorizeTeacher(); }
+    });
+
+    $('prev').onclick = () => go(current - 1);
+    $('next').onclick = () => go(current + 1);
+
+    updateTeacherButton();
+    render();
+  </script>
+</body>
+</html>

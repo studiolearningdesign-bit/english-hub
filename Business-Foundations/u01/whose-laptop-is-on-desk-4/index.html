@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whose Laptop Is on Desk 4? — Business Foundations | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 8px rgba(0, 31, 84, 0.06);
+      --shadow-md: 0 10px 28px rgba(7, 21, 39, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==================== SITE HEADER ==================== */
+    header.site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .site-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 46px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-white {
+      height: 84px;
+      width: auto;
+      object-fit: contain;
+      margin: -19px 0;
+      display: block;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+
+    .header-course {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      white-space: nowrap;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-student {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate-200);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .header-student:hover { color: var(--white); }
+
+    .header-teacher-btn {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font: 700 13px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: var(--gold-500);
+      cursor: pointer;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .header-teacher-btn:hover { color: var(--gold-400); }
+    .header-teacher-btn.is-active { color: var(--teal-300); }
+
+    .header-back-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .header-back-link:hover { color: var(--white); }
+
+    /* ==================== MAIN ==================== */
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 24px 56px;
+    }
+
+    /* ==================== HERO BANNER ==================== */
+    header.workspace-hero-banner {
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 44px 48px;
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(110deg, rgba(7, 21, 39, 0.95) 0%, rgba(11, 37, 69, 0.86) 54%, rgba(7, 21, 39, 0.45) 100%),
+        url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md);
+    }
+
+    .workspace-hero-banner h1 {
+      font-size: clamp(30px, 4.4vw, 44px);
+      font-weight: 800;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+      margin: 0 0 14px;
+      color: var(--white);
+    }
+
+    .workspace-hero-banner h1 span { color: var(--gold-500); }
+
+    .workspace-hero-banner p {
+      max-width: 560px;
+      margin: 0;
+      font-size: 16.5px;
+      color: rgba(248, 250, 252, 0.9);
+    }
+
+    /* ==================== SEGMENTED NAV ==================== */
+    nav.module-nav-grid {
+      display: flex;
+      overflow-x: auto;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin: 26px 0 24px;
+      gap: 4px;
+      scrollbar-width: thin;
+    }
+
+    nav.module-nav-grid button {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    nav.module-nav-grid button:hover { color: var(--navy-900); }
+
+    nav.module-nav-grid button .nav-idx {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--slate-500);
+    }
+
+    nav.module-nav-grid button.active {
+      background: var(--white);
+      color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+      border-color: var(--slate-200);
+      font-weight: 700;
+    }
+
+    nav.module-nav-grid button.active .nav-idx { color: var(--teal-700); }
+
+    /* ==================== CARDS & TYPOGRAPHY ==================== */
+    article.card-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+      margin: 0 0 10px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy-900);
+      line-height: 1.3;
+      margin: 22px 0 10px;
+    }
+
+    h3:first-child { margin-top: 0; }
+
+    p.lead { color: var(--slate-600); margin: 0 0 18px; }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--teal-700);
+    }
+
+    /* ==================== TEACHER NOTE ACCORDION ==================== */
+    details.teacher-note-box {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+
+    details.teacher-note-box summary {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    details.teacher-note-box summary::-webkit-details-marker { display: none; }
+    details.teacher-note-box summary::after { content: '+'; font-size: 16px; }
+    details.teacher-note-box[open] summary::after { content: '−'; }
+
+    .teacher-steps {
+      margin: 12px 0 0;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--gold-border);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--slate-900);
+    }
+
+    .teacher-step-item {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .teacher-step-item strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-600);
+      margin-bottom: 4px;
+    }
+
+    /* ==================== BUTTONS ==================== */
+    .btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+      border-radius: var(--radius-sm);
+      padding: 9px 15px;
+      transition: all 0.16s ease;
+    }
+
+    .btn:hover:not(:disabled) { border-color: var(--teal-700); color: var(--teal-700); }
+    .btn:disabled { opacity: 0.45; cursor: default; }
+
+    .btn-primary {
+      background: var(--navy-900);
+      color: var(--white);
+      border-color: var(--navy-900);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--navy-700);
+      border-color: var(--navy-700);
+      color: var(--white);
+    }
+
+    .btn-teal {
+      background: var(--teal-700);
+      color: var(--white);
+      border-color: var(--teal-700);
+    }
+
+    .btn-teal:hover:not(:disabled) {
+      background: var(--teal-800);
+      border-color: var(--teal-800);
+      color: var(--white);
+    }
+
+    .btn-audio {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      color: var(--teal-800);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-audio:hover {
+      background: var(--teal-700);
+      color: var(--white);
+      border-color: var(--teal-700);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ==================== WARM-UP SCENE & POLL ==================== */
+    .scene-banner {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 22px;
+      align-items: center;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .scene-banner img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .scene-banner-body { padding: 18px 22px 18px 0; }
+
+    .poll-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+    }
+
+    .poll-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .poll-card h3 { margin: 0; font-size: 16.5px; }
+
+    .poll-btn {
+      background: var(--white);
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-full);
+      padding: 6px 13px;
+      font: 600 13px 'Plus Jakarta Sans', sans-serif;
+      color: var(--slate-700);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .poll-btn:hover { border-color: var(--teal-700); color: var(--teal-800); }
+    .poll-btn.selected { background: var(--navy-900); border-color: var(--navy-900); color: var(--white); }
+
+    /* ==================== FLIP CARDS (EXACT REFERENCE) ==================== */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin: 14px 0 26px;
+    }
+
+    .flip-card {
+      perspective: 1000px;
+      height: 235px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flip-front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
+
+    .flip-back {
+      transform: rotateY(180deg);
+      background: var(--navy-950);
+      border-color: var(--navy-800);
+      color: var(--white);
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .flip-word {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+    }
+
+    .flip-word-chunk {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+    }
+
+    .flip-ipa {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin-top: 4px;
+    }
+
+    .flip-example {
+      font-size: 0.9rem;
+      color: var(--slate-700);
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+    }
+
+    .flip-audio-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flip-back-word {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold-400);
+      line-height: 1.2;
+    }
+
+    .flip-back-meaning {
+      font-size: 0.94rem;
+      color: var(--slate-100);
+      max-width: 28ch;
+      margin: 0;
+    }
+
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
+
+    /* ==================== INTELLIGIBILITY & UNSCRAMBLE ==================== */
+    .pron-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .pron-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .unscramble-row {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .scrambled-letters {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--teal-800);
+    }
+
+    .text-input {
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font: 500 14.5px 'Plus Jakarta Sans', sans-serif;
+      color: var(--navy-900);
+      background: var(--white);
+      min-width: 180px;
+    }
+
+    .text-input:focus { outline: none; border-color: var(--teal-700); }
+
+    /* ==================== LISTENING STAGE ==================== */
+    .listening-stage {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(212, 168, 67, 0.25);
+    }
+
+    .listening-speakers {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .speaker-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-full);
+      padding: 6px 14px 6px 6px;
+    }
+
+    .speaker-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .transcript-panel {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.93rem;
+      color: var(--slate-100);
+      line-height: 1.75;
+    }
+
+    .transcript-panel.is-open { display: block; }
+
+    /* ==================== TABLES, CLINIC & SPEAKING CARDS ==================== */
+    .table-scroll { overflow-x: auto; margin: 14px 0 22px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+    }
+
+    th, td {
+      padding: 11px 14px;
+      border: 1px solid var(--slate-200);
+      text-align: left;
+    }
+
+    th { background: var(--navy-900); color: var(--white); font-weight: 600; }
+    tbody tr:nth-child(even) { background: var(--slate-50); }
+
+    .line {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .line:last-child { border-bottom: 0; }
+
+    .clinic-row {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .claim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin: 16px 0 20px;
+    }
+
+    .claim-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .claim-card:hover { border-color: var(--teal-700); }
+    .claim-card.selected {
+      background: var(--white);
+      border-color: var(--navy-900);
+      box-shadow: var(--shadow-md);
+    }
+
+    .claim-card img {
+      width: 100%;
+      height: 148px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .claim-card-body { padding: 14px 16px; }
+
+    .checklist-box {
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 9px 0;
+      font-size: 14.5px;
+      color: var(--slate-900);
+      cursor: pointer;
+    }
+
+    .checklist-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    label.field-label {
+      display: block;
+      font-weight: 600;
+      color: var(--navy-900);
+      margin: 14px 0;
+    }
+
+    textarea, input[type="password"] {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 11px 13px;
+      width: 100%;
+      margin-top: 6px;
+      color: var(--slate-900);
+      background: var(--white);
+    }
+
+    textarea { min-height: 86px; resize: vertical; }
+
+    .feedback-msg {
+      margin: 8px 0 0;
+      font-size: 13.5px;
+      font-weight: 600;
+      min-height: 20px;
+    }
+
+    .good { color: var(--teal-800); }
+    .bad { color: var(--danger-600); }
+
+    .end-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 26px 0 8px;
+      gap: 12px;
+    }
+
+    /* ==================== FOOTER (EXACT REFERENCE) ==================== */
+    footer.studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+
+    .footer-links-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-explore-link {
+      color: var(--slate-200);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 7px 12px;
+    }
+
+    .footer-explore-link:hover { color: var(--white); }
+
+    .footer-teacher-portal {
+      color: var(--gold-400);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      transition: all 0.16s;
+    }
+
+    .footer-teacher-portal:hover {
+      background: rgba(212, 168, 67, 0.14);
+      color: var(--white);
+    }
+
+    dialog {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      max-width: 400px;
+      width: 92%;
+      box-shadow: var(--shadow-md);
+    }
+
+    dialog::backdrop {
+      background: rgba(7, 21, 39, 0.58);
+      backdrop-filter: blur(4px);
+    }
+
+    @media (max-width: 760px) {
+      .site-header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+      header.workspace-hero-banner { padding: 30px 22px; min-height: 200px; }
+      article.card-block { padding: 20px; }
+      .scene-banner, .unscramble-row, .clinic-row { grid-template-columns: 1fr; }
+      .scene-banner-body { padding: 0 18px 18px; }
+    }
+
+    @media print {
+      header.site-header, nav.module-nav-grid, .end-nav, footer.studio-site-footer, button, dialog { display: none !important; }
+      body { background: #fff; }
+      article.card-block { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../index.html" class="header-brand">
+        <span class="brand-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="brand-logo-white"
+          >
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="header-course">English Hub &middot; Business Foundations</span>
+      </a>
+      <div class="header-links">
+        <button type="button" class="header-student" id="studentName" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-btn" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a class="header-back-link" href="../index.html">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="workspace-hero-banner">
+      <h1>Whose Laptop Is on <span>Desk 4?</span></h1>
+      <p>Conference Room B is empty, but four items are still on the table. Find the right owners before the next client meeting starts.</p>
+    </header>
+
+    <nav class="module-nav-grid" id="nav" aria-label="Lesson modules"></nav>
+
+    <div id="screen"></div>
+
+    <div class="end-nav">
+      <button type="button" class="btn" id="prev">&larr; Previous</button>
+      <span id="count" class="mono"></span>
+      <button type="button" class="btn btn-primary" id="next">Next &rarr;</button>
+    </div>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="footer-logo-white"
+          >
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; Whose Laptop Is on Desk 4? (Business Foundations)</div>
+      </div>
+      <div class="footer-links-right">
+        <a href="explore.html" class="footer-explore-link">Explore Worksheet &rarr;</a>
+        <a href="../../../teacher-hub/Business-Foundations/whose-laptop-is-on-desk-4/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="teacherDialog">
+    <span class="kicker">Faculty Access</span>
+    <h3 style="margin-top: 4px;">Teacher's Version</h3>
+    <p class="lead" style="font-size: 14px;">Enter your authorized faculty PIN to unlock live teaching sequences and answer keys.</p>
+    <input id="pinInput" type="password" placeholder="Enter PIN" aria-label="Teacher PIN" autocomplete="off">
+    <p id="pinMessage" class="feedback-msg bad"></p>
+    <div class="actions" style="margin-top: 14px; justify-content: flex-end;">
+      <button type="button" class="btn" onclick="document.getElementById('teacherDialog').close()">Cancel</button>
+      <button type="button" class="btn btn-primary" onclick="authorizeTeacher()">Unlock</button>
+    </div>
+  </dialog>
+
+  <script>
+    const MODULE_NAMES = [
+      'Warm-up',
+      'Vocabulary',
+      'Workplace Expressions',
+      'Listening',
+      'Grammar',
+      'Speaking',
+      'Exit Ticket'
+    ];
+
+    const VALID_PINS = ['0410', '2064'];
+
+    let current = 0;
+    let isTeacher = false;
+    let transcriptOpen = false;
+    let selectedClaim = 0;
+    const savedInputs = {};
+    const pollSelections = {};
+
+    const $ = (id) => document.getElementById(id);
+
+    (function initSession() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const student = params.get('name') || localStorage.getItem('ld_student_name') || 'Guest';
+        $('studentName').textContent = 'Student · ' + student;
+        if (params.get('role') === 'teacher') isTeacher = true;
+      } catch (_) {
+        $('studentName').textContent = 'Student · Guest';
+      }
+    })();
+
+    const VOCAB = [
+      { word: 'coworker', pos: 'noun', ipa: '/ˈkoʊˌwɜːrkər/', example: 'My coworker is in Finance.', meaning: 'A person who works in the same company or team.', scrambled: 'K E R C O W O R', clue: 'A colleague in your same company or team.' },
+      { word: 'belongings', pos: 'noun (pl.)', ipa: '/bɪˈlɒŋɪŋz/', example: 'Are these your belongings?', meaning: 'Your personal things and work items.', scrambled: 'S G N I G N O L E B', clue: 'Your personal items on a desk or in a bag.' },
+      { word: 'stationery', pos: 'noun', ipa: '/ˈsteɪʃənəri/', example: 'This stationery is for HR.', meaning: 'Office paper, pens, envelopes, and desk supplies.', scrambled: 'Y R E N O I T A T S', clue: 'Office pens, paper, and desk supplies.' },
+      { word: 'lanyard', pos: 'noun', ipa: '/ˈlænjərd/', example: 'Her lanyard is blue.', meaning: 'The neck strap that holds an office ID badge.', scrambled: 'D R A Y N A L', clue: 'The strap around your neck for an ID card.' },
+      { word: 'drawer', pos: 'noun', ipa: '/drɔːr/', example: 'His keys are in the drawer.', meaning: 'The sliding box in a desk for storing items.', scrambled: 'R E W A R D', clue: 'The sliding storage box built into a desk.' },
+      { word: 'shared', pos: 'adjective', ipa: '/ʃɛərd/', example: 'Desk 4 is a shared desk.', meaning: 'Used by two or more people, not just one.', scrambled: 'D E R A H S', clue: 'Used by multiple people in the office.' }
+    ];
+
+    const EXPRESSIONS = [
+      { phrase: 'No idea.', use: 'uncertainty', ipa: '/noʊ aɪˈdiːə/', example: 'Whose charger is this? — No idea.', meaning: 'I do not know at all.' },
+      { phrase: 'Good question.', use: 'buying time', ipa: '/ɡʊd ˈkwɛstʃən/', example: 'Whose folder is on Desk 4? — Good question.', meaning: 'That is important, and I need to think or check.' },
+      { phrase: 'I think so.', use: 'soft confirm', ipa: '/aɪ θɪŋk soʊ/', example: 'Is this Elena\'s badge? — I think so.', meaning: 'Probably yes, though I am not 100% certain.' },
+      { phrase: 'Ask IT.', use: 'redirecting', ipa: '/æsk aɪˈtiː/', example: 'Whose laptop is this? — Ask IT.', meaning: 'Check with the tech support team.' }
+    ];
+
+    const TRANSFORM_ITEMS = [
+      { prompt: 'The badge of Elena', answer: "Elena's badge" },
+      { prompt: 'The charger of Carlos', answer: "Carlos's charger" },
+      { prompt: 'The folders of the managers', answer: "the managers' folders" },
+      { prompt: 'The headset of Daniel (use possessive adjective)', answer: 'his headset' }
+    ];
+
+    const CLINIC_ITEMS = [
+      { sentence: 'This is Sofia. His notebook is on Desk 4.', status: 'fix', fix: 'Her notebook is on Desk 4.' },
+      { sentence: "Whose keys are these? They're David's.", status: 'natural', fix: 'Already natural.' },
+      { sentence: 'Whose charger are this?', status: 'fix', fix: 'Whose charger is this?' },
+      { sentence: 'This is the team. Our office is ready.', status: 'natural', fix: 'Already natural.' }
+    ];
+
+    const CLAIM_CARDS = [
+      {
+        tag: 'ITEM 01 · SINGULAR',
+        item: 'Silver Laptop',
+        desk: 'Desk 4',
+        owner: "Elena's laptop (her laptop — Finance)",
+        photo: 'photo-1496181133206-80ce9b88a853'
+      },
+      {
+        tag: 'ITEM 02 · SINGULAR',
+        item: 'Black Headset',
+        desk: 'Conference Room B',
+        owner: "Carlos's headset (his headset — Operations)",
+        photo: 'photo-1505740420928-5e560c06d30e'
+      },
+      {
+        tag: 'ITEM 03 · PLURAL',
+        item: 'Office Keys',
+        desk: 'Reception Counter',
+        owner: "David's keys (his keys — IT Support)",
+        photo: 'photo-1582139329536-e7284fece509'
+      },
+      {
+        tag: 'ITEM 04 · PLURAL',
+        item: 'Confidential Folders',
+        desk: 'Printer Station',
+        owner: "the managers' folders (their folders — HR)",
+        photo: 'photo-1568992687947-868a62a9f521'
+      }
+    ];
+
+    const TEACHER_NOTES = [
+      {
+        setup: 'Show the shared hot-desk photo. Keep the warm-up strictly in [P] (To Be + my/your).',
+        modeling: 'Answer one poll question aloud first: "My desk is organized, and my badge is in my pocket."',
+        check: 'Elicit brief oral responses to the 3 poll prompts without introducing his/her/\'s yet.',
+        keys: 'Diagnostic [P] only. Note whether the student uses singular (is) vs. plural (are) comfortably.'
+      },
+      {
+        setup: 'Present the 6 high-value workplace words on Flip Cards before opening Unscramble.',
+        modeling: 'Play Word + Example audios; flip cards to confirm meaning. Run the his/her and \'s sound contrast.',
+        check: 'Have the student solve Unscramble independently, then read each word aloud in a sentence.',
+        keys: 'Unscramble: 1. coworker · 2. belongings · 3. stationery · 4. lanyard · 5. drawer · 6. shared.'
+      },
+      {
+        setup: 'Teach all 4 Workplace Expressions as fixed blocks — do not analyze "think" or "ask" as Present Simple [F].',
+        modeling: 'Play Phrase + Example audios and drill crisp, natural workplace intonation.',
+        check: 'Point to an object on your desk and ask a quick question so the student replies with one expression.',
+        keys: 'Fixed blocks: No idea. / Good question. / I think so. / Ask IT.'
+      },
+      {
+        setup: 'Keep the transcript CLOSED during the first two plays. Set the gist question: "How many items are in Room B?"',
+        modeling: 'Play the dialogue once for gist, then a second time for the 4 owner-verification checks.',
+        check: 'Open the transcript AFTER answering to notice his, her, their, \'s, and Whose is/are.',
+        keys: '1. Elena\'s · 2. Carlos\'s · 3. David\'s · 4. the managers\' (their folders).'
+      },
+      {
+        setup: 'Connect the grammar tables directly to the items Claire and David just sorted.',
+        modeling: 'Emphasize Spanish L1 interference: "su" splits into his (man), her (woman), and their (plural). Do NOT introduce mine/yours [F].',
+        check: 'Complete Part A (Transform) and Part B (Spot & Fix — zero red hints).',
+        keys: 'Part A: Elena\'s badge · Carlos\'s charger · the managers\' folders · his headset. Part B: 1. Fix (Her notebook...) · 2. Natural · 3. Fix (Whose charger is this?) · 4. Natural.'
+      },
+      {
+        setup: 'Roleplay: Student is the Office Coordinator; Teacher (or Partner) is IT Support / Coworker.',
+        modeling: 'Model Item 01: "Whose laptop is this?" → "Good question. I think it\'s Elena\'s laptop. Her desk is Desk 4."',
+        check: 'Swap roles for Items 03–04 so the student practices plural "Whose ... are these? They\'re..."',
+        keys: 'Verify all 4 Speaking Checklist criteria without supplying scripted lines.'
+      },
+      {
+        setup: 'Close previous tabs. Exit Ticket gathers independent written evidence with zero copyable models.',
+        modeling: 'Clarify singular vs. plural question requirement only.',
+        check: 'Check apostrophe placement (\'s vs. s\'), his/her accuracy, and is/are agreement.',
+        keys: 'Record E0–E3 separately for: Whose is/are questions, \'s ownership, and his/her/their transfer.'
+      }
+    ];
+
+    function renderTeacherAccordion(idx) {
+      if (!isTeacher) return '';
+      const n = TEACHER_NOTES[idx];
+      return `
+        <details class="teacher-note-box">
+          <summary>Teacher's Live Sequence &middot; Module ${String(idx + 1).padStart(2, '0')}</summary>
+          <div class="teacher-steps">
+            <div class="teacher-step-item"><strong>1. Setup</strong>${n.setup}</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>${n.modeling}</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>${n.check}</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>${n.keys}</div>
+          </div>
+        </details>
+      `;
+    }
+
+    function audioBtn(file, label) {
+      return `<button type="button" class="btn-audio" onclick="event.stopPropagation(); playAudio(this, '${file}')">&#9654; ${label}</button>`;
+    }
+
+    function playAudio(btn, file) {
+      const original = btn.dataset.label || btn.textContent;
+      btn.dataset.label = original;
+      const audio = new Audio('audio/' + file + '.mp3');
+      audio.play().catch(() => {
+        btn.textContent = 'Audio pending studio file';
+        setTimeout(() => { btn.textContent = original; }, 2200);
+      });
+    }
+
+    function renderFlipCard(item, idx, type) {
+      const num = String(idx + 1).padStart(2, '0');
+      const isVocab = type === 'vocab';
+      const term = isVocab ? item.word : item.phrase;
+      const badge = isVocab ? item.pos : item.use.toLowerCase();
+      const termClass = isVocab ? 'flip-word' : 'flip-word-chunk';
+      const mainFile = isVocab ? `vocab-${num}-word` : `expr-${num}-phrase`;
+      const exFile = isVocab ? `vocab-${num}-example` : `expr-${num}-example`;
+      const mainLabel = isVocab ? 'Word' : 'Phrase';
+
+      return `
+        <div class="flip-card" role="button" tabindex="0" aria-label="Flip card for ${term}"
+             onclick="this.classList.toggle('is-flipped')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}">
+          <div class="flip-card-inner">
+            <div class="flip-face">
+              <div class="flip-front-top">
+                <div class="flip-word-group">
+                  <div class="${termClass}">${term}</div>
+                  <div class="flip-ipa">${item.ipa}</div>
+                </div>
+                <span class="flip-pos">${badge}</span>
+              </div>
+              <div class="flip-example">"${item.example}"</div>
+              <div class="flip-audio-row" onclick="event.stopPropagation()">
+                ${audioBtn(mainFile, mainLabel)}
+                ${audioBtn(exFile, 'Example')}
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="flip-back-word">${term}</div>
+              <div class="flip-back-meaning">${item.meaning}</div>
+              <div class="flip-hint">Click to flip back</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectPoll(key, val) {
+      pollSelections[key] = val;
+      render();
+    }
+
+    function checkUnscramble(idx) {
+      const inp = $('uns' + idx);
+      const fb = $('unsFb' + idx);
+      if (!inp || !fb) return;
+      const ok = inp.value.trim().toLowerCase() === VOCAB[idx].word.toLowerCase();
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct!' : 'Check the letters and try again.';
+    }
+
+    function checkChoice(btn) {
+      const fb = btn.parentElement.nextElementSibling;
+      const ok = btn.dataset.answer === 'true';
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct.' : 'Listen again and verify the owner.';
+    }
+
+    function renderChoice(question, options, correct) {
+      return `
+        <div class="line">
+          <div style="font-weight: 600; color: var(--navy-900); margin-bottom: 10px;">${question}</div>
+          <div class="actions">
+            ${options.map(opt => `<button type="button" class="btn" data-answer="${opt === correct}" onclick="checkChoice(this)">${opt}</button>`).join('')}
+          </div>
+          <p class="feedback-msg" aria-live="polite"></p>
+        </div>
+      `;
+    }
+
+    function checkTransform(idx) {
+      const inp = $('tr' + idx);
+      const fb = $('trFb' + idx);
+      if (!inp || !fb) return;
+      const normalize = s => s.trim().toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, ' ');
+      const ok = normalize(inp.value) === normalize(TRANSFORM_ITEMS[idx].answer);
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct!' : 'Check apostrophe placement and word order.';
+    }
+
+    function checkClinic(idx, choice) {
+      const item = CLINIC_ITEMS[idx];
+      const fb = $('clFb' + idx);
+      const ok = choice === item.status;
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok
+        ? (item.status === 'fix' ? `Correct — say or write the fix: "${item.fix}"` : 'Correct — this sentence is natural.')
+        : 'Look closely at the possessive or singular/plural verb.';
+    }
+
+    function toggleTranscript() {
+      transcriptOpen = !transcriptOpen;
+      render();
+    }
+
+    function selectClaim(idx) {
+      selectedClaim = idx;
+      render();
+    }
+
+    function renderTextboxes(labels) {
+      return labels.map((lbl, i) => `
+        <label class="field-label">
+          ${lbl}
+          <textarea data-save="${current}-${i}" placeholder="Write your response here..."></textarea>
+        </label>
+      `).join('');
+    }
+
+    const MODULES = [
+      // 01 Warm-up
+      () => `
+        <article class="card-block">
+          <span class="kicker">01 &middot; Warm-up</span>
+          <h2>Desk 4 at 5:30 PM</h2>
+          <p class="lead">In modern offices, people use open desks and meeting rooms every day. React to the three quick questions below and share with your teacher.</p>
+
+          <div class="scene-banner">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80" alt="Modern corporate office desk">
+            <div class="scene-banner-body">
+              <h3>5:30 PM at Desk 4</h3>
+              <p class="lead" style="margin-bottom:0;">The meeting is over, the room is quiet, and four items (a laptop, keys, a charger, and folders) are still on the table.</p>
+            </div>
+          </div>
+
+          <div class="poll-grid">
+            ${[
+              { key: 'p1', q: '1. Is your desk clean or messy right now?', opts: ['Very clean', 'A little messy', 'Total chaos'] },
+              { key: 'p2', q: '2. Is your office ID on your desk or in your bag?', opts: ['On my desk', 'In my bag', 'At home'] },
+              { key: 'p3', q: '3. Is your team organized with meeting rooms?', opts: ['Yes, always', 'Sometimes', 'Not really'] }
+            ].map(p => `
+              <div class="poll-card">
+                <h3>${p.q}</h3>
+                <div class="actions">
+                  ${p.opts.map(opt => `<button type="button" class="poll-btn ${pollSelections[p.key] === opt ? 'selected' : ''}" onclick="selectPoll('${p.key}', '${opt}')">${opt}</button>`).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </article>
+      `,
+
+      // 02 Vocabulary
+      () => `
+        <article class="card-block">
+          <span class="kicker">02 &middot; Core Vocabulary</span>
+          <h2>Items on the Desk</h2>
+          <p class="lead">Listen to each word and example, then click any card to flip and confirm the meaning.</p>
+          <div class="flip-grid">
+            ${VOCAB.map((v, i) => renderFlipCard(v, i, 'vocab')).join('')}
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Intelligibility Micro-Focus</span>
+          <h3>Clear Distinction: His vs. Her &amp; Possessive 's</h3>
+          <p class="lead">Listen carefully to the vowel difference between <strong>his</strong> and <strong>her</strong>, and the three endings of <strong>'s</strong>.</p>
+          <div class="pron-grid">
+            <div class="pron-card">
+              <span class="mono">POSSESSIVE CONTRAST</span>
+              <div style="font-size:17px; font-weight:800; color:var(--navy-900);">his badge &nbsp;vs.&nbsp; her badge</div>
+              <div class="mono">/hɪz/ &nbsp;&middot;&nbsp; /hɜːr/</div>
+              <div>${audioBtn('pron-01-his-her', 'Listen & Compare')}</div>
+            </div>
+            <div class="pron-card">
+              <span class="mono">ENDINGS OF 'S</span>
+              <div style="font-size:17px; font-weight:800; color:var(--navy-900);">Pat's /s/ &middot; Daniel's /z/ &middot; Carlos's /ɪz/</div>
+              <div class="mono">3 natural sounds</div>
+              <div>${audioBtn('pron-02-genitive-s', 'Listen & Compare')}</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Vocabulary Practice</span>
+          <h3>Unscramble the Office Item</h3>
+          <p class="lead">Put the letters in order to spell each workplace item correctly.</p>
+          ${VOCAB.map((v, i) => `
+            <div class="unscramble-row">
+              <div>
+                <div class="scrambled-letters">${v.scrambled}</div>
+                <div style="font-size:14px; color:var(--slate-600);">${v.clue}</div>
+                <p id="unsFb${i}" class="feedback-msg" style="margin:4px 0 0;" aria-live="polite"></p>
+              </div>
+              <div class="actions">
+                <input type="text" class="text-input" id="uns${i}" data-save="uns-${i}" placeholder="Type word..." onkeydown="if(event.key==='Enter')checkUnscramble(${i})">
+                <button type="button" class="btn btn-primary" onclick="checkUnscramble(${i})">Check</button>
+              </div>
+            </div>
+          `).join('')}
+        </article>
+      `,
+
+      // 03 Workplace Expressions
+      () => `
+        <article class="card-block">
+          <span class="kicker">03 &middot; Workplace Expressions</span>
+          <h2>Quick Office Replies</h2>
+          <p class="lead">Learn these four natural workplace replies as complete blocks. Click each card to see when to use it.</p>
+          <div class="flip-grid">
+            ${EXPRESSIONS.map((e, i) => renderFlipCard(e, i, 'expr')).join('')}
+          </div>
+        </article>
+      `,
+
+      // 04 Listening
+      () => `
+        <article class="card-block">
+          <span class="kicker">04 &middot; Listening in Context</span>
+          <h2>Conference Room B: Lost &amp; Found</h2>
+          <p class="lead">Listen to Claire (Office Coordinator) and David (IT Support) first. Keep the transcript closed until you answer the four checks.</p>
+
+          <div class="listening-stage">
+            <div class="listening-speakers">
+              <div class="speaker-pill">
+                <img class="speaker-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80" alt="Claire">
+                <div><strong>Claire</strong><div style="font-size:0.75rem; color:var(--slate-300);">Office Coordinator</div></div>
+              </div>
+              <div class="speaker-pill">
+                <img class="speaker-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="David">
+                <div><strong>David</strong><div style="font-size:0.75rem; color:var(--slate-300);">IT Support</div></div>
+              </div>
+            </div>
+            <div class="actions" style="justify-content: space-between;">
+              <div>
+                <strong>Audio Track: Desk 4 Cleanup</strong>
+                <div style="font-size:0.84rem; color:var(--slate-300);">Claire and David identify four items left after a meeting.</div>
+              </div>
+              <div class="actions">
+                <button type="button" class="btn btn-teal" onclick="playAudio(this, 'listening-01-desk4')">&#9654; Play Dialogue</button>
+                <button type="button" class="btn" onclick="toggleTranscript()">${transcriptOpen ? 'Hide Transcript' : 'Show Transcript (after listening)'}</button>
+              </div>
+            </div>
+            <div class="transcript-panel ${transcriptOpen ? 'is-open' : ''}">
+              <p><strong>Claire:</strong> David, wait a second. Desk 4 is a shared desk — whose laptop is this?</p>
+              <p><strong>David:</strong> Good question. Let me check the sticker... Yes, I think so — it's Elena's laptop. Her department is Finance.</p>
+              <p><strong>Claire:</strong> Great. And whose blue lanyard is in the top drawer?</p>
+              <p><strong>David:</strong> That's Carlos's lanyard. He's my coworker in Operations.</p>
+              <p><strong>Claire:</strong> Okay. What about these belongings? Whose keys are these?</p>
+              <p><strong>David:</strong> Oh! Those are my keys! Thanks, Claire.</p>
+              <p><strong>Claire:</strong> Haha, no problem! And this stationery and these folders?</p>
+              <p><strong>David:</strong> No idea. Maybe they're the managers' folders — their meeting is at nine. Ask IT if another laptop is still here.</p>
+            </div>
+          </div>
+
+          <h3>Owner Verification</h3>
+          ${renderChoice("1. Whose laptop is on the shared desk?", ["Elena's", "Carlos's", "David's"], "Elena's")}
+          ${renderChoice("2. Whose lanyard is in the top drawer?", ["Elena's", "Carlos's", "the managers'"], "Carlos's")}
+          ${renderChoice("3. Whose keys are on the table?", ["Claire's", "David's", "Elena's"], "David's")}
+          ${renderChoice("4. Whose folders are on the table?", ["David's", "Carlos's", "the managers'"], "the managers'")}
+        </article>
+      `,
+
+      // 05 Grammar
+      () => `
+        <article class="card-block">
+          <span class="kicker">05 &middot; Grammar in Context</span>
+          <h2>Possessive Adjectives, 's &amp; Whose...?</h2>
+          <p class="lead">Use possessive adjectives (<strong>my, your, his, her, our, their</strong>) and <strong>'s</strong> to show who owns an item, a desk, or a file.</p>
+
+          <h3>1. Possessive Adjectives</h3>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Subject</th><th>Possessive</th><th>Workplace Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>I</strong></td><td><strong>my</strong></td><td>My badge is ready.</td></tr>
+                <tr><td><strong>You</strong></td><td><strong>your</strong></td><td>Is this your charger?</td></tr>
+                <tr><td><strong>He</strong></td><td><strong>his</strong></td><td>Carlos is here. <strong>His</strong> headset is black.</td></tr>
+                <tr><td><strong>She</strong></td><td><strong>her</strong></td><td>Elena is in Finance. <strong>Her</strong> laptop is on Desk 4.</td></tr>
+                <tr><td><strong>We</strong></td><td><strong>our</strong></td><td>Our office is on Floor 3.</td></tr>
+                <tr><td><strong>They</strong></td><td><strong>their</strong></td><td>The managers are ready. <strong>Their</strong> folders are confidential.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>2. Possessive 's &amp; Questions with Whose</h3>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Form</th><th>Question (Whose...?)</th><th>Affirmative / Negative</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Singular name ('s)</strong></td><td><strong>Whose</strong> laptop <strong>is</strong> this?</td><td>It's <strong>Elena's</strong> laptop. / It isn't <strong>Carlos's</strong>.</td></tr>
+                <tr><td><strong>Name ending in -s ('s)</strong></td><td><strong>Whose</strong> headset <strong>is</strong> this?</td><td>It's <strong>Carlos's</strong> headset.</td></tr>
+                <tr><td><strong>Plural ending in -s (s')</strong></td><td><strong>Whose</strong> folders <strong>are</strong> these?</td><td>They're the <strong>managers'</strong> folders. / They aren't <strong>our</strong> folders.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Practice A &middot; Transform to Natural Workplace English</h3>
+          <p class="lead">Rewrite each phrase using <strong>'s</strong>, <strong>s'</strong>, or a possessive adjective.</p>
+          ${TRANSFORM_ITEMS.map((item, i) => `
+            <div class="unscramble-row">
+              <div>
+                <div style="font-weight:700; color:var(--navy-900);">${i + 1}. ${item.prompt}</div>
+                <p id="trFb${i}" class="feedback-msg" style="margin:4px 0 0;" aria-live="polite"></p>
+              </div>
+              <div class="actions">
+                <input type="text" class="text-input" id="tr${i}" data-save="tr-${i}" placeholder="Write natural form..." onkeydown="if(event.key==='Enter')checkTransform(${i})">
+                <button type="button" class="btn btn-primary" onclick="checkTransform(${i})">Check</button>
+              </div>
+            </div>
+          `).join('')}
+
+          <h3>Practice B &middot; Error Clinic (Spot &amp; Fix)</h3>
+          <p class="lead">Decide whether each office sentence is natural or needs a fix. If it needs a fix, correct it aloud with your teacher.</p>
+          ${CLINIC_ITEMS.map((item, i) => `
+            <div class="clinic-row">
+              <div style="font-weight:600; color:var(--navy-900);">${i + 1}. ${item.sentence}</div>
+              <div class="actions">
+                <button type="button" class="btn" onclick="checkClinic(${i}, 'natural')">Natural</button>
+                <button type="button" class="btn" onclick="checkClinic(${i}, 'fix')">Needs a fix</button>
+              </div>
+              <p id="clFb${i}" class="feedback-msg" style="margin:0;" aria-live="polite"></p>
+            </div>
+          `).join('')}
+        </article>
+      `,
+
+      // 06 Speaking
+      () => `
+        <article class="card-block">
+          <span class="kicker">06 &middot; Speaking Simulation</span>
+          <h2>The Lost &amp; Found Desk Roleplay</h2>
+          <p class="lead">Select an item card below. Roleplay a quick office check: ask who owns each item (singular or plural), react with a Workplace Expression, and confirm the right owner.</p>
+
+          <div class="claim-grid">
+            ${CLAIM_CARDS.map((c, i) => `
+              <div class="claim-card ${selectedClaim === i ? 'selected' : ''}" onclick="selectClaim(${i})">
+                <img src="https://images.unsplash.com/${c.photo}?auto=format&fit=crop&w=600&q=80" alt="${c.item}">
+                <div class="claim-card-body">
+                  <div class="mono">${c.tag}</div>
+                  <h3 style="margin:4px 0;">${c.item}</h3>
+                  <div style="font-size:13.5px; color:var(--slate-600);">Location: ${c.desk}</div>
+                  ${selectedClaim === i ? `<div style="margin-top:8px; padding-top:8px; border-top:1px solid var(--slate-200); font-size:13.5px; font-weight:700; color:var(--teal-800);">Owner record: ${c.owner}</div>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="checklist-box">
+            <span class="kicker">Speaking Checklist</span>
+            ${[
+              'I ask at least one singular question (Whose ... is this?) and one plural question (Whose ... are these?).',
+              'I use possessive \'s or s\' accurately to name the owner.',
+              'I use his, her, or their accurately without mixing them up.',
+              'I include at least two Workplace Expressions naturally (No idea / Good question / I think so / Ask IT).'
+            ].map(t => `<label class="checklist-item"><input type="checkbox"> <span>${t}</span></label>`).join('')}
+          </div>
+        </article>
+      `,
+
+      // 07 Exit Ticket
+      () => `
+        <article class="card-block">
+          <span class="kicker">07 &middot; Exit Ticket</span>
+          <h2>End-of-Day Desk Report</h2>
+          <p class="lead">Without looking back at previous modules, write your own short report about items left in Conference Room B.</p>
+          ${renderTextboxes([
+            '1. Write one singular question with Whose...?',
+            '2. Write one plural question with Whose...?',
+            "3. Write two ownership sentences using 's or s'",
+            '4. Write two sentences using his, her, our, or their'
+          ])}
+          <div class="checklist-box">
+            <span class="kicker">My Can-Do Statements</span>
+            ${[
+              'I can ask who owns singular and plural office items using Whose is this? / Whose are these?',
+              "I can state ownership clearly using 's (Elena's, Carlos's) and s' (the managers').",
+              'I can distinguish his, her, our, and their accurately in speech and writing.',
+              'I can use natural quick office replies (No idea / Good question / I think so / Ask IT).'
+            ].map(t => `<label class="checklist-item"><input type="checkbox"> <span>${t}</span></label>`).join('')}
+          </div>
+        </article>
+      `
+    ];
+
+    function saveCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => {
+        savedInputs[el.dataset.save] = el.value;
+      });
+    }
+
+    function restoreCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => {
+        if (savedInputs[el.dataset.save] !== undefined) el.value = savedInputs[el.dataset.save];
+      });
+    }
+
+    function render() {
+      saveCurrentInputs();
+      $('nav').innerHTML = MODULE_NAMES.map((name, idx) => `
+        <button type="button" class="${current === idx ? 'active' : ''}" onclick="go(${idx})">
+          <span class="nav-idx">${String(idx + 1).padStart(2, '0')}</span>
+          <span>${name}</span>
+        </button>
+      `).join('');
+
+      $('screen').innerHTML = renderTeacherAccordion(current) + MODULES[current]();
+      restoreCurrentInputs();
+
+      $('prev').disabled = current === 0;
+      $('next').disabled = current === MODULE_NAMES.length - 1;
+      $('count').textContent = `${String(current + 1).padStart(2, '0')} / ${String(MODULE_NAMES.length).padStart(2, '0')}`;
+    }
+
+    function go(idx) {
+      current = idx;
+      render();
+      $('nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const activeBtn = $('nav').children[idx];
+      if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    }
+
+    function editStudentName() {
+      const currentName = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', currentName);
+      if (next === null) return;
+      const clean = next.trim();
+      try { localStorage.setItem('ld_student_name', clean); } catch (_) {}
+      $('studentName').textContent = 'Student · ' + (clean || 'Guest');
+    }
+
+    function updateTeacherButton() {
+      const btn = $('teacherToggleBtn');
+      if (!btn) return;
+      btn.classList.toggle('is-active', isTeacher);
+      btn.textContent = isTeacher ? "Teacher's Version (On) ×" : "Teacher's Version ↗";
+    }
+
+    function openTeacherModal() {
+      if (isTeacher) {
+        isTeacher = false;
+        updateTeacherButton();
+        render();
+        return;
+      }
+      $('pinMessage').textContent = '';
+      $('pinInput').value = '';
+      $('teacherDialog').showModal();
+      setTimeout(() => $('pinInput').focus(), 60);
+    }
+
+    function authorizeTeacher() {
+      const pin = ($('pinInput').value || '').trim();
+      if (VALID_PINS.includes(pin)) {
+        isTeacher = true;
+        $('teacherDialog').close();
+        updateTeacherButton();
+        render();
+      } else {
+        $('pinMessage').textContent = 'Incorrect PIN. Please verify with Academic Coordination.';
+        $('pinInput').focus();
+      }
+    }
+
+    $('pinInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); authorizeTeacher(); }
+    });
+
+    $('prev').onclick = () => go(current - 1);
+    $('next').onclick = () => go(current + 1);
+
+    updateTeacherButton();
+    render();
+  </script>
+</body>
+</html>
