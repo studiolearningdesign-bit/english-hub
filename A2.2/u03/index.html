@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.2 &middot; Macro-Unit 03 &middot; 3 Lessons</div>
       <h1 class="hero-title">The Art of <span>Setting Boundaries</span></h1>
-      <p class="hero-desc">Consolidar comparaciones complejas, quejas de espacio/tiempo, límites éticos, futuro y experiencias de vida.</p>
+      <p class="hero-desc">Compare lifestyles, set personal boundaries, talk about future plans, and share memorable life experiences.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Grandparent Dilemma</h2>
-            <p class="lesson-desc">¿Los abuelos jubilados tienen la obligación de ser guardería gratis de los nietos?</p>
+            <p class="lesson-desc">Discuss whether retired grandparents should be expected to provide free daily childcare.</p>
             <div class="lesson-pills">
-              <span class="pill">Modal de recomendación y consejo: should /</span>
+              <span class="pill">45 min</span>
               <span class="pill">Draw the line</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Mandatory Sunday Dinners</h2>
-            <p class="lesson-desc">Los compromisos que odias pero a los que vas por culpa social.</p>
+            <p class="lesson-desc">Navigate mandatory family gatherings you attend mostly out of guilt.</p>
             <div class="lesson-pills">
-              <span class="pill">Obligación externa: have to / has to vs Fa</span>
+              <span class="pill">45 min</span>
               <span class="pill">Out of obligation</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Hard Limits &amp; Taboos</h2>
-            <p class="lesson-desc">Reglas no negociables: revisar el celular de tu pareja o prestar el auto a un ebrio.</p>
+            <p class="lesson-desc">Define non-negotiable personal rules, from phone privacy to lending your car.</p>
             <div class="lesson-pills">
-              <span class="pill">Contraste: Prohibición estricta (mustn't) </span>
+              <span class="pill">45 min</span>
               <span class="pill">Out of the question</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.2 &middot; Macro-Unit 03</div>
+    <div>Curriculum 2026 &middot; A2.2 &middot; Macro-Unit 03</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

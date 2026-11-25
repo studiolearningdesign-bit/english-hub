@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1+ &middot; Macro-Unit 03 &middot; 2 Lessons</div>
       <h1 class="hero-title">Executive Tact, Diplomacy <span>&amp; Hedging</span></h1>
-      <p class="hero-desc">Manejar el matiz profesional, autocrítica constructiva, suavizado diplomático y mediación ejecutiva.</p>
+      <p class="hero-desc">Communicate with professional tact, reflect on past decisions, soften hard truths, and mediate high-stakes talks.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Art of Hedging: Softening Truths</h2>
-            <p class="lesson-desc">Decir verdades demoledoras sin que te corran: suavizar opiniones categóricas.</p>
+            <p class="lesson-desc">Deliver tough feedback and hard truths diplomatically without burning bridges.</p>
             <div class="lesson-pills">
-              <span class="pill">Técnicas de Hedging: Verbos tentativos (It</span>
+              <span class="pill">45 min</span>
               <span class="pill">With all due respect</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Impersonal Shield &amp; Formal Contrast</h2>
-            <p class="lesson-desc">Redactar un memo donde no señalas con el dedo: 'It was agreed that...' + contrastes.</p>
+            <p class="lesson-desc">Write objective, blame-free crisis memos that keep teams aligned.</p>
             <div class="lesson-pills">
-              <span class="pill">Impersonal Passive (It was agreed that</span>
+              <span class="pill">45 min</span>
               <span class="pill">Be that as it may</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1+ &middot; Macro-Unit 03</div>
+    <div>Curriculum 2026 &middot; B1+ &middot; Macro-Unit 03</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

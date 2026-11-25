@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.1 &middot; Macro-Unit 04 &middot; 2 Lessons</div>
       <h1 class="hero-title">The Neighborhood &amp; <span>Lost Connections</span></h1>
-      <p class="hero-desc">Describir la identidad real, raíces, familia diversa, pertenencias y espacios cotidianos sin clichés infantiles.</p>
+      <p class="hero-desc">Talk about your name, roots, close relationships, personal belongings, and everyday spaces in real-life situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Disappearing Corner Shop</h2>
-            <p class="lesson-desc">¿La conveniencia fría del OXXO/súper o la tiendita donde te fían y te conocen?</p>
+            <p class="lesson-desc">Compare the convenience of chain stores with the local corner shop where everyone knows your name.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas de servicio: Is there a [place] </span>
+              <span class="pill">45 min</span>
               <span class="pill">Just around the corner</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Could You Survive Without GPS?</h2>
-            <p class="lesson-desc">Si se apaga tu teléfono en una colonia desconocida, ¿sabes orientarte o estás indefenso?</p>
+            <p class="lesson-desc">Find out if you could still navigate an unfamiliar neighborhood if your phone battery died.</p>
             <div class="lesson-pills">
-              <span class="pill">Imperativos afirmativos y negativos (Turn </span>
+              <span class="pill">45 min</span>
               <span class="pill">You can't miss it</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.1 &middot; Macro-Unit 04</div>
+    <div>Curriculum 2026 &middot; A1.1 &middot; Macro-Unit 04</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.1 &middot; Macro-Unit 01 &middot; 4 Lessons</div>
       <h1 class="hero-title">The Name We Carry &amp; <span>First Impressions</span></h1>
-      <p class="hero-desc">Describir la identidad real, raíces, familia diversa, pertenencias y espacios cotidianos sin clichés infantiles.</p>
+      <p class="hero-desc">Talk about your name, roots, close relationships, personal belongings, and everyday spaces in real-life situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Story Behind Your Name</h2>
-            <p class="lesson-desc">Nombres que la gente odia, apodos vergonzosos y pronunciación real.</p>
+            <p class="lesson-desc">Talk about names people love or dislike, funny nicknames, and how to pronounce your real name.</p>
             <div class="lesson-pills">
-              <span class="pill">Pronombres sujeto (I, you) + Verbo To Be (</span>
+              <span class="pill">45 min</span>
               <span class="pill">Nice to finally put a face to the name</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Where Are You Really From?</h2>
-            <p class="lesson-desc">El orgullo del pueblo o barrio de origen vs la ciudad. ¿La provincia es más cálida?</p>
+            <p class="lesson-desc">Compare hometown pride with big-city life and ask people where they are really from.</p>
             <div class="lesson-pills">
-              <span class="pill">Verbo To Be (he, she, we, they) + pregunta</span>
+              <span class="pill">45 min</span>
               <span class="pill">Born and raised in...</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Job vs. The Human</h2>
-            <p class="lesson-desc">¿Eres tu título universitario o tu pasión? El ingeniero en Uber, la mamá emprendedora.</p>
+            <p class="lesson-desc">Discuss the difference between a job title and what truly defines a person.</p>
             <div class="lesson-pills">
-              <span class="pill">Artículos indefinidos (a/an)</span>
+              <span class="pill">45 min</span>
               <span class="pill">It pays the bills</span>
             </div>
           </div>
@@ -438,9 +438,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The First 30 Seconds</h2>
-            <p class="lesson-desc">¿Qué dice tu foto de WhatsApp o apretón de manos? ¿Las primeras impresiones son justas?</p>
+            <p class="lesson-desc">Explore what a profile photo or handshake says about you and whether first impressions are fair.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas de información con Wh- + To Be (</span>
+              <span class="pill">45 min</span>
               <span class="pill">First impressions matter</span>
             </div>
           </div>
@@ -452,7 +452,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.1 &middot; Macro-Unit 01</div>
+    <div>Curriculum 2026 &middot; A1.1 &middot; Macro-Unit 01</div>
   </footer>
 
   <script>
@@ -474,7 +474,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.1 &middot; Macro-Unit 01 &middot; 2 Lessons</div>
       <h1 class="hero-title">The Split Second: When <span>Everything Changed</span></h1>
-      <p class="hero-desc">Desenvolverse con diplomacia, narrar escenas dramáticas interrumpidas, definir con precisión y medir resistencia.</p>
+      <p class="hero-desc">Handle delicate conversations with tact, tell dramatic turning-point stories, and express personal choices.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Split Second</h2>
-            <p class="lesson-desc">Ese segundo exacto que cambió el rumbo: un choque repentino, una llamada crucial.</p>
+            <p class="lesson-desc">Describe the exact split second when a sudden call or event changed everything.</p>
             <div class="lesson-pills">
-              <span class="pill">Past Continuous (was/were + -ing) vs Past </span>
+              <span class="pill">45 min</span>
               <span class="pill">Out of nowhere</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Emotional Aftermath</h2>
-            <p class="lesson-desc">Describir el impacto emocional: cómo te sentiste tú vs la causa de la situación.</p>
+            <p class="lesson-desc">Separate how a dramatic moment made you feel from what caused it.</p>
             <div class="lesson-pills">
-              <span class="pill">Adjetivos participiales: terminación -ed (</span>
+              <span class="pill">45 min</span>
               <span class="pill">Scared to death</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.1 &middot; Macro-Unit 01</div>
+    <div>Curriculum 2026 &middot; B1.1 &middot; Macro-Unit 01</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore &middot; A1.1-U01-L01 The Story Behind Your Name | English Hub · L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); white-space: nowrap; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .header-student-btn, .header-teacher-link {
+      background: none; border: none; font-family: inherit; font-size: 13px; cursor: pointer; padding: 4px 0;
+    }
+    .header-student-btn { color: var(--slate-200); font-weight: 500; }
+    .header-teacher-link { color: var(--gold-500); font-weight: 700; }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+    .header-back-link:hover { color: var(--white); }
+
+    .page-container { max-width: 980px; margin: 0 auto; padding: 28px 24px 64px; }
+
+    .workspace-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 190px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 32px 36px;
+      margin-bottom: 26px;
+      background-color: var(--navy-900);
+      background-image:
+        linear-gradient(120deg, rgba(7, 21, 39, 0.94) 0%, rgba(0, 31, 84, 0.84) 60%, rgba(15, 118, 110, 0.72) 100%),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      color: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+    .hero-title { font-size: clamp(1.55rem, 2.8vw, 2.15rem); font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+    .hero-title span { color: var(--gold-500); }
+    .hero-subtitle { font-size: 0.94rem; color: var(--slate-200); max-width: 54ch; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: inherit; font-size: 0.85rem; font-weight: 700;
+      padding: 10px 18px; border-radius: var(--radius-sm); border: 1px solid transparent;
+      cursor: pointer; text-decoration: none; transition: all 0.15s;
+    }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); }
+    .btn-gold:hover { background: var(--gold-400); }
+    .btn-outline { background: var(--white); color: var(--navy-900); border-color: var(--slate-300); }
+    .btn-outline:hover { border-color: var(--navy-900); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-800); }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+
+    .worksheet-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .part-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+    .part-title { font-size: 1.22rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .part-desc { font-size: 0.9rem; color: var(--slate-600); margin-bottom: 18px; }
+
+    .drill-list { display: grid; gap: 12px; }
+    .drill-row {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .drill-prompt { font-weight: 600; color: var(--navy-900); font-size: 0.94rem; }
+    .select-input, .text-input {
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 7px 11px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      color: var(--navy-900);
+      background: var(--white);
+    }
+    .status-pill { font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: var(--radius-full); }
+    .status-ok { background: var(--teal-50); color: var(--teal-800); }
+    .status-err { background: var(--danger-50); color: var(--danger-600); }
+
+    .dialogue-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+    .dialogue-line { font-size: 0.94rem; color: var(--slate-800); }
+    .write-lines {
+      display: grid;
+      gap: 12px;
+    }
+    .write-line-input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid var(--slate-300);
+      padding: 8px 4px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      color: var(--navy-900);
+      background: transparent;
+    }
+    .write-line-input:focus { outline: none; border-bottom-color: var(--teal-700); }
+
+    .teacher-key-box {
+      display: none;
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+      color: var(--slate-800);
+    }
+    body.teacher-mode .teacher-key-box { display: block; }
+
+    .studio-site-footer { border-top: 1px solid var(--slate-200); background: var(--white); padding: 22px 24px; }
+    .footer-inner {
+      max-width: 980px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--slate-600);
+    }
+    .footer-teacher-portal { color: var(--navy-900); font-weight: 700; text-decoration: none; }
+
+    @media print {
+      .site-header, .print-hide, .studio-site-footer { display: none !important; }
+      body { background: #fff; }
+      .page-container { padding: 0; max-width: 100%; }
+      .workspace-hero-banner {
+        background: #001F54 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        min-height: auto;
+        padding: 18px 22px;
+      }
+      .worksheet-card { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html?mode=explore" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; A1.1 Explore</span>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="header-student-btn" id="studentNameBtn">Student &middot; Guest</button>
+        <a href="./index.html" class="header-teacher-link" style="text-decoration:none;">Experience Lesson &#8599;</a>
+        <a href="../index.html?mode=explore" class="header-back-link">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="workspace-hero-banner">
+      <div>
+        <h1 class="hero-title">Explore: <span>The Story Behind Your Name</span></h1>
+        <p class="hero-subtitle">Independent practice for names, nicknames, <strong>I am / You are</strong>, and real-life check-in phrases.</p>
+      </div>
+      <button type="button" class="btn btn-gold print-hide" onclick="window.print()">Print Worksheet</button>
+    </header>
+
+    <div class="teacher-key-box">
+      <strong>Teacher Answer Key:</strong>
+      Part 1: 1. nickname &middot; 2. first name &middot; 3. last name &middot; 4. hard &middot; 5. easy &middot; 6. real name.
+      Part 2: 1. I'm &middot; 2. Are you &middot; 3. I'm not &middot; 4. My &middot; 5. You're.
+      Part 3: 1. What's your name? &middot; 2. You can call me &middot; 3. No, I'm serious! &middot; 4. Again, please?
+    </div>
+
+    <!-- PART 1: VOCABULARY -->
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 01 &middot; Vocabulary</div>
+      <h2 class="part-title">Match the Word to the Clue</h2>
+      <p class="part-desc">Choose the best word for each sentence.</p>
+      <div class="drill-list" id="vocabDrillList"></div>
+      <div class="print-hide" style="margin-top: 16px;">
+        <button type="button" class="btn btn-teal btn-sm" onclick="checkPart1()">Check Part 01</button>
+      </div>
+    </section>
+
+    <!-- PART 2: GRAMMAR -->
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 02 &middot; Grammar Mechanics</div>
+      <h2 class="part-title">I, You &amp; To Be</h2>
+      <p class="part-desc">Complete each sentence with <strong>I'm</strong>, <strong>I'm not</strong>, <strong>You're</strong>, <strong>Are you</strong>, or <strong>My</strong>.</p>
+      <div class="drill-list" id="grammarDrillList"></div>
+      <div class="print-hide" style="margin-top: 16px;">
+        <button type="button" class="btn btn-teal btn-sm" onclick="checkPart2()">Check Part 02</button>
+      </div>
+    </section>
+
+    <!-- PART 3: USA CHUNKS IN DIALOGUE -->
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 03 &middot; Real-Life Dialogue</div>
+      <h2 class="part-title">Complete the Check-In</h2>
+      <p class="part-desc">Choose the natural phrase for each line.</p>
+      <div class="dialogue-box" id="chunkDialogueList"></div>
+      <div class="print-hide" style="margin-top: 16px;">
+        <button type="button" class="btn btn-teal btn-sm" onclick="checkPart3()">Check Part 03</button>
+      </div>
+    </section>
+
+    <!-- PART 4: INDEPENDENT WRITING -->
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 04 &middot; Your Turn</div>
+      <h2 class="part-title">Write Your Own Name Card</h2>
+      <p class="part-desc">Write 4 short sentences about your name. Use capital <strong>I</strong>, capital names, and periods.</p>
+      <div class="write-lines">
+        <input type="text" class="write-line-input" aria-label="Sentence 1" placeholder="1.">
+        <input type="text" class="write-line-input" aria-label="Sentence 2" placeholder="2.">
+        <input type="text" class="write-line-input" aria-label="Sentence 3" placeholder="3.">
+        <input type="text" class="write-line-input" aria-label="Sentence 4" placeholder="4.">
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Story Behind Your Name (A1.1 Explore)</div>
+      <a href="../../../teacher-hub/A1.1/the-story-behind-your-name/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <script>
+    const vocabItems = [
+      { prompt: '1. Beto is a short name from friends. It is a ___.', ans: 'nickname' },
+      { prompt: '2. Sofia is her main personal name. It is her ___.', ans: 'first name' },
+      { prompt: '3. Rivera is his family name. It is his ___.', ans: 'last name' },
+      { prompt: '4. Valdovinos is not simple to say. It is ___.', ans: 'hard' },
+      { prompt: '5. Leo is simple to say and write. It is ___.', ans: 'easy' },
+      { prompt: '6. Not a nickname&mdash;your official true name is your ___.', ans: 'real name' }
+    ];
+    const vocabOptions = ['first name', 'last name', 'nickname', 'real name', 'easy', 'hard'];
+
+    const grammarItems = [
+      { prompt: "1. Hello! ___ Carlos.", ans: "I'm", options: ["I'm", "You're", "My"] },
+      { prompt: "2. ___ Mateo? &mdash; Yes, I am.", ans: "Are you", options: ["Are you", "I'm", "My"] },
+      { prompt: "3. No, ___ Kiwi. My name is Teo.", ans: "I'm not", options: ["I'm not", "Are you", "You're"] },
+      { prompt: "4. ___ last name is Mendoza.", ans: "My", options: ["My", "I'm", "You're"] },
+      { prompt: "5. Welcome, Nora! ___ on the list.", ans: "You're", options: ["You're", "I'm", "My"] }
+    ];
+
+    const chunkItems = [
+      { speaker: 'Host:', before: 'Hello! ', after: '', ans: "What's your name?", options: ["What's your name?", "Again, please?", "No, I'm serious!"] },
+      { speaker: 'Guest:', before: 'My name is Guadalupe. ', after: ' Lupe.', ans: 'You can call me', options: ['You can call me', "No, I'm serious!", 'Again, please?'] },
+      { speaker: 'Host:', before: 'Lupe! Is your last name Xochitl? ', after: '', ans: 'Again, please?', options: ['Again, please?', 'You can call me', "What's your name?"] },
+      { speaker: 'Guest:', before: 'Yes, Xochitl. ', after: '', ans: "No, I'm serious!", options: ["No, I'm serious!", 'You can call me', "What's your name?"] }
+    ];
+
+    function renderDrills() {
+      const vList = document.getElementById('vocabDrillList');
+      vocabItems.forEach((item, i) => {
+        const opts = vocabOptions.map(o => `<option value="${o}">${o}</option>`).join('');
+        vList.innerHTML += `
+          <div class="drill-row">
+            <div class="drill-prompt">${item.prompt}</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <select class="select-input" id="v-sel-${i}"><option value="">Choose...</option>${opts}</select>
+              <span id="v-st-${i}"></span>
+            </div>
+          </div>`;
+      });
+
+      const gList = document.getElementById('grammarDrillList');
+      grammarItems.forEach((item, i) => {
+        const opts = item.options.map(o => `<option value="${o}">${o}</option>`).join('');
+        gList.innerHTML += `
+          <div class="drill-row">
+            <div class="drill-prompt">${item.prompt}</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <select class="select-input" id="g-sel-${i}"><option value="">Choose...</option>${opts}</select>
+              <span id="g-st-${i}"></span>
+            </div>
+          </div>`;
+      });
+
+      const cList = document.getElementById('chunkDialogueList');
+      chunkItems.forEach((item, i) => {
+        const opts = item.options.map(o => `<option value="${o}">${o}</option>`).join('');
+        cList.innerHTML += `
+          <div class="dialogue-line">
+            <strong>${item.speaker}</strong> ${item.before}
+            <select class="select-input" id="c-sel-${i}"><option value="">Choose...</option>${opts}</select>
+            ${item.after}
+            <span id="c-st-${i}"></span>
+          </div>`;
+      });
+    }
+
+    function checkPart1() {
+      vocabItems.forEach((item, i) => {
+        const val = document.getElementById('v-sel-' + i).value;
+        const st = document.getElementById('v-st-' + i);
+        st.className = 'status-pill ' + (val === item.ans ? 'status-ok' : 'status-err');
+        st.textContent = val === item.ans ? 'OK' : 'Check';
+      });
+    }
+    function checkPart2() {
+      grammarItems.forEach((item, i) => {
+        const val = document.getElementById('g-sel-' + i).value;
+        const st = document.getElementById('g-st-' + i);
+        st.className = 'status-pill ' + (val === item.ans ? 'status-ok' : 'status-err');
+        st.textContent = val === item.ans ? 'OK' : 'Check';
+      });
+    }
+    function checkPart3() {
+      chunkItems.forEach((item, i) => {
+        const val = document.getElementById('c-sel-' + i).value;
+        const st = document.getElementById('c-st-' + i);
+        st.className = 'status-pill ' + (val === item.ans ? 'status-ok' : 'status-err');
+        st.textContent = val === item.ans ? 'OK' : 'Check';
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderDrills();
+      try {
+        const n = localStorage.getItem('ld_student_name');
+        if (n) document.getElementById('studentNameBtn').textContent = 'Student · ' + n;
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('role') === 'teacher' || sessionStorage.getItem('ld-coordinator-auth') === 'granted') {
+          document.body.classList.add('teacher-mode');
+        }
+      } catch (_) {}
+    });
+  </script>
+</body>
+</html>

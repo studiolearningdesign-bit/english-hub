@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.2 &middot; Macro-Unit 05 &middot; 1 Lesson</div>
       <h1 class="hero-title">Routines vs. The <span>Crisis Phase</span></h1>
-      <p class="hero-desc">Comunicar rutinas reales, convivencias difíciles, mentiras por celular, comida y habilidades cotidianas.</p>
+      <p class="hero-desc">Share daily routines, household habits, restaurant bills, white lies, and everyday abilities with confidence.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Crisis Mode: Breaking the Pattern</h2>
-            <p class="lesson-desc">'Normalmente cocino en casa, pero esta semana vivo a café porque estamos en auditoría'.</p>
+            <p class="lesson-desc">Contrast your normal everyday routine with a chaotic crunch week at work or home.</p>
             <div class="lesson-pills">
-              <span class="pill">Simple (usually, every day) vs Continuous </span>
+              <span class="pill">45 min</span>
               <span class="pill">It's just a phase</span>
             </div>
           </div>
@@ -389,7 +389,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.2 &middot; Macro-Unit 05</div>
+    <div>Curriculum 2026 &middot; A1.2 &middot; Macro-Unit 05</div>
   </footer>
 
   <script>
@@ -411,7 +411,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

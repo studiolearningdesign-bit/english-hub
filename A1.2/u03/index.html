@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.2 &middot; Macro-Unit 03 &middot; 3 Lessons</div>
       <h1 class="hero-title">Food Culture, The Bill &amp; <span>The Guilt</span></h1>
-      <p class="hero-desc">Comunicar rutinas reales, convivencias difíciles, mentiras por celular, comida y habilidades cotidianas.</p>
+      <p class="hero-desc">Share daily routines, household habits, restaurant bills, white lies, and everyday abilities with confidence.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Grandma's Feast vs. The Miracle Diet</h2>
-            <p class="lesson-desc">La abuela ofendida si no repites plato vs la obsesión con contar calorías.</p>
+            <p class="lesson-desc">Navigate a generous family feast when you are trying to stick to a strict diet.</p>
             <div class="lesson-pills">
-              <span class="pill">Sustantivos contables e incontables + uso </span>
+              <span class="pill">45 min</span>
               <span class="pill">I'm stuffed!</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Splitting the Bill: The Dinner Drama</h2>
-            <p class="lesson-desc">Uno pidió corte caro y tragos, tú una ensalada. ¿Dividir parejo o cada quien lo suyo?</p>
+            <p class="lesson-desc">Handle the awkward dinner check when one person ordered steak and drinks and you had a salad.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas de cantidad: How much</span>
+              <span class="pill">45 min</span>
               <span class="pill">Split the bill</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Ordering Real Food</h2>
-            <p class="lesson-desc">En un restaurante real en USA: 'Dressings? Sides? Any allergies?'. Pedir sin pena.</p>
+            <p class="lesson-desc">Order food confidently at a US restaurant, including sides, dressings, and substitutions.</p>
             <div class="lesson-pills">
-              <span class="pill">Peticiones de cortesía: I would like</span>
+              <span class="pill">45 min</span>
               <span class="pill">Check, please</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.2 &middot; Macro-Unit 03</div>
+    <div>Curriculum 2026 &middot; A1.2 &middot; Macro-Unit 03</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

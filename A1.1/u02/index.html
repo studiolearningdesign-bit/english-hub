@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.1 &middot; Macro-Unit 02 &middot; 3 Lessons</div>
       <h1 class="hero-title">Chosen Family &amp; <span>Household Boundaries</span></h1>
-      <p class="hero-desc">Describir la identidad real, raíces, familia diversa, pertenencias y espacios cotidianos sin clichés infantiles.</p>
+      <p class="hero-desc">Talk about your name, roots, close relationships, personal belongings, and everyday spaces in real-life situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Blood vs. Bond</h2>
-            <p class="lesson-desc">Padrastros, amigos que son más hermanos que primos y mascotas tratadas como hijos.</p>
+            <p class="lesson-desc">Talk about chosen family, close friends who feel like siblings, and pets treated like family.</p>
             <div class="lesson-pills">
-              <span class="pill">Adjetivos posesivos (my, your, his, her, o</span>
+              <span class="pill">45 min</span>
               <span class="pill">Blood is thicker than water</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Borrowed Jacket</h2>
-            <p class="lesson-desc">Cosas tomadas sin permiso en casa: cargadores, chamarras, llaves del auto.</p>
+            <p class="lesson-desc">Deal with items borrowed at home without asking—chargers, jackets, and car keys.</p>
             <div class="lesson-pills">
-              <span class="pill">Genitivo Sajón ('s de posesión)</span>
+              <span class="pill">45 min</span>
               <span class="pill">Hands off!</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Meaning Behind the Object</h2>
-            <p class="lesson-desc">La joya de la abuela, el juguete viejo del perro o el regalo feo guardado por lástima.</p>
+            <p class="lesson-desc">Share the story behind an old keepsake, a family heirloom, or a gift you cannot throw away.</p>
             <div class="lesson-pills">
-              <span class="pill">Verbo Have / Has para posesión física afir</span>
+              <span class="pill">45 min</span>
               <span class="pill">Priceless to me</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.1 &middot; Macro-Unit 02</div>
+    <div>Curriculum 2026 &middot; A1.1 &middot; Macro-Unit 02</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

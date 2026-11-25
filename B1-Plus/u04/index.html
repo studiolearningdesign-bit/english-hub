@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1+ &middot; Macro-Unit 04 &middot; 1 Lesson</div>
       <h1 class="hero-title">B1+/B2 Capstone Studio — The <span>High-Stakes Mediation</span></h1>
-      <p class="hero-desc">Manejar el matiz profesional, autocrítica constructiva, suavizado diplomático y mediación ejecutiva.</p>
+      <p class="hero-desc">Communicate with professional tact, reflect on past decisions, soften hard truths, and mediate high-stakes talks.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The High-Stakes Mediation</h2>
-            <p class="lesson-desc">Fungir como mediador en una disputa de alto impacto cerrando un acuerdo vinculante.</p>
+            <p class="lesson-desc">Mediate a high-stakes dispute and guide both sides to a workable agreement.</p>
             <div class="lesson-pills">
-              <span class="pill">Integración total del MCER: Continuous, 3r</span>
+              <span class="pill">60 min</span>
               <span class="pill">Break the deadlock</span>
             </div>
           </div>
@@ -389,7 +389,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1+ &middot; Macro-Unit 04</div>
+    <div>Curriculum 2026 &middot; B1+ &middot; Macro-Unit 04</div>
   </footer>
 
   <script>
@@ -411,7 +411,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

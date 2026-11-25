@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.1 &middot; Macro-Unit 06 &middot; 1 Lesson</div>
       <h1 class="hero-title">A1.1 Capstone Studio — The Real <span>Human Dossier</span></h1>
-      <p class="hero-desc">Describir la identidad real, raíces, familia diversa, pertenencias y espacios cotidianos sin clichés infantiles.</p>
+      <p class="hero-desc">Talk about your name, roots, close relationships, personal belongings, and everyday spaces in real-life situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Unsung Hero Profile</h2>
-            <p class="lesson-desc">Presentar en inglés el perfil de una persona real que admiras profundamente.</p>
+            <p class="lesson-desc">Present a real-life profile of an everyday hero you deeply admire.</p>
             <div class="lesson-pills">
-              <span class="pill">Integración total: To Be, Possessives, Gen</span>
+              <span class="pill">60 min</span>
               <span class="pill">Hands down the best...</span>
             </div>
           </div>
@@ -389,7 +389,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.1 &middot; Macro-Unit 06</div>
+    <div>Curriculum 2026 &middot; A1.1 &middot; Macro-Unit 06</div>
   </footer>
 
   <script>
@@ -411,7 +411,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

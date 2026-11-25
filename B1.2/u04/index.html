@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.2 &middot; Macro-Unit 04 &middot; 1 Lesson</div>
       <h1 class="hero-title">The Outsourcing Trap &amp; <span>Remodeling Hell</span></h1>
-      <p class="hero-desc">Manejar situaciones hipotéticas, reportar declaraciones, desarmar procesos pasivos y deducir lógica.</p>
+      <p class="hero-desc">Navigate ethical dilemmas, report what others said, explain how things happen, and draw logical conclusions.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Remodeling Nightmare</h2>
-            <p class="lesson-desc">Pagar para que otro haga el trabajo sucio y termine siendo una pesadilla (albañiles, mecánicos).</p>
+            <p class="lesson-desc">Survive remodeling nightmares when contractors and mechanics turn a simple job into chaos.</p>
             <div class="lesson-pills">
-              <span class="pill">Causative Structure: Have / Get + object +</span>
+              <span class="pill">45 min</span>
               <span class="pill">Cost an arm and a leg</span>
             </div>
           </div>
@@ -389,7 +389,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.2 &middot; Macro-Unit 04</div>
+    <div>Curriculum 2026 &middot; B1.2 &middot; Macro-Unit 04</div>
   </footer>
 
   <script>
@@ -411,7 +411,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

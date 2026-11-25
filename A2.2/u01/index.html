@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.2 &middot; Macro-Unit 01 &middot; 3 Lessons</div>
       <h1 class="hero-title">Generational Clashes &amp; Quality <span>of Life</span></h1>
-      <p class="hero-desc">Consolidar comparaciones complejas, quejas de espacio/tiempo, límites éticos, futuro y experiencias de vida.</p>
+      <p class="hero-desc">Compare lifestyles, set personal boundaries, talk about future plans, and share memorable life experiences.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Who Has It Harder: 1980s vs Today?</h2>
-            <p class="lesson-desc">Los abuelos diciendo 'nadie nos llevaba a terapia' vs papás con pantallas y culpa.</p>
+            <p class="lesson-desc">Compare raising kids and growing up in the 1980s versus today's digital world.</p>
             <div class="lesson-pills">
-              <span class="pill">Comparativos regulares (-er, more</span>
+              <span class="pill">45 min</span>
               <span class="pill">Hands down</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Provincial Peace vs. Capital Chaos</h2>
-            <p class="lesson-desc">¿Vale la pena el sueldo más alto en CDMX si pierdes 4 horas en el tráfico?</p>
+            <p class="lesson-desc">Weigh a higher salary in a crowded capital city against calmer life and lower costs elsewhere.</p>
             <div class="lesson-pills">
-              <span class="pill">Comparación equitativa: as + adjective + a</span>
+              <span class="pill">45 min</span>
               <span class="pill">Not all it's cracked up to be</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Peak of Culture: Best &amp; Worst</h2>
-            <p class="lesson-desc">El peor trabajo que has tenido o la película más sobrevalorada de la historia.</p>
+            <p class="lesson-desc">Debate the worst job you have ever had or the most overrated movie of all time.</p>
             <div class="lesson-pills">
-              <span class="pill">Superlativos regulares e irregulares (the </span>
+              <span class="pill">45 min</span>
               <span class="pill">By far the best</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.2 &middot; Macro-Unit 01</div>
+    <div>Curriculum 2026 &middot; A2.2 &middot; Macro-Unit 01</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

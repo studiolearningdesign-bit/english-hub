@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.2 &middot; Macro-Unit 04 &middot; 2 Lessons</div>
       <h1 class="hero-title">Right Now: White Lies <span>&amp; Multitasking</span></h1>
-      <p class="hero-desc">Comunicar rutinas reales, convivencias difíciles, mentiras por celular, comida y habilidades cotidianas.</p>
+      <p class="hero-desc">Share daily routines, household habits, restaurant bills, white lies, and everyday abilities with confidence.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">White Lies We Tell Right Now</h2>
-            <p class="lesson-desc">Las mentiras piadosas por celular: decir 'I am driving' cuando sigues en pijama en la cama.</p>
+            <p class="lesson-desc">Confess the harmless white lies people text when they say 'I am driving' while still at home.</p>
             <div class="lesson-pills">
-              <span class="pill">Present Continuous afirmativo y negativo (</span>
+              <span class="pill">45 min</span>
               <span class="pill">I'm on my way!</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Secret Life of Waiting Rooms</h2>
-            <p class="lesson-desc">¿Qué hace la gente cuando nadie la ve? Esperando en el banco: fisgonear pantallas.</p>
+            <p class="lesson-desc">Observe the funny things people do while killing time in waiting rooms.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas con Present Continuous (What are</span>
+              <span class="pill">45 min</span>
               <span class="pill">People-watching</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.2 &middot; Macro-Unit 04</div>
+    <div>Curriculum 2026 &middot; A1.2 &middot; Macro-Unit 04</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.1 &middot; Macro-Unit 03 &middot; 3 Lessons</div>
       <h1 class="hero-title">Spaces, Sanctuaries &amp; The <span>Clutter Dilemma</span></h1>
-      <p class="hero-desc">Describir la identidad real, raíces, familia diversa, pertenencias y espacios cotidianos sin clichés infantiles.</p>
+      <p class="hero-desc">Talk about your name, roots, close relationships, personal belongings, and everyday spaces in real-life situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Junk Drawer</h2>
-            <p class="lesson-desc">El cajón del desorden mexicano: cables viejos, llaves desconocidas y tickets.</p>
+            <p class="lesson-desc">Inspect the classic household junk drawer full of old cables, mystery keys, and receipts.</p>
             <div class="lesson-pills">
-              <span class="pill">There is / There are (afirm</span>
+              <span class="pill">45 min</span>
               <span class="pill">It's driving me crazy</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Sanctuary</h2>
-            <p class="lesson-desc">¿Cuál es tu rincón de paz? La cocina de noche o quedarse en el auto 10 minutos.</p>
+            <p class="lesson-desc">Describe your personal quiet corner—the kitchen at midnight or ten peaceful minutes in your car.</p>
             <div class="lesson-pills">
-              <span class="pill">Preposiciones de lugar: in, on, under, beh</span>
+              <span class="pill">45 min</span>
               <span class="pill">My happy place</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Impulse Buy on My Desk</h2>
-            <p class="lesson-desc">Ese aparato que compraste en el súper y ahora es perchero o adorno inútil.</p>
+            <p class="lesson-desc">Laugh about impulse buys that looked great in the store and now sit unused on your desk.</p>
             <div class="lesson-pills">
-              <span class="pill">Demostrativos (this, that, these, those) e</span>
+              <span class="pill">45 min</span>
               <span class="pill">What a waste of money!</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.1 &middot; Macro-Unit 03</div>
+    <div>Curriculum 2026 &middot; A1.1 &middot; Macro-Unit 03</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

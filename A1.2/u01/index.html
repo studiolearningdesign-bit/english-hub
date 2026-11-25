@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.2 &middot; Macro-Unit 01 &middot; 3 Lessons</div>
       <h1 class="hero-title">The Morning Myth &amp; The <span>Exhaustion Trap</span></h1>
-      <p class="hero-desc">Comunicar rutinas reales, convivencias difíciles, mentiras por celular, comida y habilidades cotidianas.</p>
+      <p class="hero-desc">Share daily routines, household habits, restaurant bills, white lies, and everyday abilities with confidence.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The 5 AM Club or Modern Madness?</h2>
-            <p class="lesson-desc">La presión de madrugar vs el placer de la noche y el botón de snooze.</p>
+            <p class="lesson-desc">Debate early-morning productivity culture versus night-owl habits and hitting the snooze button.</p>
             <div class="lesson-pills">
-              <span class="pill">Present Simple I (I, you, we, they) afirma</span>
+              <span class="pill">45 min</span>
               <span class="pill">I'm a morning person / night owl</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Doomscrolling: The Sleep Thief</h2>
-            <p class="lesson-desc">¿Qué hacemos de verdad antes de dormir? El scrolling infinito de videos en la cama.</p>
+            <p class="lesson-desc">Look honestly at bedtime habits and endless late-night video scrolling.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas con auxiliar Do (Do you</span>
+              <span class="pill">45 min</span>
               <span class="pill">Call it a day</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Weekend Chores vs. Real Rest</h2>
-            <p class="lesson-desc">El fin de semana no es descanso: lavar ropa acumulada, súper y compromisos familiares.</p>
+            <p class="lesson-desc">Compare what weekends are supposed to be with laundry, groceries, and family errands.</p>
             <div class="lesson-pills">
-              <span class="pill">Marcadores de hábito: on weekends, in the </span>
+              <span class="pill">45 min</span>
               <span class="pill">Back to the grind</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.2 &middot; Macro-Unit 01</div>
+    <div>Curriculum 2026 &middot; A1.2 &middot; Macro-Unit 01</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

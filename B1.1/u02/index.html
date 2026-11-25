@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.1 &middot; Macro-Unit 02 &middot; 2 Lessons</div>
       <h1 class="hero-title">The Person I Used <span>to Be</span></h1>
-      <p class="hero-desc">Desenvolverse con diplomacia, narrar escenas dramáticas interrumpidas, definir con precisión y medir resistencia.</p>
+      <p class="hero-desc">Handle delicate conversations with tact, tell dramatic turning-point stories, and express personal choices.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Past Identities</h2>
-            <p class="lesson-desc">Reconocer que ya no eres el mismo: amigos que perdiste, cosas que tolerabas antes.</p>
+            <p class="lesson-desc">Reflect on who you used to be, old habits you outgrew, and friends you drifted from.</p>
             <div class="lesson-pills">
-              <span class="pill">Used to + infinitive (afirm</span>
+              <span class="pill">45 min</span>
               <span class="pill">Back in my prime</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Dusty Passions</h2>
-            <p class="lesson-desc">Esa guitarra que lleva 5 años juntando polvo o las clases de pintura abandonadas.</p>
+            <p class="lesson-desc">Talk about dusty hobbies—the guitar in the corner or art classes left behind.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas con Did you use to</span>
+              <span class="pill">45 min</span>
               <span class="pill">Gathering dust</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.1 &middot; Macro-Unit 02</div>
+    <div>Curriculum 2026 &middot; B1.1 &middot; Macro-Unit 02</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

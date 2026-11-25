@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.1 &middot; Macro-Unit 01 &middot; 3 Lessons</div>
       <h1 class="hero-title">Nostalgia &amp; The 'Good Old <span>Days' Fallacy</span></h1>
-      <p class="hero-desc">Narrar anécdotas en pasado, dominar la fonética de -ed, el FOMO digital y causas y consecuencias reales.</p>
+      <p class="hero-desc">Tell real stories about the past, small disasters, digital habits, and everyday cause-and-effect situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Was Life Really Better Back Then?</h2>
-            <p class="lesson-desc">¿La vida antes era más unida y tranquila, o solo era aburrida y limitada?</p>
+            <p class="lesson-desc">Debate whether life in the past was truly calmer and closer, or just more limited.</p>
             <div class="lesson-pills">
-              <span class="pill">Past Simple de To Be (was/were, wasn't/wer</span>
+              <span class="pill">45 min</span>
               <span class="pill">Back in the day</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Where on Earth Were You Yesterday?</h2>
-            <p class="lesson-desc">El misterio de faltar a un evento familiar o junta y justificar ausencias.</p>
+            <p class="lesson-desc">Explain a mysterious absence from a family event or meeting and build a believable alibi.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas con Wh- + Was/Were (Where were y</span>
+              <span class="pill">45 min</span>
               <span class="pill">Where on earth were you?</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Ghost Places: What Used to Exist Here</h2>
-            <p class="lesson-desc">Lugares que marcaron nuestra vida y hoy son estacionamientos o farmacias.</p>
+            <p class="lesson-desc">Remember meaningful neighborhood places that have since turned into parking lots or pharmacies.</p>
             <div class="lesson-pills">
-              <span class="pill">There was / There were (afirm</span>
+              <span class="pill">45 min</span>
               <span class="pill">A thing of the past</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.1 &middot; Macro-Unit 01</div>
+    <div>Curriculum 2026 &middot; A2.1 &middot; Macro-Unit 01</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

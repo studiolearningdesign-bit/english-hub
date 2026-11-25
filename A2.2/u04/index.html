@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.2 &middot; Macro-Unit 04 &middot; 3 Lessons</div>
       <h1 class="hero-title">The Tomorrow Dilemma: Plans, AI &amp; <span>Free Will</span></h1>
-      <p class="hero-desc">Consolidar comparaciones complejas, quejas de espacio/tiempo, límites éticos, futuro y experiencias de vida.</p>
+      <p class="hero-desc">Compare lifestyles, set personal boundaries, talk about future plans, and share memorable life experiences.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Will AI Replace Real Human Connection?</h2>
-            <p class="lesson-desc">¿Los jóvenes preferirán hablar con una IA que con personas de carne y hueso?</p>
+            <p class="lesson-desc">Debate whether people will eventually prefer talking to AI over real human connection.</p>
             <div class="lesson-pills">
-              <span class="pill">Will / won't para predicciones basadas en </span>
+              <span class="pill">45 min</span>
               <span class="pill">Mark my words</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">My Life, Not My Parents' Plan</h2>
-            <p class="lesson-desc">Romper con el molde: cambiar de carrera a los 35 años o decidir no casarse.</p>
+            <p class="lesson-desc">Talk about breaking the mold—changing careers later in life or choosing your own path.</p>
             <div class="lesson-pills">
-              <span class="pill">Be going to (afirm</span>
+              <span class="pill">45 min</span>
               <span class="pill">Make up your mind</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Spontaneous Deals vs. Fixed Agendas</h2>
-            <p class="lesson-desc">El que planea con meses de anticipación vs la llamada: 'Nos vemos en 20 min'.</p>
+            <p class="lesson-desc">Compare long-term planners with friends who text 'Let's meet in 20 minutes.'</p>
             <div class="lesson-pills">
-              <span class="pill">Contraste: Will (decisión al instante) vs </span>
+              <span class="pill">45 min</span>
               <span class="pill">On the spur of the moment</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.2 &middot; Macro-Unit 04</div>
+    <div>Curriculum 2026 &middot; A2.2 &middot; Macro-Unit 04</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

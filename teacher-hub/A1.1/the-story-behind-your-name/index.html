@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Hub &middot; A1.1-U01-L01 The Story Behind Your Name | L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-600: #475569;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.65;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 68px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .header-link { color: var(--gold-500); text-decoration: none; font-size: 13px; font-weight: 700; }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+
+    .page-container { max-width: 1020px; margin: 0 auto; padding: 30px 24px 64px; }
+
+    .hub-hero {
+      background: linear-gradient(135deg, #071527 0%, #001F54 65%, #133E68 100%);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+      border: 1px solid rgba(212, 168, 67, 0.25);
+    }
+    .hub-hero h1 { font-size: 1.85rem; font-weight: 800; line-height: 1.2; margin-bottom: 6px; }
+    .hub-hero h1 span { color: var(--gold-500); }
+    .hub-hero p { color: var(--slate-200); font-size: 0.94rem; }
+
+    .btn-print {
+      background: var(--gold-500);
+      color: var(--navy-950);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-print:hover { background: var(--gold-400); }
+
+    .hub-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 30px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hub-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+    .hub-title { font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 14px; }
+
+    .pnf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .pnf-box {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      background: var(--slate-50);
+    }
+    .pnf-box.is-f { background: var(--danger-50); border-color: rgba(220, 38, 38, 0.25); }
+    .pnf-box h3 { font-size: 0.92rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .pnf-box.is-f h3 { color: var(--danger-600); }
+    .pnf-box p { font-size: 0.88rem; color: var(--slate-800); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 8px;
+    }
+    th {
+      background: var(--navy-900);
+      color: var(--white);
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--slate-200);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: var(--slate-50); }
+
+    .studio-site-footer { border-top: 1px solid var(--slate-200); background: var(--white); padding: 20px 24px; }
+    .footer-inner {
+      max-width: 1020px; margin: 0 auto; display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; font-size: 0.82rem; color: var(--slate-600);
+    }
+
+    @media print {
+      .site-header, .btn-print, .studio-site-footer { display: none !important; }
+      body { background: #fff; }
+      .page-container { padding: 0; max-width: 100%; }
+      .hub-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px 24px; }
+      .hub-card { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../A1.1/u01/index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher's Hub &middot; A1.1</span>
+      </a>
+      <div class="header-actions">
+        <a href="../../../A1.1/u01/the-story-behind-your-name/index.html?role=teacher" class="header-link">Open Live Lesson (Teacher Mode) &#8599;</a>
+        <a href="../../../A1.1/u01/index.html" class="header-back-link">&larr; Back to Unit 01</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="hub-hero">
+      <div>
+        <h1>Teacher's Guide: <span>The Story Behind Your Name</span></h1>
+        <p>A1.1-U01-L01 &middot; Documento maestro de preparaci&oacute;n, producci&oacute;n de audios y evaluaci&oacute;n cualitativa.</p>
+      </div>
+      <button type="button" class="btn-print" onclick="window.print()">Print Teacher Guide</button>
+    </header>
+
+    <!-- 1. LESSON PLAN -->
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 01</div>
+      <h2 class="hub-title">Complete Lesson Plan (Secuencia Did&aacute;ctica Completa)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>M&oacute;dulo</th>
+            <th>Objetivo</th>
+            <th>Procedimiento paso a paso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>01 &middot; Warm-Up</strong><br><span class="font-mono">Engage</span></td>
+            <td>Activar [P] sin presi&oacute;n ni gram&aacute;tica nueva.</td>
+            <td>1. Saludar con <em>Hello! What's your name?</em><br>2. Modelar una reacci&oacute;n en la encuesta.<br>3. Pedir al alumno responder oralmente usando <em>My name is... / Yes / No</em>.</td>
+          </tr>
+          <tr>
+            <td><strong>02 &middot; Vocabulary</strong><br><span class="font-mono">Build</span></td>
+            <td>6 palabras clave + contraste <em>I am / I'm</em>.</td>
+            <td>1. Explorar las 6 Flip Cards (<em>first name, last name, nickname, real name, easy, hard</em>).<br>2. Practicar pronunciaci&oacute;n de <em>I am vs I'm</em>.<br>3. Resolver <em>Unscramble the Word</em> y verificar ortograf&iacute;a.</td>
+          </tr>
+          <tr>
+            <td><strong>03 &middot; USA Chunks</strong><br><span class="font-mono">Notice</span></td>
+            <td>4 bloques pragm&aacute;ticos fijos sin desglose gramatical.</td>
+            <td>1. Presentar los 4 chunks como bloques cerrados.<br>2. Practicar ritmo y entonaci&oacute;n (<em>You can call me...</em>, <em>Again, please?</em>).<br>3. Simular un nombre dif&iacute;cil para provocar <em>Again, please?</em></td>
+          </tr>
+          <tr>
+            <td><strong>04 &middot; Listening</strong><br><span class="font-mono">Notice in Context</span></td>
+            <td>Escucha sin transcripci&oacute;n previa.</td>
+            <td>1. Reproducir el di&aacute;logo entre Nora y Mateo con el texto oculto.<br>2. Responder las 4 preguntas Yes/No.<br>3. Abrir la transcripci&oacute;n para notar <em>I'm / I'm not / Are you...?</em></td>
+          </tr>
+          <tr>
+            <td><strong>05 &middot; Grammar</strong><br><span class="font-mono">Understand</span></td>
+            <td>Sistematizar <em>I, you + To Be + My</em>.</td>
+            <td>1. Revisar tabla afirmativa, negativa y pregunta Yes/No.<br>2. Resolver <em>Error Clinic</em> (el alumno detecta el error sin marcas rojas).<br>3. Construir oraciones en <em>Wordbox</em>.</td>
+          </tr>
+          <tr>
+            <td><strong>06 &middot; Speaking</strong><br><span class="font-mono">Communicate</span></td>
+            <td>Intercambio real con tarjeta secreta.</td>
+            <td>1. El alumno elige Card A, B o C.<br>2. El docente hace una suposici&oacute;n incorrecta (<em>Are you Leo?</em>).<br>3. El alumno corrige con <em>No, I'm not...</em> y usa al menos 1 chunk.</td>
+          </tr>
+          <tr>
+            <td><strong>07 &middot; Exit Ticket</strong><br><span class="font-mono">Reflect</span></td>
+            <td>Evidencia escrita aut&oacute;noma (espacio en blanco).</td>
+            <td>1. Escribir 3–4 frases aisladas sobre nombre real, apodo y una negaci&oacute;n.<br>2. Verificar may&uacute;scula en <em>I</em>, nombres propios, ap&oacute;strofo y puntuaci&oacute;n.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 2. DELIMITACION P / N / F -->
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 02</div>
+      <h2 class="hub-title">Delimitaci&oacute;n Curricular (P / N / F)</h2>
+      <div class="pnf-grid">
+        <div class="pnf-box">
+          <h3>[P] Previamente Demostrado</h3>
+          <p><em>Hello, Hi, Good morning, Goodbye, What's your name?, My name is..., Again, please, Yes, No</em>, nombres propios, consignas <em>Listen, Read, Write, Ask</em>.</p>
+        </div>
+        <div class="pnf-box">
+          <h3>[N] Recurso Nuevo</h3>
+          <p>Pronombres <em>I, you</em>; verbo <em>To Be</em> (<em>I am / I'm, I am not / I'm not, You are / You're, You aren't, Am I...?, Are you...?</em>); posesivo <em>My</em>; 6 palabras de identidad; 4 USA Chunks.</p>
+        </div>
+        <div class="pnf-box is-f">
+          <h3>[F] L&iacute;mite Frontera (Prohibido)</h3>
+          <p>Verbos de acci&oacute;n (<em>work, like, live, call</em> analizado), tercera persona productiva (<em>he, she, we, they</em>), posesivos (<em>his, her, our, their</em>), genitivo <em>'s</em>, <em>do/does</em>, comparativos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. GUION DE AUDIO -->
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 03</div>
+      <h2 class="hub-title">Guion de Producci&oacute;n de Audios (Estudio)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Archivo MP3 (<span class="font-mono">./audio/</span>)</th>
+            <th>Texto exacto para grabaci&oacute;n</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="font-mono">u01-l01-warmup-1.mp3</td><td>"Hello! What's your name?"</td></tr>
+          <tr><td class="font-mono">u01-l01-warmup-2.mp3</td><td>"My name is Carlos. Is that right?"</td></tr>
+          <tr><td class="font-mono">u01-l01-warmup-3.mp3</td><td>"Again, please!"</td></tr>
+          <tr><td class="font-mono">vocab-first-name.mp3 / -ex.mp3</td><td>"First name." / "My first name is Carlos."</td></tr>
+          <tr><td class="font-mono">vocab-last-name.mp3 / -ex.mp3</td><td>"Last name." / "My last name is Rivera."</td></tr>
+          <tr><td class="font-mono">vocab-nickname.mp3 / -ex.mp3</td><td>"Nickname." / "My nickname is Beto."</td></tr>
+          <tr><td class="font-mono">vocab-real-name.mp3 / -ex.mp3</td><td>"Real name." / "My real name is Sofia."</td></tr>
+          <tr><td class="font-mono">vocab-easy.mp3 / -ex.mp3</td><td>"Easy." / "My name is easy."</td></tr>
+          <tr><td class="font-mono">vocab-hard.mp3 / -ex.mp3</td><td>"Hard." / "My last name is hard."</td></tr>
+          <tr><td class="font-mono">pron-iam-im.mp3</td><td>"I am Mateo. I'm Mateo."</td></tr>
+          <tr><td class="font-mono">pron-name-nickname.mp3</td><td>"Name. Nickname."</td></tr>
+          <tr><td class="font-mono">chunk-face-to-name.mp3</td><td>"Hello, Luis! Nice to finally put a face to the name."</td></tr>
+          <tr><td class="font-mono">chunk-call-me.mp3</td><td>"My name is Guadalupe. You can call me Lupe."</td></tr>
+          <tr><td class="font-mono">chunk-serious.mp3</td><td>"My nickname is Kiwi. No, I'm serious!"</td></tr>
+          <tr><td class="font-mono">chunk-again-please.mp3</td><td>"Sorry&mdash;again, please?"</td></tr>
+          <tr>
+            <td class="font-mono">u01-l01-listening.mp3</td>
+            <td>
+              <strong>Nora:</strong> Good morning! I'm Nora. What's your name?<br>
+              <strong>Mateo:</strong> Hi, Nora! Nice to finally put a face to the name. I'm Mateo.<br>
+              <strong>Nora:</strong> Mateo... Are you Mateo Valdovinos?<br>
+              <strong>Mateo:</strong> Yes, I am! My last name is hard. You can call me Teo.<br>
+              <strong>Nora:</strong> Okay, Teo! Wait&mdash;is your nickname Kiwi on the list?<br>
+              <strong>Mateo:</strong> Haha, no! I'm not Kiwi. I'm Teo!<br>
+              <strong>Nora:</strong> Oh, sorry! Again, please? Teo?<br>
+              <strong>Mateo:</strong> Yes! Teo. No, I'm serious&mdash;Valdovinos is hard, Teo is easy!
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4. RUBRICA E0-E3 -->
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 04</div>
+      <h2 class="hub-title">Protocolo de Mediaci&oacute;n y R&uacute;brica Cualitativa (E0&ndash;E3)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nivel</th>
+            <th>Descriptor de Evidencia Observable</th>
+            <th>Decisi&oacute;n Pedag&oacute;gica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>E0</strong></td>
+            <td>No logra responder a <em>What's your name?</em> ni distinguir <em>I'm</em> de <em>I'm not</em> aun con modelo visible.</td>
+            <td>Repetir modelado oral lento y practicar pares <em>Yes, I am / No, I'm not</em> antes de avanzar.</td>
+          </tr>
+          <tr>
+            <td><strong>E1</strong></td>
+            <td>Produce su nombre con apoyo visual o copiando el modelo; omite <em>am/are</em> o confunde <em>I</em> con <em>My</em>.</td>
+            <td>Reforzar con <em>Explore</em> Part 02 y contraste directo <em>I'm [Name]</em> vs <em>My name is [Name]</em>.</td>
+          </tr>
+          <tr>
+            <td><strong>E2</strong></td>
+            <td>Se presenta, corrige una suposici&oacute;n (<em>No, I'm not...</em>) y pregunta <em>Are you...?</em> con apoyo m&iacute;nimo.</td>
+            <td>Consolidado para avanzar a <strong>A1.1-U01-L02</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>E3</strong></td>
+            <td>Integra de forma fluida <em>I'm / I'm not / Are you...?</em> + al menos dos USA Chunks y escribe su Exit Ticket sin copiar.</td>
+            <td>Dominio observable pleno; listo para ampliar con <em>he/she/we/they</em> y origen en L02.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
+      <div>Teacher's Hub &middot; A1.1-U01-L01</div>
+    </div>
+  </footer>
+</body>
+</html>

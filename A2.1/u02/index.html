@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.1 &middot; Macro-Unit 02 &middot; 2 Lessons</div>
       <h1 class="hero-title">Murphy's Law &amp; The <span>Pronunciation Trap</span></h1>
-      <p class="hero-desc">Narrar anécdotas en pasado, dominar la fonética de -ed, el FOMO digital y causas y consecuencias reales.</p>
+      <p class="hero-desc">Tell real stories about the past, small disasters, digital habits, and everyday cause-and-effect situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">When It Rains, It Pours: The 3 Sounds of -ed</h2>
-            <p class="lesson-desc">La cadena de pequeños desastres: no sonó la alarma, se cayó el café, se ponchó la llanta.</p>
+            <p class="lesson-desc">Tell the story of a morning when everything went wrong—missed alarm, spilled coffee, flat tire.</p>
             <div class="lesson-pills">
-              <span class="pill">Past Simple regular (-ed)</span>
+              <span class="pill">45 min</span>
               <span class="pill">When it rains, it pours</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Did You Really Do That?</h2>
-            <p class="lesson-desc">Dudas en la carretera: '¿Apagué la estufa? ¿Le pusiste seguro a la puerta?'.</p>
+            <p class="lesson-desc">Relive that highway panic moment: 'Did I turn off the stove? Did I lock the front door?'</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas con Did (Did you lock</span>
+              <span class="pill">45 min</span>
               <span class="pill">Don't tell me you forgot!</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.1 &middot; Macro-Unit 02</div>
+    <div>Curriculum 2026 &middot; A2.1 &middot; Macro-Unit 02</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

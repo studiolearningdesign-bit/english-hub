@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A1.1-U01-L01 · The Story Behind Your Name | English Hub · L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* === HEADER === */
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 46px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .brand-logo-white {
+      height: 84px;
+      width: auto;
+      object-fit: contain;
+      margin: -19px 0;
+      display: block;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+    .brand-course-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      white-space: nowrap;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .header-student-btn {
+      background: none;
+      border: none;
+      color: var(--slate-200);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .header-student-btn:hover { color: var(--white); }
+    .header-teacher-link {
+      background: none;
+      border: none;
+      color: var(--gold-500);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .header-teacher-link:hover { color: var(--gold-400); }
+    .header-teacher-link.is-active {
+      color: var(--teal-300);
+    }
+    .header-back-link {
+      color: var(--slate-200);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .header-back-link:hover { color: var(--white); }
+
+    /* === CONTAINER === */
+    .page-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+    }
+
+    /* === HERO BANNER === */
+    .workspace-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 210px;
+      display: flex;
+      align-items: flex-end;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      background-color: var(--navy-900);
+      background-image:
+        linear-gradient(120deg, rgba(7, 21, 39, 0.92) 0%, rgba(0, 31, 84, 0.80) 55%, rgba(19, 62, 104, 0.68) 100%),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md);
+      color: var(--white);
+    }
+    .hero-content {
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    .hero-title span { color: var(--gold-500); }
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--slate-200);
+      font-weight: 400;
+      max-width: 60ch;
+    }
+
+    /* === SEGMENTED NAVIGATION === */
+    .module-nav-grid {
+      display: flex;
+      gap: 4px;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin-bottom: 28px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .module-tab {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .module-tab:hover {
+      color: var(--navy-900);
+      background: rgba(255, 255, 255, 0.55);
+    }
+    .module-tab .tab-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--slate-500);
+    }
+    .module-tab.active {
+      background: var(--white);
+      color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+      border-color: var(--slate-200);
+      font-weight: 700;
+    }
+    .module-tab.active .tab-num {
+      color: var(--teal-700);
+    }
+
+    /* === MODULE PANELS === */
+    .module-panel { display: none; }
+    .module-panel.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 22px;
+    }
+    .section-header {
+      margin-bottom: 22px;
+    }
+    .section-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .section-lead {
+      font-size: 0.95rem;
+      color: var(--slate-600);
+    }
+
+    /* === TEACHER NOTE BOX (Hidden unless Teacher mode active) === */
+    .teacher-note-box {
+      display: none;
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+    body.teacher-mode .teacher-note-box { display: block; }
+    .teacher-note-box summary {
+      padding: 13px 18px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .teacher-note-box summary::-webkit-details-marker { display: none; }
+    .teacher-note-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      background: var(--white);
+      border: 1px solid var(--gold-border);
+      padding: 2px 9px;
+      border-radius: var(--radius-full);
+    }
+    .teacher-note-body {
+      padding: 0 18px 16px;
+      font-size: 0.86rem;
+      color: var(--slate-800);
+      border-top: 1px solid rgba(212, 168, 67, 0.22);
+      padding-top: 12px;
+    }
+    .teacher-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .teacher-step-item {
+      background: var(--white);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+    .teacher-step-item strong {
+      display: block;
+      font-size: 0.78rem;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--gold-600);
+      margin-bottom: 4px;
+    }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--navy-900);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--navy-700); }
+    .btn-teal {
+      background: var(--teal-700);
+      color: var(--white);
+    }
+    .btn-teal:hover { background: var(--teal-800); }
+    .btn-outline {
+      background: var(--white);
+      color: var(--navy-900);
+      border-color: var(--slate-300);
+    }
+    .btn-outline:hover {
+      border-color: var(--navy-900);
+      background: var(--slate-50);
+    }
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.78rem;
+    }
+
+    /* === AUDIO PLAYER (REAL MP3 ONLY - NO TTS) === */
+    .audio-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--teal-50);
+      color: var(--teal-800);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      border-radius: var(--radius-full);
+      padding: 5px 12px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .audio-btn:hover {
+      background: var(--teal-700);
+      color: var(--white);
+      border-color: var(--teal-700);
+    }
+    .audio-status-note {
+      font-size: 0.75rem;
+      color: var(--slate-500);
+      margin-top: 6px;
+      min-height: 18px;
+    }
+
+    /* === 01 WARM-UP POLL & REACTIONS === */
+    .poll-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .poll-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .poll-question {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+    }
+    .poll-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .poll-opt-btn {
+      background: var(--white);
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-full);
+      padding: 7px 14px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .poll-opt-btn:hover {
+      border-color: var(--teal-700);
+      color: var(--teal-800);
+    }
+    .poll-opt-btn.selected {
+      background: var(--navy-900);
+      color: var(--white);
+      border-color: var(--navy-900);
+    }
+    .poll-reply {
+      margin-top: 10px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--teal-800);
+      min-height: 20px;
+    }
+    .trigger-questions {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .trigger-questions h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+    }
+    .trigger-list {
+      display: grid;
+      gap: 10px;
+    }
+    .trigger-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+
+    /* === 02 & 03 FLIP CARDS === */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+    .flip-card {
+      perspective: 1000px;
+      height: 235px;
+      cursor: pointer;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.is-flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+      background: var(--navy-950);
+      color: var(--white);
+      border-color: var(--navy-800);
+      justify-content: center;
+      gap: 12px;
+    }
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+    }
+    .flip-word {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.2;
+    }
+    .flip-ipa {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--slate-500);
+    }
+    .flip-example {
+      font-size: 0.9rem;
+      color: var(--slate-700);
+      font-weight: 500;
+    }
+    .flip-audio-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .flip-back-word {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--gold-400);
+    }
+    .flip-back-meaning {
+      font-size: 0.95rem;
+      color: var(--slate-100);
+      max-width: 28ch;
+    }
+    .flip-hint {
+      font-size: 0.72rem;
+      color: var(--slate-400);
+    }
+
+    /* === MICRO-FOCUS PRONUNCIATION === */
+    .pron-contrast-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 26px;
+    }
+    .pron-contrast-box h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+    }
+    .pron-pairs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .pron-pair-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pron-pair-label {
+      font-weight: 700;
+      color: var(--navy-900);
+      font-size: 0.95rem;
+    }
+
+    /* === UNSCRAMBLE ACTIVITY === */
+    .activity-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 22px;
+    }
+    .activity-box h3 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+    }
+    .unscramble-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .unscramble-row {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+    .scrambled-letters {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--teal-800);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .unscramble-clue {
+      font-size: 0.84rem;
+      color: var(--slate-600);
+    }
+    .unscramble-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .text-input {
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--navy-900);
+      background: var(--white);
+      min-width: 170px;
+    }
+    .text-input:focus {
+      outline: 2px solid var(--teal-500);
+      border-color: var(--teal-700);
+    }
+    .status-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+    }
+    .status-ok { background: var(--teal-50); color: var(--teal-800); }
+    .status-err { background: var(--danger-50); color: var(--danger-600); }
+
+    /* === 04 LISTENING === */
+    .listening-stage {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(212, 168, 67, 0.25);
+    }
+    .listening-stage-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .transcript-panel {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.92rem;
+      color: var(--slate-100);
+      line-height: 1.7;
+    }
+    .transcript-panel.is-open { display: block; }
+    .comp-list {
+      display: grid;
+      gap: 12px;
+    }
+    .comp-item {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .comp-q {
+      font-weight: 600;
+      color: var(--navy-900);
+      font-size: 0.94rem;
+    }
+    .comp-btns {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    /* === 05 GRAMMAR === */
+    .grammar-table-wrap {
+      overflow-x: auto;
+      margin-bottom: 24px;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    .grammar-table th {
+      background: var(--navy-900);
+      color: var(--white);
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .grammar-table td {
+      padding: 12px 16px;
+      border-top: 1px solid var(--slate-200);
+      color: var(--slate-800);
+      background: var(--white);
+    }
+    .grammar-table tr:nth-child(even) td {
+      background: var(--slate-50);
+    }
+    .grammar-highlight {
+      font-weight: 700;
+      color: var(--teal-800);
+    }
+
+    .clinic-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+      margin-bottom: 24px;
+    }
+    .clinic-row {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+    .clinic-sentence {
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+
+    .wordbox-row {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .wordbox-tokens {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .word-chip {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-full);
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy-900);
+      cursor: pointer;
+    }
+    .word-chip:hover { border-color: var(--teal-700); }
+    .word-chip.used { opacity: 0.4; pointer-events: none; }
+    .wordbox-answer {
+      min-height: 38px;
+      border: 1px dashed var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 7px 12px;
+      font-weight: 600;
+      color: var(--navy-900);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: var(--slate-50);
+    }
+
+    /* === 06 SPEAKING === */
+    .secret-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .secret-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      cursor: pointer;
+      transition: all 0.16s;
+    }
+    .secret-card:hover { border-color: var(--teal-700); }
+    .secret-card.selected {
+      background: var(--white);
+      border-color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+    }
+    .secret-card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--teal-700);
+      margin-bottom: 8px;
+    }
+    .checklist-box {
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .checklist-box h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 10px;
+    }
+    .checklist-items {
+      display: grid;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--slate-800);
+    }
+
+    /* === 07 EXIT TICKET === */
+    .exit-textarea {
+      width: 100%;
+      min-height: 120px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--navy-900);
+      resize: vertical;
+      margin-bottom: 14px;
+    }
+    .exit-textarea:focus {
+      outline: 2px solid var(--teal-500);
+      border-color: var(--teal-700);
+    }
+    .cando-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .cando-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--slate-800);
+      cursor: pointer;
+    }
+    .cando-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    /* === BOTTOM STEP NAV === */
+    .module-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    /* === SITE FOOTER === */
+    .studio-site-footer {
+      border-top: 1px solid var(--slate-200);
+      background: var(--white);
+      padding: 22px 24px;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: var(--slate-600);
+    }
+    .footer-teacher-portal {
+      color: var(--navy-900);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .footer-teacher-portal:hover {
+      color: var(--teal-700);
+      text-decoration: underline;
+    }
+
+    /* === PIN MODAL === */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 21, 39, 0.65);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: var(--shadow-md);
+    }
+    .modal-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+    }
+    .modal-card p {
+      font-size: 0.86rem;
+      color: var(--slate-600);
+      margin-bottom: 14px;
+    }
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .workspace-hero-banner { padding: 26px 22px; min-height: 180px; }
+      .section-card { padding: 22px 18px; }
+      .unscramble-row, .clinic-row { grid-template-columns: 1fr; }
+      .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; A1.1</span>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="header-student-btn" id="studentNameBtn" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-link" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a href="../index.html" class="header-back-link">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="workspace-hero-banner">
+      <div class="hero-content">
+        <h1 class="hero-title">The Story Behind <span>Your Name</span></h1>
+        <p class="hero-subtitle">Real names, funny nicknames, and the first hello when you finally meet someone in person.</p>
+      </div>
+    </header>
+
+    <nav class="module-nav-grid" role="tablist" aria-label="Lesson Modules">
+      <button type="button" class="module-tab active" data-tab="m1" role="tab" aria-selected="true"><span class="tab-num">01</span> Warm-Up</button>
+      <button type="button" class="module-tab" data-tab="m2" role="tab" aria-selected="false"><span class="tab-num">02</span> Vocabulary</button>
+      <button type="button" class="module-tab" data-tab="m3" role="tab" aria-selected="false"><span class="tab-num">03</span> USA Chunks</button>
+      <button type="button" class="module-tab" data-tab="m4" role="tab" aria-selected="false"><span class="tab-num">04</span> Listening</button>
+      <button type="button" class="module-tab" data-tab="m5" role="tab" aria-selected="false"><span class="tab-num">05</span> Grammar</button>
+      <button type="button" class="module-tab" data-tab="m6" role="tab" aria-selected="false"><span class="tab-num">06</span> Speaking</button>
+      <button type="button" class="module-tab" data-tab="m7" role="tab" aria-selected="false"><span class="tab-num">07</span> Exit Ticket</button>
+    </nav>
+
+    <!-- ==================== 01 WARM-UP ==================== -->
+    <section class="module-panel active" id="m1">
+      <details class="teacher-note-box">
+        <summary>Teacher's Guide &middot; 01 Warm-Up <span class="teacher-note-badge">P Only</span></summary>
+        <div class="teacher-note-body">
+          <div class="teacher-steps-grid">
+            <div class="teacher-step-item"><strong>1. Setup</strong>Greet the student using <em>Hello!</em> and <em>What's your name?</em> Keep strictly to [P] frames.</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Click one reaction option yourself first: <em>"My name is [Name]. Yes, it is good!"</em></div>
+            <div class="teacher-step-item"><strong>3. Check</strong>Have the student click their answers and say one short [P] line aloud.</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>Open-ended personal activation. Accept any valid <em>Yes / No / My name is...</em> response.</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">01 &middot; Engage</div>
+          <h2 class="section-title">Name Check: How Do You Feel About Your Name?</h2>
+          <p class="section-lead">Click your answer, then say your name aloud.</p>
+        </div>
+
+        <div class="poll-grid">
+          <div class="poll-card">
+            <div class="poll-question">1. Your name: is it good or funny?</div>
+            <div class="poll-options">
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Yes! Good name.')">Good</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Okay!')">Okay</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Haha, funny!')">Funny</button>
+            </div>
+            <div class="poll-reply"></div>
+          </div>
+
+          <div class="poll-card">
+            <div class="poll-question">2. In a cafe, is your name a problem?</div>
+            <div class="poll-options">
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'Yes! Spell it again, please!')">Yes</button>
+              <button type="button" class="poll-opt-btn" onclick="selectPoll(this, 'No, no problem.')">No</button>
+            </div>
+            <div class="poll-reply"></div>
+          </div>
+        </div>
+
+        <div class="trigger-questions">
+          <h3>Ask &amp; Answer</h3>
+          <div class="trigger-list">
+            <div class="trigger-item">
+              <span>Hello! What's your name?</span>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-1.mp3', this)">&#9654; Listen</button>
+            </div>
+            <div class="trigger-item">
+              <span>My name is... Is that right?</span>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-2.mp3', this)">&#9654; Listen</button>
+            </div>
+            <div class="trigger-item">
+              <span>Again, please!</span>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/u01-l01-warmup-3.mp3', this)">&#9654; Listen</button>
+            </div>
+          </div>
+          <div class="audio-status-note" id="audioStatusGlobal"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m2')">Next: Vocabulary &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02 VOCABULARY ==================== -->
+    <section class="module-panel" id="m2">
+      <details class="teacher-note-box">
+        <summary>Teacher's Guide &middot; 02 Vocabulary <span class="teacher-note-badge">6 Words + Unscramble</span></summary>
+        <div class="teacher-note-body">
+          <div class="teacher-steps-grid">
+            <div class="teacher-step-item"><strong>1. Setup</strong>Have the student read each front card and click to flip for meaning. Notice examples use [P] <em>My ... is ...</em></div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Model word stress: <em>NICK-name</em>, <em>FIRST name</em>, <em>LAST name</em>. Contrast <em>I'm</em> vs <em>I am</em>.</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>Run the Unscramble activity below. Ask the student to spell or say the solved word.</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>Unscramble: 1. nickname &middot; 2. first name &middot; 3. last name &middot; 4. real name &middot; 5. easy &middot; 6. hard.</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">02 &middot; Build</div>
+          <h2 class="section-title">Key Words for Names</h2>
+          <p class="section-lead">Click any card to see the meaning. Listen to the word and the example.</p>
+        </div>
+
+        <div class="flip-grid">
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">noun</span>
+                <div>
+                  <div class="flip-word">first name</div>
+                  <div class="flip-ipa">/fɜːrst neɪm/</div>
+                </div>
+                <div class="flip-example">"My first name is Carlos."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-first-name.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-first-name-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">first name</div>
+                <div class="flip-back-meaning">Your main personal name (not your family name).</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">noun</span>
+                <div>
+                  <div class="flip-word">last name</div>
+                  <div class="flip-ipa">/læst neɪm/</div>
+                </div>
+                <div class="flip-example">"My last name is Rivera."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-last-name.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-last-name-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">last name</div>
+                <div class="flip-back-meaning">Your family name.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">noun</span>
+                <div>
+                  <div class="flip-word">nickname</div>
+                  <div class="flip-ipa">/ˈnɪkneɪm/</div>
+                </div>
+                <div class="flip-example">"My nickname is Beto."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-nickname.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-nickname-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">nickname</div>
+                <div class="flip-back-meaning">A short or funny name from friends or family.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">noun</span>
+                <div>
+                  <div class="flip-word">real name</div>
+                  <div class="flip-ipa">/ˈrɪəl neɪm/</div>
+                </div>
+                <div class="flip-example">"My real name is Sofia."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-real-name.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-real-name-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">real name</div>
+                <div class="flip-back-meaning">Your true official name (not a nickname).</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">adjective</span>
+                <div>
+                  <div class="flip-word">easy</div>
+                  <div class="flip-ipa">/ˈiːzi/</div>
+                </div>
+                <div class="flip-example">"My name is easy."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-easy.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-easy-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">easy</div>
+                <div class="flip-back-meaning">Simple to say or write.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">adjective</span>
+                <div>
+                  <div class="flip-word">hard</div>
+                  <div class="flip-ipa">/hɑːrd/</div>
+                </div>
+                <div class="flip-example">"My last name is hard."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-hard.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-hard-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">hard</div>
+                <div class="flip-back-meaning">Not easy to say or write.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pron-contrast-box">
+          <h3>Sound Focus: Clear Contractions</h3>
+          <p class="section-lead">Listen to the difference between the full form and the short form.</p>
+          <div class="pron-pairs">
+            <div class="pron-pair-card">
+              <div class="pron-pair-label">I am &nbsp;vs.&nbsp; I'm</div>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/pron-iam-im.mp3', this)">&#9654; Listen &amp; Compare</button>
+            </div>
+            <div class="pron-pair-card">
+              <div class="pron-pair-label">name &nbsp;vs.&nbsp; nickname</div>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/pron-name-nickname.mp3', this)">&#9654; Listen &amp; Compare</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity-box">
+          <h3>Vocabulary Activity: Unscramble the Word</h3>
+          <p class="section-lead">Put the letters in order to write the right word.</p>
+          <div class="unscramble-grid" id="unscrambleList"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m1')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m3')">Next: USA Chunks &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03 USA CHUNKS ==================== -->
+    <section class="module-panel" id="m3">
+      <details class="teacher-note-box">
+        <summary>Teacher's Guide &middot; 03 USA Chunks <span class="teacher-note-badge">Fixed Expressions</span></summary>
+        <div class="teacher-note-body">
+          <div class="teacher-steps-grid">
+            <div class="teacher-step-item"><strong>1. Setup</strong>Teach these 4 expressions as whole, fixed blocks. Do NOT analyze the grammar inside them.</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Play each audio and drill natural rhythm: <em>"You can CALL me Lupe."</em></div>
+            <div class="teacher-step-item"><strong>3. Check</strong>Say a long or funny name and prompt the student to react with <em>"Again, please?"</em> or <em>"No, I'm serious!"</em></div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>Students should use at least two chunks naturally in Module 06 Speaking.</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">03 &middot; Notice</div>
+          <h2 class="section-title">Real-Life Expressions (USA Chunks)</h2>
+          <p class="section-lead">Learn each phrase as one complete block. Click a card to see when to use it.</p>
+        </div>
+
+        <div class="flip-grid">
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">First Meeting</span>
+                <div>
+                  <div class="flip-word">Nice to finally put a face to the name.</div>
+                </div>
+                <div class="flip-example">"Hello, Luis! Nice to finally put a face to the name."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-face-to-name.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">Nice to finally put a face to the name.</div>
+                <div class="flip-back-meaning">You know the name from messages, and now you meet in person.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">Nickname</span>
+                <div>
+                  <div class="flip-word">You can call me...</div>
+                </div>
+                <div class="flip-example">"My name is Guadalupe. You can call me Lupe."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-call-me.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">You can call me...</div>
+                <div class="flip-back-meaning">Tell someone the short name or nickname you want.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">Reaction</span>
+                <div>
+                  <div class="flip-word">No, I'm serious!</div>
+                </div>
+                <div class="flip-example">"My nickname is Kiwi. No, I'm serious!"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-serious.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">No, I'm serious!</div>
+                <div class="flip-back-meaning">It sounds funny, and it is 100% true.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <span class="flip-pos">Repair</span>
+                <div>
+                  <div class="flip-word">Again, please?</div>
+                </div>
+                <div class="flip-example">"Sorry&mdash;again, please?"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-again-please.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">Again, please?</div>
+                <div class="flip-back-meaning">Ask someone to repeat a name slowly.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m2')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m4')">Next: Listening &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 LISTENING ==================== -->
+    <section class="module-panel" id="m4">
+      <details class="teacher-note-box">
+        <summary>Teacher's Guide &middot; 04 Listening <span class="teacher-note-badge">Transcript Hidden First</span></summary>
+        <div class="teacher-note-body">
+          <div class="teacher-steps-grid">
+            <div class="teacher-step-item"><strong>1. Setup</strong>Keep the transcript hidden! Play the studio audio once for gist, then a second time for details.</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Ask: <em>"Is his name Mateo? Yes or No?"</em> before checking all 4 items.</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>Have the student answer Yes/No, then open the transcript to notice <em>I'm / I'm not / Are you...?</em></div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>1. No (he is Mateo) &middot; 2. Yes (real name: Mateo) &middot; 3. No (nickname: Teo) &middot; 4. Yes (last name is hard).</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">04 &middot; Notice in Context</div>
+          <h2 class="section-title">At the Studio Check-In</h2>
+          <p class="section-lead">Listen to Nora and Mateo first. Do not open the text until you finish the questions.</p>
+        </div>
+
+        <div class="listening-stage">
+          <div class="listening-stage-top">
+            <div>
+              <strong>Audio Track: Studio Check-In</strong>
+              <div style="font-size: 0.84rem; color: var(--slate-300);">Nora &amp; Mateo meet for the first time.</div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-teal btn-sm" onclick="playLessonAudio('./audio/u01-l01-listening.mp3', this)">&#9654; Play Dialogue</button>
+              <button type="button" class="btn btn-outline btn-sm" id="toggleTranscriptBtn" onclick="toggleTranscript()">Show Transcript (after listening)</button>
+            </div>
+          </div>
+          <div class="transcript-panel" id="transcriptPanel">
+            <p><strong>Nora:</strong> Good morning! I'm Nora. What's your name?</p>
+            <p><strong>Mateo:</strong> Hi, Nora! Nice to finally put a face to the name. I'm Mateo.</p>
+            <p><strong>Nora:</strong> Mateo... Are you Mateo Valdovinos?</p>
+            <p><strong>Mateo:</strong> Yes, I am! My last name is hard. You can call me Teo.</p>
+            <p><strong>Nora:</strong> Okay, Teo! Wait&mdash;is your nickname Kiwi on the list?</p>
+            <p><strong>Mateo:</strong> Haha, no! I'm not Kiwi. I'm Teo!</p>
+            <p><strong>Nora:</strong> Oh, sorry! Again, please? Teo?</p>
+            <p><strong>Mateo:</strong> Yes! Teo. No, I'm serious&mdash;Valdovinos is hard, Teo is easy!</p>
+          </div>
+        </div>
+
+        <div class="comp-list" id="listeningCompList"></div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m3')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m5')">Next: Grammar &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 GRAMMAR ==================== -->
+    <section class="module-panel" id="m5">
+      <details class="teacher-note-box">
+        <summary>Teacher's Guide &middot; 05 Grammar <span class="teacher-note-badge">I / you + To Be + My</span></summary>
+        <div class="teacher-note-body">
+          <div class="teacher-steps-grid">
+            <div class="teacher-step-item"><strong>1. Setup</strong>Scope strictly limited to <em>I, you</em> + <em>am / are</em> + <em>My</em>. Do NOT introduce <em>he/she/they</em> here.</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Point out <em>am</em> goes with <em>I</em>, and <em>are</em> goes with <em>you</em>.</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>In Error Clinic, let the student find the mistake without hints. Then build sentences in the Wordbox.</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>Clinic: 1. I am / I'm Carlos &middot; 2. You are / You're funny &middot; 3. Are you Mateo? &middot; 4. I'm not Kiwi &middot; 5. My name is Nora.</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">05 &middot; Understand &amp; Practice</div>
+          <h2 class="section-title">I, You &amp; To Be</h2>
+          <p class="section-lead">Use <strong>I am (I'm)</strong> to talk about yourself, and <strong>You are (You're)</strong> to talk to another person. Use <strong>My</strong> for your name.</p>
+        </div>
+
+        <div class="grammar-table-wrap">
+          <table class="grammar-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>I (+ My)</th>
+                <th>You</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Affirmative (+)</strong></td>
+                <td><span class="grammar-highlight">I am</span> Mateo. / <span class="grammar-highlight">I'm</span> Teo.<br><span class="grammar-highlight">My</span> name is Mateo.</td>
+                <td><span class="grammar-highlight">You are</span> Nora. / <span class="grammar-highlight">You're</span> Nora.</td>
+              </tr>
+              <tr>
+                <td><strong>Negative (&minus;)</strong></td>
+                <td><span class="grammar-highlight">I am not</span> Kiwi. / <span class="grammar-highlight">I'm not</span> Kiwi.</td>
+                <td><span class="grammar-highlight">You are not</span> Teo. / <span class="grammar-highlight">You aren't</span> Teo.</td>
+              </tr>
+              <tr>
+                <td><strong>Yes/No Question (?)</strong></td>
+                <td><span class="grammar-highlight">Am I</span> on the list?<br>Yes, you are. / No, you aren't.</td>
+                <td><span class="grammar-highlight">Are you</span> Mateo?<br>Yes, I am. / No, I'm not.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="activity-box" style="margin-bottom: 22px;">
+          <h3>Grammar in Context A: Error Clinic (Find &amp; Fix)</h3>
+          <p class="section-lead">Each sentence has one mistake. Find it and write the correct sentence.</p>
+          <div class="clinic-list" id="errorClinicList"></div>
+        </div>
+
+        <div class="activity-box">
+          <h3>Grammar in Context B: Wordbox Sentence Builder</h3>
+          <p class="section-lead">Click the words in order to make each sentence.</p>
+          <div id="wordboxContainer"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m4')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m6')">Next: Speaking &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06 SPEAKING ==================== -->
+    <section class="module-panel" id="m6">
+      <details class="teacher-note-box">
+        <summary>Teacher's Guide &middot; 06 Speaking <span class="teacher-note-badge">Roleplay + Checklist</span></summary>
+        <div class="teacher-note-body">
+          <div class="teacher-steps-grid">
+            <div class="teacher-step-item"><strong>1. Setup</strong>Student picks one Secret Name Card below (do not show partner). You play the check-in host.</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Ask: <em>"Hello! Are you Leo?"</em> Student answers with <em>No, I'm not...</em> and uses a chunk.</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>Verify the 4 checklist items are demonstrated aloud without reading from a script.</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>Evidence: 1 greeting, 1 negative correction (<em>I'm not</em>), 1 chunk, 1 question back (<em>What's your name?</em>).</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">06 &middot; Communicate</div>
+          <h2 class="section-title">Secret Name Card Roleplay</h2>
+          <p class="section-lead">Pick one card. Meet your partner at the studio desk. Confirm your real name and share your nickname!</p>
+        </div>
+
+        <div class="secret-cards-grid">
+          <div class="secret-card" onclick="selectSecretCard(this)">
+            <div class="secret-card-tag">CARD A</div>
+            <div><strong>First Name:</strong> Maximiliano</div>
+            <div><strong>Last Name:</strong> Quintero (hard!)</div>
+            <div><strong>Nickname:</strong> Max</div>
+          </div>
+          <div class="secret-card" onclick="selectSecretCard(this)">
+            <div class="secret-card-tag">CARD B</div>
+            <div><strong>First Name:</strong> Guadalupe</div>
+            <div><strong>Last Name:</strong> Mendoza</div>
+            <div><strong>Nickname:</strong> Lupe</div>
+          </div>
+          <div class="secret-card" onclick="selectSecretCard(this)">
+            <div class="secret-card-tag">CARD C</div>
+            <div><strong>First Name:</strong> Francisco</div>
+            <div><strong>Last Name:</strong> Echeverria (hard!)</div>
+            <div><strong>Nickname:</strong> Paco</div>
+          </div>
+        </div>
+
+        <div class="checklist-box">
+          <h3>Speaking Checklist</h3>
+          <div class="checklist-items">
+            <div>1. Say hello and ask your partner's name (<em>What's your name?</em>).</div>
+            <div>2. Say your real name with <em>I'm...</em> or <em>My name is...</em></div>
+            <div>3. Correct one wrong guess with <em>No, I'm not...</em></div>
+            <div>4. Use at least one USA Chunk (<em>You can call me...</em> / <em>No, I'm serious!</em> / <em>Again, please?</em>).</div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m5')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m7')">Next: Exit Ticket &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07 EXIT TICKET ==================== -->
+    <section class="module-panel" id="m7">
+      <details class="teacher-note-box">
+        <summary>Teacher's Guide &middot; 07 Exit Ticket <span class="teacher-note-badge">Evidence Check</span></summary>
+        <div class="teacher-note-body">
+          <div class="teacher-steps-grid">
+            <div class="teacher-step-item"><strong>1. Setup</strong>Student writes 3–4 isolated sentences in the blank space without copying from earlier tabs.</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>Prompt orally: <em>"Write your name, your nickname (real or fun), and one 'I'm not' sentence."</em></div>
+            <div class="teacher-step-item"><strong>3. Check</strong>Check capital <em>I</em>, capital names, apostrophe in <em>I'm / I'm not</em>, and period/question mark.</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>Advance only if student produces accurate <em>I am / I'm not</em> and <em>My name is...</em> independently.</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">07 &middot; Reflect</div>
+          <h2 class="section-title">Exit Ticket</h2>
+          <p class="section-lead">Write 3 or 4 short sentences about your name, your nickname, and one thing you are not.</p>
+        </div>
+
+        <textarea class="exit-textarea" id="exitTicketInput" aria-label="Exit Ticket response"></textarea>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-teal" onclick="saveExitTicket()">Save My Exit Ticket</button>
+          <span id="exitTicketStatus" class="audio-status-note" style="margin: 0;"></span>
+        </div>
+
+        <div class="cando-list">
+          <label class="cando-item"><input type="checkbox"> <span>I can say my first name, last name, and nickname using <strong>I'm</strong> and <strong>My</strong>.</span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can ask <strong>What's your name?</strong> and <strong>Are you...?</strong></span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can say <strong>No, I'm not</strong> when someone gets my name wrong.</span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can use <strong>You can call me...</strong> and <strong>Again, please?</strong> in a real conversation.</span></label>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m6')">&larr; Previous</button>
+          <a href="./explore.html" class="btn btn-primary">Go to Explore (Workbook) &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Story Behind Your Name (A1.1)</div>
+      <a href="../../../teacher-hub/A1.1/the-story-behind-your-name/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <!-- PIN MODAL -->
+  <div class="modal-backdrop" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
+    <div class="modal-card">
+      <h3 id="pinModalTitle">Teacher's Version</h3>
+      <p>Enter your faculty PIN to show step-by-step teaching notes and answer keys.</p>
+      <input type="password" id="pinInput" class="text-input" style="width: 100%;" placeholder="Faculty PIN" onkeydown="if(event.key==='Enter')submitPin()">
+      <div class="audio-status-note" id="pinError" style="color: var(--danger-600);"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline btn-sm" onclick="closeTeacherModal()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="submitPin()">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // === STUDENT NAME & TEACHER PIN ===
+    function loadStudentName() {
+      let name = '';
+      try {
+        name = localStorage.getItem('ld_student_name') || '';
+        if (!name) {
+          const raw = localStorage.getItem('ld-english-hub');
+          if (raw) name = (JSON.parse(raw).studentName || '');
+        }
+      } catch (_) {}
+      const btn = document.getElementById('studentNameBtn');
+      if (btn) btn.textContent = 'Student · ' + (name.trim() || 'Guest');
+    }
+
+    function editStudentName() {
+      const current = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', current);
+      if (next === null) return;
+      const clean = next.trim();
+      try {
+        localStorage.setItem('ld_student_name', clean);
+        const raw = localStorage.getItem('ld-english-hub');
+        const data = raw ? JSON.parse(raw) : {};
+        data.studentName = clean;
+        localStorage.setItem('ld-english-hub', JSON.stringify(data));
+      } catch (_) {}
+      loadStudentName();
+    }
+
+    const VALID_PINS = ['2680', '5726', '8826', '2026', 'admin'];
+    function setTeacherMode(active) {
+      document.body.classList.toggle('teacher-mode', active);
+      const btn = document.getElementById('teacherToggleBtn');
+      if (btn) {
+        btn.classList.toggle('is-active', active);
+        btn.textContent = active ? "Teacher's Version (On) ×" : "Teacher's Version ↗";
+      }
+    }
+    function openTeacherModal() {
+      if (document.body.classList.contains('teacher-mode')) {
+        try { sessionStorage.removeItem('ld-coordinator-auth'); } catch (_) {}
+        setTeacherMode(false);
+        return;
+      }
+      document.getElementById('pinError').textContent = '';
+      document.getElementById('pinInput').value = '';
+      document.getElementById('pinModal').classList.add('is-open');
+      setTimeout(() => document.getElementById('pinInput').focus(), 50);
+    }
+    function closeTeacherModal() {
+      document.getElementById('pinModal').classList.remove('is-open');
+    }
+    function submitPin() {
+      const val = document.getElementById('pinInput').value.trim();
+      if (VALID_PINS.includes(val)) {
+        try { sessionStorage.setItem('ld-coordinator-auth', 'granted'); } catch (_) {}
+        setTeacherMode(true);
+        closeTeacherModal();
+      } else {
+        document.getElementById('pinError').textContent = 'Incorrect PIN. Please try again.';
+      }
+    }
+
+    // === SEGMENTED TAB NAVIGATION ===
+    const tabs = document.querySelectorAll('.module-tab');
+    const panels = document.querySelectorAll('.module-panel');
+    function goToTab(tabId) {
+      tabs.forEach(t => {
+        const match = t.dataset.tab === tabId;
+        t.classList.toggle('active', match);
+        t.setAttribute('aria-selected', match ? 'true' : 'false');
+      });
+      panels.forEach(p => p.classList.toggle('active', p.id === tabId));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    tabs.forEach(t => t.addEventListener('click', () => goToTab(t.dataset.tab)));
+
+    // === REAL AUDIO PLAYER (NO TTS) ===
+    let currentAudio = null;
+    function playLessonAudio(src, btn) {
+      const statusEl = document.getElementById('audioStatusGlobal');
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
+      const audio = new Audio(src);
+      currentAudio = audio;
+      const orig = btn.innerHTML;
+      btn.innerHTML = '&#9632; Playing...';
+      audio.play().then(() => {
+        if (statusEl) statusEl.textContent = '';
+      }).catch(() => {
+        btn.innerHTML = orig;
+        const fileName = src.split('/').pop();
+        if (statusEl) {
+          statusEl.textContent = 'Studio audio file queued: ' + fileName;
+        }
+      });
+      audio.onended = () => { btn.innerHTML = orig; };
+    }
+
+    // === 01 WARM-UP POLL ===
+    function selectPoll(btn, reply) {
+      const card = btn.closest('.poll-card');
+      card.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      card.querySelector('.poll-reply').textContent = reply;
+    }
+
+    // === 02 UNSCRAMBLE ===
+    const unscrambleItems = [
+      { scrambled: 'K I C N M A N E', clue: 'Short or funny name from friends', answer: 'nickname' },
+      { scrambled: 'R I F S T   M A N E', clue: 'Your main personal name', answer: 'first name' },
+      { scrambled: 'S A L T   M A N E', clue: 'Your family name', answer: 'last name' },
+      { scrambled: 'E A R L   M A N E', clue: 'Your official true name', answer: 'real name' },
+      { scrambled: 'S A Y E', clue: 'Simple to say or write', answer: 'easy' },
+      { scrambled: 'D R A H', clue: 'Not easy to say or write', answer: 'hard' }
+    ];
+    function renderUnscramble() {
+      const list = document.getElementById('unscrambleList');
+      unscrambleItems.forEach((item, idx) => {
+        const row = document.createElement('div');
+        row.className = 'unscramble-row';
+        row.innerHTML = `
+          <div>
+            <div class="scrambled-letters">${item.scrambled}</div>
+            <div class="unscramble-clue">${item.clue}</div>
+          </div>
+          <div class="unscramble-input-wrap">
+            <input type="text" class="text-input" id="unscr-${idx}" placeholder="Type word...">
+            <button type="button" class="btn btn-outline btn-sm" onclick="checkUnscramble(${idx})">Check</button>
+            <span id="unscr-st-${idx}"></span>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+    }
+    function checkUnscramble(idx) {
+      const val = document.getElementById('unscr-' + idx).value.trim().toLowerCase();
+      const st = document.getElementById('unscr-st-' + idx);
+      if (val === unscrambleItems[idx].answer) {
+        st.className = 'status-pill status-ok';
+        st.textContent = 'Correct';
+      } else {
+        st.className = 'status-pill status-err';
+        st.textContent = 'Try again';
+      }
+    }
+
+    // === 04 LISTENING ===
+    const compItems = [
+      { q: '1. Is his name Kiwi?', ans: 'No' },
+      { q: '2. Is his real first name Mateo?', ans: 'Yes' },
+      { q: '3. Is his nickname Valdovinos?', ans: 'No' },
+      { q: '4. Is his last name hard?', ans: 'Yes' }
+    ];
+    function renderListeningComp() {
+      const container = document.getElementById('listeningCompList');
+      compItems.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'comp-item';
+        div.innerHTML = `
+          <div class="comp-q">${item.q}</div>
+          <div class="comp-btns">
+            <button type="button" class="poll-opt-btn" onclick="checkComp(${idx}, 'Yes', this)">Yes</button>
+            <button type="button" class="poll-opt-btn" onclick="checkComp(${idx}, 'No', this)">No</button>
+            <span id="comp-st-${idx}"></span>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+    function checkComp(idx, choice, btn) {
+      const row = btn.closest('.comp-btns');
+      row.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const st = document.getElementById('comp-st-' + idx);
+      if (choice === compItems[idx].ans) {
+        st.className = 'status-pill status-ok';
+        st.textContent = 'Correct';
+      } else {
+        st.className = 'status-pill status-err';
+        st.textContent = 'Listen again';
+      }
+    }
+    function toggleTranscript() {
+      const panel = document.getElementById('transcriptPanel');
+      const btn = document.getElementById('toggleTranscriptBtn');
+      const open = panel.classList.toggle('is-open');
+      btn.textContent = open ? 'Hide Transcript' : 'Show Transcript (after listening)';
+    }
+
+    // === 05 GRAMMAR: ERROR CLINIC (NO RED HIGHLIGHTING) ===
+    const clinicItems = [
+      { broken: 'I are Carlos.', fixes: ["i am carlos.", "i'm carlos."] },
+      { broken: 'You is funny.', fixes: ["you are funny.", "you're funny."] },
+      { broken: 'Is you Mateo?', fixes: ["are you mateo?"] },
+      { broken: "I not am Kiwi.", fixes: ["i am not kiwi.", "i'm not kiwi."] },
+      { broken: 'I name is Nora.', fixes: ["my name is nora."] }
+    ];
+    function renderErrorClinic() {
+      const list = document.getElementById('errorClinicList');
+      clinicItems.forEach((item, idx) => {
+        const row = document.createElement('div');
+        row.className = 'clinic-row';
+        row.innerHTML = `
+          <div class="clinic-sentence">${idx + 1}. ${item.broken}</div>
+          <input type="text" class="text-input" id="clinic-${idx}" placeholder="Write the fix...">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <button type="button" class="btn btn-outline btn-sm" onclick="checkClinic(${idx})">Check</button>
+            <span id="clinic-st-${idx}"></span>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+    }
+    function checkClinic(idx) {
+      const val = document.getElementById('clinic-' + idx).value.trim().toLowerCase().replace(/\s+/g, ' ');
+      const st = document.getElementById('clinic-st-' + idx);
+      if (clinicItems[idx].fixes.includes(val)) {
+        st.className = 'status-pill status-ok';
+        st.textContent = 'Fixed!';
+      } else {
+        st.className = 'status-pill status-err';
+        st.textContent = 'Check I / you / My';
+      }
+    }
+
+    // === 05 GRAMMAR: WORDBOX ===
+    const wordboxItems = [
+      { tokens: ['not', "I'm", 'Leo.'], answer: "I'm not Leo." },
+      { tokens: ['you', 'Are', 'Sofia?'], answer: 'Are you Sofia?' },
+      { tokens: ['call', 'can', 'me', 'You', 'Paco.'], answer: 'You can call me Paco.' },
+      { tokens: ['is', 'name', 'My', 'hard.'], answer: 'My name is hard.' }
+    ];
+    const wordboxState = wordboxItems.map(() => []);
+    function renderWordbox() {
+      const container = document.getElementById('wordboxContainer');
+      wordboxItems.forEach((item, idx) => {
+        const row = document.createElement('div');
+        row.className = 'wordbox-row';
+        const chipsHtml = item.tokens.map((tok, tIdx) =>
+          `<button type="button" class="word-chip" id="wb-chip-${idx}-${tIdx}" onclick="pickWord(${idx}, ${tIdx}, '${tok.replace(/'/g, "\\'")}')">${tok}</button>`
+        ).join('');
+        row.innerHTML = `
+          <div class="wordbox-tokens">${chipsHtml}</div>
+          <div class="wordbox-answer">
+            <span id="wb-out-${idx}" style="color: var(--slate-500);">Click words above...</span>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="resetWordbox(${idx})">Clear</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="checkWordbox(${idx})">Check</button>
+              <span id="wb-st-${idx}"></span>
+            </div>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+    function pickWord(idx, tIdx, tok) {
+      document.getElementById(`wb-chip-${idx}-${tIdx}`).classList.add('used');
+      wordboxState[idx].push(tok);
+      const out = document.getElementById('wb-out-' + idx);
+      out.style.color = 'var(--navy-900)';
+      out.textContent = wordboxState[idx].join(' ');
+    }
+    function resetWordbox(idx) {
+      wordboxState[idx] = [];
+      wordboxItems[idx].tokens.forEach((_, tIdx) => {
+        document.getElementById(`wb-chip-${idx}-${tIdx}`).classList.remove('used');
+      });
+      const out = document.getElementById('wb-out-' + idx);
+      out.style.color = 'var(--slate-500)';
+      out.textContent = 'Click words above...';
+      document.getElementById('wb-st-' + idx).textContent = '';
+      document.getElementById('wb-st-' + idx).className = '';
+    }
+    function checkWordbox(idx) {
+      const built = wordboxState[idx].join(' ');
+      const st = document.getElementById('wb-st-' + idx);
+      if (built === wordboxItems[idx].answer) {
+        st.className = 'status-pill status-ok';
+        st.textContent = 'Correct!';
+      } else {
+        st.className = 'status-pill status-err';
+        st.textContent = 'Try again';
+      }
+    }
+
+    // === 06 SECRET CARD ===
+    function selectSecretCard(card) {
+      document.querySelectorAll('.secret-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+
+    // === 07 EXIT TICKET ===
+    function saveExitTicket() {
+      const val = document.getElementById('exitTicketInput').value.trim();
+      const st = document.getElementById('exitTicketStatus');
+      if (!val) {
+        st.style.color = 'var(--danger-600)';
+        st.textContent = 'Write 3 or 4 sentences first.';
+        return;
+      }
+      try { localStorage.setItem('ld_a11_u01_l01_exit', val); } catch (_) {}
+      st.style.color = 'var(--teal-800)';
+      st.textContent = 'Saved! Share your sentences with your teacher.';
+    }
+
+    // === INIT ===
+    window.addEventListener('DOMContentLoaded', () => {
+      loadStudentName();
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('role') === 'teacher' || sessionStorage.getItem('ld-coordinator-auth') === 'granted') {
+        setTeacherMode(true);
+      }
+      renderUnscramble();
+      renderListeningComp();
+      renderErrorClinic();
+      renderWordbox();
+      try {
+        const savedExit = localStorage.getItem('ld_a11_u01_l01_exit');
+        if (savedExit) document.getElementById('exitTicketInput').value = savedExit;
+      } catch (_) {}
+    });
+  </script>
+</body>
+</html>

@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.2 &middot; Macro-Unit 02 &middot; 2 Lessons</div>
       <h1 class="hero-title">Transmitted Truths &amp; <span>Office Politics</span></h1>
-      <p class="hero-desc">Manejar situaciones hipotéticas, reportar declaraciones, desarmar procesos pasivos y deducir lógica.</p>
+      <p class="hero-desc">Navigate ethical dilemmas, report what others said, explain how things happen, and draw logical conclusions.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Watercooler Gossip</h2>
-            <p class="lesson-desc">¿Supiste lo que dijo el jefe sobre los despidos? Transmitir mensajes sin distorsión.</p>
+            <p class="lesson-desc">Pass along office rumors and executive announcements accurately without distortion.</p>
             <div class="lesson-pills">
-              <span class="pill">Reported Speech: Regla del Tense Backshift</span>
+              <span class="pill">45 min</span>
               <span class="pill">Word on the street is...</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Say vs. Tell &amp; Reporting Verbs</h2>
-            <p class="lesson-desc">La diferencia entre informar, mentir y advertir: claim, admit, promise, warn.</p>
+            <p class="lesson-desc">Distinguish between claiming, admitting, promising, and warning in high-stakes news.</p>
             <div class="lesson-pills">
-              <span class="pill">Contraste estricto: Say (that) vs Tell [so</span>
+              <span class="pill">45 min</span>
               <span class="pill">For the record</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.2 &middot; Macro-Unit 02</div>
+    <div>Curriculum 2026 &middot; B1.2 &middot; Macro-Unit 02</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

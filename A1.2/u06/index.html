@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.2 &middot; Macro-Unit 06 &middot; 2 Lessons</div>
       <h1 class="hero-title">Hidden Talents &amp; The Burden <span>of Favors</span></h1>
-      <p class="hero-desc">Comunicar rutinas reales, convivencias difíciles, mentiras por celular, comida y habilidades cotidianas.</p>
+      <p class="hero-desc">Share daily routines, household habits, restaurant bills, white lies, and everyday abilities with confidence.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Family IT Guy: The Favor Trap</h2>
-            <p class="lesson-desc">El abuso de la confianza familiar: pedir favores profesionales complejos gratis.</p>
+            <p class="lesson-desc">Set boundaries when family and friends expect free professional favors.</p>
             <div class="lesson-pills">
-              <span class="pill">Modal can / can't para habilidad y peticio</span>
+              <span class="pill">45 min</span>
               <span class="pill">Do me a favor</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Things We Secretly Hate Doing</h2>
-            <p class="lesson-desc">Cosas que todos dicen amar pero son un martirio: baby showers, eventos de networking.</p>
+            <p class="lesson-desc">Admit the everyday social events and chores everyone pretends to enjoy but secretly dislikes.</p>
             <div class="lesson-pills">
-              <span class="pill">Patrones verbales: love / like / don't min</span>
+              <span class="pill">45 min</span>
               <span class="pill">I can't stand it</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.2 &middot; Macro-Unit 06</div>
+    <div>Curriculum 2026 &middot; A1.2 &middot; Macro-Unit 06</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

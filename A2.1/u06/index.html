@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.1 &middot; Macro-Unit 06 &middot; 1 Lesson</div>
       <h1 class="hero-title">A2.1 Capstone Studio — The Murphy <span>Incident Report</span></h1>
-      <p class="hero-desc">Narrar anécdotas en pasado, dominar la fonética de -ed, el FOMO digital y causas y consecuencias reales.</p>
+      <p class="hero-desc">Tell real stories about the past, small disasters, digital habits, and everyday cause-and-effect situations.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Epic Fail Story</h2>
-            <p class="lesson-desc">Narrar una anécdota real donde todo lo que podía salir mal, salió mal.</p>
+            <p class="lesson-desc">Share a memorable story where everything that could go wrong actually did.</p>
             <div class="lesson-pills">
-              <span class="pill">Integración: Was/Were, Regulares (-ed), Ir</span>
+              <span class="pill">60 min</span>
               <span class="pill">Long story short</span>
             </div>
           </div>
@@ -389,7 +389,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.1 &middot; Macro-Unit 06</div>
+    <div>Curriculum 2026 &middot; A2.1 &middot; Macro-Unit 06</div>
   </footer>
 
   <script>
@@ -411,7 +411,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

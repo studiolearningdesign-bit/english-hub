@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.1 &middot; Macro-Unit 06 &middot; 2 Lessons</div>
       <h1 class="hero-title">Endurance: How Long Have You <span>Held On?</span></h1>
-      <p class="hero-desc">Desenvolverse con diplomacia, narrar escenas dramáticas interrumpidas, definir con precisión y medir resistencia.</p>
+      <p class="hero-desc">Handle delicate conversations with tact, tell dramatic turning-point stories, and express personal choices.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Through Thick and Thin</h2>
-            <p class="lesson-desc">¿Cuánto tiempo lleva esa amistad de pie a pesar de las broncas?</p>
+            <p class="lesson-desc">Celebrate friendships and commitments that have lasted through thick and thin.</p>
             <div class="lesson-pills">
-              <span class="pill">Present Perfect con for (duración) y since</span>
+              <span class="pill">45 min</span>
               <span class="pill">For as long as I can remember</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Milestone Check</h2>
-            <p class="lesson-desc">La lista de pendientes de vida: lo ya logrado, lo recién hecho y lo atorado.</p>
+            <p class="lesson-desc">Review your personal checklist: milestones reached, recent wins, and goals still pending.</p>
             <div class="lesson-pills">
-              <span class="pill">Adverbios de expectativa: already (antes),</span>
+              <span class="pill">45 min</span>
               <span class="pill">Not quite yet</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.1 &middot; Macro-Unit 06</div>
+    <div>Curriculum 2026 &middot; B1.1 &middot; Macro-Unit 06</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

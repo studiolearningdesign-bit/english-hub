@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.2 &middot; Macro-Unit 05 &middot; 2 Lessons</div>
       <h1 class="hero-title">Uncomfortable Firsts &amp; <span>Life Milestones</span></h1>
-      <p class="hero-desc">Consolidar comparaciones complejas, quejas de espacio/tiempo, límites éticos, futuro y experiencias de vida.</p>
+      <p class="hero-desc">Compare lifestyles, set personal boundaries, talk about future plans, and share memorable life experiences.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Uncomfortable Firsts</h2>
-            <p class="lesson-desc">Experiencias límite: hablar ante 500 personas, renunciar a un trabajo tóxico sin red.</p>
+            <p class="lesson-desc">Share bold firsts—speaking to a huge crowd or walking away from a toxic job.</p>
             <div class="lesson-pills">
-              <span class="pill">Present Perfect Simple con ever y never + </span>
+              <span class="pill">45 min</span>
               <span class="pill">Been there, done that</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">From Experience to Story</h2>
-            <p class="lesson-desc">El pivote de la conversación: abres con experiencia general y saltas a la anécdota.</p>
+            <p class="lesson-desc">Turn a quick 'Have you ever...?' question into a vivid personal story.</p>
             <div class="lesson-pills">
-              <span class="pill">Contraste: Have you ever</span>
+              <span class="pill">45 min</span>
               <span class="pill">To make a long story short</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.2 &middot; Macro-Unit 05</div>
+    <div>Curriculum 2026 &middot; A2.2 &middot; Macro-Unit 05</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.2 &middot; Macro-Unit 05 &middot; 2 Lessons</div>
       <h1 class="hero-title">Everyday Mysteries <span>&amp; Deduction</span></h1>
-      <p class="hero-desc">Manejar situaciones hipotéticas, reportar declaraciones, desarmar procesos pasivos y deducir lógica.</p>
+      <p class="hero-desc">Navigate ethical dilemmas, report what others said, explain how things happen, and draw logical conclusions.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Connecting the Dots: Must, Can't &amp; Might</h2>
-            <p class="lesson-desc">Especular con fundamento: ver pistas ambiguas en la oficina y formular hipótesis.</p>
+            <p class="lesson-desc">Piece together ambiguous clues at the office and make reasoned deductions.</p>
             <div class="lesson-pills">
-              <span class="pill">Modales de deducción presente: Must be (ce</span>
+              <span class="pill">45 min</span>
               <span class="pill">Something smells fishy</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Confirming Suspicions: Question Tags</h2>
-            <p class="lesson-desc">Confirmar rumores: 'Tú ya sabías esto, ¿verdad? No me estás mintiendo, ¿o sí?'.</p>
+            <p class="lesson-desc">Confirm suspicions and press for straight answers in tense conversations.</p>
             <div class="lesson-pills">
-              <span class="pill">Question Tags: Auxiliar invertido de signo</span>
+              <span class="pill">45 min</span>
               <span class="pill">Don't play dumb with me</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.2 &middot; Macro-Unit 05</div>
+    <div>Curriculum 2026 &middot; B1.2 &middot; Macro-Unit 05</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

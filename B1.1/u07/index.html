@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.1 &middot; Macro-Unit 07 &middot; 1 Lesson</div>
       <h1 class="hero-title">B1.1 Capstone Studio — The Turning <span>Point Thesis</span></h1>
-      <p class="hero-desc">Desenvolverse con diplomacia, narrar escenas dramáticas interrumpidas, definir con precisión y medir resistencia.</p>
+      <p class="hero-desc">Handle delicate conversations with tact, tell dramatic turning-point stories, and express personal choices.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The Turning Point Narrative</h2>
-            <p class="lesson-desc">Exponer un punto de quiebre en tu vida con toda la artillería narrativa de B1.1.</p>
+            <p class="lesson-desc">Present a defining turning point in your life with clarity and nuance.</p>
             <div class="lesson-pills">
-              <span class="pill">Integración total: Past Simple vs Continuo</span>
+              <span class="pill">60 min</span>
               <span class="pill">A turning point</span>
             </div>
           </div>
@@ -389,7 +389,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.1 &middot; Macro-Unit 07</div>
+    <div>Curriculum 2026 &middot; B1.1 &middot; Macro-Unit 07</div>
   </footer>
 
   <script>
@@ -411,7 +411,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

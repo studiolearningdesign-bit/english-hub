@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">B1.1 &middot; Macro-Unit 05 &middot; 2 Lessons</div>
       <h1 class="hero-title">The Psychology of Choice: Deciding <span>vs. Avoiding</span></h1>
-      <p class="hero-desc">Desenvolverse con diplomacia, narrar escenas dramáticas interrumpidas, definir con precisión y medir resistencia.</p>
+      <p class="hero-desc">Handle delicate conversations with tact, tell dramatic turning-point stories, and express personal choices.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">What We Choose vs. Avoid</h2>
-            <p class="lesson-desc">¿Por qué posponemos una charla incómoda pero gastamos dinero sin pensar?</p>
+            <p class="lesson-desc">Explore why we put off tough conversations yet make snap decisions without thinking.</p>
             <div class="lesson-pills">
-              <span class="pill">Verb Patterns: Gerundio (enjoy, avoid, sug</span>
+              <span class="pill">45 min</span>
               <span class="pill">Avoid it like the plague</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Prepositions &amp; Hidden Knacks</h2>
-            <p class="lesson-desc">Para qué eres bueno de verdad y de qué estás harto en tu rutina.</p>
+            <p class="lesson-desc">Talk about what you have a natural knack for and what you are sick and tired of.</p>
             <div class="lesson-pills">
-              <span class="pill">Regla de oro: Preposition + Gerund (-ing) </span>
+              <span class="pill">45 min</span>
               <span class="pill">Sick and tired of...</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; B1.1 &middot; Macro-Unit 05</div>
+    <div>Curriculum 2026 &middot; B1.1 &middot; Macro-Unit 05</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

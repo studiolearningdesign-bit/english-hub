@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A2.2 &middot; Macro-Unit 02 &middot; 2 Lessons</div>
       <h1 class="hero-title">The Space &amp; <span>Time Squeeze</span></h1>
-      <p class="hero-desc">Consolidar comparaciones complejas, quejas de espacio/tiempo, límites éticos, futuro y experiencias de vida.</p>
+      <p class="hero-desc">Compare lifestyles, set personal boundaries, talk about future plans, and share memorable life experiences.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Micro-Apartments &amp; Skyrocketing Rents</h2>
-            <p class="lesson-desc">Pagar rentas brutales por departamentos minúsculos donde no cabe ni la cama.</p>
+            <p class="lesson-desc">Talk about sky-high city rents for tiny apartments with barely enough room to breathe.</p>
             <div class="lesson-pills">
-              <span class="pill">Too + adjective (too small, too noisy) vs </span>
+              <span class="pill">45 min</span>
               <span class="pill">Cramped quarters</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">24 Hours Are Not Enough</h2>
-            <p class="lesson-desc">Quemar la vela por ambos lados: demasiado trabajo y nada de tiempo para respirar.</p>
+            <p class="lesson-desc">Reflect on burning the candle at both ends with too much work and not enough rest.</p>
             <div class="lesson-pills">
-              <span class="pill">Too much + incontable / Too many + contabl</span>
+              <span class="pill">45 min</span>
               <span class="pill">Spread too thin</span>
             </div>
           </div>
@@ -410,7 +410,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A2.2 &middot; Macro-Unit 02</div>
+    <div>Curriculum 2026 &middot; A2.2 &middot; Macro-Unit 02</div>
   </footer>
 
   <script>
@@ -432,7 +432,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {

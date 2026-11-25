@@ -210,7 +210,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     }
     .lesson-card:hover {
       transform: translateY(-3px);
@@ -352,7 +352,7 @@
     <header class="workspace-hero-banner">
       <div class="hero-pill">A1.2 &middot; Macro-Unit 02 &middot; 3 Lessons</div>
       <h1 class="hero-title">Living with Others: Quirks, Habits <span>&amp; Judgment</span></h1>
-      <p class="hero-desc">Comunicar rutinas reales, convivencias difíciles, mentiras por celular, comida y habilidades cotidianas.</p>
+      <p class="hero-desc">Share daily routines, household habits, restaurant bills, white lies, and everyday abilities with confidence.</p>
     </header>
 
     <div class="mode-switch-bar">
@@ -375,9 +375,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">Living with a Control Freak</h2>
-            <p class="lesson-desc">Manías ajenas: la persona que acomoda todo por color o se estresa por un vaso.</p>
+            <p class="lesson-desc">Talk about living with someone who has strict household quirks and color-coded shelves.</p>
             <div class="lesson-pills">
-              <span class="pill">Present Simple II (he, she, it: -s/-es/-ie</span>
+              <span class="pill">45 min</span>
               <span class="pill">Drive someone up the wall</span>
             </div>
           </div>
@@ -396,9 +396,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">The 'Always 15 Minutes Late' Friend</h2>
-            <p class="lesson-desc">La impuntualidad cultural: ¿falta de respeto o forma relajada de ver la vida?</p>
+            <p class="lesson-desc">Discuss cultural views on punctuality: is being 15 minutes late rude or just relaxed?</p>
             <div class="lesson-pills">
-              <span class="pill">Adverbios de frecuencia (always, usually, </span>
+              <span class="pill">45 min</span>
               <span class="pill">Fashionably late</span>
             </div>
           </div>
@@ -417,9 +417,9 @@
         <div class="card-body">
           <div>
             <h2 class="lesson-title">What Does He Actually Do All Day?</h2>
-            <p class="lesson-desc">El choque generacional: Las mamás pensando que el hijo en home office 'no hace nada'.</p>
+            <p class="lesson-desc">Explain what remote work actually looks like to family members who think you are just relaxing.</p>
             <div class="lesson-pills">
-              <span class="pill">Preguntas con auxiliar Does + pronombres W</span>
+              <span class="pill">45 min</span>
               <span class="pill">Work from home</span>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
   <footer class="site-footer">
     <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
-    <div>Master Scope &amp; Sequence 2026 &middot; A1.2 &middot; Macro-Unit 02</div>
+    <div>Curriculum 2026 &middot; A1.2 &middot; Macro-Unit 02</div>
   </footer>
 
   <script>
@@ -453,7 +453,7 @@
         }
         if (hint) {
           hint.textContent = isExplore
-            ? 'Mode: Explore (Workbook, mechanics & precision drills)'
+            ? 'Mode: Explore (Workbook &amp; Practice)'
             : 'Mode: Experience (Communicative Lesson)';
         }
         backLinks.forEach((a) => {
