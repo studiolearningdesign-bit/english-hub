@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -331,6 +331,26 @@
       height: 14px;
       flex-shrink: 0;
     }
+    .btn-open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--navy-900);
+      border: 1px solid var(--navy-900);
+      color: var(--white);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    .btn-open:hover {
+      background: var(--teal-700);
+      border-color: var(--teal-700);
+    }
     .site-footer {
       border-top: 1px solid var(--slate-200);
       padding: 22px 24px;
@@ -375,7 +395,7 @@
     </div>
 
     <section class="lessons-grid">
-      <article class="lesson-card is-soon">
+      <article class="lesson-card">
         <div class="card-visual">
           <img class="card-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="The Story Behind Your Name">
           <div class="card-visual-gradient"></div>
@@ -391,7 +411,7 @@
               <span class="pill">Nice to finally put a face to the name</span>
             </div>
           </div>
-          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
+          <a href="./the-story-behind-your-name/index.html" class="btn-open" id="link-u01-l01">Open Lesson &rarr;</a>
         </div>
       </article>
 
@@ -487,6 +507,11 @@
         backLinks.forEach((a) => {
           a.href = isExplore ? '../../a1-1_workspace.html?mode=explore' : '../../a1-1_workspace.html';
         });
+        const l01 = document.getElementById('link-u01-l01');
+        if (l01) {
+          l01.href = isExplore ? './the-story-behind-your-name/explore.html' : './the-story-behind-your-name/index.html';
+          l01.innerHTML = isExplore ? 'Open Explore &rarr;' : 'Open Lesson &rarr;';
+        }
       }
 
       if (btnExp) btnExp.addEventListener('click', () => applyMode('experience'));
