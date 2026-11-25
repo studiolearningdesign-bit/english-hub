@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A1.1-U01-L02 · Where Are You Really From? | English Hub · L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* === HEADER === */
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 68px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; min-width: 0; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; flex-shrink: 0; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); flex-shrink: 0; }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); white-space: nowrap; }
+    .header-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .header-student-btn, .header-teacher-link {
+      background: none; border: none; font-family: inherit; font-size: 13px; cursor: pointer; padding: 4px 0; transition: color 0.15s;
+    }
+    .header-student-btn { color: var(--slate-200); font-weight: 500; }
+    .header-student-btn:hover { color: var(--white); }
+    .header-teacher-link { color: var(--gold-500); font-weight: 700; }
+    .header-teacher-link:hover { color: var(--gold-400); }
+    .header-teacher-link.is-active { color: var(--teal-300); }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; }
+    .header-back-link:hover { color: var(--white); }
+
+    .page-container { max-width: 1120px; margin: 0 auto; padding: 28px 24px 64px; }
+
+    /* === HERO === */
+    .workspace-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 215px;
+      display: flex;
+      align-items: flex-end;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      background-color: var(--navy-900);
+      background-image:
+        linear-gradient(120deg, rgba(7, 21, 39, 0.92) 0%, rgba(0, 31, 84, 0.80) 55%, rgba(19, 62, 104, 0.68) 100%),
+        url('https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md);
+      color: var(--white);
+    }
+    .hero-content { max-width: 720px; position: relative; z-index: 2; }
+    .hero-title { font-size: clamp(1.75rem, 3.2vw, 2.45rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .hero-title span { color: var(--gold-500); }
+    .hero-subtitle { font-size: 0.98rem; color: var(--slate-200); max-width: 60ch; }
+
+    /* === SEGMENTED NAV === */
+    .module-nav-grid {
+      display: flex; gap: 4px; background: var(--slate-100); border: 1px solid var(--slate-200);
+      padding: 5px; border-radius: var(--radius-md); margin-bottom: 28px; overflow-x: auto; scrollbar-width: thin;
+    }
+    .module-tab {
+      flex: 1 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: transparent; border: 1px solid transparent; border-radius: var(--radius-sm);
+      padding: 10px 14px; font-family: inherit; font-size: 0.85rem; font-weight: 600;
+      color: var(--slate-600); cursor: pointer; transition: all 0.18s ease; white-space: nowrap;
+    }
+    .module-tab:hover { color: var(--navy-900); background: rgba(255, 255, 255, 0.55); }
+    .module-tab .tab-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; font-weight: 700; color: var(--slate-500); }
+    .module-tab.active { background: var(--white); color: var(--navy-900); box-shadow: var(--shadow-sm); border-color: var(--slate-200); font-weight: 700; }
+    .module-tab.active .tab-num { color: var(--teal-700); }
+
+    .module-panel { display: none; }
+    .module-panel.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-card {
+      background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg);
+      padding: 32px; box-shadow: var(--shadow-sm); margin-bottom: 22px;
+    }
+    .section-header { margin-bottom: 22px; }
+    .section-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal-700); margin-bottom: 6px; }
+    .section-title { font-size: 1.45rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; margin-bottom: 6px; }
+    .section-lead { font-size: 0.95rem; color: var(--slate-600); }
+
+    /* === TEACHER NOTE BOX === */
+    .teacher-note-box {
+      display: none; background: var(--gold-100); border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md); margin-bottom: 18px; overflow: hidden;
+    }
+    body.teacher-mode .teacher-note-box { display: block; }
+    .teacher-note-box summary {
+      padding: 12px 16px; font-size: 0.85rem; font-weight: 700; color: var(--navy-900);
+      cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .teacher-note-box summary::-webkit-details-marker { display: none; }
+    .teacher-note-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.71rem; font-weight: 700; text-transform: uppercase;
+      color: var(--gold-600); background: var(--white); border: 1px solid var(--gold-border); padding: 2px 9px; border-radius: var(--radius-full);
+    }
+    .teacher-note-body { padding: 12px 16px 16px; font-size: 0.84rem; color: var(--slate-800); border-top: 1px solid rgba(212, 168, 67, 0.24); }
+    .teacher-meta-line {
+      font-size: 0.82rem; color: var(--navy-900); margin-bottom: 10px; background: var(--white);
+      border: 1px solid rgba(212, 168, 67, 0.28); border-radius: var(--radius-sm); padding: 8px 12px;
+    }
+    .teacher-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+    .teacher-step-item {
+      background: var(--white); border: 1px solid rgba(212, 168, 67, 0.28); border-radius: var(--radius-sm); padding: 10px 12px; line-height: 1.5;
+    }
+    .teacher-step-item strong { display: block; font-size: 0.75rem; font-family: 'IBM Plex Mono', monospace; color: var(--gold-600); margin-bottom: 4px; text-transform: uppercase; }
+
+    /* === BUTTONS & AUDIO === */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit;
+      font-size: 0.86rem; font-weight: 700; padding: 10px 18px; border-radius: var(--radius-sm);
+      border: 1px solid transparent; cursor: pointer; transition: all 0.16s ease; text-decoration: none;
+    }
+    .btn-primary { background: var(--navy-900); color: var(--white); }
+    .btn-primary:hover { background: var(--navy-700); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-800); }
+    .btn-outline { background: var(--white); color: var(--navy-900); border-color: var(--slate-300); }
+    .btn-outline:hover { border-color: var(--navy-900); background: var(--slate-50); }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+
+    .audio-btn {
+      display: inline-flex; align-items: center; gap: 6px; background: var(--teal-50); color: var(--teal-800);
+      border: 1px solid rgba(15, 118, 110, 0.25); border-radius: var(--radius-full); padding: 5px 12px;
+      font-family: inherit; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s;
+    }
+    .audio-btn:hover { background: var(--teal-700); color: var(--white); border-color: var(--teal-700); }
+    .audio-status-note { font-size: 0.78rem; color: var(--slate-500); margin-top: 8px; min-height: 18px; }
+
+    /* === 01 WARM-UP: PHOTO DILEMMA === */
+    .dilemma-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-bottom: 22px; }
+    .dilemma-card {
+      background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-md);
+      overflow: hidden; cursor: pointer; transition: all 0.18s; box-shadow: var(--shadow-sm);
+      text-align: left; font-family: inherit; padding: 0;
+    }
+    .dilemma-card:hover { border-color: var(--teal-700); transform: translateY(-2px); }
+    .dilemma-card.selected { border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+    .dilemma-photo { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .dilemma-body { padding: 16px 18px; }
+    .dilemma-title { font-size: 1.08rem; font-weight: 800; color: var(--navy-900); margin-bottom: 4px; }
+    .dilemma-desc { font-size: 0.88rem; color: var(--slate-600); }
+    .dilemma-reply {
+      background: var(--teal-50); border: 1px solid rgba(15, 118, 110, 0.22); border-radius: var(--radius-sm);
+      padding: 12px 16px; font-size: 0.9rem; font-weight: 700; color: var(--navy-900); margin-bottom: 22px; display: none;
+    }
+    .dilemma-reply.is-visible { display: block; }
+
+    .vibe-strip {
+      background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 20px;
+    }
+    .vibe-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .poll-opt-btn {
+      background: var(--white); border: 1px solid var(--slate-300); border-radius: var(--radius-full);
+      padding: 7px 15px; font-family: inherit; font-size: 0.84rem; font-weight: 600; color: var(--slate-700); cursor: pointer; transition: all 0.15s;
+    }
+    .poll-opt-btn:hover { border-color: var(--teal-700); color: var(--teal-800); }
+    .poll-opt-btn.selected { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+
+    /* === 02 VISUAL PLACE STRIP + FLIP CARDS === */
+    .place-strip {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 24px;
+    }
+    .place-card {
+      background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); overflow: hidden;
+    }
+    .place-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
+    .place-card-body { padding: 12px 14px; }
+    .place-card-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; color: var(--teal-700); text-transform: uppercase; }
+    .place-card-title { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); }
+
+    .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; margin-bottom: 26px; }
+    .flip-card { perspective: 1000px; height: 235px; cursor: pointer; }
+    .flip-card-inner {
+      position: relative; width: 100%; height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1); transform-style: preserve-3d;
+    }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-face {
+      position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      border-radius: var(--radius-md); border: 1px solid var(--slate-200); padding: 18px 20px;
+      display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;
+      text-align: center; background: var(--white); box-shadow: var(--shadow-sm);
+    }
+    .flip-front-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; text-align: left; }
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
+    .flip-back {
+      transform: rotateY(180deg); background: var(--navy-950); color: var(--white);
+      border-color: var(--navy-800); justify-content: center; align-items: center; gap: 12px;
+    }
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; text-transform: lowercase;
+      color: var(--teal-700); background: var(--teal-50); padding: 3px 10px; border-radius: var(--radius-full); flex-shrink: 0; margin-top: 2px;
+    }
+    .flip-word { font-size: 1.55rem; font-weight: 800; color: var(--navy-900); line-height: 1.18; letter-spacing: -0.015em; }
+    .flip-word-chunk { font-size: 1.2rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; }
+    .flip-ipa { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--slate-500); margin-top: 4px; }
+    .flip-example { font-size: 0.9rem; color: var(--slate-700); font-weight: 500; text-align: center; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.4rem; font-weight: 800; color: var(--gold-400); }
+    .flip-back-meaning { font-size: 0.94rem; color: var(--slate-100); max-width: 28ch; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
+
+    .pron-contrast-box, .activity-box {
+      background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 22px; margin-bottom: 22px;
+    }
+    .pron-contrast-box h3, .activity-box h3 { font-size: 1.02rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .pron-pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 14px; }
+    .pron-pair-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .pron-pair-label { font-weight: 700; color: var(--navy-900); font-size: 0.95rem; }
+
+    /* === VOCAB PHOTO MATCH === */
+    .match-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 16px; }
+    .match-card {
+      background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm);
+      padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .match-clue { font-size: 0.9rem; font-weight: 600; color: var(--navy-900); }
+    .select-input, .text-input {
+      border: 1px solid var(--slate-300); border-radius: var(--radius-sm); padding: 8px 12px;
+      font-family: inherit; font-size: 0.88rem; color: var(--navy-900); background: var(--white);
+    }
+    .status-pill { font-size: 0.76rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); display: inline-block; }
+    .status-ok { background: var(--teal-50); color: var(--teal-800); }
+    .status-err { background: var(--danger-50); color: var(--danger-600); }
+
+    /* === 03 SCENE BANNER === */
+    .scene-banner {
+      display: grid; grid-template-columns: 280px 1fr; gap: 22px; align-items: center;
+      background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 24px;
+    }
+    .scene-banner-photo { width: 100%; height: 185px; object-fit: cover; display: block; }
+    .scene-banner-body { padding: 18px 22px 18px 0; }
+    .scene-banner-body h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .scene-banner-body p { font-size: 0.9rem; color: var(--slate-600); }
+
+    /* === 04 READING PROFILES === */
+    .profiles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 22px; }
+    .profile-card {
+      background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md);
+      padding: 20px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .profile-head { display: flex; align-items: center; gap: 14px; }
+    .profile-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; }
+    .profile-name { font-size: 1.05rem; font-weight: 800; color: var(--navy-900); }
+    .profile-meta { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; color: var(--teal-700); }
+    .profile-text { font-size: 0.92rem; color: var(--slate-800); line-height: 1.65; }
+
+    .comp-list { display: grid; gap: 12px; }
+    .comp-item {
+      background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm);
+      padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .comp-q { font-weight: 600; color: var(--navy-900); font-size: 0.94rem; }
+    .comp-btns { display: flex; gap: 8px; align-items: center; }
+
+    /* === 05 GRAMMAR === */
+    .pronoun-4-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 22px; }
+    .pronoun-mini-card {
+      display: flex; align-items: center; gap: 12px; background: var(--slate-50);
+      border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 14px;
+    }
+    .pronoun-mini-photo { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; }
+
+    .grammar-table-wrap { overflow-x: auto; margin-bottom: 24px; border: 1px solid var(--slate-200); border-radius: var(--radius-md); }
+    .grammar-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
+    .grammar-table th { background: var(--navy-900); color: var(--white); padding: 12px 16px; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .grammar-table td { padding: 12px 16px; border-top: 1px solid var(--slate-200); color: var(--slate-800); background: var(--white); }
+    .grammar-table tr:nth-child(even) td { background: var(--slate-50); }
+    .grammar-highlight { font-weight: 700; color: var(--teal-800); }
+
+    .transform-list { display: grid; gap: 12px; margin-top: 14px; }
+    .transform-row {
+      background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm);
+      padding: 14px 16px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: center;
+    }
+    .choice-pair-row {
+      background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm);
+      padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+
+    /* === 06 SPEAKING TRAVELER CARDS === */
+    .traveler-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 22px; }
+    .traveler-card {
+      background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md);
+      overflow: hidden; cursor: pointer; transition: all 0.16s;
+    }
+    .traveler-card:hover { border-color: var(--teal-700); }
+    .traveler-card.selected { background: var(--white); border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+    .traveler-photo { width: 100%; height: 225px; object-fit: cover; object-position: center top; display: block; }
+    .traveler-body { padding: 16px; font-size: 0.9rem; }
+    .traveler-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--teal-700); margin-bottom: 6px; }
+
+    .checklist-box { background: var(--teal-50); border: 1px solid rgba(15, 118, 110, 0.22); border-radius: var(--radius-md); padding: 20px; }
+    .checklist-box h3 { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); margin-bottom: 10px; }
+    .checklist-items { display: grid; gap: 8px; font-size: 0.9rem; color: var(--slate-800); }
+
+    /* === 07 EXIT TICKET === */
+    .exit-textarea {
+      width: 100%; min-height: 120px; border: 1px solid var(--slate-300); border-radius: var(--radius-md);
+      padding: 14px; font-family: inherit; font-size: 0.95rem; color: var(--navy-900); resize: vertical; margin-bottom: 14px;
+    }
+    .exit-textarea:focus { outline: 2px solid var(--teal-500); border-color: var(--teal-700); }
+    .cando-list { display: grid; gap: 10px; margin-top: 18px; }
+    .cando-item {
+      display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: var(--slate-50);
+      border: 1px solid var(--slate-200); border-radius: var(--radius-sm); font-size: 0.9rem; color: var(--slate-800); cursor: pointer;
+    }
+    .cando-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    .module-footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--slate-200); }
+
+    /* === EXECUTIVE SITE FOOTER === */
+    .studio-site-footer {
+      background: var(--navy-950); border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200); padding: 28px 24px; margin-top: 24px;
+    }
+    .footer-inner {
+      max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.84rem;
+    }
+    .footer-brand-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+    .footer-teacher-portal {
+      color: var(--gold-400); font-weight: 700; text-decoration: none; padding: 7px 14px;
+      border-radius: var(--radius-full); border: 1px solid rgba(212, 168, 67, 0.4); transition: all 0.16s;
+    }
+    .footer-teacher-portal:hover { background: rgba(212, 168, 67, 0.14); color: var(--white); }
+
+    /* === PIN MODAL === */
+    .modal-backdrop {
+      display: none; position: fixed; inset: 0; background: rgba(7, 21, 39, 0.65); z-index: 300;
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 26px; width: 100%; max-width: 380px; box-shadow: var(--shadow-md); }
+    .modal-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .modal-card p { font-size: 0.86rem; color: var(--slate-600); margin-bottom: 14px; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+
+    @media (max-width: 780px) {
+      .workspace-hero-banner { padding: 26px 22px; min-height: 180px; }
+      .section-card { padding: 22px 18px; }
+      .dilemma-grid, .place-strip, .scene-banner, .transform-row { grid-template-columns: 1fr; }
+      .scene-banner-body { padding: 0 18px 18px; }
+      .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; A1.1</span>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="header-student-btn" id="studentNameBtn" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-link" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a href="../index.html" class="header-back-link">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="workspace-hero-banner">
+      <div class="hero-content">
+        <h1 class="hero-title">Where Are You <span>Really From?</span></h1>
+        <p class="hero-subtitle">Small-town pride, big-city energy, and the difference between your roots and your home today.</p>
+      </div>
+    </header>
+
+    <nav class="module-nav-grid" role="tablist" aria-label="Lesson Modules">
+      <button type="button" class="module-tab active" data-tab="m1" role="tab" aria-selected="true"><span class="tab-num">01</span> Warm-Up</button>
+      <button type="button" class="module-tab" data-tab="m2" role="tab" aria-selected="false"><span class="tab-num">02</span> Vocabulary</button>
+      <button type="button" class="module-tab" data-tab="m3" role="tab" aria-selected="false"><span class="tab-num">03</span> Everyday Expressions</button>
+      <button type="button" class="module-tab" data-tab="m4" role="tab" aria-selected="false"><span class="tab-num">04</span> Reading</button>
+      <button type="button" class="module-tab" data-tab="m5" role="tab" aria-selected="false"><span class="tab-num">05</span> Grammar</button>
+      <button type="button" class="module-tab" data-tab="m6" role="tab" aria-selected="false"><span class="tab-num">06</span> Speaking</button>
+      <button type="button" class="module-tab" data-tab="m7" role="tab" aria-selected="false"><span class="tab-num">07</span> Exit Ticket</button>
+    </nav>
+
+    <!-- ==================== 01 WARM-UP ==================== -->
+    <section class="module-panel active" id="m1">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">01 &middot; Engage</div>
+          <h2 class="section-title">Small Town vs. Big City</h2>
+          <p class="section-lead">Look at both places. Click the place that feels more like <strong>you</strong>.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 1A: Visual Place Dilemma <span class="teacher-note-badge">Strict [P] &middot; Schema</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Activar el dilema de la lecci&oacute;n (orgullo de pueblo/provincia vs. gran ciudad) de forma visual y personal sin adelantar <em>he/she/we/they</em> ni <em>Are you from...?</em></div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado del docente</strong>Haz clic en tu opci&oacute;n primero: <em>"I'm [Tu Nombre]. For me: Small town! Nice and calm."</em></div>
+              <div class="teacher-step-item"><strong>2. Participaci&oacute;n del alumno</strong>Pide al alumno elegir una de las dos fotograf&iacute;as y reaccionar con palabras simples conocidas (<em>Yes / No / Good / Big / Nice</em>).</div>
+              <div class="teacher-step-item"><strong>3. Control [F]</strong>Evita preguntar <em>"Where do you live?"</em> o usar comparativos (<em>"bigger / warmer"</em>). Mant&eacute;n el intercambio en adjetivos simples.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="dilemma-grid">
+          <button type="button" class="dilemma-card" onclick="pickPlaceDilemma(this, 'Small Town: calm streets, friendly faces, and strong roots!')">
+            <img class="dilemma-photo" src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=800&q=80" alt="Colorful quiet small town street">
+            <div class="dilemma-body">
+              <div class="dilemma-title">Small Town</div>
+              <div class="dilemma-desc">Calm streets, local plazas, and familiar faces.</div>
+            </div>
+          </button>
+
+          <button type="button" class="dilemma-card" onclick="pickPlaceDilemma(this, 'Big City: bright lights, fast energy, and new people!')">
+            <img class="dilemma-photo" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80" alt="Big city skyline">
+            <div class="dilemma-body">
+              <div class="dilemma-title">Big City</div>
+              <div class="dilemma-desc">Tall buildings, busy streets, and nonstop energy.</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="dilemma-reply" id="dilemmaReply"></div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 1B: Quick Vibe Check (Personal [P]) <span class="teacher-note-badge">Recycled L01 [P]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Recuperar <em>I'm / I'm not</em> de L01 en un contexto nuevo antes de introducir el vocabulario de lugares en el M&oacute;dulo 02.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado</strong>Se&ntilde;ala una palabra: <em>"I'm a big-city person!"</em> o <em>"I'm not a big-city person!"</em></div>
+              <div class="teacher-step-item"><strong>2. Activaci&oacute;n oral</strong>Pide al alumno elegir 2 palabras que describan su lugar ideal y decir una frase corta con <em>My place is...</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="vibe-strip">
+          <div style="font-weight: 800; color: var(--navy-900);">Your Place: Pick 2 words</div>
+          <div class="vibe-pills">
+            <button type="button" class="poll-opt-btn" onclick="this.classList.toggle('selected')">Big</button>
+            <button type="button" class="poll-opt-btn" onclick="this.classList.toggle('selected')">Small</button>
+            <button type="button" class="poll-opt-btn" onclick="this.classList.toggle('selected')">Nice</button>
+            <button type="button" class="poll-opt-btn" onclick="this.classList.toggle('selected')">Good</button>
+            <button type="button" class="poll-opt-btn" onclick="this.classList.toggle('selected')">Old</button>
+            <button type="button" class="poll-opt-btn" onclick="this.classList.toggle('selected')">New</button>
+          </div>
+          <div class="audio-status-note" id="audioStatusGlobal"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m2')">Next: Vocabulary &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02 VOCABULARY ==================== -->
+    <section class="module-panel" id="m2">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">02 &middot; Build</div>
+          <h2 class="section-title">Places &amp; Roots Vocabulary</h2>
+          <p class="section-lead">Look at the three levels (Country &rarr; City &rarr; Neighborhood), then flip each card to check the meaning.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2A: Visual Scale &amp; 9 Flip Cards <span class="teacher-note-badge">MFP Sequence</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Distinguir claramente la escala geogr&aacute;fica (<em>country &rarr; city / hometown &rarr; neighborhood</em>) y 5 adjetivos esenciales para describir lugares (<em>quiet, warm, friendly, busy, modern</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Anclaje visual</strong>Se&ntilde;ala las 3 fotos superiores: <em>"Mexico = country. M&eacute;rida = city. Centro = neighborhood."</em></div>
+              <div class="teacher-step-item"><strong>2. Interferencia L1 (Pronunciaci&oacute;n)</strong>Atenci&oacute;n a <em>quiet</em> (/ˈkwaɪət/, dos s&iacute;labas), <em>neighborhood</em> (<em>gh</em> muda) y <em>busy</em> (/ˈbɪzi/, se pronuncia "bizi", no "busi").</div>
+              <div class="teacher-step-item"><strong>3. Diferencia clave</strong>Aclara que <em>hometown</em> = lugar de origen (donde creciste), mientras que <em>home</em> = ciudad donde vives ahora. Contrasta <em>quiet vs. busy</em>.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="place-strip">
+          <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=600&q=80" alt="Country view">
+            <div class="place-card-body">
+              <div class="place-card-kicker">Level 1 &middot; Country</div>
+              <div class="place-card-title">Mexico / Colombia / Canada</div>
+            </div>
+          </div>
+          <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1585464231875-d9ef1f5ad396?auto=format&fit=crop&w=600&q=80" alt="City view">
+            <div class="place-card-body">
+              <div class="place-card-kicker">Level 2 &middot; City / Hometown</div>
+              <div class="place-card-title">Puebla / Le&oacute;n / M&eacute;rida</div>
+            </div>
+          </div>
+          <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Neighborhood street">
+            <div class="place-card-body">
+              <div class="place-card-kicker">Level 3 &middot; Neighborhood</div>
+              <div class="place-card-title">Local area &amp; streets</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-grid">
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">hometown</div>
+                    <div class="flip-ipa">/ˈhoʊmtaʊn/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"My hometown is Puebla."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-hometown.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-hometown-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">hometown</div>
+                <div class="flip-back-meaning">The town or city where you are from.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">city</div>
+                    <div class="flip-ipa">/ˈsɪti/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"My city is big."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-city.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-city-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">city</div>
+                <div class="flip-back-meaning">A large place with many people and streets.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">country</div>
+                    <div class="flip-ipa">/ˈkʌntri/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"My country is Mexico."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-country.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-country-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">country</div>
+                <div class="flip-back-meaning">A nation like Mexico, Colombia, or Canada.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">neighborhood</div>
+                    <div class="flip-ipa">/ˈneɪbərhʊd/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"My neighborhood is nice."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-neighborhood.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-neighborhood-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">neighborhood</div>
+                <div class="flip-back-meaning">The small local area around your home.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">quiet</div>
+                    <div class="flip-ipa">/ˈkwaɪət/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
+                </div>
+                <div class="flip-example">"My hometown is quiet."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-quiet.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-quiet-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">quiet</div>
+                <div class="flip-back-meaning">Calm, with very little noise.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">warm</div>
+                    <div class="flip-ipa">/wɔːrm/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
+                </div>
+                <div class="flip-example">"My hometown is warm."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-warm.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-warm-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">warm</div>
+                <div class="flip-back-meaning">Kind and friendly (or pleasant heat).</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">friendly</div>
+                    <div class="flip-ipa">/ˈfrendli/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
+                </div>
+                <div class="flip-example">"My neighborhood is friendly."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-friendly.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-friendly-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">friendly</div>
+                <div class="flip-back-meaning">Nice, kind, and welcoming to people.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">busy</div>
+                    <div class="flip-ipa">/ˈbɪzi/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
+                </div>
+                <div class="flip-example">"Mexico City is busy."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-busy.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-busy-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">busy</div>
+                <div class="flip-back-meaning">Full of people, cars, and activity (not quiet).</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">modern</div>
+                    <div class="flip-ipa">/ˈmɑːdərn/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
+                </div>
+                <div class="flip-example">"Toronto is modern."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-modern.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-modern-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">modern</div>
+                <div class="flip-back-meaning">New in style, with new buildings and design.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2B: Sound Focus (from vs. in / he's vs. she's) <span class="teacher-note-badge">Phonology Drill</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Distinguir auditivamente <em>from</em> (origen) frente a <em>in</em> (residencia) y /h/ aspirada en <em>he's</em> frente a /ʃ/ en <em>she's</em>.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Contraste de sentido</strong>Se&ntilde;ala hacia atr&aacute;s (pasado/ra&iacute;ces) al decir <em>from Puebla</em> y hacia el piso (ahora) al decir <em>in Le&oacute;n</em>.</div>
+              <div class="teacher-step-item"><strong>2. Contraste /h/ vs. /ʃ/</strong>Modela <em>He's</em> (aire suave) vs. <em>She's</em> (sonido de silencio "shhh"). Pide al alumno identificar cu&aacute;l dices.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="pron-contrast-box">
+          <h3>Sound Focus: Origin vs. Home &amp; He's vs. She's</h3>
+          <p class="section-lead">Listen carefully to the difference in sound and meaning.</p>
+          <div class="pron-pairs">
+            <div class="pron-pair-card">
+              <div class="pron-pair-label">from Puebla &nbsp;vs.&nbsp; in Le&oacute;n</div>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/pron-from-in.mp3', this)">&#9654; Listen &amp; Compare</button>
+            </div>
+            <div class="pron-pair-card">
+              <div class="pron-pair-label">He's &nbsp;vs.&nbsp; She's</div>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/pron-hes-shes.mp3', this)">&#9654; Listen &amp; Compare</button>
+            </div>
+          </div>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2C: Visual Context Match <span class="teacher-note-badge">Meaning Check &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Comprobar comprensi&oacute;n de significado en contexto (din&aacute;mica distinta a Unscramble de L01).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Verificaci&oacute;n oral</strong>Tras comprobar las respuestas, pide al alumno decir un ejemplo propio para <em>country</em> y <em>hometown</em>.</div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. country &middot; 2. hometown &middot; 3. neighborhood &middot; 4. quiet &middot; 5. busy &middot; 6. modern.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="activity-box">
+          <h3>Vocabulary Activity: Match the Clue to the Word</h3>
+          <p class="section-lead">Choose the best word for each real-life clue.</p>
+          <div class="match-grid" id="vocabMatchGrid"></div>
+          <div style="margin-top: 14px;">
+            <button type="button" class="btn btn-teal btn-sm" onclick="checkVocabMatch()">Check Answers</button>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m1')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m3')">Next: Everyday Expressions &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03 EVERYDAY EXPRESSIONS ==================== -->
+    <section class="module-panel" id="m3">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">03 &middot; Notice</div>
+          <h2 class="section-title">Everyday Expressions</h2>
+          <p class="section-lead">Learn each phrase as one complete block. Click a card to see when to use it.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 3A: Pragmatic Chunks for Roots &amp; Surprise <span class="teacher-note-badge">Whole-Block Drilling</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Ense&ntilde;ar 4 bloques naturales para hablar de origen y reaccionar con sorpresa, sin analizar pasivos (<em>born and raised</em>) ni elipsis.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado expresivo</strong>Exagera ligeramente la entonaci&oacute;n de sorpresa en <em>"Small world!"</em> y <em>"No way!"</em> para que el alumno copie el tono real, no plano.</div>
+              <div class="teacher-step-item"><strong>2. Intercambio r&aacute;pido</strong>Di tu origen como expresi&oacute;n fija (<em>"Born and raised in [Ciudad]! What about you?"</em> — sin usar <em>I'm born</em> ni pasado) y motiva al alumno a responder con <em>What about you?</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="scene-banner">
+          <img class="scene-banner-photo" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="People smiling and discovering they are from the same place">
+          <div class="scene-banner-body">
+            <h3>When You Discover Shared Roots</h3>
+            <p>Sometimes you meet someone far from home&mdash;and they are from your same city! Use these 4 expressions to sound warm and natural.</p>
+          </div>
+        </div>
+
+        <div class="flip-grid">
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">Born and raised in...</div>
+                  </div>
+                  <span class="flip-pos">origin</span>
+                </div>
+                <div class="flip-example">"Born and raised in Celaya!"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-born-raised.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">Born and raised in...</div>
+                <div class="flip-back-meaning">You are from that place from day one.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">Small world!</div>
+                  </div>
+                  <span class="flip-pos">surprise</span>
+                </div>
+                <div class="flip-example">"You're from Le&oacute;n too? Small world!"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-small-world.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">Small world!</div>
+                <div class="flip-back-meaning">A happy surprise when you share a place or friend.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">No way!</div>
+                  </div>
+                  <span class="flip-pos">reaction</span>
+                </div>
+                <div class="flip-example">"You're from Canada? No way!"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-no-way.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">No way!</div>
+                <div class="flip-back-meaning">"Really?!" &mdash; friendly surprise.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">What about you?</div>
+                  </div>
+                  <span class="flip-pos">question</span>
+                </div>
+                <div class="flip-example">"I'm from Colombia. What about you?"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-what-about-you.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">What about you?</div>
+                <div class="flip-back-meaning">Ask the same question back to your partner.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m2')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m4')">Next: Reading &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 READING ==================== -->
+    <section class="module-panel" id="m4">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">04 &middot; Notice in Context</div>
+          <h2 class="section-title">Three Profiles: Hometown vs. Home Today</h2>
+          <p class="section-lead">Read the three profiles silently first. Then listen to check pronunciation and answer the questions.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 4A: Silent Reading &amp; Optional Post-Read Audio <span class="teacher-note-badge">Inductive Notice</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Contrastar <em>from</em> (origen) y <em>home is in</em> (residencia) en perfiles reales e introducir inductivamente <em>he's, she's, we're, they're</em> antes del M&oacute;dulo 05.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Lectura silenciosa primero</strong>Da 60–90 segundos para leer en silencio. No reproduzcas el audio hasta despu&eacute;s de leer.</div>
+              <div class="teacher-step-item"><strong>2. Escucha opcional post-lectura</strong>Usa los botones <em>Listen (after reading)</em> para modelar ritmo y acento en nombres de ciudades (<em>Ce-LA-ya, M&Eacute;-ri-da, Me-de-LL&Iacute;N</em>).</div>
+              <div class="teacher-step-item"><strong>3. Puente a Gram&aacute;tica</strong>Se&ntilde;ala en los perfiles: <em>"Diego &rarr; He's from Celaya. Camila &rarr; She's Colombian. Lucas &amp; Elena &rarr; They're from Canada."</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="profiles-grid">
+          <article class="profile-card">
+            <div class="profile-head">
+              <img class="profile-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&crop=faces,top&w=240&h=240&q=80" alt="Diego">
+              <div>
+                <div class="profile-name">Diego</div>
+                <div class="profile-meta">Celaya &rarr; Mexico City</div>
+              </div>
+            </div>
+            <p class="profile-text">"Hello! I'm Diego. Born and raised in Celaya! Celaya is small, warm, and friendly. Now, my home is in Mexico City. It's big and busy, not quiet!"</p>
+            <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/read-diego.mp3', this)">&#9654; Listen (after reading)</button>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-head">
+              <img class="profile-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces,top&w=240&h=240&q=80" alt="Camila">
+              <div>
+                <div class="profile-name">Camila</div>
+                <div class="profile-meta">Medell&iacute;n, Colombia</div>
+              </div>
+            </div>
+            <p class="profile-text">"Hi! I'm Camila. I'm Colombian&mdash;born and raised in Medell&iacute;n! My neighborhood is warm and friendly. My friend in Toronto is from Medell&iacute;n too&mdash;small world! What about you?"</p>
+            <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/read-camila.mp3', this)">&#9654; Listen (after reading)</button>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-head">
+              <img class="profile-avatar" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&crop=faces,top&w=240&h=240&q=80" alt="Lucas and Elena">
+              <div>
+                <div class="profile-name">Lucas &amp; Elena</div>
+                <div class="profile-meta">Toronto &rarr; M&eacute;rida</div>
+              </div>
+            </div>
+            <p class="profile-text">"Hi! We're Lucas and Elena. We're Canadian&mdash;born and raised in Toronto! Toronto is big and modern. Now, we're in M&eacute;rida. It's warm and quiet!"</p>
+            <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/read-lucas-elena.mp3', this)">&#9654; Listen (after reading)</button>
+          </article>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 4B: Profile Comprehension Check <span class="teacher-note-badge">Origin vs. Home &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Verificar que el alumno no confunde <em>origen (from)</em> con <em>residencia actual (home is in)</em>.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Si hay error en #1</strong>Regresa al perfil de Diego y contrasta las dos frases: <em>"born and raised in Celaya"</em> vs. <em>"my home is in Mexico City"</em>.</div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. No (Celaya) &middot; 2. Yes &middot; 3. No (Canadian / Toronto) &middot; 4. Yes (M&eacute;rida).</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="comp-list" id="readingCompList"></div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m3')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m5')">Next: Grammar &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 GRAMMAR ==================== -->
+    <section class="module-panel" id="m5">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">05 &middot; Understand &amp; Practice</div>
+          <h2 class="section-title">He, She, We, They + To Be &amp; Yes/No Questions</h2>
+          <p class="section-lead">Use <strong>is</strong> with <strong>he / she</strong>, and <strong>are</strong> with <strong>we / they / you</strong>. Put <strong>Are / Is</strong> first to ask a Yes/No question.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5A: Guided Discovery (He/She/We/They + Yes/No) <span class="teacher-note-badge">Strict Scope [N]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>L&iacute;mite estricto [F]:</strong> Prohibido <em>Where do you come from?</em>, <em>Where do you live?</em>, o posesivos <em>his/her/their</em>. Ense&ntilde;a <em>Where are you from?</em> como marco fijo de origen.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Anclaje con retratos</strong>Se&ntilde;ala cada tarjeta visual: <em>Diego &rarr; He is (He's). Camila &rarr; She is (She's). You + I &rarr; We are (We're). Lucas &amp; Elena &rarr; They are (They're).</em></div>
+              <div class="teacher-step-item"><strong>2. Interferencia L1</strong>Anticipa dos errores: 1) usar <em>is</em> con plural (<em>"They is from Canada"</em>), 2) olvidar invertir en pregunta (<em>"You are from Le&oacute;n?"</em> &rarr; <em>"Are you from Le&oacute;n?"</em>).</div>
+              <div class="teacher-step-item"><strong>3. Respuestas cortas</strong>Destaca que en afirmativo corto <strong>no</strong> se contrae: <em>"Yes, he is"</em> (nunca <em>"Yes, he's"</em>). En negativo s&iacute;: <em>"No, he isn't."</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="pronoun-4-grid">
+          <div class="pronoun-mini-card">
+            <img class="pronoun-mini-photo" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&crop=faces,top&w=180&h=180&q=80" alt="He">
+            <div><strong style="color:var(--navy-900);">He is / He's</strong><div style="font-size:0.82rem; color:var(--slate-600);">He's from Celaya.</div></div>
+          </div>
+          <div class="pronoun-mini-card">
+            <img class="pronoun-mini-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces,top&w=180&h=180&q=80" alt="She">
+            <div><strong style="color:var(--navy-900);">She is / She's</strong><div style="font-size:0.82rem; color:var(--slate-600);">She's from Colombia.</div></div>
+          </div>
+          <div class="pronoun-mini-card">
+            <img class="pronoun-mini-photo" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&crop=faces,top&w=180&h=180&q=80" alt="We">
+            <div><strong style="color:var(--navy-900);">We are / We're</strong><div style="font-size:0.82rem; color:var(--slate-600);">We're from Mexico.</div></div>
+          </div>
+          <div class="pronoun-mini-card">
+            <img class="pronoun-mini-photo" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&crop=faces,top&w=180&h=180&q=80" alt="They">
+            <div><strong style="color:var(--navy-900);">They are / They're</strong><div style="font-size:0.82rem; color:var(--slate-600);">They're Canadian.</div></div>
+          </div>
+        </div>
+
+        <div class="grammar-table-wrap">
+          <table class="grammar-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>He / She</th>
+                <th>We / They / You</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Affirmative (+)</strong></td>
+                <td><span class="grammar-highlight">He is / He's</span> from Celaya.<br><span class="grammar-highlight">She is / She's</span> Colombian.</td>
+                <td><span class="grammar-highlight">We are / We're</span> from Puebla.<br><span class="grammar-highlight">They are / They're</span> Canadian.</td>
+              </tr>
+              <tr>
+                <td><strong>Negative (&minus;)</strong></td>
+                <td><span class="grammar-highlight">He isn't</span> from Canada.<br><span class="grammar-highlight">She isn't</span> from Le&oacute;n.</td>
+                <td><span class="grammar-highlight">We aren't</span> from Toronto.<br><span class="grammar-highlight">They aren't</span> Mexican.</td>
+              </tr>
+              <tr>
+                <td><strong>Yes/No Question (?)</strong></td>
+                <td><span class="grammar-highlight">Is he</span> from Celaya?<br>Yes, he is. / No, he isn't.<br><span class="grammar-highlight">Is she</span> Colombian?<br>Yes, she is. / No, she isn't.</td>
+                <td><span class="grammar-highlight">Are you</span> from Mexico?<br>Yes, I am. / No, I'm not.<br><span class="grammar-highlight">Are they</span> from Canada?<br>Yes, they are. / No, they aren't.</td>
+              </tr>
+              <tr>
+                <td><strong>Origin Frame</strong></td>
+                <td colspan="2"><span class="grammar-highlight">Where are you from?</span> &rarr; I'm from Puebla. My home is in Le&oacute;n.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5B: Transform (+ &harr; &minus; &harr; ?) <span class="teacher-note-badge">Form Manipulation &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Practicar transformaci&oacute;n activa entre afirmativo, negativo e interrogativo (mec&aacute;nica distinta a Error Clinic de L01).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado</strong>Haz el #1 oralmente primero: <em>"He is from Puebla. Negative: He isn't from Puebla."</em></div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. He isn't / He is not from Puebla. &middot; 2. Is she from Colombia? &middot; 3. They aren't / They are not Mexican. &middot; 4. Are you from Le&oacute;n?</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="activity-box">
+          <h3>Grammar in Context A: Transform the Sentence</h3>
+          <p class="section-lead">Change each sentence to Negative (&minus;) or Yes/No Question (?).</p>
+          <div class="transform-list" id="transformList"></div>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5C: Natural vs. Broken Choice <span class="teacher-note-badge">Accuracy Check &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Afianzar concordancia <em>is/are</em> y respuestas cortas sin contracci&oacute;n afirmativa.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Por qu&eacute; funciona</strong>Al terminar cada &iacute;tem, pregunta <em>"Why?"</em> para confirmar que el alumno entiende el sujeto (<em>they &rarr; are</em>, <em>she &rarr; is</em>).</div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. Are you from M&eacute;rida? &middot; 2. Yes, she is. &middot; 3. They're from Canada. &middot; 4. We aren't from Toronto.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="activity-box">
+          <h3>Grammar in Context B: Natural vs. Broken</h3>
+          <p class="section-lead">Click the natural, correct sentence in each pair.</p>
+          <div class="transform-list" id="naturalChoiceList"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m4')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m6')">Next: Speaking &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06 SPEAKING ==================== -->
+    <section class="module-panel" id="m6">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">06 &middot; Communicate</div>
+          <h2 class="section-title">City Mixer: Who Am I? (Origin Guessing Game)</h2>
+          <p class="section-lead">Pick one traveler secretly. Your partner asks Yes/No questions (<em>Is he/she from...?</em>) to guess the right person!</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 6A: Information-Gap Guessing Game <span class="teacher-note-badge">Performance Task</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Evaluar producci&oacute;n oral real de <em>Is he/she from...? / Are they from...? / Yes, he is / No, she isn't</em> con vac&iacute;o de informaci&oacute;n aut&eacute;ntico (distinto al Roleplay de L01).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Ronda 1 (Docente pregunta)</strong>El alumno elige una tarjeta en secreto. T&uacute; preguntas: <em>"Is she from Colombia?"</em> / <em>"Are they from Canada?"</em> El alumno responde solo con <em>Yes, she is / No, he isn't</em>.</div>
+              <div class="teacher-step-item"><strong>2. Ronda 2 (Alumno pregunta)</strong>Inviertan roles: t&uacute; eliges tarjeta en secreto y el alumno debe formular al menos 2 preguntas con <em>Is he/she...?</em> o <em>Are they...?</em></div>
+              <div class="teacher-step-item"><strong>3. Cierre personal</strong>Cierra con 1 pregunta real: <em>"Where are you really from? Is your home in the same city?"</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="traveler-grid">
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Andres">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 1 &middot; HE</div>
+              <div><strong>Name:</strong> Andr&eacute;s</div>
+              <div><strong>From:</strong> Puebla, Mexico</div>
+              <div><strong>Home:</strong> Le&oacute;n</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Daniel">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 2 &middot; HE</div>
+              <div><strong>Name:</strong> Daniel</div>
+              <div><strong>From:</strong> Toronto, Canada</div>
+              <div><strong>Home:</strong> Puebla</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Tomas">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 3 &middot; HE</div>
+              <div><strong>Name:</strong> Tom&aacute;s</div>
+              <div><strong>From:</strong> Bogot&aacute;, Colombia</div>
+              <div><strong>Home:</strong> M&eacute;rida</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Valeria">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 4 &middot; SHE</div>
+              <div><strong>Name:</strong> Valeria</div>
+              <div><strong>From:</strong> Bogot&aacute;, Colombia</div>
+              <div><strong>Home:</strong> M&eacute;rida</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Renata">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 5 &middot; SHE</div>
+              <div><strong>Name:</strong> Renata</div>
+              <div><strong>From:</strong> Celaya, Mexico</div>
+              <div><strong>Home:</strong> Toronto</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Hannah">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 6 &middot; SHE</div>
+              <div><strong>Name:</strong> Hannah</div>
+              <div><strong>From:</strong> Montreal, Canada</div>
+              <div><strong>Home:</strong> Le&oacute;n</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Sofia and Leo">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 7 &middot; THEY</div>
+              <div><strong>Names:</strong> Sofia &amp; Leo</div>
+              <div><strong>From:</strong> Celaya, Mexico</div>
+              <div><strong>Home:</strong> Toronto</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Marco and Ana">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 8 &middot; THEY</div>
+              <div><strong>Names:</strong> Marco &amp; Ana</div>
+              <div><strong>From:</strong> Medell&iacute;n, Colombia</div>
+              <div><strong>Home:</strong> Puebla</div>
+            </div>
+          </div>
+
+          <div class="traveler-card" onclick="selectTraveler(this)">
+            <img class="traveler-photo" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Liam and Chloe">
+            <div class="traveler-body">
+              <div class="traveler-tag">TRAVELER 9 &middot; THEY</div>
+              <div><strong>Names:</strong> Liam &amp; Chloe</div>
+              <div><strong>From:</strong> Toronto, Canada</div>
+              <div><strong>Home:</strong> M&eacute;rida</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-box">
+          <h3>Speaking Checklist</h3>
+          <div class="checklist-items">
+            <div>1. Ask at least 2 Yes/No questions with <em>Is he/she from...?</em> or <em>Are they from...?</em></div>
+            <div>2. Answer accurately with <em>Yes, he/she is</em> or <em>No, he/she isn't</em> (or <em>they are / aren't</em>).</div>
+            <div>3. Say where you are from and where your home is today.</div>
+            <div>4. Use at least one Everyday Expression (<em>Born and raised in...</em> / <em>Small world!</em> / <em>No way!</em> / <em>What about you?</em>).</div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m5')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m7')">Next: Exit Ticket &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07 EXIT TICKET ==================== -->
+    <section class="module-panel" id="m7">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">07 &middot; Reflect</div>
+          <h2 class="section-title">Exit Ticket</h2>
+          <p class="section-lead">Write 3 or 4 short sentences: where you are from, where your home is today, and where one friend or family member is from (using <strong>He's</strong> or <strong>She's</strong>).</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 7A: Written Evidence &amp; Advancement <span class="teacher-note-badge">Understanding Before Advancement</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Comprobar producci&oacute;n aut&oacute;noma (espacio en blanco) diferenciando origen (<em>from</em>) y residencia (<em>home is in</em>) e incluyendo tercera persona (<em>He's / She's</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Qu&eacute; observar</strong>Uso correcto de may&uacute;sculas en ciudades, pa&iacute;ses y nacionalidades (<em>Mexico, Mexican</em>) + ausencia de <em>I live</em> o <em>come from</em>.</div>
+              <div class="teacher-step-item"><strong>2. Decisi&oacute;n de avance</strong>Con E2/E3 asigna <em>Explore</em> y avanza a L03 (<em>The Job vs. The Human</em>). Con E0/E1 refuerza <em>is/are</em> en <em>Explore</em> Part 02.</div>
+            </div>
+          </div>
+        </details>
+
+        <textarea class="exit-textarea" id="exitTicketInput" aria-label="Exit Ticket response"></textarea>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-teal" onclick="saveExitTicket()">Save My Exit Ticket</button>
+          <span id="exitTicketStatus" class="audio-status-note" style="margin: 0;"></span>
+        </div>
+
+        <div class="cando-list">
+          <label class="cando-item"><input type="checkbox"> <span>I can say where I am from (<strong>I'm from...</strong>) and where my home is (<strong>My home is in...</strong>).</span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can use <strong>he's, she's, we're, they're</strong> and negative forms (<strong>isn't / aren't</strong>).</span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can ask and answer Yes/No questions (<strong>Are you from...? / Is he from...?</strong>).</span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can use <strong>Born and raised in...</strong>, <strong>Small world!</strong>, and <strong>What about you?</strong></span></label>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m6')">&larr; Previous</button>
+          <a href="./explore.html" class="btn btn-primary">Go to Explore (Workbook) &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; Where Are You Really From? (A1.1)</div>
+      </div>
+      <a href="../../../teacher-hub/A1.1/where-are-you-really-from/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <!-- PIN MODAL -->
+  <div class="modal-backdrop" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
+    <div class="modal-card">
+      <h3 id="pinModalTitle">Teacher's Version</h3>
+      <p>Enter your authorized faculty PIN to unlock step-by-step didactic sequences and answer keys.</p>
+      <input type="password" id="pinInput" class="text-input" style="width: 100%;" placeholder="Faculty PIN" onkeydown="if(event.key==='Enter')submitPin()">
+      <div class="audio-status-note" id="pinError" style="color: var(--danger-600);"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline btn-sm" onclick="closeTeacherModal()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="submitPin()">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadStudentName() {
+      let name = '';
+      try {
+        name = localStorage.getItem('ld_student_name') || '';
+        if (!name) {
+          const raw = localStorage.getItem('ld-english-hub');
+          if (raw) name = (JSON.parse(raw).studentName || '');
+        }
+      } catch (_) {}
+      const btn = document.getElementById('studentNameBtn');
+      if (btn) btn.textContent = 'Student · ' + (name.trim() || 'Guest');
+    }
+
+    function editStudentName() {
+      const current = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', current);
+      if (next === null) return;
+      const clean = next.trim();
+      try {
+        localStorage.setItem('ld_student_name', clean);
+        const raw = localStorage.getItem('ld-english-hub');
+        const data = raw ? JSON.parse(raw) : {};
+        data.studentName = clean;
+        localStorage.setItem('ld-english-hub', JSON.stringify(data));
+      } catch (_) {}
+      loadStudentName();
+    }
+
+    const VALID_PINS = ['2064', '0410'];
+    function setTeacherMode(active) {
+      document.body.classList.toggle('teacher-mode', active);
+      const btn = document.getElementById('teacherToggleBtn');
+      if (btn) {
+        btn.classList.toggle('is-active', active);
+        btn.textContent = active ? "Teacher's Version (On) ×" : "Teacher's Version ↗";
+      }
+    }
+    function openTeacherModal() {
+      if (document.body.classList.contains('teacher-mode')) {
+        try { sessionStorage.removeItem('ld-coordinator-auth'); } catch (_) {}
+        setTeacherMode(false);
+        return;
+      }
+      document.getElementById('pinError').textContent = '';
+      document.getElementById('pinInput').value = '';
+      document.getElementById('pinModal').classList.add('is-open');
+      setTimeout(() => document.getElementById('pinInput').focus(), 50);
+    }
+    function closeTeacherModal() { document.getElementById('pinModal').classList.remove('is-open'); }
+    function submitPin() {
+      const val = document.getElementById('pinInput').value.trim();
+      if (VALID_PINS.includes(val)) {
+        try { sessionStorage.setItem('ld-coordinator-auth', 'granted'); } catch (_) {}
+        setTeacherMode(true);
+        closeTeacherModal();
+      } else {
+        document.getElementById('pinError').textContent = 'Incorrect PIN. Please try again.';
+      }
+    }
+
+    const tabs = document.querySelectorAll('.module-tab');
+    const panels = document.querySelectorAll('.module-panel');
+    function goToTab(tabId) {
+      tabs.forEach(t => {
+        const match = t.dataset.tab === tabId;
+        t.classList.toggle('active', match);
+        t.setAttribute('aria-selected', match ? 'true' : 'false');
+      });
+      panels.forEach(p => p.classList.toggle('active', p.id === tabId));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    tabs.forEach(t => t.addEventListener('click', () => goToTab(t.dataset.tab)));
+
+    let currentAudio = null;
+    function playLessonAudio(src, btn) {
+      const statusEl = document.getElementById('audioStatusGlobal');
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+      const audio = new Audio(src);
+      currentAudio = audio;
+      const orig = btn.innerHTML;
+      btn.innerHTML = '&#9632; Playing...';
+      audio.play().then(() => {
+        if (statusEl) statusEl.textContent = '';
+      }).catch(() => {
+        btn.innerHTML = orig;
+        const fileName = src.split('/').pop();
+        if (statusEl) statusEl.textContent = 'Studio audio file queued: ' + fileName;
+      });
+      audio.onended = () => { btn.innerHTML = orig; };
+    }
+
+    function pickPlaceDilemma(card, msg) {
+      document.querySelectorAll('.dilemma-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      const reply = document.getElementById('dilemmaReply');
+      reply.textContent = msg;
+      reply.classList.add('is-visible');
+    }
+
+    const vocabMatchItems = [
+      { clue: '1. Mexico, Colombia, and Canada are each a...', ans: 'country' },
+      { clue: '2. The town or city where you are from:', ans: 'hometown' },
+      { clue: '3. The small local area right around your home:', ans: 'neighborhood' },
+      { clue: '4. Calm, with very little noise:', ans: 'quiet' },
+      { clue: '5. Full of people, cars, and activity (not quiet):', ans: 'busy' },
+      { clue: '6. New in style, with new buildings and design:', ans: 'modern' }
+    ];
+    const vocabWords = ['hometown', 'city', 'country', 'neighborhood', 'quiet', 'warm', 'friendly', 'busy', 'modern'];
+    function renderVocabMatch() {
+      const grid = document.getElementById('vocabMatchGrid');
+      const opts = vocabWords.map(w => `<option value="${w}">${w}</option>`).join('');
+      vocabMatchItems.forEach((item, i) => {
+        grid.innerHTML += `
+          <div class="match-card">
+            <div class="match-clue">${item.clue}</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <select class="select-input" id="vm-${i}"><option value="">Choose...</option>${opts}</select>
+              <span id="vm-st-${i}"></span>
+            </div>
+          </div>`;
+      });
+    }
+    function checkVocabMatch() {
+      vocabMatchItems.forEach((item, i) => {
+        const val = document.getElementById('vm-' + i).value;
+        const st = document.getElementById('vm-st-' + i);
+        st.className = 'status-pill ' + (val === item.ans ? 'status-ok' : 'status-err');
+        st.textContent = val === item.ans ? 'Correct' : 'Try again';
+      });
+    }
+
+    const readingComp = [
+      { q: '1. Is Diego originally from Mexico City?', ans: 'No' },
+      { q: '2. Is Camila from Colombia?', ans: 'Yes' },
+      { q: '3. Are Lucas and Elena Mexican?', ans: 'No' },
+      { q: '4. Are Lucas and Elena in Mérida now?', ans: 'Yes' }
+    ];
+    function renderReadingComp() {
+      const list = document.getElementById('readingCompList');
+      readingComp.forEach((item, idx) => {
+        list.innerHTML += `
+          <div class="comp-item">
+            <div class="comp-q">${item.q}</div>
+            <div class="comp-btns">
+              <button type="button" class="poll-opt-btn" onclick="checkReadComp(${idx}, 'Yes', this)">Yes</button>
+              <button type="button" class="poll-opt-btn" onclick="checkReadComp(${idx}, 'No', this)">No</button>
+              <span id="rc-st-${idx}"></span>
+            </div>
+          </div>`;
+      });
+    }
+    function checkReadComp(idx, choice, btn) {
+      const row = btn.closest('.comp-btns');
+      row.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const st = document.getElementById('rc-st-' + idx);
+      st.className = 'status-pill ' + (choice === readingComp[idx].ans ? 'status-ok' : 'status-err');
+      st.textContent = choice === readingComp[idx].ans ? 'Correct' : 'Read again';
+    }
+
+    const transformItems = [
+      { prompt: '1. He is from Puebla. (&rarr; Negative)', answers: ["he isn't from puebla.", "he is not from puebla.", "he's not from puebla."] },
+      { prompt: '2. She is from Colombia. (&rarr; Yes/No ?)', answers: ["is she from colombia?"] },
+      { prompt: '3. They are Mexican. (&rarr; Negative)', answers: ["they aren't mexican.", "they are not mexican.", "they're not mexican."] },
+      { prompt: '4. You are from León. (&rarr; Yes/No ?)', answers: ["are you from león?", "are you from leon?"] }
+    ];
+    function renderTransforms() {
+      const list = document.getElementById('transformList');
+      transformItems.forEach((item, idx) => {
+        list.innerHTML += `
+          <div class="transform-row">
+            <div style="font-weight:600; color:var(--navy-900);">${item.prompt}</div>
+            <input type="text" class="text-input" id="tr-${idx}" placeholder="Write sentence...">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="checkTransform(${idx})">Check</button>
+              <span id="tr-st-${idx}"></span>
+            </div>
+          </div>`;
+      });
+    }
+    function checkTransform(idx) {
+      const val = document.getElementById('tr-' + idx).value.trim().toLowerCase().replace(/\s+/g, ' ');
+      const st = document.getElementById('tr-st-' + idx);
+      st.className = 'status-pill ' + (transformItems[idx].answers.includes(val) ? 'status-ok' : 'status-err');
+      st.textContent = transformItems[idx].answers.includes(val) ? 'Correct!' : 'Check form';
+    }
+
+    const naturalChoices = [
+      { a: 'Are you from Mérida?', b: 'Is you from Mérida?', ans: 'a' },
+      { a: "Yes, she's.", b: 'Yes, she is.', ans: 'b' },
+      { a: "They're from Canada.", b: 'They is from Canada.', ans: 'a' },
+      { a: "We isn't from Toronto.", b: "We aren't from Toronto.", ans: 'b' }
+    ];
+    function renderNaturalChoices() {
+      const list = document.getElementById('naturalChoiceList');
+      naturalChoices.forEach((item, idx) => {
+        list.innerHTML += `
+          <div class="choice-pair-row">
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" class="poll-opt-btn" onclick="checkChoice(${idx}, 'a', this)">${item.a}</button>
+              <button type="button" class="poll-opt-btn" onclick="checkChoice(${idx}, 'b', this)">${item.b}</button>
+            </div>
+            <span id="nc-st-${idx}"></span>
+          </div>`;
+      });
+    }
+    function checkChoice(idx, pick, btn) {
+      const row = btn.closest('.choice-pair-row');
+      row.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const st = document.getElementById('nc-st-' + idx);
+      st.className = 'status-pill ' + (pick === naturalChoices[idx].ans ? 'status-ok' : 'status-err');
+      st.textContent = pick === naturalChoices[idx].ans ? 'Natural!' : 'Try again';
+    }
+
+    function selectTraveler(card) {
+      document.querySelectorAll('.traveler-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+
+    function saveExitTicket() {
+      const val = document.getElementById('exitTicketInput').value.trim();
+      const st = document.getElementById('exitTicketStatus');
+      if (!val) {
+        st.style.color = 'var(--danger-600)';
+        st.textContent = 'Write 3 or 4 sentences first.';
+        return;
+      }
+      try { localStorage.setItem('ld_a11_u01_l02_exit', val); } catch (_) {}
+      st.style.color = 'var(--teal-800)';
+      st.textContent = 'Saved! Share your sentences with your teacher.';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadStudentName();
+      const params = new URLSearchParams(window.location.search);
+      let hasAuth = false;
+      try { hasAuth = sessionStorage.getItem('ld-coordinator-auth') === 'granted'; } catch (_) {}
+      if (params.get('role') === 'teacher' || hasAuth) setTeacherMode(true);
+      renderVocabMatch();
+      renderReadingComp();
+      renderTransforms();
+      renderNaturalChoices();
+      try {
+        const saved = localStorage.getItem('ld_a11_u01_l02_exit');
+        if (saved) document.getElementById('exitTicketInput').value = saved;
+      } catch (_) {}
+    });
+  </script>
+</body>
+</html>

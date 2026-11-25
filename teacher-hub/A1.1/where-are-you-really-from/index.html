@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Hub &middot; A1.1-U01-L02 Where Are You Really From? | L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527; --navy-900: #001F54; --navy-700: #133E68;
+      --teal-800: #0F766E; --teal-700: #007A87; --teal-50: #F0FDFA;
+      --gold-600: #B57C00; --gold-500: #D4A843; --gold-400: #E5A922;
+      --white: #FFFFFF; --slate-50: #F8FAFC; --slate-200: #E2E8F0; --slate-600: #475569; --slate-800: #1E293B; --slate-900: #0A192F;
+      --danger-600: #DC2626; --danger-50: #FEF2F2;
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 18px; --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; background: var(--slate-50); color: var(--slate-900); line-height: 1.62; }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header { background: var(--navy-950); border-bottom: 1px solid rgba(212, 168, 67, 0.25); color: var(--white); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .header-link { color: var(--gold-500); text-decoration: none; font-size: 13px; font-weight: 700; }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+
+    .page-container { max-width: 1040px; margin: 0 auto; padding: 30px 24px 64px; }
+    .hub-hero {
+      background: linear-gradient(135deg, #071527 0%, #001F54 65%, #133E68 100%);
+      color: var(--white); border-radius: var(--radius-lg); padding: 32px 36px; margin-bottom: 22px;
+      display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;
+      border: 1px solid rgba(212, 168, 67, 0.25);
+    }
+    .hub-hero h1 { font-size: 1.85rem; font-weight: 800; line-height: 1.2; margin-bottom: 6px; }
+    .hub-hero h1 span { color: var(--gold-500); }
+    .hub-hero p { color: var(--slate-200); font-size: 0.94rem; }
+    .btn-print { background: var(--gold-500); color: var(--navy-950); border: none; border-radius: var(--radius-sm); padding: 10px 18px; font-family: inherit; font-size: 0.86rem; font-weight: 700; cursor: pointer; }
+    .btn-print:hover { background: var(--gold-400); }
+
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 22px; }
+    .meta-item { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 14px 16px; }
+    .meta-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--teal-700); margin-bottom: 4px; }
+    .meta-val { font-size: 0.88rem; font-weight: 600; color: var(--navy-900); }
+
+    .hub-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 26px 30px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+    .hub-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: var(--teal-700); margin-bottom: 4px; }
+    .hub-title { font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 14px; }
+
+    .stage-block { border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 18px 20px; margin-bottom: 14px; background: var(--slate-50); }
+    .stage-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--slate-200); }
+    .stage-head h3 { font-size: 1rem; font-weight: 800; color: var(--navy-900); }
+    .stage-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--teal-800); background: var(--teal-50); border: 1px solid rgba(15, 118, 110, 0.22); padding: 2px 10px; border-radius: 999px; }
+    .stage-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.86rem; }
+    .stage-col { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 12px; }
+    .stage-col strong { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; color: var(--gold-600); margin-bottom: 4px; }
+
+    .pnf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .pnf-box { border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px; background: var(--slate-50); }
+    .pnf-box.is-f { background: var(--danger-50); border-color: rgba(220, 38, 38, 0.25); }
+    .pnf-box h3 { font-size: 0.92rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .pnf-box.is-f h3 { color: var(--danger-600); }
+    .pnf-box p { font-size: 0.87rem; color: var(--slate-800); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin-top: 8px; }
+    th { background: var(--navy-900); color: var(--white); text-align: left; padding: 10px 14px; font-size: 0.78rem; text-transform: uppercase; }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--slate-200); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--slate-50); }
+
+    .studio-site-footer { background: var(--navy-950); border-top: 1px solid rgba(212, 168, 67, 0.25); color: var(--slate-200); padding: 22px 24px; }
+    .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; }
+
+    @media print {
+      .site-header, .btn-print, .studio-site-footer { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      .page-container { padding: 0; max-width: 100%; }
+      .hub-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 22px; }
+      .hub-card, .stage-block { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../A1.1/u01/index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher's Hub &middot; A1.1</span>
+      </a>
+      <div class="header-actions">
+        <a href="../../../A1.1/u01/where-are-you-really-from/index.html?role=teacher" class="header-link">Open Live Lesson (Teacher Mode) &#8599;</a>
+        <a href="../../../A1.1/u01/index.html" class="header-back-link">&larr; Back to Unit 01</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="hub-hero">
+      <div>
+        <h1>Complete Lesson Plan: <span>Where Are You Really From?</span></h1>
+        <p>A1.1-U01-L02 &middot; Secuencia did&aacute;ctica completa, guion de producci&oacute;n de audios y r&uacute;brica cualitativa.</p>
+      </div>
+      <button type="button" class="btn-print" onclick="window.print()">Print Teacher Guide</button>
+    </header>
+
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">C&oacute;digo &amp; Curso</div><div class="meta-val">A1.1-U01-L02 &middot; Macro-Unit 01</div></div>
+      <div class="meta-item"><div class="meta-label">Resultado Comunicativo</div><div class="meta-val">Distinguir origen y residencia; hablar de terceros con he/she/we/they + preguntas Yes/No.</div></div>
+      <div class="meta-item"><div class="meta-label">Principio de Tiempo</div><div class="meta-val">Flexible (Understanding Comes Before Advancement; 1–2 sesiones seg&uacute;n evidencia).</div></div>
+      <div class="meta-item"><div class="meta-label">Evidencia de Avance</div><div class="meta-val">Juego de adivinanza oral (Is he/she from...?) + Exit Ticket con origen, hogar y tercero.</div></div>
+    </div>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 01 &middot; Did&aacute;ctica Paso a Paso</div>
+      <h2 class="hub-title">Complete Lesson Plan (Secuencia Did&aacute;ctica por Actividad)</h2>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>01 &middot; Warm-Up: Small Town vs. Big City (Actividades 1A y 1B)</h3>
+          <span class="stage-tag">Fase: Engage &middot; Strict [P]</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Teacher Script &amp; Modelado</strong>En 1A elige primero tu foto: <em>"I'm [Tu Nombre]. For me: Small town! Nice and calm."</em> En 1B modela 2 palabras: <em>"My place is small and nice."</em></div>
+          <div class="stage-col"><strong>Control [F]</strong>No uses comparativos (<em>bigger, warmer</em>) ni <em>Where do you live?</em> Mant&eacute;n el intercambio en adjetivos simples y <em>I'm / I'm not</em> de L01.</div>
+          <div class="stage-col"><strong>Transici&oacute;n</strong>Conecta directo con Vocabulario: <em>"Great! Let's learn 6 words for your roots and places."</em></div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>02 &middot; Vocabulary: Visual Scale, 6 Flip Cards, Sound Focus &amp; Match (2A–2C)</h3>
+          <span class="stage-tag">Fase: Build &middot; MFP + Phonology</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Teacher Script &amp; Modelado</strong>Usa la escala de 3 fotos (<em>Country &rarr; City &rarr; Neighborhood</em>). Aclara <em>hometown</em> (origen) vs. <em>home</em> (residencia actual). En 2B usa gestos para <em>from</em> (atr&aacute;s) vs. <em>in</em> (aqu&iacute;).</div>
+          <div class="stage-col"><strong>Interferencia L1</strong>Vigila <em>quiet</em> (/ˈkwaɪət/, dos s&iacute;labas), <em>neighborhood</em> (<em>gh</em> muda) y el contraste /h/ en <em>He's</em> vs. /ʃ/ en <em>She's</em>.</div>
+          <div class="stage-col"><strong>Answer Keys (2C)</strong>1. country &middot; 2. city &middot; 3. hometown &middot; 4. neighborhood &middot; 5. quiet &middot; 6. warm.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>03 &middot; Everyday Expressions: 4 Bloques Pragm&aacute;ticos (3A)</h3>
+          <span class="stage-tag">Fase: Notice &middot; Whole Chunks</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Teacher Script &amp; Modelado</strong>Modela con entonaci&oacute;n expresiva de sorpresa <em>"Small world!"</em> y <em>"No way!"</em>. Ense&ntilde;a <em>Born and raised in...</em> como bloque cerrado sin explicar voz pasiva.</div>
+          <div class="stage-col"><strong>Pr&aacute;ctica Rec&iacute;proca</strong>Di tu ciudad (<em>"I'm born and raised in [Ciudad]. What about you?"</em>) y provoca que el alumno use <em>What about you?</em> de vuelta.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>04 &middot; Reading: Three Profiles (Actividades 4A y 4B)</h3>
+          <span class="stage-tag">Fase: Notice in Context &middot; Silent Read First</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Secuencia de Lectura</strong>1) Lectura silenciosa (60–90s) &middot; 2) Responder 4 preguntas Yes/No &middot; 3) Reproducir audio opcional <em>Listen (after reading)</em> para ritmo y entonaci&oacute;n.</div>
+          <div class="stage-col"><strong>Puente Inductivo</strong>Se&ntilde;ala en los perfiles c&oacute;mo cambia <em>To Be</em> con Diego (<em>he's</em>), Camila (<em>she's</em>) y Lucas &amp; Elena (<em>we're / they're</em>).</div>
+          <div class="stage-col"><strong>Answer Keys (4B)</strong>1. No (Celaya) &middot; 2. Yes &middot; 3. No (Canadian / Toronto) &middot; 4. Yes (M&eacute;rida).</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>05 &middot; Grammar: He/She/We/They + To Be &amp; Yes/No Questions (5A–5C)</h3>
+          <span class="stage-tag">Fase: Understand &amp; Practice &middot; Strict [N]</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Descubrimiento Guiado (5A)</strong>Ap&oacute;yate en los 4 retratos (<em>He / She / We / They</em>). Recalca que en respuestas cortas afirmativas NO se contrae (<em>"Yes, he is"</em>, nunca <em>"Yes, he's"</em>).</div>
+          <div class="stage-col"><strong>Interferencia L1</strong>Corrige amablemente <em>"They is"</em> y la falta de inversi&oacute;n en preguntas (<em>"You are from...?" &rarr; "Are you from...?"</em>). Prohibido <em>come from</em> con <em>do</em>.</div>
+          <div class="stage-col"><strong>Answer Keys (5B y 5C)</strong>5B: 1. He isn't from Puebla. &middot; 2. Is she from Colombia? &middot; 3. They aren't Mexican. &middot; 4. Are you from Le&oacute;n? 5C: 1. Are you from M&eacute;rida? &middot; 2. Yes, she is. &middot; 3. They're from Canada. &middot; 4. We aren't from Toronto.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>06 &middot; Speaking: City Mixer Guessing Game (6A)</h3>
+          <span class="stage-tag">Fase: Communicate &middot; Information Gap</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Ronda 1 y Ronda 2</strong>Primero el alumno elige tarjeta secreta y responde <em>Yes, he is / No, she isn't</em>. Luego invierten roles para que el alumno formule preguntas <em>Is he/she from...? / Are they from...?</em></div>
+          <div class="stage-col"><strong>Cierre Personal</strong>Concluye preguntando: <em>"Where are you really from? Is your home in the same city?"</em></div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>07 &middot; Exit Ticket &amp; Can-Do Statements (7A)</h3>
+          <span class="stage-tag">Fase: Reflect &middot; Advancement Check</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Evidencia Escrita</strong>3–4 oraciones aut&oacute;nomas en el espacio en blanco: <em>I'm from...</em>, <em>My home is in...</em> y 1 oraci&oacute;n con <em>He's / She's</em>.</div>
+          <div class="stage-col"><strong>Decisi&oacute;n de Avance</strong>Revisar may&uacute;sculas en ciudades/pa&iacute;ses/nacionalidades y concordancia <em>is/are</em> antes de avanzar a L03.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 02 &middot; Control Ling&uuml;&iacute;stico</div>
+      <h2 class="hub-title">Delimitaci&oacute;n Curricular (P / P? / N / F)</h2>
+      <div class="pnf-grid">
+        <div class="pnf-box"><h3>[P] Previamente Demostrado</h3><p><em>I, you, My</em>; <em>I'm / I'm not / You're / Are you...?</em>; saludos y vocabulario de L01.</p></div>
+        <div class="pnf-box"><h3>[P?] Diagnosticar en 1B</h3><p>Uso correcto de <em>I'm / I'm not</em> sin omitir pronombre sujeto.</p></div>
+        <div class="pnf-box"><h3>[N] Recurso Nuevo</h3><p><em>he, she, we, they</em> + <em>To Be</em> (+, &minus;, ? y respuestas cortas); <em>Where are you from? / I'm from... / My home is in...</em>; 6 palabras de lugar; 4 Everyday Expressions.</p></div>
+        <div class="pnf-box is-f"><h3>[F] L&iacute;mite Frontera (Prohibido)</h3><p><em>Where do you come from?</em>, <em>Where do you live?</em>, <em>I live in...</em>, profesiones con <em>a/an</em> (L03), posesivos <em>his/her/our/their</em> (U02-L01), comparativos.</p></div>
+      </div>
+    </section>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 03 &middot; Producci&oacute;n de Estudio</div>
+      <h2 class="hub-title">Guion de Producci&oacute;n de Audios (Sin TTS)</h2>
+      <table>
+        <thead><tr><th>Archivo MP3 (<span class="font-mono">./audio/</span>)</th><th>Texto exacto para grabaci&oacute;n</th></tr></thead>
+        <tbody>
+          <tr><td class="font-mono">vocab-hometown.mp3 / -ex.mp3</td><td>"Hometown." / "My hometown is Puebla."</td></tr>
+          <tr><td class="font-mono">vocab-city.mp3 / -ex.mp3</td><td>"City." / "My city is big."</td></tr>
+          <tr><td class="font-mono">vocab-country.mp3 / -ex.mp3</td><td>"Country." / "My country is Mexico."</td></tr>
+          <tr><td class="font-mono">vocab-neighborhood.mp3 / -ex.mp3</td><td>"Neighborhood." / "My neighborhood is nice."</td></tr>
+          <tr><td class="font-mono">vocab-quiet.mp3 / -ex.mp3</td><td>"Quiet." / "My hometown is quiet."</td></tr>
+          <tr><td class="font-mono">vocab-warm.mp3 / -ex.mp3</td><td>"Warm." / "My hometown is warm."</td></tr>
+          <tr><td class="font-mono">vocab-friendly.mp3 / -ex.mp3</td><td>"Friendly." / "My neighborhood is friendly."</td></tr>
+          <tr><td class="font-mono">vocab-busy.mp3 / -ex.mp3</td><td>"Busy." / "Mexico City is busy."</td></tr>
+          <tr><td class="font-mono">vocab-modern.mp3 / -ex.mp3</td><td>"Modern." / "Toronto is modern."</td></tr>
+          <tr><td class="font-mono">pron-from-in.mp3</td><td>"I'm from Puebla. [pausa 1s] My home is in Le&oacute;n."</td></tr>
+          <tr><td class="font-mono">pron-hes-shes.mp3</td><td>"He's from Mexico. [pausa 1s] She's from Colombia."</td></tr>
+          <tr><td class="font-mono">chunk-born-raised.mp3</td><td>"Born and raised in Celaya!"</td></tr>
+          <tr><td class="font-mono">chunk-small-world.mp3</td><td>"You're from Le&oacute;n too? Small world!"</td></tr>
+          <tr><td class="font-mono">chunk-no-way.mp3</td><td>"You're from Canada? No way!"</td></tr>
+          <tr><td class="font-mono">chunk-what-about-you.mp3</td><td>"I'm from Colombia. What about you?"</td></tr>
+          <tr><td class="font-mono">read-diego.mp3</td><td>"Hello! I'm Diego. Born and raised in Celaya! Celaya is small, warm, and friendly. Now, my home is in Mexico City. It's big and busy, not quiet!"</td></tr>
+          <tr><td class="font-mono">read-camila.mp3</td><td>"Hi! I'm Camila. I'm Colombian&mdash;born and raised in Medell&iacute;n! My neighborhood is warm and friendly. My friend in Toronto is from Medell&iacute;n too&mdash;small world! What about you?"</td></tr>
+          <tr><td class="font-mono">read-lucas-elena.mp3</td><td>"Hi! We're Lucas and Elena. We're Canadian&mdash;born and raised in Toronto! Toronto is big and modern. Now, we're in M&eacute;rida. It's warm and quiet!"</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 04 &middot; Evaluaci&oacute;n y Avance</div>
+      <h2 class="hub-title">Protocolo de Mediaci&oacute;n y R&uacute;brica Cualitativa (E0&ndash;E3)</h2>
+      <table>
+        <thead><tr><th>Nivel</th><th>Descriptor de Evidencia Observable</th><th>Decisi&oacute;n Pedag&oacute;gica</th></tr></thead>
+        <tbody>
+          <tr><td><strong>E0</strong></td><td>Confunde origen y residencia y no logra concordar <em>he/she is</em> ni <em>they are</em> aun con tabla visible.</td><td>Retomar contraste visual <em>from / in</em> y pr&aacute;ctica oral guiada con retratos antes de avanzar.</td></tr>
+          <tr><td><strong>E1</strong></td><td>Responde <em>Yes/No</em> con apoyo, pero omite inversi&oacute;n en pregunta (<em>"He is from...?"</em>) o usa <em>is</em> con <em>they</em>.</td><td>Reforzar con <em>Explore</em> Part 02 y repetir Ronda 2 de Speaking con otra tarjeta.</td></tr>
+          <tr><td><strong>E2</strong></td><td>Diferencia origen y residencia, formula preguntas <em>Is he/she from...?</em> y responde corto con precisi&oacute;n.</td><td>Consolidado para avanzar a <strong>A1.1-U01-L03</strong>.</td></tr>
+          <tr><td><strong>E3</strong></td><td>Integra con soltura <em>he/she/we/they + To Be</em>, usa al menos dos Everyday Expressions y escribe su Exit Ticket sin copiar.</td><td>Dominio observable pleno; listo para L03 (<em>The Job vs. The Human</em>).</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div>Educate &bull; Design &bull; Grow &middot; Teacher's Hub &middot; A1.1-U01-L02</div>
+      <div>Complete Lesson Plan</div>
+    </div>
+  </footer>
+</body>
+</html>
