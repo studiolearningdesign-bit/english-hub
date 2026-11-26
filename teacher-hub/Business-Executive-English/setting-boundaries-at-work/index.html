@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Hub &middot; BE-05-L01: Setting Boundaries at Work | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --teal-800: #0F766E;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-100: #FEF8EB;
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-200: #E2E8F0;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --radius-sm: 8px;
+      --radius-lg: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--slate-50); color: var(--slate-900); line-height: 1.6; }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+    .site-header { background: var(--navy-950); border-bottom: 1px solid rgba(212, 168, 67, 0.25); color: var(--white); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--gold-500); }
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; font-family: inherit; font-size: 0.82rem; font-weight: 700; padding: 8px 15px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; text-decoration: none; }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); }
+    .btn-ghost { background: transparent; color: var(--slate-200); border-color: rgba(255, 255, 255, 0.22); }
+    .page-container { max-width: 1020px; margin: 0 auto; padding: 28px 24px 64px; }
+    .doc-hero { background: var(--navy-950); color: var(--white); border-radius: var(--radius-lg); padding: 30px 34px; margin-bottom: 24px; border: 1px solid rgba(212, 168, 67, 0.3); }
+    .doc-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; color: var(--gold-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+    .doc-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
+    .doc-meta { font-size: 0.88rem; color: var(--slate-200); }
+    .guide-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 26px 28px; margin-bottom: 20px; }
+    .guide-card h2 { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); margin-bottom: 12px; }
+    .guide-card p, .guide-card li { font-size: 0.88rem; color: var(--slate-800); }
+    .guide-card ol { padding-left: 20px; display: grid; gap: 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin-top: 10px; }
+    th { background: var(--navy-950); color: var(--white); text-align: left; padding: 10px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; text-transform: uppercase; }
+    td { padding: 10px 12px; border-top: 1px solid var(--slate-200); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--slate-50); }
+    .tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; background: var(--teal-50); color: var(--teal-800); }
+    .tag-gold { background: var(--gold-100); color: var(--gold-600); }
+    @media print {
+      .site-header, .no-print { display: none !important; }
+      body { background: #FFFFFF; color: #000000; }
+      .page-container { max-width: 100%; padding: 0; }
+      .doc-hero { background: #FFFFFF; color: #001F54; border: 1px solid #CBD5E1; }
+      .doc-meta, .doc-kicker { color: #334155; }
+      .guide-card { break-inside: avoid; border: 1px solid #CBD5E1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../Business-Executive-English/u05/setting-boundaries-at-work/index.html?role=teacher" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher Hub &middot; Executive Business</span>
+      </a>
+      <div class="header-actions no-print">
+        <button type="button" class="btn btn-gold" onclick="window.print()">Print Teacher Guide</button>
+        <a href="../../../Business-Executive-English/u05/setting-boundaries-at-work/index.html?role=teacher" class="btn btn-ghost">&larr; Back to Live Lesson</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="doc-hero">
+      <div class="doc-kicker">Teacher's Preparation &amp; Production Guide &middot; BE-05-L01</div>
+      <h1 class="doc-title">Setting Boundaries at Work</h1>
+      <div class="doc-meta">Track 05: People, Leadership &amp; Culture &middot; TED Talk: Nedra Glover Tawwab &middot; Target: B1+ / B2+ &middot; Oral-First TBLT</div>
+    </header>
+
+    <section class="guide-card">
+      <h2>1. Delimitaci&oacute;n Curricular (P / P? / N / F)</h2>
+      <table>
+        <thead><tr><th>Categor&iacute;a</th><th>Alcance Exacto</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag">P</span> Previo</td><td>Present/Past Simple, modales b&aacute;sicos (<em>can, could</em>), vocabulario general de oficina, juntas y plazos.</td></tr>
+          <tr><td><span class="tag tag-gold">P?</span> A diagnosticar</td><td>Uso de infinitivo sin <em>to</em> tras modales (<em>would</em>) vs. <em>prefer + to + verb</em>.</td></tr>
+          <tr><td><span class="tag">N</span> Nuevo</td><td><strong>Polite Refusals &amp; Preferences:</strong> <code>would rather (+ not) + base verb</code>, <code>prefer (+ not) + to + base verb</code>, <code>I'd love to..., though...</code>.<br><strong>L&eacute;xico (6):</strong> <em>set a boundary, at full capacity, push back, protect focus, trade-off, overcommit</em>.<br><strong>Executive Chunks (4):</strong> <em>I'd love to help, though..., What's the trade-off?, Here's what I can do, Not right now</em>.</td></tr>
+          <tr><td><span class="tag">F</span> L&iacute;mite Frontera</td><td>Sin lenguaje terap&eacute;utico cl&iacute;nico ni rechazos agresivos/secos (<em>No, that's not my job</em>). Sin redacci&oacute;n extensa en la sesi&oacute;n en vivo.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card">
+      <h2>2. Complete Lesson Plan</h2>
+      <ol>
+        <li><strong>01 Warm-Up &middot; The "Quick Favor" Trap:</strong> Reaccionar a los 3 mensajes entrantes (Slack 5:45 PM, correo viernes, scope creep de cliente) y responder las 3 preguntas en <code>[P]</code>.</li>
+        <li><strong>02 Vocabulary &middot; 6 Collocations + Boundary Audit:</strong> Voltear las 6 tarjetas y auditar los 6 h&aacute;bitos. Claves: <code>1-Healthy, 2-Burnout, 3-Healthy, 4-Burnout, 5-Healthy, 6-Burnout</code>.</li>
+        <li><strong>03 Executive Chunks &amp; Tone Focus:</strong> Practicar los 4 bloques fijos y contrastar el tono con exceso de disculpas vs. el tono firme y sereno.</li>
+        <li><strong>04 TED Talk &middot; Nedra Glover Tawwab:</strong> Ver el video corto (<code>4SCrXqbhmCY</code>) con subt&iacute;tulos en ingl&eacute;s si hace falta, y responder las 3 preguntas (<code>1-B, 2-A, 3-C</code>).</li>
+        <li><strong>05 Grammar &middot; Polite Refusals:</strong> Revisar <code>would rather</code> (sin <em>to</em>) vs. <code>prefer to</code>. Claves Part A: <code>1-B, 2-A, 3-C</code>. Wordbox: <em>I'd rather finish this report than rush two projects.</em> / <em>Would you prefer to meet on Thursday instead?</em></li>
+        <li><strong>06 Speaking &middot; Boundary Lab:</strong> Simular 2 o 3 escenarios en vivo donde el docente presiona como jefe/cliente/par y el alumno responde en 30 segundos usando los 3 pasos de Tawwab.</li>
+        <li><strong>07 Exit Ticket:</strong> Escribir 2&ndash;3 oraciones reales sobre un l&iacute;mite para esta semana y marcar los Can-Do.</li>
+      </ol>
+    </section>
+
+    <section class="guide-card">
+      <h2>3. Guion de Producci&oacute;n de Audios (Estudio &middot; Cero TTS)</h2>
+      <p>Carpeta destino: <code class="font-mono">Business-Executive-English/u05/setting-boundaries-at-work/audio/</code></p>
+      <table>
+        <thead><tr><th>Archivo MP3</th><th>Texto Exacto para Grabaci&oacute;n</th></tr></thead>
+        <tbody>
+          <tr><td class="font-mono">vocab_01_word.mp3 / _ex.mp3</td><td>"Set a boundary." / "She set a clear boundary around her focus hours every morning."</td></tr>
+          <tr><td class="font-mono">vocab_02_word.mp3 / _ex.mp3</td><td>"At full capacity." / "Our engineering team is at full capacity until Friday."</td></tr>
+          <tr><td class="font-mono">vocab_03_word.mp3 / _ex.mp3</td><td>"Push back." / "We had to push back on the client's unrealistic Friday deadline."</td></tr>
+          <tr><td class="font-mono">vocab_04_word.mp3 / _ex.mp3</td><td>"Protect focus." / "Blocking two hours on your calendar helps protect deep focus."</td></tr>
+          <tr><td class="font-mono">vocab_05_word.mp3 / _ex.mp3</td><td>"Trade-off." / "If we launch early, the trade-off is skipping the second review."</td></tr>
+          <tr><td class="font-mono">vocab_06_word.mp3 / _ex.mp3</td><td>"Overcommit." / "Saying yes to everything only leads managers to overcommit."</td></tr>
+          <tr><td class="font-mono">chunk_01_word.mp3 / _ex.mp3</td><td>"I'd love to help, though..." / "I'd love to help with the launch deck, though my week is fully booked."</td></tr>
+          <tr><td class="font-mono">chunk_02_word.mp3 / _ex.mp3</td><td>"What's the trade-off?" / "I can take this on today—what's the trade-off on my other deadlines?"</td></tr>
+          <tr><td class="font-mono">chunk_03_word.mp3 / _ex.mp3</td><td>"Here's what I can do." / "I can't attend the 7 AM call, but here's what I can do: I'll send my notes tonight."</td></tr>
+          <tr><td class="font-mono">chunk_04_word.mp3 / _ex.mp3</td><td>"Not right now." / "Not right now, but let's revisit this on Monday morning."</td></tr>
+          <tr><td class="font-mono">pron_apologetic.mp3</td><td>(Rushed, overly apologetic) "I'm really sorry, maybe I could try next week if that's okay..."</td></tr>
+          <tr><td class="font-mono">pron_firm.mp3</td><td>(Calm, steady executive tone) "I'm at full capacity today — HERE'S what I can deliver by THURS-day."</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card">
+      <h2>4. R&uacute;brica Cualitativa (E0&ndash;E3)</h2>
+      <table>
+        <thead><tr><th>Nivel</th><th>Evidencia Observable en el Boundary Lab y Exit Ticket</th></tr></thead>
+        <tbody>
+          <tr><td><strong>E0</strong></td><td>Acepta la petici&oacute;n sin poner l&iacute;mites o responde de forma brusca/confusa incluso con apoyos.</td></tr>
+          <tr><td><strong>E1</strong></td><td>Rechaza con disculpas excesivas o confunde <em>would rather + to</em> / <em>prefer</em> sin lograr ofrecer alternativa.</td></tr>
+          <tr><td><strong>E2</strong></td><td><strong>Logro esperado:</strong> comunica un l&iacute;mite claro con tono sereno, usa correctamente al menos 1 estructura objetivo y 2 Executive Chunks, y propone un <em>trade-off</em> o alternativa real.</td></tr>
+          <tr><td><strong>E3</strong></td><td>Sostiene el l&iacute;mite con soltura frente a la insistencia del interlocutor sin sonar defensivo.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

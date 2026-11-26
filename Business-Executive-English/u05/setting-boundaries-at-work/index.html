@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BE-05-L01 &middot; Setting Boundaries at Work | English Hub &middot; Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* === HEADER === */
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 46px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .brand-logo-white {
+      height: 84px;
+      width: auto;
+      object-fit: contain;
+      margin: -19px 0;
+      display: block;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+    .brand-course-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      white-space: nowrap;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .header-student-btn {
+      background: none;
+      border: none;
+      color: var(--slate-200);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .header-student-btn:hover { color: var(--white); }
+    .header-teacher-link {
+      background: none;
+      border: none;
+      color: var(--gold-500);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .header-teacher-link:hover { color: var(--gold-400); }
+    .header-teacher-link.is-active { color: var(--teal-300); }
+    .header-back-link {
+      color: var(--slate-200);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .header-back-link:hover { color: var(--white); }
+
+    /* === CONTAINER === */
+    .page-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+    }
+
+    /* === HERO BANNER === */
+    .workspace-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 215px;
+      display: flex;
+      align-items: flex-end;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      background-color: var(--navy-900);
+      background-image:
+        linear-gradient(120deg, rgba(7, 21, 39, 0.93) 0%, rgba(0, 31, 84, 0.82) 55%, rgba(19, 62, 104, 0.70) 100%),
+        url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center 25%;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md);
+      color: var(--white);
+    }
+    .hero-content { max-width: 720px; position: relative; z-index: 2; }
+    .hero-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    .hero-title span { color: var(--gold-500); }
+    .hero-subtitle { font-size: 0.98rem; color: var(--slate-200); font-weight: 400; max-width: 62ch; }
+
+    /* === SEGMENTED NAVIGATION === */
+    .module-nav-grid {
+      display: flex;
+      gap: 4px;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .module-tab {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: none;
+      background: transparent;
+      color: var(--slate-600);
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .module-tab:hover { color: var(--navy-900); }
+    .module-tab .tab-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--slate-400);
+    }
+    .module-tab.active {
+      background: var(--white);
+      color: var(--navy-900);
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+    .module-tab.active .tab-num { color: var(--teal-700); }
+
+    /* === PANELS & CARDS === */
+    .module-panel { display: none; }
+    .module-panel.active { display: block; animation: fadeIn 0.22s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 30px 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-header { margin-bottom: 22px; }
+    .section-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      letter-spacing: -0.015em;
+      margin-bottom: 6px;
+    }
+    .section-lead { font-size: 0.94rem; color: var(--slate-600); max-width: 72ch; }
+
+    /* === TEACHER NOTES (HIDDEN BY DEFAULT) === */
+    .teacher-note-box {
+      display: none;
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    body.teacher-mode .teacher-note-box { display: block; }
+    .teacher-note-box summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 13px 18px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .teacher-note-box summary::-webkit-details-marker { display: none; }
+    .teacher-note-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold-600);
+      background: var(--white);
+      border: 1px solid var(--gold-border);
+      padding: 2px 9px;
+      border-radius: var(--radius-full);
+    }
+    .teacher-note-body {
+      padding: 0 18px 16px;
+      border-top: 1px solid var(--gold-border);
+      padding-top: 12px;
+      font-size: 0.85rem;
+      color: var(--slate-800);
+    }
+    .teacher-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .teacher-step-item {
+      background: var(--white);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .teacher-step-item strong {
+      display: block;
+      color: var(--navy-900);
+      margin-bottom: 3px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      text-decoration: none;
+    }
+    .btn-sm { font-size: 0.8rem; padding: 7px 13px; }
+    .btn-primary { background: var(--navy-900); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-700); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-800); }
+    .btn-outline { background: var(--white); color: var(--navy-900); border-color: var(--slate-300); }
+    .btn-outline:hover { border-color: var(--navy-900); background: var(--slate-50); }
+
+    /* === 01 WARM-UP: PING CARDS === */
+    .ping-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .ping-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .ping-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--teal-700);
+    }
+    .ping-time { color: var(--danger-600); }
+    .ping-quote {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      color: var(--navy-900);
+    }
+    .ping-reactions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .react-btn {
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--slate-700);
+      cursor: pointer;
+    }
+    .react-btn.active { background: var(--navy-900); border-color: var(--navy-900); color: var(--white); }
+
+    .prompts-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .prompt-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+    .prompt-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold-600);
+      margin-bottom: 5px;
+    }
+    .prompt-text { font-size: 0.9rem; font-weight: 600; color: var(--navy-900); }
+
+    /* === FLIP CARDS (A1.1 EXACT FORMAT) === */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+    .flip-card { perspective: 1000px; height: 245px; cursor: pointer; }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      text-align: center;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .flip-front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+    }
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
+    .flip-back {
+      transform: rotateY(180deg);
+      background: var(--navy-950);
+      color: var(--white);
+      border-color: var(--navy-800);
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .flip-word {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+    }
+    .flip-word-chunk {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+    }
+    .flip-ipa {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      margin-top: 4px;
+    }
+    .flip-example { font-size: 0.88rem; color: var(--slate-700); font-weight: 500; text-align: center; line-height: 1.45; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.28rem; font-weight: 800; color: var(--gold-400); }
+    .flip-back-meaning { font-size: 0.92rem; color: var(--slate-100); max-width: 28ch; line-height: 1.5; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
+    .audio-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: inherit;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--slate-200);
+      background: var(--slate-50);
+      color: var(--navy-900);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .audio-chip:hover { border-color: var(--teal-700); color: var(--teal-700); background: var(--teal-50); }
+    .audio-status-note { font-size: 0.8rem; color: var(--slate-500); margin-top: 8px; min-height: 20px; }
+
+    /* === ACTIVITY BOXES === */
+    .activity-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      margin-top: 8px;
+    }
+    .activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .activity-title { font-size: 1.04rem; font-weight: 800; color: var(--navy-900); }
+    .score-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal-800);
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      padding: 4px 11px;
+      border-radius: var(--radius-full);
+    }
+    .sort-list { display: grid; gap: 10px; }
+    .sort-item {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .sort-text { font-size: 0.9rem; font-weight: 600; color: var(--navy-900); flex: 1; min-width: 220px; }
+    .sort-actions { display: flex; gap: 8px; }
+    .choice-btn {
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--slate-700);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .choice-btn:hover { border-color: var(--navy-900); color: var(--navy-900); }
+    .choice-btn.is-correct { background: var(--teal-50); border-color: var(--teal-700); color: var(--teal-800); }
+    .choice-btn.is-wrong { background: var(--danger-50); border-color: var(--danger-600); color: var(--danger-600); }
+    .sort-fb { width: 100%; font-size: 0.8rem; color: var(--slate-600); margin-top: 4px; display: none; }
+    .sort-fb.show { display: block; }
+
+    /* === PRONUNCIATION === */
+    .pron-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .pron-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .pron-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 15px;
+    }
+    .pron-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold-600);
+      margin-bottom: 6px;
+    }
+    .pron-line { font-size: 0.92rem; color: var(--navy-900); margin-bottom: 10px; }
+
+    /* === 04 TED TALK VIDEO === */
+    .video-shell {
+      background: var(--navy-950);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(212, 168, 67, 0.3);
+    }
+    .video-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--white);
+    }
+    .video-title { font-size: 1rem; font-weight: 800; }
+    .video-speaker { font-size: 0.82rem; color: var(--gold-400); font-weight: 600; }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      background: #000000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .quiz-stack { display: grid; gap: 14px; }
+    .quiz-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+    .quiz-q { font-size: 0.92rem; font-weight: 700; color: var(--navy-900); margin-bottom: 10px; }
+    .quiz-opts { display: grid; gap: 8px; }
+    .quiz-opt {
+      text-align: left;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 500;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+      color: var(--slate-800);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .quiz-opt:hover { border-color: var(--teal-700); }
+    .quiz-opt.is-correct { background: var(--teal-50); border-color: var(--teal-700); color: var(--teal-800); font-weight: 700; }
+    .quiz-opt.is-wrong { background: var(--danger-50); border-color: var(--danger-600); color: var(--danger-600); }
+
+    /* === 05 GRAMMAR === */
+    .grammar-intro {
+      font-size: 0.95rem;
+      color: var(--slate-700);
+      margin-bottom: 18px;
+      max-width: 74ch;
+    }
+    .grammar-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+    }
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      background: var(--white);
+    }
+    .grammar-table th {
+      background: var(--navy-950);
+      color: var(--white);
+      text-align: left;
+      padding: 12px 14px;
+      font-size: 0.78rem;
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .grammar-table td {
+      padding: 12px 14px;
+      border-top: 1px solid var(--slate-200);
+      vertical-align: top;
+      color: var(--slate-800);
+    }
+    .grammar-table tr:nth-child(even) td { background: var(--slate-50); }
+    .code-em {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal-800);
+      background: var(--teal-50);
+      padding: 2px 6px;
+      border-radius: 5px;
+    }
+    .upgrade-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .upgrade-raw { font-size: 0.88rem; color: var(--slate-600); margin-bottom: 10px; }
+    .upgrade-raw strong { color: var(--navy-900); }
+
+    .wordbox-row {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .wordbox-prompt { font-size: 0.84rem; color: var(--slate-600); margin-bottom: 10px; }
+    .wordbox-tokens { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .word-chip {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-full);
+      padding: 6px 12px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--navy-900);
+      cursor: pointer;
+    }
+    .word-chip:hover { border-color: var(--teal-700); }
+    .word-chip.used { opacity: 0.35; pointer-events: none; }
+    .wordbox-answer {
+      min-height: 40px;
+      border: 1px dashed var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy-900);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: var(--slate-50);
+    }
+
+    /* === 06 SPEAKING: BOUNDARY LAB === */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .lab-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .lab-card:hover { border-color: var(--teal-700); }
+    .lab-card.selected { background: var(--white); border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+    .lab-role {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .lab-title { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .lab-ask { font-size: 0.86rem; color: var(--slate-700); font-style: italic; margin-bottom: 8px; }
+    .lab-constraint { font-size: 0.78rem; color: var(--slate-500); }
+
+    .checklist-box {
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .checklist-box h3 { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); margin-bottom: 10px; }
+    .checklist-items { display: grid; gap: 8px; font-size: 0.88rem; color: var(--slate-800); }
+
+    /* === 07 EXIT TICKET === */
+    .exit-textarea {
+      width: 100%;
+      min-height: 110px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      color: var(--navy-900);
+      resize: vertical;
+      margin-bottom: 12px;
+    }
+    .exit-textarea:focus { outline: 2px solid var(--teal-500); border-color: var(--teal-700); }
+    .cando-list { display: grid; gap: 10px; margin-top: 18px; }
+    .cando-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--slate-800);
+      cursor: pointer;
+    }
+    .cando-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    /* === FOOTER NAV === */
+    .module-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    /* === SITE FOOTER === */
+    .studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+    .footer-brand-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+    .footer-teacher-portal {
+      color: var(--gold-400);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      transition: all 0.16s;
+    }
+    .footer-teacher-portal:hover { background: rgba(212, 168, 67, 0.14); color: var(--white); }
+
+    /* === PIN MODAL === */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 21, 39, 0.65);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: var(--shadow-md);
+    }
+    .modal-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .modal-card p { font-size: 0.86rem; color: var(--slate-600); margin-bottom: 14px; }
+    .text-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.92rem;
+    }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+
+    @media (max-width: 780px) {
+      .workspace-hero-banner { padding: 26px 22px; min-height: 180px; }
+      .section-card { padding: 22px 18px; }
+      .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+      .brand-course-label, .brand-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; Executive Business</span>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="header-student-btn" id="studentNameBtn" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-link" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a href="../index.html" class="header-back-link">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="workspace-hero-banner">
+      <div class="hero-content">
+        <h1 class="hero-title">Setting Boundaries <span>at Work</span></h1>
+        <p class="hero-subtitle">Say no to unreasonable demands without burning bridges&mdash;protect your focus, negotiate realistic trade-offs, and keep executive relationships intact.</p>
+      </div>
+    </header>
+
+    <nav class="module-nav-grid" role="tablist" aria-label="Lesson Modules">
+      <button type="button" class="module-tab active" data-tab="m1" role="tab" aria-selected="true"><span class="tab-num">01</span> Warm-Up</button>
+      <button type="button" class="module-tab" data-tab="m2" role="tab" aria-selected="false"><span class="tab-num">02</span> Vocabulary</button>
+      <button type="button" class="module-tab" data-tab="m3" role="tab" aria-selected="false"><span class="tab-num">03</span> Executive Chunks</button>
+      <button type="button" class="module-tab" data-tab="m4" role="tab" aria-selected="false"><span class="tab-num">04</span> TED Talk</button>
+      <button type="button" class="module-tab" data-tab="m5" role="tab" aria-selected="false"><span class="tab-num">05</span> Grammar</button>
+      <button type="button" class="module-tab" data-tab="m6" role="tab" aria-selected="false"><span class="tab-num">06</span> Speaking</button>
+      <button type="button" class="module-tab" data-tab="m7" role="tab" aria-selected="false"><span class="tab-num">07</span> Exit Ticket</button>
+    </nav>
+
+    <!-- ==================== 01 WARM-UP ==================== -->
+    <section class="module-panel active" id="m1">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 01 Warm-Up: The "Quick Favor" Trap <span class="teacher-note-badge">Activation [P]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Muestra los 3 mensajes entrantes (Slack a las 5:45 PM, correo de director y WhatsApp de cliente) y pide al alumno elegir su reacci&oacute;n instintiva.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Comparte cu&aacute;l te cuesta m&aacute;s rechazar en tu propio trabajo usando solo <code>[P]</code>.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Haz las 3 preguntas detonadoras en voz alta. No corrijas ni adelantes todav&iacute;a <em>would rather / prefer to</em>.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>No hay respuesta &uacute;nica; busca que note la tensi&oacute;n entre querer verse colaborativo y proteger la calidad del trabajo.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">01 &middot; Engage</div>
+          <h2 class="section-title">The "Quick Favor" Trap</h2>
+          <p class="section-lead">Read these three real-world messages. Click how you usually react, then discuss the three questions below.</p>
+        </div>
+
+        <div class="ping-grid">
+          <div class="ping-card">
+            <div class="ping-meta"><span>SLACK &middot; PEER</span><span class="ping-time">5:45 PM</span></div>
+            <div class="ping-quote">"Hey! Quick favor&mdash;could you review my 20-page proposal before tomorrow at 8 AM?"</div>
+            <div class="ping-reactions">
+              <button type="button" class="react-btn" onclick="pickReact(this)">Say yes &amp; stay late</button>
+              <button type="button" class="react-btn" onclick="pickReact(this)">Push to tomorrow</button>
+            </div>
+          </div>
+
+          <div class="ping-card">
+            <div class="ping-meta"><span>EMAIL &middot; DIRECTOR</span><span class="ping-time">FRIDAY 4:30 PM</span></div>
+            <div class="ping-quote">"Can you join the Monday 7 AM global sync? I know it's early, it'll just be 45 minutes."</div>
+            <div class="ping-reactions">
+              <button type="button" class="react-btn" onclick="pickReact(this)">Accept immediately</button>
+              <button type="button" class="react-btn" onclick="pickReact(this)">Ask for notes instead</button>
+            </div>
+          </div>
+
+          <div class="ping-card">
+            <div class="ping-meta"><span>CALL &middot; CLIENT</span><span class="ping-time">MID-PROJECT</span></div>
+            <div class="ping-quote">"While you're in the system, can your team also build two extra dashboards for free?"</div>
+            <div class="ping-reactions">
+              <button type="button" class="react-btn" onclick="pickReact(this)">Do it to keep peace</button>
+              <button type="button" class="react-btn" onclick="pickReact(this)">Clarify scope</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompts-strip">
+          <div class="prompt-card">
+            <div class="prompt-num">QUESTION 01</div>
+            <div class="prompt-text">Which of those three requests is hardest for you to turn down? Why?</div>
+          </div>
+          <div class="prompt-card">
+            <div class="prompt-num">QUESTION 02</div>
+            <div class="prompt-text">In your company culture, what happens when someone says "no" too directly?</div>
+          </div>
+          <div class="prompt-card">
+            <div class="prompt-num">QUESTION 03</div>
+            <div class="prompt-text">What is the hidden cost of saying "yes" to every urgent request?</div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" onclick="goTab('m2')">Next: Vocabulary &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02 VOCABULARY ==================== -->
+    <section class="module-panel" id="m2">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 02 Vocabulary: 6 Boundary Collocations + Audit <span class="teacher-note-badge">Lexis</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Pide al alumno revisar las 6 Flip Cards, escuchar los audios y voltear cada tarjeta para ver el significado.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Enfatiza la pronunciaci&oacute;n de <em>trade-off</em> y <em>capacity</em>. Pide 1 ejemplo oral breve con su semana actual.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>En el <em>Boundary Audit</em>, p&iacute;dele justificar en voz alta si cada h&aacute;bito es <em>Healthy Boundary</em> o <em>Hidden Burnout</em>.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>1: Healthy Boundary &middot; 2: Hidden Burnout &middot; 3: Healthy Boundary &middot; 4: Hidden Burnout &middot; 5: Healthy Boundary &middot; 6: Hidden Burnout.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">02 &middot; Lexis</div>
+          <h2 class="section-title">Six Boundary &amp; Focus Collocations</h2>
+          <p class="section-lead">Click any card to flip it and check the meaning. Use the audio buttons to hear each term and example.</p>
+        </div>
+
+        <div class="flip-grid" id="vocabGrid"></div>
+        <div class="audio-status-note" id="vocabAudioStatus"></div>
+
+        <div class="activity-box">
+          <div class="activity-header">
+            <div class="activity-title">Boundary Audit: Healthy Boundary or Hidden Burnout?</div>
+            <span class="score-pill" id="sortScorePill">0 / 6 audited</span>
+          </div>
+          <p style="font-size: 0.86rem; color: var(--slate-600); margin-bottom: 14px;">Read each workplace habit and click the category that fits best. Explain your reasoning out loud.</p>
+          <div class="sort-list" id="sortList"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m1')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m3')">Next: Executive Chunks &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03 EXECUTIVE CHUNKS ==================== -->
+    <section class="module-panel" id="m3">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 03 Executive Chunks &amp; Firm Tone <span class="teacher-note-badge">Pragmatics [L]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Presenta los 4 bloques como respuestas fijas listas para usar bajo presi&oacute;n. Sin an&aacute;lisis gramatical interno.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Reproduce los audios y practica el ritmo natural de <em>I'd love to help, though...</em> sin sonar nervioso.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>En el foco de pronunciaci&oacute;n, contrasta una disculpa excesiva vs. un tono firme y amable.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Verifica que entienda que ofrecer una alternativa (<em>"here's what I can do"</em>) mantiene el respeto sin ceder el l&iacute;mite.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">03 &middot; Functional Language</div>
+          <h2 class="section-title">Executive Chunks for Saying No Professionally</h2>
+          <p class="section-lead">Learn these four expressions as complete spoken blocks. Click each card to see when leaders use it.</p>
+        </div>
+
+        <div class="flip-grid" id="chunksGrid"></div>
+        <div class="audio-status-note" id="chunksAudioStatus"></div>
+
+        <div class="pron-box">
+          <div class="activity-title" style="margin-bottom: 4px;">Intelligibility Focus: Firm vs. Apologetic Tone</div>
+          <p style="font-size: 0.86rem; color: var(--slate-600);">Over-apologizing ("I'm so, so sorry...") weakens your boundary. Keep your voice steady, pause briefly, and pivot to what you CAN do.</p>
+          <div class="pron-grid">
+            <div class="pron-card">
+              <div class="pron-tag">OVER-APOLOGETIC / HESITANT</div>
+              <div class="pron-line">"I'm really sorry, maybe I could try next week if that's okay..."</div>
+              <button type="button" class="audio-chip" onclick="playRealAudio('audio/pron_apologetic.mp3', 'pronAudioStatus')">&#9654; Play Hesitant</button>
+            </div>
+            <div class="pron-card">
+              <div class="pron-tag">STEADY EXECUTIVE BOUNDARY</div>
+              <div class="pron-line">"I'm at full capacity today &mdash; <strong>HERE'S</strong> what I can deliver by <strong>THURS</strong>day."</div>
+              <button type="button" class="audio-chip" onclick="playRealAudio('audio/pron_firm.mp3', 'pronAudioStatus')">&#9654; Play Steady</button>
+            </div>
+          </div>
+          <div class="audio-status-note" id="pronAudioStatus"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m2')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m4')">Next: TED Talk &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 TED TALK ==================== -->
+    <section class="module-panel" id="m4">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 04 TED Talk: Nedra Glover Tawwab <span class="teacher-note-badge">Notice</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Presenta el video corto de TED (<em>The Way We Work</em>, ~3.5 min). Pide al alumno identificar los 3 pasos mientras lo ve.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Si el alumno necesita subt&iacute;tulos en ingl&eacute;s, act&iacute;valos en YouTube (no en espa&ntilde;ol) para reforzar comprensi&oacute;n.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Responde las 3 preguntas r&aacute;pidas y preg&uacute;ntale cu&aacute;l de los 3 pasos le cuesta m&aacute;s aplicar en su empresa.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Q1: B (Identify your needs first) &middot; Q2: A (Be clear and direct without over-explaining) &middot; Q3: C (Follow through with consistent action).</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">04 &middot; TED Talk Input</div>
+          <h2 class="section-title">Your 3-Step Guide to Setting Better Boundaries at Work</h2>
+          <p class="section-lead">Watch Nedra Glover Tawwab's short TED Talk and note her three practical steps for healthy workplace boundaries.</p>
+        </div>
+
+        <div class="video-shell">
+          <div class="video-meta-bar">
+            <div class="video-title">TED &middot; The Way We Work</div>
+            <div class="video-speaker">Speaker: Nedra Glover Tawwab</div>
+          </div>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/4SCrXqbhmCY"
+              title="Your 3-step guide to setting better boundaries at work | Nedra Glover Tawwab | TED"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="quiz-stack" id="tedQuiz"></div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m3')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m5')">Next: Grammar &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 GRAMMAR ==================== -->
+    <section class="module-panel" id="m5">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 05 Grammar: Polite Refusals &amp; would rather / prefer to <span class="teacher-note-badge">Understand [N]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Conecta con el TED Talk: para comunicar un l&iacute;mite sin fricci&oacute;n, usamos estructuras de preferencia y rechazo diplom&aacute;tico.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Enfatiza la diferencia clave: <code>would rather + base verb</code> (SIN <em>to</em>) vs. <code>prefer + to + base verb</code> (CON <em>to</em>), y negaci&oacute;n <code>would rather not</code>.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Resuelve los 3 <em>Refusal Upgrades</em> y los 2 <em>Wordboxes</em> por clic (sin escribir p&aacute;rrafos).</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Upgrades: 1B (would rather deliver) &middot; 2A (prefer to review) &middot; 3C (I'd love to help, though). Wordbox 1: <em>I'd rather finish this report than rush two projects.</em> &middot; Wordbox 2: <em>Would you prefer to meet on Thursday instead?</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">05 &middot; Grammar in Context</div>
+          <h2 class="section-title">Polite Refusal Structures &amp; <em>would rather / prefer to</em></h2>
+          <p class="grammar-intro">Executives protect their priorities by framing a "no" as a clear choice for quality and focus, rather than an abrupt rejection.</p>
+        </div>
+
+        <div class="grammar-table-wrap">
+          <table class="grammar-table">
+            <thead>
+              <tr>
+                <th>Structure</th>
+                <th>Affirmative</th>
+                <th>Negative</th>
+                <th>Questions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-em">would rather + base verb</span><br><small>State a clear priority (no "to")</small></td>
+                <td>I<strong>'d rather deliver</strong> one strong report than rush two.</td>
+                <td>I<strong>'d rather not commit</strong> before checking my team's capacity.</td>
+                <td><strong>Would you rather</strong> push the call to Friday?</td>
+              </tr>
+              <tr>
+                <td><span class="code-em">prefer to + base verb</span><br><small>State a working preference (uses "to")</small></td>
+                <td>I <strong>prefer to protect</strong> morning focus rather than book early calls.</td>
+                <td>I <strong>prefer not to</strong> take on extra scope mid-sprint.</td>
+                <td><strong>Do you prefer to</strong> receive a written summary?</td>
+              </tr>
+              <tr>
+                <td><span class="code-em">I'd love to..., though / however...</span><br><small>Softened refusal + pivot</small></td>
+                <td><strong>I'd love to</strong> join, <strong>though</strong> my calendar is full until 3 PM.</td>
+                <td>I <strong>can't</strong> take this today; <strong>however</strong>, I can start Thursday.</td>
+                <td><strong>Could we</strong> revisit this once Q3 closes?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="activity-box">
+          <div class="activity-header">
+            <div class="activity-title">Part A &middot; Refusal Upgrade (Choose the Diplomatic Executive Form)</div>
+            <span class="score-pill" id="upgradeScorePill">0 / 3 upgraded</span>
+          </div>
+          <div id="upgradeContainer"></div>
+        </div>
+
+        <div class="activity-box" style="margin-top: 18px;">
+          <div class="activity-header">
+            <div class="activity-title">Part B &middot; Quick Wordbox (Build the Boundary Line)</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 10px;">Click the chips in order to build two natural executive responses.</p>
+          <div id="wordboxContainer"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m4')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m6')">Next: Speaking &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06 SPEAKING ==================== -->
+    <section class="module-panel" id="m6">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 06 Speaking: Boundary Lab <span class="teacher-note-badge">Live Production</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Pide al alumno elegir 2 o 3 escenarios (o as&iacute;gnalos t&uacute;) y responder en vivo en 30&ndash;45 segundos cada uno.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Haz el papel del solicitante con presi&oacute;n realista: <em>"Come on, it will only take 15 minutes!"</em></div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Observa que aplique los 3 pasos de Tawwab: validar/reconocer brevemente, decir el l&iacute;mite con claridad sin sobre-explicar y ofrecer una alternativa o trade-off.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Eval&uacute;a con la R&uacute;brica Cualitativa (E0&ndash;E3 en Teacher Hub): uso preciso de <em>would rather / prefer to</em> y al menos 2 Executive Chunks.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">06 &middot; Live Communication</div>
+          <h2 class="section-title">Boundary Lab: Respond Under Pressure</h2>
+          <p class="section-lead">Select a scenario card below and deliver a calm 30-second spoken response to your coach, who will play the person pushing your boundary.</p>
+        </div>
+
+        <div class="lab-grid" id="labGrid"></div>
+
+        <div class="checklist-box">
+          <h3>Speaking Checklist (What Great Looks Like)</h3>
+          <div class="checklist-items">
+            <div>&#10003; <strong>Clear &amp; direct boundary:</strong> State what you can or cannot do without over-apologizing.</div>
+            <div>&#10003; <strong>Accurate grammar:</strong> Use <em>would rather + base verb</em>, <em>prefer to + verb</em>, or a softened refusal (<em>I'd love to, though...</em>).</div>
+            <div>&#10003; <strong>Executive chunks:</strong> Include at least two expressions naturally (<em>at full capacity, push back, trade-off, here's what I can do</em>).</div>
+            <div>&#10003; <strong>Constructive pivot:</strong> Offer a realistic alternative timeline or ask about the trade-off.</div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m5')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m7')">Next: Exit Ticket &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07 EXIT TICKET ==================== -->
+    <section class="module-panel" id="m7">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 07 Exit Ticket &amp; Can-Do Evidence <span class="teacher-note-badge">Closure</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>El espacio est&aacute; en blanco para recoger una micro-producci&oacute;n aut&eacute;ntica del alumno.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Pide 2&ndash;3 oraciones sobre un l&iacute;mite real que necesite comunicar esta semana en su trabajo.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Verifica que use correctamente <em>would rather</em> (sin <em>to</em>) o <em>prefer to</em> y un tono firme sin disculpas excesivas.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Inv&iacute;talo a abrir <code>explore.html</code> para redactar con calma un correo completo de rechazo diplom&aacute;tico.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">07 &middot; Reflect &amp; Apply</div>
+          <h2 class="section-title">Exit Ticket &amp; Can-Do Check</h2>
+          <p class="section-lead">Write 2 to 3 short sentences stating one real boundary you need to set at work this week, using <em>would rather</em> or <em>prefer to</em> and one alternative you can offer.</p>
+        </div>
+
+        <textarea id="exitTicketInput" class="exit-textarea" placeholder="Write your 2–3 sentences here..."></textarea>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-teal" onclick="saveExitTicket()">Save Exit Ticket</button>
+          <a href="./explore.html" class="btn btn-outline">Continue to Explore (Workbook) &rarr;</a>
+          <span class="audio-status-note" id="exitStatus" style="margin-top: 0;"></span>
+        </div>
+
+        <div class="cando-list">
+          <label class="cando-item"><input type="checkbox" id="cd1"> I can distinguish healthy boundaries from burnout habits using 6 executive collocations.</label>
+          <label class="cando-item"><input type="checkbox" id="cd2"> I can summarize Nedra Glover Tawwab's 3-step boundary framework from the TED Talk.</label>
+          <label class="cando-item"><input type="checkbox" id="cd3"> I can use <em>would rather</em>, <em>prefer to</em>, and softened refusals accurately without over-apologizing.</label>
+          <label class="cando-item"><input type="checkbox" id="cd4"> I can push back calmly on urgent requests from a boss, peer, or client while offering a clear trade-off.</label>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m6')">&larr; Previous</button>
+          <a href="../index.html" class="btn btn-primary">Return to Track 05 &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <span>Educate &bull; Design &bull; Grow &middot; English Hub &middot; Setting Boundaries at Work (Executive Business)</span>
+      </div>
+      <a href="../../../teacher-hub/Business-Executive-English/setting-boundaries-at-work/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <!-- PIN MODAL -->
+  <div class="modal-backdrop" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
+    <div class="modal-card">
+      <h3 id="pinModalTitle">Teacher's Version</h3>
+      <p>Enter your authorized faculty PIN to unlock step-by-step didactic sequences and answer keys.</p>
+      <input type="password" id="pinInput" class="text-input" placeholder="Faculty PIN" onkeydown="if(event.key==='Enter')submitPin()">
+      <div class="audio-status-note" id="pinError" style="color: var(--danger-600);"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline btn-sm" onclick="closeTeacherModal()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="submitPin()">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* === STUDENT NAME & TEACHER PIN === */
+    function loadStudentName() {
+      let name = '';
+      try {
+        name = localStorage.getItem('ld_student_name') || '';
+        if (!name) {
+          const raw = localStorage.getItem('ld-english-hub');
+          if (raw) name = (JSON.parse(raw).studentName || '');
+        }
+      } catch (_) {}
+      const btn = document.getElementById('studentNameBtn');
+      if (btn) btn.textContent = 'Student \u00B7 ' + (name || 'Guest');
+    }
+    function editStudentName() {
+      const current = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', current);
+      if (next === null) return;
+      const clean = next.trim();
+      try {
+        localStorage.setItem('ld_student_name', clean);
+        const raw = localStorage.getItem('ld-english-hub');
+        const data = raw ? JSON.parse(raw) : {};
+        data.studentName = clean;
+        localStorage.setItem('ld-english-hub', JSON.stringify(data));
+      } catch (_) {}
+      loadStudentName();
+    }
+
+    const VALID_PINS = ['2064', '0410'];
+    function setTeacherMode(active) {
+      document.body.classList.toggle('teacher-mode', active);
+      const btn = document.getElementById('teacherToggleBtn');
+      if (btn) {
+        btn.classList.toggle('is-active', active);
+        btn.textContent = active ? "Teacher's Version (Active)" : "Teacher's Version \u2197";
+      }
+    }
+    function openTeacherModal() {
+      if (document.body.classList.contains('teacher-mode')) {
+        setTeacherMode(false);
+        return;
+      }
+      document.getElementById('pinError').textContent = '';
+      document.getElementById('pinInput').value = '';
+      document.getElementById('pinModal').classList.add('is-open');
+      setTimeout(() => document.getElementById('pinInput').focus(), 50);
+    }
+    function closeTeacherModal() {
+      document.getElementById('pinModal').classList.remove('is-open');
+    }
+    function submitPin() {
+      const val = document.getElementById('pinInput').value.trim();
+      if (VALID_PINS.includes(val)) {
+        try { sessionStorage.setItem('ld-coordinator-auth', 'granted'); } catch (_) {}
+        setTeacherMode(true);
+        closeTeacherModal();
+      } else {
+        document.getElementById('pinError').textContent = 'Incorrect PIN. Please try again.';
+      }
+    }
+
+    /* === TABS === */
+    function goTab(id) {
+      document.querySelectorAll('.module-tab').forEach(btn => {
+        const active = btn.dataset.tab === id;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      document.querySelectorAll('.module-panel').forEach(panel => {
+        panel.classList.toggle('active', panel.id === id);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.module-tab').forEach(btn => {
+      btn.addEventListener('click', () => goTab(btn.dataset.tab));
+    });
+
+    /* === 01 WARM-UP REACTION === */
+    function pickReact(btn) {
+      btn.parentElement.querySelectorAll('.react-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    /* === REAL AUDIO PLAYER (NO TTS) === */
+    let activeAudio = null;
+    function playRealAudio(src, statusId) {
+      if (activeAudio) { activeAudio.pause(); activeAudio = null; }
+      const statusEl = document.getElementById(statusId);
+      const audio = new Audio(src);
+      activeAudio = audio;
+      if (statusEl) statusEl.textContent = 'Playing audio...';
+      audio.play().then(() => {
+        if (statusEl) statusEl.textContent = '';
+      }).catch(() => {
+        if (statusEl) statusEl.textContent = 'Studio audio file queued (' + src + ').';
+      });
+    }
+
+    /* === 02 VOCABULARY FLIP CARDS === */
+    const VOCAB_DATA = [
+      {
+        word: 'set a boundary',
+        pos: 'verb phrase',
+        ipa: '/set ə ˈbaʊn.dɚ.i/',
+        example: 'She set a clear boundary around her focus hours every morning.',
+        meaning: 'To define what is acceptable and what you can or cannot take on at work.',
+        wAudio: 'audio/vocab_01_word.mp3',
+        eAudio: 'audio/vocab_01_ex.mp3'
+      },
+      {
+        word: 'at full capacity',
+        pos: 'prep phrase',
+        ipa: '/æt fʊl kəˈpæs.ə.ti/',
+        example: 'Our engineering team is at full capacity until Friday.',
+        meaning: 'Completely booked with zero extra room for new tasks right now.',
+        wAudio: 'audio/vocab_02_word.mp3',
+        eAudio: 'audio/vocab_02_ex.mp3'
+      },
+      {
+        word: 'push back',
+        pos: 'phrasal verb',
+        ipa: '/pʊʃ bæk/',
+        example: 'We had to push back on the client\'s unrealistic Friday deadline.',
+        meaning: 'To disagree respectfully or challenge an unreasonable request.',
+        wAudio: 'audio/vocab_03_word.mp3',
+        eAudio: 'audio/vocab_03_ex.mp3'
+      },
+      {
+        word: 'protect focus',
+        pos: 'verb phrase',
+        ipa: '/prəˈtekt ˈfoʊ.kəs/',
+        example: 'Blocking two hours on your calendar helps protect deep focus.',
+        meaning: 'To guard your uninterrupted time for high-impact work.',
+        wAudio: 'audio/vocab_04_word.mp3',
+        eAudio: 'audio/vocab_04_ex.mp3'
+      },
+      {
+        word: 'trade-off',
+        pos: 'noun',
+        ipa: '/ˈtreɪd.ɔːf/',
+        example: 'If we launch early, the trade-off is skipping the second review.',
+        meaning: 'A balance where choosing one priority means giving up or delaying another.',
+        wAudio: 'audio/vocab_05_word.mp3',
+        eAudio: 'audio/vocab_05_ex.mp3'
+      },
+      {
+        word: 'overcommit',
+        pos: 'verb',
+        ipa: '/ˌoʊ.vɚ.kəˈmɪt/',
+        example: 'Saying yes to everything only leads managers to overcommit.',
+        meaning: 'To promise more deliverables or time than you can realistically handle.',
+        wAudio: 'audio/vocab_06_word.mp3',
+        eAudio: 'audio/vocab_06_ex.mp3'
+      }
+    ];
+
+    function renderFlipCards(items, containerId, statusId, isChunk) {
+      const grid = document.getElementById(containerId);
+      grid.innerHTML = items.map(item => `
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-face">
+              <div class="flip-front-top">
+                <div class="flip-word-group">
+                  <div class="${isChunk ? 'flip-word-chunk' : 'flip-word'}">${item.word}</div>
+                  <div class="flip-ipa">${item.ipa}</div>
+                </div>
+                <span class="flip-pos">${item.pos}</span>
+              </div>
+              <div class="flip-example">"${item.example}"</div>
+              <div class="flip-audio-row" onclick="event.stopPropagation()">
+                <button type="button" class="audio-chip" onclick="playRealAudio('${item.wAudio}', '${statusId}')">&#9654; ${isChunk ? 'Expression' : 'Word'}</button>
+                <button type="button" class="audio-chip" onclick="playRealAudio('${item.eAudio}', '${statusId}')">&#9654; Example</button>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="flip-back-word">${item.word}</div>
+              <div class="flip-back-meaning">${item.meaning}</div>
+              <div class="flip-hint">Click to flip back</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    /* === 02 BOUNDARY AUDIT === */
+    const SORT_ITEMS = [
+      { text: 'Asking your manager which current project should move to next week before accepting a new one.', ans: 'healthy', fb: 'Healthy Boundary — makes the trade-off visible.' },
+      { text: 'Saying "yes, no problem" at 6 PM and working until midnight to avoid awkwardness.', ans: 'burnout', fb: 'Hidden Burnout — overcommitting destroys your bandwidth.' },
+      { text: 'Keeping 9–11 AM blocked for strategic work and replying to Slack messages afterward.', ans: 'healthy', fb: 'Healthy Boundary — actively protects focus.' },
+      { text: 'Checking work email during dinner every night just in case someone sends an urgent note.', ans: 'burnout', fb: 'Hidden Burnout — no recovery time creates chronic fatigue.' },
+      { text: 'Offering a realistic Thursday delivery instead of promising an impossible Tuesday.', ans: 'healthy', fb: 'Healthy Boundary — builds trust through honesty.' },
+      { text: 'Apologizing repeatedly when your team is already at full capacity.', ans: 'burnout', fb: 'Hidden Burnout — makes a normal capacity limit sound like a personal failure.' }
+    ];
+    const sortState = {};
+    function renderSort() {
+      document.getElementById('sortList').innerHTML = SORT_ITEMS.map((item, i) => `
+        <div class="sort-item" id="sortRow${i}">
+          <div class="sort-text">${i + 1}. ${item.text}</div>
+          <div class="sort-actions">
+            <button type="button" class="choice-btn" onclick="checkSort(${i}, 'healthy', this)">Healthy Boundary</button>
+            <button type="button" class="choice-btn" onclick="checkSort(${i}, 'burnout', this)">Hidden Burnout</button>
+          </div>
+          <div class="sort-fb" id="sortFb${i}"></div>
+        </div>
+      `).join('');
+    }
+    function checkSort(idx, pick, btn) {
+      const row = document.getElementById('sortRow' + idx);
+      row.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+      const ok = SORT_ITEMS[idx].ans === pick;
+      btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+      const fb = document.getElementById('sortFb' + idx);
+      fb.textContent = (ok ? 'Spot on: ' : 'Look closer: ') + SORT_ITEMS[idx].fb;
+      fb.classList.add('show');
+      if (ok) sortState[idx] = true;
+      document.getElementById('sortScorePill').textContent = Object.keys(sortState).length + ' / ' + SORT_ITEMS.length + ' audited';
+    }
+
+    /* === 03 EXECUTIVE CHUNKS === */
+    const CHUNKS_DATA = [
+      {
+        word: 'I\'d love to help, though...',
+        pos: 'Softened refusal',
+        ipa: '/aɪd lʌv tuː help ðoʊ/',
+        example: 'I\'d love to help with the launch deck, though my week is fully booked.',
+        meaning: 'Shows goodwill first, then states your real capacity limit calmly.',
+        wAudio: 'audio/chunk_01_word.mp3',
+        eAudio: 'audio/chunk_01_ex.mp3'
+      },
+      {
+        word: 'What\'s the trade-off?',
+        pos: 'Reprioritizing',
+        ipa: '/wʌts ðə ˈtreɪd.ɔːf/',
+        example: 'I can take this on today—what\'s the trade-off on my other deadlines?',
+        meaning: 'Asks your manager or client to help decide what gets paused or moved.',
+        wAudio: 'audio/chunk_02_word.mp3',
+        eAudio: 'audio/chunk_02_ex.mp3'
+      },
+      {
+        word: 'Here\'s what I can do',
+        pos: 'Constructive pivot',
+        ipa: '/hɪrz wʌt aɪ kæn duː/',
+        example: 'I can\'t attend the 7 AM call, but here\'s what I can do: I\'ll send my notes tonight.',
+        meaning: 'Shifts the conversation from a flat "no" to a workable alternative.',
+        wAudio: 'audio/chunk_03_word.mp3',
+        eAudio: 'audio/chunk_03_ex.mp3'
+      },
+      {
+        word: 'Not right now',
+        pos: 'Clear timing',
+        ipa: '/nɑːt raɪt naʊ/',
+        example: 'Not right now, but let\'s revisit this on Monday morning.',
+        meaning: 'A brief, calm deferral that protects immediate priorities without shutting the door forever.',
+        wAudio: 'audio/chunk_04_word.mp3',
+        eAudio: 'audio/chunk_04_ex.mp3'
+      }
+    ];
+
+    /* === 04 TED TALK QUIZ === */
+    const TED_QS = [
+      {
+        q: '1. According to Nedra Glover Tawwab, what is the FIRST step to setting a boundary?',
+        opts: [
+          'Wait until you feel completely burned out.',
+          'Identify your own needs and notice what is causing stress.',
+          'Send a long email explaining your entire schedule.'
+        ],
+        ans: 1
+      },
+      {
+        q: '2. How should you communicate a boundary in Step 2?',
+        opts: [
+          'Be clear, direct, and polite without over-explaining or apologizing.',
+          'Drop subtle hints and hope your coworker notices.',
+          'Say yes first and cancel at the last minute.'
+        ],
+        ans: 0
+      },
+      {
+        q: '3. What makes a boundary real in Step 3?',
+        opts: [
+          'Repeating the request every month.',
+          'Asking HR to enforce it for you.',
+          'Following through with consistent action when someone tests the limit.'
+        ],
+        ans: 2
+      }
+    ];
+    function renderTedQuiz() {
+      document.getElementById('tedQuiz').innerHTML = TED_QS.map((item, qi) => `
+        <div class="quiz-card" id="tq${qi}">
+          <div class="quiz-q">${item.q}</div>
+          <div class="quiz-opts">
+            ${item.opts.map((opt, oi) => `<button type="button" class="quiz-opt" onclick="checkTQ(${qi}, ${oi}, this)">${opt}</button>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+    function checkTQ(qi, oi, btn) {
+      const card = document.getElementById('tq' + qi);
+      card.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+      btn.classList.add(oi === TED_QS[qi].ans ? 'is-correct' : 'is-wrong');
+    }
+
+    /* === 05 GRAMMAR: REFUSAL UPGRADE + WORDBOX === */
+    const UPGRADES = [
+      {
+        raw: 'Too blunt: "No, I won\'t rush two reports this week."',
+        opts: [
+          'I\'d rather to deliver one strong report than rush two.',
+          'I\'d rather deliver one strong report than rush two.',
+          'I\'d rather delivering one strong report than rush two.'
+        ],
+        ans: 1,
+        note: 'Use would rather + base verb (no "to").'
+      },
+      {
+        raw: 'Weak / unclear: "Maybe I shouldn\'t review contracts in the morning?"',
+        opts: [
+          'I prefer to review contracts in the afternoon rather than during my morning focus block.',
+          'I prefer reviewing to contracts in the afternoon.',
+          'I prefer review contracts in the afternoon.'
+        ],
+        ans: 0,
+        note: 'Use prefer to + base verb.'
+      },
+      {
+        raw: 'Over-apologetic: "I\'m so sorry, I just can\'t do this right now, forgive me."',
+        opts: [
+          'I love helping, but I\'m busy.',
+          'No, I am at full capacity right now.',
+          'I\'d love to help, though I\'m at full capacity until Thursday.'
+        ],
+        ans: 2,
+        note: 'Use I\'d love to..., though... to stay warm and firm.'
+      }
+    ];
+    const upgradeDone = {};
+    function renderUpgrades() {
+      document.getElementById('upgradeContainer').innerHTML = UPGRADES.map((u, ui) => `
+        <div class="upgrade-card" id="upg${ui}">
+          <div class="upgrade-raw"><strong>${ui + 1}.</strong> ${u.raw}</div>
+          <div class="quiz-opts">
+            ${u.opts.map((o, oi) => `<button type="button" class="quiz-opt" onclick="checkUpgrade(${ui}, ${oi}, this)">${o}</button>`).join('')}
+          </div>
+          <div class="sort-fb" id="upgFb${ui}"></div>
+        </div>
+      `).join('');
+    }
+    function checkUpgrade(ui, oi, btn) {
+      const card = document.getElementById('upg' + ui);
+      card.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+      const ok = oi === UPGRADES[ui].ans;
+      btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+      const fb = document.getElementById('upgFb' + ui);
+      fb.textContent = (ok ? 'Executive standard! ' : 'Check the form: ') + UPGRADES[ui].note;
+      fb.classList.add('show');
+      if (ok) upgradeDone[ui] = true;
+      document.getElementById('upgradeScorePill').textContent = Object.keys(upgradeDone).length + ' / ' + UPGRADES.length + ' upgraded';
+    }
+
+    const WORDBOXES = [
+      {
+        prompt: '1. Prioritize finishing one report over rushing two projects:',
+        tokens: ['than rush', 'finish', 'I\'d rather', 'two projects.', 'this report'],
+        target: "I'd rather finish this report than rush two projects."
+      },
+      {
+        prompt: '2. Offer Thursday as an alternative meeting day:',
+        tokens: ['to meet', 'Would you', 'instead?', 'prefer', 'on Thursday'],
+        target: 'Would you prefer to meet on Thursday instead?'
+      }
+    ];
+    const wbSelections = [[], []];
+    function renderWordboxes() {
+      document.getElementById('wordboxContainer').innerHTML = WORDBOXES.map((wb, wi) => `
+        <div class="wordbox-row">
+          <div class="wordbox-prompt"><strong>${wb.prompt}</strong></div>
+          <div class="wordbox-tokens" id="wbTokens${wi}">
+            ${wb.tokens.map((t, ti) => `<button type="button" class="word-chip" id="wb_${wi}_${ti}" onclick="pickToken(${wi}, ${ti})">${t}</button>`).join('')}
+          </div>
+          <div class="wordbox-answer">
+            <span id="wbAns${wi}">Click chips above to build the sentence...</span>
+            <button type="button" class="btn btn-outline btn-sm" onclick="resetWordbox(${wi})">Reset</button>
+          </div>
+          <div class="sort-fb" id="wbFb${wi}"></div>
+        </div>
+      `).join('');
+    }
+    function pickToken(wi, ti) {
+      document.getElementById(`wb_${wi}_${ti}`).classList.add('used');
+      wbSelections[wi].push(WORDBOXES[wi].tokens[ti]);
+      const built = wbSelections[wi].join(' ');
+      document.getElementById('wbAns' + wi).textContent = built;
+      if (wbSelections[wi].length === WORDBOXES[wi].tokens.length) {
+        const fb = document.getElementById('wbFb' + wi);
+        const ok = built === WORDBOXES[wi].target;
+        fb.textContent = ok ? 'Correct! Clear, natural boundary.' : 'Almost — reset and check the verb order.';
+        fb.style.color = ok ? 'var(--teal-800)' : 'var(--danger-600)';
+        fb.classList.add('show');
+      }
+    }
+    function resetWordbox(wi) {
+      wbSelections[wi] = [];
+      document.querySelectorAll(`#wbTokens${wi} .word-chip`).forEach(c => c.classList.remove('used'));
+      document.getElementById('wbAns' + wi).textContent = 'Click chips above to build the sentence...';
+      document.getElementById('wbFb' + wi).classList.remove('show');
+    }
+
+    /* === 06 SPEAKING: BOUNDARY LAB === */
+    const LAB_SCENARIOS = [
+      {
+        role: 'SCENARIO 01 · YOUR DIRECTOR',
+        title: 'The Last-Minute Deck',
+        ask: '"Can you rebuild these 15 slides tonight? I need them for the 8 AM board prep."',
+        constraint: 'Goal: Ask about the trade-off on your current deadline and propose an 8:30 AM executive summary instead.'
+      },
+      {
+        role: 'SCENARIO 02 · TEAM PEER',
+        title: 'The Unscheduled Call',
+        ask: '"Hey, got 15 minutes right now? I need you to walk me through the entire Q3 tracker."',
+        constraint: 'Goal: Protect your morning focus block and offer a 2 PM slot or a quick 3-bullet summary.'
+      },
+      {
+        role: 'SCENARIO 03 · KEY CLIENT',
+        title: 'Scope Creep Request',
+        ask: '"Since your team is already running the audit, can you include our Mexico branch at no extra cost?"',
+        constraint: 'Goal: Push back diplomatically without sounding rigid and pivot to a formal follow-up quote.'
+      },
+      {
+        role: 'SCENARIO 04 · DIRECT REPORT',
+        title: 'Constant Interruptions',
+        ask: '"Wait—before I send this client email, can you check every paragraph with me live?"',
+        constraint: 'Goal: Set a boundary around your bandwidth while empowering them to own routine replies.'
+      }
+    ];
+    function renderLab() {
+      document.getElementById('labGrid').innerHTML = LAB_SCENARIOS.map((s, i) => `
+        <div class="lab-card" onclick="selectLab(this)">
+          <div class="lab-role">${s.role}</div>
+          <div class="lab-title">${s.title}</div>
+          <div class="lab-ask">${s.ask}</div>
+          <div class="lab-constraint">${s.constraint}</div>
+        </div>
+      `).join('');
+    }
+    function selectLab(card) {
+      document.querySelectorAll('.lab-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+
+    /* === 07 EXIT TICKET === */
+    function saveExitTicket() {
+      const val = document.getElementById('exitTicketInput').value.trim();
+      const st = document.getElementById('exitStatus');
+      if (!val) {
+        st.style.color = 'var(--danger-600)';
+        st.textContent = 'Write 2–3 short sentences before saving.';
+        return;
+      }
+      try { localStorage.setItem('ld_be_u05_l01_exit', val); } catch (_) {}
+      st.style.color = 'var(--teal-800)';
+      st.textContent = 'Saved! Share your boundary statement with your coach.';
+    }
+
+    /* === INIT === */
+    (function init() {
+      loadStudentName();
+      renderFlipCards(VOCAB_DATA, 'vocabGrid', 'vocabAudioStatus', false);
+      renderSort();
+      renderFlipCards(CHUNKS_DATA, 'chunksGrid', 'chunksAudioStatus', true);
+      renderTedQuiz();
+      renderUpgrades();
+      renderWordboxes();
+      renderLab();
+
+      try {
+        const savedExit = localStorage.getItem('ld_be_u05_l01_exit');
+        if (savedExit) document.getElementById('exitTicketInput').value = savedExit;
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('role') === 'teacher' || sessionStorage.getItem('ld-coordinator-auth') === 'granted') {
+          setTeacherMode(true);
+        }
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore &middot; BE-05-L01: Setting Boundaries at Work | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --radius-sm: 8px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+    .header-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+    .header-gold-link { color: var(--gold-500); text-decoration: none; font-size: 13px; font-weight: 700; }
+
+    .page-container { max-width: 980px; margin: 0 auto; padding: 28px 24px 64px; }
+    .explore-hero {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .explore-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal-50);
+      opacity: 0.85;
+      margin-bottom: 6px;
+    }
+    .explore-title { font-size: clamp(1.5rem, 2.8vw, 2.05rem); font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
+    .explore-title span { color: var(--gold-500); }
+    .explore-sub { font-size: 0.92rem; color: var(--slate-300); max-width: 58ch; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+    .section-title { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .section-lead { font-size: 0.88rem; color: var(--slate-600); margin-bottom: 16px; }
+
+    .task-row {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .task-sentence { font-size: 0.9rem; color: var(--navy-900); font-weight: 500; flex: 1; min-width: 240px; }
+    .task-select {
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+    }
+    .task-input {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.88rem;
+      color: var(--navy-900);
+      margin-top: 8px;
+    }
+    .fb-line { font-size: 0.8rem; font-weight: 600; margin-top: 6px; min-height: 18px; }
+    .fb-ok { color: var(--teal-800); }
+    .fb-err { color: var(--danger-600); }
+
+    .brief-textarea {
+      width: 100%;
+      min-height: 110px;
+      padding: 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--navy-900);
+      resize: vertical;
+    }
+
+    .studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 24px;
+      margin-top: 28px;
+      font-size: 0.82rem;
+    }
+    .footer-inner { max-width: 980px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media print {
+      .site-header, .no-print, .studio-site-footer { display: none !important; }
+      body { background: #FFFFFF; color: #000000; }
+      .page-container { max-width: 100%; padding: 0; }
+      .explore-hero { background: #FFFFFF; color: #001F54; border: 1px solid #CBD5E1; padding: 18px; }
+      .explore-sub, .explore-kicker { color: #334155; }
+      .section-card { box-shadow: none; break-inside: avoid; border: 1px solid #CBD5E1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Explore &middot; Executive Business</span>
+      </a>
+      <div class="header-actions">
+        <a href="./index.html" class="header-gold-link">Open Experience (Live Session) &rarr;</a>
+        <a href="../index.html?mode=explore" class="header-link">&larr; Back to Track 05</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="explore-hero">
+      <div>
+        <div class="explore-kicker">BE-05-L01 &middot; Autonomous Workbook</div>
+        <h1 class="explore-title">Setting Boundaries <span>at Work</span></h1>
+        <p class="explore-sub">Autonomous consolidation: reinforce boundary collocations, fix common refusal slips, and draft one diplomatic pushback message.</p>
+      </div>
+      <button type="button" class="btn btn-gold no-print" onclick="window.print()">Print Worksheet</button>
+    </header>
+
+    <section class="section-card">
+      <div class="section-kicker">Part 01 &middot; Lexical Precision</div>
+      <h2 class="section-title">Choose the Exact Boundary Expression</h2>
+      <p class="section-lead">Select the collocation or executive chunk that best completes each sentence.</p>
+      <div id="recallList"></div>
+      <div class="no-print" style="margin-top: 14px; display: flex; align-items: center; gap: 12px;">
+        <button type="button" class="btn btn-teal" onclick="checkRecall()">Check Answers</button>
+        <span class="fb-line" id="recallScore" style="margin: 0;"></span>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-kicker">Part 02 &middot; Error Clinic</div>
+      <h2 class="section-title">Spot &amp; Fix the Refusal Slip</h2>
+      <p class="section-lead">Each sentence below contains one grammar mistake in <em>would rather</em> or <em>prefer to</em>. Rewrite the corrected sentence.</p>
+      <div id="clinicList"></div>
+      <div class="no-print" style="margin-top: 14px; display: flex; align-items: center; gap: 12px;">
+        <button type="button" class="btn btn-teal" onclick="checkClinic()">Verify Corrections</button>
+        <span class="fb-line" id="clinicScore" style="margin: 0;"></span>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-kicker">Part 03 &middot; Autonomous Writing Transfer</div>
+      <h2 class="section-title">Draft Your Diplomatic Pushback Message</h2>
+      <p class="section-lead">Scenario: A colleague asks you at 5:30 PM to take over a 2-hour client audit tomorrow morning. Write a short Slack/email reply (4–5 lines) using <em>I'd love to..., though...</em>, <em>would rather / prefer to</em>, and <em>Here's what I can do</em>.</p>
+      <textarea id="bfMessage" class="brief-textarea" placeholder="Write your diplomatic refusal with a constructive alternative..."></textarea>
+      <div class="no-print" style="margin-top: 12px; display: flex; align-items: center; gap: 12px;">
+        <button type="button" class="btn btn-teal" onclick="saveMsg()">Save Draft</button>
+        <span class="fb-line" id="msgStatus" style="margin: 0;"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div>Educate &bull; Design &bull; Grow &middot; Explore Workbook &middot; Executive Business</div>
+      <div>BE-05-L01 &middot; Setting Boundaries at Work</div>
+    </div>
+  </footer>
+
+  <script>
+    const RECALL_DATA = [
+      { s: '1. Our design team is ____ until Friday, so we cannot add another sprint item.', opts: ['at full capacity', 'trade-off', 'push back'], ans: 'at full capacity' },
+      { s: '2. Blocking 9–11 AM on my calendar helps me ____ on strategic work.', opts: ['overcommit', 'protect focus', 'not right now'], ans: 'protect focus' },
+      { s: '3. If we move the launch up by three days, what is the ____ on quality testing?', opts: ['trade-off', 'capacity', 'boundary'], ans: 'trade-off' },
+      { s: '4. I can\'t join the 7 AM call, but ____: I\'ll send my updates tonight.', opts: ['here\'s what I can do', 'at full capacity', 'overcommit'], ans: 'here\'s what I can do' },
+      { s: '5. Saying yes to every urgent ping is the fastest way to ____.', opts: ['set a boundary', 'overcommit', 'push back'], ans: 'overcommit' }
+    ];
+    function renderRecall() {
+      document.getElementById('recallList').innerHTML = RECALL_DATA.map((r, i) => `
+        <div class="task-row">
+          <div class="task-sentence">${r.s}</div>
+          <select id="rec${i}" class="task-select">
+            <option value="">Choose...</option>
+            ${r.opts.map(o => `<option value="${o}">${o}</option>`).join('')}
+          </select>
+          <div class="fb-line" id="recFb${i}" style="width: 100%;"></div>
+        </div>
+      `).join('');
+    }
+    function checkRecall() {
+      let ok = 0;
+      RECALL_DATA.forEach((r, i) => {
+        const val = document.getElementById('rec' + i).value;
+        const fb = document.getElementById('recFb' + i);
+        if (val === r.ans) { ok++; fb.className = 'fb-line fb-ok'; fb.textContent = 'Correct.'; }
+        else { fb.className = 'fb-line fb-err'; fb.textContent = 'Check your choice and try again.'; }
+      });
+      document.getElementById('recallScore').textContent = ok + ' / ' + RECALL_DATA.length + ' correct';
+    }
+
+    const CLINIC_DATA = [
+      { bad: '1. I would rather to finish this proposal well than rush it.', key: 'rather finish', hint: 'would rather + base verb (no "to").' },
+      { bad: '2. She prefers protect her morning hours for deep client work.', key: 'prefers to protect', hint: 'prefer + to + base verb.' },
+      { bad: '3. I\'d rather don\'t commit to Friday until I check with ops.', key: 'rather not commit', hint: 'Negative form: would rather not + base verb.' }
+    ];
+    function renderClinic() {
+      document.getElementById('clinicList').innerHTML = CLINIC_DATA.map((c, i) => `
+        <div class="task-row" style="display: block;">
+          <div class="task-sentence">${c.bad}</div>
+          <input type="text" id="cl${i}" class="task-input" placeholder="Type the corrected sentence...">
+          <div class="fb-line" id="clFb${i}"></div>
+        </div>
+      `).join('');
+    }
+    function checkClinic() {
+      let ok = 0;
+      CLINIC_DATA.forEach((c, i) => {
+        const val = document.getElementById('cl' + i).value.trim().toLowerCase();
+        const fb = document.getElementById('clFb' + i);
+        if (val.includes(c.key)) { ok++; fb.className = 'fb-line fb-ok'; fb.textContent = 'Accurate fix!'; }
+        else { fb.className = 'fb-line fb-err'; fb.textContent = 'Hint: ' + c.hint; }
+      });
+      document.getElementById('clinicScore').textContent = ok + ' / ' + CLINIC_DATA.length + ' fixed';
+    }
+
+    function saveMsg() {
+      try { localStorage.setItem('ld_be_u05_l01_explore_msg', document.getElementById('bfMessage').value.trim()); } catch (_) {}
+      const st = document.getElementById('msgStatus');
+      st.className = 'fb-line fb-ok';
+      st.textContent = 'Draft saved locally. You can print this worksheet anytime.';
+    }
+
+    (function init() {
+      renderRecall();
+      renderClinic();
+      try {
+        const saved = localStorage.getItem('ld_be_u05_l01_explore_msg');
+        if (saved) document.getElementById('bfMessage').value = saved;
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>
