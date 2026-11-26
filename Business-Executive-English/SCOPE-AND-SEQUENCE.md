@@ -20,6 +20,7 @@ Para evitar que las sesiones se vuelvan pesadas o excesivamente escritas, **toda
 | **Escritura** | **Máximo 1 micro-producción** (Exit Ticket de 2–3 líneas reales). | Redacción completa (memo BLUF, pitch, correo diplomático) + versión imprimible. |
 | **Speaking** | **Simulación oral central** con *Speaking Checklist* visible (3–4 criterios). **Prohibido repetir la misma dinámica dentro de un mismo Track.** | Guía de preparación o autoevaluación oral. |
 | **Audio / Video** | **100% audios reales** preproducidos (cero TTS del navegador) + **videos cortos tipo TED Talk** en lecciones clave (ej. Tawwab, Edmondson). Guion en `teacher-hub/Business-Executive-English/`. | — |
+| **Footer** | Usar el logo blanco (`logo-white-lockup.webp`) seguido **únicamente** de `Educate • Design • Grow · English Hub · [Título] (Executive Business)` (sin repetir `Learning & Development Studio` en texto junto al logo). | Sin repetir `Learning & Development Studio` en texto. |
 
 ---
 
