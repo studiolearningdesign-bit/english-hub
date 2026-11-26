@@ -451,61 +451,88 @@
     /* === FLIP CARDS (02 VOCAB & 03 CHUNKS) === */
     .flip-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
       margin-bottom: 26px;
     }
-    .flip-card {
-      perspective: 1000px;
-      min-height: 225px;
-      cursor: pointer;
-    }
-    .flip-inner {
+    .flip-card { perspective: 1000px; height: 245px; cursor: pointer; }
+    .flip-card-inner {
       position: relative;
       width: 100%;
       height: 100%;
-      min-height: 225px;
-      transition: transform 0.45s ease;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
       transform-style: preserve-3d;
     }
-    .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
     .flip-face {
       position: absolute;
       inset: 0;
       backface-visibility: hidden;
-      background: var(--white);
-      border: 1px solid var(--slate-200);
+      -webkit-backface-visibility: hidden;
       border-radius: var(--radius-md);
-      padding: 20px;
+      border: 1px solid var(--slate-200);
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+      align-items: stretch;
       text-align: center;
+      background: var(--white);
       box-shadow: var(--shadow-sm);
     }
+    .flip-front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+    }
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
     .flip-back {
       transform: rotateY(180deg);
       background: var(--navy-950);
       color: var(--white);
-      border-color: rgba(212, 168, 67, 0.35);
+      border-color: var(--navy-800);
       justify-content: center;
-      gap: 10px;
+      align-items: center;
+      gap: 12px;
     }
     .flip-pos {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
+      text-transform: lowercase;
       color: var(--teal-700);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+      margin-top: 2px;
     }
-    .flip-word { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); margin: 4px 0 2px; }
-    .flip-back .flip-word { color: var(--gold-400); font-size: 1.24rem; }
-    .flip-ipa { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--slate-500); margin-bottom: 8px; }
-    .flip-example { font-size: 0.86rem; color: var(--slate-700); line-height: 1.45; }
-    .flip-meaning { font-size: 0.92rem; color: var(--slate-200); max-width: 28ch; line-height: 1.5; }
-    .flip-hint { font-size: 0.72rem; color: var(--slate-400); margin-top: 6px; }
+    .flip-word {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+    }
+    .flip-word-chunk {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+    }
+    .flip-ipa {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      margin-top: 4px;
+    }
+    .flip-example { font-size: 0.88rem; color: var(--slate-700); font-weight: 500; text-align: center; line-height: 1.45; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.3rem; font-weight: 800; color: var(--gold-400); }
+    .flip-back-meaning { font-size: 0.92rem; color: var(--slate-100); max-width: 28ch; line-height: 1.5; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
     .audio-btn-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
     .audio-chip {
       display: inline-flex;
@@ -514,7 +541,7 @@
       font-family: inherit;
       font-size: 0.74rem;
       font-weight: 700;
-      padding: 5px 11px;
+      padding: 5px 12px;
       border-radius: var(--radius-full);
       border: 1px solid var(--slate-200);
       background: var(--slate-50);
@@ -1566,29 +1593,28 @@
       }
     ];
 
-    function renderFlipCards(items, containerId, statusId) {
+    function renderFlipCards(items, containerId, statusId, isChunk) {
       const grid = document.getElementById(containerId);
       grid.innerHTML = items.map(item => `
-        <div class="flip-card" onclick="this.classList.toggle('flipped')">
-          <div class="flip-inner">
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
             <div class="flip-face">
-              <div>
-                <div class="flip-pos">${item.pos}</div>
-                <div class="flip-word">${item.word}</div>
-                <div class="flip-ipa">${item.ipa}</div>
-              </div>
-              <p class="flip-example">"${item.example}"</p>
-              <div>
-                <div class="audio-btn-row">
-                  <button type="button" class="audio-chip" onclick="event.stopPropagation(); playRealAudio('${item.wAudio}', '${statusId}')">&#9654; Word</button>
-                  <button type="button" class="audio-chip" onclick="event.stopPropagation(); playRealAudio('${item.eAudio}', '${statusId}')">&#9654; Example</button>
+              <div class="flip-front-top">
+                <div class="flip-word-group">
+                  <div class="${isChunk ? 'flip-word-chunk' : 'flip-word'}">${item.word}</div>
+                  <div class="flip-ipa">${item.ipa}</div>
                 </div>
-                <div class="flip-hint">Click card to see meaning</div>
+                <span class="flip-pos">${item.pos}</span>
+              </div>
+              <div class="flip-example">"${item.example}"</div>
+              <div class="flip-audio-row" onclick="event.stopPropagation()">
+                <button type="button" class="audio-chip" onclick="playRealAudio('${item.wAudio}', '${statusId}')">&#9654; ${isChunk ? 'Expression' : 'Word'}</button>
+                <button type="button" class="audio-chip" onclick="playRealAudio('${item.eAudio}', '${statusId}')">&#9654; Example</button>
               </div>
             </div>
             <div class="flip-face flip-back">
-              <div class="flip-word">${item.word}</div>
-              <p class="flip-meaning">${item.meaning}</p>
+              <div class="flip-back-word">${item.word}</div>
+              <div class="flip-back-meaning">${item.meaning}</div>
               <div class="flip-hint">Click to flip back</div>
             </div>
           </div>
@@ -1887,9 +1913,9 @@
     /* === INIT === */
     (function init() {
       loadStudentName();
-      renderFlipCards(VOCAB_DATA, 'vocabGrid', 'vocabAudioStatus');
+      renderFlipCards(VOCAB_DATA, 'vocabGrid', 'vocabAudioStatus', false);
       renderSort();
-      renderFlipCards(CHUNKS_DATA, 'chunksGrid', 'chunksAudioStatus');
+      renderFlipCards(CHUNKS_DATA, 'chunksGrid', 'chunksAudioStatus', true);
       renderListeningQuiz();
       renderUpgrades();
       renderWordboxes();

@@ -14,7 +14,7 @@ Para evitar que las sesiones se vuelvan pesadas o excesivamente escritas, **toda
 
 | Dimensión | Estándar en `Experience` (Clase en vivo · Oral-First) | Estándar en `Explore` (Autónomo · Consolidación) |
 | :--- | :--- | :--- |
-| **Vocabulario** | **6 colocaciones ejecutivas transversales** (aplicables a cualquier industria; jerga financiera/legal reservada a Tracks 4 y 6). | Práctica de recuperación en contexto real. |
+| **Vocabulario** | **6 colocaciones ejecutivas transversales** en Flip Cards formato A1.1 (`word` + IPA a la izquierda, `pos` pill a la derecha, ejemplo centrado, botones de audio abajo y reverso navy con significado). Jerga financiera/legal reservada a Tracks 4 y 6. | Práctica de recuperación en contexto real. |
 | **Pragmatic Chunks `[L]`** | **3 a 4 bloques fijos** listos para hablar (no 9–10 *stems* largos). | Aplicación en diálogo o correo corto. |
 | **Gramática `[N]`** | **1 estructura clara** + práctica **ágil sin párrafos** (*Error Clinic, Diplomatic Upgrade, Swap the Tense, Decision Matrix, Wordbox*). | Consolidación escrita controlada y transferencia. |
 | **Escritura** | **Máximo 1 micro-producción** (Exit Ticket de 2–3 líneas reales). | Redacción completa (memo BLUF, pitch, correo diplomático) + versión imprimible. |
