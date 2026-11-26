@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Business English &middot; Workspace | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-700: #133E68;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --white: #FFFFFF;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(10, 25, 47, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+    .site-header {
+      background: rgba(7, 21, 39, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      height: 52px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .brand-logo-white {
+      height: 92px;
+      width: auto;
+      object-fit: contain;
+      margin: -20px 0;
+      display: block;
+      flex-shrink: 0;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+    .brand-course-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-200);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .student-pill {
+      background: none;
+      border: none;
+      color: var(--slate-200);
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .student-pill:hover { color: var(--white); }
+    .nav-back-link {
+      color: var(--slate-200);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-back-link:hover {
+      color: var(--white);
+      border-color: var(--gold-400);
+      background: rgba(212, 168, 67, 0.15);
+    }
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 36px 24px 72px;
+    }
+    .workspace-hero-banner {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 48px;
+      margin-bottom: 28px;
+      color: var(--white);
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      box-shadow: 0 24px 48px -12px rgba(7, 21, 39, 0.35);
+      background-image: linear-gradient(95deg, rgba(7, 21, 39, 0.96) 0%, rgba(11, 31, 58, 0.88) 52%, rgba(7, 21, 39, 0.72) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80');
+    }
+    .hero-title {
+      font-size: clamp(34px, 4.2vw, 46px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      max-width: 24ch;
+    }
+    .hero-title span { color: var(--gold-500); }
+    .hero-desc {
+      font-size: clamp(15px, 1.4vw, 17px);
+      color: #cbd5e1;
+      max-width: 64ch;
+      line-height: 1.6;
+    }
+    .mode-switch-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding: 12px 18px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .mode-switch-group {
+      display: inline-flex;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      gap: 4px;
+    }
+    .mode-switch-btn {
+      border: none;
+      background: transparent;
+      color: var(--slate-600);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mode-switch-btn.active.exp { background: var(--navy-900); color: var(--white); }
+    .mode-switch-btn.active.expl { background: var(--teal-700); color: var(--white); }
+    .mode-switch-hint {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--slate-600);
+    }
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 22px;
+    }
+    .track-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .track-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .card-visual {
+      position: relative;
+      height: 172px;
+      overflow: hidden;
+      background: var(--navy-950);
+    }
+    .card-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .track-card:hover .card-photo { transform: scale(1.04); }
+    .card-visual-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,21,39,0.12) 0%, rgba(7,21,39,0.74) 100%);
+    }
+    .card-badges {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .track-code {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--white);
+      background: rgba(7, 21, 39, 0.82);
+      border: 1px solid rgba(212, 168, 67, 0.45);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+    .track-count {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--slate-200);
+      background: rgba(7, 21, 39, 0.78);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+    .card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .track-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .track-desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      margin-bottom: 12px;
+    }
+    .track-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+    }
+    .btn-open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--navy-900);
+      border: 1px solid var(--navy-900);
+      color: var(--white);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    .btn-open:hover {
+      background: var(--teal-700);
+      border-color: var(--teal-700);
+    }
+    .site-footer {
+      border-top: 1px solid var(--slate-200);
+      padding: 22px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--slate-500);
+    }
+    @media (max-width: 640px) {
+      .workspace-hero-banner { padding: 36px 24px; }
+      .brand-course-label, .brand-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="./assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; Executive Business</span>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="student-pill" id="studentNameBtn" onclick="editStudentName()">Student &middot; Guest</button>
+        <a href="./index.html" class="nav-back-link">&larr; English Hub Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <header class="workspace-hero-banner">
+      <h1 class="hero-title">Executive Business <span>Lifecycle Tracks</span></h1>
+      <p class="hero-desc">Six real-world leadership tracks grounded in organizational dynamics (Mintzberg, Senge, Edmondson &amp; Tawwab). Select a track to open its sessions.</p>
+    </header>
+
+    <div class="mode-switch-bar">
+      <div class="mode-switch-group" role="tablist" aria-label="Lesson Mode">
+        <button type="button" class="mode-switch-btn active exp" id="uSwitchExp" role="tab" aria-selected="true">Experience (Live Session)</button>
+        <button type="button" class="mode-switch-btn expl" id="uSwitchExpl" role="tab" aria-selected="false">Explore (Workbook)</button>
+      </div>
+      <div class="mode-switch-hint" id="uSwitchHint">Mode: Experience (Oral-First Executive Session)</div>
+    </div>
+
+    <section class="tracks-grid">
+      <article class="track-card">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Track 01 Crisis & Operations">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="track-code font-mono">TRACK 01</span>
+            <span class="track-count font-mono">4 Lessons</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="track-title">Crisis &amp; Operations</h2>
+            <p class="track-desc">Lead urgent deadline calls, brief stakeholders on supply chain bottlenecks, run blameless RCAs, and pitch contingency plans.</p>
+            <div class="track-pills">
+              <span class="pill">First Conditional</span>
+              <span class="pill">Passive Voice</span>
+              <span class="pill">Past Deduction</span>
+            </div>
+          </div>
+          <a href="./Business-Executive-English/u01/index.html" class="btn-open track-link" data-base="./Business-Executive-English/u01/index.html">Open Track 01 &rarr;</a>
+        </div>
+      </article>
+
+      <article class="track-card">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Track 02 Meetings & Alignment">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="track-code font-mono">TRACK 02</span>
+            <span class="track-count font-mono">4 Lessons</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="track-title">Meetings &amp; Alignment</h2>
+            <p class="track-desc">Explain delays with authority, mediate cross-functional priorities, hold the floor during heated meetings, and lock in action items.</p>
+            <div class="track-pills">
+              <span class="pill">Past Perfect</span>
+              <span class="pill">Reported Speech</span>
+              <span class="pill">Softeners</span>
+            </div>
+          </div>
+          <a href="./Business-Executive-English/u02/index.html" class="btn-open track-link" data-base="./Business-Executive-English/u02/index.html">Open Track 02 &rarr;</a>
+        </div>
+      </article>
+
+      <article class="track-card">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="Track 03 Client Relations & Diplomatic Pushback">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="track-code font-mono">TRACK 03</span>
+            <span class="track-count font-mono">4 Lessons</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="track-title">Client Relations &amp; Diplomatic Pushback</h2>
+            <p class="track-desc">De-escalate unhappy enterprise accounts, trade concessions strategically, push back on scope creep, and deliver QBRs.</p>
+            <div class="track-pills">
+              <span class="pill">2nd Conditional</span>
+              <span class="pill">Hedging</span>
+              <span class="pill">Impact Trends</span>
+            </div>
+          </div>
+          <a href="./Business-Executive-English/u03/index.html" class="btn-open track-link" data-base="./Business-Executive-English/u03/index.html">Open Track 03 &rarr;</a>
+        </div>
+      </article>
+
+      <article class="track-card">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Track 04 Finance, Contracts & Legal Friction">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="track-code font-mono">TRACK 04</span>
+            <span class="track-count font-mono">4 Lessons</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="track-title">Finance, Contracts &amp; Legal Friction</h2>
+            <p class="track-desc">Follow up on overdue balances, audit invoice discrepancies, negotiate payment schedules, and review contract redlines.</p>
+            <div class="track-pills">
+              <span class="pill">Present Perfect</span>
+              <span class="pill">Relative Clauses</span>
+              <span class="pill">Obligation</span>
+            </div>
+          </div>
+          <a href="./Business-Executive-English/u04/index.html" class="btn-open track-link" data-base="./Business-Executive-English/u04/index.html">Open Track 04 &rarr;</a>
+        </div>
+      </article>
+
+      <article class="track-card">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Track 05 People, Leadership & Culture">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="track-code font-mono">TRACK 05</span>
+            <span class="track-count font-mono">5 Lessons &middot; Live</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="track-title">People, Leadership &amp; Culture</h2>
+            <p class="track-desc">Set boundaries at work, defend ROI in 1-on-1s, build psychological safety, delegate cleanly, and resolve team friction.</p>
+            <div class="track-pills">
+              <span class="pill">BE-05-L04 Live</span>
+              <span class="pill">Causatives</span>
+              <span class="pill">TED Talks</span>
+            </div>
+          </div>
+          <a href="./Business-Executive-English/u05/index.html" class="btn-open track-link" data-base="./Business-Executive-English/u05/index.html">Open Track 05 &rarr;</a>
+        </div>
+      </article>
+
+      <article class="track-card">
+        <div class="card-visual">
+          <img class="card-photo" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Track 06 Boardroom Strategy & Executive Vision">
+          <div class="card-visual-gradient"></div>
+          <div class="card-badges">
+            <span class="track-code font-mono">TRACK 06</span>
+            <span class="track-count font-mono">3 Lessons</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h2 class="track-title">Boardroom Strategy &amp; Executive Vision</h2>
+            <p class="track-desc">Defend budget variances to finance controllers, pitch strategic trade-offs to the board, and lead town halls in uncertainty.</p>
+            <div class="track-pills">
+              <span class="pill">Participle Clauses</span>
+              <span class="pill">3rd Conditional</span>
+              <span class="pill">Emphasis</span>
+            </div>
+          </div>
+          <a href="./Business-Executive-English/u06/index.html" class="btn-open track-link" data-base="./Business-Executive-English/u06/index.html">Open Track 06 &rarr;</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
+    <div>Curriculum 2026 &middot; Executive Business English &middot; 6 Lifecycle Tracks</div>
+  </footer>
+
+  <script>
+    function loadStudentName() {
+      let name = '';
+      try {
+        name = localStorage.getItem('ld_student_name') || '';
+        if (!name) {
+          const raw = localStorage.getItem('ld-english-hub');
+          if (raw) name = (JSON.parse(raw).studentName || '');
+        }
+      } catch (_) {}
+      const btn = document.getElementById('studentNameBtn');
+      if (btn) btn.textContent = 'Student \u00B7 ' + (name || 'Guest');
+    }
+    function editStudentName() {
+      const current = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', current);
+      if (next === null) return;
+      const clean = next.trim();
+      try {
+        localStorage.setItem('ld_student_name', clean);
+        const raw = localStorage.getItem('ld-english-hub');
+        const data = raw ? JSON.parse(raw) : {};
+        data.studentName = clean;
+        localStorage.setItem('ld-english-hub', JSON.stringify(data));
+      } catch (_) {}
+      loadStudentName();
+    }
+
+    (function () {
+      loadStudentName();
+      const btnExp = document.getElementById('uSwitchExp');
+      const btnExpl = document.getElementById('uSwitchExpl');
+      const hint = document.getElementById('uSwitchHint');
+      const links = document.querySelectorAll('.track-link');
+
+      function applyMode(mode) {
+        const isExplore = mode === 'explore';
+        if (btnExp) {
+          btnExp.classList.toggle('active', !isExplore);
+          btnExp.setAttribute('aria-selected', isExplore ? 'false' : 'true');
+        }
+        if (btnExpl) {
+          btnExpl.classList.toggle('active', isExplore);
+          btnExpl.setAttribute('aria-selected', isExplore ? 'true' : 'false');
+        }
+        if (hint) {
+          hint.textContent = isExplore
+            ? 'Mode: Explore (Written & Autonomous Consolidation)'
+            : 'Mode: Experience (Oral-First Executive Session)';
+        }
+        links.forEach((a) => {
+          const base = a.dataset.base;
+          a.href = isExplore ? base + '?mode=explore' : base;
+        });
+      }
+
+      if (btnExp) btnExp.addEventListener('click', () => applyMode('experience'));
+      if (btnExpl) btnExpl.addEventListener('click', () => applyMode('explore'));
+      const params = new URLSearchParams(window.location.search);
+      applyMode(params.get('mode') === 'explore' ? 'explore' : 'experience');
+    })();
+  </script>
+</body>
+</html>
