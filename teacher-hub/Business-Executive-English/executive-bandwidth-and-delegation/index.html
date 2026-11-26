@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Hub &middot; BE-05-L04: Executive Bandwidth &amp; Delegation | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-600: #475569;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--gold-500); }
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 15px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); }
+    .btn-ghost { background: transparent; color: var(--slate-200); border-color: rgba(255, 255, 255, 0.22); }
+
+    .page-container { max-width: 1020px; margin: 0 auto; padding: 28px 24px 64px; }
+    .doc-hero {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 30px 34px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(212, 168, 67, 0.3);
+    }
+    .doc-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; color: var(--gold-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+    .doc-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
+    .doc-meta { font-size: 0.88rem; color: var(--slate-200); }
+
+    .guide-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 20px;
+    }
+    .guide-card h2 { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); margin-bottom: 12px; }
+    .guide-card h3 { font-size: 0.96rem; font-weight: 700; color: var(--teal-800); margin: 14px 0 6px; }
+    .guide-card p, .guide-card li { font-size: 0.88rem; color: var(--slate-800); }
+    .guide-card ul, .guide-card ol { padding-left: 20px; display: grid; gap: 6px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin-top: 10px; }
+    th {
+      background: var(--navy-950);
+      color: var(--white);
+      text-align: left;
+      padding: 10px 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+    }
+    td { padding: 10px 12px; border-top: 1px solid var(--slate-200); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--slate-50); }
+    .tag {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--teal-50);
+      color: var(--teal-800);
+    }
+    .tag-gold { background: var(--gold-100); color: var(--gold-600); }
+
+    @media print {
+      .site-header, .no-print { display: none !important; }
+      body { background: #FFFFFF; color: #000000; }
+      .page-container { max-width: 100%; padding: 0; }
+      .doc-hero { background: #FFFFFF; color: #001F54; border: 1px solid #CBD5E1; }
+      .doc-meta, .doc-kicker { color: #334155; }
+      .guide-card { break-inside: avoid; border: 1px solid #CBD5E1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../Business-Executive-English/u05/executive-bandwidth-and-delegation/index.html?role=teacher" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher Hub &middot; Executive Business</span>
+      </a>
+      <div class="header-actions no-print">
+        <button type="button" class="btn btn-gold" onclick="window.print()">Print Teacher Guide</button>
+        <a href="../../../Business-Executive-English/u05/executive-bandwidth-and-delegation/index.html?role=teacher" class="btn btn-ghost">&larr; Back to Live Lesson</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="doc-hero">
+      <div class="doc-kicker">Teacher's Preparation &amp; Production Guide &middot; BE-05-L04</div>
+      <h1 class="doc-title">Executive Bandwidth &amp; Delegation</h1>
+      <div class="doc-meta">Track 05: People, Leadership &amp; Organizational Culture &middot; Target: B1+ / B2+ &middot; Oral-First TBLT Session</div>
+    </header>
+
+    <!-- 1. CURRICULAR DELIMITATION P / P? / N / F -->
+    <section class="guide-card">
+      <h2>1. Delimitaci&oacute;n Curricular (P / P? / N / F)</h2>
+      <table>
+        <thead>
+          <tr><th>Categor&iacute;a</th><th>Alcance Exacto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag">P</span> Previo</td><td>Present/Past Simple, Present Perfect b&aacute;sico, modales de uso cotidiano (<em>can, should, need to</em>), vocabulario general de calendario, equipo y plazos.</td></tr>
+          <tr><td><span class="tag tag-gold">P?</span> A diagnosticar</td><td>Diferencia entre verbo base sin <em>to</em> vs. infinitivo con <em>to</em>; participios pasados irregulares frecuentes (<em>sent, done, written, signed off</em>).</td></tr>
+          <tr><td><span class="tag">N</span> Nuevo</td><td><strong>Causative &amp; Delegation Verbs:</strong> <code>have + person + base verb</code>, <code>get + thing + past participle</code>, <code>empower / ask / trust + person + to + verb</code> (Afirmativo, Negativo, Yes/No y Wh-).<br><strong>L&eacute;xico (6):</strong> <em>delegate ownership, clear a bottleneck, hands-off approach, micromanage, low-value task, operational bandwidth</em>.<br><strong>Executive Chunks (4):</strong> <em>Take this off your plate, Run with it, Loop me in, On my radar</em>.</td></tr>
+          <tr><td><span class="tag">F</span> L&iacute;mite Frontera</td><td>Prohibido pasiva causativa literaria (<em>having had it reviewed</em>), jerga financiera/SaaS densa o redacci&oacute;n de p&aacute;rrafos largos durante la clase en vivo (la redacci&oacute;n extensa vive en <code>explore.html</code>).</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 2. COMPLETE LESSON PLAN -->
+    <section class="guide-card">
+      <h2>2. Complete Lesson Plan (Secuencia Did&aacute;ctica Paso a Paso)</h2>
+      <ol>
+        <li><strong>01 Warm-Up &middot; The Impossible Monday:</strong> Revisar la agenda sobrecargada, mover el medidor de carga laboral (1&ndash;10) y detonar conversaci&oacute;n con las 3 preguntas en <code>[P]</code>. No corregir ni adelantar a&uacute;n estructuras causativas.</li>
+        <li><strong>02 Vocabulary &middot; 6 Collocations + Quick Sort:</strong> Voltear las 6 tarjetas con audios reales y clasificar en voz alta los 6 h&aacute;bitos entre <em>Smart Delegation</em> y <em>Micromanagement</em>. Claves: <code>1-Smart, 2-Micro, 3-Smart, 4-Micro, 5-Smart, 6-Micro</code>.</li>
+        <li><strong>03 Executive Chunks &amp; Stress Focus:</strong> Presentar los 4 chunks como bloques fijos (sin desglosar gram&aacute;tica interna). Contrastar el audio plano vs. el acento ejecutivo pausado en <em>RUN / LOOP / FRI-day</em>.</li>
+        <li><strong>04 Listening &middot; Notice in Context:</strong> Escuchar el di&aacute;logo Daniel &amp; Claire con la transcripci&oacute;n oculta. Responder las 3 preguntas (<code>1-B, 2-A, 3-C</code>). En la segunda vuelta, abrir transcripci&oacute;n para notar <em>have Sofia handle</em>, <em>get the final numbers signed off</em> y <em>empower your two team leads to present</em>.</li>
+        <li><strong>05 Grammar &middot; Causative &amp; Delegation Verbs:</strong> Sistematizar el cuadro gramatical destacando la trampa <code>have + person + base verb</code> (sin <em>to</em>) vs. <code>empower + person + to + verb</code>. Completar <em>Delegation Upgrade</em> (<code>1-B, 2-A, 3-C</code>) y los 2 <em>Wordboxes</em> (<em>Let's have Elena review the slides today.</em> / <em>Can we get the report approved by Friday?</em>).</li>
+        <li><strong>06 Speaking &middot; Delegation Triage Game:</strong> El alumno clasifica las 6 tareas de lunes en <em>Keep / Delegate / Pause</em> (m&aacute;x. 2 en <em>Keep</em>) y defiende su plan oralmente. El docente desaf&iacute;a 2 decisiones con objeciones breves para observar producci&oacute;n real.</li>
+        <li><strong>07 Exit Ticket &amp; Can-Do Check:</strong> Micro-producci&oacute;n real de 2&ndash;3 oraciones en blanco sobre una tarea real del alumno + autoevaluaci&oacute;n Can-Do. Asignar <code>explore.html</code> si desea consolidaci&oacute;n escrita.</li>
+      </ol>
+    </section>
+
+    <!-- 3. STUDIO AUDIO PRODUCTION SCRIPT -->
+    <section class="guide-card">
+      <h2>3. Guion de Producci&oacute;n de Audios (Estudio &middot; Cero TTS)</h2>
+      <p>Carpeta destino: <code class="font-mono">Business-Executive-English/u05/executive-bandwidth-and-delegation/audio/</code></p>
+      <table>
+        <thead>
+          <tr><th>Archivo MP3</th><th>Texto Exacto para Grabaci&oacute;n</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="font-mono">vocab_01_word.mp3 / _ex.mp3</td><td>"Delegate ownership." / "Strong leaders delegate ownership, not just small tasks."</td></tr>
+          <tr><td class="font-mono">vocab_02_word.mp3 / _ex.mp3</td><td>"Clear a bottleneck." / "Approving every small invoice myself created a bottleneck."</td></tr>
+          <tr><td class="font-mono">vocab_03_word.mp3 / _ex.mp3</td><td>"Hands-off approach." / "She takes a hands-off approach once the goal is clear."</td></tr>
+          <tr><td class="font-mono">vocab_04_word.mp3 / _ex.mp3</td><td>"Micromanage." / "When managers micromanage, talented people stop taking initiative."</td></tr>
+          <tr><td class="font-mono">vocab_05_word.mp3 / _ex.mp3</td><td>"Low-value task." / "Reformatting old charts is a low-value task for a director."</td></tr>
+          <tr><td class="font-mono">vocab_06_word.mp3 / _ex.mp3</td><td>"Operational bandwidth." / "Our team does not have the bandwidth for a third project this month."</td></tr>
+          <tr><td class="font-mono">chunk_01_word.mp3 / _ex.mp3</td><td>"Take this off your plate." / "You have two client calls today—let me take the summary off your plate."</td></tr>
+          <tr><td class="font-mono">chunk_02_word.mp3 / _ex.mp3</td><td>"Run with it." / "Your proposal looks solid—go ahead and run with it."</td></tr>
+          <tr><td class="font-mono">chunk_03_word.mp3 / _ex.mp3</td><td>"Loop me in." / "You don't need my approval on every step—just loop me in if costs change."</td></tr>
+          <tr><td class="font-mono">chunk_04_word.mp3 / _ex.mp3</td><td>"On my radar." / "Thanks for flagging the Q4 staffing gap—it's officially on my radar."</td></tr>
+          <tr><td class="font-mono">pron_stress_flat.mp3</td><td>(Fast, flat monotone) "Can you just run with it and loop me in on Friday."</td></tr>
+          <tr><td class="font-mono">pron_stress_exec.mp3</td><td>(Calm, stressed keywords + slight pause) "Go ahead and RUN with it — just LOOP me in before FRI-day."</td></tr>
+          <tr><td class="font-mono">listening_dialogue.mp3</td><td><strong>Claire:</strong> Daniel, you look stretched thin today. How is your operational bandwidth looking this week?<br><strong>Daniel:</strong> Honestly, I'm maxed out. I spent three hours this morning formatting vendor updates and checking every slide for Thursday's review.<br><strong>Claire:</strong> That sounds like a classic bottleneck. Why not have Sofia handle the weekly vendor updates? She already knows the accounts.<br><strong>Daniel:</strong> I thought about that, I just worry something might slip if I take a hands-off approach.<br><strong>Claire:</strong> You don't have to disappear. Let her run with it, and ask her to loop you in if a deadline changes. That will immediately take three hours off your plate.<br><strong>Daniel:</strong> Fair point. What about the Q3 budget pack?<br><strong>Claire:</strong> Get the final numbers signed off by finance tomorrow, and empower your two team leads to present their own sections on Thursday. Keep the big risks on your radar, not the font sizes.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4. MEDIATION & QUALITATIVE RUBRIC E0-E3 -->
+    <section class="guide-card">
+      <h2>4. Protocolo de Mediaci&oacute;n y R&uacute;brica Cualitativa (E0&ndash;E3)</h2>
+      <p>Recuerda el principio <em>Understanding Comes Before Advancement</em>: no avances si el alumno a&uacute;n mezcla <em>have + person + to</em> o no logra defender sus decisiones oralmente.</p>
+      <table>
+        <thead>
+          <tr><th>Nivel</th><th>Evidencia Observable en el Delegation Triage Game y Exit Ticket</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>E0</strong></td><td>No logra expresar delegaci&oacute;n ni con apoyos visibles; describe solo lo que har&aacute; personalmente.</td></tr>
+          <tr><td><strong>E1</strong></td><td>Logro parcial o dependencia de guion id&eacute;ntico; confunde repetidamente <em>have + person + to</em> o el participio en <em>get + thing + done</em>.</td></tr>
+          <tr><td><strong>E2</strong></td><td><strong>Logro esperado:</strong> clasifica prioridades y defiende su plan usando al menos 2 estructuras causativas/de delegaci&oacute;n correctas y 2 Executive Chunks con inteligibilidad clara.</td></tr>
+          <tr><td><strong>E3</strong></td><td>Mayor flexibilidad: responde de forma espont&aacute;nea a las 2 objeciones del docente integrando las 3 estructuras objetivo y tono ejecutivo calmado.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

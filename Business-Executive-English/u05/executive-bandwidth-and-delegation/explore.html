@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore &middot; BE-05-L04: Executive Bandwidth &amp; Delegation | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+    .header-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+    .header-link:hover { color: var(--white); }
+    .header-gold-link { color: var(--gold-500); text-decoration: none; font-size: 13px; font-weight: 700; }
+    .header-gold-link:hover { color: var(--gold-400); }
+
+    .page-container { max-width: 980px; margin: 0 auto; padding: 28px 24px 64px; }
+
+    .explore-hero {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .explore-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal-50);
+      opacity: 0.85;
+      margin-bottom: 6px;
+    }
+    .explore-title { font-size: clamp(1.5rem, 2.8vw, 2.05rem); font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
+    .explore-title span { color: var(--gold-500); }
+    .explore-sub { font-size: 0.92rem; color: var(--slate-300); max-width: 58ch; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); }
+    .btn-gold:hover { background: var(--gold-400); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-800); }
+    .btn-outline { background: var(--white); color: var(--navy-900); border-color: var(--slate-300); }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 4px;
+    }
+    .section-title { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .section-lead { font-size: 0.88rem; color: var(--slate-600); margin-bottom: 16px; }
+
+    .task-row {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .task-sentence { font-size: 0.9rem; color: var(--navy-900); font-weight: 500; flex: 1; min-width: 240px; }
+    .task-select {
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+    }
+    .task-input {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.88rem;
+      color: var(--navy-900);
+      margin-top: 8px;
+    }
+    .fb-line { font-size: 0.8rem; font-weight: 600; margin-top: 6px; min-height: 18px; }
+    .fb-ok { color: var(--teal-800); }
+    .fb-err { color: var(--danger-600); }
+
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .brief-field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 5px;
+    }
+    .brief-textarea {
+      width: 100%;
+      min-height: 90px;
+      padding: 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--navy-900);
+      resize: vertical;
+    }
+
+    .studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 24px;
+      margin-top: 28px;
+      font-size: 0.82rem;
+    }
+    .footer-inner { max-width: 980px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media print {
+      .site-header, .no-print, .studio-site-footer { display: none !important; }
+      body { background: #FFFFFF; color: #000000; }
+      .page-container { max-width: 100%; padding: 0; }
+      .explore-hero { background: #FFFFFF; color: #001F54; border: 1px solid #CBD5E1; padding: 18px; }
+      .explore-sub, .explore-kicker { color: #334155; }
+      .section-card { box-shadow: none; break-inside: avoid; border: 1px solid #CBD5E1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Explore &middot; Executive Business</span>
+      </a>
+      <div class="header-actions">
+        <a href="./index.html" class="header-gold-link">Open Experience (Live Session) &rarr;</a>
+        <a href="../index.html?mode=explore" class="header-link">&larr; Back to Track 05</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="explore-hero">
+      <div>
+        <div class="explore-kicker">BE-05-L04 &middot; Autonomous Workbook</div>
+        <h1 class="explore-title">Executive Bandwidth &amp; <span>Delegation</span></h1>
+        <p class="explore-sub">Autonomous consolidation: reinforce your collocations, spot subtle grammar slips, and draft one crisp delegation brief for your own team.</p>
+      </div>
+      <button type="button" class="btn btn-gold no-print" onclick="window.print()">Print Worksheet</button>
+    </header>
+
+    <!-- PART 1: COLLOCATION & CHUNK RECALL -->
+    <section class="section-card">
+      <div class="section-kicker">Part 01 &middot; Lexical Precision</div>
+      <h2 class="section-title">Choose the Exact Executive Expression</h2>
+      <p class="section-lead">Select the collocation or executive chunk that best completes each workplace statement.</p>
+      <div id="recallList"></div>
+      <div class="no-print" style="margin-top: 14px; display: flex; align-items: center; gap: 12px;">
+        <button type="button" class="btn btn-teal" onclick="checkRecall()">Check Answers</button>
+        <span class="fb-line" id="recallScore" style="margin: 0;"></span>
+      </div>
+    </section>
+
+    <!-- PART 2: ERROR CLINIC (NO RED/UNDERLINED HINTS) -->
+    <section class="section-card">
+      <div class="section-kicker">Part 02 &middot; Error Clinic</div>
+      <h2 class="section-title">Spot &amp; Fix the Delegation Error</h2>
+      <p class="section-lead">Each sentence below contains one grammar mistake in a delegation structure. Rewrite the corrected sentence in the box.</p>
+      <div id="clinicList"></div>
+      <div class="no-print" style="margin-top: 14px; display: flex; align-items: center; gap: 12px;">
+        <button type="button" class="btn btn-teal" onclick="checkClinic()">Verify Corrections</button>
+        <span class="fb-line" id="clinicScore" style="margin: 0;"></span>
+      </div>
+    </section>
+
+    <!-- PART 3: WRITTEN DELEGATION BRIEF -->
+    <section class="section-card">
+      <div class="section-kicker">Part 03 &middot; Autonomous Writing Transfer</div>
+      <h2 class="section-title">Draft Your Real Delegation Brief</h2>
+      <p class="section-lead">Think of one recurring task you can hand off this month. Complete the brief below using at least two delegation structures and two executive chunks.</p>
+      <div class="brief-grid">
+        <div class="brief-field">
+          <label for="bfOwner">1. Task &amp; New Owner</label>
+          <input type="text" id="bfOwner" class="task-input" style="margin-top: 0;" placeholder="e.g., Weekly vendor tracker — Ana Morales">
+        </div>
+        <div class="brief-field">
+          <label for="bfDeadline">2. Target Outcome &amp; Deadline</label>
+          <input type="text" id="bfDeadline" class="task-input" style="margin-top: 0;" placeholder="e.g., Get the tracker updated by Thursday 3 PM">
+        </div>
+      </div>
+      <div class="brief-field">
+        <label for="bfMessage">3. Your Short Delegation Message (4–5 lines)</label>
+        <textarea id="bfMessage" class="brief-textarea" placeholder="Write the clear message you would send to hand off ownership, define autonomy, and state when they should loop you in..."></textarea>
+      </div>
+      <div class="no-print" style="margin-top: 12px; display: flex; align-items: center; gap: 12px;">
+        <button type="button" class="btn btn-teal" onclick="saveBrief()">Save Brief</button>
+        <span class="fb-line" id="briefStatus" style="margin: 0;"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div><strong>Learning &amp; Development Studio</strong> &middot; Educate &bull; Design &bull; Grow</div>
+      <div>Explore Workbook &middot; Executive Business English &middot; BE-05-L04</div>
+    </div>
+  </footer>
+
+  <script>
+    const RECALL_DATA = [
+      { s: '1. Approving every small travel receipt myself has turned my desk into a major ____.', opts: ['bottleneck', 'hands-off approach', 'radar'], ans: 'bottleneck' },
+      { s: '2. Your launch plan is solid—go ahead and ____.', opts: ['micromanage it', 'run with it', 'clear it'], ans: 'run with it' },
+      { s: '3. You have two urgent client calls today; let me ____.', opts: ['take this off your plate', 'loop me in', 'delegate ownership'], ans: 'take this off your plate' },
+      { s: '4. I don\'t need to attend every check-in, just ____ if the budget changes.', opts: ['on my radar', 'loop me in', 'hands-off approach'], ans: 'loop me in' },
+      { s: '5. Reformatting old charts is a ____ that a senior lead should hand off.', opts: ['low-value task', 'operational bandwidth', 'bottleneck'], ans: 'low-value task' },
+      { s: '6. Thanks for flagging the Q4 staffing risk—it is officially ____.', opts: ['run with it', 'on my radar', 'off your plate'], ans: 'on my radar' }
+    ];
+    function renderRecall() {
+      document.getElementById('recallList').innerHTML = RECALL_DATA.map((r, i) => `
+        <div class="task-row">
+          <div class="task-sentence">${r.s}</div>
+          <select id="rec${i}" class="task-select">
+            <option value="">Choose...</option>
+            ${r.opts.map(o => `<option value="${o}">${o}</option>`).join('')}
+          </select>
+          <div class="fb-line" id="recFb${i}" style="width: 100%;"></div>
+        </div>
+      `).join('');
+    }
+    function checkRecall() {
+      let ok = 0;
+      RECALL_DATA.forEach((r, i) => {
+        const val = document.getElementById('rec' + i).value;
+        const fb = document.getElementById('recFb' + i);
+        if (val === r.ans) {
+          ok++;
+          fb.className = 'fb-line fb-ok';
+          fb.textContent = 'Correct.';
+        } else {
+          fb.className = 'fb-line fb-err';
+          fb.textContent = 'Check your choice and try again.';
+        }
+      });
+      document.getElementById('recallScore').textContent = ok + ' / ' + RECALL_DATA.length + ' correct';
+    }
+
+    const CLINIC_DATA = [
+      { bad: '1. I will have Marco to prepare the Q3 summary before noon.', key: 'have marco prepare', hint: 'have + person + base verb (no "to").' },
+      { bad: '2. Can we get the vendor agreement sign off by Thursday?', key: 'signed off', hint: 'get + thing + past participle.' },
+      { bad: '3. We want to empower our regional leads make pricing decisions.', key: 'to make', hint: 'empower + person + to + base verb.' },
+      { bad: '4. Did you had Sofia review the client slides yesterday?', key: 'did you have', hint: 'Use base verb "have" after "Did you".' }
+    ];
+    function renderClinic() {
+      document.getElementById('clinicList').innerHTML = CLINIC_DATA.map((c, i) => `
+        <div class="task-row" style="display: block;">
+          <div class="task-sentence">${c.bad}</div>
+          <input type="text" id="cl${i}" class="task-input" placeholder="Type the corrected sentence...">
+          <div class="fb-line" id="clFb${i}"></div>
+        </div>
+      `).join('');
+    }
+    function checkClinic() {
+      let ok = 0;
+      CLINIC_DATA.forEach((c, i) => {
+        const val = document.getElementById('cl' + i).value.trim().toLowerCase();
+        const fb = document.getElementById('clFb' + i);
+        if (val.includes(c.key)) {
+          ok++;
+          fb.className = 'fb-line fb-ok';
+          fb.textContent = 'Accurate fix!';
+        } else {
+          fb.className = 'fb-line fb-err';
+          fb.textContent = 'Hint: ' + c.hint;
+        }
+      });
+      document.getElementById('clinicScore').textContent = ok + ' / ' + CLINIC_DATA.length + ' fixed';
+    }
+
+    function saveBrief() {
+      const payload = {
+        owner: document.getElementById('bfOwner').value.trim(),
+        deadline: document.getElementById('bfDeadline').value.trim(),
+        msg: document.getElementById('bfMessage').value.trim()
+      };
+      try { localStorage.setItem('ld_be_u05_l04_explore_brief', JSON.stringify(payload)); } catch (_) {}
+      const st = document.getElementById('briefStatus');
+      st.className = 'fb-line fb-ok';
+      st.textContent = 'Brief saved locally. You can also print this worksheet.';
+    }
+
+    (function init() {
+      renderRecall();
+      renderClinic();
+      try {
+        const raw = localStorage.getItem('ld_be_u05_l04_explore_brief');
+        if (raw) {
+          const p = JSON.parse(raw);
+          if (p.owner) document.getElementById('bfOwner').value = p.owner;
+          if (p.deadline) document.getElementById('bfDeadline').value = p.deadline;
+          if (p.msg) document.getElementById('bfMessage').value = p.msg;
+        }
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>
