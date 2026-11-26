@@ -435,7 +435,7 @@
         </div>
       </article>
 
-      <article class="lesson-card is-soon">
+      <article class="lesson-card">
         <div class="card-visual">
           <img class="card-photo" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="The Job vs. The Human">
           <div class="card-visual-gradient"></div>
@@ -451,7 +451,7 @@
               <span class="pill">It pays the bills</span>
             </div>
           </div>
-          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
+          <a href="./the-job-vs-the-human/index.html" class="btn-open" id="link-u01-l03">Open Lesson &rarr;</a>
         </div>
       </article>
 
@@ -516,6 +516,11 @@
         if (l02) {
           l02.href = isExplore ? './where-are-you-really-from/explore.html' : './where-are-you-really-from/index.html';
           l02.innerHTML = isExplore ? 'Open Explore &rarr;' : 'Open Lesson &rarr;';
+        }
+        const l03 = document.getElementById('link-u01-l03');
+        if (l03) {
+          l03.href = isExplore ? './the-job-vs-the-human/explore.html' : './the-job-vs-the-human/index.html';
+          l03.innerHTML = isExplore ? 'Open Explore &rarr;' : 'Open Lesson &rarr;';
         }
       }
 

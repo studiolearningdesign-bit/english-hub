@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore &middot; A1.1-U01-L03 The Job vs. The Human | English Hub · L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527; --navy-900: #001F54; --teal-800: #0F766E; --teal-700: #007A87; --teal-50: #F0FDFA;
+      --gold-500: #D4A843; --gold-400: #E5A922; --white: #FFFFFF; --slate-50: #F8FAFC;
+      --slate-200: #E2E8F0; --slate-300: #CBD5E1; --slate-600: #475569; --slate-900: #0A192F;
+      --danger-600: #DC2626; --danger-50: #FEF2F2;
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 18px; --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05); --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; background: var(--slate-50); color: var(--slate-900); line-height: 1.6; }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header { background: var(--navy-950); border-bottom: 1px solid rgba(212, 168, 67, 0.25); color: var(--white); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .header-student-btn { color: var(--slate-200); font-size: 13px; }
+    .header-teacher-link { color: var(--gold-500); font-size: 13px; font-weight: 700; text-decoration: none; }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+
+    .page-container { max-width: 980px; margin: 0 auto; padding: 28px 24px 64px; }
+    .workspace-hero-banner {
+      border-radius: var(--radius-lg); overflow: hidden; min-height: 190px; display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 32px 36px; margin-bottom: 26px;
+      background-color: var(--navy-900);
+      background-image:
+        linear-gradient(120deg, rgba(7, 21, 39, 0.94) 0%, rgba(0, 31, 84, 0.84) 60%, rgba(15, 118, 110, 0.72) 100%),
+        url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover; background-position: center; border: 1px solid rgba(212, 168, 67, 0.24); color: var(--white); box-shadow: var(--shadow-md);
+    }
+    .hero-title { font-size: clamp(1.55rem, 2.8vw, 2.15rem); font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+    .hero-title span { color: var(--gold-500); }
+    .hero-subtitle { font-size: 0.94rem; color: var(--slate-200); max-width: 54ch; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; font-size: 0.85rem; font-weight: 700; padding: 10px 18px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; text-decoration: none; }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+
+    .worksheet-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+    .part-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: var(--teal-700); margin-bottom: 4px; }
+    .part-title { font-size: 1.22rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .part-desc { font-size: 0.9rem; color: var(--slate-600); margin-bottom: 18px; }
+
+    .drill-list { display: grid; gap: 12px; }
+    .drill-row { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .drill-prompt { font-weight: 600; color: var(--navy-900); font-size: 0.94rem; }
+    .select-input { border: 1px solid var(--slate-300); border-radius: var(--radius-sm); padding: 7px 11px; font-family: inherit; font-size: 0.88rem; color: var(--navy-900); background: var(--white); }
+    .status-pill { font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: var(--radius-full); }
+    .status-ok { background: var(--teal-50); color: var(--teal-800); }
+    .status-err { background: var(--danger-50); color: var(--danger-600); }
+
+    .dialogue-box { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 18px; display: grid; gap: 12px; }
+    .write-lines { display: grid; gap: 12px; }
+    .write-line-input { width: 100%; border: none; border-bottom: 1px solid var(--slate-300); padding: 8px 4px; font-family: inherit; font-size: 0.94rem; color: var(--navy-900); background: transparent; }
+
+    .studio-site-footer { background: var(--navy-950); border-top: 1px solid rgba(212, 168, 67, 0.25); color: var(--slate-200); padding: 24px; }
+    .footer-inner { max-width: 980px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; }
+    .footer-brand-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 34px; overflow: hidden; }
+    .footer-logo-white { height: 64px; width: auto; object-fit: contain; margin: -15px 0; display: block; }
+    .footer-teacher-portal { color: var(--gold-400); font-weight: 700; text-decoration: none; padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(212, 168, 67, 0.4); }
+
+    @media print {
+      .site-header, .print-hide, .studio-site-footer { display: none !important; }
+      body { background: #fff; }
+      .page-container { padding: 0; max-width: 100%; }
+      .workspace-hero-banner { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; min-height: auto; padding: 18px 22px; }
+      .worksheet-card { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html?mode=explore" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; A1.1 Explore</span>
+      </a>
+      <div class="header-actions">
+        <span class="header-student-btn" id="studentNameBtn">Student &middot; Guest</span>
+        <a href="./index.html" class="header-teacher-link">Experience Lesson &#8599;</a>
+        <a href="../index.html?mode=explore" class="header-back-link">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="workspace-hero-banner">
+      <div>
+        <h1 class="hero-title">Explore: <span>The Job vs. The Human</span></h1>
+        <p class="hero-subtitle">Independent practice for jobs, <strong>a / an / no article</strong>, and real-life work expressions.</p>
+      </div>
+      <button type="button" class="btn btn-gold print-hide" onclick="window.print()">Print Worksheet</button>
+    </header>
+
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 01 &middot; Vocabulary</div>
+      <h2 class="part-title">Jobs &amp; Qualities</h2>
+      <p class="part-desc">Choose the best word for each sentence.</p>
+      <div class="drill-list" id="vocabDrillList"></div>
+      <div class="print-hide" style="margin-top: 16px;">
+        <button type="button" class="btn btn-teal btn-sm" onclick="checkPart1()">Check Part 01</button>
+      </div>
+    </section>
+
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 02 &middot; Grammar Mechanics</div>
+      <h2 class="part-title">a, an, or No Article (&Oslash;)</h2>
+      <p class="part-desc">Choose the correct option for each sentence.</p>
+      <div class="drill-list" id="grammarDrillList"></div>
+      <div class="print-hide" style="margin-top: 16px;">
+        <button type="button" class="btn btn-teal btn-sm" onclick="checkPart2()">Check Part 02</button>
+      </div>
+    </section>
+
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 03 &middot; Everyday Expressions</div>
+      <h2 class="part-title">Complete the Conversation</h2>
+      <p class="part-desc">Choose the natural phrase for each line.</p>
+      <div class="dialogue-box" id="chunkDialogueList"></div>
+      <div class="print-hide" style="margin-top: 16px;">
+        <button type="button" class="btn btn-teal btn-sm" onclick="checkPart3()">Check Part 03</button>
+      </div>
+    </section>
+
+    <section class="worksheet-card">
+      <div class="part-kicker">Part 04 &middot; Your Turn</div>
+      <h2 class="part-title">Write 4 Short Sentences</h2>
+      <p class="part-desc">Write about your job or dream job (using <strong>a / an</strong>), one job you are not, and one friend's job.</p>
+      <div class="write-lines">
+        <input type="text" class="write-line-input" placeholder="1.">
+        <input type="text" class="write-line-input" placeholder="2.">
+        <input type="text" class="write-line-input" placeholder="3.">
+        <input type="text" class="write-line-input" placeholder="4.">
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Job vs. The Human (A1.1 Explore)</div>
+      </div>
+      <a href="../../../teacher-hub/A1.1/the-job-vs-the-human/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <script>
+    const vocabItems = [
+      { prompt: '1. Rosa is in a hospital. She is a ___.', ans: 'nurse' },
+      { prompt: '2. Sam is in a kitchen. He is a ___.', ans: 'chef' },
+      { prompt: '3. Hugo designs buildings. He is an ___.', ans: 'architect' },
+      { prompt: '4. Gabriel is in a city car. He is a ___.', ans: 'driver' },
+      { prompt: '5. Clara is in a school. She is a ___.', ans: 'teacher' },
+      { prompt: '6. Paula is full of new ideas. She is ___.', ans: 'creative' }
+    ];
+    const vocabOpts = ['teacher', 'nurse', 'driver', 'chef', 'engineer', 'artist', 'architect', 'creative', 'happy'];
+
+    const grammarItems = [
+      { prompt: "1. I'm ___ engineer.", ans: "an", options: ["a", "an", "No article"] },
+      { prompt: "2. She's ___ nurse.", ans: "a", options: ["a", "an", "No article"] },
+      { prompt: "3. They're ___ drivers.", ans: "No article", options: ["a", "an", "No article"] },
+      { prompt: "4. Are you ___ artist?", ans: "an", options: ["a", "an", "No article"] },
+      { prompt: "5. He's ___ happy.", ans: "No article", options: ["a", "an", "No article"] }
+    ];
+
+    const chunkItems = [
+      { speaker: 'A:', before: "I'm a driver, ", after: '.', ans: 'just for now', options: ['just for now', "That's awesome!", 'Good for you!'] },
+      { speaker: 'A:', before: 'My real passion is art, and this job — ', after: '', ans: 'it pays the bills.', options: ['it pays the bills.', "That's awesome!", 'just for now'] },
+      { speaker: 'B:', before: "You're an artist too? ", after: '', ans: "That's awesome!", options: ["That's awesome!", 'just for now', 'it pays the bills.'] },
+      { speaker: 'B:', before: 'Keep going! ', after: '', ans: 'Good for you!', options: ['Good for you!', 'just for now', 'it pays the bills.'] }
+    ];
+
+    function renderAll() {
+      const v = document.getElementById('vocabDrillList');
+      const vO = vocabOpts.map(o => `<option value="${o}">${o}</option>`).join('');
+      vocabItems.forEach((it, i) => {
+        v.innerHTML += `<div class="drill-row"><div class="drill-prompt">${it.prompt}</div><div style="display:flex;align-items:center;gap:8px;"><select class="select-input" id="v-${i}"><option value="">Choose...</option>${vO}</select><span id="vs-${i}"></span></div></div>`;
+      });
+      const g = document.getElementById('grammarDrillList');
+      grammarItems.forEach((it, i) => {
+        const gO = it.options.map(o => `<option value="${o}">${o}</option>`).join('');
+        g.innerHTML += `<div class="drill-row"><div class="drill-prompt">${it.prompt}</div><div style="display:flex;align-items:center;gap:8px;"><select class="select-input" id="g-${i}"><option value="">Choose...</option>${gO}</select><span id="gs-${i}"></span></div></div>`;
+      });
+      const c = document.getElementById('chunkDialogueList');
+      chunkItems.forEach((it, i) => {
+        const cO = it.options.map(o => `<option value="${o}">${o}</option>`).join('');
+        c.innerHTML += `<div><strong>${it.speaker}</strong> ${it.before}<select class="select-input" id="c-${i}"><option value="">Choose...</option>${cO}</select>${it.after} <span id="cs-${i}"></span></div>`;
+      });
+    }
+    function checkPart1() { vocabItems.forEach((it, i) => { const ok = document.getElementById('v-'+i).value === it.ans; const s = document.getElementById('vs-'+i); s.className = 'status-pill ' + (ok ? 'status-ok' : 'status-err'); s.textContent = ok ? 'OK' : 'Check'; }); }
+    function checkPart2() { grammarItems.forEach((it, i) => { const ok = document.getElementById('g-'+i).value === it.ans; const s = document.getElementById('gs-'+i); s.className = 'status-pill ' + (ok ? 'status-ok' : 'status-err'); s.textContent = ok ? 'OK' : 'Check'; }); }
+    function checkPart3() { chunkItems.forEach((it, i) => { const ok = document.getElementById('c-'+i).value === it.ans; const s = document.getElementById('cs-'+i); s.className = 'status-pill ' + (ok ? 'status-ok' : 'status-err'); s.textContent = ok ? 'OK' : 'Check'; }); }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderAll();
+      try { const n = localStorage.getItem('ld_student_name'); if (n) document.getElementById('studentNameBtn').textContent = 'Student · ' + n; } catch (_) {}
+    });
+  </script>
+</body>
+</html>

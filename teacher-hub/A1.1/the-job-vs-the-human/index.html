@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Hub &middot; A1.1-U01-L03 The Job vs. The Human | L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527; --navy-900: #001F54; --navy-700: #133E68;
+      --teal-800: #0F766E; --teal-700: #007A87; --teal-50: #F0FDFA;
+      --gold-600: #B57C00; --gold-500: #D4A843; --gold-400: #E5A922;
+      --white: #FFFFFF; --slate-50: #F8FAFC; --slate-200: #E2E8F0; --slate-600: #475569; --slate-800: #1E293B; --slate-900: #0A192F;
+      --danger-600: #DC2626; --danger-50: #FEF2F2;
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 18px; --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; background: var(--slate-50); color: var(--slate-900); line-height: 1.62; }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header { background: var(--navy-950); border-bottom: 1px solid rgba(212, 168, 67, 0.25); color: var(--white); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .header-link { color: var(--gold-500); text-decoration: none; font-size: 13px; font-weight: 700; }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+
+    .page-container { max-width: 1040px; margin: 0 auto; padding: 30px 24px 64px; }
+    .hub-hero { background: linear-gradient(135deg, #071527 0%, #001F54 65%, #133E68 100%); color: var(--white); border-radius: var(--radius-lg); padding: 32px 36px; margin-bottom: 22px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; border: 1px solid rgba(212, 168, 67, 0.25); }
+    .hub-hero h1 { font-size: 1.85rem; font-weight: 800; line-height: 1.2; margin-bottom: 6px; }
+    .hub-hero h1 span { color: var(--gold-500); }
+    .hub-hero p { color: var(--slate-200); font-size: 0.94rem; }
+    .btn-print { background: var(--gold-500); color: var(--navy-950); border: none; border-radius: var(--radius-sm); padding: 10px 18px; font-family: inherit; font-size: 0.86rem; font-weight: 700; cursor: pointer; }
+
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 22px; }
+    .meta-item { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 14px 16px; }
+    .meta-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--teal-700); margin-bottom: 4px; }
+    .meta-val { font-size: 0.88rem; font-weight: 600; color: var(--navy-900); }
+
+    .hub-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 26px 30px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+    .hub-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: var(--teal-700); margin-bottom: 4px; }
+    .hub-title { font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 14px; }
+
+    .stage-block { border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 18px 20px; margin-bottom: 14px; background: var(--slate-50); }
+    .stage-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--slate-200); }
+    .stage-head h3 { font-size: 1rem; font-weight: 800; color: var(--navy-900); }
+    .stage-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--teal-800); background: var(--teal-50); border: 1px solid rgba(15, 118, 110, 0.22); padding: 2px 10px; border-radius: 999px; }
+    .stage-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.86rem; }
+    .stage-col { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 12px; }
+    .stage-col strong { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; color: var(--gold-600); margin-bottom: 4px; }
+
+    .pnf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .pnf-box { border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px; background: var(--slate-50); }
+    .pnf-box.is-f { background: var(--danger-50); border-color: rgba(220, 38, 38, 0.25); }
+    .pnf-box h3 { font-size: 0.92rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .pnf-box.is-f h3 { color: var(--danger-600); }
+    .pnf-box p { font-size: 0.87rem; color: var(--slate-800); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin-top: 8px; }
+    th { background: var(--navy-900); color: var(--white); text-align: left; padding: 10px 14px; font-size: 0.78rem; text-transform: uppercase; }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--slate-200); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--slate-50); }
+
+    .studio-site-footer { background: var(--navy-950); border-top: 1px solid rgba(212, 168, 67, 0.25); color: var(--slate-200); padding: 22px 24px; }
+    .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; }
+
+    @media print {
+      .site-header, .btn-print, .studio-site-footer { display: none !important; }
+      body { background: #fff; font-size: 11pt; }
+      .page-container { padding: 0; max-width: 100%; }
+      .hub-hero { background: #001F54 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 22px; }
+      .hub-card, .stage-block { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../../A1.1/u01/index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Teacher's Hub &middot; A1.1</span>
+      </a>
+      <div class="header-actions">
+        <a href="../../../A1.1/u01/the-job-vs-the-human/index.html?role=teacher" class="header-link">Open Live Lesson (Teacher Mode) &#8599;</a>
+        <a href="../../../A1.1/u01/index.html" class="header-back-link">&larr; Back to Unit 01</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="hub-hero">
+      <div>
+        <h1>Complete Lesson Plan: <span>The Job vs. The Human</span></h1>
+        <p>A1.1-U01-L03 &middot; Secuencia did&aacute;ctica completa, guion de producci&oacute;n de audios y r&uacute;brica cualitativa.</p>
+      </div>
+      <button type="button" class="btn-print" onclick="window.print()">Print Teacher Guide</button>
+    </header>
+
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">C&oacute;digo &amp; Curso</div><div class="meta-val">A1.1-U01-L03 &middot; Macro-Unit 01</div></div>
+      <div class="meta-item"><div class="meta-label">Resultado Comunicativo</div><div class="meta-val">Nombrar, preguntar y corregir profesiones usando To Be + a / an (y plural sin art&iacute;culo).</div></div>
+      <div class="meta-item"><div class="meta-label">Principio de Tiempo</div><div class="meta-val">Flexible (Understanding Comes Before Advancement; 1–2 sesiones).</div></div>
+      <div class="meta-item"><div class="meta-label">Evidencia de Avance</div><div class="meta-val">Entrevista Double Life (Day Job vs. Passion) + Exit Ticket con a/an correcto.</div></div>
+    </div>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 01 &middot; Did&aacute;ctica Paso a Paso</div>
+      <h2 class="hub-title">Complete Lesson Plan (Secuencia Did&aacute;ctica por Actividad)</h2>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>01 &middot; Warm-Up: Look Beyond the Photo (Actividades 1A y 1B)</h3>
+          <span class="stage-tag">Fase: Engage &middot; Strict [P]</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Teacher Script &amp; Modelado</strong>Se&ntilde;ala a Hugo: <em>"He's from Puebla. Office or Music Studio?"</em> Al revelar la sorpresa, provoca <em>"No way!"</em> (L02).</div>
+          <div class="stage-col"><strong>Control [F]</strong>No preguntes <em>"What does he do?"</em> ni uses Present Simple (<em>works, plays</em>). En 1B modela: <em>"Is your job 100% of you? No!"</em></div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>02 &middot; Vocabulary: 9 Flip Cards, Sound Focus &amp; Riddles (2A–2C)</h3>
+          <span class="stage-tag">Fase: Build &middot; MFP + Linking</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Pronunciaci&oacute;n cr&iacute;tica</strong>Atenci&oacute;n a <em>architect</em> (/k/ dura), <em>chef</em> (/ʃ/ suave), <em>engineer</em> (acento final) y enlace suave <em>a-teacher / an-artist</em> en 2B.</div>
+          <div class="stage-col"><strong>Answer Keys (2C)</strong>1. nurse &middot; 2. chef &middot; 3. driver &middot; 4. architect &middot; 5. engineer &middot; 6. artist.</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>03 &middot; Everyday Expressions (3A)</h3>
+          <span class="stage-tag">Fase: Notice &middot; Whole Chunks</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Regla Cr&iacute;tica</strong>Ense&ntilde;ar <em>It pays the bills / That's awesome! / Good for you! / Just for now</em> como bloques cerrados (no explicar <em>-s</em> de tercera persona en <em>pays</em>).</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>04 &middot; Listening: The Engineer Behind the Wheel (4A y 4B)</h3>
+          <span class="stage-tag">Fase: Notice in Context &middot; Transcript Hidden</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Pre / While / Post</strong>Escucha 1 con texto oculto (gist: <em>"Is Gabriel an engineer too?"</em>). Escucha 2 para responder Yes/No. Post: abrir texto y notar <em>a driver, an engineer, a nurse</em>.</div>
+          <div class="stage-col"><strong>Answer Keys (4B)</strong>1. Yes &middot; 2. Yes &middot; 3. No (nurse) &middot; 4. Yes (Puebla).</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>05 &middot; Grammar: a / an + To Be for Jobs (5A–5C)</h3>
+          <span class="stage-tag">Fase: Understand &amp; Practice &middot; Strict [N]</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>Interferencia L1</strong>Evitar omisi&oacute;n de art&iacute;culo (<em>"I'm engineer"</em>) y evitar art&iacute;culo en plural (<em>"They are an artists"</em>) o ante adjetivo solo (<em>"She's a creative"</em>).</div>
+          <div class="stage-col"><strong>Answer Keys (5B y 5C)</strong>5B: 1. a &middot; 2. an &middot; 3. an &middot; 4. a &middot; 5. No article &middot; 6. No article. 5C: 1. She is/She's an engineer. &middot; 2. I am/I'm a teacher. &middot; 3. They are/They're artists. &middot; 4. Are you an architect?</div>
+        </div>
+      </div>
+
+      <div class="stage-block">
+        <div class="stage-head">
+          <h3>06 &middot; Speaking: Double Life Interview (6A) &amp; 07 Exit Ticket (7A)</h3>
+          <span class="stage-tag">Fase: Communicate &amp; Reflect</span>
+        </div>
+        <div class="stage-cols">
+          <div class="stage-col"><strong>6A Entrevista</strong>Ronda 1 en primera persona (<em>No, I'm not a chef! I'm a driver, just for now</em>). Ronda 2 describiendo otra tarjeta en tercera persona (<em>He's / She's</em>).</div>
+          <div class="stage-col"><strong>7A Decisi&oacute;n de avance</strong>Verificar <em>a/an</em> correcto en las 3–4 oraciones aut&oacute;nomas sin verbos de rutina [F] antes de avanzar a L04.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 02 &middot; Control Ling&uuml;&iacute;stico</div>
+      <h2 class="hub-title">Delimitaci&oacute;n Curricular (P / P? / N / F)</h2>
+      <div class="pnf-grid">
+        <div class="pnf-box"><h3>[P] Previamente Demostrado</h3><p><em>To Be</em> (<em>I, you, he, she, we, they</em>) en +, &minus;, ?; <em>from / in</em>; expresiones de L01 y L02.</p></div>
+        <div class="pnf-box"><h3>[P?] Diagnosticar</h3><p>Inversi&oacute;n en preguntas Yes/No (<em>Are you...? / Is she...?</em>) y respuestas cortas.</p></div>
+        <div class="pnf-box"><h3>[N] Recurso Nuevo</h3><p>Art&iacute;culos indefinidos <em>a / an</em> + profesiones singulares; plural sin art&iacute;culo; 9 palabras (7 profesiones + 2 cualidades); 4 Everyday Expressions.</p></div>
+        <div class="pnf-box is-f"><h3>[F] L&iacute;mite Frontera (Prohibido)</h3><p>Present Simple / rutinas laborales (<em>work, drive, teach, cook, What do you do?</em>), posesivos <em>his/her/their</em>, preguntas <em>Wh-</em> abiertas (L04).</p></div>
+      </div>
+    </section>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 03 &middot; Producci&oacute;n de Estudio</div>
+      <h2 class="hub-title">Guion de Producci&oacute;n de Audios (Sin TTS)</h2>
+      <table>
+        <thead><tr><th>Archivo MP3 (<span class="font-mono">./audio/</span>)</th><th>Texto exacto para grabaci&oacute;n</th></tr></thead>
+        <tbody>
+          <tr><td class="font-mono">vocab-teacher.mp3 / -ex.mp3</td><td>"Teacher." / "I'm a teacher."</td></tr>
+          <tr><td class="font-mono">vocab-nurse.mp3 / -ex.mp3</td><td>"Nurse." / "She's a nurse."</td></tr>
+          <tr><td class="font-mono">vocab-driver.mp3 / -ex.mp3</td><td>"Driver." / "He's a driver."</td></tr>
+          <tr><td class="font-mono">vocab-chef.mp3 / -ex.mp3</td><td>"Chef." / "I'm a chef."</td></tr>
+          <tr><td class="font-mono">vocab-engineer.mp3 / -ex.mp3</td><td>"Engineer." / "He's an engineer."</td></tr>
+          <tr><td class="font-mono">vocab-artist.mp3 / -ex.mp3</td><td>"Artist." / "She's an artist."</td></tr>
+          <tr><td class="font-mono">vocab-architect.mp3 / -ex.mp3</td><td>"Architect." / "I'm an architect."</td></tr>
+          <tr><td class="font-mono">vocab-creative.mp3 / -ex.mp3</td><td>"Creative." / "She's creative."</td></tr>
+          <tr><td class="font-mono">vocab-happy.mp3 / -ex.mp3</td><td>"Happy." / "He's happy."</td></tr>
+          <tr><td class="font-mono">pron-a-jobs.mp3</td><td>"A teacher. [pausa 1s] A nurse."</td></tr>
+          <tr><td class="font-mono">pron-an-jobs.mp3</td><td>"An engineer. [pausa 1s] An artist."</td></tr>
+          <tr><td class="font-mono">chunk-pays-bills.mp3</td><td>"I'm a driver. It pays the bills!"</td></tr>
+          <tr><td class="font-mono">chunk-awesome.mp3</td><td>"You're an artist? That's awesome!"</td></tr>
+          <tr><td class="font-mono">chunk-good-for-you.mp3</td><td>"I'm a nurse now. Good for you!"</td></tr>
+          <tr><td class="font-mono">chunk-just-for-now.mp3</td><td>"I'm a chef, just for now."</td></tr>
+          <tr>
+            <td class="font-mono">u01-l03-listening.mp3</td>
+            <td>
+              <strong>Rosa:</strong> Hi! Are you Gabriel?<br>
+              <strong>Gabriel:</strong> Yes, I am! Welcome. Nice to meet you.<br>
+              <strong>Rosa:</strong> Are you from Mexico City?<br>
+              <strong>Gabriel:</strong> No, I'm not! Born and raised in Puebla. I'm a driver here, just for now. It pays the bills!<br>
+              <strong>Rosa:</strong> Oh! Are you a student?<br>
+              <strong>Gabriel:</strong> No, I'm an engineer&mdash;and an artist too! What about you? Are you an architect?<br>
+              <strong>Rosa:</strong> Haha, no! I'm not an architect. I'm a nurse.<br>
+              <strong>Gabriel:</strong> A nurse? That's awesome! Good for you!
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="hub-card">
+      <div class="hub-kicker">Secci&oacute;n 04 &middot; Evaluaci&oacute;n y Avance</div>
+      <h2 class="hub-title">Protocolo de Mediaci&oacute;n y R&uacute;brica Cualitativa (E0&ndash;E3)</h2>
+      <table>
+        <thead><tr><th>Nivel</th><th>Descriptor de Evidencia Observable</th><th>Decisi&oacute;n Pedag&oacute;gica</th></tr></thead>
+        <tbody>
+          <tr><td><strong>E0</strong></td><td>Omite sistem&aacute;ticamente <em>a / an</em> y no logra preguntar <em>Are you a/an...?</em> aun con tabla visible.</td><td>Practicar pares orales cortos (<em>a nurse / an engineer</em>) antes de repetir la entrevista.</td></tr>
+          <tr><td><strong>E1</strong></td><td>Usa <em>a</em> para todo (ej. <em>a engineer</em>) o inserta art&iacute;culo en plural (<em>a teachers</em>).</td><td>Reforzar con <em>Explore</em> Part 02 y contraste auditivo <em>a vs. an</em>.</td></tr>
+          <tr><td><strong>E2</strong></td><td>Usa <em>a / an</em> correctamente con profesiones singulares y corrige una suposici&oacute;n con <em>No, I'm not</em>.</td><td>Consolidado para avanzar a <strong>A1.1-U01-L04</strong>.</td></tr>
+          <tr><td><strong>E3</strong></td><td>Alterna con fluidez singular (<em>a/an</em>), plural sin art&iacute;culo, 2+ Everyday Expressions y Exit Ticket aut&oacute;nomo.</td><td>Dominio observable pleno; listo para L04 (<em>The First 30 Seconds</em>).</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div>Educate &bull; Design &bull; Grow &middot; Teacher's Hub &middot; A1.1-U01-L03</div>
+      <div>Complete Lesson Plan</div>
+    </div>
+  </footer>
+</body>
+</html>

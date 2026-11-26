@@ -338,6 +338,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
       margin-bottom: 16px;
     }
 
@@ -349,6 +351,8 @@
       border-radius: 6px;
       color: #ffffff;
       background: var(--navy-main);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .code-gold { background: var(--navy-main); border: 1px solid var(--gold); color: var(--gold); }
     .code-teal { background: var(--navy-main); border: 1px solid var(--teal); color: var(--teal); }
@@ -858,7 +862,7 @@
       <article class="card is-hidden" data-stage="specialized">
         <div>
           <div class="card-top">
-            <span class="card-code code-teal">Business Foundations</span>
+            <span class="card-code code-teal">Foundations</span>
             <span class="card-stage-kicker">Corporate A1.1–B1+</span>
           </div>
           <h3 class="card-title">Business English Foundations</h3>

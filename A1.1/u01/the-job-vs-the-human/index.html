@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A1.1-U01-L03 · The Job vs. The Human | English Hub · L&amp;D Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* === HEADER === */
+    .site-header { background: var(--navy-950); border-bottom: 1px solid rgba(212, 168, 67, 0.25); color: var(--white); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; min-width: 0; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; flex-shrink: 0; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); flex-shrink: 0; }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); white-space: nowrap; }
+    .header-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .header-student-btn, .header-teacher-link { background: none; border: none; font-family: inherit; font-size: 13px; cursor: pointer; padding: 4px 0; transition: color 0.15s; }
+    .header-student-btn { color: var(--slate-200); font-weight: 500; }
+    .header-student-btn:hover { color: var(--white); }
+    .header-teacher-link { color: var(--gold-500); font-weight: 700; }
+    .header-teacher-link:hover { color: var(--gold-400); }
+    .header-teacher-link.is-active { color: var(--teal-300); }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; }
+    .header-back-link:hover { color: var(--white); }
+
+    .page-container { max-width: 1120px; margin: 0 auto; padding: 28px 24px 64px; }
+
+    /* === HERO === */
+    .workspace-hero-banner {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 215px;
+      display: flex; align-items: flex-end; padding: 36px 40px; margin-bottom: 24px;
+      background-color: var(--navy-900);
+      background-image:
+        linear-gradient(120deg, rgba(7, 21, 39, 0.92) 0%, rgba(0, 31, 84, 0.80) 55%, rgba(19, 62, 104, 0.68) 100%),
+        url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover; background-position: center; border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md); color: var(--white);
+    }
+    .hero-content { max-width: 720px; position: relative; z-index: 2; }
+    .hero-title { font-size: clamp(1.75rem, 3.2vw, 2.45rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .hero-title span { color: var(--gold-500); }
+    .hero-subtitle { font-size: 0.98rem; color: var(--slate-200); max-width: 60ch; }
+
+    /* === SEGMENTED NAV === */
+    .module-nav-grid {
+      display: flex; gap: 4px; background: var(--slate-100); border: 1px solid var(--slate-200);
+      padding: 5px; border-radius: var(--radius-md); margin-bottom: 28px; overflow-x: auto; scrollbar-width: thin;
+    }
+    .module-tab {
+      flex: 1 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: transparent; border: 1px solid transparent; border-radius: var(--radius-sm);
+      padding: 10px 14px; font-family: inherit; font-size: 0.85rem; font-weight: 600;
+      color: var(--slate-600); cursor: pointer; transition: all 0.18s ease; white-space: nowrap;
+    }
+    .module-tab:hover { color: var(--navy-900); background: rgba(255, 255, 255, 0.55); }
+    .module-tab .tab-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; font-weight: 700; color: var(--slate-500); }
+    .module-tab.active { background: var(--white); color: var(--navy-900); box-shadow: var(--shadow-sm); border-color: var(--slate-200); font-weight: 700; }
+    .module-tab.active .tab-num { color: var(--teal-700); }
+
+    .module-panel { display: none; }
+    .module-panel.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); margin-bottom: 22px; }
+    .section-header { margin-bottom: 22px; }
+    .section-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal-700); margin-bottom: 6px; }
+    .section-title { font-size: 1.45rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; margin-bottom: 6px; }
+    .section-lead { font-size: 0.95rem; color: var(--slate-600); }
+
+    /* === TEACHER NOTE BOX === */
+    .teacher-note-box { display: none; background: var(--gold-100); border: 1px solid var(--gold-border); border-radius: var(--radius-md); margin-bottom: 18px; overflow: hidden; }
+    body.teacher-mode .teacher-note-box { display: block; }
+    .teacher-note-box summary { padding: 12px 16px; font-size: 0.85rem; font-weight: 700; color: var(--navy-900); cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .teacher-note-box summary::-webkit-details-marker { display: none; }
+    .teacher-note-badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.71rem; font-weight: 700; text-transform: uppercase; color: var(--gold-600); background: var(--white); border: 1px solid var(--gold-border); padding: 2px 9px; border-radius: var(--radius-full); }
+    .teacher-note-body { padding: 12px 16px 16px; font-size: 0.84rem; color: var(--slate-800); border-top: 1px solid rgba(212, 168, 67, 0.24); }
+    .teacher-meta-line { font-size: 0.82rem; color: var(--navy-900); margin-bottom: 10px; background: var(--white); border: 1px solid rgba(212, 168, 67, 0.28); border-radius: var(--radius-sm); padding: 8px 12px; }
+    .teacher-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+    .teacher-step-item { background: var(--white); border: 1px solid rgba(212, 168, 67, 0.28); border-radius: var(--radius-sm); padding: 10px 12px; line-height: 1.5; }
+    .teacher-step-item strong { display: block; font-size: 0.75rem; font-family: 'IBM Plex Mono', monospace; color: var(--gold-600); margin-bottom: 4px; text-transform: uppercase; }
+
+    /* === BUTTONS & AUDIO === */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; font-size: 0.86rem; font-weight: 700; padding: 10px 18px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; transition: all 0.16s ease; text-decoration: none; }
+    .btn-primary { background: var(--navy-900); color: var(--white); }
+    .btn-primary:hover { background: var(--navy-700); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-800); }
+    .btn-outline { background: var(--white); color: var(--navy-900); border-color: var(--slate-300); }
+    .btn-outline:hover { border-color: var(--navy-900); background: var(--slate-50); }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+
+    .audio-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal-50); color: var(--teal-800); border: 1px solid rgba(15, 118, 110, 0.25); border-radius: var(--radius-full); padding: 5px 12px; font-family: inherit; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s; }
+    .audio-btn:hover { background: var(--teal-700); color: var(--white); border-color: var(--teal-700); }
+    .audio-status-note { font-size: 0.78rem; color: var(--slate-500); margin-top: 8px; min-height: 18px; }
+
+    .poll-opt-btn { background: var(--white); border: 1px solid var(--slate-300); border-radius: var(--radius-full); padding: 6px 14px; font-family: inherit; font-size: 0.82rem; font-weight: 600; color: var(--slate-700); cursor: pointer; transition: all 0.15s; }
+    .poll-opt-btn:hover { border-color: var(--teal-700); color: var(--teal-800); }
+    .poll-opt-btn.selected { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+
+    /* === 01 WARM-UP: BEYOND THE PHOTO === */
+    .guess-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 18px; margin-bottom: 24px; }
+    .guess-card { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; }
+    .guess-photo { width: 100%; height: 225px; object-fit: cover; object-position: center top; display: block; }
+    .guess-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .guess-name { font-size: 1rem; font-weight: 800; color: var(--navy-900); }
+    .guess-reveal { font-size: 0.84rem; font-weight: 700; color: var(--teal-800); min-height: 22px; }
+
+    .human-opinion-box { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+
+    /* === 02 & 03 FLIP CARDS === */
+    .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; margin-bottom: 26px; }
+    .flip-card { perspective: 1000px; height: 235px; cursor: pointer; }
+    .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1); transform-style: preserve-3d; }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: var(--radius-md); border: 1px solid var(--slate-200); padding: 18px 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; text-align: center; background: var(--white); box-shadow: var(--shadow-sm); }
+    .flip-front-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; text-align: left; }
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
+    .flip-back { transform: rotateY(180deg); background: var(--navy-950); color: var(--white); border-color: var(--navy-800); justify-content: center; align-items: center; gap: 12px; }
+    .flip-pos { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; text-transform: lowercase; color: var(--teal-700); background: var(--teal-50); padding: 3px 10px; border-radius: var(--radius-full); flex-shrink: 0; margin-top: 2px; }
+    .flip-word { font-size: 1.55rem; font-weight: 800; color: var(--navy-900); line-height: 1.18; letter-spacing: -0.015em; }
+    .flip-word-chunk { font-size: 1.2rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; }
+    .flip-ipa { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--slate-500); margin-top: 4px; }
+    .flip-example { font-size: 0.9rem; color: var(--slate-700); font-weight: 500; text-align: center; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.4rem; font-weight: 800; color: var(--gold-400); }
+    .flip-back-meaning { font-size: 0.94rem; color: var(--slate-100); max-width: 28ch; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
+
+    .pron-contrast-box, .activity-box { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 22px; margin-bottom: 22px; }
+    .pron-contrast-box h3, .activity-box h3 { font-size: 1.02rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .pron-pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 14px; }
+    .pron-pair-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .pron-pair-label { font-weight: 700; color: var(--navy-900); font-size: 0.95rem; }
+
+    /* === RIDDLE GUESS === */
+    .riddle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; margin-top: 14px; }
+    .riddle-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .riddle-text { font-size: 0.92rem; font-weight: 600; color: var(--navy-900); }
+    .text-input { border: 1px solid var(--slate-300); border-radius: var(--radius-sm); padding: 8px 12px; font-family: inherit; font-size: 0.88rem; color: var(--navy-900); background: var(--white); }
+    .status-pill { font-size: 0.76rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); display: inline-block; }
+    .status-ok { background: var(--teal-50); color: var(--teal-800); }
+    .status-err { background: var(--danger-50); color: var(--danger-600); }
+
+    /* === SCENE BANNER === */
+    .scene-banner { display: grid; grid-template-columns: 280px 1fr; gap: 22px; align-items: center; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 24px; }
+    .scene-banner-photo { width: 100%; height: 185px; object-fit: cover; display: block; }
+    .scene-banner-body { padding: 18px 22px 18px 0; }
+    .scene-banner-body h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .scene-banner-body p { font-size: 0.9rem; color: var(--slate-600); }
+
+    /* === 04 LISTENING === */
+    .listening-stage { background: var(--navy-950); color: var(--white); border-radius: var(--radius-md); padding: 24px; margin-bottom: 22px; border: 1px solid rgba(212, 168, 67, 0.25); }
+    .listening-speakers { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .speaker-pill { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius-full); padding: 6px 14px 6px 6px; }
+    .speaker-avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; object-position: center top; }
+    .listening-stage-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .transcript-panel { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 0.92rem; color: var(--slate-100); line-height: 1.7; }
+    .transcript-panel.is-open { display: block; }
+    .comp-list { display: grid; gap: 12px; }
+    .comp-item { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .comp-q { font-weight: 600; color: var(--navy-900); font-size: 0.94rem; }
+    .comp-btns { display: flex; gap: 8px; align-items: center; }
+
+    /* === 05 GRAMMAR A / AN === */
+    .article-visual-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 22px; }
+    .article-visual-card { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px; }
+    .article-big { font-size: 1.5rem; font-weight: 800; color: var(--teal-700); margin-bottom: 4px; }
+    .grammar-table-wrap { overflow-x: auto; margin-bottom: 24px; border: 1px solid var(--slate-200); border-radius: var(--radius-md); }
+    .grammar-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
+    .grammar-table th { background: var(--navy-900); color: var(--white); padding: 12px 16px; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .grammar-table td { padding: 12px 16px; border-top: 1px solid var(--slate-200); color: var(--slate-800); background: var(--white); }
+    .grammar-table tr:nth-child(even) td { background: var(--slate-50); }
+    .grammar-highlight { font-weight: 700; color: var(--teal-800); }
+
+    .sort-list { display: grid; gap: 12px; margin-top: 14px; }
+    .sort-row { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .clinic-row { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 14px 16px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: center; }
+
+    /* === 06 SPEAKING DOUBLE LIFE CARDS === */
+    .doublelife-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 22px; }
+    .doublelife-card { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); overflow: hidden; cursor: pointer; transition: all 0.16s; }
+    .doublelife-card:hover { border-color: var(--teal-700); }
+    .doublelife-card.selected { background: var(--white); border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+    .doublelife-photo { width: 100%; height: 225px; object-fit: cover; object-position: center top; display: block; }
+    .doublelife-body { padding: 16px; font-size: 0.9rem; }
+    .doublelife-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--teal-700); margin-bottom: 6px; }
+
+    .checklist-box { background: var(--teal-50); border: 1px solid rgba(15, 118, 110, 0.22); border-radius: var(--radius-md); padding: 20px; }
+    .checklist-box h3 { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); margin-bottom: 10px; }
+    .checklist-items { display: grid; gap: 8px; font-size: 0.9rem; color: var(--slate-800); }
+
+    /* === 07 EXIT TICKET === */
+    .exit-textarea { width: 100%; min-height: 120px; border: 1px solid var(--slate-300); border-radius: var(--radius-md); padding: 14px; font-family: inherit; font-size: 0.95rem; color: var(--navy-900); resize: vertical; margin-bottom: 14px; }
+    .cando-list { display: grid; gap: 10px; margin-top: 18px; }
+    .cando-item { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); font-size: 0.9rem; color: var(--slate-800); cursor: pointer; }
+    .cando-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    .module-footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--slate-200); }
+
+    /* === FOOTER === */
+    .studio-site-footer { background: var(--navy-950); border-top: 1px solid rgba(212, 168, 67, 0.28); color: var(--slate-200); padding: 28px 24px; margin-top: 24px; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.84rem; }
+    .footer-brand-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+    .footer-teacher-portal { color: var(--gold-400); font-weight: 700; text-decoration: none; padding: 7px 14px; border-radius: var(--radius-full); border: 1px solid rgba(212, 168, 67, 0.4); transition: all 0.16s; }
+    .footer-teacher-portal:hover { background: rgba(212, 168, 67, 0.14); color: var(--white); }
+
+    /* === PIN MODAL === */
+    .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(7, 21, 39, 0.65); z-index: 300; align-items: center; justify-content: center; padding: 20px; }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 26px; width: 100%; max-width: 380px; box-shadow: var(--shadow-md); }
+    .modal-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .modal-card p { font-size: 0.86rem; color: var(--slate-600); margin-bottom: 14px; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+
+    @media (max-width: 780px) {
+      .workspace-hero-banner { padding: 26px 22px; min-height: 180px; }
+      .section-card { padding: 22px 18px; }
+      .scene-banner, .article-visual-grid, .clinic-row { grid-template-columns: 1fr; }
+      .scene-banner-body { padding: 0 18px 18px; }
+      .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; A1.1</span>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="header-student-btn" id="studentNameBtn" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-link" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a href="../index.html" class="header-back-link">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="workspace-hero-banner">
+      <div class="hero-content">
+        <h1 class="hero-title">The Job vs. <span>The Human</span></h1>
+        <p class="hero-subtitle">A job title is only part of the story&mdash;the engineer behind the wheel, the artist at the desk, and the real person behind the badge.</p>
+      </div>
+    </header>
+
+    <nav class="module-nav-grid" role="tablist" aria-label="Lesson Modules">
+      <button type="button" class="module-tab active" data-tab="m1" role="tab" aria-selected="true"><span class="tab-num">01</span> Warm-Up</button>
+      <button type="button" class="module-tab" data-tab="m2" role="tab" aria-selected="false"><span class="tab-num">02</span> Vocabulary</button>
+      <button type="button" class="module-tab" data-tab="m3" role="tab" aria-selected="false"><span class="tab-num">03</span> Everyday Expressions</button>
+      <button type="button" class="module-tab" data-tab="m4" role="tab" aria-selected="false"><span class="tab-num">04</span> Listening</button>
+      <button type="button" class="module-tab" data-tab="m5" role="tab" aria-selected="false"><span class="tab-num">05</span> Grammar</button>
+      <button type="button" class="module-tab" data-tab="m6" role="tab" aria-selected="false"><span class="tab-num">06</span> Speaking</button>
+      <button type="button" class="module-tab" data-tab="m7" role="tab" aria-selected="false"><span class="tab-num">07</span> Exit Ticket</button>
+    </nav>
+
+    <!-- ==================== 01 WARM-UP ==================== -->
+    <section class="module-panel active" id="m1">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">01 &middot; Engage</div>
+          <h2 class="section-title">Look Beyond the Photo</h2>
+          <p class="section-lead">Look at each person. Click your first guess&mdash;then see the surprise!</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 1A: First-Guess Visual Challenge <span class="teacher-note-badge">Strict [P] &middot; Schema</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Activar el dilema de la lecci&oacute;n (<em>The Job vs. The Human</em>) rompiendo estereotipos visuales sin exigir a&uacute;n la regla <em>a/an</em> ni verbos de acci&oacute;n [F].</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado del docente</strong>Se&ntilde;ala la Foto 1 (Hugo): <em>"Look at Hugo. He's from Puebla. Office or Kitchen? What is your guess?"</em></div>
+              <div class="teacher-step-item"><strong>2. Reacci&oacute;n con [P]</strong>Cuando haga clic y vea la sorpresa, invita al alumno a reaccionar usando expresiones ya aprendidas en L02: <em>"No way!"</em></div>
+              <div class="teacher-step-item"><strong>3. Control [F]</strong>No preguntes <em>"What does he do?"</em> ni <em>"Where does she work?"</em> Mant&eacute;n el intercambio en <em>Yes / No / No way! / Cool!</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="guess-grid">
+          <article class="guess-card">
+            <img class="guess-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Hugo portrait">
+            <div class="guess-body">
+              <div class="guess-name">Hugo &middot; From Puebla</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="poll-opt-btn" onclick="revealHuman(this, 'Surprise! Office by day, music studio by night!')">Office</button>
+                <button type="button" class="poll-opt-btn" onclick="revealHuman(this, 'Yes! Music studio by night, office by day!')">Music Studio</button>
+              </div>
+              <div class="guess-reveal"></div>
+            </div>
+          </article>
+
+          <article class="guess-card">
+            <img class="guess-photo" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Paula portrait">
+            <div class="guess-body">
+              <div class="guess-name">Paula &middot; From Bogot&aacute;</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="poll-opt-btn" onclick="revealHuman(this, 'Surprise! Hospital by day, painter at home!')">Hospital</button>
+                <button type="button" class="poll-opt-btn" onclick="revealHuman(this, 'Yes! Painter at home, hospital by day!')">Art Studio</button>
+              </div>
+              <div class="guess-reveal"></div>
+            </div>
+          </article>
+
+          <article class="guess-card">
+            <img class="guess-photo" src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Sam portrait">
+            <div class="guess-body">
+              <div class="guess-name">Sam &middot; From Toronto</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="poll-opt-btn" onclick="revealHuman(this, 'Surprise! City car by day, architecture student at night!')">City Car</button>
+                <button type="button" class="poll-opt-btn" onclick="revealHuman(this, 'Yes! Architecture design, and city driver right now!')">Design Desk</button>
+              </div>
+              <div class="guess-reveal"></div>
+            </div>
+          </article>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 1B: Quick Human Question <span class="teacher-note-badge">Recycled [P]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Conectar el tema con la vida del alumno usando una pregunta binaria simple antes de introducir las 9 palabras del M&oacute;dulo 02.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Modelado</strong>Di: <em>"Is your job 100% of you? For me: No! I'm a human first."</em></div>
+              <div class="teacher-step-item"><strong>2. Transici&oacute;n</strong>Pide al alumno elegir <em>Yes / No</em> y pasa a Vocabulario: <em>"Now let's learn words for jobs and humans."</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="human-opinion-box">
+          <div>
+            <div style="font-weight:800; color:var(--navy-900);">Quick Poll: Is your job 100% of who you are?</div>
+            <div style="font-size:0.86rem; color:var(--slate-600);" id="humanPollReply">Click your answer.</div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button type="button" class="poll-opt-btn" onclick="pickHumanPoll(this, 'Interesting! Your job is a big part of your story.')">Yes</button>
+            <button type="button" class="poll-opt-btn" onclick="pickHumanPoll(this, 'Many people agree! You are more than a job title.')">No</button>
+          </div>
+        </div>
+        <div class="audio-status-note" id="audioStatusGlobal"></div>
+
+        <div class="module-footer-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m2')">Next: Vocabulary &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02 VOCABULARY ==================== -->
+    <section class="module-panel" id="m2">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">02 &middot; Build</div>
+          <h2 class="section-title">Jobs &amp; Human Qualities</h2>
+          <p class="section-lead">Click each card to see the meaning and listen. Notice <strong>a</strong> and <strong>an</strong> in the examples!</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2A: 9 Flip Cards (7 Jobs + 2 Qualities) <span class="teacher-note-badge">MFP Sequence</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Presentar 7 profesiones seleccionadas (4 con sonido conson&aacute;ntico + 3 con sonido voc&aacute;lico para preparar <em>a/an</em>) y 2 adjetivos humanos (<em>creative, happy</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Pronunciaci&oacute;n cr&iacute;tica</strong>Vigila <em>engineer</em> (acento al final: /ˌendʒɪˈnɪər/), <em>architect</em> (/k/ dura: "AR-ki-tekt", no "ar-chi-tect") y <em>chef</em> (/ʃ/ suave: "shef").</div>
+              <div class="teacher-step-item"><strong>2. Exposici&oacute;n natural a a/an</strong>No expliques la regla todav&iacute;a; solo haz notar auditivamente <em>"a teacher"</em> vs. <em>"an engineer"</em>.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="flip-grid">
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">teacher</div>
+                    <div class="flip-ipa">/ˈtiːtʃər/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"I'm a teacher."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-teacher.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-teacher-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">teacher</div>
+                <div class="flip-back-meaning">A person in a school or class who helps students learn.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">nurse</div>
+                    <div class="flip-ipa">/nɜːrs/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"She's a nurse."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-nurse.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-nurse-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">nurse</div>
+                <div class="flip-back-meaning">A medical professional in a hospital or clinic.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">driver</div>
+                    <div class="flip-ipa">/ˈdraɪvər/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"He's a driver."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-driver.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-driver-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">driver</div>
+                <div class="flip-back-meaning">A person in a taxi, bus, or city car.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">chef</div>
+                    <div class="flip-ipa">/ʃef/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"I'm a chef."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-chef.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-chef-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">chef</div>
+                <div class="flip-back-meaning">A professional cook in a restaurant or kitchen.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">engineer</div>
+                    <div class="flip-ipa">/ˌendʒɪˈnɪər/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"He's an engineer."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-engineer.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-engineer-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">engineer</div>
+                <div class="flip-back-meaning">A technical expert in machines, software, or systems.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">artist</div>
+                    <div class="flip-ipa">/ˈɑːrtɪst/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"She's an artist."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-artist.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-artist-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">artist</div>
+                <div class="flip-back-meaning">A creative person in painting, music, or design.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">architect</div>
+                    <div class="flip-ipa">/ˈɑːrkɪtekt/</div>
+                  </div>
+                  <span class="flip-pos">noun</span>
+                </div>
+                <div class="flip-example">"I'm an architect."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-architect.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-architect-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">architect</div>
+                <div class="flip-back-meaning">A person who designs houses and buildings.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">creative</div>
+                    <div class="flip-ipa">/kriˈeɪtɪv/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
+                </div>
+                <div class="flip-example">"She's creative."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-creative.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-creative-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">creative</div>
+                <div class="flip-back-meaning">Full of new, original ideas.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word">happy</div>
+                    <div class="flip-ipa">/ˈhæpi/</div>
+                  </div>
+                  <span class="flip-pos">adjective</span>
+                </div>
+                <div class="flip-example">"He's happy."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-happy.mp3', this)">&#9654; Word</button>
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/vocab-happy-ex.mp3', this)">&#9654; Example</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">happy</div>
+                <div class="flip-back-meaning">Feeling good and smiling.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2B: Sound Focus (Linking a / an) <span class="teacher-note-badge">Phonology Drill</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Entrenar el enlace suave de <em>a</em> (/ə/) y <em>an</em> (/ən/) unido a la profesi&oacute;n, evitando pausas rob&oacute;ticas o pronunciar <em>a</em> como /eɪ/.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Enlace fluido</strong>Modela <em>"a-teacher"</em> (/əˈtiːtʃər/) y <em>"an-artist"</em> (/ənˈɑːrtɪst/) como una sola unidad sonora.</div>
+              <div class="teacher-step-item"><strong>2. Interferencia L1</strong>Recuerda al alumno que en espa&ntilde;ol decimos "Soy ingeniero" sin art&iacute;culo, pero en ingl&eacute;s <strong>siempre</strong> va <em>a / an</em> antes de una profesi&oacute;n singular.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="pron-contrast-box">
+          <h3>Sound Focus: Smooth Linking (a vs. an)</h3>
+          <p class="section-lead">Listen to how <strong>a</strong> and <strong>an</strong> connect smoothly to the job word.</p>
+          <div class="pron-pairs">
+            <div class="pron-pair-card">
+              <div class="pron-pair-label">a teacher &nbsp;/&nbsp; a nurse</div>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/pron-a-jobs.mp3', this)">&#9654; Listen &amp; Repeat</button>
+            </div>
+            <div class="pron-pair-card">
+              <div class="pron-pair-label">an engineer &nbsp;/&nbsp; an artist</div>
+              <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/pron-an-jobs.mp3', this)">&#9654; Listen &amp; Repeat</button>
+            </div>
+          </div>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 2C: Quick Job Riddles <span class="teacher-note-badge">Recall &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Activar recuperaci&oacute;n l&eacute;xica mediante acertijos breves (mec&aacute;nica distinta a L01 y L02).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Apoyo oral</strong>Si duda en la ortograf&iacute;a de <em>architect</em> o <em>engineer</em>, perm&iacute;tele revisar la tarjeta de arriba y volver a escribirla sin copiar letra por letra.</div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. nurse &middot; 2. chef &middot; 3. driver &middot; 4. architect &middot; 5. engineer &middot; 6. artist.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="activity-box">
+          <h3>Vocabulary Activity: Guess the Job</h3>
+          <p class="section-lead">Read each clue and type the job word.</p>
+          <div class="riddle-grid" id="riddleGrid"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m1')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m3')">Next: Everyday Expressions &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03 EVERYDAY EXPRESSIONS ==================== -->
+    <section class="module-panel" id="m3">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">03 &middot; Notice</div>
+          <h2 class="section-title">Everyday Expressions</h2>
+          <p class="section-lead">Learn each phrase as one complete block. Click a card to see when to use it.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 3A: Pragmatic Chunks About Work <span class="teacher-note-badge">Whole-Block Drilling</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Introducir 4 expresiones cotidianas sobre el trabajo como bloques cerrados (prohibido analizar la <em>-s</em> de Present Simple en <em>It pays the bills</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Tono y gesto</strong>Modela <em>"It pays the bills"</em> con un gesto relajado de hombros (pragm&aacute;tico, sin queja) y <em>"That's awesome!"</em> con energ&iacute;a positiva.</div>
+              <div class="teacher-step-item"><strong>2. Mini-intercambio</strong>Di: <em>"I'm a driver, just for now. It pays the bills!"</em> y pide al alumno reaccionar con <em>"Good for you!"</em> o <em>"That's awesome!"</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="scene-banner">
+          <img class="scene-banner-photo" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Colleagues talking naturally at a table">
+          <div class="scene-banner-body">
+            <h3>Honest Conversations About Work</h3>
+            <p>Sometimes a job is your passion, and sometimes it is just a step on the way. These 4 everyday phrases help you talk about both naturally.</p>
+          </div>
+        </div>
+
+        <div class="flip-grid">
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">It pays the bills.</div>
+                  </div>
+                  <span class="flip-pos">reality</span>
+                </div>
+                <div class="flip-example">"I'm a driver. It pays the bills!"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-pays-bills.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">It pays the bills.</div>
+                <div class="flip-back-meaning">Maybe not your dream job, and it gives you the money you need.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">That's awesome!</div>
+                  </div>
+                  <span class="flip-pos">reaction</span>
+                </div>
+                <div class="flip-example">"You're an artist? That's awesome!"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-awesome.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">That's awesome!</div>
+                <div class="flip-back-meaning">A warm, positive reaction ("That's great / cool!").</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">Good for you!</div>
+                  </div>
+                  <span class="flip-pos">support</span>
+                </div>
+                <div class="flip-example">"I'm a nurse now. &mdash; Good for you!"</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-good-for-you.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">Good for you!</div>
+                <div class="flip-back-meaning">"I'm happy for you!" &mdash; warm support.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-face">
+                <div class="flip-front-top">
+                  <div class="flip-word-group">
+                    <div class="flip-word-chunk">Just for now.</div>
+                  </div>
+                  <span class="flip-pos">temporary</span>
+                </div>
+                <div class="flip-example">"I'm a chef, just for now."</div>
+                <div class="flip-audio-row" onclick="event.stopPropagation()">
+                  <button type="button" class="audio-btn" onclick="playLessonAudio('./audio/chunk-just-for-now.mp3', this)">&#9654; Listen</button>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="flip-back-word">Just for now.</div>
+                <div class="flip-back-meaning">Temporary&mdash;only for this moment, not forever.</div>
+                <div class="flip-hint">Click to flip back</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m2')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m4')">Next: Listening &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 LISTENING ==================== -->
+    <section class="module-panel" id="m4">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">04 &middot; Notice in Context</div>
+          <h2 class="section-title">In the Car: The Engineer Behind the Wheel</h2>
+          <p class="section-lead">Listen to Rosa and Gabriel first. Keep the transcript closed until you finish the questions.</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 4A: Independent Listening <span class="teacher-note-badge">Transcript Hidden First</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Escuchar <em>a / an</em> y las 4 Everyday Expressions en un di&aacute;logo real sin lectura simult&aacute;nea.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Pregunta de idea general (Escucha 1)</strong>Antes de dar Play, pregunta: <em>"Gabriel is a driver. Is he an engineer too?"</em> (Yes).</div>
+              <div class="teacher-step-item"><strong>2. Escucha 2 (Detalle)</strong>Reproduce una segunda vez para responder los 4 reactivos Yes/No.</div>
+              <div class="teacher-step-item"><strong>3. Puente a Gram&aacute;tica</strong>Al abrir el texto, pide subrayar/se&ntilde;alar <em>a driver, an engineer, an artist, a nurse</em>.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="listening-stage">
+          <div class="listening-speakers">
+            <div class="speaker-pill">
+              <img class="speaker-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&crop=faces,top&w=200&h=200&q=80" alt="Rosa">
+              <div><strong>Rosa</strong><div style="font-size:0.75rem; color: var(--slate-300);">Passenger</div></div>
+            </div>
+            <div class="speaker-pill">
+              <img class="speaker-avatar" src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&crop=faces,top&w=200&h=200&q=80" alt="Gabriel">
+              <div><strong>Gabriel</strong><div style="font-size:0.75rem; color: var(--slate-300);">City Driver</div></div>
+            </div>
+          </div>
+          <div class="listening-stage-top">
+            <div>
+              <strong>Audio Track: The Engineer Behind the Wheel</strong>
+              <div style="font-size: 0.84rem; color: var(--slate-300);">A short ride turns into a real conversation.</div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-teal btn-sm" onclick="playLessonAudio('./audio/u01-l03-listening.mp3', this)">&#9654; Play Dialogue</button>
+              <button type="button" class="btn btn-outline btn-sm" id="toggleTranscriptBtn" onclick="toggleTranscript()">Show Transcript (after listening)</button>
+            </div>
+          </div>
+          <div class="transcript-panel" id="transcriptPanel">
+            <p><strong>Rosa:</strong> Hi! Are you Gabriel?</p>
+            <p><strong>Gabriel:</strong> Yes, I am! Welcome. Nice to meet you.</p>
+            <p><strong>Rosa:</strong> Are you from Mexico City?</p>
+            <p><strong>Gabriel:</strong> No, I'm not! Born and raised in Puebla. I'm a driver here, just for now. It pays the bills!</p>
+            <p><strong>Rosa:</strong> Oh! Are you a student?</p>
+            <p><strong>Gabriel:</strong> No, I'm an engineer&mdash;and an artist too! What about you? Are you an architect?</p>
+            <p><strong>Rosa:</strong> Haha, no! I'm not an architect. I'm a nurse.</p>
+            <p><strong>Gabriel:</strong> A nurse? That's awesome! Good for you!</p>
+          </div>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 4B: Comprehension Check <span class="teacher-note-badge">Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Answer Keys</strong>1. Yes (driver just for now) &middot; 2. Yes (an engineer and an artist) &middot; 3. No (she's a nurse) &middot; 4. Yes (born and raised in Puebla).</div>
+              <div class="teacher-step-item"><strong>2. Noticing</strong>Pregunta: <em>"Why 'a nurse' and 'an engineer'?"</em> Deja que el alumno proponga la hip&oacute;tesis antes de pasar al M&oacute;dulo 05.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="comp-list" id="listeningCompList"></div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m3')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m5')">Next: Grammar &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 GRAMMAR ==================== -->
+    <section class="module-panel" id="m5">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">05 &middot; Understand &amp; Practice</div>
+          <h2 class="section-title">Indefinite Articles (a / an) + To Be for Jobs</h2>
+          <p class="section-lead">In English, always use <strong>a</strong> or <strong>an</strong> before a singular job. Never use <strong>a / an</strong> with plural jobs!</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5A: Guided Discovery (a vs. an vs. Plural) <span class="teacher-note-badge">Strict Scope [N]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>L&iacute;mite estricto [F]:</strong> Prohibido introducir rutinas en Present Simple (<em>works, teaches, drives</em>) ni <em>What do you do?</em> Enf&oacute;cate 100% en <em>To Be + a/an + job</em>.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Regla visual simple</strong>Se&ntilde;ala las 3 tarjetas superiores: <strong>a</strong> + sonido consonante (<em>a teacher</em>), <strong>an</strong> + sonido vocal <em>a, e, i, o, u</em> (<em>an artist</em>), <strong>&Oslash;</strong> en plural (<em>We're teachers</em>).</div>
+              <div class="teacher-step-item"><strong>2. Interferencia L1 (Espa&ntilde;ol)</strong>El error #1 en hispanohablantes es omitir el art&iacute;culo (<em>"I'm engineer"</em>) o ponerlo en plural (<em>"We are a teachers"</em>). Contrasta ambos en voz alta.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="article-visual-grid">
+          <div class="article-visual-card">
+            <div class="article-big">a + consonant</div>
+            <div style="font-size:0.88rem; color:var(--slate-700);"><strong>a</strong> teacher &middot; <strong>a</strong> nurse<br><strong>a</strong> driver &middot; <strong>a</strong> chef</div>
+          </div>
+          <div class="article-visual-card">
+            <div class="article-big">an + vowel</div>
+            <div style="font-size:0.88rem; color:var(--slate-700);"><strong>an</strong> engineer &middot; <strong>an</strong> artist<br><strong>an</strong> architect</div>
+          </div>
+          <div class="article-visual-card">
+            <div class="article-big">&Oslash; + plural</div>
+            <div style="font-size:0.88rem; color:var(--slate-700);">We're <strong>teachers</strong>.<br>They're <strong>engineers</strong>. (No a/an!)</div>
+          </div>
+        </div>
+
+        <div class="grammar-table-wrap">
+          <table class="grammar-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Singular (a / an)</th>
+                <th>Plural (No a / an)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Affirmative (+)</strong></td>
+                <td>I'm <span class="grammar-highlight">a</span> nurse. / He's <span class="grammar-highlight">an</span> engineer.</td>
+                <td>We're <span class="grammar-highlight">nurses</span>. / They're <span class="grammar-highlight">engineers</span>.</td>
+              </tr>
+              <tr>
+                <td><strong>Negative (&minus;)</strong></td>
+                <td>I'm not <span class="grammar-highlight">a</span> chef. / She isn't <span class="grammar-highlight">an</span> architect.</td>
+                <td>We aren't <span class="grammar-highlight">chefs</span>. / They aren't <span class="grammar-highlight">artists</span>.</td>
+              </tr>
+              <tr>
+                <td><strong>Yes/No Question (?)</strong></td>
+                <td>Are you <span class="grammar-highlight">a</span> driver? &rarr; Yes, I am. / No, I'm not.<br>Is she <span class="grammar-highlight">an</span> artist? &rarr; Yes, she is. / No, she isn't.</td>
+                <td>Are they <span class="grammar-highlight">teachers</span>?<br>Yes, they are. / No, they aren't.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5B: Bucket Sort (a / an / &Oslash;) <span class="teacher-note-badge">Discrimination &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Entrenar decisi&oacute;n r&aacute;pida entre <em>a</em>, <em>an</em> y <em>&Oslash; (plural / adjetivo solo)</em>.</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Trampa productiva (#5 y #6)</strong>#5 (<em>engineers</em>) es plural &rarr; No article. #6 (<em>creative</em>) es adjetivo solo &rarr; No article. Pide al alumno explicar por qu&eacute;.</div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. a &middot; 2. an &middot; 3. an &middot; 4. a &middot; 5. No article &middot; 6. No article.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="activity-box">
+          <h3>Grammar in Context A: Choose a, an, or No Article (&Oslash;)</h3>
+          <p class="section-lead">Click the right option for each sentence.</p>
+          <div class="sort-list" id="articleSortList"></div>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 5C: Job Bio Editor (Find &amp; Fix) <span class="teacher-note-badge">Zero Red Hints &middot; Keys</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Automonitoreo</strong>Sin marcas rojas: deja que el alumno lea en voz alta para escuchar el error (<em>"She is engineer"</em>).</div>
+              <div class="teacher-step-item"><strong>2. Answer Keys</strong>1. She is / She's an engineer. &middot; 2. I am / I'm a teacher. &middot; 3. They are / They're artists. &middot; 4. Are you an architect?</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="activity-box">
+          <h3>Grammar in Context B: Job Bio Editor</h3>
+          <p class="section-lead">Each profile line has one mistake. Find it and write the correct sentence.</p>
+          <div class="sort-list" id="bioClinicList"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m4')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m6')">Next: Speaking &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06 SPEAKING ==================== -->
+    <section class="module-panel" id="m6">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">06 &middot; Communicate</div>
+          <h2 class="section-title">Double Life Interview: Day Job vs. Passion</h2>
+          <p class="section-lead">Pick one person. Your partner asks <em>Are you a/an...?</em> to discover both your day job and your real passion!</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 6A: Double Life Interview <span class="teacher-note-badge">Performance Task</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Practicar producci&oacute;n libre integrando <em>I'm a/an...</em>, <em>I'm not a/an...</em>, <em>Are you a/an...?</em> y las Everyday Expressions (<em>It pays the bills / Just for now / That's awesome!</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Ronda 1 (Entrevista en primera persona)</strong>El alumno adopta una de las 6 identidades. T&uacute; preguntas: <em>"Are you a teacher?"</em> El alumno corrige y revela sus dos lados: <em>"No, I'm not! I'm a driver, just for now. It pays the bills! I'm an architect too."</em></div>
+              <div class="teacher-step-item"><strong>2. Ronda 2 (Tercera persona)</strong>Se&ntilde;ala otra tarjeta y pide al alumno describirla: <em>"She's a nurse, and she's an artist too. She's creative!"</em></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="doublelife-grid">
+          <div class="doublelife-card" onclick="selectDoubleLife(this)">
+            <img class="doublelife-photo" src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Gabriel">
+            <div class="doublelife-body">
+              <div class="doublelife-tag">PROFILE 1 &middot; HE</div>
+              <div><strong>Name:</strong> Gabriel (Puebla)</div>
+              <div><strong>Day Job:</strong> Driver (just for now)</div>
+              <div><strong>Passion:</strong> Engineer &amp; Artist</div>
+            </div>
+          </div>
+
+          <div class="doublelife-card" onclick="selectDoubleLife(this)">
+            <img class="doublelife-photo" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Rosa">
+            <div class="doublelife-body">
+              <div class="doublelife-tag">PROFILE 2 &middot; SHE</div>
+              <div><strong>Name:</strong> Rosa (Le&oacute;n)</div>
+              <div><strong>Day Job:</strong> Nurse</div>
+              <div><strong>Passion:</strong> Chef (creative!)</div>
+            </div>
+          </div>
+
+          <div class="doublelife-card" onclick="selectDoubleLife(this)">
+            <img class="doublelife-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Hugo">
+            <div class="doublelife-body">
+              <div class="doublelife-tag">PROFILE 3 &middot; HE</div>
+              <div><strong>Name:</strong> Hugo (Bogot&aacute;)</div>
+              <div><strong>Day Job:</strong> Architect</div>
+              <div><strong>Passion:</strong> Artist</div>
+            </div>
+          </div>
+
+          <div class="doublelife-card" onclick="selectDoubleLife(this)">
+            <img class="doublelife-photo" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Paula">
+            <div class="doublelife-body">
+              <div class="doublelife-tag">PROFILE 4 &middot; SHE</div>
+              <div><strong>Name:</strong> Paula (M&eacute;rida)</div>
+              <div><strong>Day Job:</strong> Teacher</div>
+              <div><strong>Passion:</strong> Architect</div>
+            </div>
+          </div>
+
+          <div class="doublelife-card" onclick="selectDoubleLife(this)">
+            <img class="doublelife-photo" src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Sam">
+            <div class="doublelife-body">
+              <div class="doublelife-tag">PROFILE 5 &middot; HE</div>
+              <div><strong>Name:</strong> Sam (Toronto)</div>
+              <div><strong>Day Job:</strong> Chef</div>
+              <div><strong>Passion:</strong> Engineer</div>
+            </div>
+          </div>
+
+          <div class="doublelife-card" onclick="selectDoubleLife(this)">
+            <img class="doublelife-photo" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&crop=faces,top&w=600&h=480&q=80" alt="Clara">
+            <div class="doublelife-body">
+              <div class="doublelife-tag">PROFILE 6 &middot; SHE</div>
+              <div><strong>Name:</strong> Clara (Celaya)</div>
+              <div><strong>Day Job:</strong> Engineer</div>
+              <div><strong>Passion:</strong> Teacher (happy!)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-box">
+          <h3>Speaking Checklist</h3>
+          <div class="checklist-items">
+            <div>1. Use <strong>a</strong> or <strong>an</strong> accurately before singular jobs (<em>I'm a nurse / I'm an engineer</em>).</div>
+            <div>2. Correct at least one wrong guess (<em>No, I'm not a chef!</em>).</div>
+            <div>3. Ask your partner at least 2 questions with <em>Are you a/an...?</em></div>
+            <div>4. Use at least one Everyday Expression (<em>It pays the bills</em> / <em>Just for now</em> / <em>That's awesome!</em> / <em>Good for you!</em>).</div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m5')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goToTab('m7')">Next: Exit Ticket &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07 EXIT TICKET ==================== -->
+    <section class="module-panel" id="m7">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">07 &middot; Reflect</div>
+          <h2 class="section-title">Exit Ticket</h2>
+          <p class="section-lead">Write 3 or 4 short sentences: your job or dream job (with <strong>a / an</strong>), one job you are not, and one sentence about a friend (<strong>He's / She's a/an...</strong>).</p>
+        </div>
+
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; Activity 7A: Written Evidence &amp; Advancement <span class="teacher-note-badge">Understanding Before Advancement</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-meta-line"><strong>Prop&oacute;sito pedag&oacute;gico:</strong> Comprobar uso aut&oacute;nomo de <em>a / an</em> (sin omisiones) y ausencia de verbos de rutina [F] antes de avanzar a L04 (<em>The First 30 Seconds</em>).</div>
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Qu&eacute; revisar</strong>Presencia de <em>a / an</em> antes de profesiones singulares, ausencia de <em>a / an</em> antes de adjetivos solos (<em>I'm creative</em>) y may&uacute;scula en <em>I</em>.</div>
+              <div class="teacher-step-item"><strong>2. Decisi&oacute;n de avance</strong>Con E2/E3 asigna <em>Explore</em> y avanza a L04. Con E0/E1 refuerza <em>a/an</em> en <em>Explore</em> Part 02.</div>
+            </div>
+          </div>
+        </details>
+
+        <textarea class="exit-textarea" id="exitTicketInput" aria-label="Exit Ticket response"></textarea>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-teal" onclick="saveExitTicket()">Save My Exit Ticket</button>
+          <span id="exitTicketStatus" class="audio-status-note" style="margin: 0;"></span>
+        </div>
+
+        <div class="cando-list">
+          <label class="cando-item"><input type="checkbox"> <span>I can say my job or dream job using <strong>I'm a...</strong> or <strong>I'm an...</strong></span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I know when to use <strong>a</strong>, <strong>an</strong>, or <strong>no article</strong> (plural / adjective).</span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can ask and correct jobs (<strong>Are you an engineer? &mdash; No, I'm not!</strong>).</span></label>
+          <label class="cando-item"><input type="checkbox"> <span>I can use <strong>It pays the bills</strong>, <strong>Just for now</strong>, and <strong>That's awesome!</strong></span></label>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goToTab('m6')">&larr; Previous</button>
+          <a href="./explore.html" class="btn btn-primary">Go to Explore (Workbook) &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Job vs. The Human (A1.1)</div>
+      </div>
+      <a href="../../../teacher-hub/A1.1/the-job-vs-the-human/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <!-- PIN MODAL -->
+  <div class="modal-backdrop" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
+    <div class="modal-card">
+      <h3 id="pinModalTitle">Teacher's Version</h3>
+      <p>Enter your authorized faculty PIN to unlock step-by-step didactic sequences and answer keys.</p>
+      <input type="password" id="pinInput" class="text-input" style="width: 100%;" placeholder="Faculty PIN" onkeydown="if(event.key==='Enter')submitPin()">
+      <div class="audio-status-note" id="pinError" style="color: var(--danger-600);"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline btn-sm" onclick="closeTeacherModal()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="submitPin()">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadStudentName() {
+      let name = '';
+      try {
+        name = localStorage.getItem('ld_student_name') || '';
+        if (!name) { const raw = localStorage.getItem('ld-english-hub'); if (raw) name = (JSON.parse(raw).studentName || ''); }
+      } catch (_) {}
+      const btn = document.getElementById('studentNameBtn');
+      if (btn) btn.textContent = 'Student · ' + (name.trim() || 'Guest');
+    }
+    function editStudentName() {
+      const current = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', current);
+      if (next === null) return;
+      const clean = next.trim();
+      try {
+        localStorage.setItem('ld_student_name', clean);
+        const raw = localStorage.getItem('ld-english-hub');
+        const data = raw ? JSON.parse(raw) : {};
+        data.studentName = clean;
+        localStorage.setItem('ld-english-hub', JSON.stringify(data));
+      } catch (_) {}
+      loadStudentName();
+    }
+
+    const VALID_PINS = ['2064', '0410'];
+    function setTeacherMode(active) {
+      document.body.classList.toggle('teacher-mode', active);
+      const btn = document.getElementById('teacherToggleBtn');
+      if (btn) {
+        btn.classList.toggle('is-active', active);
+        btn.textContent = active ? "Teacher's Version (On) ×" : "Teacher's Version ↗";
+      }
+    }
+    function openTeacherModal() {
+      if (document.body.classList.contains('teacher-mode')) {
+        try { sessionStorage.removeItem('ld-coordinator-auth'); } catch (_) {}
+        setTeacherMode(false);
+        return;
+      }
+      document.getElementById('pinError').textContent = '';
+      document.getElementById('pinInput').value = '';
+      document.getElementById('pinModal').classList.add('is-open');
+      setTimeout(() => document.getElementById('pinInput').focus(), 50);
+    }
+    function closeTeacherModal() { document.getElementById('pinModal').classList.remove('is-open'); }
+    function submitPin() {
+      const val = document.getElementById('pinInput').value.trim();
+      if (VALID_PINS.includes(val)) {
+        try { sessionStorage.setItem('ld-coordinator-auth', 'granted'); } catch (_) {}
+        setTeacherMode(true);
+        closeTeacherModal();
+      } else {
+        document.getElementById('pinError').textContent = 'Incorrect PIN. Please try again.';
+      }
+    }
+
+    const tabs = document.querySelectorAll('.module-tab');
+    const panels = document.querySelectorAll('.module-panel');
+    function goToTab(tabId) {
+      tabs.forEach(t => {
+        const match = t.dataset.tab === tabId;
+        t.classList.toggle('active', match);
+        t.setAttribute('aria-selected', match ? 'true' : 'false');
+      });
+      panels.forEach(p => p.classList.toggle('active', p.id === tabId));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    tabs.forEach(t => t.addEventListener('click', () => goToTab(t.dataset.tab)));
+
+    let currentAudio = null;
+    function playLessonAudio(src, btn) {
+      const statusEl = document.getElementById('audioStatusGlobal');
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+      const audio = new Audio(src);
+      currentAudio = audio;
+      const orig = btn.innerHTML;
+      btn.innerHTML = '&#9632; Playing...';
+      audio.play().then(() => { if (statusEl) statusEl.textContent = ''; }).catch(() => {
+        btn.innerHTML = orig;
+        const fileName = src.split('/').pop();
+        if (statusEl) statusEl.textContent = 'Studio audio file queued: ' + fileName;
+      });
+      audio.onended = () => { btn.innerHTML = orig; };
+    }
+
+    function revealHuman(btn, msg) {
+      const body = btn.closest('.guess-body');
+      body.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      body.querySelector('.guess-reveal').textContent = msg;
+    }
+    function pickHumanPoll(btn, msg) {
+      btn.parentElement.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('humanPollReply').textContent = msg;
+    }
+
+    const riddles = [
+      { clue: '1. Hospital & clinic professional:', ans: 'nurse' },
+      { clue: '2. Professional cook in a kitchen:', ans: 'chef' },
+      { clue: '3. Person in a city car or taxi:', ans: 'driver' },
+      { clue: '4. Designer of houses and buildings:', ans: 'architect' },
+      { clue: '5. Technical expert in machines or software:', ans: 'engineer' },
+      { clue: '6. Creative person in painting or music:', ans: 'artist' }
+    ];
+    function renderRiddles() {
+      const g = document.getElementById('riddleGrid');
+      riddles.forEach((r, i) => {
+        g.innerHTML += `
+          <div class="riddle-card">
+            <div class="riddle-text">${r.clue}</div>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input type="text" class="text-input" id="rid-${i}" placeholder="Type job..." style="flex:1;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="checkRiddle(${i})">Check</button>
+              <span id="rid-st-${i}"></span>
+            </div>
+          </div>`;
+      });
+    }
+    function checkRiddle(i) {
+      const val = document.getElementById('rid-' + i).value.trim().toLowerCase();
+      const st = document.getElementById('rid-st-' + i);
+      st.className = 'status-pill ' + (val === riddles[i].ans ? 'status-ok' : 'status-err');
+      st.textContent = val === riddles[i].ans ? 'Correct' : 'Try again';
+    }
+
+    const compItems = [
+      { q: '1. Is Gabriel a driver right now?', ans: 'Yes' },
+      { q: '2. Is Gabriel an engineer and an artist?', ans: 'Yes' },
+      { q: '3. Is Rosa an architect?', ans: 'No' },
+      { q: '4. Is Gabriel from Puebla?', ans: 'Yes' }
+    ];
+    function renderComp() {
+      const c = document.getElementById('listeningCompList');
+      compItems.forEach((it, i) => {
+        c.innerHTML += `
+          <div class="comp-item">
+            <div class="comp-q">${it.q}</div>
+            <div class="comp-btns">
+              <button type="button" class="poll-opt-btn" onclick="checkComp(${i}, 'Yes', this)">Yes</button>
+              <button type="button" class="poll-opt-btn" onclick="checkComp(${i}, 'No', this)">No</button>
+              <span id="lc-st-${i}"></span>
+            </div>
+          </div>`;
+      });
+    }
+    function checkComp(i, pick, btn) {
+      btn.closest('.comp-btns').querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const st = document.getElementById('lc-st-' + i);
+      st.className = 'status-pill ' + (pick === compItems[i].ans ? 'status-ok' : 'status-err');
+      st.textContent = pick === compItems[i].ans ? 'Correct' : 'Listen again';
+    }
+    function toggleTranscript() {
+      const p = document.getElementById('transcriptPanel');
+      const b = document.getElementById('toggleTranscriptBtn');
+      const open = p.classList.toggle('is-open');
+      b.textContent = open ? 'Hide Transcript' : 'Show Transcript (after listening)';
+    }
+
+    const sortItems = [
+      { text: "1. She's ___ nurse.", ans: 'a' },
+      { text: "2. He's ___ engineer.", ans: 'an' },
+      { text: "3. I'm ___ artist.", ans: 'an' },
+      { text: "4. You're ___ chef.", ans: 'a' },
+      { text: "5. They're ___ engineers.", ans: 'none' },
+      { text: "6. She's ___ creative.", ans: 'none' }
+    ];
+    function renderSort() {
+      const list = document.getElementById('articleSortList');
+      sortItems.forEach((it, i) => {
+        list.innerHTML += `
+          <div class="sort-row">
+            <div style="font-weight:600; color:var(--navy-900);">${it.text}</div>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <button type="button" class="poll-opt-btn" onclick="checkSort(${i}, 'a', this)">a</button>
+              <button type="button" class="poll-opt-btn" onclick="checkSort(${i}, 'an', this)">an</button>
+              <button type="button" class="poll-opt-btn" onclick="checkSort(${i}, 'none', this)">No article (&Oslash;)</button>
+              <span id="sr-st-${i}"></span>
+            </div>
+          </div>`;
+      });
+    }
+    function checkSort(i, pick, btn) {
+      btn.parentElement.querySelectorAll('.poll-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const st = document.getElementById('sr-st-' + i);
+      st.className = 'status-pill ' + (pick === sortItems[i].ans ? 'status-ok' : 'status-err');
+      st.textContent = pick === sortItems[i].ans ? 'Correct!' : 'Check rule';
+    }
+
+    const bioItems = [
+      { broken: '1. She is engineer.', fixes: ["she is an engineer.", "she's an engineer."] },
+      { broken: '2. I am an teacher.', fixes: ["i am a teacher.", "i'm a teacher."] },
+      { broken: '3. They are an artists.', fixes: ["they are artists.", "they're artists."] },
+      { broken: '4. Are you a architect?', fixes: ["are you an architect?"] }
+    ];
+    function renderBioClinic() {
+      const list = document.getElementById('bioClinicList');
+      bioItems.forEach((it, i) => {
+        list.innerHTML += `
+          <div class="clinic-row">
+            <div style="font-weight:600; color:var(--navy-900);">${it.broken}</div>
+            <input type="text" class="text-input" id="bio-${i}" placeholder="Write the fix...">
+            <div style="display:flex; gap:8px; align-items:center;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="checkBio(${i})">Check</button>
+              <span id="bio-st-${i}"></span>
+            </div>
+          </div>`;
+      });
+    }
+    function checkBio(i) {
+      const val = document.getElementById('bio-' + i).value.trim().toLowerCase().replace(/\s+/g, ' ');
+      const st = document.getElementById('bio-st-' + i);
+      st.className = 'status-pill ' + (bioItems[i].fixes.includes(val) ? 'status-ok' : 'status-err');
+      st.textContent = bioItems[i].fixes.includes(val) ? 'Fixed!' : 'Check a / an';
+    }
+
+    function selectDoubleLife(card) {
+      document.querySelectorAll('.doublelife-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+
+    function saveExitTicket() {
+      const val = document.getElementById('exitTicketInput').value.trim();
+      const st = document.getElementById('exitTicketStatus');
+      if (!val) { st.style.color = 'var(--danger-600)'; st.textContent = 'Write 3 or 4 sentences first.'; return; }
+      try { localStorage.setItem('ld_a11_u01_l03_exit', val); } catch (_) {}
+      st.style.color = 'var(--teal-800)';
+      st.textContent = 'Saved! Share your sentences with your teacher.';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadStudentName();
+      const params = new URLSearchParams(window.location.search);
+      let hasAuth = false;
+      try { hasAuth = sessionStorage.getItem('ld-coordinator-auth') === 'granted'; } catch (_) {}
+      if (params.get('role') === 'teacher' || hasAuth) setTeacherMode(true);
+      renderRiddles();
+      renderComp();
+      renderSort();
+      renderBioClinic();
+      try { const saved = localStorage.getItem('ld_a11_u01_l03_exit'); if (saved) document.getElementById('exitTicketInput').value = saved; } catch (_) {}
+    });
+  </script>
+</body>
+</html>
