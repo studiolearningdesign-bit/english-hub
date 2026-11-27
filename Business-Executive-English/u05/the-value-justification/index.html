@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BE-05-L02 &middot; The Value Justification 1-on-1 | English Hub &middot; Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+      --shadow-md: 0 10px 26px -6px rgba(10, 25, 47, 0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* === HEADER === */
+    .site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; flex-shrink: 0; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); flex-shrink: 0; }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); white-space: nowrap; }
+    .header-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .header-student-btn {
+      background: none;
+      border: none;
+      color: var(--slate-200);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .header-student-btn:hover { color: var(--white); }
+    .header-teacher-link {
+      background: none;
+      border: none;
+      color: var(--gold-500);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .header-teacher-link:hover { color: var(--gold-400); }
+    .header-teacher-link.is-active { color: var(--teal-300); }
+    .header-back-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; }
+    .header-back-link:hover { color: var(--white); }
+
+    /* === CONTAINER === */
+    .page-container { max-width: 1120px; margin: 0 auto; padding: 28px 24px 64px; }
+
+    /* === HERO BANNER === */
+    .workspace-hero-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 215px;
+      display: flex;
+      align-items: flex-end;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      background-color: var(--navy-900);
+      background-image:
+        linear-gradient(120deg, rgba(7, 21, 39, 0.93) 0%, rgba(0, 31, 84, 0.82) 55%, rgba(19, 62, 104, 0.70) 100%),
+        url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md);
+      color: var(--white);
+    }
+    .hero-content { max-width: 720px; position: relative; z-index: 2; }
+    .hero-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    .hero-title span { color: var(--gold-500); }
+    .hero-subtitle { font-size: 0.98rem; color: var(--slate-200); font-weight: 400; max-width: 62ch; }
+
+    /* === SEGMENTED NAVIGATION === */
+    .module-nav-grid {
+      display: flex;
+      gap: 4px;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .module-tab {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: none;
+      background: transparent;
+      color: var(--slate-600);
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .module-tab:hover { color: var(--navy-900); }
+    .module-tab .tab-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; color: var(--slate-400); }
+    .module-tab.active { background: var(--white); color: var(--navy-900); font-weight: 700; box-shadow: var(--shadow-sm); }
+    .module-tab.active .tab-num { color: var(--teal-700); }
+
+    /* === PANELS & CARDS === */
+    .module-panel { display: none; }
+    .module-panel.active { display: block; animation: fadeIn 0.22s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 30px 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-header { margin-bottom: 22px; }
+    .section-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+    .section-title { font-size: 1.4rem; font-weight: 800; color: var(--navy-900); letter-spacing: -0.015em; margin-bottom: 6px; }
+    .section-lead { font-size: 0.94rem; color: var(--slate-600); max-width: 72ch; }
+
+    /* === TEACHER NOTES === */
+    .teacher-note-box {
+      display: none;
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    body.teacher-mode .teacher-note-box { display: block; }
+    .teacher-note-box summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 13px 18px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .teacher-note-box summary::-webkit-details-marker { display: none; }
+    .teacher-note-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold-600);
+      background: var(--white);
+      border: 1px solid var(--gold-border);
+      padding: 2px 9px;
+      border-radius: var(--radius-full);
+    }
+    .teacher-note-body { padding: 12px 18px 16px; border-top: 1px solid var(--gold-border); font-size: 0.85rem; color: var(--slate-800); }
+    .teacher-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-top: 10px; }
+    .teacher-step-item { background: var(--white); border: 1px solid var(--gold-border); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 0.82rem; line-height: 1.5; }
+    .teacher-step-item strong { display: block; color: var(--navy-900); margin-bottom: 3px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      text-decoration: none;
+    }
+    .btn-sm { font-size: 0.8rem; padding: 7px 13px; }
+    .btn-primary { background: var(--navy-900); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-700); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-800); }
+    .btn-outline { background: var(--white); color: var(--navy-900); border-color: var(--slate-300); }
+    .btn-outline:hover { border-color: var(--navy-900); background: var(--slate-50); }
+
+    /* === 01 WARM-UP: PARADOX & POLL === */
+    .paradox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 22px; }
+    .paradox-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .paradox-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--danger-600); margin-bottom: 6px; }
+    .paradox-card.is-exec .paradox-tag { color: var(--teal-700); }
+    .paradox-title { font-size: 1.02rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .paradox-quote { font-size: 0.88rem; color: var(--slate-700); font-style: italic; background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 12px; }
+
+    .poll-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .poll-q { font-size: 0.96rem; font-weight: 800; color: var(--navy-900); margin-bottom: 12px; }
+    .quiz-opts { display: grid; gap: 8px; }
+    .quiz-opt {
+      text-align: left;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 500;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+      color: var(--slate-800);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .quiz-opt:hover { border-color: var(--teal-700); }
+    .quiz-opt.is-correct { background: var(--teal-50); border-color: var(--teal-700); color: var(--teal-800); font-weight: 700; }
+    .quiz-opt.is-wrong { background: var(--danger-50); border-color: var(--danger-600); color: var(--danger-600); }
+    .poll-fb { font-size: 0.84rem; color: var(--teal-800); font-weight: 600; margin-top: 10px; min-height: 20px; }
+
+    .prompts-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .prompt-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px; }
+    .prompt-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--gold-600); margin-bottom: 5px; }
+    .prompt-text { font-size: 0.9rem; font-weight: 600; color: var(--navy-900); }
+
+    /* === FLIP CARDS (A1.1 EXACT FORMAT) === */
+    .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; margin-bottom: 26px; }
+    .flip-card { perspective: 1000px; height: 245px; cursor: pointer; }
+    .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1); transform-style: preserve-3d; }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      text-align: center;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .flip-front-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; text-align: left; }
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
+    .flip-back { transform: rotateY(180deg); background: var(--navy-950); color: var(--white); border-color: var(--navy-800); justify-content: center; align-items: center; gap: 12px; }
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .flip-word { font-size: 1.32rem; font-weight: 800; color: var(--navy-900); line-height: 1.18; letter-spacing: -0.015em; }
+    .flip-word-chunk { font-size: 1.12rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; }
+    .flip-ipa { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--slate-500); margin-top: 4px; }
+    .flip-example { font-size: 0.88rem; color: var(--slate-700); font-weight: 500; text-align: center; line-height: 1.45; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.28rem; font-weight: 800; color: var(--gold-400); }
+    .flip-back-meaning { font-size: 0.92rem; color: var(--slate-100); max-width: 28ch; line-height: 1.5; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
+    .audio-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: inherit;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--slate-200);
+      background: var(--slate-50);
+      color: var(--navy-900);
+      cursor: pointer;
+    }
+    .audio-chip:hover { border-color: var(--teal-700); color: var(--teal-700); background: var(--teal-50); }
+    .audio-status-note { font-size: 0.8rem; color: var(--slate-500); margin-top: 8px; min-height: 20px; }
+
+    /* === 02 CONTEXT MATCH === */
+    .activity-box { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 22px; margin-top: 8px; }
+    .activity-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+    .activity-title { font-size: 1.04rem; font-weight: 800; color: var(--navy-900); }
+    .score-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal-800);
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      padding: 4px 11px;
+      border-radius: var(--radius-full);
+    }
+    .match-row {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .match-text { font-size: 0.9rem; font-weight: 500; color: var(--navy-900); flex: 1; min-width: 240px; }
+    .match-select {
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+    }
+    .sort-fb { width: 100%; font-size: 0.8rem; color: var(--slate-600); margin-top: 4px; display: none; }
+    .sort-fb.show { display: block; }
+
+    /* === PRONUNCIATION === */
+    .pron-box { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 20px; }
+    .pron-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 12px; }
+    .pron-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 15px; }
+    .pron-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--gold-600); margin-bottom: 6px; }
+    .pron-line { font-size: 0.92rem; color: var(--navy-900); margin-bottom: 10px; }
+
+    /* === 04 LISTENING: PITCH A VS PITCH B === */
+    .pitch-compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .pitch-card {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(212, 168, 67, 0.28);
+    }
+    .pitch-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 8px; }
+    .pitch-name { font-weight: 800; font-size: 1rem; }
+    .pitch-badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; padding: 3px 9px; border-radius: var(--radius-full); background: rgba(255,255,255,0.1); color: var(--gold-400); }
+    .native-audio { width: 100%; height: 38px; border-radius: var(--radius-sm); margin: 8px 0; }
+    .transcript-box {
+      display: none;
+      margin-top: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-size: 0.85rem;
+      color: var(--slate-100);
+      line-height: 1.6;
+    }
+    .transcript-box.is-open { display: block; }
+    .quiz-stack { display: grid; gap: 14px; }
+    .quiz-card { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px 18px; }
+    .quiz-q { font-size: 0.92rem; font-weight: 700; color: var(--navy-900); margin-bottom: 10px; }
+
+    /* === 05 GRAMMAR === */
+    .grammar-intro { font-size: 0.95rem; color: var(--slate-700); margin-bottom: 18px; max-width: 74ch; }
+    .grammar-table-wrap { overflow-x: auto; border: 1px solid var(--slate-200); border-radius: var(--radius-md); margin-bottom: 24px; }
+    .grammar-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; background: var(--white); }
+    .grammar-table th {
+      background: var(--navy-950);
+      color: var(--white);
+      text-align: left;
+      padding: 12px 14px;
+      font-size: 0.78rem;
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .grammar-table td { padding: 12px 14px; border-top: 1px solid var(--slate-200); vertical-align: top; color: var(--slate-800); }
+    .grammar-table tr:nth-child(even) td { background: var(--slate-50); }
+    .code-em { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; font-weight: 700; color: var(--teal-800); background: var(--teal-50); padding: 2px 6px; border-radius: 5px; }
+    .upgrade-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 12px; }
+    .upgrade-raw { font-size: 0.88rem; color: var(--slate-600); margin-bottom: 10px; }
+    .upgrade-raw strong { color: var(--navy-900); }
+
+    .builder-grid { display: grid; gap: 12px; margin-bottom: 14px; }
+    .builder-step label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--navy-900); margin-bottom: 5px; }
+    .builder-select { width: 100%; padding: 9px 12px; border: 1px solid var(--slate-300); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.86rem; background: var(--white); color: var(--navy-900); }
+    .builder-preview {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    /* === 06 SPEAKING: 90-SEC PITCH + OBJECTIONS === */
+    .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 18px; }
+    .role-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      cursor: pointer;
+    }
+    .role-card.selected { background: var(--white); border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+    .role-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--teal-700); margin-bottom: 4px; }
+    .role-title { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .role-facts { font-size: 0.84rem; color: var(--slate-700); display: grid; gap: 4px; }
+
+    .objection-box {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+    .objection-box h4 { font-size: 0.9rem; font-weight: 800; color: var(--navy-900); margin-bottom: 8px; }
+    .objection-item { font-size: 0.86rem; color: var(--slate-800); margin-bottom: 6px; }
+
+    .checklist-box { background: var(--teal-50); border: 1px solid rgba(15, 118, 110, 0.22); border-radius: var(--radius-md); padding: 20px; }
+    .checklist-box h3 { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); margin-bottom: 10px; }
+    .checklist-items { display: grid; gap: 8px; font-size: 0.88rem; color: var(--slate-800); }
+
+    /* === 07 EXIT TICKET === */
+    .exit-textarea {
+      width: 100%;
+      min-height: 110px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      color: var(--navy-900);
+      resize: vertical;
+      margin-bottom: 12px;
+    }
+    .cando-list { display: grid; gap: 10px; margin-top: 18px; }
+    .cando-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--slate-800);
+      cursor: pointer;
+    }
+    .cando-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    .module-footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--slate-200); }
+
+    /* === SITE FOOTER === */
+    .studio-site-footer { background: var(--navy-950); border-top: 1px solid rgba(212, 168, 67, 0.28); color: var(--slate-200); padding: 28px 24px; margin-top: 24px; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.84rem; }
+    .footer-brand-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 36px; overflow: hidden; }
+    .footer-logo-white { height: 68px; width: auto; object-fit: contain; margin: -16px 0; display: block; }
+    .footer-teacher-portal { color: var(--gold-400); font-weight: 700; text-decoration: none; padding: 7px 14px; border-radius: var(--radius-full); border: 1px solid rgba(212, 168, 67, 0.4); }
+
+    /* === PIN MODAL === */
+    .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(7, 21, 39, 0.65); z-index: 300; align-items: center; justify-content: center; padding: 20px; }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 26px; width: 100%; max-width: 380px; box-shadow: var(--shadow-md); }
+    .modal-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .modal-card p { font-size: 0.86rem; color: var(--slate-600); margin-bottom: 14px; }
+    .text-input { width: 100%; padding: 10px 12px; border: 1px solid var(--slate-300); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.92rem; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+
+    @media (max-width: 780px) {
+      .workspace-hero-banner { padding: 26px 22px; min-height: 180px; }
+      .section-card { padding: 22px 18px; }
+      .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+      .brand-course-label, .brand-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">English Hub &middot; Executive Business</span>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="header-student-btn" id="studentNameBtn" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-link" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a href="../index.html" class="header-back-link">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="workspace-hero-banner">
+      <div class="hero-content">
+        <h1 class="hero-title">The Value Justification <span>1-on-1</span></h1>
+        <p class="hero-subtitle">Shift compensation and promotion conversations from personal effort to measurable business impact&mdash;and deliver a calm, confident 90-second value pitch.</p>
+      </div>
+    </header>
+
+    <nav class="module-nav-grid" role="tablist" aria-label="Lesson Modules">
+      <button type="button" class="module-tab active" data-tab="m1" role="tab" aria-selected="true"><span class="tab-num">01</span> Warm-Up</button>
+      <button type="button" class="module-tab" data-tab="m2" role="tab" aria-selected="false"><span class="tab-num">02</span> Vocabulary</button>
+      <button type="button" class="module-tab" data-tab="m3" role="tab" aria-selected="false"><span class="tab-num">03</span> Executive Chunks</button>
+      <button type="button" class="module-tab" data-tab="m4" role="tab" aria-selected="false"><span class="tab-num">04</span> Listening</button>
+      <button type="button" class="module-tab" data-tab="m5" role="tab" aria-selected="false"><span class="tab-num">05</span> Grammar</button>
+      <button type="button" class="module-tab" data-tab="m6" role="tab" aria-selected="false"><span class="tab-num">06</span> Speaking</button>
+      <button type="button" class="module-tab" data-tab="m7" role="tab" aria-selected="false"><span class="tab-num">07</span> Exit Ticket</button>
+    </nav>
+
+    <!-- ==================== 01 WARM-UP ==================== -->
+    <section class="module-panel active" id="m1">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 01 Warm-Up: The Compensation Paradox <span class="teacher-note-badge">Activation [P]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Contrasta las dos tarjetas (Esfuerzo personal vs. Impacto medible) y pide al alumno votar en el diagn&oacute;stico r&aacute;pido.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Comenta por qu&eacute; los directivos suelen rechazar argumentos basados solo en antig&uuml;edad o costo de vida.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Haz las 3 preguntas detonadoras usando solo <code>[P]</code>.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>En el Poll, la opci&oacute;n B es la ganadora porque combina un hito pasado con resultados vigentes medibles.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">01 &middot; Engage</div>
+          <h2 class="section-title">The Compensation Paradox</h2>
+          <p class="section-lead">Why do two talented managers get completely different answers in a salary review? Compare these two mindsets and vote below.</p>
+        </div>
+
+        <div class="paradox-grid">
+          <div class="paradox-card">
+            <div class="paradox-tag">THE EFFORT TRAP</div>
+            <div class="paradox-title">Personal Need &amp; Hours Worked</div>
+            <div class="paradox-quote">"I've been here three years, I always stay late, and everything is getting more expensive."</div>
+          </div>
+          <div class="paradox-card is-exec">
+            <div class="paradox-tag">THE EXECUTIVE STANDARD</div>
+            <div class="paradox-title">Measurable Business Impact</div>
+            <div class="paradox-quote">"Last quarter I redesigned our onboarding. Since then, it has cut ramp-up time by 30%."</div>
+          </div>
+        </div>
+
+        <div class="poll-box">
+          <div class="poll-q">Quick Check: Which argument is strongest in a 1-on-1 with your VP?</div>
+          <div class="quiz-opts">
+            <button type="button" class="quiz-opt" onclick="checkWarmupPoll(0, this)">A. "I haven't had a raise in two years and I work weekends when needed."</button>
+            <button type="button" class="quiz-opt" onclick="checkWarmupPoll(1, this)">B. "In Q2 I took over two extra accounts, and since then our retention has grown by 15%."</button>
+            <button type="button" class="quiz-opt" onclick="checkWarmupPoll(2, this)">C. "Competitors are paying 20% more for this same job title."</button>
+          </div>
+          <div class="poll-fb" id="pollFb"></div>
+        </div>
+
+        <div class="prompts-strip">
+          <div class="prompt-card">
+            <div class="prompt-num">QUESTION 01</div>
+            <div class="prompt-text">Why is talking about your results sometimes harder than talking about your effort?</div>
+          </div>
+          <div class="prompt-card">
+            <div class="prompt-num">QUESTION 02</div>
+            <div class="prompt-text">In your role, what counts as real value—time saved, revenue, fewer errors, or team retention?</div>
+          </div>
+          <div class="prompt-card">
+            <div class="prompt-num">QUESTION 03</div>
+            <div class="prompt-text">What is one achievement from the last six months you are proud of?</div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" onclick="goTab('m2')">Next: Vocabulary &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02 VOCABULARY ==================== -->
+    <section class="module-panel" id="m2">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 02 Vocabulary: 6 Transverse Collocations + Match <span class="teacher-note-badge">Lexis</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Presenta las 6 tarjetas limpias (sin jerga nicho de SaaS). Escuchen el audio y volteen cada una.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Enfatiza la colocaci&oacute;n <em>take on extra scope</em> y <em>align compensation</em>. Pide 1 ejemplo oral de su propia &aacute;rea.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>En la actividad inferior, el alumno selecciona la expresi&oacute;n exacta para cada situaci&oacute;n sin teclear.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>1: track record &middot; 2: measurable impact &middot; 3: take on extra scope &middot; 4: save hours &middot; 5: drive results &middot; 6: align compensation.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">02 &middot; Lexis</div>
+          <h2 class="section-title">Six Cross-Industry Value Collocations</h2>
+          <p class="section-lead">Click any card to flip it and check the meaning. Use the audio buttons to hear each term and example.</p>
+        </div>
+
+        <div class="flip-grid" id="vocabGrid"></div>
+        <div class="audio-status-note" id="vocabAudioStatus"></div>
+
+        <div class="activity-box">
+          <div class="activity-header">
+            <div class="activity-title">Context Match: Pick the Right Collocation</div>
+            <span class="score-pill" id="matchScorePill">0 / 6 matched</span>
+          </div>
+          <div id="matchContainer"></div>
+          <button type="button" class="btn btn-teal btn-sm" style="margin-top: 8px;" onclick="checkMatches()">Check Matches</button>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m1')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m3')">Next: Executive Chunks &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03 EXECUTIVE CHUNKS ==================== -->
+    <section class="module-panel" id="m3">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 03 Executive Chunks &amp; Metric Stress <span class="teacher-note-badge">Pragmatics [L]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Ense&ntilde;a estos 4 bloques como frases fijas para estructurar un pitch oral en 1-on-1.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Practica el enlace natural de <em>On top of my core role</em> y <em>I'd like to align on</em>.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>En el foco de inteligibilidad, pide al alumno marcar con la voz el n&uacute;mero y el verbo de impacto.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Asegura que no diga <em>"I want more money"</em> en bruto, sino <em>"I'd like to align on compensation"</em>.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">03 &middot; Functional Language</div>
+          <h2 class="section-title">Executive Chunks for Framing Impact</h2>
+          <p class="section-lead">Learn these four expressions as ready-to-use spoken blocks. Click each card to see when leaders use it.</p>
+        </div>
+
+        <div class="flip-grid" id="chunksGrid"></div>
+        <div class="audio-status-note" id="chunksAudioStatus"></div>
+
+        <div class="pron-box">
+          <div class="activity-title" style="margin-bottom: 4px;">Intelligibility Focus: Stressing Numbers &amp; Results</div>
+          <p style="font-size: 0.86rem; color: var(--slate-600);">When sharing metrics in a 1-on-1, rushing past the numbers hides your impact. Slow down slightly on the result and the percentage.</p>
+          <div class="pron-grid">
+            <div class="pron-card">
+              <div class="pron-tag">RUSHED / MONOTONE</div>
+              <div class="pron-line">"Since October it has saved the team about six hours every week."</div>
+              <button type="button" class="audio-chip" onclick="playRealAudio('audio/pron_flat.mp3', 'pronAudioStatus')">&#9654; Play Flat</button>
+            </div>
+            <div class="pron-card">
+              <div class="pron-tag">EXECUTIVE IMPACT STRESS</div>
+              <div class="pron-line">"Since Oc<strong>TO</strong>ber, it has <strong>SAVED</strong> the team <strong>SIX HOURS</strong> every <strong>WEEK</strong>."</div>
+              <button type="button" class="audio-chip" onclick="playRealAudio('audio/pron_exec.mp3', 'pronAudioStatus')">&#9654; Play Executive</button>
+            </div>
+          </div>
+          <div class="audio-status-note" id="pronAudioStatus"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m2')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m4')">Next: Listening &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 LISTENING ==================== -->
+    <section class="module-panel" id="m4">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 04 Listening: Pitch A vs. Pitch B <span class="teacher-note-badge">Notice</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Mant&eacute;n las transcripciones cerradas en la primera escucha. Escuchen Pitch A (Carlos) y Pitch B (Elena).</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Pide al alumno responder primero las 3 preguntas de comprensi&oacute;n.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Abre las transcripciones despu&eacute;s y haz que se&ntilde;ale el contraste de tiempos verbales en Elena: Past Simple (<em>In May I led...</em>) + Present Perfect (<em>Since then, it has cut...</em>).</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Q1: A (Effort and rising costs) &middot; Q2: B (A May workflow fix + ongoing weekly savings) &middot; Q3: C (Past Simple for the milestone, Present Perfect for ongoing impact).</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">04 &middot; Receptive Contrast</div>
+          <h2 class="section-title">Listening: Pitch A vs. Pitch B</h2>
+          <p class="section-lead">Listen to two managers opening the same compensation 1-on-1. Keep the transcripts hidden on your first listen.</p>
+        </div>
+
+        <div class="pitch-compare-grid">
+          <div class="pitch-card">
+            <div class="pitch-head">
+              <span class="pitch-name">Pitch A &middot; Carlos</span>
+              <span class="pitch-badge">Effort-Focused</span>
+            </div>
+            <audio controls class="native-audio" preload="none">
+              <source src="audio/pitch_a.mp3" type="audio/mpeg">
+            </audio>
+            <button type="button" class="btn btn-outline btn-sm" style="margin-top: 6px;" onclick="toggleTrans('transA', this)">Show Transcript A (after listening)</button>
+            <div class="transcript-box" id="transA">
+              "Thanks for meeting with me. I've been in this role for almost three years now, and I always stay late when the team is busy. Everything is getting more expensive, so I wanted to ask if we could look at my salary."
+            </div>
+          </div>
+
+          <div class="pitch-card">
+            <div class="pitch-head">
+              <span class="pitch-name">Pitch B &middot; Elena</span>
+              <span class="pitch-badge">Impact-Focused</span>
+            </div>
+            <audio controls class="native-audio" preload="none">
+              <source src="audio/pitch_b.mp3" type="audio/mpeg">
+            </audio>
+            <button type="button" class="btn btn-outline btn-sm" style="margin-top: 6px;" onclick="toggleTrans('transB', this)">Show Transcript B (after listening)</button>
+            <div class="transcript-box" id="transB">
+              "Thanks for making time today. <strong>In May, I redesigned</strong> our client handoff process. <strong>Since then, it has cut</strong> setup delays by 30% and <strong>has saved</strong> the team six hours every week. On top of my core role, <strong>I have also taken on</strong> training for two new hires, so I'd like to align my compensation with this expanded scope."
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-stack" id="listeningQuiz"></div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m3')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m5')">Next: Grammar &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 GRAMMAR ==================== -->
+    <section class="module-panel" id="m5">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 05 Grammar: Past Simple vs. Present Perfect <span class="teacher-note-badge">Understand [N]</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Explica la regla visual en 30 segundos: <em>Past Simple</em> = hito cerrado con fecha; <em>Present Perfect</em> = impacto que sigue vivo hoy.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Se&ntilde;ala el error t&iacute;pico: usar Past Simple con <em>since</em> o <em>over the past six months</em>.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Completa los 3 <em>Tense Fixes</em> (sin teclear) y arma 1 pitch modelo con el <em>Guided 3-Step Frame</em> para leerlo en voz alta.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Fixes: 1B (has reduced) &middot; 2A (led) &middot; 3C (have taken on).</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">05 &middot; Grammar in Context</div>
+          <h2 class="section-title">Past Simple vs. Present Perfect (The Time-Impact Formula)</h2>
+          <p class="grammar-intro">Use <strong>Past Simple</strong> to anchor when you delivered a project, and switch to <strong>Present Perfect</strong> to prove that your work is still creating value today.</p>
+        </div>
+
+        <div class="grammar-table-wrap">
+          <table class="grammar-table">
+            <thead>
+              <tr>
+                <th>Role in Your Pitch</th>
+                <th>Affirmative</th>
+                <th>Negative</th>
+                <th>Questions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-em">Past Simple</span><br><small>Specific finished milestone (In Q3, Last May)</small></td>
+                <td>In May, I <strong>redesigned</strong> the client handoff.</td>
+                <td>We <strong>didn't miss</strong> a single deadline in Q3.</td>
+                <td><strong>Did</strong> the new process <strong>launch</strong> on time?<br><strong>When did</strong> you take over that account?</td>
+              </tr>
+              <tr>
+                <td><span class="code-em">Present Perfect</span><br><small>Ongoing impact (Since then, Over the past 6 months)</small></td>
+                <td>Since then, it <strong>has saved</strong> six hours a week.</td>
+                <td>Client complaints <strong>haven't returned</strong> since June.</td>
+                <td><strong>How much time has</strong> this <strong>saved</strong>?<br><strong>Have</strong> you <strong>taken on</strong> extra scope?</td>
+              </tr>
+              <tr>
+                <td><span class="code-em">The Diplomatic Ask</span><br><small>Connect ongoing value to alignment</small></td>
+                <td>Given that I<strong>'ve taken on</strong> extra scope, I'd like to align my role.</td>
+                <td>I'm <strong>not asking</strong> for a change without clear results.</td>
+                <td><strong>Would</strong> next quarter <strong>work</strong> to review this?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="activity-box">
+          <div class="activity-header">
+            <div class="activity-title">Part A &middot; Swap the Tense (Choose the Accurate Form)</div>
+            <span class="score-pill" id="upgradeScorePill">0 / 3 fixed</span>
+          </div>
+          <div id="upgradeContainer"></div>
+        </div>
+
+        <div class="activity-box" style="margin-top: 18px;">
+          <div class="activity-header">
+            <div class="activity-title">Part B &middot; Guided 3-Step Pitch Frame (Speak-Ready)</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 12px;">Pick one option per step to assemble a clean 3-sentence model, then read it out loud with strong stress on the numbers.</p>
+          <div class="builder-grid">
+            <div class="builder-step">
+              <label for="bStep1">Step 1 &middot; Past Milestone (Past Simple)</label>
+              <select id="bStep1" class="builder-select" onchange="updateBuilder()">
+                <option value="In Q2, I rebuilt our weekly client reporting template.">In Q2, I rebuilt our weekly client reporting template.</option>
+                <option value="Last September, I led the training for four new team members.">Last September, I led the training for four new team members.</option>
+                <option value="In June, I standardized our vendor approval workflow.">In June, I standardized our vendor approval workflow.</option>
+              </select>
+            </div>
+            <div class="builder-step">
+              <label for="bStep2">Step 2 &middot; Ongoing Impact (Present Perfect)</label>
+              <select id="bStep2" class="builder-select" onchange="updateBuilder()">
+                <option value="Since then, it has saved the team five hours every week and cut errors in half.">Since then, it has saved the team five hours every week and cut errors in half.</option>
+                <option value="Over the past six months, that change has improved on-time delivery by 20%.">Over the past six months, that change has improved on-time delivery by 20%.</option>
+                <option value="Since that rollout, we have retained 98% of our key accounts.">Since that rollout, we have retained 98% of our key accounts.</option>
+              </select>
+            </div>
+            <div class="builder-step">
+              <label for="bStep3">Step 3 &middot; Diplomatic Alignment Ask</label>
+              <select id="bStep3" class="builder-select" onchange="updateBuilder()">
+                <option value="On top of my core role, I have taken on extra scope, so I'd like to align my compensation with this impact.">On top of my core role, I have taken on extra scope, so I'd like to align my compensation with this impact.</option>
+                <option value="Given this track record, I'd like to discuss a step up in both scope and compensation.">Given this track record, I'd like to discuss a step up in both scope and compensation.</option>
+                <option value="With these results in place, could we review my compensation band this quarter?">With these results in place, could we review my compensation band this quarter?</option>
+              </select>
+            </div>
+          </div>
+          <div class="builder-preview" id="builderPreview"></div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m4')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m6')">Next: Speaking &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06 SPEAKING ==================== -->
+    <section class="module-panel" id="m6">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 06 Speaking: 90-Second Pitch + Boss Pushback <span class="teacher-note-badge">Live Production</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>El alumno puede usar su propio trabajo real O elegir una de las 2 tarjetas de rol. Dale 60 segundos para ordenar sus notas mentales (sin redactar p&aacute;rrafos).</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Pide el pitch oral de ~60&ndash;90 segundos: Hito + Impacto vigente + Petici&oacute;n diplom&aacute;tica.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Lanza las 2 objeciones del jefe en vivo para observar c&oacute;mo defiende su valor sin ponerse a la defensiva.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Eval&uacute;a con la R&uacute;brica E0&ndash;E3: contraste correcto Past Simple vs. Present Perfect y al menos 2 Executive Chunks.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">06 &middot; Live Communication</div>
+          <h2 class="section-title">Live 1-on-1 Compensation Pitch</h2>
+          <p class="section-lead">Use your own real achievements&mdash;or click one role card below&mdash;and deliver a calm 90-second pitch to your coach, then handle two realistic pushbacks.</p>
+        </div>
+
+        <div class="role-grid">
+          <div class="role-card selected" onclick="selectRole(this)">
+            <div class="role-tag">OPTION A · YOUR REAL ROLE</div>
+            <div class="role-title">Your Actual Achievements</div>
+            <div class="role-facts">
+              <div>&bull; 1 project you completed in the last 6&ndash;12 months</div>
+              <div>&bull; 1 ongoing result (time saved, quality, or growth)</div>
+              <div>&bull; 1 clear alignment ask</div>
+            </div>
+          </div>
+          <div class="role-card" onclick="selectRole(this)">
+            <div class="role-tag">OPTION B · OPERATIONS LEAD</div>
+            <div class="role-title">Supply &amp; Process Lead</div>
+            <div class="role-facts">
+              <div>&bull; Q2: Automated daily warehouse checklists</div>
+              <div>&bull; Since Q2: Cut dispatch delays by 25%, saved 8 hrs/week</div>
+              <div>&bull; Extra scope: Training 3 regional coordinators</div>
+            </div>
+          </div>
+          <div class="role-card" onclick="selectRole(this)">
+            <div class="role-tag">OPTION C · CLIENT SUCCESS</div>
+            <div class="role-title">Senior Account Lead</div>
+            <div class="role-facts">
+              <div>&bull; Last August: Built a 30-day client onboarding playbook</div>
+              <div>&bull; Since then: Kept 95% renewal rate, absorbed 2 enterprise accounts</div>
+              <div>&bull; Ask: Senior title &amp; compensation band alignment</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="objection-box">
+          <h4>Be Ready for Two Realistic Boss Pushbacks:</h4>
+          <div class="objection-item"><strong>1.</strong> "These are solid results, though isn't improving processes already part of your core role?"</div>
+          <div class="objection-item"><strong>2.</strong> "Budgets are tight this quarter—what if we revisit this in six months?"</div>
+        </div>
+
+        <div class="checklist-box">
+          <h3>Speaking Checklist (What Great Looks Like)</h3>
+          <div class="checklist-items">
+            <div>&#10003; <strong>Time-Impact contrast:</strong> Anchor your milestone in Past Simple and prove ongoing results with Present Perfect.</div>
+            <div>&#10003; <strong>Quantified value:</strong> Include at least one concrete number, percentage, or hours saved.</div>
+            <div>&#10003; <strong>Executive chunks:</strong> Use at least two expressions (<em>on top of my core role, since we rolled that out, bottom-line impact, align on</em>).</div>
+            <div>&#10003; <strong>Composed pushback:</strong> Respond calmly to the two objections without sounding defensive.</div>
+          </div>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m5')">&larr; Previous</button>
+          <button type="button" class="btn btn-primary" onclick="goTab('m7')">Next: Exit Ticket &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07 EXIT TICKET ==================== -->
+    <section class="module-panel" id="m7">
+      <div class="section-card">
+        <details class="teacher-note-box">
+          <summary>Teacher Sequence &middot; 07 Exit Ticket &amp; Can-Do Evidence <span class="teacher-note-badge">Closure</span></summary>
+          <div class="teacher-note-body">
+            <div class="teacher-steps-grid">
+              <div class="teacher-step-item"><strong>1. Setup</strong>Espacio totalmente en blanco para recoger 2&ndash;3 oraciones reales del alumno.</div>
+              <div class="teacher-step-item"><strong>2. Modeling</strong>Pide 1 hito en Past Simple + 1 resultado vigente en Present Perfect.</div>
+              <div class="teacher-step-item"><strong>3. Check</strong>Confirma que no mezcle fechas cerradas con Present Perfect ni expresiones con <em>since</em> en Past Simple.</div>
+              <div class="teacher-step-item"><strong>4. Keys</strong>Para redactar su Value Pitch completo por escrito, env&iacute;alo a <code>explore.html</code>.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-header">
+          <div class="section-kicker">07 &middot; Reflect &amp; Apply</div>
+          <h2 class="section-title">Exit Ticket &amp; Can-Do Check</h2>
+          <p class="section-lead">Write 2 to 3 short sentences about one real achievement from your job: one Past Simple milestone and one Present Perfect ongoing result.</p>
+        </div>
+
+        <textarea id="exitTicketInput" class="exit-textarea" placeholder="Write your 2–3 sentences here..."></textarea>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-teal" onclick="saveExitTicket()">Save Exit Ticket</button>
+          <a href="./explore.html" class="btn btn-outline">Continue to Explore (Full Pitch Studio) &rarr;</a>
+          <span class="audio-status-note" id="exitStatus" style="margin-top: 0;"></span>
+        </div>
+
+        <div class="cando-list">
+          <label class="cando-item"><input type="checkbox" id="cd1"> I can frame professional value using 6 cross-industry collocations instead of effort-based excuses.</label>
+          <label class="cando-item"><input type="checkbox" id="cd2"> I can contrast Past Simple (milestone) and Present Perfect (ongoing impact) accurately.</label>
+          <label class="cando-item"><input type="checkbox" id="cd3"> I can use executive chunks (<em>on top of my core role, bottom-line impact, align on</em>) naturally when speaking.</label>
+          <label class="cando-item"><input type="checkbox" id="cd4"> I can deliver a 90-second value pitch and answer two realistic manager pushbacks calmly.</label>
+        </div>
+
+        <div class="module-footer-nav">
+          <button type="button" class="btn btn-outline" onclick="goTab('m6')">&larr; Previous</button>
+          <a href="../index.html" class="btn btn-primary">Return to Track 05 &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="footer-logo-white">
+        </span>
+        <span>Educate &bull; Design &bull; Grow &middot; English Hub &middot; The Value Justification 1-on-1 (Executive Business)</span>
+      </div>
+      <a href="../../../teacher-hub/Business-Executive-English/the-value-justification/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <!-- PIN MODAL -->
+  <div class="modal-backdrop" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
+    <div class="modal-card">
+      <h3 id="pinModalTitle">Teacher's Version</h3>
+      <p>Enter your authorized faculty PIN to unlock step-by-step didactic sequences and answer keys.</p>
+      <input type="password" id="pinInput" class="text-input" placeholder="Faculty PIN" onkeydown="if(event.key==='Enter')submitPin()">
+      <div class="audio-status-note" id="pinError" style="color: var(--danger-600);"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline btn-sm" onclick="closeTeacherModal()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="submitPin()">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* === STUDENT NAME & TEACHER PIN === */
+    function loadStudentName() {
+      let name = '';
+      try {
+        name = localStorage.getItem('ld_student_name') || '';
+        if (!name) {
+          const raw = localStorage.getItem('ld-english-hub');
+          if (raw) name = (JSON.parse(raw).studentName || '');
+        }
+      } catch (_) {}
+      const btn = document.getElementById('studentNameBtn');
+      if (btn) btn.textContent = 'Student \u00B7 ' + (name || 'Guest');
+    }
+    function editStudentName() {
+      const current = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', current);
+      if (next === null) return;
+      const clean = next.trim();
+      try {
+        localStorage.setItem('ld_student_name', clean);
+        const raw = localStorage.getItem('ld-english-hub');
+        const data = raw ? JSON.parse(raw) : {};
+        data.studentName = clean;
+        localStorage.setItem('ld-english-hub', JSON.stringify(data));
+      } catch (_) {}
+      loadStudentName();
+    }
+
+    const VALID_PINS = ['2064', '0410'];
+    function setTeacherMode(active) {
+      document.body.classList.toggle('teacher-mode', active);
+      const btn = document.getElementById('teacherToggleBtn');
+      if (btn) {
+        btn.classList.toggle('is-active', active);
+        btn.textContent = active ? "Teacher's Version (Active)" : "Teacher's Version \u2197";
+      }
+    }
+    function openTeacherModal() {
+      if (document.body.classList.contains('teacher-mode')) { setTeacherMode(false); return; }
+      document.getElementById('pinError').textContent = '';
+      document.getElementById('pinInput').value = '';
+      document.getElementById('pinModal').classList.add('is-open');
+      setTimeout(() => document.getElementById('pinInput').focus(), 50);
+    }
+    function closeTeacherModal() { document.getElementById('pinModal').classList.remove('is-open'); }
+    function submitPin() {
+      const val = document.getElementById('pinInput').value.trim();
+      if (VALID_PINS.includes(val)) {
+        try { sessionStorage.setItem('ld-coordinator-auth', 'granted'); } catch (_) {}
+        setTeacherMode(true);
+        closeTeacherModal();
+      } else {
+        document.getElementById('pinError').textContent = 'Incorrect PIN. Please try again.';
+      }
+    }
+
+    /* === TABS === */
+    function goTab(id) {
+      document.querySelectorAll('.module-tab').forEach(btn => {
+        const active = btn.dataset.tab === id;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      document.querySelectorAll('.module-panel').forEach(panel => { panel.classList.toggle('active', panel.id === id); });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.module-tab').forEach(btn => { btn.addEventListener('click', () => goTab(btn.dataset.tab)); });
+
+    /* === 01 WARM-UP POLL === */
+    function checkWarmupPoll(idx, btn) {
+      btn.parentElement.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+      btn.classList.add(idx === 1 ? 'is-correct' : 'is-wrong');
+      const fb = document.getElementById('pollFb');
+      fb.style.color = idx === 1 ? 'var(--teal-800)' : 'var(--danger-600)';
+      fb.textContent = idx === 1
+        ? 'Executive consensus: Option B proves both expanded responsibility and ongoing measurable value.'
+        : 'Weak leverage: tenure or competitor pay alone rarely persuades leadership without measurable impact.';
+    }
+
+    /* === REAL AUDIO PLAYER (NO TTS) === */
+    let activeAudio = null;
+    function playRealAudio(src, statusId) {
+      if (activeAudio) { activeAudio.pause(); activeAudio = null; }
+      const statusEl = document.getElementById(statusId);
+      const audio = new Audio(src);
+      activeAudio = audio;
+      if (statusEl) statusEl.textContent = 'Playing audio...';
+      audio.play().then(() => { if (statusEl) statusEl.textContent = ''; })
+        .catch(() => { if (statusEl) statusEl.textContent = 'Studio audio file queued (' + src + ').'; });
+    }
+
+    /* === 02 VOCABULARY FLIP CARDS === */
+    const VOCAB_DATA = [
+      { word: 'track record', pos: 'noun phrase', ipa: '/ˈtræk ˌrek.ɚd/', example: 'She has a strong track record of delivering projects ahead of schedule.', meaning: 'A proven history of past achievements and consistent results.', wAudio: 'audio/vocab_01_word.mp3', eAudio: 'audio/vocab_01_ex.mp3' },
+      { word: 'measurable impact', pos: 'noun phrase', ipa: '/ˈmeʒ.ɚ.ə.bəl ˈɪm.pækt/', example: 'Focus your 1-on-1 on measurable impact, not just busy hours.', meaning: 'Clear results that can be shown with numbers, time saved, or quality gains.', wAudio: 'audio/vocab_02_word.mp3', eAudio: 'audio/vocab_02_ex.mp3' },
+      { word: 'take on extra scope', pos: 'verb phrase', ipa: '/teɪk ɑːn ˈek.strə skoʊp/', example: 'Since January, he has taken on extra scope across two regions.', meaning: 'To accept additional responsibilities beyond your original job description.', wAudio: 'audio/vocab_03_word.mp3', eAudio: 'audio/vocab_03_ex.mp3' },
+      { word: 'align compensation', pos: 'verb phrase', ipa: '/əˈlaɪn ˌkɑːm.pənˈseɪ.ʃən/', example: 'I\'d like to align my compensation with the results I\'ve delivered.', meaning: 'To adjust pay or benefits so they fairly match your current contribution.', wAudio: 'audio/vocab_04_word.mp3', eAudio: 'audio/vocab_04_ex.mp3' },
+      { word: 'save hours', pos: 'verb phrase', ipa: '/seɪv ˈaʊ.ɚz/', example: 'The new reporting tool has saved the team six hours every week.', meaning: 'To reduce wasted time so people can focus on higher-value work.', wAudio: 'audio/vocab_05_word.mp3', eAudio: 'audio/vocab_05_ex.mp3' },
+      { word: 'drive results', pos: 'verb phrase', ipa: '/draɪv rɪˈzʌlts/', example: 'Leaders are promoted when they consistently drive results.', meaning: 'To actively push projects forward so they produce real business outcomes.', wAudio: 'audio/vocab_06_word.mp3', eAudio: 'audio/vocab_06_ex.mp3' }
+    ];
+
+    function renderFlipCards(items, containerId, statusId, isChunk) {
+      document.getElementById(containerId).innerHTML = items.map(item => `
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-face">
+              <div class="flip-front-top">
+                <div class="flip-word-group">
+                  <div class="${isChunk ? 'flip-word-chunk' : 'flip-word'}">${item.word}</div>
+                  <div class="flip-ipa">${item.ipa}</div>
+                </div>
+                <span class="flip-pos">${item.pos}</span>
+              </div>
+              <div class="flip-example">"${item.example}"</div>
+              <div class="flip-audio-row" onclick="event.stopPropagation()">
+                <button type="button" class="audio-chip" onclick="playRealAudio('${item.wAudio}', '${statusId}')">&#9654; ${isChunk ? 'Expression' : 'Word'}</button>
+                <button type="button" class="audio-chip" onclick="playRealAudio('${item.eAudio}', '${statusId}')">&#9654; Example</button>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="flip-back-word">${item.word}</div>
+              <div class="flip-back-meaning">${item.meaning}</div>
+              <div class="flip-hint">Click to flip back</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    /* === 02 CONTEXT MATCH === */
+    const MATCH_DATA = [
+      { s: '1. Four quarters of on-time launches show a solid ____.', ans: 'track record' },
+      { s: '2. Cutting errors by 20% proves ____.', ans: 'measurable impact' },
+      { s: '3. Coaching two new leads means you ____.', ans: 'take on extra scope' },
+      { s: '4. Automating that weekly report helped ____.', ans: 'save hours' },
+      { s: '5. Strong owners don\'t just attend meetings—they ____.', ans: 'drive results' },
+      { s: '6. When your role expands, it\'s fair to ask to ____.', ans: 'align compensation' }
+    ];
+    const MATCH_OPTS = ['track record', 'measurable impact', 'take on extra scope', 'save hours', 'drive results', 'align compensation'];
+    function renderMatches() {
+      document.getElementById('matchContainer').innerHTML = MATCH_DATA.map((m, i) => `
+        <div class="match-row">
+          <div class="match-text">${m.s}</div>
+          <select id="mSel${i}" class="match-select">
+            <option value="">Select...</option>
+            ${MATCH_OPTS.map(o => `<option value="${o}">${o}</option>`).join('')}
+          </select>
+          <div class="sort-fb" id="mFb${i}"></div>
+        </div>
+      `).join('');
+    }
+    function checkMatches() {
+      let ok = 0;
+      MATCH_DATA.forEach((m, i) => {
+        const val = document.getElementById('mSel' + i).value;
+        const fb = document.getElementById('mFb' + i);
+        const good = val === m.ans;
+        if (good) ok++;
+        fb.textContent = good ? 'Correct.' : 'Check the context and try another collocation.';
+        fb.style.color = good ? 'var(--teal-800)' : 'var(--danger-600)';
+        fb.classList.add('show');
+      });
+      document.getElementById('matchScorePill').textContent = ok + ' / ' + MATCH_DATA.length + ' matched';
+    }
+
+    /* === 03 EXECUTIVE CHUNKS === */
+    const CHUNKS_DATA = [
+      { word: 'On top of my core role', pos: 'Adding scope', ipa: '/ɑːn tɑːp ʌv maɪ kɔːr roʊl/', example: 'On top of my core role, I have trained three new coordinators.', meaning: 'Highlights extra responsibilities you took on beyond your baseline job.', wAudio: 'audio/chunk_01_word.mp3', eAudio: 'audio/chunk_01_ex.mp3' },
+      { word: 'Since we rolled that out', pos: 'Ongoing link', ipa: '/sɪns wiː roʊld ðæt aʊt/', example: 'Since we rolled that out, setup delays have dropped by 30%.', meaning: 'Connects a past launch smoothly to its ongoing results today.', wAudio: 'audio/chunk_02_word.mp3', eAudio: 'audio/chunk_02_ex.mp3' },
+      { word: 'The bottom-line impact', pos: 'Business value', ipa: '/ðə ˈbɑː.təm.laɪn ˈɪm.pækt/', example: 'The bottom-line impact is six hours saved per person each week.', meaning: 'Sums up the practical, measurable benefit for the organization.', wAudio: 'audio/chunk_03_word.mp3', eAudio: 'audio/chunk_03_ex.mp3' },
+      { word: 'I\'d like to align on', pos: 'Diplomatic ask', ipa: '/aɪd laɪk tuː əˈlaɪn ɑːn/', example: 'I\'d like to align on a compensation review for next quarter.', meaning: 'A calm, collaborative way to introduce a salary or promotion request.', wAudio: 'audio/chunk_04_word.mp3', eAudio: 'audio/chunk_04_ex.mp3' }
+    ];
+
+    /* === 04 LISTENING === */
+    function toggleTrans(id, btn) {
+      const box = document.getElementById(id);
+      const open = box.classList.toggle('is-open');
+      btn.textContent = open ? 'Hide Transcript' : 'Show Transcript (after listening)';
+    }
+    const LISTENING_QS = [
+      { q: '1. What is the main weakness of Carlos\'s pitch?', opts: ['He focuses on years worked and living costs instead of measurable results.', 'He speaks too fast about financial percentages.', 'He refuses to take on extra accounts.'], ans: 0 },
+      { q: '2. How does Elena prove her value in Pitch B?', opts: ['She compares her salary to a competitor.', 'She shares a May workflow redesign and the hours it has saved since then.', 'She asks for a smaller workload.'], ans: 1 },
+      { q: '3. Which two tenses does Elena combine cleanly?', opts: ['Future Simple and Past Continuous.', 'Present Simple only.', 'Past Simple for the May milestone + Present Perfect for ongoing savings.'], ans: 2 }
+    ];
+    function renderListeningQuiz() {
+      document.getElementById('listeningQuiz').innerHTML = LISTENING_QS.map((item, qi) => `
+        <div class="quiz-card" id="lq${qi}">
+          <div class="quiz-q">${item.q}</div>
+          <div class="quiz-opts">
+            ${item.opts.map((opt, oi) => `<button type="button" class="quiz-opt" onclick="checkLQ(${qi}, ${oi}, this)">${opt}</button>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+    function checkLQ(qi, oi, btn) {
+      const card = document.getElementById('lq' + qi);
+      card.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+      btn.classList.add(oi === LISTENING_QS[qi].ans ? 'is-correct' : 'is-wrong');
+    }
+
+    /* === 05 GRAMMAR === */
+    const UPGRADES = [
+      { raw: '1. "Since October, the new checklist reduced errors by 25%."', opts: ['Since October, the new checklist reduced errors by 25%.', 'Since October, the new checklist has reduced errors by 25%.', 'Since October, the new checklist is reducing errors by 25%.'], ans: 1, note: 'Use Present Perfect with "since + point in time" for ongoing results.' },
+      { raw: '2. "In Q2 last year, I have led the vendor migration."', opts: ['In Q2 last year, I led the vendor migration.', 'In Q2 last year, I have led the vendor migration.', 'In Q2 last year, I lead the vendor migration.'], ans: 0, note: 'Use Past Simple with a finished past time marker ("In Q2 last year").' },
+      { raw: '3. "Over the past six months, I took on two new accounts."', opts: ['Over the past six months, I take on two new accounts.', 'Over the past six months, I was taking on two new accounts.', 'Over the past six months, I have taken on two new accounts.'], ans: 2, note: 'Use Present Perfect with "over the past six months" (period up to now).' }
+    ];
+    const upgradeDone = {};
+    function renderUpgrades() {
+      document.getElementById('upgradeContainer').innerHTML = UPGRADES.map((u, ui) => `
+        <div class="upgrade-card" id="upg${ui}">
+          <div class="upgrade-raw"><strong>${u.raw}</strong></div>
+          <div class="quiz-opts">
+            ${u.opts.map((o, oi) => `<button type="button" class="quiz-opt" onclick="checkUpgrade(${ui}, ${oi}, this)">${o}</button>`).join('')}
+          </div>
+          <div class="sort-fb" id="upgFb${ui}"></div>
+        </div>
+      `).join('');
+    }
+    function checkUpgrade(ui, oi, btn) {
+      const card = document.getElementById('upg' + ui);
+      card.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('is-correct', 'is-wrong'));
+      const ok = oi === UPGRADES[ui].ans;
+      btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+      const fb = document.getElementById('upgFb' + ui);
+      fb.textContent = (ok ? 'Accurate! ' : 'Check the time marker: ') + UPGRADES[ui].note;
+      fb.classList.add('show');
+      if (ok) upgradeDone[ui] = true;
+      document.getElementById('upgradeScorePill').textContent = Object.keys(upgradeDone).length + ' / ' + UPGRADES.length + ' fixed';
+    }
+
+    function updateBuilder() {
+      const s1 = document.getElementById('bStep1').value;
+      const s2 = document.getElementById('bStep2').value;
+      const s3 = document.getElementById('bStep3').value;
+      document.getElementById('builderPreview').textContent = s1 + ' ' + s2 + ' ' + s3;
+    }
+
+    /* === 06 SPEAKING === */
+    function selectRole(card) {
+      document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+
+    /* === 07 EXIT TICKET === */
+    function saveExitTicket() {
+      const val = document.getElementById('exitTicketInput').value.trim();
+      const st = document.getElementById('exitStatus');
+      if (!val) {
+        st.style.color = 'var(--danger-600)';
+        st.textContent = 'Write 2–3 short sentences before saving.';
+        return;
+      }
+      try { localStorage.setItem('ld_be_u05_l02_exit', val); } catch (_) {}
+      st.style.color = 'var(--teal-800)';
+      st.textContent = 'Saved! Ready for your next 1-on-1.';
+    }
+
+    /* === INIT === */
+    (function init() {
+      loadStudentName();
+      renderFlipCards(VOCAB_DATA, 'vocabGrid', 'vocabAudioStatus', false);
+      renderMatches();
+      renderFlipCards(CHUNKS_DATA, 'chunksGrid', 'chunksAudioStatus', true);
+      renderListeningQuiz();
+      renderUpgrades();
+      updateBuilder();
+
+      try {
+        const savedExit = localStorage.getItem('ld_be_u05_l02_exit');
+        if (savedExit) document.getElementById('exitTicketInput').value = savedExit;
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('role') === 'teacher' || sessionStorage.getItem('ld-coordinator-auth') === 'granted') {
+          setTeacherMode(true);
+        }
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>

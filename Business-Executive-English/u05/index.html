@@ -404,7 +404,7 @@
         </div>
       </article>
 
-      <article class="lesson-card is-soon">
+      <article class="lesson-card">
         <div class="card-visual">
           <img class="card-photo" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=800&q=80" alt="The Value Justification 1-on-1">
           <div class="card-visual-gradient"></div>
@@ -421,7 +421,7 @@
               <span class="pill">Measurable impact</span>
             </div>
           </div>
-          <span class="btn-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Soon</span>
+          <a href="./the-value-justification/index.html" class="btn-open" id="link-u05-l02">Open Lesson &rarr;</a>
         </div>
       </article>
 
@@ -525,6 +525,11 @@
         if (l01) {
           l01.href = isExplore ? './setting-boundaries-at-work/explore.html' : './setting-boundaries-at-work/index.html';
           l01.innerHTML = isExplore ? 'Open Explore &rarr;' : 'Open Lesson &rarr;';
+        }
+        const l02 = document.getElementById('link-u05-l02');
+        if (l02) {
+          l02.href = isExplore ? './the-value-justification/explore.html' : './the-value-justification/index.html';
+          l02.innerHTML = isExplore ? 'Open Explore &rarr;' : 'Open Lesson &rarr;';
         }
         const l04 = document.getElementById('link-u05-l04');
         if (l04) {

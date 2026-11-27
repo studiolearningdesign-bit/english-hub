@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore &middot; BE-05-L02: The Value Justification 1-on-1 | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-600: #475569;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --radius-sm: 8px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 6px rgba(10, 25, 47, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--slate-50); color: var(--slate-900); line-height: 1.6; }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .site-header { background: var(--navy-950); border-bottom: 1px solid rgba(212, 168, 67, 0.25); color: var(--white); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); }
+    .brand-course-label { font-size: 13px; font-weight: 600; color: var(--slate-200); }
+    .header-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header-link { color: var(--slate-200); text-decoration: none; font-size: 13px; font-weight: 600; }
+    .header-gold-link { color: var(--gold-500); text-decoration: none; font-size: 13px; font-weight: 700; }
+
+    .page-container { max-width: 980px; margin: 0 auto; padding: 28px 24px 64px; }
+    .explore-hero {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .explore-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-50); opacity: 0.85; margin-bottom: 6px; }
+    .explore-title { font-size: clamp(1.5rem, 2.8vw, 2.05rem); font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
+    .explore-title span { color: var(--gold-500); }
+    .explore-sub { font-size: 0.92rem; color: var(--slate-300); max-width: 58ch; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: inherit; font-size: 0.84rem; font-weight: 700; padding: 9px 16px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); }
+    .btn-teal { background: var(--teal-700); color: var(--white); }
+
+    .section-card { background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 26px 28px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+    .section-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--teal-700); margin-bottom: 4px; }
+    .section-title { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
+    .section-lead { font-size: 0.88rem; color: var(--slate-600); margin-bottom: 16px; }
+
+    .task-row { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; }
+    .task-sentence { font-size: 0.9rem; color: var(--navy-900); font-weight: 500; margin-bottom: 8px; }
+    .task-input, .brief-textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--navy-900);
+    }
+    .brief-textarea { min-height: 82px; resize: vertical; }
+    .pitch-field { margin-bottom: 14px; }
+    .pitch-field label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--navy-900); margin-bottom: 5px; }
+    .fb-line { font-size: 0.8rem; font-weight: 600; margin-top: 6px; min-height: 18px; }
+    .fb-ok { color: var(--teal-800); }
+    .fb-err { color: var(--danger-600); }
+
+    .studio-site-footer { background: var(--navy-950); border-top: 1px solid rgba(212, 168, 67, 0.28); color: var(--slate-200); padding: 24px; margin-top: 28px; font-size: 0.82rem; }
+    .footer-inner { max-width: 980px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media print {
+      .site-header, .no-print, .studio-site-footer { display: none !important; }
+      body { background: #FFFFFF; color: #000000; }
+      .page-container { max-width: 100%; padding: 0; }
+      .explore-hero { background: #FFFFFF; color: #001F54; border: 1px solid #CBD5E1; padding: 18px; }
+      .explore-sub, .explore-kicker { color: #334155; }
+      .section-card { box-shadow: none; break-inside: avoid; border: 1px solid #CBD5E1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-lockup">
+        <span class="brand-logo-wrap">
+          <img src="../../../assets/logo-white-lockup.webp" onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';" alt="Learning &amp; Development Studio" class="brand-logo-white">
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-course-label">Explore &middot; Executive Business</span>
+      </a>
+      <div class="header-actions">
+        <a href="./index.html" class="header-gold-link">Open Experience (Live Session) &rarr;</a>
+        <a href="../index.html?mode=explore" class="header-link">&larr; Back to Track 05</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <header class="explore-hero">
+      <div>
+        <div class="explore-kicker">BE-05-L02 &middot; Autonomous Pitch Studio</div>
+        <h1 class="explore-title">The Value Justification <span>1-on-1</span></h1>
+        <p class="explore-sub">Autonomous written consolidation: fix tense-contrast errors, rewrite effort-based drafts into measurable value, and craft your full 3-part Value Pitch.</p>
+      </div>
+      <button type="button" class="btn btn-gold no-print" onclick="window.print()">Print Worksheet</button>
+    </header>
+
+    <!-- PART 1: ERROR CLINIC -->
+    <section class="section-card">
+      <div class="section-kicker">Part 01 &middot; Time-Impact Error Clinic</div>
+      <h2 class="section-title">Spot &amp; Fix the Tense Slip</h2>
+      <p class="section-lead">Each sentence below mixes up Past Simple and Present Perfect. Type the corrected version.</p>
+      <div id="clinicList"></div>
+      <div class="no-print" style="margin-top: 12px; display: flex; align-items: center; gap: 12px;">
+        <button type="button" class="btn btn-teal" onclick="checkClinic()">Verify Corrections</button>
+        <span class="fb-line" id="clinicScore" style="margin: 0;"></span>
+      </div>
+    </section>
+
+    <!-- PART 2: AUTONOMOUS VALUE PITCH STUDIO (MOVED FROM LIVE SESSION) -->
+    <section class="section-card">
+      <div class="section-kicker">Part 02 &middot; Autonomous Pitch Studio</div>
+      <h2 class="section-title">Write Your Full 3-Step Value Pitch</h2>
+      <p class="section-lead">Take your time to craft your real 1-on-1 pitch in three clear steps: Milestone (Past Simple), Ongoing Impact (Present Perfect), and Diplomatic Alignment Ask.</p>
+
+      <div class="pitch-field">
+        <label for="p1">1. Historical Milestone (Past Simple + Specific Time Anchor)</label>
+        <textarea id="p1" class="brief-textarea" placeholder="e.g., In Q3, I redesigned our client onboarding checklist..."></textarea>
+      </div>
+      <div class="pitch-field">
+        <label for="p2">2. Continuous Return (Present Perfect + Quantified Result)</label>
+        <textarea id="p2" class="brief-textarea" placeholder="e.g., Since that rollout, it has saved the team 5 hours per week and cut errors by 20%..."></textarea>
+      </div>
+      <div class="pitch-field">
+        <label for="p3">3. Diplomatic Alignment Ask (Extra Scope + Polite Request)</label>
+        <textarea id="p3" class="brief-textarea" placeholder="e.g., On top of my core role, I have taken on training new hires, so I'd like to align my compensation..."></textarea>
+      </div>
+
+      <div class="no-print" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-teal" onclick="savePitch()">Save My Value Pitch</button>
+        <span class="fb-line" id="pitchStatus" style="margin: 0;"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div>Educate &bull; Design &bull; Grow &middot; Explore Workbook &middot; Executive Business</div>
+      <div>BE-05-L02 &middot; The Value Justification 1-on-1</div>
+    </div>
+  </footer>
+
+  <script>
+    const CLINIC_DATA = [
+      { bad: '1. Since May, the new process saved us six hours every week.', key: 'has saved', hint: 'Use Present Perfect (has saved) with "Since May".' },
+      { bad: '2. Last quarter, I have launched the regional training program.', key: 'i launched', hint: 'Use Past Simple (launched) with "Last quarter".' },
+      { bad: '3. Over the past year, I took on three extra enterprise accounts.', key: 'have taken on', hint: 'Use Present Perfect (have taken on) with "Over the past year".' }
+    ];
+    function renderClinic() {
+      document.getElementById('clinicList').innerHTML = CLINIC_DATA.map((c, i) => `
+        <div class="task-row">
+          <div class="task-sentence">${c.bad}</div>
+          <input type="text" id="cl${i}" class="task-input" placeholder="Type the corrected sentence...">
+          <div class="fb-line" id="clFb${i}"></div>
+        </div>
+      `).join('');
+    }
+    function checkClinic() {
+      let ok = 0;
+      CLINIC_DATA.forEach((c, i) => {
+        const val = document.getElementById('cl' + i).value.trim().toLowerCase();
+        const fb = document.getElementById('clFb' + i);
+        if (val.includes(c.key)) { ok++; fb.className = 'fb-line fb-ok'; fb.textContent = 'Accurate fix!'; }
+        else { fb.className = 'fb-line fb-err'; fb.textContent = 'Hint: ' + c.hint; }
+      });
+      document.getElementById('clinicScore').textContent = ok + ' / ' + CLINIC_DATA.length + ' fixed';
+    }
+
+    function savePitch() {
+      const payload = {
+        p1: document.getElementById('p1').value.trim(),
+        p2: document.getElementById('p2').value.trim(),
+        p3: document.getElementById('p3').value.trim()
+      };
+      try { localStorage.setItem('ld_be_u05_l02_explore_pitch', JSON.stringify(payload)); } catch (_) {}
+      const st = document.getElementById('pitchStatus');
+      st.className = 'fb-line fb-ok';
+      st.textContent = 'Value Pitch saved locally. Print this worksheet anytime.';
+    }
+
+    (function init() {
+      renderClinic();
+      try {
+        const raw = localStorage.getItem('ld_be_u05_l02_explore_pitch');
+        if (raw) {
+          const p = JSON.parse(raw);
+          if (p.p1) document.getElementById('p1').value = p.p1;
+          if (p.p2) document.getElementById('p2').value = p.p2;
+          if (p.p3) document.getElementById('p3').value = p.p3;
+        }
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>
