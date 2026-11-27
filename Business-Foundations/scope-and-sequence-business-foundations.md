@@ -27,7 +27,7 @@
 ### `u02` · Office Spaces, Tools & Onboarding *(A1.1)*
 | Código | Lección | Gramática `[N]` | Estado |
 | :--- | :--- | :--- | :--- |
-| `BF-U02-L01` | The Floor Plan Walkthrough | `There is / There are` + preposiciones de lugar (`in, on, next to, between, behind`) | Soon |
+| `BF-U02-L01` | The Floor Plan Walkthrough | `There is / There are` + preposiciones de lugar (`in, on, next to, between, behind`) | Live |
 | `BF-U02-L02` | First-Day Security & Setup | Demostrativos (`this, that, these, those`) + Imperativos afirmativos y negativos | Soon |
 | `BF-U02-L03` | The Team Profile Board | Posición del adjetivo (`To be + adj` vs. `have/has + adj + noun`) + `and / but` | Soon |
 

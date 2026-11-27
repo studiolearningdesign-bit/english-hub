@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Floor Plan Walkthrough — Business Foundations | Learning &amp; Development Studio</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #071527;
+      --navy-900: #001F54;
+      --navy-800: #0B2545;
+      --navy-700: #133E68;
+      --teal-800: #0F766E;
+      --teal-700: #007A87;
+      --teal-500: #14B8A6;
+      --teal-300: #4DD0E1;
+      --teal-50: #F0FDFA;
+      --gold-600: #B57C00;
+      --gold-500: #D4A843;
+      --gold-400: #E5A922;
+      --gold-100: #FEF8EB;
+      --gold-border: rgba(212, 168, 67, 0.35);
+      --white: #FFFFFF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-900: #0A192F;
+      --danger-600: #DC2626;
+      --danger-50: #FEF2F2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 8px rgba(0, 31, 84, 0.06);
+      --shadow-md: 0 10px 28px rgba(7, 21, 39, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--slate-50);
+      color: var(--slate-900);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==================== SITE HEADER ==================== */
+    header.site-header {
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(212, 168, 67, 0.25);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .site-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .brand-logo-wrap { display: inline-flex; align-items: center; height: 46px; overflow: hidden; flex-shrink: 0; }
+    .brand-logo-white { height: 84px; width: auto; object-fit: contain; margin: -19px 0; display: block; }
+    .brand-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.18); flex-shrink: 0; }
+    .header-course { font-size: 13px; font-weight: 600; color: var(--slate-200); white-space: nowrap; }
+
+    .header-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+    .header-student {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate-200);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .header-student:hover { color: var(--white); }
+
+    .header-teacher-btn {
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      font: 700 13px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: var(--gold-500);
+      cursor: pointer;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+    .header-teacher-btn:hover { color: var(--gold-400); }
+    .header-teacher-btn.is-active { color: var(--teal-300); }
+
+    .header-back-link { font-size: 13px; font-weight: 600; color: var(--slate-200); text-decoration: none; white-space: nowrap; }
+    .header-back-link:hover { color: var(--white); }
+
+    /* ==================== MAIN & HERO ==================== */
+    main { max-width: 1120px; margin: 0 auto; padding: 28px 24px 56px; }
+
+    header.workspace-hero-banner {
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 44px 48px;
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(110deg, rgba(7, 21, 39, 0.95) 0%, rgba(11, 37, 69, 0.86) 54%, rgba(7, 21, 39, 0.45) 100%),
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;
+      border: 1px solid rgba(212, 168, 67, 0.24);
+      box-shadow: var(--shadow-md);
+    }
+
+    .workspace-hero-banner h1 {
+      font-size: clamp(30px, 4.4vw, 44px);
+      font-weight: 800;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      max-width: 680px;
+      margin: 0 0 14px;
+      color: var(--white);
+    }
+
+    .workspace-hero-banner h1 span { color: var(--gold-500); }
+    .workspace-hero-banner p { max-width: 560px; margin: 0; font-size: 16.5px; color: rgba(248, 250, 252, 0.9); }
+
+    /* ==================== SEGMENTED NAV ==================== */
+    nav.module-nav-grid {
+      display: flex;
+      overflow-x: auto;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin: 26px 0 24px;
+      gap: 4px;
+      scrollbar-width: thin;
+    }
+
+    nav.module-nav-grid button {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    nav.module-nav-grid button:hover { color: var(--navy-900); }
+    nav.module-nav-grid button .nav-idx { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700; color: var(--slate-500); }
+    nav.module-nav-grid button.active { background: var(--white); color: var(--navy-900); box-shadow: var(--shadow-sm); border-color: var(--slate-200); font-weight: 700; }
+    nav.module-nav-grid button.active .nav-idx { color: var(--teal-700); }
+
+    /* ==================== CARDS & TYPOGRAPHY ==================== */
+    article.card-block {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 6px;
+    }
+
+    h2 { font-size: 25px; font-weight: 800; color: var(--navy-900); line-height: 1.25; margin: 0 0 10px; }
+    h3 { font-size: 18px; font-weight: 700; color: var(--navy-900); line-height: 1.3; margin: 22px 0 10px; }
+    h3:first-child { margin-top: 0; }
+    p.lead { color: var(--slate-600); margin: 0 0 18px; }
+    .mono { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--teal-700); }
+
+    /* ==================== TEACHER NOTE ACCORDION ==================== */
+    details.teacher-note-box {
+      background: var(--gold-100);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+
+    details.teacher-note-box summary {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    details.teacher-note-box summary::-webkit-details-marker { display: none; }
+    details.teacher-note-box summary::after { content: '+'; font-size: 16px; }
+    details.teacher-note-box[open] summary::after { content: '−'; }
+
+    .teacher-steps {
+      margin: 12px 0 0;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--gold-border);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--slate-900);
+    }
+
+    .teacher-step-item {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .teacher-step-item strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-600);
+      margin-bottom: 4px;
+    }
+
+    /* ==================== BUTTONS ==================== */
+    .btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+      border-radius: var(--radius-sm);
+      padding: 9px 15px;
+      transition: all 0.16s ease;
+    }
+    .btn:hover:not(:disabled) { border-color: var(--teal-700); color: var(--teal-700); }
+    .btn:disabled { opacity: 0.45; cursor: default; }
+
+    .btn-primary { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+    .btn-primary:hover:not(:disabled) { background: var(--navy-700); border-color: var(--navy-700); color: var(--white); }
+
+    .btn-teal { background: var(--teal-700); color: var(--white); border-color: var(--teal-700); }
+    .btn-teal:hover:not(:disabled) { background: var(--teal-800); border-color: var(--teal-800); color: var(--white); }
+
+    .btn-audio {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.25);
+      color: var(--teal-800);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-audio:hover { background: var(--teal-700); color: var(--white); border-color: var(--teal-700); }
+
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+    /* ==================== 01 VISUAL WARM-UP PHOTO SHOWDOWN ==================== */
+    .versus-block { margin-bottom: 22px; }
+    .versus-label { font-size: 15px; font-weight: 800; color: var(--navy-900); margin-bottom: 10px; }
+
+    .versus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .photo-choice {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 2px solid var(--slate-200);
+      background: var(--navy-950);
+      cursor: pointer;
+      text-align: left;
+      padding: 0;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .photo-choice:hover { transform: translateY(-2px); border-color: var(--teal-700); }
+
+    .photo-choice.selected {
+      border-color: var(--gold-500);
+      box-shadow: 0 10px 24px rgba(212, 168, 67, 0.25);
+    }
+
+    .photo-choice img {
+      width: 100%;
+      height: 168px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.18s ease;
+    }
+
+    .photo-choice.selected img { opacity: 1; }
+
+    .photo-choice-caption {
+      padding: 12px 16px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .photo-choice-caption strong { font-size: 15px; color: var(--navy-900); }
+
+    .choice-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      background: var(--slate-100);
+      color: var(--slate-600);
+    }
+
+    .photo-choice.selected .choice-tag {
+      background: var(--navy-900);
+      color: var(--gold-400);
+    }
+
+    /* ==================== 02 VISUAL OFFICE PHOTO STRIP ==================== */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 14px 0 22px;
+    }
+
+    .gallery-tile {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+    }
+
+    .gallery-tile img {
+      width: 100%;
+      height: 105px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-tile span {
+      display: block;
+      padding: 7px 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--navy-900);
+      text-align: center;
+    }
+
+    /* ==================== FLIP CARDS (EXACT REFERENCE) ==================== */
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin: 14px 0 26px;
+    }
+
+    .flip-card { perspective: 1000px; height: 235px; cursor: pointer; }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flip-front-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; text-align: left; }
+    .flip-word-group { flex: 1; min-width: 0; padding-right: 6px; }
+
+    .flip-back {
+      transform: rotateY(180deg);
+      background: var(--navy-950);
+      border-color: var(--navy-800);
+      color: var(--white);
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .flip-pos {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      color: var(--teal-700);
+      background: var(--teal-50);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .flip-word { font-size: 1.5rem; font-weight: 800; color: var(--navy-900); line-height: 1.18; letter-spacing: -0.015em; }
+    .flip-word-chunk { font-size: 1.18rem; font-weight: 800; color: var(--navy-900); line-height: 1.25; }
+    .flip-ipa { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--slate-500); margin-top: 4px; }
+    .flip-example { font-size: 0.9rem; color: var(--slate-700); font-weight: 500; text-align: center; margin: 0; }
+    .flip-audio-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .flip-back-word { font-size: 1.4rem; font-weight: 800; color: var(--gold-400); line-height: 1.2; }
+    .flip-back-meaning { font-size: 0.94rem; color: var(--slate-100); max-width: 28ch; margin: 0; }
+    .flip-hint { font-size: 0.72rem; color: var(--slate-400); }
+
+    /* ==================== ARCHITECTURAL SVG FLOOR PLAN ==================== */
+    .blueprint-shell {
+      background: var(--navy-950);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(212, 168, 67, 0.28);
+      margin-bottom: 18px;
+    }
+
+    .blueprint-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-sm);
+    }
+
+    .zone-label-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .zone-assign-row {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--white);
+      font-size: 13px;
+    }
+
+    .zone-select {
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      background: var(--navy-800);
+      color: var(--white);
+      font: 600 13px 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* ==================== VISUAL PREPOSITIONS SVG CARDS ==================== */
+    .prep-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 14px 0 22px;
+    }
+
+    .prep-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .prep-card svg { width: 64px; height: 48px; }
+    .prep-card strong { color: var(--navy-900); font-size: 15px; }
+    .prep-card span { font-size: 12px; color: var(--slate-600); line-height: 1.35; }
+
+    /* ==================== INTELLIGIBILITY & LISTENING ==================== */
+    .pron-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 12px; }
+    .pron-card { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+
+    .listening-stage {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(212, 168, 67, 0.25);
+    }
+
+    .listening-speakers { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
+    .speaker-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-full);
+      padding: 6px 14px 6px 6px;
+    }
+    .speaker-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+
+    .transcript-panel {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.93rem;
+      color: var(--slate-100);
+      line-height: 1.75;
+    }
+    .transcript-panel.is-open { display: block; }
+
+    /* ==================== 06 SPEAKING: SPOT THE DIFFERENCES + FLOOR 5 DESIGNER ==================== */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 14px 0 22px;
+    }
+
+    .diff-plan-card {
+      background: var(--navy-950);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      border: 1px solid rgba(212, 168, 67, 0.28);
+    }
+
+    .diff-plan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .designer-palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 16px;
+    }
+
+    .palette-chip {
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+      font: 700 13px 'Plus Jakarta Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .palette-chip:hover { border-color: var(--teal-700); color: var(--teal-800); }
+    .palette-chip.active { background: var(--gold-500); border-color: var(--gold-500); color: var(--navy-950); }
+
+    .floor5-canvas {
+      background: var(--navy-950);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(212, 168, 67, 0.3);
+      color: var(--white);
+    }
+
+    .floor5-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .floor5-slot {
+      min-height: 92px;
+      border-radius: var(--radius-sm);
+      border: 1px dashed rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      padding: 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      transition: all 0.16s;
+    }
+
+    .floor5-slot:hover { border-color: var(--gold-400); background: rgba(212, 168, 67, 0.12); }
+
+    .floor5-slot.filled {
+      border-style: solid;
+      border-color: var(--teal-500);
+      background: rgba(20, 184, 166, 0.18);
+    }
+
+    .floor5-hall {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 9px;
+      border-radius: var(--radius-sm);
+      background: rgba(212, 168, 67, 0.14);
+      border: 1px solid rgba(212, 168, 67, 0.35);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-400);
+    }
+
+    /* ==================== TABLES, INPUTS & CHECKLIST ==================== */
+    .table-scroll { overflow-x: auto; margin: 14px 0 22px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    th, td { padding: 11px 14px; border: 1px solid var(--slate-200); text-align: left; }
+    th { background: var(--navy-900); color: var(--white); font-weight: 600; }
+    tbody tr:nth-child(even) { background: var(--slate-50); }
+
+    .line { padding: 15px 0; border-bottom: 1px solid var(--slate-200); }
+    .line:last-child { border-bottom: 0; }
+
+    .build-row {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .text-input {
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font: 500 14.5px 'Plus Jakarta Sans', sans-serif;
+      color: var(--navy-900);
+      background: var(--white);
+      min-width: 240px;
+    }
+
+    .checklist-box {
+      background: var(--teal-50);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 9px 0;
+      font-size: 14.5px;
+      color: var(--slate-900);
+      cursor: pointer;
+    }
+    .checklist-item input { margin-top: 4px; accent-color: var(--teal-700); }
+
+    label.field-label { display: block; font-weight: 600; color: var(--navy-900); margin: 14px 0; }
+
+    textarea, input[type="password"] {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 11px 13px;
+      width: 100%;
+      margin-top: 6px;
+      color: var(--slate-900);
+      background: var(--white);
+    }
+    textarea { min-height: 86px; resize: vertical; }
+
+    .feedback-msg { margin: 8px 0 0; font-size: 13.5px; font-weight: 600; min-height: 20px; }
+    .good { color: var(--teal-800); }
+    .bad { color: var(--danger-600); }
+
+    .end-nav { display: flex; justify-content: space-between; align-items: center; margin: 26px 0 8px; gap: 12px; }
+
+    /* ==================== FOOTER ==================== */
+    footer.studio-site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid rgba(212, 168, 67, 0.28);
+      color: var(--slate-200);
+      padding: 24px 24px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      font-size: 0.82rem;
+    }
+
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .footer-logo-wrap { display: inline-flex; align-items: center; height: 34px; overflow: hidden; flex-shrink: 0; }
+    .footer-logo-white { height: 64px; width: auto; object-fit: contain; margin: -15px 0; display: block; }
+
+    .footer-teacher-portal {
+      color: var(--gold-400);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.16s;
+    }
+    .footer-teacher-portal:hover { background: rgba(212, 168, 67, 0.14); color: var(--white); }
+
+    dialog {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      max-width: 400px;
+      width: 92%;
+      box-shadow: var(--shadow-md);
+    }
+    dialog::backdrop { background: rgba(7, 21, 39, 0.58); backdrop-filter: blur(4px); }
+
+    @media (max-width: 780px) {
+      .site-header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; }
+      header.workspace-hero-banner { padding: 30px 22px; min-height: 200px; }
+      article.card-block { padding: 20px; }
+      .versus-grid, .diff-grid, .floor5-grid, .build-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-wrap: wrap; justify-content: center; text-align: center; }
+    }
+
+    @media print {
+      header.site-header, nav.module-nav-grid, .end-nav, footer.studio-site-footer, button, dialog { display: none !important; }
+      body { background: #fff; }
+      article.card-block { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../index.html" class="header-brand">
+        <span class="brand-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="brand-logo-white"
+          >
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="header-course">English Hub &middot; Business Foundations</span>
+      </a>
+      <div class="header-links">
+        <button type="button" class="header-student" id="studentName" onclick="editStudentName()">Student &middot; Guest</button>
+        <button type="button" class="header-teacher-btn" id="teacherToggleBtn" onclick="openTeacherModal()">Teacher's Version &#8599;</button>
+        <a class="header-back-link" href="../index.html">&larr; Back to Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="workspace-hero-banner">
+      <h1>The Floor Plan <span>Walkthrough</span></h1>
+      <p>A new colleague arrives on Floor 3 and doesn't know where anything is. Give a clear, confident tour of the spaces and facilities.</p>
+    </header>
+
+    <nav class="module-nav-grid" id="nav" aria-label="Lesson modules"></nav>
+
+    <div id="screen"></div>
+
+    <div class="end-nav">
+      <button type="button" class="btn" id="prev">&larr; Previous</button>
+      <span id="count" class="mono"></span>
+      <button type="button" class="btn btn-primary" id="next">Next &rarr;</button>
+    </div>
+  </main>
+
+  <footer class="studio-site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="footer-logo-wrap">
+          <img
+            src="../../../assets/logo-white-lockup.webp"
+            onerror="this.onerror=null;this.src='https://learning-development-studio.github.io/english-hub/assets/logo-white-lockup.webp';"
+            alt="Learning &amp; Development Studio"
+            class="footer-logo-white"
+          >
+        </span>
+        <div>Educate &bull; Design &bull; Grow &middot; The Floor Plan Walkthrough (Business Foundations)</div>
+      </div>
+      <a href="../../../teacher-hub/Business-Foundations/the-floor-plan-walkthrough/index.html" class="footer-teacher-portal">Teacher's Portal &amp; Printable Version &rarr;</a>
+    </div>
+  </footer>
+
+  <dialog id="teacherDialog">
+    <span class="kicker">Faculty Access</span>
+    <h3 style="margin-top: 4px;">Teacher's Version</h3>
+    <p class="lead" style="font-size: 14px;">Enter your authorized faculty PIN to unlock live teaching sequences and answer keys.</p>
+    <input id="pinInput" type="password" placeholder="Enter PIN" aria-label="Teacher PIN" autocomplete="off">
+    <p id="pinMessage" class="feedback-msg bad"></p>
+    <div class="actions" style="margin-top: 14px; justify-content: flex-end;">
+      <button type="button" class="btn" onclick="document.getElementById('teacherDialog').close()">Cancel</button>
+      <button type="button" class="btn btn-primary" onclick="authorizeTeacher()">Unlock</button>
+    </div>
+  </dialog>
+
+  <script>
+    const MODULE_NAMES = [
+      'Warm-up',
+      'Vocabulary',
+      'Workplace Expressions',
+      'Listening',
+      'Grammar',
+      'Speaking',
+      'Exit Ticket'
+    ];
+
+    const VALID_PINS = ['0410', '2064'];
+
+    let current = 0;
+    let isTeacher = false;
+    let transcriptOpen = false;
+    let hidePlanB = false;
+    let activePaletteRoom = 'Boardroom';
+    const floor5Slots = { s1: 'Front Desk', s2: '', s3: '', s4: '', s5: '', s6: '' };
+    const savedInputs = {};
+    const prefChoices = {};
+    const zoneAnswers = {};
+
+    const $ = (id) => document.getElementById(id);
+
+    (function initSession() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const student = params.get('name') || localStorage.getItem('ld_student_name') || 'Guest';
+        $('studentName').textContent = 'Student · ' + student;
+        if (params.get('role') === 'teacher') isTeacher = true;
+      } catch (_) {
+        $('studentName').textContent = 'Student · Guest';
+      }
+    })();
+
+    const VOCAB = [
+      { word: 'breakroom', pos: 'noun', ipa: '/ˈbreɪkruːm/', example: 'Our breakroom is on Floor 3.', meaning: 'The office lounge where staff rest, eat, or get coffee.', photo: 'photo-1497366811353-6870744d04b2' },
+      { word: 'supply closet', pos: 'noun', ipa: '/səˈplaɪ ˈklɒzɪt/', example: 'The spare stationery is in the supply closet.', meaning: 'A small storage room for office supplies and paper.', photo: 'photo-1586023492125-27b2c045efd7' },
+      { word: 'front desk', pos: 'noun', ipa: '/frʌnt dɛsk/', example: 'Your visitor badge is at the front desk.', meaning: 'The main reception counter near the building entrance.', photo: 'photo-1497366754035-f200968a6e72' },
+      { word: 'boardroom', pos: 'noun', ipa: '/ˈbɔːrdruːm/', example: 'The boardroom is ready for the directors.', meaning: 'A large formal room for executive meetings.', photo: 'photo-1497366216548-37526070297c' },
+      { word: 'workstation', pos: 'noun', ipa: '/ˈwɜːrkˌsteɪʃən/', example: 'Her workstation has two monitors.', meaning: 'An individual desk area equipped with a computer.', photo: 'photo-1497215728101-856f4ea42174' },
+      { word: 'hallway', pos: 'noun', ipa: '/ˈhɔːlweɪ/', example: 'The meeting rooms are down the hallway.', meaning: 'The long corridor connecting rooms on a floor.', photo: 'photo-1504384308090-c894fdcc538d' }
+    ];
+
+    const FLOOR_ZONES = [
+      { id: 'z1', pin: '01', hint: 'Entrance reception counter', answer: 'front desk' },
+      { id: 'z2', pin: '02', hint: 'Large glass meeting room', answer: 'boardroom' },
+      { id: 'z3', pin: '03', hint: 'Coffee & lunch lounge', answer: 'breakroom' },
+      { id: 'z4', pin: '04', hint: 'Main central corridor', answer: 'hallway' },
+      { id: 'z5', pin: '05', hint: 'Paper & stationery storage', answer: 'supply closet' },
+      { id: 'z6', pin: '06', hint: '6 computer desks by windows', answer: 'workstation' }
+    ];
+
+    const EXPRESSIONS = [
+      { phrase: 'Right across from...', use: 'location', ipa: '/raɪt əˈkrɒs frʌm/', example: 'The breakroom is right across from HR.', meaning: 'Directly on the opposite side of the corridor.' },
+      { phrase: 'Just down the hall.', use: 'location', ipa: '/dʒʌst daʊn ðə hɔːl/', example: 'The boardroom is just down the hall.', meaning: 'A very short walk along the corridor.' },
+      { phrase: "You can't miss it.", use: 'reassurance', ipa: '/juː kænt mɪs ɪt/', example: "The front desk is by the glass doors — you can't miss it.", meaning: 'It is very big or obvious; easy to see.' },
+      { phrase: 'On your left / right.', use: 'orientation', ipa: '/ɒn jʊər lɛft/', example: 'The supply closet is on your right.', meaning: 'Located on the left or right side as you face forward.' }
+    ];
+
+    const PREPOSITIONS = [
+      {
+        word: 'in',
+        ex: 'in the supply closet',
+        svg: '<svg viewBox="0 0 64 48"><rect x="14" y="10" width="36" height="28" rx="4" fill="none" stroke="#001F54" stroke-width="2.5"/><circle cx="32" cy="24" r="7" fill="#D4A843"/></svg>'
+      },
+      {
+        word: 'on',
+        ex: 'on the counter',
+        svg: '<svg viewBox="0 0 64 48"><rect x="10" y="28" width="44" height="10" rx="3" fill="#001F54"/><circle cx="32" cy="20" r="7" fill="#D4A843"/></svg>'
+      },
+      {
+        word: 'under',
+        ex: 'under the desk',
+        svg: '<svg viewBox="0 0 64 48"><rect x="10" y="10" width="44" height="10" rx="3" fill="#001F54"/><circle cx="32" cy="31" r="7" fill="#D4A843"/></svg>'
+      },
+      {
+        word: 'behind',
+        ex: 'behind the printer',
+        svg: '<svg viewBox="0 0 64 48"><circle cx="24" cy="20" r="8" fill="#D4A843"/><rect x="24" y="18" width="24" height="20" rx="4" fill="#001F54"/></svg>'
+      },
+      {
+        word: 'next to',
+        ex: 'next to the windows',
+        svg: '<svg viewBox="0 0 64 48"><rect x="10" y="14" width="20" height="20" rx="4" fill="#001F54"/><circle cx="44" cy="24" r="8" fill="#D4A843"/></svg>'
+      },
+      {
+        word: 'between',
+        ex: 'between HR and Finance',
+        svg: '<svg viewBox="0 0 64 48"><rect x="6" y="14" width="14" height="20" rx="3" fill="#001F54"/><circle cx="32" cy="24" r="7" fill="#D4A843"/><rect x="44" y="14" width="14" height="20" rx="3" fill="#001F54"/></svg>'
+      },
+      {
+        word: 'in front of',
+        ex: 'in front of the elevators',
+        svg: '<svg viewBox="0 0 64 48"><rect x="22" y="10" width="26" height="20" rx="4" fill="#001F54"/><circle cx="22" cy="30" r="8" fill="#D4A843" stroke="#FFFFFF" stroke-width="2"/></svg>'
+      }
+    ];
+
+    const BUILD_ITEMS = [
+      { prompt: '1. Ask about a coffee machine in the breakroom (singular):', answer: 'Is there a coffee machine in the breakroom?' },
+      { prompt: '2. Ask about spare workstations on Floor 3 (plural):', answer: 'Are there spare workstations on Floor 3?' },
+      { prompt: '3. State there is NO printer in the boardroom (negative):', answer: "There isn't a printer in the boardroom." },
+      { prompt: '4. State there are NO lockers behind the front desk (negative):', answer: "There aren't lockers behind the front desk." }
+    ];
+
+    const PALETTE_ROOMS = ['Boardroom', 'Breakroom', 'Workstations (8)', 'Supply Closet', 'Front Desk', 'HR Office', 'Coffee Bar', 'Clear Slot'];
+
+    const TEACHER_NOTES = [
+      {
+        setup: 'Use the 3 visual Photo Showdowns to activate [P] only (To Be + basic office words).',
+        modeling: 'Pick one photo first: "I prefer the quiet private room — open floors are noisy!"',
+        check: 'Elicit brief oral reasons without introducing There is/are or [N] room names yet.',
+        keys: 'Diagnostic [P] only.'
+      },
+      {
+        setup: 'Use the 6-photo Office Gallery to anchor meaning visually, then drill the Flip Cards and SVG Floor 3 Blueprint.',
+        modeling: 'Play Word + Example audios; flip cards. Drill There\'s (/ðɛərz/) vs. There are and between vs. behind.',
+        check: 'Have the student match Pins 01–06 on the architectural blueprint and click Check Floor Plan.',
+        keys: '01: front desk · 02: boardroom · 03: breakroom · 04: hallway · 05: supply closet · 06: workstation.'
+      },
+      {
+        setup: 'Teach all 4 Workplace Expressions as fixed chunks — do NOT dissect "can\'t" as modal grammar [F].',
+        modeling: 'Use hand gestures (across, down the hall, left/right) while drilling natural stress.',
+        check: 'Ask the student to point to something in their own room using "On my left / right".',
+        keys: 'Fixed blocks: Right across from... / Just down the hall. / You can\'t miss it. / On your left / right.'
+      },
+      {
+        setup: 'Keep the transcript CLOSED during the first two plays. Gist question: "Is there a cafeteria on Floor 3?"',
+        modeling: 'Play once for gist, then a second time for the 4 True/False Floor Checks.',
+        check: 'Open the transcript AFTER checking to notice There is/are/isn\'t/aren\'t and prepositions.',
+        keys: '1. True · 2. False (it is between HR and Finance) · 3. True · 4. False (there isn\'t a cafeteria on Floor 3).'
+      },
+      {
+        setup: 'Use the 7 visual SVG preposition icons so the student sees each spatial relationship immediately.',
+        modeling: 'Watch Spanish L1 interference: "Have a boardroom" ❌ → "There is a boardroom" ✅. Avoid movement prepositions [F].',
+        check: 'Complete Part A (Location Check) and Part B (Questions & Negatives).',
+        keys: 'Part A: 1. between · 2. in front of · 3. next to · 4. behind. Part B: 1. Is there a coffee machine in the breakroom? · 2. Are there spare workstations on Floor 3? · 3. There isn\'t a printer in the boardroom. · 4. There aren\'t lockers behind the front desk.'
+      },
+      {
+        setup: 'Run TWO lively oral rounds: (1) Spot the 4 Differences between Blueprint A & B, then (2) Design Floor 5 & Pitch to the CEO.',
+        modeling: 'Model 1 difference: "In Plan A, there is a breakroom next to Finance, but in Plan B, there is a boardroom."',
+        check: 'In Round 2, ask live CEO questions ("Is there a supply closet near IT? Where is the breakroom?") while the student clicks slots and pitches.',
+        keys: '4 Differences (A→B): 1. Breakroom ↔ Boardroom swapped · 2. 6 Workstations → 10 Workstations · 3. Supply Closet moved behind Front Desk → between HR & IT · 4. Cafeteria exists in Plan B (absent in Plan A).'
+      },
+      {
+        setup: 'Close previous modules. Exit Ticket collects independent written evidence with zero copyable models.',
+        modeling: 'Clarify that the student may describe their real office, home office, or their custom Floor 5.',
+        check: 'Verify There is/are agreement (never "There is 3 rooms" or "Have a printer") and preposition accuracy.',
+        keys: 'Record E0–E3 separately for: There is/are/isn\'t/aren\'t, Is/Are there questions, and prepositions of place.'
+      }
+    ];
+
+    function renderTeacherAccordion(idx) {
+      if (!isTeacher) return '';
+      const n = TEACHER_NOTES[idx];
+      return `
+        <details class="teacher-note-box">
+          <summary>Teacher's Live Sequence &middot; Module ${String(idx + 1).padStart(2, '0')}</summary>
+          <div class="teacher-steps">
+            <div class="teacher-step-item"><strong>1. Setup</strong>${n.setup}</div>
+            <div class="teacher-step-item"><strong>2. Modeling</strong>${n.modeling}</div>
+            <div class="teacher-step-item"><strong>3. Check</strong>${n.check}</div>
+            <div class="teacher-step-item"><strong>4. Keys</strong>${n.keys}</div>
+          </div>
+        </details>
+      `;
+    }
+
+    function audioBtn(file, label) {
+      return `<button type="button" class="btn-audio" onclick="event.stopPropagation(); playAudio(this, '${file}')">&#9654; ${label}</button>`;
+    }
+
+    function playAudio(btn, file) {
+      const original = btn.dataset.label || btn.textContent;
+      btn.dataset.label = original;
+      const audio = new Audio('audio/' + file + '.mp3');
+      audio.play().catch(() => {
+        btn.textContent = 'Audio pending studio file';
+        setTimeout(() => { btn.textContent = original; }, 2200);
+      });
+    }
+
+    function renderFlipCard(item, idx, type) {
+      const num = String(idx + 1).padStart(2, '0');
+      const isVocab = type === 'vocab';
+      const term = isVocab ? item.word : item.phrase;
+      const badge = isVocab ? item.pos : item.use.toLowerCase();
+      const termClass = isVocab ? 'flip-word' : 'flip-word-chunk';
+      const mainFile = isVocab ? `vocab-${num}-word` : `expr-${num}-phrase`;
+      const exFile = isVocab ? `vocab-${num}-example` : `expr-${num}-example`;
+      const mainLabel = isVocab ? 'Word' : 'Phrase';
+
+      return `
+        <div class="flip-card" role="button" tabindex="0" aria-label="Flip card for ${term}"
+             onclick="this.classList.toggle('is-flipped')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}">
+          <div class="flip-card-inner">
+            <div class="flip-face">
+              <div class="flip-front-top">
+                <div class="flip-word-group">
+                  <div class="${termClass}">${term}</div>
+                  <div class="flip-ipa">${item.ipa}</div>
+                </div>
+                <span class="flip-pos">${badge}</span>
+              </div>
+              <div class="flip-example">"${item.example}"</div>
+              <div class="flip-audio-row" onclick="event.stopPropagation()">
+                ${audioBtn(mainFile, mainLabel)}
+                ${audioBtn(exFile, 'Example')}
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="flip-back-word">${term}</div>
+              <div class="flip-back-meaning">${item.meaning}</div>
+              <div class="flip-hint">Click to flip back</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectPref(key, val) {
+      prefChoices[key] = val;
+      render();
+    }
+
+    function setZone(id, val) { zoneAnswers[id] = val; }
+
+    function checkFloorPlan() {
+      let score = 0;
+      FLOOR_ZONES.forEach(z => { if (zoneAnswers[z.id] === z.answer) score++; });
+      const fb = $('floorFeedback');
+      if (!fb) return;
+      fb.className = 'feedback-msg ' + (score === FLOOR_ZONES.length ? 'good' : 'bad');
+      fb.textContent = score === FLOOR_ZONES.length
+        ? 'All 6 Floor 3 blueprint pins labeled accurately!'
+        : `${score} / ${FLOOR_ZONES.length} correct — look closely at the blueprint pins and try again.`;
+    }
+
+    function checkChoice(btn) {
+      const fb = btn.parentElement.nextElementSibling;
+      const ok = btn.dataset.answer === 'true';
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct.' : 'Check the audio or floor plan details and try again.';
+    }
+
+    function renderChoice(question, options, correct) {
+      return `
+        <div class="line">
+          <div style="font-weight: 600; color: var(--navy-900); margin-bottom: 10px;">${question}</div>
+          <div class="actions">
+            ${options.map(opt => `<button type="button" class="btn" data-answer="${opt === correct}" onclick="checkChoice(this)">${opt}</button>`).join('')}
+          </div>
+          <p class="feedback-msg" aria-live="polite"></p>
+        </div>
+      `;
+    }
+
+    function checkBuild(idx) {
+      const inp = $('bd' + idx);
+      const fb = $('bdFb' + idx);
+      if (!inp || !fb) return;
+      const clean = s => s.trim().toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, ' ');
+      const ok = clean(inp.value) === clean(BUILD_ITEMS[idx].answer);
+      fb.className = 'feedback-msg ' + (ok ? 'good' : 'bad');
+      fb.textContent = ok ? 'Correct!' : 'Check singular/plural agreement (is/are) and punctuation.';
+    }
+
+    function toggleTranscript() { transcriptOpen = !transcriptOpen; render(); }
+    function togglePlanB() { hidePlanB = !hidePlanB; render(); }
+    function pickPalette(room) { activePaletteRoom = room; render(); }
+    function placeInSlot(slotId) {
+      floor5Slots[slotId] = activePaletteRoom === 'Clear Slot' ? '' : activePaletteRoom;
+      render();
+    }
+    function resetFloor5() {
+      Object.keys(floor5Slots).forEach(k => floor5Slots[k] = '');
+      floor5Slots.s1 = 'Front Desk';
+      render();
+    }
+
+    function renderTextboxes(labels) {
+      return labels.map((lbl, i) => `
+        <label class="field-label">
+          ${lbl}
+          <textarea data-save="${current}-${i}" placeholder="Write your response here..."></textarea>
+        </label>
+      `).join('');
+    }
+
+    function renderFloor3SVG() {
+      return `
+        <svg class="blueprint-svg" viewBox="0 0 820 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architectural Floor 3 Blueprint">
+          <rect width="820" height="330" fill="#0B2545" rx="10"/>
+          <!-- Outer walls -->
+          <rect x="18" y="18" width="784" height="294" fill="none" stroke="#4DD0E1" stroke-width="2" stroke-opacity="0.45"/>
+          <!-- Top Row Rooms -->
+          <rect x="26" y="26" width="230" height="106" fill="#133E68" stroke="#D4A843" stroke-opacity="0.55" rx="6"/>
+          <text x="42" y="54" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700">PIN 01 · ENTRANCE</text>
+          <text x="42" y="78" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="13">Reception counter &amp; visitor badges</text>
+          <rect x="42" y="94" width="78" height="22" rx="4" fill="#071527" stroke="#4DD0E1"/>
+          <text x="52" y="109" fill="#4DD0E1" font-family="IBM Plex Mono, monospace" font-size="10">ELEVATORS</text>
+
+          <rect x="272" y="26" width="260" height="106" fill="#133E68" stroke="#D4A843" stroke-opacity="0.55" rx="6"/>
+          <text x="288" y="54" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700">PIN 02 · GLASS ROOM</text>
+          <text x="288" y="78" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="13">Large oval table · Director meetings</text>
+          <rect x="330" y="92" width="140" height="24" rx="12" fill="#071527" stroke="#D4A843"/>
+
+          <rect x="548" y="26" width="246" height="106" fill="#133E68" stroke="#D4A843" stroke-opacity="0.55" rx="6"/>
+          <text x="564" y="54" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700">PIN 03 · LOUNGE</text>
+          <text x="564" y="78" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="13">Coffee machine, fridge &amp; lunch tables</text>
+          <circle cx="585" cy="105" r="10" fill="#0F766E"/><circle cx="620" cy="105" r="10" fill="#0F766E"/>
+
+          <!-- Central Corridor (Pin 04) -->
+          <rect x="26" y="144" width="768" height="44" fill="rgba(212,168,67,0.14)" stroke="#D4A843" stroke-dasharray="6 4" rx="4"/>
+          <text x="410" y="171" text-anchor="middle" fill="#E5A922" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700">PIN 04 · CENTRAL CORRIDOR CONNECTING ALL ROOMS</text>
+
+          <!-- Bottom Row Rooms -->
+          <rect x="26" y="200" width="250" height="104" fill="#133E68" stroke="#4DD0E1" stroke-opacity="0.5" rx="6"/>
+          <text x="42" y="228" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700">PIN 05 · STORAGE</text>
+          <text x="42" y="252" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="13">Between HR &amp; Finance · Paper &amp; pens</text>
+          <rect x="42" y="268" width="90" height="20" rx="3" fill="#071527" stroke="#94A3B8"/>
+          <text x="52" y="282" fill="#94A3B8" font-family="IBM Plex Mono, monospace" font-size="10">PRINTER</text>
+
+          <rect x="292" y="200" width="502" height="104" fill="#133E68" stroke="#4DD0E1" stroke-opacity="0.5" rx="6"/>
+          <text x="310" y="228" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700">PIN 06 · WINDOW DESK ZONE</text>
+          <text x="310" y="252" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="13">Individual desks with computers &amp; monitors next to windows</text>
+          <rect x="310" y="266" width="60" height="24" rx="3" fill="#0F766E"/><rect x="382" y="266" width="60" height="24" rx="3" fill="#0F766E"/>
+          <rect x="454" y="266" width="60" height="24" rx="3" fill="#0F766E"/><rect x="526" y="266" width="60" height="24" rx="3" fill="#0F766E"/>
+          <rect x="598" y="266" width="60" height="24" rx="3" fill="#0F766E"/><rect x="670" y="266" width="60" height="24" rx="3" fill="#0F766E"/>
+        </svg>
+      `;
+    }
+
+    function renderDiffSVG(plan) {
+      const isA = plan === 'A';
+      return `
+        <svg class="blueprint-svg" viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg">
+          <rect width="420" height="230" fill="#0B2545" rx="8"/>
+          <!-- Top Left -->
+          <rect x="12" y="12" width="124" height="74" rx="5" fill="#133E68" stroke="#4DD0E1" stroke-opacity="0.5"/>
+          <text x="22" y="34" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700">FRONT DESK</text>
+          <text x="22" y="54" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="11">${isA ? 'Supply Closet behind' : 'Elevators in front'}</text>
+          <!-- Top Middle -->
+          <rect x="148" y="12" width="124" height="74" rx="5" fill="${isA ? '#0F766E' : '#1E3A8A'}" stroke="#D4A843" stroke-opacity="0.6"/>
+          <text x="158" y="36" fill="#FFFFFF" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700">${isA ? 'BREAKROOM' : 'BOARDROOM'}</text>
+          <text x="158" y="56" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Next to Finance</text>
+          <!-- Top Right -->
+          <rect x="284" y="12" width="124" height="74" rx="5" fill="#133E68" stroke="#4DD0E1" stroke-opacity="0.5"/>
+          <text x="294" y="36" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700">FINANCE</text>
+          <text x="294" y="56" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">${isA ? 'No Cafeteria' : '+ Mini Cafeteria'}</text>
+          <!-- Hallway -->
+          <rect x="12" y="96" width="396" height="26" rx="4" fill="rgba(212,168,67,0.16)" stroke="#D4A843" stroke-dasharray="4 3"/>
+          <text x="210" y="113" text-anchor="middle" fill="#E5A922" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700">MAIN HALLWAY</text>
+          <!-- Bottom Left -->
+          <rect x="12" y="132" width="188" height="84" rx="5" fill="${isA ? '#1E3A8A' : '#0F766E'}" stroke="#D4A843" stroke-opacity="0.6"/>
+          <text x="22" y="156" fill="#FFFFFF" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700">${isA ? 'BOARDROOM' : 'BREAKROOM'}</text>
+          <text x="22" y="178" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="11">${isA ? 'Across from Front Desk' : 'Supply Closet between HR &amp; IT'}</text>
+          <!-- Bottom Right -->
+          <rect x="212" y="132" width="196" height="84" rx="5" fill="#133E68" stroke="#4DD0E1" stroke-opacity="0.6"/>
+          <text x="222" y="156" fill="#D4A843" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700">${isA ? '6 WORKSTATIONS' : '10 WORKSTATIONS'}</text>
+          <text x="222" y="178" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Next to glass windows</text>
+        </svg>
+      `;
+    }
+
+    const MODULES = [
+      // 01 Visual Warm-up (Strictly [P]!)
+      () => `
+        <article class="card-block">
+          <span class="kicker">01 &middot; Visual Warm-up</span>
+          <h2>Choose Your Ideal Office</h2>
+          <p class="lead">Look at each pair of real office photos. Click the space you prefer and tell your teacher why.</p>
+
+          ${[
+            {
+              key: 'w1',
+              title: '1. Daily Office Layout',
+              a: { label: 'Open Office Floor', img: 'photo-1497366216548-37526070297c' },
+              b: { label: 'Quiet Private Office', img: 'photo-1497366811353-6870744d04b2' }
+            },
+            {
+              key: 'w2',
+              title: '2. Best Desk Location',
+              a: { label: 'Desk by the Window', img: 'photo-1497215728101-856f4ea42174' },
+              b: { label: 'Team Table Together', img: 'photo-1522071820081-009f0129c71c' }
+            },
+            {
+              key: 'w3',
+              title: '3. Meeting Room Style',
+              a: { label: 'Formal Glass Room', img: 'photo-1497366754035-f200968a6e72' },
+              b: { label: 'Casual Coffee Corner', img: 'photo-1556761175-5973dc0f32e7' }
+            }
+          ].map(pair => `
+            <div class="versus-block">
+              <div class="versus-label">${pair.title}</div>
+              <div class="versus-grid">
+                ${[pair.a, pair.b].map(opt => {
+                  const sel = prefChoices[pair.key] === opt.label;
+                  return `
+                    <button type="button" class="photo-choice ${sel ? 'selected' : ''}" onclick="selectPref('${pair.key}', '${opt.label}')">
+                      <img src="https://images.unsplash.com/${opt.img}?auto=format&fit=crop&w=700&q=80" alt="${opt.label}">
+                      <div class="photo-choice-caption">
+                        <strong>${opt.label}</strong>
+                        <span class="choice-tag">${sel ? 'Selected' : 'Choose'}</span>
+                      </div>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `).join('')}
+        </article>
+      `,
+
+      // 02 Vocabulary + Photo Gallery + Architectural SVG Blueprint
+      () => `
+        <article class="card-block">
+          <span class="kicker">02 &middot; Core Vocabulary</span>
+          <h2>Visual Tour: Key Office Zones</h2>
+          <p class="lead">Look at the six real office spaces first, then listen and flip each card to confirm the meaning.</p>
+
+          <div class="photo-gallery">
+            ${VOCAB.map(v => `
+              <div class="gallery-tile">
+                <img src="https://images.unsplash.com/${v.photo}?auto=format&fit=crop&w=420&q=80" alt="${v.word}">
+                <span>${v.word}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="flip-grid">
+            ${VOCAB.map((v, i) => renderFlipCard(v, i, 'vocab')).join('')}
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Intelligibility Micro-Focus</span>
+          <h3>Natural Linking &amp; Preposition Stress</h3>
+          <p class="lead">Listen to the smooth rhythm of <strong>There's / There are</strong> and the second-syllable stress in <strong>be-TWEEN / be-HIND</strong>.</p>
+          <div class="pron-grid">
+            <div class="pron-card">
+              <span class="mono">EXISTENTIAL LINKING</span>
+              <div style="font-size:17px; font-weight:800; color:var(--navy-900);">There's a boardroom &nbsp;vs.&nbsp; There are two rooms</div>
+              <div>${audioBtn('pron-01-theres-there-are', 'Listen & Compare')}</div>
+            </div>
+            <div class="pron-card">
+              <span class="mono">WORD STRESS</span>
+              <div style="font-size:17px; font-weight:800; color:var(--navy-900);">be-TWEEN /bɪˈtwiːn/ &nbsp;&middot;&nbsp; be-HIND /bɪˈhaɪnd/</div>
+              <div>${audioBtn('pron-02-between-behind', 'Listen & Compare')}</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">Visual Practice</span>
+          <h3>Label the Architectural Blueprint (Floor 3)</h3>
+          <p class="lead">Inspect Pins 01–06 on the Floor 3 blueprint and assign the right workspace term to each pin.</p>
+          <div class="blueprint-shell">
+            ${renderFloor3SVG()}
+            <div class="zone-label-grid">
+              ${FLOOR_ZONES.map(z => `
+                <div class="zone-assign-row">
+                  <span><strong style="color:var(--gold-400);">PIN ${z.pin}</strong></span>
+                  <select class="zone-select" onchange="setZone('${z.id}', this.value)" aria-label="Label for Pin ${z.pin}">
+                    <option value="">Choose zone...</option>
+                    ${VOCAB.map(v => `<option value="${v.word}" ${zoneAnswers[z.id] === v.word ? 'selected' : ''}>${v.word}</option>`).join('')}
+                  </select>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          <div class="actions" style="justify-content: space-between;">
+            <p id="floorFeedback" class="feedback-msg" style="margin:0;" aria-live="polite">Assign all 6 pins on the blueprint, then check your map.</p>
+            <button type="button" class="btn btn-primary" onclick="checkFloorPlan()">Check Floor Plan</button>
+          </div>
+        </article>
+      `,
+
+      // 03 Workplace Expressions
+      () => `
+        <article class="card-block">
+          <span class="kicker">03 &middot; Workplace Expressions</span>
+          <h2>Guiding Someone Around the Office</h2>
+          <p class="lead">Learn these four practical orientation expressions as complete blocks for giving quick office directions.</p>
+          <div class="flip-grid">
+            ${EXPRESSIONS.map((e, i) => renderFlipCard(e, i, 'expr')).join('')}
+          </div>
+        </article>
+      `,
+
+      // 04 Listening
+      () => `
+        <article class="card-block">
+          <span class="kicker">04 &middot; Listening in Context</span>
+          <h2>Floor 3 Orientation Tour</h2>
+          <p class="lead">Listen to Hannah (Facilities Lead) welcoming Marcus on his first morning. Keep the transcript closed until you complete the 4 checks.</p>
+
+          <div class="listening-stage">
+            <div class="listening-speakers">
+              <div class="speaker-pill">
+                <img class="speaker-avatar" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&q=80" alt="Hannah">
+                <div><strong>Hannah</strong><div style="font-size:0.75rem; color:var(--slate-300);">Facilities Lead</div></div>
+              </div>
+              <div class="speaker-pill">
+                <img class="speaker-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" alt="Marcus">
+                <div><strong>Marcus</strong><div style="font-size:0.75rem; color:var(--slate-300);">New Operations Analyst</div></div>
+              </div>
+            </div>
+            <div class="actions" style="justify-content: space-between;">
+              <div>
+                <strong>Audio Track: Floor 3 Walkthrough</strong>
+                <div style="font-size:0.84rem; color:var(--slate-300);">Hannah shows Marcus the key rooms and facilities on Floor 3.</div>
+              </div>
+              <div class="actions">
+                <button type="button" class="btn btn-teal" onclick="playAudio(this, 'listening-01-floor3')">&#9654; Play Dialogue</button>
+                <button type="button" class="btn" onclick="toggleTranscript()">${transcriptOpen ? 'Hide Transcript' : 'Show Transcript (after listening)'}</button>
+              </div>
+            </div>
+            <div class="transcript-panel ${transcriptOpen ? 'is-open' : ''}">
+              <p><strong>Hannah:</strong> Welcome to Floor 3, Marcus! Right here in front of the elevators, there's the front desk — you can't miss it.</p>
+              <p><strong>Marcus:</strong> Great! Are there spare workstations near Operations?</p>
+              <p><strong>Hannah:</strong> Yes, there are! There are six workstations next to the big windows, and your desk is on your left.</p>
+              <p><strong>Marcus:</strong> Awesome. And is there a breakroom on this floor?</p>
+              <p><strong>Hannah:</strong> Yes, there is. It's just down the hall, right across from the boardroom. There's a coffee machine on the counter and spare cups in the cabinet.</p>
+              <p><strong>Marcus:</strong> Perfect. Where is the supply closet?</p>
+              <p><strong>Hannah:</strong> It's between HR and Finance, right behind the printer. Oh, and there isn't a cafeteria on Floor 3 — that's on Floor 1.</p>
+            </div>
+          </div>
+
+          <h3>Floor 3 Verification</h3>
+          ${renderChoice('1. The front desk is in front of the elevators.', ['True', 'False'], 'True')}
+          ${renderChoice('2. The supply closet is next to the front desk.', ['True', 'False'], 'False')}
+          ${renderChoice('3. The breakroom is right across from the boardroom.', ['True', 'False'], 'True')}
+          ${renderChoice('4. There is a cafeteria on Floor 3.', ['True', 'False'], 'False')}
+        </article>
+      `,
+
+      // 05 Grammar with Visual Spatial Diagrams
+      () => `
+        <article class="card-block">
+          <span class="kicker">05 &middot; Grammar in Context</span>
+          <h2>There Is / There Are &amp; Prepositions of Place</h2>
+          <p class="lead">Use <strong>There is</strong> (singular) and <strong>There are</strong> (plural) to say what exists in an office, and prepositions of place to pinpoint exact locations.</p>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Form</th><th>Singular</th><th>Plural</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Affirmative (+)</strong></td><td><strong>There is (There's)</strong> a boardroom on Floor 3.</td><td><strong>There are</strong> six workstations by the window.</td></tr>
+                <tr><td><strong>Negative (&minus;)</strong></td><td><strong>There isn't</strong> a cafeteria on Floor 3.</td><td><strong>There aren't</strong> spare lockers here.</td></tr>
+                <tr><td><strong>Yes/No Question (?)</strong></td><td><strong>Is there</strong> a breakroom on this floor?<br>Yes, there is. / No, there isn't.</td><td><strong>Are there</strong> spare monitors in IT?<br>Yes, there are. / No, there aren't.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>7 Prepositions of Place (Visual Map)</h3>
+          <div class="prep-grid">
+            ${PREPOSITIONS.map(p => `
+              <div class="prep-card">
+                ${p.svg}
+                <strong>${p.word}</strong>
+                <span>${p.ex}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <h3>Practice A &middot; Pinpoint the Location (Floor 3)</h3>
+          ${renderChoice('1. The supply closet is _____ HR and Finance.', ['between', 'under', 'on'], 'between')}
+          ${renderChoice('2. The front desk is right _____ the elevators.', ['in front of', 'in', 'under'], 'in front of')}
+          ${renderChoice('3. The six workstations are _____ the big windows.', ['next to', 'in', 'between'], 'next to')}
+          ${renderChoice('4. The supply closet is right _____ the printer.', ['behind', 'on', 'between'], 'behind')}
+
+          <h3>Practice B &middot; Build Questions &amp; Negatives</h3>
+          <p class="lead">Write the complete question or negative sentence using <strong>There is / There are</strong>.</p>
+          ${BUILD_ITEMS.map((item, i) => `
+            <div class="build-row">
+              <div>
+                <div style="font-weight:700; color:var(--navy-900);">${item.prompt}</div>
+                <p id="bdFb${i}" class="feedback-msg" style="margin:4px 0 0;" aria-live="polite"></p>
+              </div>
+              <div class="actions">
+                <input type="text" class="text-input" id="bd${i}" data-save="bd-${i}" placeholder="Write full sentence..." onkeydown="if(event.key==='Enter')checkBuild(${i})">
+                <button type="button" class="btn btn-primary" onclick="checkBuild(${i})">Check</button>
+              </div>
+            </div>
+          `).join('')}
+        </article>
+      `,
+
+      // 06 Speaking: Spot the 4 Differences + Live Interactive Floor 5 Designer
+      () => `
+        <article class="card-block">
+          <span class="kicker">06 &middot; Speaking Challenge · Round 1</span>
+          <h2>Spot the 4 Blueprint Differences</h2>
+          <p class="lead">Compare <strong>Original Plan A</strong> and <strong>Renovated Plan B</strong> aloud with your teacher. Describe all 4 changes using <strong>There is / There are / There isn't</strong> and prepositions of place.</p>
+
+          <div class="actions" style="margin-bottom: 12px;">
+            <button type="button" class="btn" onclick="togglePlanB()">${hidePlanB ? 'Show Plan B' : 'Hide Plan B (Information Gap Mode)'}</button>
+          </div>
+
+          <div class="diff-grid">
+            <div class="diff-plan-card">
+              <div class="diff-plan-header">
+                <span class="mono" style="color:var(--gold-400);">PLAN A · ORIGINAL</span>
+              </div>
+              ${renderDiffSVG('A')}
+            </div>
+            <div class="diff-plan-card">
+              <div class="diff-plan-header">
+                <span class="mono" style="color:var(--teal-300);">PLAN B · RENOVATED</span>
+              </div>
+              ${hidePlanB
+                ? `<div style="min-height:200px; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--slate-300); padding:20px;">Plan B hidden for live Information Gap.<br>Ask your teacher: "Is there a...?" / "Where is the...?"</div>`
+                : renderDiffSVG('B')}
+            </div>
+          </div>
+        </article>
+
+        <article class="card-block">
+          <span class="kicker">06 &middot; Speaking Challenge · Round 2</span>
+          <h2>Design Floor 5 &amp; Pitch to the CEO</h2>
+          <p class="lead">You are designing the new Floor 5! Select a room from the palette, click any slot on the blueprint to place it, and then <strong>pitch your live floor plan aloud</strong> to the CEO (your teacher).</p>
+
+          <div class="designer-palette">
+            ${PALETTE_ROOMS.map(room => `
+              <button type="button" class="palette-chip ${activePaletteRoom === room ? 'active' : ''}" onclick="pickPalette('${room}')">${room}</button>
+            `).join('')}
+          </div>
+
+          <div class="floor5-canvas">
+            <div class="actions" style="justify-content:space-between;">
+              <span class="mono" style="color:var(--gold-400);">YOUR CUSTOM FLOOR 5 BLUEPRINT · CLICK ANY SLOT TO PLACE "${activePaletteRoom.toUpperCase()}"</span>
+              <button type="button" class="btn" style="padding:5px 11px; font-size:12px;" onclick="resetFloor5()">Reset Floor 5</button>
+            </div>
+            <div class="floor5-grid">
+              ${[
+                ['s1', 'North-West (by Elevators)'],
+                ['s2', 'North-Center (between NW & NE)'],
+                ['s3', 'North-East (Corner View)'],
+              ].map(([id, pos]) => `
+                <button type="button" class="floor5-slot ${floor5Slots[id] ? 'filled' : ''}" onclick="placeInSlot('${id}')">
+                  <span class="mono" style="color:var(--gold-400); font-size:10.5px;">${pos}</span>
+                  <strong style="font-size:15px;">${floor5Slots[id] || '+ Click to place room'}</strong>
+                </button>
+              `).join('')}
+              <div class="floor5-hall">MAIN HALLWAY</div>
+              ${[
+                ['s4', 'South-West (Left of Hall)'],
+                ['s5', 'South-Center (Across from North-Center)'],
+                ['s6', 'South-East (Next to Windows)'],
+              ].map(([id, pos]) => `
+                <button type="button" class="floor5-slot ${floor5Slots[id] ? 'filled' : ''}" onclick="placeInSlot('${id}')">
+                  <span class="mono" style="color:var(--teal-300); font-size:10.5px;">${pos}</span>
+                  <strong style="font-size:15px;">${floor5Slots[id] || '+ Click to place room'}</strong>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="checklist-box">
+            <span class="kicker">Speaking Checklist</span>
+            ${[
+              'I explain at least three blueprint differences aloud using There is / There are / There isn\'t.',
+              'I pitch my custom Floor 5 layout using at least four prepositions of place (between, next to, behind, in front of).',
+              'I answer live CEO questions accurately (Yes, there is / No, there aren\'t).',
+              'I include at least two Workplace Expressions (Right across from / Just down the hall / You can\'t miss it / On your left).'
+            ].map(t => `<label class="checklist-item"><input type="checkbox"> <span>${t}</span></label>`).join('')}
+          </div>
+        </article>
+      `,
+
+      // 07 Exit Ticket
+      () => `
+        <article class="card-block">
+          <span class="kicker">07 &middot; Exit Ticket</span>
+          <h2>Quick Office Guide</h2>
+          <p class="lead">Without looking back at previous modules, write a short orientation note for a new colleague describing your real office or your custom Floor 5.</p>
+          ${renderTextboxes([
+            '1. Two affirmative sentences (one with There is, one with There are)',
+            "2. Two negative sentences (There isn't / There aren't)",
+            '3. Two location sentences using prepositions of place (between, next to, behind, in front of)',
+            '4. One question with Is there...? or Are there...?'
+          ])}
+          <div class="checklist-box">
+            <span class="kicker">My Can-Do Statements</span>
+            ${[
+              'I can describe what exists on an office floor using There is and There are.',
+              "I can state what is not available using There isn't and There aren't.",
+              'I can pinpoint rooms and equipment using prepositions of place.',
+              'I can guide a new colleague using natural orientation expressions.'
+            ].map(t => `<label class="checklist-item"><input type="checkbox"> <span>${t}</span></label>`).join('')}
+          </div>
+          <div class="actions" style="margin-top: 18px; justify-content: flex-end;">
+            <a href="./explore.html" class="btn btn-primary" style="text-decoration:none;">Go to Explore (Workbook) &rarr;</a>
+          </div>
+        </article>
+      `
+    ];
+
+    function saveCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => { savedInputs[el.dataset.save] = el.value; });
+    }
+
+    function restoreCurrentInputs() {
+      document.querySelectorAll('[data-save]').forEach(el => {
+        if (savedInputs[el.dataset.save] !== undefined) el.value = savedInputs[el.dataset.save];
+      });
+    }
+
+    function render() {
+      saveCurrentInputs();
+      $('nav').innerHTML = MODULE_NAMES.map((name, idx) => `
+        <button type="button" class="${current === idx ? 'active' : ''}" onclick="go(${idx})">
+          <span class="nav-idx">${String(idx + 1).padStart(2, '0')}</span>
+          <span>${name}</span>
+        </button>
+      `).join('');
+
+      $('screen').innerHTML = renderTeacherAccordion(current) + MODULES[current]();
+      restoreCurrentInputs();
+
+      $('prev').disabled = current === 0;
+      $('next').disabled = current === MODULE_NAMES.length - 1;
+      $('count').textContent = `${String(current + 1).padStart(2, '0')} / ${String(MODULE_NAMES.length).padStart(2, '0')}`;
+    }
+
+    function go(idx) {
+      current = idx;
+      render();
+      $('nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const activeBtn = $('nav').children[idx];
+      if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    }
+
+    function editStudentName() {
+      const currentName = localStorage.getItem('ld_student_name') || '';
+      const next = prompt('Enter your name:', currentName);
+      if (next === null) return;
+      const clean = next.trim();
+      try { localStorage.setItem('ld_student_name', clean); } catch (_) {}
+      $('studentName').textContent = 'Student · ' + (clean || 'Guest');
+    }
+
+    function updateTeacherButton() {
+      const btn = $('teacherToggleBtn');
+      if (!btn) return;
+      btn.classList.toggle('is-active', isTeacher);
+      btn.textContent = isTeacher ? "Teacher's Version (On) ×" : "Teacher's Version ↗";
+    }
+
+    function openTeacherModal() {
+      if (isTeacher) {
+        isTeacher = false;
+        updateTeacherButton();
+        render();
+        return;
+      }
+      $('pinMessage').textContent = '';
+      $('pinInput').value = '';
+      $('teacherDialog').showModal();
+      setTimeout(() => $('pinInput').focus(), 60);
+    }
+
+    function authorizeTeacher() {
+      const pin = ($('pinInput').value || '').trim();
+      if (VALID_PINS.includes(pin)) {
+        isTeacher = true;
+        $('teacherDialog').close();
+        updateTeacherButton();
+        render();
+      } else {
+        $('pinMessage').textContent = 'Incorrect PIN. Please verify with Academic Coordination.';
+        $('pinInput').focus();
+      }
+    }
+
+    $('pinInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); authorizeTeacher(); }
+    });
+
+    $('prev').onclick = () => go(current - 1);
+    $('next').onclick = () => go(current + 1);
+
+    updateTeacherButton();
+    render();
+  </script>
+</body>
+</html>
